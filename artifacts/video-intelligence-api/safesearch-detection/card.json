@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.470Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api",
+  "feature_name": "SafeSearch detection",
+  "feature_slug": "safesearch-detection",
+  "summary": "Adds SafeSearch detection to inspect video frames for potentially adult imagery via annotate calls.",
+  "extended_definition": "Adds SafeSearch detection to inspect video frames for potentially adult imagery via annotate calls.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+      "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+      "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze videos for labels \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "LABEL DETECTION ] with io . open ( path , \"rb\" ) as movie : input content = movie . read () operation = video client . annotate video ( request = { \"features\" : features , \"input content\" : input content } ) print ( \" \\n Processing video for label annotations:\" ) result = operation . result ( timeout = 90 ) print ( \" \\n Finished processing.\" ) Process video/segment level label annotations segment labels = result . annotation results [ 0 ] . segment label annotations for i , segment label in enumerate ( segment labels ): print ( \"Video label description: {} \" . format ( segment label . entity . description )) for category entity in segment label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , segment in enumerate ( segment label . segments ): start time = ( segment . segment . start time offset . seconds + segment . segment . start time offset . microseconds / 1e6 ) end time = ( segment . segment . end time offset . seconds + segment . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = segment . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Process shot level label annotations shot labels = result . annotation results [ 0 ] . shot label annotations for i , shot label in enumerate ( shot labels ): print ( \"Shot label description: {} \" . format ( shot label . entity . description )) for category entity in shot label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , shot in enumerate ( shot label . segments ): start time = ( shot . segment . start time offset . seconds + shot . segment . start time offset . microseconds / 1e6 ) end time = ( shot . segment . end time offset . seconds + shot . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = shot . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Process frame level label annotations frame labels = result . annotation results [ 0 ] . frame label annotations for i , frame label in enumerate ( frame labels ): print ( \"Frame label description: {} \" . format ( frame label . entity . description )) for category entity in frame label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) Each frame label annotation has many frames, here we print information only about the first frame. frame = frame label . frames [ 0 ] time offset = frame . time offset . seconds + frame . time offset . microseconds / 1e6 print ( \" \\t First frame time offset: {} s\" . format ( time offset )) print ( \" \\t First frame confidence: {} \" . format ( frame . confidence )) print ( \" \\n \" ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Video Intelligence reference documentation for .NET.",
+          "VideoContext ( label detection config = config ) operation = video client . annotate video ( request = { \"features\" : features , \"input uri\" : path , \"video context\" : context } ) print ( \" \\n Processing video for label annotations:\" ) result = operation . result ( timeout = 180 ) print ( \" \\n Finished processing.\" ) Process video/segment level label annotations segment labels = result . annotation results [ 0 ] . segment label annotations for i , segment label in enumerate ( segment labels ): print ( \"Video label description: {} \" . format ( segment label . entity . description )) for category entity in segment label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , segment in enumerate ( segment label . segments ): start time = ( segment . segment . start time offset . seconds + segment . segment . start time offset . microseconds / 1e6 ) end time = ( segment . segment . end time offset . seconds + segment . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = segment . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Process shot level label annotations shot labels = result . annotation results [ 0 ] . shot label annotations for i , shot label in enumerate ( shot labels ): print ( \"Shot label description: {} \" . format ( shot label . entity . description )) for category entity in shot label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , shot in enumerate ( shot label . segments ): start time = ( shot . segment . start time offset . seconds + shot . segment . start time offset . microseconds / 1e6 ) end time = ( shot . segment . end time offset . seconds + shot . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = shot . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Process frame level label annotations frame labels = result . annotation results [ 0 ] . frame label annotations for i , frame label in enumerate ( frame labels ): print ( \"Frame label description: {} \" . format ( frame label . entity . description )) for category entity in frame label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) Each frame label annotation has many frames, here we print information only about the first frame. frame = frame label . frames [ 0 ] time offset = frame . time offset . seconds + frame . time offset . microseconds / 1e6 print ( \" \\t First frame time offset: {} s\" . format ( time offset )) print ( \" \\t First frame confidence: {} \" . format ( frame . confidence )) print ( \" \\n \" ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Video Intelligence reference documentation for .NET.",
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const path = 'Local file to analyze, e.g. ./my-file.mp4'; // Reads a local video file and converts it to base64 const readFile = util . promisify ( fs . readFile ); const file = await readFile ( path ); const inputContent = file . toString ( 'base64' ); // Constructs request const request = { inputContent : inputContent , features : [ 'LABEL DETECTION' ], }; // Detects labels in a video const [ operation ] = await client . annotateVideo ( request ); console . log ( 'Waiting for operation to complete...' ); const [ operationResult ] = await operation . promise (); // Gets annotations for video const annotations = operationResult . annotationResults [ 0 ]; const labels = annotations . segmentLabelAnnotations ; labels . forEach ( label = > { console . log ( Label ${ label . entity . description } occurs at: ); label . segments . forEach ( segment = > { const time = segment . segment ; if ( time . startTimeOffset . seconds === undefined ) { time . startTimeOffset . seconds = 0 ; } if ( time . startTimeOffset . nanos === undefined ) { time . startTimeOffset . nanos = 0 ; } if ( time . endTimeOffset . seconds === undefined ) { time . endTimeOffset . seconds = 0 ; } if ( time . endTimeOffset . nanos === undefined ) { time . endTimeOffset . nanos = 0 ; } console . log ( \\tStart: ${ time . startTimeOffset . seconds } + . ${ ( time . startTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\tEnd: ${ time . endTimeOffset . seconds } . + ${ ( time . endTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\tConfidence: ${ segment . confidence } ); }); }); Python For more information on installing and using the Video Intelligence API Client Library for Python, refer to Video Intelligence API Client Libraries . \"\"\"Detect labels given a file path.\"\"\" video client = videointelligence ."
+        ]
+      },
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"entity\" : { object ( Entity ) } , \"confidence\" : number , \"frames\" : [ { object ( ObjectTrackingFrame ) } ] , \"version\" : string , // Union field track info can be only one of the following: \"segment\" : { object ( VideoSegment ) } , \"trackId\" : string // End of list of possible types for union field track info . } Fields entity object ( Entity ) Entity to specify the object category that this track is labeled as. confidence number Object category's labeling confidence of this track. frames[] object ( ObjectTrackingFrame ) Information corresponding to all frames where this object track appears.",
+          "JSON representation { \"inputUri\" : string , \"segment\" : { object ( VideoSegment ) } , \"segmentLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"segmentPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"frameLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"faceDetectionAnnotations\" : [ { object ( FaceDetectionAnnotation ) } ] , \"shotAnnotations\" : [ { object ( VideoSegment ) } ] , \"explicitAnnotation\" : { object ( ExplicitContentAnnotation ) } , \"speechTranscriptions\" : [ { object ( SpeechTranscription ) } ] , \"textAnnotations\" : [ { object ( TextAnnotation ) } ] , \"objectAnnotations\" : [ { object ( ObjectTrackingAnnotation ) } ] , \"logoRecognitionAnnotations\" : [ { object ( LogoRecognitionAnnotation ) } ] , \"personDetectionAnnotations\" : [ { object ( PersonDetectionAnnotation ) } ] , \"error\" : { object ( Status ) } } Fields inputUri string Video file location in Cloud Storage . segment object ( VideoSegment ) Video segment on which the annotation is run. segmentLabelAnnotations[] object ( LabelAnnotation ) Topical label annotations on video level or user-specified segment level.",
+          "JSON representation { \"normalizedBoundingBox\" : { object ( NormalizedBoundingBox ) } , \"timeOffset\" : string , \"attributes\" : [ { object ( DetectedAttribute ) } ] , \"landmarks\" : [ { object ( DetectedLandmark ) } ] } Fields normalizedBoundingBox object ( NormalizedBoundingBox ) Normalized Bounding box in a frame, where the object is located. timeOffset string ( Duration format) Time-offset, relative to the beginning of the video, corresponding to the video frame for this object."
+        ]
+      },
+      {
+        "title": "\"Detect explicit content in videos \\_|\\_ Video Intelligence API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const gcsUri = 'GCS URI of video to analyze, e.g. gs://my-bucket/my-video.mp4'; const request = { inputUri : gcsUri , features : [ 'EXPLICIT CONTENT DETECTION' ], }; // Human-readable likelihoods const likelihoods = [ 'UNKNOWN' , 'VERY UNLIKELY' , 'UNLIKELY' , 'POSSIBLE' , 'LIKELY' , 'VERY LIKELY' , ]; // Detects unsafe content const [ operation ] = await client . annotateVideo ( request ); console . log ( 'Waiting for operation to complete...' ); const [ operationResult ] = await operation . promise (); // Gets unsafe content const explicitContentResults = operationResult . annotationResults [ 0 ]. explicitAnnotation ; console . log ( 'Explicit annotation results:' ); explicitContentResults . frames . forEach ( result = > { if ( result . timeOffset === undefined ) { result . timeOffset = {}; } if ( result . timeOffset . seconds === undefined ) { result . timeOffset . seconds = 0 ; } if ( result . timeOffset . nanos === undefined ) { result . timeOffset . nanos = 0 ; } console . log ( \\tTime: ${ result . timeOffset . seconds } + . ${ ( result . timeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\t\\tPornography likelihood: ${ likelihoods [ result . pornographyLikelihood ] } ); }); Python For more information on installing and using the Cloud Video Intelligence API Client Library for Python, refer to Cloud Video Intelligence API Client Libraries . \"\"\"Detects explicit content from the GCS path to a video.\"\"\" video client = videointelligence .",
+          "EXPLICIT CONTENT DETECTION ) . build (); OperationFuture<AnnotateVideoResponse , AnnotateVideoProgress > response = client . annotateVideoAsync ( request ); System . out . println ( \"Waiting for operation to complete...\" ); // Print detected annotations and their positions in the analyzed video. for ( VideoAnnotationResults result : response . get (). getAnnotationResultsList ()) { for ( ExplicitContentFrame frame : result . getExplicitAnnotation (). getFramesList ()) { double frameTime = frame . getTimeOffset (). getSeconds () + frame . getTimeOffset (). getNanos () / 1e9 ; System . out . printf ( \"Location: %.3fs\\n\" , frameTime ); System . out . println ( \"Adult: \" + frame . getPornographyLikelihood ()); } } Node.js To authenticate to Video Intelligence, set up Application Default Credentials.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://videointelligence.googleapis.com/v1/ OPERATION NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\", \"annotationProgress\": [ { \"inputUri\": \"/demomaker/gbikes dinosaur.mp4\", \"progressPercent\": 100, \"startTime\": \"2020-03-26T00:16:35.112404Z\", \"updateTime\": \"2020-03-26T00:16:55.937889Z\" } ] }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\", \"annotationResults\": [ { \"inputUri\": \"/demomaker/gbikes dinosaur.mp4\", \"explicitAnnotation\": { \"frames\": [ { \"timeOffset\": \"0.056149s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, { \"timeOffset\": \"1.166841s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, ... { \"timeOffset\": \"41.678209s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, { \"timeOffset\": \"42.596413s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" } ] } } ] } } Shot detection annotations are returned as a shotAnnotations list."
+        ]
+      },
+      {
+        "title": "\"Label Detection Tutorial \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "LABEL DETECTION ] operation = video client . annotate video ( request = { \"features\" : features , \"input uri\" : path } ) print ( \" \\n Processing video for label annotations:\" ) result = operation . result ( timeout = 90 ) print ( \" \\n Finished processing.\" ) segment labels = result . annotation results [ 0 ] . segment label annotations for i , segment label in enumerate ( segment labels ): print ( \"Video label description: {} \" . format ( segment label . entity . description )) for category entity in segment label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , segment in enumerate ( segment label . segments ): start time = ( segment . segment . start time offset . seconds + segment . segment . start time offset . microseconds / 1e6 ) end time = ( segment . segment . end time offset . seconds + segment . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = segment . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) if name == \" main \" : parser = argparse .",
+          "RawDescriptionHelpFormatter ) parser . add argument ( \"path\" , help = \"GCS file path for label detection.\" ) args = parser . parse args () analyze labels ( args . path ) Here, the passed argument is parsed for the Cloud Storage URI of the video filename and is passed to the main() function.",
+          "Parse the response segment labels = result . annotation results [ 0 ] . segment label annotations for i , segment label in enumerate ( segment labels ): print ( \"Video label description: {} \" . format ( segment label . entity . description )) for category entity in segment label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , segment in enumerate ( segment label . segments ): start time = ( segment . segment . start time offset . seconds + segment . segment . start time offset . microseconds / 1e6 ) end time = ( segment . segment . end time offset . seconds + segment . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = segment . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Once the operation has been completed, the response will contain the result within an AnnotateVideoResponse , which consists of a list of annotationResults , one for each video sent in the request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assistant.mp4",
+      "dinosaur.mp4",
+      "e.g",
+      "file.mp4",
+      "type.googleapis.com",
+      "video.mp4",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-labels",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "https://docs.cloud.google.com/video-intelligence/docs/label-tutorial"
+      ]
+    }
+  ]
+}

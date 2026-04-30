@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.344Z",
+  "source_step08_card": "data/step-08/current/products/service-extensions/card.json",
+  "product_name": "Service Extensions",
+  "product_slug": "service-extensions",
+  "feature_name": "Edge extensions",
+  "feature_slug": "edge-extensions",
+  "summary": "Service Extensions now supports edge extensions to modify request headers early in the request lifecycle for global external Application Load Balancers to influence caching and routing behavior.",
+  "extended_definition": "Service Extensions now supports edge extensions to modify request headers early in the request lifecycle for global external Application Load Balancers to influence caching and routing behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+      "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+      "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Load Balancing and Cloud CDN extensions overview \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before a load balancer calls a traffic extension on the request path for a request, it does the following: Performs fault injection Selects a backend service for the request Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Applies Cloud CDN caching policies for the selected backend service in the case of global external Application Load Balancers After a load balancer calls a traffic extension on the request path for a request, it does the following: Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring After a load balancer calls a traffic extension on the response path for a request, it does the following: Performs response header transformations and resolves custom response header variables Performs logging by using Cloud Logging Performs Cloud CDN caching in the case of global external Application Load Balancers Custom headers In the traffic path, edge and route extensions run at extensibility points before the stage at which the load balancer adds custom headers .",
+          "You can configure Application Load Balancers to use the following types of extensions: Edge extensions help you manipulate request headers to influence backend service selection and the content that Cloud CDN serves from cache.",
+          "How edge extensions work Edge extensions run first on the request processing path and let you use request headers to influence backend service selection and the content that Cloud CDN serves from cache."
+        ]
+      },
+      {
+        "title": "\"Configure an edge extension \\_|\\_ Service Extensions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create extension . gcloud Define the plugin in a YAML file and associate it with a global forwarding rule—for example, cr-xlb-forwarding-rule . cat >edge-plugin.yaml <<EOF name: edge-ext forwardingRules: - https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/global/forwardingRules/cr-xlb-forwarding-rule loadBalancingScheme: EXTERNAL MANAGED extensionChains: - name: \"chain1\" matchCondition: celExpression: 'request.path.startsWith(\"/extensions\")' extensions: - name: 'ext1' service: projects/ PROJECT ID /locations/global/wasmPlugins/ WASM PLUGIN failOpen: false supportedEvents: - REQUEST HEADERS forwardAttributes: - request.host - request.path EOF Replace the following: PROJECT ID : the project ID WASM PLUGIN : the ID or the fully qualified name of the plugin Edge extensions let you use only one regular expression per CEL expression.",
+          "To verify that the edge extension works as expected, use the same curl command: curl FORWARDING RULE IP /extensions The output is similar to the following and indicates that the page is served from a VM in region B : Page served from region-B-vm To verify that the plugin runs only for requests with the /extension path prefix, repeat the curl command without a path. curl FORWARDING RULE IP The output is similar to the following: Page served from region-A-vm Limitations for edge extensions You can attach only one edge extension to a forwarding rule.",
+          "Configure using plugins This section uses an example to show you how to configure an edge extension by using a plugin that rewrites the :host request header to service-extensions.com when the path matches /extensions ."
+        ]
+      },
+      {
+        "title": "\"CEL matcher language reference \\_|\\_ Service Extensions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample expressions Match all requests to host example.com with backend service bs1 in 123 as the final destination: request.host == \"example.com\" && request.backend service name == \"bs1\" && request.backend service project number == 123 Match all requests for the path /inventory with an HTTP header Hello : request.path.endsWith(\"/inventory\") && request.headers[\"Hello\"] != \"\" Limitations The following limitations apply to CEL expressions when specified for Service Extensions: Maximum expressions per extension: 1 for edge extensions and 5 for other extensions Maximum number of characters per regular expression: 100 Maximum number of characters per CEL expression: 500 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Not applicable for edge extensions. request.backend service project number int When using Shared VPC, the project number of the backend service to which the request is forwarded.",
+          "The keys in this map are in lowercase. request.method string The HTTP request method, such as GET or POST . request.host string Convenience equivalent to request.headers['host'] . request.path string The requested HTTP URL path. request.query string The HTTP URL query in the format of name1=value&name2=value2 , as it appears in the first line of the HTTP request."
+        ]
+      },
+      {
+        "title": "\"Cloud Load Balancing callouts overview \\_|\\_ Service Extensions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to modify only request headers for route and traffic extensions, set the supported events field in the extension to REQUEST HEADERS .",
+          "The ext proc protocol lets the extension service respond to events in the lifecycle of an HTTP request by examining and modifying the headers or the body of the request.",
+          "The service can modify, add, or remove any original request headers and update HTTP response headers that are sent to the client."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "extensions.com",
+      "plugin.yaml",
+      "request.backend",
+      "request.headers",
+      "request.host",
+      "request.method",
+      "request.path",
+      "request.path.endsWith",
+      "request.path.startsWith",
+      "request.query",
+      "x.lower",
+      "x.upper"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-edge-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/cel-matcher-language-reference",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    }
+  ]
+}

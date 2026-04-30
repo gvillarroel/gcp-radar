@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.321Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vpn/card.json",
+  "product_name": "Cloud VPN",
+  "product_slug": "cloud-vpn",
+  "feature_name": "GRE traffic support",
+  "feature_slug": "gre-traffic-support",
+  "summary": "Cloud VPN supports carrying GRE traffic over VPN tunnels; Cloud VPN supports carrying GRE traffic over VPN tunnels.",
+  "extended_definition": "Cloud VPN supports carrying GRE traffic over VPN tunnels; Cloud VPN supports carrying GRE traffic over VPN tunnels.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud VPN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "The unhealthy VPN tunnel in turn causes removal of the routes using this tunnel as a next-hop (BGP routes or static routes) triggering a failover of VM traffic to other VPN tunnels that are healthy.",
+          "Network bandwidth Each Cloud VPN tunnel supports up to 250,000 packets per second for the sum of ingress and egress traffic.",
+          "Cloud VPN supports generic routing encapsulation (GRE) traffic."
+        ]
+      },
+      {
+        "title": "View logs and metrics \\_|\\_ Cloud VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This feature lets you quickly see the amount of traffic moving between entities, such as the traffic traversing the VPN tunnels between Google Cloud and the on-premises network.",
+          "It can be set to as low as one second (1s), and scaled higher if more data sampling points over a longer period of days are needed. ( rate({\"vpn.googleapis.com/network/sent bytes count\", monitored resource=\"vpn gateway\", tunnel name=\" TUNNEL NAME \"}[1m]) + rate({\"vpn.googleapis.com/network/received bytes count\", monitored resource=\"vpn gateway\", tunnel name=\" TUNNEL NAME \"}[1m]) ) > 187500000 # 187.5 MBy/s 1000000 Query for pps : This example query notifies you when the sum of sent packets count and received packets count exceeds 50% of the maximum recommended packet rate of 250,000 pps for a given VPN tunnel. ( rate({\"vpn.googleapis.com/network/sent packets count\", monitored resource=\"vpn gateway\", tunnel name=\" TUNNEL NAME \"}[1m]) + rate({\"vpn.googleapis.com/network/received packets count\", monitored resource=\"vpn gateway\", tunnel name=\" TUNNEL NAME \"}[1m]) ) > 125000 For more information about PromQL, see PromQL for Cloud Monitoring .",
+          "After sampling, data is not visible for up to 60 seconds. configured for sla : (BOOL) Whether the HA connection is fully configured for SLA. gcp service health : (BOOL) Whether the Google Cloud side of the HA connection is fully functional. end to end health : (BOOL) Whether the HA connection is functional end-to-end. network/dropped received packets count GA (project) Incoming packets dropped DELTA , INT64 , 1 vpn gateway Ingress (received from peer VPN) packets dropped for tunnel."
+        ]
+      },
+      {
+        "title": "HA VPN topologies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this topology, you create HA VPN tunnels to carry IPsec-encrypted traffic over VLAN attachments of either Dedicated Interconnect or Partner Interconnect.",
+          "If you use an active-passive configuration across multiple HA VPN gateways—with an active and passive tunnel pair configured on each gateway—HA VPN doesn't use the passive tunnels for failover until all the active tunnels on all gateways have failed.",
+          "If you deploy an HA VPN gateway with IPV6 ONLY or IPV4 IPV6 stack type, then your VPN tunnels can support the exchange of IPv6 traffic."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud VPN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the following guidelines when defining traffic selectors: The local traffic selector for the Cloud VPN tunnel should cover all subnets in your Virtual Private Cloud (VPC) network that you need to share with your peer network.",
+          "Classic VPN also supports using multiple CIDR blocks for traffic selectors with IKEv2, but it uses a single Child SA for all CIDR blocks.",
+          "Important: For Classic VPN using static routing, IKEv1 supports a single IP range (CIDR block) for each traffic selector."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vpn.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/viewing-logs-metrics",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/support/troubleshooting"
+      ]
+    }
+  ]
+}

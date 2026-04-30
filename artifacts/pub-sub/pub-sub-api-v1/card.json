@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.158Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub API v1",
+  "feature_slug": "pub-sub-api-v1",
+  "summary": "Pub/Sub API v1 reached stable production release.",
+  "extended_definition": "Pub/Sub API v1 reached stable production release.",
+  "lifecycle": {
+    "latest_feature_date": "2015-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema A subscription resource."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"update subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the UpdateSubscription method."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the GetSubscription method.",
+          "When set, the payload to the push endpoint is in the form of the JSON representation of a PubsubMessage ( https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage) . noWrapper object ( NoWrapper ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "The only supported values for the x-goog-version attribute are: v1beta1 : uses the push format defined in the v1beta1 Pub/Sub API. v1 or v1beta2 : uses the push format defined in the v1 Pub/Sub API.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list subscriptions\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the ListSubscriptions method.",
+          "When set, the payload to the push endpoint is in the form of the JSON representation of a PubsubMessage ( https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#pubsubmessage) . noWrapper object ( NoWrapper ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.pubsub.v1",
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

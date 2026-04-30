@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect producer port configuration",
+  "feature_slug": "private-service-connect-producer-port-configuration",
+  "summary": "Private Service Connect now supports specifying the producer port in backend configuration when connecting to a published service.",
+  "extended_definition": "Private Service Connect now supports specifying the producer port in backend configuration when connecting to a published service.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Private Service Connect port mapping \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifications Private Service Connect port mapping has the following specifications: A Private Service Connect port mapping connection requires a Private Service Connect endpoint in a consumer VPC network that connects to a service attachment in a producer VPC network.",
+          "Deployment Deploying a Private Service Connect port mapping connection differs from deploying a regular Private Service Connect endpoint connection for published services in the following ways: The service producer creates a port mapping service.",
+          "Private Service Connect port mapping lets consumer VMs communicate with specific producer VMs through the following process: The consumer VM sends packets to the endpoint's IP address, using a designated client destination port."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "",
+        "evidence_snippets": [
+          "Private Service Connect provides two methods to connect to published services: Endpoints (based on a forwarding rule) Backends (based on a load balancer) These endpoint types require slightly different producer configurations.",
+          "Update any automation so that new producer load balancers that support global access Private Service Connect endpoints are configured for global access.",
+          "Update any automation so that new producer load balancers that support global access Private Service Connect NEGs are configured for global access."
+        ]
+      },
+      {
+        "title": "\"Create a Private Service Connect backend \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "source_id": "site-docs-root-2",
+        "final_score": 238,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Create . gcloud Use the gcloud compute network-endpoint-groups create command: gcloud compute network-endpoint-groups create NEG NAME \\ --network-endpoint-type=private-service-connect \\ --psc-target-service= TARGET SERVICE \\ --region= REGION \\ --network= NETWORK \\ --subnet= SUBNET If you know which port is being used by the producer , you can specify the port with --producer-port= PORT .",
+          "If you know which port is used, you can specify it as part of the Private Service Connect NEG configuration.",
+          "For more information about supported services and configurations, see About Private Service Connect backends ."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "source_id": "site-docs-root-2",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "The backend must be based on a load balancer that supports cross-region failover and includes the following configuration: A Private Service Connect NEG in each region that points to that region's service attachment A global backend service that contains the NEG backends The following diagram shows a multi-region deployment: This example shows a consumer global external Application Load Balancer that connects to a service that is published in multiple regions.",
+          "Published service instances must have one of the following backend types: Network endpoint group of type GCE VM IP PORT Network endpoint group of type GCE VM IP Managed or unmanaged instance group The published service instances must be accessed by Private Service Connect backends that are based on load balancers that supports Private Service Connect health .",
+          "Private Service Connect health lets service producers define health states that support automatic cross-region failover for service consumers that use Private Service Connect backends."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-port-mapping",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health"
+      ]
+    }
+  ]
+}

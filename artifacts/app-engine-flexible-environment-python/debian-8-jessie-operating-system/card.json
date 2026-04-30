@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.313Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python",
+  "feature_name": "Debian 8 Jessie operating system",
+  "feature_slug": "debian-8-jessie-operating-system",
+  "summary": "App Engine flexible environment used the Debian 8 Jessie operating system for application instances; deprecated on June 2018.",
+  "extended_definition": "App Engine flexible environment used the Debian 8 Jessie operating system for application instances; deprecated on June 2018.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-04",
+    "deprecation_date": "June 2018",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet",
+      "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"The Python runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/runtime",
+        "source_id": "site-docs-reference-2",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The Python runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "Examples To specify Python 3.14 on Ubuntu 24: runtime : python env : flex entrypoint : gunicorn -b :$PORT main:app runtime config : operating system : \"ubuntu24\" runtime version : \"3.14\" To specify the latest supported Python version on Ubuntu 24: runtime : python env : flex entrypoint : gunicorn -b :$PORT main:app runtime config : operating system : \"ubuntu24\" See the app.yaml reference page for more information.",
+          "The Python runtime is the software stack responsible for installing your application code and dependencies, and then running that application in the flexible environment."
+        ]
+      },
+      {
+        "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The .NET runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : \"10\" operating system : \"ubuntu24\" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.",
+          "Specify the operating system setting in your app.yaml file: runtime : aspnetcore env : flex runtime config : operating system : \"ubuntu24\" Optionally, you can specify a runtime version by including the runtime version setting in your app.yaml file."
+        ]
+      },
+      {
+        "title": "\"The .NET runtime \\_|\\_ App Engine flexible environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/dotnet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 40,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback The .NET runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, the app.yaml file looks as follows when specifying .NET 10 on Ubuntu 24: runtime : aspnetcore env : flex runtime config : runtime version : \"10\" operating system : \"ubuntu24\" Previous runtime versions Warning: .NET version 3 and earlier have reached end of support.",
+          "Specify the operating system setting in your app.yaml file: runtime : aspnetcore env : flex runtime config : operating system : \"ubuntu24\" Optionally, you can specify a runtime version by including the runtime version setting in your app.yaml file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

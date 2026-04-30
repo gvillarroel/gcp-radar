@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.757Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops",
+  "feature_name": "Data tables",
+  "feature_slug": "data-tables",
+  "summary": "Data tables are multicolumn lookup structures that users can create or import into Google SecOps and use in rules.",
+  "extended_definition": "Data tables are multicolumn lookup structures that users can create or import into Google SecOps and use in rules.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure data RBAC for data tables \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure data RBAC for data tables Supported in: Google secops SIEM This page describes how data role-based access control ( data RBAC ) administrators and users can assign scopes to data tables.",
+          "Another way of looking at this is from the perspective of a data table: Scoped data tables with selected can be accessed by specific users or rules that have matching scopes.",
+          "Access permissions vary by user type (scoped versus global): Scoped users can create a scoped data table using all or a subset of the scopes that are assigned to them."
+        ]
+      },
+      {
+        "title": "\"Impact of data RBAC on Google SecOps features \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access control : While feature RBAC determines who can create or edit a dashboard, data RBAC determines what specific data is visible within the charts and tables.",
+          "Access permissions for users in data tables The scopes that are associated with a data table determine how global and scoped users can interact with it.",
+          "Data tables Data tables are multicolumn data constructs that let you input your own data into Google SecOps."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create and manage scopes You can create and manage data scopes within the Google SecOps user interface, and then assign those scopes to users or groups through IAM.",
+          "Important: Before data RBAC is enabled, all users, regardless of assigned scopes, have global access and can view all data.",
+          "You can use the Suspicious DHCP Activity label to create a scope and assign the scope to the relevant users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-data-tables",
+        "https://docs.cloud.google.com/chronicle/docs/administration/datarbac-impact",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users"
+      ]
+    }
+  ]
+}

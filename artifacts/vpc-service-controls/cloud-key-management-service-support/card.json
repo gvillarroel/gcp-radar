@@ -1,0 +1,245 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.790Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Cloud Key Management Service support",
+  "feature_slug": "cloud-key-management-service-support",
+  "summary": "VPC Service Controls supports protecting Cloud Key Management Service resources.",
+  "extended_definition": "VPC Service Controls supports protecting Cloud Key Management Service resources.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have VPC Service Controls configured, before you create a Google Security Operations instance, move the Google Cloud project and Cloud Key Management Service (Cloud KMS) for customer-managed encryption keys (CMEK) project outside the VPC Service Controls perimeter.",
+          "When a project is added to a VPC Service Controls perimeter, all tag keys and corresponding tag values under the project are considered to be resources within the perimeter.",
+          "Limitations The Cloud Key Management Service integration with VPC Service Controls has no known limitations."
+        ]
+      },
+      {
+        "title": "\"Configure IAM roles in ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Key Management Service cloudkms.googleapis.com When you use customer-managed encryption keys (CMEK) , VPC Service Controls doesn't support the use of Cloud KMS roles in the ingress and egress rules.",
+          "Cloud Storage storage.googleapis.com VPC Service Controls supports custom roles for Cloud Storage in the ingress and egress rules, but not the predefined Cloud Storage roles .",
+          "VPC Service Controls uses ingress and egress rules to allow access to and from the resources and clients protected by service perimeters."
+        ]
+      },
+      {
+        "title": "\"VPC networks management in service perimeters \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "source_id": "site-docs-reference-2",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback VPC networks management in service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "You can also allow access from a VPC network that is not inside your perimeter to resources inside your perimeter by specifying an ingress rule.",
+          "If a VPC network has a custom subnet mode but if no subnets exist, then that VPC network cannot be added independently to VPC Service Controls."
+        ]
+      },
+      {
+        "title": "\"Design and architect service perimeters \\_|\\_ VPC Service Controls \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Since services and network resources within a perimeter can communicate freely with the necessary IAM and network controls permissions, the teams responsible for perimeter management will primarily be concerned with north-south access, which is access from the internet to resources inside the perimeter.",
+          "We recommend that you layer your perimeter with additional security controls and best practices, such as ensuring that resources within the VPC network don't have direct internet egress.",
+          "When an organization uses multiple smaller perimeters, perimeter management teams must devote resources to managing east-west traffic between an organization's perimeters in addition to north-south traffic from outside the organization."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "containerregistry.googleapis.com",
+      "iam.serviceAccounts.signBlob",
+      "iam.serviceAccounts.signJwt",
+      "iam.serviceAccountTokenCreator",
+      "krmapihosting.googleapis.com",
+      "logging.googleapis.com",
+      "monitoring.googleapis.com",
+      "resourcemanager.tagAdmin",
+      "resourcemanager.tagKeys.get",
+      "resourcemanager.tagUser",
+      "resourcemanager.tagValues.get",
+      "resourcemanager.tagViewer",
+      "storage.googleapis.com",
+      "storage.objects.move",
+      "storage.objectUser",
+      "sts.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/resourcemanager.tagAdmin",
+      "roles/resourcemanager.tagUser",
+      "roles/resourcemanager.tagViewer",
+      "roles/storage.objectUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/configure-iam-roles",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/architect-perimeters"
+      ]
+    }
+  ]
+}

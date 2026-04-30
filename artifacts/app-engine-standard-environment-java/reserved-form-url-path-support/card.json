@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.661Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Reserved /form URL path support",
+  "feature_slug": "reserved-form-url-path-support",
+  "summary": "App Engine forwards requests for the /form URL path to applications.",
+  "extended_definition": "App Engine forwards requests for the /form URL path to applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "This prevents a user from accidentally submitting query data over a non-secure connection that was intended for a secure connection. always Requests for a URL that match this handler that do not use HTTPS are automatically redirected to the HTTPS URL with the same path.",
+          "A low maximum means App Engine will start new instances sooner for pending requests, improving performance but raising running costs.",
+          "Everything after the end of the matched url pattern is appended to static dir to form the full path to the requested file."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "This prevents a user from accidentally submitting query data over a non-secure connection that was intended for a secure connection. always Requests for a URL that match this handler that do not use HTTPS are automatically redirected to the HTTPS URL with the same path.",
+          "A low maximum means App Engine will start new instances sooner for pending requests, improving performance but raising running costs.",
+          "Everything after the end of the matched url pattern is appended to static dir to form the full path to the requested file."
+        ]
+      },
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example demonstrates how to designate all png files as static files (except those in the data/ directory and all of its subdirectories): < static - files > < include path = \"/ .png\" / > < exclude path = \"/data/ .png\" / > < / static - files > You can also set HTTP headers to use when responding to requests to these static resources. < static - files > < include path = \"/my static-files\" > < http - header name = \"Access-Control-Allow-Origin\" value = \"http://example.org\" / > < / include > < / static - files > Note: If the path string doesn't start with a slash, then the HTTP headers, if any, work on App Engine but do not work on the Development Server.",
+          "This can impact class loading order, so if your app depends on a certain order using the former false default, you can set this to false . delete-jsps false true compile-encoding utf-8 utf-8 Include and exclude syntax Path patterns are specified using zero or more <include> and <exclude> elements.",
+          "A low maximum means App Engine will start new instances sooner for pending requests, improving performance but raising running costs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.google.com",
+      "class.path",
+      "example.org",
+      "java.base",
+      "java.lang",
+      "java.logging",
+      "java.nio.charset",
+      "java.util.concurrent",
+      "java.util.logging",
+      "library.path",
+      "main.jar",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java11/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    }
+  ]
+}

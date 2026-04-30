@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "DocsList FORM file type",
+  "feature_slug": "docslist-form-file-type",
+  "summary": "DocsList.FileType now includes FORM for accessing Google Forms files.",
+  "extended_definition": "DocsList.FileType now includes FORM for accessing Google Forms files.",
+  "lifecycle": {
+    "latest_feature_date": "2013-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/File",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the property DocsList.FileType.FORM to let DocsList access new Google Forms.",
+          "Deprecated Deprecated the DocsList methods find(query, start, max) , getAllFiles(start, max) , getAllFolders(start, max) , getFiles(start, max) , getFilesByType(fileType, start, max) , and getFolders(start, max) .",
+          "Deprecated Updated DocsList.getFilesByType() to accept values from the DocsList.FileType enumeration."
+        ]
+      },
+      {
+        "title": "File \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/File",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"type\" : enum ( FileType ) , \"source\" : string , \"lastModifyUser\" : { object ( User ) } , \"createTime\" : string , \"updateTime\" : string , \"functionSet\" : { object ( FunctionSet ) } } Fields name string The name of the file.",
+          "The file extension is not part of the file name, which can be identified from the type field. type enum ( FileType ) The type of the file. source string The file content. lastModifyUser object ( User ) The user who modified the file most recently.",
+          "JSON representation FileType FunctionSet JSON representation Function JSON representation An individual file within a script project."
+        ]
+      },
+      {
+        "title": "Enum BasicDataType \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type",
+        "source_id": "site-docs-reference-3",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE USER Enum A user of the Google services, in the format of “users/encoded GAIA ID” FILE Enum A file type.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[]]",
+          "Home Google Workspace Apps Script Reference Send feedback Enum BasicDataType Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.deployments"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/File",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type"
+      ]
+    }
+  ]
+}

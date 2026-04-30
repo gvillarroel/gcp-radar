@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Organization restrictions",
+  "feature_slug": "organization-restrictions",
+  "summary": "Organization restrictions limit access to resources in authorized Google Cloud organizations; Organization restrictions limit access to resources in authorized Google Cloud organizations.",
+  "extended_definition": "Organization restrictions limit access to resources in authorized Google Cloud organizations; Organization restrictions limit access to resources in authorized Google Cloud organizations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+      "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to organization restrictions \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For managed devices in an organization, the organization restrictions feature restricts access only to resources in authorized Google Cloud organizations.",
+          "Common use cases Here are some common organization restrictions use cases: Restrict access to employees in your organization so that employees can access resources only in your Google Cloud organization and not other organizations.",
+          "There is a need in organizations to restrict access of their employees only to resources in authorized Google Cloud organizations."
+        ]
+      },
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Organization resourcemanager. organizations. get Organization Policy Administrator ( roles/ orgpolicy.policyAdmin ) Provides access to define what restrictions an organization wants to place on the configuration of cloud resources by setting Organization Policies.",
+          "Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.",
+          "Http ())) policy = crm . organizations () . getIamPolicy ( resource = flags . organizationId , body = {}) . execute () print json . dumps ( policy , indent = 2 ) Grant access to an organization resource Organization Administrators can grant IAM roles to team members so that they can access an organization's resources and APIs."
+        ]
+      },
+      {
+        "title": "\"Access control for projects with IAM \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "source_id": "site-iam-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Folder resourcemanager. organizations. get resourcemanager. projects. create Project Deleter ( roles/ resourcemanager.projectDeleter ) Provides access to delete Google Cloud projects.",
+          "Lowest-level resources where you can grant this role: Project iam.policybindings. iam.policybindings.get iam.policybindings.list resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy.",
+          "Lowest-level resources where you can grant this role: Project resourcemanager.folders.get resourcemanager.folders.list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list Basic roles Use basic roles only when necessary."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudasset.assets.listResource",
+      "essentialcontacts.contacts.get",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.create",
+      "orgpolicy.policies.delete",
+      "orgpolicy.policies.list",
+      "orgpolicy.policies.update",
+      "orgpolicy.policy.get",
+      "orgpolicy.policy.set",
+      "orgpolicy.policyAdmin",
+      "resourcemanager.capabilities",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectDeleter"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/organization-restrictions/overview",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj"
+      ]
+    }
+  ]
+}

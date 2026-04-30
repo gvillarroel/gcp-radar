@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.080Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry tags",
+  "feature_slug": "artifact-registry-tags",
+  "summary": "Artifact Registry supports tags as key-value labels for grouping and organizing repositories and other resources for reporting, auditing, and access control.",
+  "extended_definition": "Artifact Registry supports tags as key-value labels for grouping and organizing repositories and other resources for reporting, auditing, and access control.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+      "https://docs.cloud.google.com/artifact-registry/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure restricted access for GKE private clusters \\_|\\_ Artifact Registry\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "source_id": "site-docs-root-2",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Resources \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.repositories.aptArtifacts",
+      "projects.locations.repositories.aptArtifacts.upload",
+      "projects.locations.repositories.attachments",
+      "projects.locations.repositories.attachments.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/gke-private-clusters",
+        "https://docs.cloud.google.com/artifact-registry/docs/resources",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication"
+      ]
+    }
+  ]
+}

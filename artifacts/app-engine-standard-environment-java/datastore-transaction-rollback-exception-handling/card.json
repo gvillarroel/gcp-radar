@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.661Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Datastore Transaction.rollback exception handling",
+  "feature_slug": "datastore-transaction-rollback-exception-handling",
+  "summary": "The low-level Datastore API logs an INFO message instead of throwing an exception when rollback follows a failed transaction operation.",
+  "extended_definition": "The low-level Datastore API logs an INFO message instead of throwing an exception when rollback follows a failed transaction operation.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following limits apply to task queues according to their type: Push Queue Limits Maximum task size 100KB Queue execution rate 500 task invocations per second per queue Maximum countdown/ETA for a task 30 days from the current date and time Maximum number of tasks that can be added in a batch 100 tasks Maximum number of tasks that can be added in a transaction 5 tasks Default maximum number of task queues 100 queues.",
+          "US/Europe Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.026/GB/month Asia (Japan) Resource Cost Code & Static Data Storage - First 1 GB Free Code & Static Data Storage - Exceeding 1 GB 0.023/GB/month\"> Firestore in Datastore mode (Datastore) The Stored Data (billable) quota refers to all data stored for the application in Datastore and Blobstore.",
+          "If you're expecting extremely high traffic levels, or for some reason your app requires particularly high quotas (for example, because of a significant product launch or large load tests), we recommend that you sign up for a support package ."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "source_id": "site-docs-reference-4",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a query requires an index that cannot be found, a com.google.appengine.api.datastore.DatastoreNeedIndexException will be thrown at runtime.",
+          "LESS THAN , today ); for ( Entity taskEntity : datastore . prepare ( query ). asIterable ()) { if ( \"done\" . equals ( taskEntity . getProperty ( \"status\" ))) { datastore . delete ( taskEntity ); } else { taskEntity . setProperty ( \"status\" , \"overdue\" ); datastore . put ( taskEntity ); } } This illustrates several basic points: The actual datastore itself is accessed through a com.google.appengine.api.datastore.DatastoreService object, produced from a com.google.appengine.api.datastore.DatastoreServiceFactory .",
+          "A common pattern of usage is: // Get a handle on the datastore itself DatastoreService datastore = DatastoreServiceFactory . getDatastoreService (); // Lookup data by known key name Entity userEntity = datastore . get ( KeyFactory . createKey ( \"UserInfo\" , email )); // Or perform a query Query query = new Query ( \"Task\" ); query . addFilter ( \"dueDate\" , Query ."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "source_id": "site-docs-reference-4",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If a query requires an index that cannot be found, a com.google.appengine.api.datastore.DatastoreNeedIndexException will be thrown at runtime.",
+          "LESS THAN , today ); for ( Entity taskEntity : datastore . prepare ( query ). asIterable ()) { if ( \"done\" . equals ( taskEntity . getProperty ( \"status\" ))) { datastore . delete ( taskEntity ); } else { taskEntity . setProperty ( \"status\" , \"overdue\" ); datastore . put ( taskEntity ); } } This illustrates several basic points: The actual datastore itself is accessed through a com.google.appengine.api.datastore.DatastoreService object, produced from a com.google.appengine.api.datastore.DatastoreServiceFactory .",
+          "A common pattern of usage is: // Get a handle on the datastore itself DatastoreService datastore = DatastoreServiceFactory . getDatastoreService (); // Lookup data by known key name Entity userEntity = datastore . get ( KeyFactory . createKey ( \"UserInfo\" , email )); // Or perform a query Query query = new Query ( \"Task\" ); query . addFilter ( \"dueDate\" , Query ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.appengine.api.datastore.DatastoreNeedIndexException",
+      "com.google.appengine.api.datastore.DatastoreService",
+      "com.google.appengine.api.datastore.DatastoreServiceFactory",
+      "com.google.appengine.api.datastore.IDatastoreServiceFactory",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Google Cloud operations suite for GKE logging and monitoring collection modes",
+  "feature_slug": "google-cloud-operations-suite-for-gke-logging-and-monitoring-collection-modes",
+  "summary": "Adds logging-only and monitoring-only collection modes for GKE clusters.",
+  "extended_definition": "Adds logging-only and monitoring-only collection modes for GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Kubernetes Engine audit logging \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "source_id": "site-iam-reference",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.container.v1.ClusterManager.CheckAutopilotCompatibility google.container.v1.ClusterManager.GetCluster google.container.v1.ClusterManager.GetNodePool google.container.v1.ClusterManager.GetOperation google.container.v1.ClusterManager.GetServerConfig google.container.v1.ClusterManager.ListClusters google.container.v1.ClusterManager.ListNodePools google.container.v1.ClusterManager.ListOperations google.container.v1beta1.ClusterManager.CheckAutopilotCompatibility google.container.v1beta1.ClusterManager.GetCluster google.container.v1beta1.ClusterManager.GetNodePool google.container.v1beta1.ClusterManager.GetOperation google.container.v1beta1.ClusterManager.GetServerConfig google.container.v1beta1.ClusterManager.ListClusters google.container.v1beta1.ClusterManager.ListNodePools google.container.v1beta1.ClusterManager.ListOperations ADMIN WRITE google.container.v1.ClusterManager.CancelOperation google.container.v1.ClusterManager.CompleteIPRotation (LRO) google.container.v1.ClusterManager.CompleteNodePoolUpgrade google.container.v1.ClusterManager.CreateCluster (LRO) google.container.v1.ClusterManager.CreateNodePool (LRO) google.container.v1.ClusterManager.DeleteCluster (LRO) google.container.v1.ClusterManager.DeleteNodePool (LRO) google.container.v1.ClusterManager.ListUsableSubnetworks google.container.v1.ClusterManager.RollbackNodePoolUpgrade (LRO) google.container.v1.ClusterManager.SetAddonsConfig (LRO) google.container.v1.ClusterManager.SetLabels (LRO) google.container.v1.ClusterManager.SetLegacyAbac (LRO) google.container.v1.ClusterManager.SetLocations (LRO) google.container.v1.ClusterManager.SetLoggingService (LRO) google.container.v1.ClusterManager.SetMaintenancePolicy (LRO) google.container.v1.ClusterManager.SetMasterAuth (LRO) google.container.v1.ClusterManager.SetMonitoringService (LRO) google.container.v1.ClusterManager.SetNetworkPolicy (LRO) google.container.v1.ClusterManager.SetNodePoolAutoscaling (LRO) google.container.v1.ClusterManager.SetNodePoolManagement (LRO) google.container.v1.ClusterManager.SetNodePoolSize (LRO) google.container.v1.ClusterManager.StartIPRotation (LRO) google.container.v1.ClusterManager.UpdateCluster (LRO) google.container.v1.ClusterManager.UpdateMaster (LRO) google.container.v1.ClusterManager.UpdateNodePool (LRO) google.container.v1beta1.ClusterManager.CancelOperation google.container.v1beta1.ClusterManager.CompleteIPRotation (LRO) google.container.v1beta1.ClusterManager.CompleteNodePoolUpgrade google.container.v1beta1.ClusterManager.CreateCluster (LRO) google.container.v1beta1.ClusterManager.CreateNodePool (LRO) google.container.v1beta1.ClusterManager.DeleteCluster (LRO) google.container.v1beta1.ClusterManager.DeleteNodePool (LRO) google.container.v1beta1.ClusterManager.ListUsableSubnetworks google.container.v1beta1.ClusterManager.RollbackNodePoolUpgrade (LRO) google.container.v1beta1.ClusterManager.SetLabels (LRO) google.container.v1beta1.ClusterManager.SetLegacyAbac (LRO) google.container.v1beta1.ClusterManager.SetLocations (LRO) google.container.v1beta1.ClusterManager.SetLoggingService (LRO) google.container.v1beta1.ClusterManager.SetMaintenancePolicy (LRO) google.container.v1beta1.ClusterManager.SetMasterAuth (LRO) google.container.v1beta1.ClusterManager.SetNetworkPolicy (LRO) google.container.v1beta1.ClusterManager.SetNodePoolAutoscaling (LRO) google.container.v1beta1.ClusterManager.SetNodePoolManagement (LRO) google.container.v1beta1.ClusterManager.SetNodePoolSize (LRO) google.container.v1beta1.ClusterManager.StartIPRotation (LRO) google.container.v1beta1.ClusterManager.UpdateCluster (LRO) google.container.v1beta1.ClusterManager.UpdateMaster (LRO) google.container.v1beta1.ClusterManager.UpdateNodePool (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Google Kubernetes Engine. google.container.v1.ClusterManager The following audit logs are associated with methods belonging to google.container.v1.ClusterManager .",
+          "Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.ListUsableSubnetworks\" RollbackNodePoolUpgrade Method : google.container.v1.ClusterManager.RollbackNodePoolUpgrade Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.RollbackNodePoolUpgrade\" SetAddonsConfig Method : google.container.v1.ClusterManager.SetAddonsConfig Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetAddonsConfig\" SetLabels Method : google.container.v1.ClusterManager.SetLabels Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetLabels\" SetLegacyAbac Method : google.container.v1.ClusterManager.SetLegacyAbac Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetLegacyAbac\" SetLocations Method : google.container.v1.ClusterManager.SetLocations Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetLocations\" SetLoggingService Method : google.container.v1.ClusterManager.SetLoggingService Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetLoggingService\" SetMaintenancePolicy Method : google.container.v1.ClusterManager.SetMaintenancePolicy Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetMaintenancePolicy\" SetMasterAuth Method : google.container.v1.ClusterManager.SetMasterAuth Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetMasterAuth\" SetMonitoringService Method : google.container.v1.ClusterManager.SetMonitoringService Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetMonitoringService\" SetNetworkPolicy Method : google.container.v1.ClusterManager.SetNetworkPolicy Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetNetworkPolicy\" SetNodePoolAutoscaling Method : google.container.v1.ClusterManager.SetNodePoolAutoscaling Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetNodePoolAutoscaling\" SetNodePoolManagement Method : google.container.v1.ClusterManager.SetNodePoolManagement Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetNodePoolManagement\" SetNodePoolSize Method : google.container.v1.ClusterManager.SetNodePoolSize Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.SetNodePoolSize\" StartIPRotation Method : google.container.v1.ClusterManager.StartIPRotation Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.StartIPRotation\" UpdateCluster Method : google.container.v1.ClusterManager.UpdateCluster Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.UpdateCluster\" UpdateMaster Method : google.container.v1.ClusterManager.UpdateMaster Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.UpdateMaster\" UpdateNodePool Method : google.container.v1.ClusterManager.UpdateNodePool Audit log type : Admin activity Permissions : container.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.container.v1.ClusterManager.UpdateNodePool\" google.container.v1beta1.ClusterManager The following audit logs are associated with methods belonging to google.container.v1beta1.ClusterManager .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE security Send feedback Google Kubernetes Engine audit logging Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "GKE audit logging information \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE security Send feedback GKE audit logging information Stay organized with collections Save and categorize content based on your preferences.",
+          "To read your Google Cloud project-level audit log entries, run the following command: gcloud logging read \"logName : projects/ PROJECT ID /logs/cloudaudit.googleapis.com\" \\ --project= PROJECT ID To read your folder-level audit log entries, run the following command: gcloud logging read \"logName : folders/ FOLDER ID /logs/cloudaudit.googleapis.com\" \\ --folder= FOLDER ID To read your organization-level audit log entries, run the following command: gcloud logging read \"logName : organizations/ ORGANIZATION ID /logs/cloudaudit.googleapis.com\" \\ --organization= ORGANIZATION ID To read your Cloud Billing account-level audit log entries, run the following command: gcloud logging read \"logName : billingAccounts/ BILLING ACCOUNT ID /logs/cloudaudit.googleapis.com\" \\ --billing-account= BILLING ACCOUNT ID Add the --freshness flag to your command to read logs that are more than 1 day old.",
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in GKE: Audit logs category GKE operations Admin Activity audit logs io.k8s.authorization.rbac.v1 io.k8s.authorization.rbac.v1.roles Note: This table provides the most commonly audited operations; it isn't a complete list."
+        ]
+      },
+      {
+        "title": "\"Collect and view logs and metrics for Ray clusters on Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following RayCluster manifests includes the env section for all Ray containers, in both headGroupSpec and workerGroupSpecs specs: Example snippet for a RayCluster manifest apiVersion : ray.io/v1 kind : RayCluster metadata : name : raycluster-structured spec : headGroupSpec : template : spec : containers : - name : ray-head image : rayproject/ray:2.54.0 # Replace with your desired Ray image ... other container settings env : - name : RAY LOGGING CONFIG ENCODING value : \"JSON\" - name : RAY BACKEND LOG JSON value : \"1\" workerGroupSpecs : - groupName : small-group replicas : 1 minReplicas : 1 maxReplicas : 5 template : spec : containers : - name : ray-worker image : rayproject/ray:2.54.0 # Replace with your desired Ray image ... other container settings env : - name : RAY LOGGING CONFIG ENCODING value : \"JSON\" - name : RAY BACKEND LOG JSON value : \"1\" Apply the updated RayCluster manifest: kubectl apply -f your-raycluster.yaml Queries for structured logs Query/filter name Expression All error logs for a specific Ray Job ID resource.type=\"k8s container\" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" severity=ERROR jsonPayload.job id=\" YOUR JOB ID \" Logs for a specific Ray worker process ID resource.type=\"k8s container\" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" jsonPayload.worker id=\" YOUR WORKER ID \" Error logs for a specific Task ID on a specific worker Pod resource.type=\"k8s container\" resource.labels.pod name=\" YOUR WORKER POD NAME \" labels.\"k8s-pod/ray io/is-ray-node\"=\"yes\" severity=ERROR jsonPayload.task id=\" YOUR TASK ID \" Enable metrics collection for a Ray cluster You can enable metrics collection for Ray clusters with new or existing Autopilot or Standard GKE clusters.",
+          "To enable structured JSON output, complete the following steps: Enable log collection enabled for your Ray cluster Set the following environment variables within your Ray container specifications in the RayCluster YAML manifest: RAY LOGGING CONFIG ENCODING=\"JSON\" : configures Ray application logs (Ray Core, actors, and tasks) to use structured JSON encoding.",
+          "Autopilot Standard This page shows how to configure Google Kubernetes Engine (GKE) to collect logs and metrics for Ray clusters running on Google Kubernetes Engine (GKE), plus how to view Ray logs and metrics in Cloud Logging and Cloud Monitoring."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "container.clusters.update",
+      "container.googleapis.com",
+      "io.k8s.authorization.rbac.v1",
+      "io.k8s.authorization.rbac.v1.roles",
+      "ray.io",
+      "raycluster.yaml",
+      "resource.labels.pod",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging-container",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/audit-logging",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/how-to/collect-view-logs-metrics"
+      ]
+    }
+  ]
+}

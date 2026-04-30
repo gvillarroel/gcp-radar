@@ -1,0 +1,211 @@
+{
+  "schema_version": "step-08-product-feature-cards-v1",
+  "generated_at": "2026-04-30T16:03:11.238Z",
+  "product_name": "API Keys API",
+  "product_slug": "api-keys-api",
+  "inputs": {
+    "step02_product_markdown": "data/step-02/current/api-keys-api.md",
+    "step06_extended_features": "data/step-06/current/products/api-keys-api/extended-features.json",
+    "step07_gate": "data/step-07/current/products/api-keys-api/gate.json",
+    "step05_permissions_index": "data/step-05/current/permissions/index.json",
+    "step05_roles_index": "data/step-05/current/roles/index.json",
+    "step04_selection": "data/step-04/current/products/api-keys-api/selection.json",
+    "step04_state": "data/step-04/current/products/api-keys-api/state.json"
+  },
+  "corpus": {
+    "health_status": "healthy",
+    "page_count": 0,
+    "selected_source_count": 4
+  },
+  "validation": {
+    "product_status": "PASS",
+    "failed_feature_count": 0,
+    "warned_feature_count": 1,
+    "fail_ratio": 0
+  },
+  "feature_count": 1,
+  "iam_summary": {
+    "explicit_feature_count": 0,
+    "derived_feature_count": 0,
+    "unknown_feature_count": 1,
+    "related_permission_groups": []
+  },
+  "service_card": {
+    "card_type": "service",
+    "service_card_id": "api-keys-api:service",
+    "service_name": "API Keys API",
+    "service_slug": "api-keys-api",
+    "generated_at": "2026-04-30T16:03:11.238Z",
+    "feature_count": 1,
+    "validation": {
+      "product_status": "PASS",
+      "failed_feature_count": 0,
+      "warned_feature_count": 1,
+      "fail_ratio": 0,
+      "passed_feature_count": 1
+    },
+    "iam_status_counts": {
+      "explicit": 0,
+      "derived_from_permission_prefix": 0,
+      "unknown": 1
+    },
+    "related_permission_groups": [],
+    "official_source_links": [
+      "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+      "https://docs.cloud.google.com/api-keys/docs/overview",
+      "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+    ],
+    "security_capabilities": [
+      {
+        "capability": "constraint",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+          "https://docs.cloud.google.com/api-keys/docs/overview",
+          "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+        ]
+      },
+      {
+        "capability": "key",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+          "https://docs.cloud.google.com/api-keys/docs/overview",
+          "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+        ]
+      },
+      {
+        "capability": "private",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+          "https://docs.cloud.google.com/api-keys/docs/overview",
+          "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+        ]
+      }
+    ],
+    "security_capability_count": 3,
+    "lifecycle": {
+      "latest_feature_date": "2022-08-22"
+    },
+    "release_notes": {
+      "source_row_count": 2,
+      "unique_feature_count": 1,
+      "latest_feature_date": "2022-08-22",
+      "source_file": "data/step-02/current/api-keys-api.md"
+    },
+    "corpus": {
+      "health_status": "healthy",
+      "page_count": 0,
+      "selected_source_count": 4
+    }
+  },
+  "features": [
+    {
+      "feature_name": "API Keys API",
+      "feature_slug": "api-keys-api",
+      "summary": "The API Keys API is now available in general availability; The API Keys API was available in preview.",
+      "extended_definition": "The API Keys API is now available in general availability; The API Keys API was available in preview.",
+      "lifecycle": {
+        "latest_feature_date": "2022-08-22",
+        "deprecation_date": "",
+        "status": "feature_observed"
+      },
+      "coverage_status": "MEDIUM",
+      "validation": {
+        "step07_pass": true,
+        "fail_count": 0,
+        "warn_count": 1,
+        "findings": [
+          {
+            "severity": "warn",
+            "rule": "thin_token_overlap",
+            "message": "Supporting pages only weakly overlap with informative feature tokens.",
+            "suggested_steps": [
+              "step-03",
+              "step-04",
+              "step-06"
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "source_links": [
+          "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+          "https://docs.cloud.google.com/api-keys/docs/overview",
+          "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+        ],
+        "rejected_non_official_links": [],
+        "supporting_pages": [
+          {
+            "title": "\"Creating and managing custom constraints \\_|\\_ API Keys API Documentation\\",
+            "url": "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+            "source_id": "site-docs-root",
+            "final_score": 26,
+            "relevance": "",
+            "evidence_snippets": [
+              "After you have created the YAML file for a new custom constraint, you must set it up to make it available for organization policies in your organization.",
+              "After this operation is complete, your custom constraints are available as organization policies in your list of Google Cloud organization policies.",
+              "For more information about the resources available to write conditions against, see Supported resources ."
+            ]
+          },
+          {
+            "title": "\"Package google.api.apikeys.v2 \\_|\\_ API Keys API Documentation \\_|\\_ Google\\",
+            "url": "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2",
+            "source_id": "site-api-reference",
+            "final_score": 20,
+            "relevance": "",
+            "evidence_snippets": []
+          },
+          {
+            "title": "API Keys Overview \\_|\\_ API Keys API Documentation \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/api-keys/docs/overview",
+            "source_id": "site-docs-root",
+            "final_score": 20,
+            "relevance": "",
+            "evidence_snippets": [
+              "Ensure that your code does not contain API keys or any other private information before you make your code publicly available."
+            ]
+          }
+        ],
+        "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+      },
+      "iam": {
+        "iam_mapping_status": "unknown",
+        "explicit_roles": [],
+        "explicit_permissions": [],
+        "derived_roles": [],
+        "derived_permissions": [],
+        "related_permission_groups": [],
+        "missing_inventory_permissions": [],
+        "missing_inventory_roles": []
+      },
+      "security_capabilities": [
+        {
+          "capability": "constraint",
+          "evidence_links": [
+            "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+            "https://docs.cloud.google.com/api-keys/docs/overview",
+            "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+          ]
+        },
+        {
+          "capability": "key",
+          "evidence_links": [
+            "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+            "https://docs.cloud.google.com/api-keys/docs/overview",
+            "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+          ]
+        },
+        {
+          "capability": "private",
+          "evidence_links": [
+            "https://docs.cloud.google.com/api-keys/docs/custom-constraints",
+            "https://docs.cloud.google.com/api-keys/docs/overview",
+            "https://docs.cloud.google.com/api-keys/docs/reference/rpc/google.api.apikeys.v2"
+          ]
+        }
+      ]
+    }
+  ]
+}

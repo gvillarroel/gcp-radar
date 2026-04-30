@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.387Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "mockgcp BigtableMaterializedView support",
+  "feature_slug": "mockgcp-bigtablematerializedview-support",
+  "summary": "Mockgcp added support for BigtableMaterializedView.",
+  "extended_definition": "Mockgcp added support for BigtableMaterializedView.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/best-practices",
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/reference/annotations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 27,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR.",
+          "Both config management tools and Config Connector treat list fields as atomic, thus the added spec.bars[0].br2 is treated as a drift by config management tools and will be removed to correct the drift .",
+          "This page might not be applicable if you're using a CRD added in version 1.114.0 and later because those CRDs use only the Absent behavior."
+        ]
+      },
+      {
+        "title": "Annotations \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/annotations",
+        "source_id": "site-docs-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "Annotation Description cnrm.cloud.google.com/mutable-but-unreadable-fields This annotation is added and managed by Config Connector for resources with mutable but unreadable fields (for example, \"password\" field in some resource spec). cnrm.cloud.google.com/observed-secret-versions This annotation is added and managed by Config Connector for resources with sensitive fields. cnrm.cloud.google.com/supports-ssa This annotation is added and managed by Config Connector for resources with server-side apply enabled . cnrm.cloud.google.com/blueprint This annotation is added for resources used in KRM blueprints ."
+        ]
+      },
+      {
+        "title": "Best practices for Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "spec.bars"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/annotations",
+        "https://docs.cloud.google.com/config-connector/docs/best-practices"
+      ]
+    }
+  ]
+}

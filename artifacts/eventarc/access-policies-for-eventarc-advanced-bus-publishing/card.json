@@ -1,0 +1,336 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.198Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Access policies for Eventarc Advanced bus publishing",
+  "feature_slug": "access-policies-for-eventarc-advanced-bus-publishing",
+  "summary": "Eventarc Advanced lets publishers use access policies to control access when publishing event messages to a bus.",
+  "extended_definition": "Eventarc Advanced lets publishers use access policies to control access when publishing event messages to a bus.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/access-control",
+      "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+      "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing",
+      "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Eventarc Advanced \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To control publishing access in Eventarc Advanced using access policies, see Control publishing access .",
+          "Lowest-level resources where you can grant this role: Project eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Message Bus Admin ( roles/ eventarc.messageBusAdmin ) Full control over Message Buses resources. eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.update eventarc.messageBuses.use Eventarc Message Bus User ( roles/ eventarc.messageBusUser ) Access to publish to or bind to a Message Bus. eventarc.messageBuses.get eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.use Eventarc Event Collector Beta ( roles/ eventarc.multiProjectEventCollector ) Can collect events from multiple projects in an org for a source resource. eventarc. multiProjectSources. collectGoogleApiEvents Eventarc Publisher Beta ( roles/ eventarc.publisher ) Can publish events to Eventarc channels.",
+          "Lowest-level resources where you can grant this role: Project eventarc. eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc. channelConnections. setIamPolicy eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.setIamPolicy eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc. enrollments. setIamPolicy eventarc.enrollments.update eventarc. events. receiveAuditLogWritten eventarc.events.receiveEvent eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. setIamPolicy eventarc. googleApiSources. update eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc. kafkaSources. setIamPolicy eventarc.locations.get eventarc.locations.list eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc. messageBuses. setIamPolicy eventarc.messageBuses.update eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc. pipelines. setIamPolicy eventarc.pipelines.update eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.setIamPolicy eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Editor ( roles/ eventarc.editor ) Editor role for eventarc eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc.events.receiveEvent eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.update eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Event Receiver ( roles/ eventarc.eventReceiver ) Can receive events from all event providers."
+        ]
+      },
+      {
+        "title": "Choose Eventarc Advanced or Eventarc Standard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "source_id": "site-iam-reference",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Eventarc Advanced Eventarc Standard Access control Per message access control and central governance with IAM See Access control with IAM See Access control with IAM Capacity Automatically provisioned Automatically provisioned Client library languages Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Compliance standards See Compliance standards See Compliance standards Cross-project event delivery Supported See Publish events from Google sources Not supported Customer managed encryption keys Yes See Use customer-managed encryption keys Yes See Use customer-managed encryption keys Dead letter queues supported No Yes, through Pub/Sub dead letter topic See Retry events Event format Events are delivered to the destination in a CloudEvents format See Event format Optionally, you can override this behavior by defining an HTTP binding Events are delivered to the destination in a CloudEvents format See Event format Event size 1 MB maximum See Quotas and limits 512 KB maximum See Quotas and limits Locations See Eventarc Advanced locations See Eventarc Standard locations Message filtering Filtering on any and all event attributes Filtering on event type and specific attributes Message routing Many providers to many destinations Provider to destination Message schema conversion Yes See Convert the format of received events No Message transformation Yes, through CEL expressions See Transform received events No Observability Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Ordered delivery There is no in-order, first-in-first-out delivery guarantee There is no in-order, first-in-first-out delivery guarantee Pricing See Eventarc pricing See Eventarc pricing Regionality Regional See Understand regionality Regional, Global See Understand Eventarc locations REST endpoints https://eventarc.googleapis.com See Eventarc API https://eventarcpublishing.googleapis.com See Eventarc Publishing API https://eventarc.googleapis.com See Eventarc API Retry and retention At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events Service limits One bus and 100 pipelines per Google Cloud project per supported region See Quotas and limits 500 triggers per Google Cloud project per supported region See Quotas and limits Service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Supported sources Google providers Direct publishers using the Eventarc Publishing API See Event providers and destinations Google providers Google providers through audit logs Third-party providers See Event providers and destinations Supported targets Cloud Run functions (including 1st gen) Cloud Run jobs and services Eventarc Advanced buses Internal HTTP endpoints in VPC networks Pub/Sub topics Workflows See Event providers and destinations Cloud Run functions Cloud Run services Internal HTTP endpoints in VPC networks Public endpoints of private and public GKE services Workflows See Event providers and destinations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Eventarc Advanced lets you receive, filter, transform, route, and deliver messages between different event providers and destinations (click diagram to enlarge).",
+          "Eventarc Advanced is feature rich and is ideal for organizations with complex eventing and messaging needs, particularly those grappling with managing numerous Pub/Sub topics, Kafka queues, or other third-party messaging systems."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Message Bus Admin ( roles/ eventarc.messageBusAdmin ) Full control over Message Buses resources. eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.update eventarc.messageBuses.use Eventarc Message Bus User ( roles/ eventarc.messageBusUser ) Access to publish to or bind to a Message Bus. eventarc.messageBuses.get eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.use Eventarc Event Collector Beta ( roles/ eventarc.multiProjectEventCollector ) Can collect events from multiple projects in an org for a source resource. eventarc. multiProjectSources. collectGoogleApiEvents Eventarc Publisher Beta ( roles/ eventarc.publisher ) Can publish events to Eventarc channels.",
+          "Warning: Do not grant service agent roles to any principals except service agents . cloudfunctions.functions.get compute. instanceGroupManagers. get compute.networkAttachments.get compute. networkAttachments. update compute.networkAttachments.use compute.regionOperations.get container.clusters.connect container.clusters.get container.deployments.create container.deployments.delete container.deployments.get container.deployments.list container.deployments.update container.namespaces.create container.namespaces.delete container.namespaces.get container.namespaces.list container. serviceAccounts. create container. serviceAccounts. delete container.serviceAccounts.get container.serviceAccounts.list container.services.get container.services.list dns. networks. targetWithPeeringZone eventarc.channels.publish eventarc.messageBuses.publish eventarc.operations.get iam.serviceAccounts.actAs iam. serviceAccounts. getAccessToken iam. serviceAccounts. getOpenIdToken monitoring.timeSeries.create pubsub.subscriptions.consume pubsub.subscriptions.create pubsub.subscriptions.delete pubsub.subscriptions.get pubsub.subscriptions.list pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.delete pubsub.topics.get pubsub.topics.list pubsub.topics.publish pubsub.topics.update run.jobs.get run.services.get serviceusage.services.use storage.buckets.get storage.buckets.update workflows.workflows.get For more information on Eventarc Standard roles and permissions, see All roles and permissions .",
+          "Lowest-level resources where you can grant this role: Project eventarc. eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc. channelConnections. setIamPolicy eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.setIamPolicy eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc. enrollments. setIamPolicy eventarc.enrollments.update eventarc. events. receiveAuditLogWritten eventarc.events.receiveEvent eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. setIamPolicy eventarc. googleApiSources. update eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc. kafkaSources. setIamPolicy eventarc.locations.get eventarc.locations.list eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc. messageBuses. setIamPolicy eventarc.messageBuses.update eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc. pipelines. setIamPolicy eventarc.pipelines.update eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.setIamPolicy eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Editor ( roles/ eventarc.editor ) Editor role for eventarc eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc.events.receiveEvent eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc.messageBuses.update eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update resourcemanager.projects.get resourcemanager.projects.list Eventarc Event Receiver ( roles/ eventarc.eventReceiver ) Can receive events from all event providers."
+        ]
+      },
+      {
+        "title": "\"Eventarc Publishing audit logging \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods DATA WRITE google.cloud.eventarc.publishing.v1.Publisher.Publish API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Eventarc Publishing. google.cloud.eventarc.publishing.v1.Publisher The following audit logs are associated with methods belonging to google.cloud.eventarc.publishing.v1.Publisher .",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Eventarc Publishing audit logs use the service name eventarcpublishing.googleapis.com .",
+          "Publish Method : google.cloud.eventarc.publishing.v1.Publisher.Publish Audit log type : Data access Permissions : eventarc.messageBuses.publish - DATA WRITE Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudfunctions.functions.get",
+      "compute.networkAttachments.get",
+      "compute.networkAttachments.use",
+      "compute.regionOperations.get",
+      "container.clusters.connect",
+      "container.clusters.get",
+      "container.deployments.create",
+      "container.deployments.delete",
+      "container.deployments.get",
+      "container.deployments.list",
+      "container.deployments.update",
+      "container.namespaces.create",
+      "container.namespaces.delete",
+      "container.namespaces.get",
+      "container.namespaces.list",
+      "container.serviceAccounts.get",
+      "container.serviceAccounts.list",
+      "container.services.get",
+      "container.services.list",
+      "eventarc.channels.attach",
+      "eventarc.channels.create",
+      "eventarc.channels.delete",
+      "eventarc.channels.get",
+      "eventarc.channels.getIamPolicy",
+      "eventarc.channels.list",
+      "eventarc.channels.publish",
+      "eventarc.channels.setIamPolicy",
+      "eventarc.channels.undelete",
+      "eventarc.channels.update",
+      "eventarc.editor",
+      "eventarc.enrollments.create",
+      "eventarc.enrollments.delete",
+      "eventarc.enrollments.get",
+      "eventarc.enrollments.list",
+      "eventarc.enrollments.update",
+      "eventarc.eventReceiver",
+      "eventarc.events.receiveEvent",
+      "eventarc.googleapis.com",
+      "eventarc.googleApiSources.get",
+      "eventarc.googleApiSources.list",
+      "eventarc.kafkaSources.create",
+      "eventarc.kafkaSources.delete",
+      "eventarc.kafkaSources.get",
+      "eventarc.kafkaSources.list",
+      "eventarc.locations",
+      "eventarc.locations.get",
+      "eventarc.locations.list",
+      "eventarc.messageBusAdmin",
+      "eventarc.messageBuses.create",
+      "eventarc.messageBuses.delete",
+      "eventarc.messageBuses.get",
+      "eventarc.messageBuses.list",
+      "eventarc.messageBuses.publish",
+      "eventarc.messageBuses.update",
+      "eventarc.messageBuses.use",
+      "eventarc.messageBusUser",
+      "eventarc.multiProjectEventCollector",
+      "eventarc.operations",
+      "eventarc.operations.cancel",
+      "eventarc.operations.delete",
+      "eventarc.operations.get",
+      "eventarc.operations.list",
+      "eventarc.pipelines.create",
+      "eventarc.pipelines.delete",
+      "eventarc.pipelines.get",
+      "eventarc.pipelines.list",
+      "eventarc.pipelines.update",
+      "eventarc.providers",
+      "eventarc.providers.get",
+      "eventarc.providers.list",
+      "eventarc.publisher",
+      "eventarc.triggers.create",
+      "eventarc.triggers.delete",
+      "eventarc.triggers.get",
+      "eventarc.triggers.getIamPolicy",
+      "eventarc.triggers.list",
+      "eventarc.triggers.setIamPolicy",
+      "eventarc.triggers.undelete",
+      "eventarc.triggers.update",
+      "eventarcpublishing.googleapis.com",
+      "iam.serviceAccounts.actAs",
+      "monitoring.timeSeries.create",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.create",
+      "pubsub.topics.delete",
+      "pubsub.topics.get",
+      "pubsub.topics.list",
+      "pubsub.topics.publish",
+      "pubsub.topics.update",
+      "run.jobs.get",
+      "run.services.get",
+      "serviceusage.services.use",
+      "storage.buckets.get",
+      "storage.buckets.update",
+      "workflows.workflows.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/access-control",
+        "https://docs.cloud.google.com/eventarc/standard/docs/audit-logs-publishing"
+      ]
+    }
+  ]
+}

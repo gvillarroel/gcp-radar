@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Control MCP use with organization policies",
+  "feature_slug": "control-mcp-use-with-organization-policies",
+  "summary": "Organization policies using the gcp.managed.allowedMCPServices constraint are deprecated and replaced by IAM deny policies for controlling MCP use; deprecated on 2026-03-17.",
+  "extended_definition": "Organization policies using the gcp.managed.allowedMCPServices constraint are deprecated and replaced by IAM deny policies for controlling MCP use; deprecated on 2026-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-15",
+    "deprecation_date": "2026-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control for projects with IAM \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "source_id": "site-iam-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IAM lets you control who (users) has what access (roles) to which resources by setting allow policies.",
+          "The role is granted on the organization resource or folder that contains the projects: Method Required permission(s) resourcemanager.projects.create resourcemanager.projects.create resourcemanager.projects.delete resourcemanager.projects.delete resourcemanager.projects.get resourcemanager.projects.get Granting this permission will also grant access to get the name of the billing account associated with the project through the Billing API method billing.projects.getBillingInfo . resourcemanager.projects.getIamPolicy resourcemanager.projects.getIamPolicy resourcemanager.projects.list resourcemanager.projects.list resourcemanager.projects.search resourcemanager.projects.get resourcemanager.projects.setIamPolicy resourcemanager.projects.setIamPolicy resourcemanager.projects.testIamPermissions Does not require any permission. resourcemanager.projects.undelete resourcemanager.projects.undelete resourcemanager.projects.patch To update a project's metadata, requires resourcemanager.projects.update permission.",
+          "Lowest-level resources where you can grant this role: Project iam.policybindings. iam.policybindings.get iam.policybindings.list resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can configure authorization policies for agents and MCP servers using existing security controls, such as IAM deny policies, and layer these attributes to build your security and governance policies.",
+          "Limitations Control of MCP use with IAM has the following limitations: The resource.service , and request.auth.oauth.client id attributes are only supported for IAM deny policies.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can configure authorization policies for agents and MCP servers using existing security controls, such as IAM deny policies, and layer these attributes to build your security and governance policies.",
+          "Limitations Control of MCP use with IAM has the following limitations: The resource.service , and request.auth.oauth.client id attributes are only supported for IAM deny policies.",
+          "Example IAM policies The following sections give examples of Identity and Access Management deny policies that can be used to control MCP use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.projects.getBillingInfo",
+      "cloudresourcemanager.googleapis.com",
+      "gcp.managed.allowedMCPServices",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "policy.json",
+      "request.auth.oauth.client",
+      "resource.service",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.projects.create",
+      "resourcemanager.projects.delete",
+      "resourcemanager.projects.getIamPolicy",
+      "resourcemanager.projects.patch",
+      "resourcemanager.projects.search",
+      "resourcemanager.projects.setIamPolicy",
+      "resourcemanager.projects.testIamPermissions",
+      "resourcemanager.projects.undelete",
+      "resourcemanager.projects.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    }
+  ]
+}

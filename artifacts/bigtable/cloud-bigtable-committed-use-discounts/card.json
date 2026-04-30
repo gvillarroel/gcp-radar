@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable committed use discounts",
+  "feature_slug": "cloud-bigtable-committed-use-discounts",
+  "summary": "Committed use discounts are generally available for Cloud Bigtable with one-year or three-year node spend commitments.",
+  "extended_definition": "Committed use discounts are generally available for Cloud Bigtable with one-year or three-year node spend commitments.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cuds",
+      "https://docs.cloud.google.com/bigtable/docs/resources",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Committed use discounts \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cuds",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "From the pricing page , see the price in the column labeled Cost per node with 1-year committed use discounts to calculate the approximate hourly commitment cost: Expenditure in us-central1 : 10 nodes $0.52 per node per hour = $5.20 per hour Expenditure in us-west2 : 20 nodes $0.624 per node per hour = $12.48 per hour Total expenditure across all regions: $6.50 + $15.60 = $17.68 per hour ($12,906.40 per month or $154,876.80 per year).",
+          "Committed use discounts (CUDs) for Bigtable provide discounted prices in exchange for your commitment to continuously spend a minimum hourly amount on Bigtable capacity for a year or longer.",
+          "Important: This page explains the new and improved committed use discounts (CUDs) program, which applies to any customers who purchase their first CUDs on or after July 15, 2025 ."
+        ]
+      },
+      {
+        "title": "Resources \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Committed use discounts Discounts for Bigtable nodes when you make a commitment to continuously spend a certain amount for one year or three years.",
+          "Locations Locations where Bigtable is available."
+        ]
+      },
+      {
+        "title": "\"Class BigtableTableAdminAsyncClient (2.35.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Union [ str , bytes ]]] = () ) - > bool Blocks until the mutations for the specified Table that have been made before the call have been replicated or reads using an app profile with DataBoostIsolationReadOnly can see all writes committed before the token was created.",
+          "If the data boost read local writes mode is specified in the request object, returns True after reads using an app profile with DataBoostIsolationReadOnly can see all writes committed before the token was created.",
+          "Generally, you only need to set this if you're developing your own client library."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cuds",
+        "https://docs.cloud.google.com/bigtable/docs/resources",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cuds",
+        "https://docs.cloud.google.com/bigtable/docs/resources",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cuds",
+        "https://docs.cloud.google.com/bigtable/docs/resources",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cuds",
+        "https://docs.cloud.google.com/bigtable/docs/resources",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.806Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Agent Development Kit (ADK)",
+  "feature_slug": "agent-development-kit-adk",
+  "summary": "Agent Development Kit (ADK) has become available in preview.",
+  "extended_definition": "Agent Development Kit (ADK) has become available in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Agent Development Kit \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ADK quickstart (open source documentation) : This quickstart guides you through installing the Agent Development Kit (ADK), setting up a basic agent with multiple tools, and running the agent locally either in the terminal or in the interactive, browser-based dev UI.",
+          "Agent Development Kit (ADK) is a flexible and modular open-source framework for developing and deploying AI agents.",
+          "You can use the following resources to get started with ADK: Quickstart with Vertex AI Agent Engine : This quickstart guides you through setting up your Google Cloud project and Vertex AI SDK for Python, developing your ADK agent, deploying the agent to Vertex AI Agent Engine Runtime, and testing the deployed agent."
+        ]
+      },
+      {
+        "title": "\"Quickstart with Agent Development Kit \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "So, the agent doesn't know any user preferences, such as their preferred temperature, as shown in the following example: First turn: User : \"Can you fix the temperature?\" (Tool Call) : ADK tries to fetch memories; no memories are available.",
+          "After you configure your Agent Development Kit (ADK) agent to use Memory Bank, your agent orchestrates calls to Memory Bank to manage long-term memories for you.",
+          "Cloud Run To see an example of using Memory Bank with Cloud Run, run the \"Get started with Sessions and Memory Bank for ADK agents in Cloud Run\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Cloud Run, refer to the instructions in the ADK documentation to learn how to define your agent to deploy to Cloud Run. adk deploy cloud run \\ ... --memory service uri = agentengine:// AGENT ENGINE ID GKE To see an example of using Memory Bank with Google Kubernetes Engine, run the \"Get started with Sessions and Memory Bank for ADK agents in Google Kubernetes Engine\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub To deploy your agent to Google Kubernetes Engine (GKE), refer to the instructions in the ADK documentation to learn how to define your agent to deploy to GKE. adk deploy gke \\ ... --memory service uri = agentengine:// AGENT ENGINE ID ADK Web Important: ADK Web is not meant for use in production deployments."
+        ]
+      },
+      {
+        "title": "\"Develop an Agent Development Kit agent \\_|\\_ Vertex AI Agent Builder \\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "source_id": "site-docs-reference",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page shows you how to develop an agent using the Agent Development Kit template (the AdkApp class in the Vertex AI SDK for Python).",
+          "If you want to override the default memory service, you can define a memory service builder function that returns a BaseMemoryService as follows: def memory service builder (): from google.adk.memory import InMemoryMemoryService return InMemoryMemoryService () Pass your database to AdkApp as memory service builder= : from vertexai.agent engines import AdkApp app = AdkApp ( agent = agent , # Required. memory service builder = memory service builder , # Optional. ) Use the agent with memories Test your ADK agent with memories: Create a session and interact with the agent: initial session = await app . async create session ( user id = \" USER ID \" ) async for event in app . async stream query ( user id = \" USER ID \" , session id = initial session . id , message = \"Can you update the temperature to my preferred temperature?\" , ): print ( event ) Since there are no available memories during the first session and the agent does not know any user preferences, the agent may reply with a response such as \"What is your preferred temperature?\" You can respond with the following command: async for event in app . async stream query ( user id = \" USER ID \" , session id = initial session . id , message = \"I like it at 71 degrees\" , ): print ( event ) The agent might return with a response such as \"Setting the temperature to 71 degrees Fahrenheit.",
+          "Use the async search memory method to display the agent's memories: response = await app . async search memory ( user id = \" USER ID \" , query = \"Fix the temperature!\" , ) print ( response ) What's next Sessions overview Memory Bank overview Use an Agent Development Kit agent ."
+        ]
+      },
+      {
+        "title": "\"Bidirectional streaming with Vertex AI Agent Engine Runtime \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, a set of two responses in the first turn might look like the following: Enter your next question: Weather in San Diego? {'bidiStreamOutput': {'output': \"FunctionCall: {'name': 'get current weather', 'args': {'location': 'San Diego'}}\\n\"}} {'bidiStreamOutput': {'output': 'end of turn'}} Enter your next question: exit Use an Agent Development Kit agent If you developed your agent using Agent Development Kit (ADK), you can use bidirectional streaming to interact with the Gemini Live API .",
+          "You can use bidirectional streaming to interact with Gemini Live API directly or using Agent Development Kit (ADK) on Vertex AI Agent Engine.",
+          "Note that the EXPERIMENTAL agent server mode is required for an agent that supports bidirectional streaming: remote live agent = client . agent engines . create ( agent = live agent , config = { \"staging bucket\" : STAGING BUCKET , \"requirements\" : [ \"google-cloud-aiplatform[agent engines,adk]==1.88.0\" , \"cloudpickle==3.0\" , \"websockets\" ], \"agent server mode\" : vertexai types ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "context.add",
+      "vertexai.agent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-development-kit/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/quickstart-adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/adk",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/bidirectional-streaming"
+      ]
+    }
+  ]
+}

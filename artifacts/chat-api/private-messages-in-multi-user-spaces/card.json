@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Private messages in multi-user spaces",
+  "feature_slug": "private-messages-in-multi-user-spaces",
+  "summary": "Chat apps can send private messages within spaces that contain multiple people.",
+  "extended_definition": "Chat apps can send private messages within spaces that contain multiple people.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+      "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user",
+      "https://developers.google.com/workspace/chat/create-messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces.messages \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "source_id": "site-docs-root-2",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if multiple Chat apps create a message using the same thread key, the messages are posted in different threads.",
+          "Resource: Message JSON representation Card JSON representation CardHeader JSON representation ImageStyle Section JSON representation WidgetMarkup JSON representation TextParagraph JSON representation Image JSON representation OnClick JSON representation FormAction JSON representation ActionParameter JSON representation OpenLink JSON representation KeyValue JSON representation Icon Button JSON representation TextButton JSON representation ImageButton JSON representation CardAction JSON representation CardWithId JSON representation Card JSON representation CardHeader JSON representation ImageType Section JSON representation Widget JSON representation TextParagraph JSON representation TextSyntax Image JSON representation OnClick JSON representation Action JSON representation ActionParameter JSON representation LoadIndicator Interaction OpenLink JSON representation OpenAs OnClose OverflowMenu JSON representation OverflowMenuItem JSON representation Icon JSON representation MaterialIcon JSON representation DecoratedText JSON representation VerticalAlignment Button JSON representation Color JSON representation Type SwitchControl JSON representation ControlType ButtonList JSON representation TextInput JSON representation Type Suggestions JSON representation SuggestionItem JSON representation Validation JSON representation InputType HostAppDataSourceMarkup JSON representation ChatClientDataSourceMarkup JSON representation SpaceDataSource JSON representation WorkflowDataSourceMarkup JSON representation Type SelectionInput JSON representation SelectionType SelectionItem JSON representation PlatformDataSource JSON representation CommonDataSource DataSourceConfig JSON representation DateTimePicker JSON representation DateTimePickerType Divider Grid JSON representation GridItem JSON representation ImageComponent JSON representation ImageCropStyle JSON representation ImageCropType BorderStyle JSON representation BorderType GridItemLayout Columns JSON representation Column JSON representation HorizontalSizeStyle HorizontalAlignment VerticalAlignment Widgets JSON representation ChipList JSON representation Layout Chip JSON representation Carousel JSON representation CarouselCard JSON representation NestedWidget JSON representation Visibility EventAction JSON representation Trigger JSON representation CommonWidgetAction JSON representation UpdateVisibilityAction JSON representation CollapseControl JSON representation DividerStyle CardAction JSON representation CardFixedFooter JSON representation DisplayStyle ExpressionData JSON representation Condition JSON representation ExpressionDataCondition JSON representation ConditionType Annotation JSON representation AnnotationType UserMentionMetadata JSON representation Type SlashCommandMetadata JSON representation Type RichLinkMetadata JSON representation RichLinkType DriveLinkData JSON representation ChatSpaceLinkData JSON representation MeetSpaceLinkData JSON representation Type HuddleStatus CalendarEventLinkData JSON representation CustomEmojiMetadata JSON representation Thread JSON representation ActionResponse JSON representation ResponseType DialogAction JSON representation Dialog JSON representation ActionStatus JSON representation Code UpdatedWidget JSON representation SelectionItems JSON representation SlashCommand JSON representation MatchedUrl JSON representation EmojiReactionSummary JSON representation DeletionMetadata JSON representation DeletionType QuotedMessageMetadata JSON representation QuoteType QuotedMessageSnapshot JSON representation ForwardedMetadata JSON representation AttachedGif JSON representation AccessoryWidget JSON representation Methods Resource: Message A message in a Google Chat space.",
+          "Methods create Creates a message in a Google Chat space. delete Deletes a message. get Returns details about a message. list Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. patch Updates a message. replaceCards Developer Preview: Available as part of the Google Workspace Developer Preview Program , which grants early access to certain features."
+        ]
+      },
+      {
+        "title": "Send a message using the Google Chat API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-messages",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreateMessageRequest ( Replace SPACE NAME here parent = \"spaces/SPACE NAME\" , Message id let chat apps get, update or delete a message without needing to store the system assigned ID in the message's resource name. message id = \"client-MESSAGE-ID\" , message = { \"text\" : \"Hello with user credential!\" } ) Make the request response = client . create message ( request ) Handle the response print ( response ) create message with user cred message id () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateMessageUserCredMessageId.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateMessageRequest ; import com.google.chat.v1.Message ; // This sample shows how to create message with message id specified with user // credential. public class CreateMessageUserCredMessageId { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.messages.create\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateMessageRequest .",
+          "The following code shows an example of how a Chat app can send a text message with an ID to a given space on behalf of an authenticated user: Node.js chat/client-libraries/cloud/create-message-user-cred-message-id.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' , ]; // This sample shows how to create a message with user credentials and a custom // message id async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // Replace SPACE NAME here. parent : 'spaces/SPACE NAME' , // Message id lets chat apps get, update or delete a message without needing // to store the system assigned ID in the message's resource name messageId : 'client-MESSAGE-ID' , message : { text : 'Hello with user credential!' }, }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create message user cred message id.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.messages.create\" ] This sample shows how to create message with user credential with message id def create message with user cred message id (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "The following code shows how to create a message that quotes another message: Node.js import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' ]; // This sample shows how to create a message that quotes another message. async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES ); // Initialize request argument(s) const request = { // TODO(developer): Replace SPACE NAME . parent : 'spaces/ SPACE NAME ' , message : { text : 'I am responding to a quoted message!' , // quotedMessageMetadata lets chat apps respond to a message by quoting it. quotedMessageMetadata : { // TODO(developer): Replace QUOTED MESSAGE NAME // and QUOTED MESSAGE LAST UPDATE TIME. name : ' QUOTED MESSAGE NAME ' , lastUpdateTime : ' QUOTED MESSAGE LAST UPDATE TIME ' } } }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } main (). catch ( console . error ); Python from authentication utils import create client with user credentials from google.apps import chat v1 as google chat from google.protobuf.timestamp pb2 import Timestamp SCOPES = [ 'https://www.googleapis.com/auth/chat.messages.create' ] This sample shows how to create a message that quotes another message. def create message quote message (): '''Creates a message that quotes another message.''' Create a client client = create client with user credentials ( SCOPES ) Create a timestamp from the RFC-3339 string."
+        ]
+      },
+      {
+        "title": "Authenticate and authorize as a Google Chat user \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Please return to the console.' ); server . destroy (); const { tokens } = await oauth2Client . getToken ( qs . get ( 'code' )); oauth2Client . credentials = tokens ; resolve ( oauth2Client ); } catch ( e ) { reject ( e ); } }) . listen ( 3000 , () = > { // Open the browser to the authorize URL to start the workflow. opn ( authorizeUrl , { wait : false }). then ( cp = > cp . unref ()); }); destroyer ( server ); }); } / Authenticates with Chat API via user credentials, then creates a Chat space. / async function createSpace () { // Create the Chat API client and authenticate with the authorized user. const chatClient = await chat . chat ({ version : 'v1' , auth : oauth2Client }); // Call the Chat API to create a space. const result = await chatClient . spaces . create ({ // Details about the space to create. requestBody : { // To create a named space, set spaceType to SPACE. 'spaceType' : 'SPACE' , // The user-visible name of the space. 'displayName' : 'API-made' } }); return result ; } // Authenticate the user, execute the function, // then print details about the created space. authenticate ( scopes ) . then ( createSpace ) . then ( console . log ); Apps Script In the Apps Script editor, edit the file appsscript.json and add the OAuth scope necessary to call the API: \"oauthScopes\" : [ \"https://www.googleapis.com/auth/chat.spaces.create\" ] Save the following code in a file named ChatSpaceCreateNamed.gs in your Apps Script project: / Authenticates with Chat API via user credentials, then creates a Chat space. / function createSpace () { try { // Details about the space to create. // To create a named space, set spaceType to SPACE. // The user-visible name of the space is displayName. const space = { 'displayName' : 'API-made' , 'spaceType' : 'SPACE' }; // Call Chat API with user credentials to create the space. const result = Chat .",
+          "Replace the contents in App.java with the following code: package com.google.chat.app.authsample ; import com.google.api.client.auth.oauth2.Credential ; import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp ; import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver ; import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow ; import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets ; import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport ; import com.google.api.client.http.HttpTransport ; import com.google.api.client.json.JsonFactory ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.client.util.store.FileDataStoreFactory ; import com.google.api.services.chat.v1.HangoutsChat ; import com.google.api.services.chat.v1.model.Space ; import java.io.InputStreamReader ; import java.util.Collection ; import java.util.Collections ; / Authenticates with Chat API via user credentials, then creates a Chat space. / public class App { // Application OAuth credentials. private static final String KEYS RESOURCE URI = \"/credentials.json\" ; // Define your app's authorization scopes. private static final Collection<String> SCOPES = Collections . singleton ( \"https://www.googleapis.com/auth/chat.spaces.create\" ); // Directory to store user credentials. private static final java . io .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-03 UTC.\"],[],[\"Chat apps utilize OAuth 2.0 for user authentication, enabling actions like creating spaces, adding users, and accessing other Workspace APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "chat.messages.create",
+      "chat.spaces.create",
+      "com.google.api.client.auth.oauth2.Credential",
+      "com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp",
+      "com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver",
+      "com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow",
+      "com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets",
+      "com.google.api.client.googleapis.javanet.GoogleNetHttpTransport",
+      "com.google.api.client.http.HttpTransport",
+      "com.google.api.client.json.gson.GsonFactory",
+      "com.google.api.client.json.JsonFactory",
+      "com.google.api.client.util.store.FileDataStoreFactory",
+      "com.google.api.services.chat.v1.HangoutsChat",
+      "com.google.api.services.chat.v1.model.Space",
+      "com.google.chat.app.authsample",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.CreateMessageRequest",
+      "com.google.chat.v1.Message",
+      "cred.js",
+      "cred.py",
+      "credentials.json",
+      "developers.google.com",
+      "id.js",
+      "id.py",
+      "java.io.InputStreamReader",
+      "java.util.Collection",
+      "java.util.Collections",
+      "spaces.messages",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/authenticate-authorize-chat-user"
+      ]
+    }
+  ]
+}

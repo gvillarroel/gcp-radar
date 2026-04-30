@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable Kafka sink",
+  "feature_slug": "bigtable-kafka-sink",
+  "summary": "The Bigtable Kafka sink is now generally available for direct connectivity with Google Cloud Managed Service for Apache Kafka.",
+  "extended_definition": "The Bigtable Kafka sink is now generally available for direct connectivity with Google Cloud Managed Service for Apache Kafka.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Aerospike Bigtable No directly corresponding item. instance : a managed group of clusters in different Google Cloud zones or regions between which replication and connection routing occur. cluster : an Aerospike deployment consisting of a collection of nodes. cluster : a group of nodes in the same geographic Google Cloud zones. node : a server providing compute and owning its storage. node : a server providing compute only.",
+          "No directly corresponding item. column family : The number of column families is unlimited, however more than 100 can cause performance degradation. bin : The number of bins is unlimited, however, each bin can hold not more than 1 MB of data.",
+          "No directly corresponding item. cell : a label for a timestamped value stored in a table. (record) digest : a hash of a three-tuple identifying a record: namespace, set, and key."
+        ]
+      },
+      {
+        "title": "\"Class BigtableInstanceAdminClient (2.74.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "source_id": "site-java-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample code: ApiFuture<Cluster> clustersFuture = client . listClustersAsync ( \"my-instance\" ); ApiFutures . addCallback ( clustersFuture , new ApiFutureCallback<List<Cluster> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListClustersException ) { PartialListClustersException partialError = ( PartialListClustersException ) t ; System . out . println ( \"The following zones are unavailable: \" + partialError . getUnavailableZones ()); System . out . println ( \"But the following clusters are reachable: \" + partialError . getClusters ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Cluster> result ) { System . out . println ( \"Found a complete set of instances: \" + result ); } }, MoreExecutors . directExecutor ()); Parameter Name Description instanceId String Returns Type Description ApiFuture < List < Cluster >> listInstances() public List<Instance> listInstances () Lists all of the instances in the current project.",
+          "Sample code: ApiFuture<Instance> instancesFuture = client . listInstancesAsync (); ApiFutures . addCallback ( instancesFuture , new ApiFutureCallback<List<Instance> > () { public void onFailure ( Throwable t ) { if ( t instanceof PartialListInstancesException ) { PartialListInstancesException partialError = ( PartialListInstancesException ) t ; System . out . println ( \"The following zones are unavailable: \" + partialError . getUnavailableZones ()); System . out . println ( \"But the following instances are reachable: \" + partialError . getInstances ()); } else { t . printStackTrace (); } } public void onSuccess ( List<Instance> result ) { System . out . println ( \"Found a complete set of instances: \" + result ); } }, MoreExecutors . directExecutor ()); Returns Type Description ApiFuture < List < Instance >> listLogicalViews(String instanceId) public List<LogicalView> listLogicalViews ( String instanceId ) Lists all logical views of the specified instance.",
+          "Sample code: ApiFuture<Policy> newPolicyFuture = client . setIamPolicyAsync ( \"my-instance\" , Policy . newBuilder () . addIdentity ( Role . of ( \"bigtable.user\" ), Identity . user ( \"someone@example.com\" )) . addIdentity ( Role . of ( \"bigtable.admin\" ), Identity . group ( \"admins@example.com\" )) . build ()); ApiFutures . addCallback ( policyFuture , new ApiFutureCallback<Policy> () { public void onSuccess ( Policy policy ) { for ( Entry<Role , Set<Identity> > entry : policy . getBindings (). entrySet ()) { System . out . printf ( \"Role: %s Identities: %s \" , entry . getKey (), entry . getValue ()); } } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: Instance-level IAM management Parameters Name Description instanceId String policy com.google.cloud.Policy Returns Type Description ApiFuture < com.google.cloud.Policy > testIamPermission(String instanceId, String[] permissions) public List<String> testIamPermission ( String instanceId , String [] permissions ) Tests whether the caller has the given permissions for the specified instance."
+        ]
+      },
+      {
+        "title": "\"Class BigtableTableAdminClient (2.74.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient",
+        "source_id": "site-java-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample code: ApiFuture<Table> modifiedTableFuture = client . modifyFamiliesAsync ( ModifyColumnFamiliesRequest . of ( tableId ) . addFamily ( \"cf1\" ) . addFamily ( \"cf2\" , GCRULES . maxAge ( Duration . ofSeconds ( 1000 , 20000 ))) . updateFamily ( \"cf3\" , GCRULES . union () . rule ( GCRULES . maxAge ( Duration . ofSeconds ( 100 ))) . rule ( GCRULES . maxVersions ( 1 )) ) . addFamily ( \"cf4\" , GCRULES . intersection () . rule ( GCRULES . maxAge ( Duration . ofSeconds ( 2000 ))) . rule ( GCRULES . maxVersions ( 10 )) ) . dropFamily ( \"cf5\" ) ); ApiFutures . addCallback ( modifiedTableFuture , new ApiFutureCallback<Table> () { public void onSuccess ( Table table ) { System . out . println ( \"Modified table: \" + table . getTableName ()); System . out . println ( \"Resulting families:\" ); for ( ColumnFamily cf : modifiedTable . getColumnFamilies ()) { System . out . println ( cf . getId ()); } } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor () ); See Also: ModifyColumnFamiliesRequestfor available options.",
+          "Sample code: CreateAuthorizedViewRequest request = CreateAuthorizedViewRequest . of ( \"my-table\" , \"my-new-authorized-view\" ) . setDeletionProtection ( true ) . setAuthorizedViewType ( SubsetView . create () . addRowPrefix ( \"row#\" ) . addFamilySubsets ( \"my-family\" , FamilySubsets . create (). addQualifier ( \"column\" ))); ApiFuture<AuthorizedView> future = client . createAuthorizedViewAsync ( request ); ApiFutures . addCallback ( future , new ApiFutureCallback<AuthorizedView> () { public void onSuccess ( AuthorizedView authorizedView ) { System . out . println ( \"Successfully created the authorized view: \" + authorizedView . getId ()); } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor () ); See Also: CreateAuthorizedViewRequestfor available options.",
+          "Sample code: CreateSchemaBundleRequest request = CreateSchemaBundleRequest . of ( \"my-table\" , \"my-new-schema-bundle\" ) . setDeletionProtection ( true ) . setSchemaBundleType ( SubsetView . create () . addRowPrefix ( \"row#\" ) . addFamilySubsets ( \"my-family\" , FamilySubsets . create (). addQualifier ( \"column\" ))); ApiFuture<SchemaBundle> future = client . createSchemaBundleAsync ( request ); ApiFutures . addCallback ( future , new ApiFutureCallback<SchemaBundle> () { public void onSuccess ( SchemaBundle schemaBundle ) { System . out . println ( \"Successfully created the schema bundle: \" + schemaBundle . getId ()); } public void onFailure ( Throwable t ) { t . printStackTrace (); } }, MoreExecutors . directExecutor ()); See Also: CreateSchemaBundleRequestfor available options."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtable.admin",
+      "bigtable.user",
+      "com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+      "com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient",
+      "com.google.cloud.Policy",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient"
+      ]
+    }
+  ]
+}

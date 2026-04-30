@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.328Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Monitor long-running operations in Bare Metal Solution via gcloud and API",
+  "feature_slug": "monitor-long-running-operations-in-bare-metal-solution-via-gcloud-and-api",
+  "summary": "Adds visibility of long-running operations via gcloud and API commands.",
+  "extended_definition": "Adds visibility of long-running operations via gcloud and API commands.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Solution Guide: Google Cloud Backup and DR for Oracle on Bare Metal Solution\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "source_id": "site-docs-root-2",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Monitor job progress and success You can monitor the running job by going to the Monitor > Jobs page. https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#jobs The page shows the status and job type.",
+          "The following output example shows that the Backup and DR agent service is running correctly: [root@test2 ]# service udsagent status Redirecting to /bin/systemctl status udsagent.service udsagent.service - Google Cloud Backup and DR service Loaded: loaded (/usr/lib/systemd/system/udsagent.service; enabled; vendor preset: disabled) Active: active (running) since Wed 2022-12-28 05:05:45 UTC; 2 days ago Process: 46753 ExecStop=/act/initscripts/udsagent.init stop (code=exited, status=0/SUCCESS) Process: 46770 ExecStart=/act/initscripts/udsagent.init start (code=exited, status=0/SUCCESS) Main PID: 46789 (udsagent) Tasks: 8 (limit: 48851) Memory: 74.0M CGroup: /system.slice/udsagent.service ├─46789 /opt/act/bin/udsagent start └─60570 /opt/act/bin/udsagent start Dec 30 05:11:30 test2 su[150713]: pam unix(su:session): session closed for user oracle Dec 30 05:11:30 test2 su[150778]: (to oracle) root on none Log messages from your backups can help you diagnose issues.",
+          "Please use b010502a8f383cae5a076d4ac9e868777657cebd0000000063abee83 (valid for 2 hrs) to register this host. -- A new secret key can be generated later by running: '/opt/act/bin/udsagent secret --reset --restart If you use the iptables command, open the ports for the backup agent firewall (TCP 5106) and Oracle services (TCP 1521): sudo iptables -A INPUT -p tcp --dport 5106 -j ACCEPT sudo iptables -A INPUT -p tcp --dport 1521 -j ACCEPT sudo firewall-cmd --permanent --add-port=5106/tcp sudo firewall-cmd --permanent --add-port=1521/tcp sudo firewall-cmd --reload Add hosts to Backup and DR In the Backup and DR management console, go to Manage > Hosts . https://bmc- PROJECT NUMBER - GENERATED ID -dot- REGION .backupdr.googleusercontent.com/#hosts Click +Add Host ."
+        ]
+      },
+      {
+        "title": "\"SAP HANA high-availability planning guide \\_|\\_ SAP on Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: primitive rsc SAPHanaTopology HA1 HDB00 ocf:suse:SAPHanaTopology \\ operations \\$id=\"rsc sap2 HA1 HDB00-operations\" \\ op monitor interval=\"10\" timeout=\"600\" \\ op start interval=\"0\" timeout=\"600\" \\ op stop interval=\"0\" timeout=\"300\" \\ params SID=\"HA1\" InstanceNumber=\"00\" clone cln SAPHanaTopology HA1 HDB00 rsc SAPHanaTopology HA1 HDB00 \\ meta is-managed=\"true\" clone-node-max=\"1\" target-role=\"Started\" interleave=\"true\" The timeout values affect each of the resource operations differently, as explained in the following table.",
+          "As a starting point, the following list shows some HA cluster resources and the associated permissions that they require: Fencing compute.instances.list compute.instances.get compute.instances.reset compute.instances.stop compute.instances.start logging.logEntries.create compute.zones.list VIP implemented by using an alias IP compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.instances.updateNetworkInterface compute.zoneOperations.get logging.logEntries.create VIP implemented by using static routes compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.routes.get compute.routes.create compute.routes.delete compute.routes.update compute.routes.list compute.networks.updatePolicy compute.networks.get compute.globalOperations.get logging.logEntries.create VIP implemented by using an internal load balancer No specific permissions required - the load balancer operates on health check statuses that does not require the cluster to interact with or change resources in Google Cloud Virtual IP implementation on Google Cloud A high-availability cluster uses a floating or virtual IP address (VIP) to move its workload from one cluster node to another in the event of an unexpected failure or for scheduled maintenance.",
+          "Parameter Recommended value Impact of changing the value secauth off Disables authentication and encryption of all totem messages. join 60 (ms) Increases how long the node waits for join messages in the membership protocol. max messages 20 Increases the maximum number of messages that might be sent by the node after receiving the token. token 20000 (ms) Increases how long the node waits for a totem protocol token before the node declares a token loss, assumes a node failure, and starts taking action."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related security documents Refer to the following additional security resources for your SAP environment on Google Cloud: Securely Connecting to VM Instances Security Center Compliance in the Google Cloud Google Cloud security whitepaper Google Infrastructure security design Monitoring For support and monitoring, Google Cloud provides the Agent for SAP , for SAP workloads running on Compute Engine instances and Bare Metal Solution servers.",
+          "For more details on administration of VMs and monitoring, see the SAP NetWeaver on Google Cloud Operations Guide .",
+          "For general guidance about how to plan for disaster recovery using Google Cloud, see: How to Design a Disaster Recovery Plan Disaster Recovery Cookbook For information about SAP HANA backup and recovery, see the SAP HANA on Google Cloud Operations Guide ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleusercontent.com",
+      "compute.globalOperations.get",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.instances.reset",
+      "compute.instances.start",
+      "compute.instances.stop",
+      "compute.instances.updateNetworkInterface",
+      "compute.networks.get",
+      "compute.networks.updatePolicy",
+      "compute.routes.create",
+      "compute.routes.delete",
+      "compute.routes.get",
+      "compute.routes.list",
+      "compute.routes.update",
+      "compute.zoneOperations.get",
+      "compute.zoneOperations.list",
+      "compute.zones.list",
+      "logging.logEntries.create",
+      "system.slice",
+      "udsagent.init",
+      "udsagent.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-backup-and-dr",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    }
+  ]
+}

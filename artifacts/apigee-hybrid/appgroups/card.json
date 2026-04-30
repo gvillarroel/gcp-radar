@@ -1,0 +1,240 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.699Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid",
+  "feature_name": "AppGroups",
+  "feature_slug": "appgroups",
+  "summary": "AppGroups support in Apigee hybrid allows grouping apps managed by the same teams, with availability introduced as a preview feature in version 1.10.",
+  "extended_definition": "AppGroups support in Apigee hybrid allows grouping apps managed by the same teams, with availability introduced as a preview feature in version 1.10.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Organizing client app ownership \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "An AppGroup represents a relationship between one or more apps that are managed by the same set of people.",
+          "Description Permissions Manage AppGroups and associated apps and keys. apigee.appgroups.list apigee.appgroups.get apigee.appgroups.create apigee.appgroups.update apigee.appgroups.delete Manage AppGroup apps. apigee.appgroupapps.list apigee.appgroupapps.get apigee.appgroupapps.create apigee.appgroupapps.manage apigee.appgroupapps.delete Manage app keys for AppGroups: apigee.appkeys.get apigee.appkeys.create apigee.appkeys.manage apigee.appkeys.delete Manage AppGroup subscriptions and monetization configurations. apigee.appgroupbalances.adjust apigee.appgroupbalances.get apigee.appgroupbalances.update apigee.appgroupmonetizationconfigs.get apigee.appgroupmonetizationconfigs.update apigee.appgroupsubscriptions.create apigee.appgroupsubscriptions.get apigee.appgroupsubscriptions.list apigee.appgroupsubscriptions.update Viewing and managing AppGroups This section shows how to view and manage AppGroups.",
+          "Managing AppGroups using the Apigee APIs Use these APIs to manage AppGroups in your orgs: Activities Link View and manage AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups View and manage the apps that belong to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps View and manage the app keys associated to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps.keys View and manage AppGroup subscriptions to API products https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.subscriptions See also AppGroup subscription management ."
+        ]
+      },
+      {
+        "title": "Configuration property reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Custom annotations . metrics.app.resources.requests.cpu Advanced Introduced in version: 1.4.0 Default value: 500m Chart: apigee-telemetry The CPU needed for normal operation of the app in a Kubernetes container, in millicores. metrics.app.resources.requests.memory Advanced Introduced in version: 1.4.0 Default value: 512Mi Chart: apigee-telemetry The memory needed for normal operation of the app in a Kubernetes container, in mebibytes. metrics.app.resources.limits.cpu Advanced Introduced in version: 1.4.0 Default value: 500m Chart: apigee-telemetry The CPU limit for the app resource in a Kubernetes container, in millicores. metrics.app.resources.limits.memory Advanced Introduced in version: 1.4.0 Default value: 1Gi Chart: apigee-telemetry The memory limit for the app resource in a Kubernetes container, in gibibytes. metrics.appStackdriverExporter.resources.limits.cpu Advanced Introduced in version: 1.7.0 Default value: 500m Chart: apigee-telemetry The CPU limit for the stackdriverExporter resource in a Kubernetes container, in millicores. metrics.appStackdriverExporter.resources.limits.memory Advanced Introduced in version: 1.7.0 Default value: 1Gi Chart: apigee-telemetry The memory limit for the stackdriverExporter resource in a Kubernetes container, in gibibytes. metrics.appStackdriverExporter.resources.requests.cpu Advanced Introduced in version: 1.7.0 Default value: 128m Chart: apigee-telemetry The CPU needed for normal operation of the stackdriverExporter in a Kubernetes container, in millicores. metrics.appStackdriverExporter.resources.requests.memory Advanced Introduced in version: 1.7.0 Default value: 512Mi Chart: apigee-telemetry The memory needed for normal operation of the stackdriverExporter in a Kubernetes container, in mebibytes. metrics.collector.envVars Basic Introduced in version: 1.13 Default value: None Chart: apigee-telemetry Allows you to pass in and override environment variables in OpenTelemetry.",
+          "Set the value to Max allows the largest change in scaling down runtime instances. runtime.hpaBehavior.scaleDown.stabilizationWindowSeconds Advanced Introduced in version: 1.7.0 Default value: 120 Chart: apigee-env The number of seconds for which past recommendations should be considered while scaling down. runtime.hpaBehavior.scaleUp.percent.periodSeconds Advanced Introduced in version: 1.7.0 Default value: 60 Chart: apigee-env The window of time for which the policy should hold true when scaling up a percentage of runtime instances. runtime.hpaBehavior.scaleUp.percent.value Advanced Introduced in version: 1.7.0 Default value: 20 Chart: apigee-env The window of time for which the policy should hold true when scaling up a percentage of runtime instances. runtime.hpaBehavior.scaleUp.pods.periodSeconds Advanced Introduced in version: 1.7.0 Default value: 60 Chart: apigee-env The window of time for which the policy should hold true when scaling up a number of runtime instances. runtime.hpaBehavior.scaleUp.pods.value Advanced Introduced in version: 1.7.0 Default value: 4 Chart: apigee-env The amount of change which is permitted by the policy when scaling up a number of runtime instances. runtime.hpaBehavior.scaleUp.selectPolicy Advanced Introduced in version: 1.7.0 Default value: Max Chart: apigee-env The decision that autoscaler makes between multiple autoscaling policies.",
+          "Set the value to Max allows the largest change in scaling up runtime instances. runtime.hpaBehavior.scaleUp.stabilizationWindowSeconds Advanced Introduced in version: 1.7.0 Default value: 30 Chart: apigee-env The number of seconds for which past recommendations should be considered while scaling up runtime instances. runtime.hpaMetrics.serverMainTaskWaitTime Advanced Introduced in version: 1.7.0 Default value: 400M Chart: apigee-env The desired average wait time (in ms) of processing queue in runtime instances for proxy requests at the http layer. runtime.hpaMetrics.serverNioTaskWaitTime Advanced Introduced in version: 1.7.0 Default value: 400M Chart: apigee-env The desired average wait time (in ms) of processing queue in runtime instances for proxy requests to process policies. runtime.hpaMetrics.targetCPUUtilizationPercentage Advanced Introduced in version: 1.7.0 Default value: 75 Chart: apigee-env The desired CPU utilization percentage across all runtime instances. runtime.image.tag Advanced Introduced in version: 1.0.0 Default value: 1.16.0 Chart: apigee-env The version label for this service's Docker image. runtime.image.url Advanced Introduced in version: 1.0.0 Default value: None Chart: apigee-env The location of the Docker image for this service."
+        ]
+      },
+      {
+        "title": "\"New Apigee hybrid installation and administration Preview \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have relied on default names then it would be deleted in next step otherwise you will need to delete them manually using following commands: kubectl delete secret -n ${ APIGEE NAMESPACE } $(kubectl get ${ APIGEE COMPONENT } ${ APIGEE COMPONENT NAME } -n ${ APIGEE NAMESPACE } -o=jsonpath='{.spec.components. .appServiceAccountSecretName}') kubectl delete secret -n ${ APIGEE NAMESPACE } $(kubectl get ${ APIGEE COMPONENT } ${ APIGEE COMPONENT NAME } -n ${ APIGEE NAMESPACE } -o=jsonpath='{.spec.components. .podServiceAccountName}') In case of OpenShift, you will need to delete scc (Security Context Constraints) created during installation of apigee hybrid. kubectl delete scc ${ SECURITY CONTEXT CONSTRAINTS NAME } Run the below command to delete roles, rolebindings, CRDs, controller deployments etc. kubectl delete -k ${ INSTALL DIR } /overlays/initialization/ingress kubectl delete -k ${ INSTALL DIR } /overlays/initialization/rbac kubectl delete -k ${ INSTALL DIR } /overlays/initialization/webhooks kubectl delete -k ${ INSTALL DIR } /overlays/initialization/crds kubectl delete -k ${ INSTALL DIR } /overlays/initialization/certificates Run the below command to delete apigee namespace kubectl delete -f ${ INSTALL DIR } /overlays/initialization/namespace.yaml Alternatively, use the command: kubectl delete $APIGEE NAMESPACE Multi Instance Installation Multi instance setup refers to the hybrid setup that can span across multiple regions or within the same regions too.",
+          "For example, if you had not change the name of the encryption keys, then you can delete them by using: kubectl delete secret -n ${ APIGEE NAMESPACE } $APIGEE ENV -encryption-keys Delete Google Cloud service account secrets: kubectl delete secret -n ${ APIGEE NAMESPACE } $(kubectl get env $APIGEE ENV -n ${ APIGEE NAMESPACE } -o=jsonpath='{.spec.components. .appServiceAccountSecretName}') Delete kubernetes service accounts: kubectl delete secret -n ${ APIGEE NAMESPACE } $(kubectl get env $APIGEE ENV -n ${ APIGEE NAMESPACE } -o=jsonpath='{.spec.components. .podServiceAccountName}') Delete the Apigee environment custom resource: kubectl -n ${ APIGEE NAMESPACE } delete env $APIGEE ENV Deleting a hybrid setup Caution: This is how the steps will appear for normal apigee hybrid installation, steps will slightly differ for advanced cases like having second organization within same cluster etc.",
+          "In the folder structure below, you can make a copy of instance1 directory called instance2 and modify the datastore and ingress configurations as needed. apigee-hybrid-setup folder structure for multi instance setup.] . ├── bases │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - controller - deployment . yaml │ │ │ └── kustomization . yaml │ │ └── istiod │ │ ├── apigee - ingressgateway - manager - deployment . yaml │ │ └── kustomization . yaml │ └── initialization │ ├── certificates │ │ ├── certificates - and - issuers . yaml │ │ └── kustomization . yaml │ ├── crds │ │ ├── customresourcedefinition - apigeedatastores . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeedeployments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeenvironments . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeorganizations . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeredis . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeerouteconfigs . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeeroutes . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - apigeetelemetries . apigee . cloud . google . com . yaml │ │ ├── customresourcedefinition - cassandradatareplications . apigee . cloud . google . com . yaml │ │ └── kustomization . yaml │ ├── ingress │ │ ├── envoyfilter - 1.11 . yaml │ │ └── kustomization . yaml │ ├── openshift │ │ ├── kustomization . yaml │ │ └── scc . yaml │ ├── rbac │ │ ├── apigee - controller │ │ │ ├── kustomization . yaml │ │ │ └── rbac . yaml │ │ └── apigee - embedded - ingress - controller │ │ ├── cluster - role - bindings . yaml │ │ ├── cluster - roles . yaml │ │ ├── kustomization . yaml │ │ └── service - account . yaml │ └── webhooks │ ├── kustomization . yaml │ ├── mutatingwebhookconfiguration . yaml │ └── validatingwebhookconfiguration . yaml ├── instances │ └── instance1 ( Add the 2 nd instance under instances directory similar to instance1 ) │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - env - group │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── workload - identity - logger │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ └── workload - identity - metrics │ │ ├── apigee - workload - identities . yaml │ │ ├── kustomization . yaml │ │ └── patch . yaml │ └── kustomization . yaml ├── overlays │ ├── controllers │ │ ├── apigee - controller │ │ │ ├── apigee - hybrid - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ ├── istiod │ │ │ ├── apigee - ingressgateway - manager - deployment - patch . yaml │ │ │ ├── apigee - istio - mesh - config . yaml │ │ │ ├── components │ │ │ │ ├── imagepullsecret │ │ │ │ │ ├── kustomization . yaml │ │ │ │ │ └── patch . yaml │ │ │ │ └── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ ├── initialization │ │ ├── certificates │ │ │ ├── apigee - ingressgateway - manager - certificate . yaml │ │ │ └── kustomization . yaml │ │ ├── crds │ │ │ └── kustomization . yaml │ │ ├── ingress │ │ │ └── kustomization . yaml │ │ ├── namespace . yaml │ │ ├── openshift │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── rbac │ │ │ ├── apigee - controller │ │ │ │ └── kustomization . yaml │ │ │ ├── apigee - embedded - ingress - controller │ │ │ │ └── kustomization . yaml │ │ │ └── kustomization . yaml │ │ └── webhooks │ │ ├── kustomization . yaml │ │ ├── mutatingwebhookconfiguration . yaml │ │ └── validatingwebhookconfiguration . yaml │ └── instances │ └── instance1 │ ├── datastore │ │ ├── apigee - datastore . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── openshift - scc │ │ │ │ ├── kustomization . yaml │ │ │ │ └── scc . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── environments │ │ ├── kustomization . yaml │ │ └── test │ │ ├── apigee - environment . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── kustomization . yaml │ ├── organization │ │ ├── apigee - organization . yaml │ │ ├── components │ │ │ ├── http - proxy │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── redis │ │ ├── apigee - redis . yaml │ │ ├── components │ │ │ ├── imagepullsecret │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ ├── nodeselector │ │ │ │ ├── kustomization . yaml │ │ │ │ └── patch . yaml │ │ │ └── workload - identity │ │ │ ├── apigee - workload - identities . yaml │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── kustomization . yaml │ │ └── secrets . yaml │ ├── route - config │ │ ├── kustomization . yaml │ │ └── test - envgroup │ │ ├── apigee - route - config . yaml │ │ ├── components │ │ │ ├── http - and - non - sni - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ ├── http - client │ │ │ │ ├── apigee - route . yaml │ │ │ │ └── kustomization . yaml │ │ │ └── non - sni - client │ │ │ ├── apigee - route . yaml │ │ │ └── kustomization . yaml │ │ └── kustomization . yaml │ └── telemetry │ ├── apigee - telemetry . yaml │ ├── components │ │ ├── http - proxy │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── imagepullsecret │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── logger │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── metrics │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── nodeselector │ │ │ ├── kustomization . yaml │ │ │ └── patch . yaml │ │ ├── openshift - scc │ │ │ ├── kustomization . yaml │ │ │ └── scc . yaml │ │ ├── workload - identity - logger │ │ │ ├── apigee - workload - identities . yaml │ │ │ └── kustomization . yaml │ │ └── workload - identity - metrics │ │ ├── apigee - workload - identities . yaml │ │ ├── kustomization . yaml │ │ └── patch . yaml │ └── kustomization . yaml ├── README . md ├── templates │ ├── ingress - certificate . yaml │ ├── ingress - cert - secret . yaml │ └── service - account - key - secret . yaml └── tools ├── apigee - hybrid - setup . sh ├── common . sh ├── create - service - account . sh └── dump kubernetes . sh Multi Instance setup on GKE Prerequisites Before configuring multiple instances of hybrid, you are expected have completed the following prerequisites: Set up Kubernetes clusters in multiple regions(same or different) with different CIDR blocks Set up cross-region communication Open Cassandra ports 7000 and 7001 between Kubernetes clusters across all regions (7000 may be used as a backup option during troubleshooting)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.appgroupapps.create",
+      "apigee.appgroupapps.delete",
+      "apigee.appgroupapps.get",
+      "apigee.appgroupapps.list",
+      "apigee.appgroupapps.manage",
+      "apigee.appgroupbalances.adjust",
+      "apigee.appgroupbalances.get",
+      "apigee.appgroupbalances.update",
+      "apigee.appgroupmonetizationconfigs.get",
+      "apigee.appgroupmonetizationconfigs.update",
+      "apigee.appgroups.create",
+      "apigee.appgroups.delete",
+      "apigee.appgroups.get",
+      "apigee.appgroups.list",
+      "apigee.appgroups.update",
+      "apigee.appgroupsubscriptions.create",
+      "apigee.appgroupsubscriptions.get",
+      "apigee.appgroupsubscriptions.list",
+      "apigee.appgroupsubscriptions.update",
+      "apigee.appkeys.create",
+      "apigee.appkeys.delete",
+      "apigee.appkeys.get",
+      "apigee.appkeys.manage",
+      "apigee.cloud.google.com",
+      "metrics.app.resources.limits.cpu",
+      "metrics.app.resources.limits.memory",
+      "metrics.app.resources.requests.cpu",
+      "metrics.app.resources.requests.memory",
+      "metrics.appStackdriverExporter.resources.limits.cpu",
+      "metrics.appStackdriverExporter.resources.limits.memory",
+      "metrics.appStackdriverExporter.resources.requests.cpu",
+      "metrics.appStackdriverExporter.resources.requests.memory",
+      "metrics.collector.envVars",
+      "metrics.proxyStackdriverExporter.resources.requests.memory",
+      "metrics.stackdriverExporter.resources.limits.cpu",
+      "namespace.yaml",
+      "organizations.appgroups",
+      "organizations.appgroups.apps",
+      "organizations.appgroups.apps.keys",
+      "organizations.appgroups.subscriptions",
+      "runtime.hpaBehavior.scaleDown.stabilizationWindowSeconds",
+      "runtime.hpaBehavior.scaleUp.percent.periodSeconds",
+      "runtime.hpaBehavior.scaleUp.percent.value",
+      "runtime.hpaBehavior.scaleUp.pods.periodSeconds",
+      "runtime.hpaBehavior.scaleUp.pods.value",
+      "runtime.hpaBehavior.scaleUp.selectPolicy",
+      "runtime.hpaBehavior.scaleUp.stabilizationWindowSeconds",
+      "runtime.hpaMetrics.serverMainTaskWaitTime",
+      "runtime.hpaMetrics.serverNioTaskWaitTime",
+      "runtime.hpaMetrics.targetCPUUtilizationPercentage",
+      "runtime.image.tag",
+      "runtime.image.url",
+      "spec.components"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/latest/config-prop-ref",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/preview/new-install-user-guide"
+      ]
+    }
+  ]
+}

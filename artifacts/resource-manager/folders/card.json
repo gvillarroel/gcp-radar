@@ -1,0 +1,154 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Folders",
+  "feature_slug": "folders",
+  "summary": "Folders let you organize projects and nested folders within the Cloud resource hierarchy and apply shared IAM policies.",
+  "extended_definition": "Folders let you organize projects and nested folders within the Cloud resource hierarchy and apply shared IAM policies.",
+  "lifecycle": {
+    "latest_feature_date": "2017-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-folders",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage projects within folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Resource Manager Guides Send feedback Manage projects within folders Stay organized with collections Save and categorize content based on your preferences.",
+          "DISPLAY NAME : the display name of the folder being moved, for example \"My Awesome Folder.\" The Move Folder response: { \"name\": \"operations/fm.1234567890\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\", \"displayName\": \" DISPLAY NAME \", \"operationType\": \"MOVE\" } } The Get Operation curl request: curl -H \"Authorization: Bearer ${bearer token}\" \\ https://cloudresourcemanager.googleapis.com/v3/operations/fm.1234567890 The Get Operation response: { \"name\": \"operations/fm.1234567890\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\", \"displayName\": \" DISPLAY NAME \", \"operationType\": \"MOVE\" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.Folder\", \"name\": \"folders/12345\", \"parent\": \"folders/98765\", \"displayName\": \" DISPLAY NAME \", \"lifecycleState\": \"ACTIVE\", \"createTime\": \"2017-07-19T23:29:26.018Z\", \"updateTime\": \"2017-07-20T00:54:44.295Z\" } } View or list projects within a folder To view or list projects that are direct children of a folder, you must have the Folder Viewer role ( roles/resourcemanager.folderViewer ) or the Browser role ( roles/browser ) on the folder.",
+          "This page describes how to organize your Google Cloud hierarchy by nesting projects within folders."
+        ]
+      },
+      {
+        "title": "Create folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to create Google Cloud folders to group and organize projects in a resource hierarchy.",
+          "POST https://cloudresourcemanager.googleapis.com/v3/projects/ Authorization: Content-Type: application/json { \"display name\": \"our-folder-456\", \"parent\": \"organizations/123\", \"tags\": { \"key\": \"123/environment\" \"value\": \"production\" }, \"tags\": { \"key\": \"123/costCenter\" \"value\": \"marketing\" } } Configure access to folders To configure access to folders, you must have the Folder IAM Administrator or Folder Admin role at the parent level.",
+          "Home Documentation Security Resource Manager Guides Send feedback Create folders Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"View, update, and delete folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Resource Manager Guides Send feedback View, update, and delete folders Stay organized with collections Save and categorize content based on your preferences.",
+          "Undelete : If you accidentally delete a folder, you can restore it within the 30-day window using the gcloud resource-manager folders undelete command or the API.",
+          "You can't create new projects or sub-folders within a soft-deleted folder."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "fm.1234567890",
+      "resourcemanager.folderViewer",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/browser",
+      "roles/resourcemanager.folderViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/manage-folders"
+      ]
+    }
+  ]
+}

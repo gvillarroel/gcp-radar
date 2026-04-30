@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.964Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Lending DocAI Document Splitter and Classifier",
+  "feature_slug": "lending-docai-document-splitter-and-classifier",
+  "summary": "The Lending DocAI Document Splitter and Classifier now supports additional processors.",
+  "extended_definition": "The Lending DocAI Document Splitter and Classifier now supports additional processors.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+      "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response",
+      "https://docs.cloud.google.com/document-ai/docs/output"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "RawDocument ( content = image content , mime type = mime type ), Only supported for Document OCR processor process options = process options , ) result = client . process document ( request = request ) For a full list of Document object attributes, reference this page: https://cloud.google.com/document-ai/docs/reference/rest/v1/Document return result . document Splitting and classification Here's a composite 10-page PDF that contains different types of documents and forms: Download PDF Here's the full document object as returned by the lending document splitter and classifier : Download JSON Each document that is detected by the splitter is represented by an entity .",
+          "For more information, see Set up authentication for a local development environment . from typing import Optional , Sequence from google.api core.client options import ClientOptions from google.cloud import documentai TODO(developer): Uncomment these variables before running the sample. project id = \"YOUR PROJECT ID\" location = \"YOUR PROCESSOR LOCATION\" # Format is \"us\" or \"eu\" processor id = \"YOUR PROCESSOR ID\" # Create processor before running sample processor version = \"rc\" # Refer to https://cloud.google.com/document-ai/docs/manage-processor-versions for more information file path = \"/path/to/local/pdf\" mime type = \"application/pdf\" # Refer to https://cloud.google.com/document-ai/docs/file-types for supported file types def process document splitter sample ( project id : str , location : str , processor id : str , processor version : str , file path : str , mime type : str , ) - > None : Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type ) Read the splitter output from a document splitter/classifier processor: e.g. https://cloud.google.com/document-ai/docs/processors-list#processor procurement-document-splitter This processor only provides text for the document and information on how to split the document on logical boundaries.",
+          "ProcessRequest request = ProcessRequest . newBuilder (). setName ( name ). setRawDocument ( document ). build (); // Recognizes text entities in the PDF document ProcessResponse result = client . processDocument ( request ); Document documentResponse = result . getDocument (); System . out . println ( \"Document processing complete.\" ); // Read the splitter output from the document splitter processor: // https://cloud.google.com/document-ai/docs/processors-list#processor doc-splitter // This processor only provides text for the document and information on how // to split the document on logical boundaries."
+        ]
+      },
+      {
+        "title": "Custom splitter \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "Repeat the previous steps with the following paths and document labels: Bucket path Document label cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/1040 form 1040 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w2 form w2 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w9 form w9 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/paystub paystub The console should look like this when complete: Select Import .",
+          "What's next Previous arrow back Custom classifier Next Document splitters behavior arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom splitter, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Create, use, and manage a custom document classifier \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Create a custom classifier in the Google Cloud console You can create custom classifiers that are specifically suited to your documents and trained and evaluated with your data.",
+          "Label a document The process of selecting text in a document and applying labels is known as annotation."
+        ]
+      },
+      {
+        "title": "Sample processor output \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/output",
+        "source_id": "site-docs-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Digitize text Processors Output samples Enterprise Document OCR (Optical Character Recognition) Category Digitize Solution type General Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-ocr-v1.2-2022-11-10 Output Document JSON pretrained-ocr-v2.0-2023-06-02 Output Document JSON Checkbox Extraction - Document JSON Font Detection - Document JSON Math OCR - Document JSON pretrained-ocr-v2.1-2024-08-07 Output Document JSON Premium Output Document JSON pretrained-ocr-v2.1.1-2025-01-31 Output Document JSON Premium Output Document JSON Extract documents Processors Output samples Custom Extractor Category Extract Solution type Custom Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-foundation-model-v1.5-2025-05-05 Output Document JSON pretrained-foundation-model-v1.5-pro-2025-06-20 Output Document JSON pretrained-foundation-model-v1.5.1-2025-08-07 Output Document JSON pretrained-foundation-model-v1.6-pro-2025-12-01 Output Document JSON pretrained-foundation-model-v1.6-2026-01-13 Output Document JSON Form Parser Category Extract Solution type General Functions OCR, Form Parsing, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-form-parser-v1.0-2020-09-23 Output Document JSON pretrained-form-parser-v2.0-2022-11-10 Output Document JSON pretrained-form-parser-v2.1-2023-06-26 Output Document JSON Layout Parser Category Extract Solution type General Functions Layout Parsing, Document Chunking Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-layout-parser-v1.0-2024-06-03 Output Document JSON Classify documents Processors Output samples Custom Classifier Category Classify Solution type Custom Functions OCR, Classification Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-classifier-v1.5-2025-08-05 Output Document JSON pretrained-classifier-v1.6-2026-03-09 Output Document JSON pretrained-classifier-v1.6-pro-2026-03-09 Output Document JSON Custom Splitter Category Classify Solution type Custom Functions OCR, Classification, Splitting Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-splitter-v1.5-2025-07-14 Output Document JSON pretrained-splitter-v1.6-2026-03-09 Output Document JSON pretrained-splitter-v1.6-pro-2026-03-09 Output Document JSON Explore pretrained processors Processors Output samples Bank Statement Parser Category Pretrained Solution type Lending Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-bankstatement-v1.0-2021-08-08 Output Document JSON pretrained-bankstatement-v1.1-2021-08-13 Output Document JSON pretrained-bankstatement-v2.0-2021-12-10 Output Document JSON pretrained-bankstatement-v3.0-2022-05-16 Output Document JSON pretrained-bankstatement-v4.0-2023-07-31 Output Document JSON pretrained-bankstatement-v5.0-2023-12-06 Output Document JSON W2 Parser Category Pretrained Solution type Lending Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-w2-v1.0-2020-10-01 Output Document JSON pretrained-w2-v1.1-2022-01-27 Output Document JSON pretrained-w2-v1.2-2022-01-28 Output Document JSON pretrained-w2-v2.0-2022-03-30 Output Document JSON pretrained-w2-v2.1-2022-06-08 Output Document JSON US Passport Parser Category Pretrained Solution type Identity Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-us-passport-v1.0-2021-06-14 Output Document JSON Utility Parser Category Pretrained Solution type Procurement Functions OCR, Entity Extraction Release stage General availability Access status Limited security Full processor details Detailed entry picture as pdfs Sample input file pretrained-utility-v1.1-2021-04-09 Output Document JSON pretrained-utility-v1.2-2022-12-15 Output Document JSON Identity Document Proofing Parser Category Pretrained Solution type Identity Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-id-proofing-v1.0-2022-10-03 Output Document JSON pretrained-id-proofing-v1.1-2023-05-18 Output Document JSON pretrained-id-proofing-v1.2-2023-10-04 Output Document JSON US Driver License Parser Category Pretrained Solution type Identity Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-us-driver-license-v1.0-2021-06-14 Output Document JSON Expense Parser Category Pretrained Solution type Procurement Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-expense-v1.1-2021-04-09 Output Document JSON pretrained-expense-v1.3.2-2024-09-11 Output Document JSON pretrained-expense-v1.4-2022-11-18 Output Document JSON pretrained-expense-v1.4.2-2024-09-12 Output Document JSON Invoice Parser Category Pretrained Solution type Procurement Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Full processor details Detailed entry picture as pdfs Sample input file pretrained-invoice-v1.1-2021-04-09 Output Document JSON pretrained-invoice-v1.2-2022-02-18 Output Document JSON pretrained-invoice-v1.3-2022-07-15 Output Document JSON pretrained-invoice-v1.4-2022-10-21 Output Document JSON pretrained-invoice-v1.5-2023-09-15 Output Document JSON pretrained-invoice-v2.0-2023-12-06 Output Document JSON Previous arrow back Client libraries Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The files on this page are sample documents in a variety of structures and the raw outputs from the Document AI API in the Document format.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.client",
+      "documentai.admin",
+      "e.g",
+      "googleapis.dev",
+      "index.html",
+      "storage.admin",
+      "v1.0",
+      "v1.1",
+      "v1.2",
+      "v1.3",
+      "v1.3.2",
+      "v1.4",
+      "v1.4.2",
+      "v1.5",
+      "v1.5.1",
+      "v1.6",
+      "v2.0",
+      "v2.1",
+      "v2.1.1",
+      "v3.0",
+      "v4.0",
+      "v5.0"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/output"
+      ]
+    }
+  ]
+}

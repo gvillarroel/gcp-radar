@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.403Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api",
+  "feature_name": "Event type field",
+  "feature_slug": "event-type-field",
+  "summary": "The Calendar API exposes an eventType field so applications can distinguish special event types such as outOfOffice.",
+  "extended_definition": "The Calendar API exposes an eventType field so applications can distinguish special event types such as outOfOffice.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+      "https://developers.google.com/workspace/calendar/api/guides/create-events",
+      "https://developers.google.com/workspace/calendar/api/guides/event-types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Event types \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Events . get ( CALENDAR ID , ' EVENT ID ' ); console . log ( response ); } catch ( exception ) { console . log ( exception . message ); } } / Creates a default event. / function createDefaultEvent () { const event = { start : { dateTime : '2024-07-30T10:30:00+01:00' }, end : { dateTime : '2024-07-30T12:30:00+01:00' }, description : 'Created from Apps Script.' , eventType : 'default' , summary : 'Sample event' , } createEvent ( event ); } / Creates a birthday event. / function createBirthday () { const event = { start : { date : '2024-01-29' }, end : { date : '2024-01-30' }, eventType : 'birthday' , recurrence : [ \"RRULE:FREQ=YEARLY\" ], summary : \"My friend's birthday\" , transparency : \"transparent\" , visibility : \"private\" , } createEvent ( event ); } / Creates a Calendar event.",
+          "See https://developers.google.com/workspace/calendar/api/v3/reference/events/list / function listEvents ( eventType = undefined ) { // Query parameters for the list request. const optionalArgs = { eventTypes : eventType ? [ eventType ] : undefined , singleEvents : true , timeMax : '2024-07-30T00:00:00+01:00' , timeMin : '2024-07-29T00:00:00+01:00' , } try { var response = Calendar .",
+          "The API allows creating birthday events using the insert method with the following specifications: eventType is set to 'birthday' . start and end fields need to define an all-day event which spans exactly one day. visibility field value must be 'private' . transparency field value must be 'transparent' ."
+        ]
+      },
+      {
+        "title": "\"Manage focus time, out of office, and working location events \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To list status events, use the events.list method, specifying one or more of the following values in the eventTypes field: 'focusTime' 'outOfOffice' 'workingLocation' Then, in the returned Event objects, inspect that the eventType field has the requested value, and refer to the corresponding field for details about the status created by the user in Google Calendar: focusTimeProperties outOfOfficeProperties workingLocationProperties Subscribe to changes on status events You can subscribe to changes on status events in the Events resource of the Calendar API.",
+          "Use the events.watch method, specifying the calendarId of the Calendar to subscribe to and one or more of the following values in the eventTypes field: 'focusTime' 'outOfOffice' 'workingLocation' Create and update Calendar status events To create a status event, you create an instance of the Events resource using the events.insert method, setting the required fields for the event type.",
+          "Secondary calendars can't have status events. / Creates a focus time event. / function createFocusTime () { const event = { start : { dateTime : '2023-11-14T10:00:00+01:00' }, end : { dateTime : '2023-11-14T12:00:00+01:00' }, eventType : 'focusTime' , focusTimeProperties : { chatStatus : 'doNotDisturb' , autoDeclineMode : 'declineOnlyNewConflictingInvitations' , declineMessage : 'Declined because I am in focus time.' , } } createEvent ( event ); } / Creates an out of office event. / function createOutOfOffice () { const event = { start : { dateTime : '2023-11-15T10:00:00+01:00' }, end : { dateTime : '2023-11-15T18:00:00+01:00' }, eventType : 'outOfOffice' , outOfOfficeProperties : { autoDeclineMode : 'declineOnlyNewConflictingInvitations' , declineMessage : 'Declined because I am on vacation.' , } } createEvent ( event ); } / Creates a working location event. / function createWorkingLocation () { const event = { start : { date : \"2023-06-01\" }, end : { date : \"2023-06-02\" }, eventType : \"workingLocation\" , visibility : \"public\" , transparency : \"transparent\" , workingLocationProperties : { type : 'customLocation' , customLocation : { label : \"a custom location\" }, } } createEvent ( event ); } / Creates a Calendar event."
+        ]
+      },
+      {
+        "title": "Create events \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/create-events",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code example demonstrates how to update an existing event to add an attachment: Java public static void addAttachment ( Calendar calendarService , Drive driveService , String calendarId , String eventId , String fileId ) throws IOException { File file = driveService . files (). get ( fileId ). execute (); Event event = calendarService . events (). get ( calendarId , eventId ). execute (); List<EventAttachment> attachments = event . getAttachments (); if ( attachments == null ) { attachments = new ArrayList<EventAttachment> (); } attachments . add ( new EventAttachment () . setFileUrl ( file . getAlternateLink ()) . setMimeType ( file . getMimeType ()) . setTitle ( file . getTitle ())); Event changes = new Event () . setAttachments ( attachments ); calendarService . events (). patch ( calendarId , eventId , changes ) . setSupportsAttachments ( true ) . execute (); } PHP function addAttachment($calendarService, $driveService, $calendarId, $eventId, $fileId) { $file = $driveService->files->get($fileId); $event = $calendarService->events->get($calendarId, $eventId); $attachments = $event->attachments; $attachments[] = array( 'fileUrl' => $file->alternateLink, 'mimeType' => $file->mimeType, 'title' => $file->title ); $changes = new Google Service Calendar Event(array( 'attachments' => $attachments )); $calendarService->events->patch($calendarId, $eventId, $changes, array( 'supportsAttachments' => TRUE )); } Python def add attachment ( calendarService , driveService , calendarId , eventId , fileId ): file = driveService . files () . get ( fileId = fileId ) . execute () event = calendarService . events () . get ( calendarId = calendarId , eventId = eventId ) . execute () attachments = event . get ( 'attachments' , []) attachments . append ({ 'fileUrl' : file [ 'alternateLink' ], 'mimeType' : file [ 'mimeType' ], 'title' : file [ 'title' ] }) changes = { 'attachments' : attachments } calendarService . events () . patch ( calendarId = calendarId , eventId = eventId , body = changes , supportsAttachments = True ) . execute () Important: You must perform a full sync of all events before enabling the supportsAttachments parameter for event modifications when adding attachments support into your existing app that stores events locally.",
+          "Besides the type , the conferenceSolution also provides the name and the iconUri fields that you can use to represent the conference solution as shown below: JavaScript const solution = event . conferenceData . conferenceSolution ; const content = document . getElementById ( \"content\" ); const text = document . createTextNode ( \"Join \" + solution . name ); const icon = document . createElement ( \"img\" ); icon . src = solution . iconUri ; content . appendChild ( icon ); content . appendChild ( text ); You can create a new conference for an event by providing a createRequest with a newly generated requestId which can be a random string .",
+          "For example, to request conference generation for an existing event: JavaScript const eventPatch = { conferenceData : { createRequest : { requestId : \"7qxalsvy0e\" } } }; gapi . client . calendar . events . patch ({ calendarId : \"primary\" , eventId : \"7cbh8rpc10lrc0ckih9tafss99\" , resource : eventPatch , sendUpdates : \"all\" , conferenceDataVersion : 1 }). execute ( function ( event ) { console . log ( \"Conference created for event: %s\" , event . htmlLink ); }); The immediate response to this call might not yet contain the fully-populated conferenceData ; this is indicated by a status code of pending in the status field."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "events.insert",
+      "events.list",
+      "events.watch",
+      "key.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "https://developers.google.com/workspace/calendar/api/guides/create-events"
+      ]
+    }
+  ]
+}

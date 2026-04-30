@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:53.733Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "A3 Edge VM Guest Agent Configuration",
+  "feature_slug": "a3-edge-vm-guest-agent-configuration",
+  "summary": "Provides guest agent configuration support for A3 Edge VM names; Provides guest agent configuration support for A3 Edge VM names.",
+  "extended_definition": "Provides guest agent configuration support for A3 Edge VM names; Provides guest agent configuration support for A3 Edge VM names.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitoring system health with Node Problem Detector \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following guest policy enables the Node problem detector agent on all the instances. recipes: - name: recipe-enable-npd desiredState: INSTALLED installSteps: - scriptRun: interpreter: SHELL script: - #!/bin/bash systemctl start node-problem-detector Viewing the collected metrics Node Problem Detector reports a list of metrics against a Compute Engine instance monitored resource.",
+          "Using user-defined guest policies Container-Optimized OS includes OS Config agent , that uses OS system utilities to maintain the state for the VM that is specified in the guest policy.",
+          "For details about guest policies, see Enable OS Config agent and Create a guest policy ."
+        ]
+      },
+      {
+        "title": "\"Configuring instances with user-defined guest policies \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable OS Config and create a guest policy, see Enable OS Config agent and Create a guest policy , respectively.",
+          "Here is an example that shows how users can use assignment and recipes features of guest policies to create a file on instances located at us-central1-a. assignment : zones : - us-central1-a recipes : - name : recipe-runscript desiredState : INSTALLED installSteps : - scriptRun : interpreter : SHELL script : touch /tmp/TOUCH FILE Note: While it is optional to provide an interpreter on other distros, Container-Optimized OS requires interpreter to execute the given script.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring instances with user-defined guest policies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Logging agent configuration compatibility The logging agent is a fluentd-based container on x86-based Container-Optimized OS images and a fluent-bit binary on Arm-based Container-Optimized OS images.",
+          "The configurations of the two agents are not compatible.",
+          "Enable the logging agent in project metadata Starting in milestone 97 , logging can be enabled in project metadata: gcloud compute project-info add-metadata \\ --metadata google-logging-enabled = true Note: Metadata flags defined at instance level takes precedence over metadata flags defined at project level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/osconfig",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging"
+      ]
+    }
+  ]
+}

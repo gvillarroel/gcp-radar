@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Continuous materialized views console detail view",
+  "feature_slug": "continuous-materialized-views-console-detail-view",
+  "summary": "Bigtable now supports viewing continuous materialized view details directly in the Google Cloud console.",
+  "extended_definition": "Bigtable now supports viewing continuous materialized view details directly in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+      "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 238,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use counters instead of continuous materialized views for the following: Aggregations that don't require filters and don't need to be across rows If you need to immediately read your writes from the cluster they are written to Use continuous materialized views when you want to do the following: Generate a different key for queries against your aggregations See changes to the base table reflected in your aggregations Automatically combine data across multiple rows Use a combination of counters and continuous materialized views for use cases like when you want to do the following: Capture fresh metrics in an aggregate cell but keep historical rollups of those metrics Combine metrics in a continuous materialized view Resource provisioning and performance Ongoing processing for continuous materialized views occurs as a low-priority background job.",
+          "Metric Description materialized view/max delay Upper bound of processing delay for the continuous materialized view materialized view/storage Amount of data used for the continuous materialized view storage in bytes materialized view/intermediate storage Amount of data used by intermediate processing for the continuous materialized view in bytes table/materialized view intermediate storage Amount of data used by intermediate processing for continuous materialized views defined on this table materialized view/user errors Number of errors from user data for the continuous materialized view.",
+          "What's next Continuous materialized view query Create and manage continuous materialized views Create an asynchronous secondary index Schema design best practices Distributed counting in Bigtable Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Continuous materialized view queries \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+        "source_id": "site-docs-root-2",
+        "final_score": 203,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next Create and manage continuous materialized views GoogleSQL for Bigtable reference documentation Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Query details This section describes a continuous materialized view query and how the results might look when the view is queried.",
+          "Before you read this document, you should be familiar with Continuous materialized views and GoogleSQL for Bigtable ."
+        ]
+      },
+      {
+        "title": "Create and manage logical views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next GoogleSQL for Bigtable overview Continuous materialized views Overview of authorized views Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For a comparison with continuous materialized views and authorized views, see Tables and views .",
+          "Describe a logical view To get details about a logical view, use the gcloud bigtable logical-views describe command. gcloud bigtable logical-views describe VIEW \\ --instance = INSTANCE The terminal displays details similar to the following: createTime: '2025-03-07T19:49:56.316578Z' etag: W/ \"/v1/17919275593532352351\" name: projects/my-project/instances/my-instance/logicalViews/my-view query: SELECT street FROM addresses updateTime: '2025-03-07T19:49:56.316578Z' deletion protection: true Query a logical view After you create a logical view, you can query it using SQL, much like you query a regular table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-view-queries",
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views"
+      ]
+    }
+  ]
+}

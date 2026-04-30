@@ -1,0 +1,425 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.851Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "conversations.converse v1 response summary object migration",
+  "feature_slug": "conversations-converse-v1-response-summary-object-migration",
+  "summary": "The `conversations.converse` v1 API response for follow-up/answer workflows was changed to use a summary object instead of the previous reply and references objects; deprecated on 2023-08-29.",
+  "extended_definition": "The `conversations.converse` v1 API response for follow-up/answer workflows was changed to use a summary object instead of the previous reply and references objects; deprecated on 2023-08-29.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "2023-08-29",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: projects.locations.collections.engines.conversations.converse | Vertex AI Search | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 328,
+        "relevance": "",
+        "evidence_snippets": [
+          "Method: projects.locations.collections.engines.conversations.converse | Vertex AI Search | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Vertex AI Search Start free Guides Reference Samples Support Resources Search the Vertex AI Search documentation Technology areas More Guides Reference Samples Support Resources Search the Vertex AI Search documentation Cross-product tools More Console Vertex AI Search All APIs and reference Authenticate to Vertex AI Search Client libraries Overview C# reference Go reference Java reference Node.js Reference PHP reference Python reference Ruby reference MCP reference Overview Tools search conversational_search REST reference Overview v1 REST Resources projects Overview provision projects.locations Overview getAclConfig getCmekConfig setUpDataConnector setUpDataConnectorV2 updateAclConfig updateCmekConfig projects.locations.cmekConfigs Overview delete get list patch projects.locations.collections Overview delete getDataConnector updateDataConnector projects.locations.collections.dataConnector.operations Overview get list projects.locations.collections.dataStores Overview completeQuery create delete get getSiteSearchEngine list patch trainCustomModel projects.locations.collections.dataStores.branches Overview batchGetDocumentsMetadata projects.locations.collections.dataStores.branches.documents Overview create delete get import list patch purge projects.locations.collections.dataStores.branches.operations Overview cancel get list projects.locations.collections.dataStores.completionConfig Overview completeQuery projects.locations.collections.dataStores.completionSuggestions Overview import purge projects.locations.collections.dataStores.controls Overview create delete get list patch projects.locations.collections.dataStores.conversations Overview converse create delete get list patch projects.locations.collections.dataStores.customModels Overview list projects.locations.collections.dataStores.models.operations Overview get list projects.locations.collections.dataStores.operations Overview get list projects.locations.collections.dataStores.schemas Overview create delete get list patch projects.locations.collections.dataStores.schemas.operations Overview get list projects.locations.collections.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.dataStores.sessions Overview create delete get list patch projects.locations.collections.dataStores.sessions.answers Overview get projects.locations.collections.dataStores.siteSearchEngine Overview batchVerifyTargetSites disableAdvancedSiteSearch enableAdvancedSiteSearch fetchDomainVerificationStatus recrawlUris projects.locations.collections.dataStores.siteSearchEngine.operations Overview get list projects.locations.collections.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.collections.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.collections.dataStores.siteSearchEngine.targetSites.operations Overview get list projects.locations.collections.dataStores.suggestionDenyListEntries Overview import purge projects.locations.collections.dataStores.userEvents Overview collect import purge write projects.locations.collections.dataStores.widgetConfigs Overview get patch projects.locations.collections.engines Overview create delete get getIamPolicy list patch setIamPolicy projects.locations.collections.engines.assistants Overview assist create delete get list patch streamAssist projects.locations.collections.engines.assistants.agents.a2a.v1 Overview getCard projects.locations.collections.engines.assistants.agents.a2a.v1.message Overview send stream projects.locations.collections.engines.assistants.agents.a2a.v1.tasks Overview cancel get subscribe projects.locations.collections.engines.assistants.agents.a2a.v1.tasks.pushNotificationConfigs Overview create delete get list projects.locations.collections.engines.assistants.agents.operations Overview get projects.locations.collections.engines.completionConfig Overview completeQuery projects.locations.collections.engines.controls Overview create delete get list patch projects.locations.collections.engines.conversations Overview converse create delete get list patch projects.locations.collections.engines.operations Overview cancel get list projects.locations.collections.engines.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.engines.sessions Overview addContextFile create delete get list patch projects.locations.collections.engines.sessions.answers Overview get projects.locations.collections.engines.sessions.assistAnswers Overview get projects.locations.collections.engines.widgetConfigs Overview get patch projects.locations.collections.operations Overview get list projects.locations.dataStores Overview completeQuery create delete get getSiteSearchEngine list patch projects.locations.dataStores.branches Overview batchGetDocumentsMetadata projects.locations.dataStores.branches.documents Overview create delete get import list patch purge projects.locations.dataStores.branches.operations Overview cancel get list projects.locations.dataStores.completionConfig Overview completeQuery projects.locations.dataStores.completionSuggestions Overview import purge projects.locations.dataStores.controls Overview create delete get list patch projects.locations.dataStores.conversations Overview converse create delete get list patch projects.locations.dataStores.models.operations Overview get list projects.locations.dataStores.operations Overview get list projects.locations.dataStores.schemas Overview create delete get list patch projects.locations.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.dataStores.sessions Overview create delete get list patch projects.locations.dataStores.sessions.answers Overview get projects.locations.dataStores.siteSearchEngine Overview disableAdvancedSiteSearch enableAdvancedSiteSearch recrawlUris projects.locations.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.dataStores.suggestionDenyListEntries Overview import purge projects.locations.dataStores.userEvents Overview collect import purge write projects.locations.dataStores.widgetConfigs Overview get patch projects.locations.groundingConfigs Overview check projects.locations.identityMappingStores Overview create delete get importIdentityMappings list listIdentityMappings purgeIdentityMappings projects.locations.identityMappingStores.operations Overview get list projects.locations.licenseConfigs Overview create get patch projects.locations.operations Overview get list projects.locations.podcasts.operations Overview get projects.locations.rankingConfigs Overview rank projects.locations.userEvents Overview collect import write projects.locations.userStores Overview batchUpdateUserLicenses get patch projects.locations.userStores.licenseConfigsUsageStats Overview list projects.locations.userStores.userLicenses Overview list projects.operations Overview cancel get list Types AclConfig AdvancedCompleteQueryResponse AlloyDbSource AnswerGenerationSpec AnswerQueryResponse AssistUserMetadata BatchGetDocumentsMetadataResponse BigQuerySource BigtableSource BoostSpec CloudSqlSource CompleteQueryResponse ContentSearchSpec ConverseConversationResponse CrowdingSpec DataConnector DataStoreSpec DisplaySpec EndUserSpec FacetSpec FetchSitemapsResponse FhirStoreSource FirestoreSource GcsSource GetWidgetConfigRequestOption GroundingSpec IdentityMappingEntry ImageQuery ImportErrorConfig IndustryVertical InlineSource Interval ListControlsResponse ListConversationsResponse ListDataStoresResponse ListDocumentsResponse ListSchemasResponse ListServingConfigsResponse ListSessionsResponse ListTargetSitesResponse Matcher NaturalLanguageQueryUnderstandingSpec PurgeErrorConfig QueryExpansionSpec QueryUnderstandingSpec RankingExpressionBackend RecommendResponse ReconciliationMode RelatedQuestionsSpec RelevanceScoreSpec RelevanceThreshold SafetySpec SearchAsYouTypeSpec SearchResponse SearchResult SearchSpec SendMessageConfiguration SessionSpec SiteSearchEngine SolutionType SpannerSource SpellCorrectionSpec StreamResponse SubscriptionTier SuggestionType SuggestionTypeSpec UserLicense v1beta REST Resources projects Overview provision projects.locations Overview getAclConfig getCmekConfig obtainCrawlRate removeDedicatedCrawlRate setDedicatedCrawlRate updateAclConfig updateCmekConfig projects.locations.cmekConfigs Overview delete get list patch projects.locations.collections.dataConnector.operations Overview get list projects.locations.collections.dataStores Overview completeQuery create delete get getSiteSearchEngine list patch trainCustomModel projects.locations.collections.dataStores.branches Overview batchGetDocumentsMetadata projects.locations.collections.dataStores.branches.documents Overview create delete get import list patch purge projects.locations.collections.dataStores.branches.operations Overview cancel get list projects.locations.collections.dataStores.completionConfig Overview completeQuery projects.locations.collections.dataStores.completionSuggestions Overview import purge projects.locations.collections.dataStores.controls Overview create delete get list patch projects.locations.collections.dataStores.conversations Overview converse create delete get list patch projects.locations.collections.dataStores.customModels Overview list projects.locations.collections.dataStores.models.operations Overview get list projects.locations.collections.dataStores.operations Overview get list projects.locations.collections.dataStores.schemas Overview create delete get list patch projects.locations.collections.dataStores.schemas.operations Overview get list projects.locations.collections.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.dataStores.sessions Overview create delete get list patch projects.locations.collections.dataStores.sessions.answers Overview get projects.locations.collections.dataStores.siteSearchEngine Overview batchVerifyTargetSites disableAdvancedSiteSearch enableAdvancedSiteSearch fetchDomainVerificationStatus recrawlUris projects.locations.collections.dataStores.siteSearchEngine.operations Overview get list projects.locations.collections.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.collections.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.collections.dataStores.siteSearchEngine.targetSites.operations Overview get list projects.locations.collections.dataStores.suggestionDenyListEntries Overview import purge projects.locations.collections.dataStores.userEvents Overview collect import purge write projects.locations.collections.engines Overview create delete get getIamPolicy list patch pause resume setIamPolicy tune projects.locations.collections.engines.assistants Overview assist create delete get list patch streamAssist projects.locations.collections.engines.assistants.agents.operations Overview get projects.locations.collections.engines.completionConfig Overview completeQuery removeSuggestion projects.locations.collections.engines.controls Overview create delete get list patch projects.locations.collections.engines.conversations Overview converse create delete get list patch projects.locations.collections.engines.operations Overview get list projects.locations.collections.engines.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.engines.sessions Overview addContextFile create delete get list patch projects.locations.collections.engines.sessions.answers Overview get projects.locations.collections.engines.sessions.assistAnswers Overview get projects.locations.collections.operations Overview get list projects.locations.dataStores Overview completeQuery create delete get getSiteSearchEngine list patch projects.locations.dataStores.branches Overview batchGetDocumentsMetadata projects.locations.dataStores.branches.documents Overview create delete get import list patch purge projects.locations.dataStores.branches.operations Overview cancel get list projects.locations.dataStores.completionConfig Overview completeQuery projects.locations.dataStores.completionSuggestions Overview import purge projects.locations.dataStores.controls Overview create delete get list patch projects.locations.dataStores.conversations Overview converse create delete get list patch projects.locations.dataStores.models.operations Overview get list projects.locations.dataStores.operations Overview get list projects.locations.dataStores.schemas Overview create delete get list patch projects.locations.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.dataStores.sessions Overview create delete get list patch projects.locations.dataStores.sessions.answers Overview get projects.locations.dataStores.siteSearchEngine Overview disableAdvancedSiteSearch enableAdvancedSiteSearch recrawlUris projects.locations.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.dataStores.suggestionDenyListEntries Overview import purge projects.locations.dataStores.userEvents Overview collect import purge write projects.locations.evaluations Overview create get list listResults projects.locations.evaluations.operations Overview get projects.locations.groundingConfigs Overview check projects.locations.identityMappingStores Overview create delete get importIdentityMappings list listIdentityMappings purgeIdentityMappings projects.locations.identityMappingStores.operations Overview get list projects.locations.licenseConfigs Overview create get patch projects.locations.operations Overview get list projects.locations.podcasts.operations Overview get projects.locations.rankingConfigs Overview rank projects.locations.sampleQuerySets Overview create delete get list patch projects.locations.sampleQuerySets.operations Overview get projects.locations.sampleQuerySets.sampleQueries Overview create delete get import list patch projects.locations.userEvents Overview collect import write projects.locations.userStores Overview batchUpdateUserLicenses get patch projects.locations.userStores.licenseConfigsUsageStats Overview list projects.locations.userStores.userLicenses Overview list projects.operations Overview get list Types AclConfig AdvancedCompleteQueryResponse AlloyDbSource AnswerGenerationSpec AnswerQueryResponse AssistUserMetadata BatchGetDocumentsMetadataResponse BigQuerySource BigtableSource BoostSpec CloudSqlSource CompleteQueryResponse ContentSearchSpec ConverseConversationResponse EndUserSpec FetchSitemapsResponse FhirStoreSource FirestoreSource GcsSource GroundingSpec IdentityMappingEntry ImportErrorConfig IndustryVertical InlineSource ListControlsResponse ListConversationsResponse ListDataStoresResponse ListDocumentsResponse ListSchemasResponse ListServingConfigsResponse ListSessionsResponse ListTargetSitesResponse Matcher PersonalizationSpec PurgeErrorConfig QueryUnderstandingSpec RecommendResponse ReconciliationMode RelatedQuestionsSpec SafetySpec SearchResponse SearchResult SearchSpec SiteSearchEngine SolutionType SpannerSource SubscriptionTier SuggestionType SuggestionTypeSpec UserInfo UserLicense v1alpha REST Resources billingAccounts.billingAccountLicenseConfigs Overview distributeLicenseConfig get list retractLicenseConfig projects Overview get patch provision reportConsentChange projects.locations Overview completeExternalIdentities estimateDataSize getAclConfig getCmekConfig obtainCrawlRate queryConfigurablePricingUsageStats removeDedicatedCrawlRate setDedicatedCrawlRate setUpDataConnector setUpDataConnectorV2 updateAclConfig updateCmekConfig projects.locations.authorizations Overview create delete get list patch projects.locations.cmekConfigs Overview delete get list patch projects.locations.collections Overview delete get getDataConnector list patch updateDataConnector projects.locations.collections.dataConnector Overview acquireAccessToken acquireAndStoreRefreshToken buildActionInvocation checkRefreshToken executeAction fetchEntitiesTypes getConnectorSecret startConnectorRun projects.locations.collections.dataConnector.connectorRuns Overview list projects.locations.collections.dataConnector.operations Overview get list projects.locations.collections.dataStores Overview addPatientFilter completeQuery create delete deletePatientFilter get getCompletionConfig getDocumentProcessingConfig getSiteSearchEngine list patch removePatientFilter replacePatientFilter trainCustomModel updateCompletionConfig updateDocumentProcessingConfig projects.locations.collections.dataStores.branches Overview batchGetDocumentsMetadata get list projects.locations.collections.dataStores.branches.documents Overview create delete get getProcessedDocument import list patch purge projects.locations.collections.dataStores.branches.documents.chunks Overview get list projects.locations.collections.dataStores.branches.operations Overview cancel get list projects.locations.collections.dataStores.completionConfig Overview completeQuery projects.locations.collections.dataStores.completionSuggestions Overview import purge projects.locations.collections.dataStores.controls Overview create delete get list patch projects.locations.collections.dataStores.conversations Overview converse create delete get list patch projects.locations.collections.dataStores.customModels Overview list projects.locations.collections.dataStores.models.operations Overview get list projects.locations.collections.dataStores.operations Overview get list projects.locations.collections.dataStores.schemas Overview create delete get list patch projects.locations.collections.dataStores.schemas.operations Overview get list projects.locations.collections.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.dataStores.sessions Overview create delete get list patch projects.locations.collections.dataStores.sessions.answers Overview get projects.locations.collections.dataStores.siteSearchEngine Overview batchVerifyTargetSites disableAdvancedSiteSearch enableAdvancedSiteSearch fetchDomainVerificationStatus getUriPatternDocumentData recrawlUris setUriPatternDocumentData projects.locations.collections.dataStores.siteSearchEngine.operations Overview get list projects.locations.collections.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.collections.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.collections.dataStores.siteSearchEngine.targetSites.operations Overview get list projects.locations.collections.dataStores.suggestionDenyListEntries Overview import purge projects.locations.collections.dataStores.userEvents Overview collect import purge write projects.locations.collections.dataStores.widgetConfigs Overview get patch projects.locations.collections.engines Overview create delete get getCompletionConfig getIamPolicy getWorkspaceSettings list patch pause resume setIamPolicy tune updateCompletionConfig projects.locations.collections.engines.analytics Overview exportMetrics getConfig updateConfig projects.locations.collections.engines.assistants Overview assist create delete get list patch streamAssist projects.locations.collections.engines.assistants.agents Overview create delete get list patch projects.locations.collections.engines.assistants.agents.files Overview import projects.locations.collections.engines.assistants.agents.operations Overview get projects.locations.collections.engines.assistants.cannedQueries Overview create delete get list listActiveCannedQueryUserViews patch projects.locations.collections.engines.completionConfig Overview completeQuery removeSuggestion projects.locations.collections.engines.controls Overview create delete get list patch projects.locations.collections.engines.conversations Overview converse create delete get list patch projects.locations.collections.engines.operations Overview get list projects.locations.collections.engines.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.collections.engines.sessions Overview addContextFile create delete get list listSessionFileMetadata patch recommendQuestions removeContextFile selectContextFiles projects.locations.collections.engines.sessions.alphaEvolveExperiments.operations Overview get projects.locations.collections.engines.sessions.answers Overview get projects.locations.collections.engines.sessions.assistAnswers Overview get projects.locations.collections.engines.sessions.operations Overview get projects.locations.collections.engines.widgetConfigs Overview get patch projects.locations.collections.operations Overview get list projects.locations.dataStores Overview addPatientFilter completeQuery create delete deletePatientFilter get getCompletionConfig getDocumentProcessingConfig getSiteSearchEngine list patch removePatientFilter replacePatientFilter updateCompletionConfig updateDocumentProcessingConfig projects.locations.dataStores.branches Overview batchGetDocumentsMetadata get list projects.locations.dataStores.branches.documents Overview create delete get getProcessedDocument import list patch purge projects.locations.dataStores.branches.documents.chunks Overview get list projects.locations.dataStores.branches.operations Overview cancel get list projects.locations.dataStores.completionConfig Overview completeQuery projects.locations.dataStores.completionSuggestions Overview import purge projects.locations.dataStores.controls Overview create delete get list patch projects.locations.dataStores.conversations Overview converse create delete get list patch projects.locations.dataStores.models.operations Overview get list projects.locations.dataStores.operations Overview get list projects.locations.dataStores.schemas Overview create delete get list patch projects.locations.dataStores.servingConfigs Overview answer create delete get list patch recommend search searchLite streamAnswer projects.locations.dataStores.sessions Overview create delete get list patch projects.locations.dataStores.sessions.answers Overview get projects.locations.dataStores.siteSearchEngine Overview disableAdvancedSiteSearch enableAdvancedSiteSearch recrawlUris projects.locations.dataStores.siteSearchEngine.sitemaps Overview create delete fetch projects.locations.dataStores.siteSearchEngine.targetSites Overview batchCreate create delete get list patch projects.locations.dataStores.suggestionDenyListEntries Overview import purge projects.locations.dataStores.userEvents Overview collect import purge write projects.locations.dataStores.widgetConfigs Overview get patch projects.locations.evaluations Overview create get list listResults projects.locations.evaluations.operations Overview get projects.locations.groundingConfigs Overview check projects.locations.identityMappingStores Overview create delete get importIdentityMappings list listIdentityMappings purgeIdentityMappings projects.locations.identityMappingStores.operations Overview get list projects.locations.licenseConfigs Overview create get patch projects.locations.notebooks Overview batchDelete create get listRecentlyViewed share projects.locations.notebooks.audioOverviews Overview create delete projects.locations.notebooks.sources Overview batchCreate batchDelete get projects.locations.operations Overview get list projects.locations.podcasts.operations Overview get projects.locations.rankingConfigs Overview rank projects.locations.requirements Overview checkRequirement projects.locations.sampleQuerySets Overview create delete get list patch projects.locations.sampleQuerySets.operations Overview get projects.locations.sampleQuerySets.sampleQueries Overview create delete get import list patch projects.locations.userEvents Overview collect import write projects.locations.userStores Overview batchUpdateUserLicenses get patch projects.locations.userStores.licenseConfigsUsageStats Overview list projects.locations.userStores.operations Overview get list projects.locations.userStores.userLicenses Overview list projects.operations Overview get list Types AclConfig AdditionalParams AdvancedCompleteQueryResponse AlloyDbSource AnalyticsConfig AnswerGenerationSpec AnswerQueryResponse AssistGenerationConfig AssistUserMetadata BatchGetDocumentsMetadataResponse BigQuerySource BigtableSource BoostSpec BranchView CloudSqlSource CompleteQueryResponse CompletionConfig ConnectorRun ContentConfig ContentSearchSpec ConverseConversationResponse CustomFineTuningSpec DataStoreSpec DocumentType EndUserSpec FetchDocumentsRequest FetchDocumentsResponse FetchSitemapsResponse FhirStoreSource FirestoreSource GcsSource GetWidgetConfigRequestOption GroundingSpec HealthcareFhirConfig IdentityMappingEntry IdpConfig ImportErrorConfig IndustryVertical InlineSource ListBranchesResponse ListChunksResponse ListControlsResponse ListConversationsResponse ListDataStoresResponse ListDocumentsResponse ListSchemasResponse ListServingConfigsResponse ListSessionsResponse ListTargetSitesResponse Matcher ObservabilityConfig Origin PersonalizationSpec ProcessedDocument ProcessedDocumentFormat ProcessedDocumentType PurgeErrorConfig QueryUnderstandingSpec RecommendResponse ReconciliationMode RefreshTokenInfo RelatedQuestionsSpec SafetySpec SearchRequest SearchResponse SearchResult SearchSpec SiteSearchEngine SolutionType SourceId SpannerSource SubscriptionTerm SubscriptionTier SuggestionType SuggestionTypeSpec Type UserInfo UserLicense WidgetAcquireAccessTokenRequest WidgetAcquireAccessTokenResponse WidgetAcquireAndStoreRefreshTokenRequest WidgetAcquireAndStoreRefreshTokenResponse WidgetDeleteSessionRequest WidgetDeleteSessionResponse WidgetExecuteActionRequest WidgetExecuteActionResponse WidgetGetSessionRequest WidgetGetSessionResponse WidgetListSessionsRequest WidgetListSessionsResponse WidgetUpdateSessionRequest WidgetUpdateSessionResponse WidgetWriteUserEventRequest WidgetWriteUserEventResponse Shared Types Types Binding CancelOperationRequest Date DateTime Distribution GetIamPolicyRequest GetOperationRequest HttpBody ListOperationsRequest ListOperationsResponse Metric MetricKind MonitoredResource MonitoredResourceMetadata Point Policy SetIamPolicyRequest TimeSeries ValueType RPC API reference Overview a2a.v1 google.api google.cloud.discoveryengine.logging google.cloud.discoveryengine.v1 google.cloud.discoveryengine.v1alpha google.cloud.discoveryengine.v1beta google.cloud.location google.cloud.notebooklm.v1alpha google.iam.v1 google.longrunning google.monitoring.v3 google.rpc google.type AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation AI and ML Vertex AI Search Reference Send feedback Method: projects.locations.collections.engines.conversations.converse Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the name resource: discoveryengine.conversations.converse For more information, see the IAM documentation .",
+          "Use projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStoreId}/conversations/- to activate auto session mode, which automatically creates a new conversation inside a conversations.converse session."
+        ]
+      },
+      {
+        "title": "Vertex AI Search audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter for this method : protoPayload.methodName=\"google.cloud.discoveryengine.v1alpha.ConversationalSearchService.AnswerQuery\" ConverseConversation Method : google.cloud.discoveryengine.v1alpha.ConversationalSearchService.ConverseConversation Audit log type : Data access Permissions : discoveryengine.conversations.converse - DATA WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.discoveryengine.v1beta.ConversationalSearchService.AnswerQuery\" ConverseConversation Method : google.cloud.discoveryengine.v1beta.ConversationalSearchService.ConverseConversation Audit log type : Data access Permissions : discoveryengine.conversations.converse - DATA WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.discoveryengine.v1.ConversationalSearchService.AnswerQuery\" ConverseConversation Method : google.cloud.discoveryengine.v1.ConversationalSearchService.ConverseConversation Audit log type : Data access Permissions : discoveryengine.conversations.converse - DATA WRITE Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Permissions Discovery Engine Admin ( roles/ discoveryengine.admin ) Grants full access to all discoveryengine resources. cloudaicompanion. aiDevToolsSettings. cloudaicompanion. aiDevToolsSettings. create cloudaicompanion. aiDevToolsSettings. delete cloudaicompanion. aiDevToolsSettings. get cloudaicompanion. aiDevToolsSettings. list cloudaicompanion. aiDevToolsSettings. update cloudaicompanion. codeRepositoryIndexes. cloudaicompanion. codeRepositoryIndexes. create cloudaicompanion. codeRepositoryIndexes. delete cloudaicompanion. codeRepositoryIndexes. get cloudaicompanion. codeRepositoryIndexes. list cloudaicompanion. codeRepositoryIndexes. update cloudaicompanion. codeToolsSettings. cloudaicompanion. codeToolsSettings. create cloudaicompanion. codeToolsSettings. delete cloudaicompanion. codeToolsSettings. get cloudaicompanion. codeToolsSettings. list cloudaicompanion. codeToolsSettings. update cloudaicompanion. dataSharingWithGoogleSettings. cloudaicompanion. dataSharingWithGoogleSettings. create cloudaicompanion. dataSharingWithGoogleSettings. delete cloudaicompanion. dataSharingWithGoogleSettings. get cloudaicompanion. dataSharingWithGoogleSettings. list cloudaicompanion. dataSharingWithGoogleSettings. update cloudaicompanion. geminiGcpEnablementSettings. cloudaicompanion. geminiGcpEnablementSettings. create cloudaicompanion. geminiGcpEnablementSettings. delete cloudaicompanion. geminiGcpEnablementSettings. get cloudaicompanion. geminiGcpEnablementSettings. list cloudaicompanion. geminiGcpEnablementSettings. update cloudaicompanion. instances. queryEffectiveSetting cloudaicompanion. instances. queryEffectiveSettingBindings cloudaicompanion. loggingSettings. cloudaicompanion. loggingSettings. create cloudaicompanion. loggingSettings. delete cloudaicompanion. loggingSettings. get cloudaicompanion. loggingSettings. list cloudaicompanion. loggingSettings. update cloudaicompanion.operations. cloudaicompanion. operations. cancel cloudaicompanion. operations. delete cloudaicompanion. operations. get cloudaicompanion. operations. list cloudaicompanion. releaseChannelSettings. cloudaicompanion. releaseChannelSettings. create cloudaicompanion. releaseChannelSettings. delete cloudaicompanion. releaseChannelSettings. get cloudaicompanion. releaseChannelSettings. list cloudaicompanion. releaseChannelSettings. update cloudaicompanion. repositoryGroups. create cloudaicompanion. repositoryGroups. delete cloudaicompanion. repositoryGroups. get cloudaicompanion. repositoryGroups. getIamPolicy cloudaicompanion. repositoryGroups. list cloudaicompanion. repositoryGroups. setIamPolicy cloudaicompanion. repositoryGroups. update cloudaicompanion. settingBindings. cloudaicompanion. settingBindings. aiDevToolsSettingsCreate cloudaicompanion. settingBindings. aiDevToolsSettingsDelete cloudaicompanion. settingBindings. aiDevToolsSettingsGet cloudaicompanion. settingBindings. aiDevToolsSettingsList cloudaicompanion. settingBindings. aiDevToolsSettingsUpdate cloudaicompanion. settingBindings. aiDevToolsSettingsUse cloudaicompanion. settingBindings. codeToolsSettingsCreate cloudaicompanion. settingBindings. codeToolsSettingsDelete cloudaicompanion. settingBindings. codeToolsSettingsGet cloudaicompanion. settingBindings. codeToolsSettingsList cloudaicompanion. settingBindings. codeToolsSettingsUpdate cloudaicompanion. settingBindings. codeToolsSettingsUse cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsCreate cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsDelete cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsGet cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsList cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsUpdate cloudaicompanion. settingBindings. dataSharingWithGoogleSettingsUse cloudaicompanion. settingBindings. geminiGcpEnablementSettingsCreate cloudaicompanion. settingBindings. geminiGcpEnablementSettingsDelete cloudaicompanion. settingBindings. geminiGcpEnablementSettingsGet cloudaicompanion. settingBindings. geminiGcpEnablementSettingsList cloudaicompanion. settingBindings. geminiGcpEnablementSettingsUpdate cloudaicompanion. settingBindings. geminiGcpEnablementSettingsUse cloudaicompanion. settingBindings. loggingSettingsCreate cloudaicompanion. settingBindings. loggingSettingsDelete cloudaicompanion. settingBindings. loggingSettingsGet cloudaicompanion. settingBindings. loggingSettingsList cloudaicompanion. settingBindings. loggingSettingsUpdate cloudaicompanion. settingBindings. loggingSettingsUse cloudaicompanion. settingBindings. releaseChannelSettingsCreate cloudaicompanion. settingBindings. releaseChannelSettingsDelete cloudaicompanion. settingBindings. releaseChannelSettingsGet cloudaicompanion. settingBindings. releaseChannelSettingsList cloudaicompanion. settingBindings. releaseChannelSettingsUpdate cloudaicompanion. settingBindings. releaseChannelSettingsUse cloudnotifications. activities. list discoveryengine.aclConfigs. discoveryengine.aclConfigs.get discoveryengine. aclConfigs. update discoveryengine.agentFiles. discoveryengine. agentFiles. delete discoveryengine. agentFiles. download discoveryengine. agentFiles. import discoveryengine. agentFiles. list discoveryengine. agentFiles. upload discoveryengine. agentIamProposals. discoveryengine. agentIamProposals. create discoveryengine. agentIamProposals. delete discoveryengine. agentIamProposals. get discoveryengine. agentIamProposals. list discoveryengine.agents.create discoveryengine.agents.delete discoveryengine.agents.get discoveryengine. agents. getAgentView discoveryengine. agents. getIamPolicy discoveryengine.agents.list discoveryengine. agents. listAvailableAgentViews discoveryengine.agents.manage discoveryengine. agents. setIamPolicy discoveryengine.agents.update discoveryengine. alertPolicies. discoveryengine. alertPolicies. create discoveryengine. alertPolicies. get discoveryengine. alertPolicies. update discoveryengine.analytics. discoveryengine. analytics. acquireDashboardSession discoveryengine. analytics. refreshDashboardSessionTokens discoveryengine.answers.get discoveryengine. assistAnswers. get discoveryengine.assistants. discoveryengine. assistants. assist discoveryengine. assistants. create discoveryengine. assistants. delete discoveryengine.assistants.get discoveryengine. assistants. list discoveryengine. assistants. update discoveryengine. authorizations. storeUserAuthorization discoveryengine. billingAccountLicenseConfigs. discoveryengine. billingAccountLicenseConfigs. distribute discoveryengine. billingAccountLicenseConfigs. get discoveryengine. billingAccountLicenseConfigs. list discoveryengine. billingAccountLicenseConfigs. retract discoveryengine.branches. discoveryengine.branches.get discoveryengine.branches.list discoveryengine. cannedQueries. discoveryengine. cannedQueries. create discoveryengine. cannedQueries. delete discoveryengine. cannedQueries. get discoveryengine. cannedQueries. list discoveryengine. cannedQueries. listActiveCannedQueryUserViews discoveryengine. cannedQueries. update discoveryengine.cmekConfigs. discoveryengine. cmekConfigs. get discoveryengine. cmekConfigs. list discoveryengine. cmekConfigs. update discoveryengine.collections. discoveryengine. collections. delete discoveryengine. collections. get discoveryengine. collections. list discoveryengine. completionConfigs. discoveryengine. completionConfigs. completeQuery discoveryengine. completionConfigs. get discoveryengine. completionConfigs. removeSuggestion discoveryengine. completionConfigs. update discoveryengine. completionSuggestions. discoveryengine. completionSuggestions. import discoveryengine. completionSuggestions. purge discoveryengine. connectorRuns. discoveryengine. connectorRuns. cancel discoveryengine. connectorRuns. list discoveryengine.controls. discoveryengine. controls. create discoveryengine. controls. delete discoveryengine.controls.get discoveryengine.controls.list discoveryengine. controls. update discoveryengine. conversations. discoveryengine. conversations. converse discoveryengine. conversations. create discoveryengine. conversations. delete discoveryengine. conversations. get discoveryengine. conversations. list discoveryengine. conversations. update discoveryengine. dataConnectors. discoveryengine. dataConnectors. acquireAccessToken discoveryengine. dataConnectors. acquireAndStoreRefreshToken discoveryengine. dataConnectors. buildActionInvocation discoveryengine. dataConnectors. checkRefreshToken discoveryengine. dataConnectors. executeAction discoveryengine. dataConnectors. get discoveryengine. dataConnectors. queryAvailableActions discoveryengine. dataConnectors. startConnectorRun discoveryengine. dataConnectors. update discoveryengine.dataStores. discoveryengine. dataStores. completeQuery discoveryengine. dataStores. create discoveryengine. dataStores. delete discoveryengine. dataStores. enrollSolutions discoveryengine.dataStores.get discoveryengine. dataStores. list discoveryengine. dataStores. listCustomModels discoveryengine. dataStores. trainCustomModel discoveryengine. dataStores. update discoveryengine. documentProcessingConfigs. discoveryengine. documentProcessingConfigs. get discoveryengine. documentProcessingConfigs. update discoveryengine.documents. discoveryengine. documents. batchGetDocumentsMetadata discoveryengine. documents. create discoveryengine. documents. delete discoveryengine.documents.get discoveryengine. documents. import discoveryengine.documents.list discoveryengine. documents. purge discoveryengine. documents. update discoveryengine.engines. discoveryengine.engines.create discoveryengine. engines. createEngineUserData discoveryengine.engines.delete discoveryengine. engines. generateMemories discoveryengine. engines. generatePersonalContext discoveryengine.engines.get discoveryengine. engines. getEngineUserData discoveryengine. engines. getIamPolicy discoveryengine. engines. getPersonalContext discoveryengine.engines.list discoveryengine.engines.pause discoveryengine.engines.resume discoveryengine. engines. setIamPolicy discoveryengine.engines.tune discoveryengine.engines.update discoveryengine. engines. updateEngineUserData discoveryengine.evaluations. discoveryengine. evaluations. create discoveryengine. evaluations. get discoveryengine. evaluations. list discoveryengine. groundingConfigs. check discoveryengine. homepageDataConfigs. fetchDocuments discoveryengine. ideaForgeIdeas. discoveryengine. ideaForgeIdeas. create discoveryengine. ideaForgeIdeas. get discoveryengine. ideaForgeInstances. discoveryengine. ideaForgeInstances. get discoveryengine. ideaForgeInstances. start discoveryengine. identityMappingStores. discoveryengine. identityMappingStores. create discoveryengine. identityMappingStores. delete discoveryengine. identityMappingStores. get discoveryengine. identityMappingStores. importIdentityMappings discoveryengine. identityMappingStores. list discoveryengine. identityMappingStores. listIdentityMappings discoveryengine. identityMappingStores. purgeIdentityMappings discoveryengine. licenseConfigs. discoveryengine. licenseConfigs. create discoveryengine. licenseConfigs. get discoveryengine. licenseConfigs. list discoveryengine. licenseConfigs. update discoveryengine.locations. discoveryengine. locations. completeExternalIdentities discoveryengine. locations. estimateDataSize discoveryengine. locations. exchangeAuthCredentials discoveryengine. locations. fetchAgentCards discoveryengine. locations. getConnectorSource discoveryengine. locations. listConnectorSources discoveryengine. locations. setUpDataConnector discoveryengine.memories. discoveryengine. memories. delete discoveryengine.memories.list discoveryengine. memories. retrieve discoveryengine. memories. update discoveryengine.models. discoveryengine.models.create discoveryengine.models.delete discoveryengine.models.get discoveryengine.models.list discoveryengine.models.pause discoveryengine.models.resume discoveryengine.models.tune discoveryengine.models.update discoveryengine. notificationMessages. discoveryengine. notificationMessages. ackAll discoveryengine. notificationMessages. list discoveryengine. notificationMessages. update discoveryengine.operations. discoveryengine.operations.get discoveryengine. operations. list discoveryengine.projects. discoveryengine.projects.get discoveryengine. projects. provision discoveryengine. projects. reportConsentChange discoveryengine. rankingConfigs. rank discoveryengine. sampleQueries. discoveryengine. sampleQueries. create discoveryengine. sampleQueries. delete discoveryengine. sampleQueries. get discoveryengine. sampleQueries. import discoveryengine. sampleQueries. list discoveryengine. sampleQueries. update discoveryengine. sampleQuerySets. discoveryengine. sampleQuerySets. create discoveryengine. sampleQuerySets. delete discoveryengine. sampleQuerySets. get discoveryengine. sampleQuerySets. list discoveryengine. sampleQuerySets. update discoveryengine.schemas. discoveryengine.schemas.create discoveryengine.schemas.delete discoveryengine.schemas.get discoveryengine.schemas.list discoveryengine. schemas. preview discoveryengine.schemas.update discoveryengine. schemas. validate discoveryengine. servingConfigs. discoveryengine. servingConfigs. answer discoveryengine. servingConfigs. create discoveryengine. servingConfigs. delete discoveryengine. servingConfigs. get discoveryengine. servingConfigs. list discoveryengine. servingConfigs. recommend discoveryengine. servingConfigs. search discoveryengine. servingConfigs. update discoveryengine.sessions. discoveryengine. sessions. addContextFile discoveryengine. sessions. create discoveryengine. sessions. delete discoveryengine. sessions. downloadFile discoveryengine. sessions. generateSummary discoveryengine.sessions.get discoveryengine.sessions.list discoveryengine. sessions. listSessionFileMetadata discoveryengine. sessions. recommendQuestions discoveryengine. sessions. removeContextFile discoveryengine. sessions. search discoveryengine. sessions. selectContextFiles discoveryengine. sessions. update discoveryengine. sessions. uploadFile discoveryengine. sharedContents. discoveryengine. sharedContents. create discoveryengine. sharedContents. delete discoveryengine. sharedContents. get discoveryengine. sharedContents. list discoveryengine. siteSearchEngines. discoveryengine. siteSearchEngines. batchVerifyTargetSites discoveryengine. siteSearchEngines. disableAdvancedSiteSearch discoveryengine. siteSearchEngines. enableAdvancedSiteSearch discoveryengine. siteSearchEngines. fetchDomainVerificationStatus discoveryengine. siteSearchEngines. get discoveryengine. siteSearchEngines. recrawlUris discoveryengine.sitemaps. discoveryengine. sitemaps. create discoveryengine. sitemaps. delete discoveryengine.sitemaps.fetch discoveryengine. suggestionDenyListEntries. discoveryengine. suggestionDenyListEntries. import discoveryengine. suggestionDenyListEntries. purge discoveryengine.targetSites. discoveryengine. targetSites. batchCreate discoveryengine. targetSites. create discoveryengine. targetSites. delete discoveryengine. targetSites. get discoveryengine. targetSites. list discoveryengine. targetSites. update discoveryengine.userEvents. discoveryengine. userEvents. create discoveryengine. userEvents. fetchStats discoveryengine. userEvents. import discoveryengine. userEvents. purge discoveryengine.userStores. discoveryengine. userStores. batchUpdateUserLicenses discoveryengine.userStores.get discoveryengine. userStores. listUserLicenses discoveryengine. userStores. update discoveryengine.users. discoveryengine.users.get discoveryengine.users.update discoveryengine. widgetConfigs. discoveryengine. widgetConfigs. get discoveryengine. widgetConfigs. update monitoring.alertPolicies.get monitoring.alertPolicies.list monitoring. alertPolicies. listEffectiveTags monitoring. alertPolicies. listTagBindings monitoring.alerts. monitoring.alerts.get monitoring.alerts.list monitoring.dashboards.get monitoring.dashboards.list monitoring. dashboards. listEffectiveTags monitoring. dashboards. listTagBindings monitoring.groups.get monitoring.groups.list monitoring. metricDescriptors. get monitoring. metricDescriptors. list monitoring. monitoredResourceDescriptors. monitoring. monitoredResourceDescriptors. get monitoring. monitoredResourceDescriptors. list monitoring. notificationChannelDescriptors. monitoring. notificationChannelDescriptors. get monitoring. notificationChannelDescriptors. list monitoring. notificationChannels. get monitoring. notificationChannels. list monitoring.services.get monitoring.services.list monitoring.slos.get monitoring.slos.list monitoring.snoozes.get monitoring.snoozes.list monitoring.timeSeries.list monitoring. uptimeCheckConfigs. get monitoring. uptimeCheckConfigs. list opsconfigmonitoring. resourceMetadata. list resourcemanager.projects.get resourcemanager.projects.list stackdriver.projects.get stackdriver. resourceMetadata. list Discovery Engine Editor ( roles/ discoveryengine.editor ) Grants read and write access to all discovery engine resources. discoveryengine.aclConfigs.get discoveryengine.agentFiles. discoveryengine. agentFiles. delete discoveryengine. agentFiles. download discoveryengine. agentFiles. import discoveryengine. agentFiles. list discoveryengine. agentFiles. upload discoveryengine.agents.create discoveryengine.agents.delete discoveryengine.agents.get discoveryengine. agents. getAgentView discoveryengine. agents. getIamPolicy discoveryengine.agents.list discoveryengine. agents. listAvailableAgentViews discoveryengine.agents.manage discoveryengine.agents.update discoveryengine. alertPolicies. get discoveryengine.analytics. discoveryengine. analytics. acquireDashboardSession discoveryengine. analytics. refreshDashboardSessionTokens discoveryengine.answers.get discoveryengine. assistAnswers. get discoveryengine. assistants. assist discoveryengine.assistants.get discoveryengine. assistants. list discoveryengine. authorizations. storeUserAuthorization discoveryengine.branches. discoveryengine.branches.get discoveryengine.branches.list discoveryengine. cannedQueries. get discoveryengine. cannedQueries. list discoveryengine. cannedQueries. listActiveCannedQueryUserViews discoveryengine. cmekConfigs. get discoveryengine. cmekConfigs. list discoveryengine. collections. get discoveryengine. collections. list discoveryengine. completionConfigs. completeQuery discoveryengine. completionConfigs. get discoveryengine. completionConfigs. removeSuggestion discoveryengine. connectorRuns. list discoveryengine.controls.get discoveryengine.controls.list discoveryengine. conversations. discoveryengine. conversations. converse discoveryengine. conversations. create discoveryengine. conversations. delete discoveryengine. conversations. get discoveryengine. conversations. list discoveryengine. conversations. update discoveryengine. dataConnectors. acquireAccessToken discoveryengine. dataConnectors. acquireAndStoreRefreshToken discoveryengine. dataConnectors. buildActionInvocation discoveryengine. dataConnectors. checkRefreshToken discoveryengine. dataConnectors. executeAction discoveryengine. dataConnectors. get discoveryengine. dataConnectors. queryAvailableActions discoveryengine. dataStores. completeQuery discoveryengine.dataStores.get discoveryengine. dataStores. list discoveryengine. dataStores. listCustomModels discoveryengine. dataStores. trainCustomModel discoveryengine. documentProcessingConfigs. get discoveryengine. documents. batchGetDocumentsMetadata discoveryengine. documents. create discoveryengine. documents. delete discoveryengine.documents.get discoveryengine. documents. import discoveryengine.documents.list discoveryengine. documents. update discoveryengine. engines. createEngineUserData discoveryengine. engines. generateMemories discoveryengine. engines. generatePersonalContext discoveryengine.engines.get discoveryengine. engines. getEngineUserData discoveryengine. engines. getPersonalContext discoveryengine.engines.list discoveryengine.engines.pause discoveryengine.engines.resume discoveryengine.engines.tune discoveryengine. engines. updateEngineUserData discoveryengine. evaluations. get discoveryengine. evaluations. list discoveryengine. groundingConfigs. check discoveryengine. homepageDataConfigs. fetchDocuments discoveryengine. ideaForgeIdeas. discoveryengine. ideaForgeIdeas. create discoveryengine. ideaForgeIdeas. get discoveryengine. ideaForgeInstances. discoveryengine. ideaForgeInstances. get discoveryengine. ideaForgeInstances. start discoveryengine. identityMappingStores. discoveryengine. identityMappingStores. create discoveryengine. identityMappingStores. delete discoveryengine. identityMappingStores. get discoveryengine. identityMappingStores. importIdentityMappings discoveryengine. identityMappingStores. list discoveryengine. identityMappingStores. listIdentityMappings discoveryengine. identityMappingStores. purgeIdentityMappings discoveryengine. licenseConfigs. get discoveryengine. licenseConfigs. list discoveryengine. locations. completeExternalIdentities discoveryengine. locations. fetchAgentCards discoveryengine.memories. discoveryengine. memories. delete discoveryengine.memories.list discoveryengine. memories. retrieve discoveryengine. memories. update discoveryengine.models. discoveryengine.models.create discoveryengine.models.delete discoveryengine.models.get discoveryengine.models.list discoveryengine.models.pause discoveryengine.models.resume discoveryengine.models.tune discoveryengine.models.update discoveryengine. notificationMessages. discoveryengine. notificationMessages. ackAll discoveryengine. notificationMessages. list discoveryengine. notificationMessages. update discoveryengine.operations. discoveryengine.operations.get discoveryengine. operations. list discoveryengine.projects.get discoveryengine. rankingConfigs. rank discoveryengine. sampleQueries. discoveryengine. sampleQueries. create discoveryengine. sampleQueries. delete discoveryengine. sampleQueries. get discoveryengine. sampleQueries. import discoveryengine. sampleQueries. list discoveryengine. sampleQueries. update discoveryengine. sampleQuerySets. discoveryengine. sampleQuerySets. create discoveryengine. sampleQuerySets. delete discoveryengine. sampleQuerySets. get discoveryengine. sampleQuerySets. list discoveryengine. sampleQuerySets. update discoveryengine.schemas.get discoveryengine.schemas.list discoveryengine. schemas. preview discoveryengine. schemas. validate discoveryengine. servingConfigs. answer discoveryengine. servingConfigs. get discoveryengine. servingConfigs. list discoveryengine. servingConfigs. recommend discoveryengine. servingConfigs. search discoveryengine.sessions. discoveryengine. sessions. addContextFile discoveryengine. sessions. create discoveryengine. sessions. delete discoveryengine. sessions. downloadFile discoveryengine. sessions. generateSummary discoveryengine.sessions.get discoveryengine.sessions.list discoveryengine. sessions. listSessionFileMetadata discoveryengine. sessions. recommendQuestions discoveryengine. sessions. removeContextFile discoveryengine. sessions. search discoveryengine. sessions. selectContextFiles discoveryengine. sessions. update discoveryengine. sessions. uploadFile discoveryengine. sharedContents. discoveryengine. sharedContents. create discoveryengine. sharedContents. delete discoveryengine. sharedContents. get discoveryengine. sharedContents. list discoveryengine. siteSearchEngines. get discoveryengine. targetSites. get discoveryengine. targetSites. list discoveryengine. userEvents. create discoveryengine. userEvents. fetchStats discoveryengine. userEvents. import discoveryengine.userStores.get discoveryengine. widgetConfigs. discoveryengine. widgetConfigs. get discoveryengine. widgetConfigs. update resourcemanager.projects.get resourcemanager.projects.list Discovery Engine User ( roles/ discoveryengine.user ) Grants user-level access to Discovery Engine resources. businessaicode. businessaicode. locations. generateContent businessaicode. locations. queryConfiguration businessaicode. locations. sendTelemetry cloudaicompanion.companions. cloudaicompanion. companions. generateChat cloudaicompanion. companions. generateCode cloudaicompanion. entitlements. get cloudaicompanion.instances. cloudaicompanion. instances. completeCode cloudaicompanion. instances. completeTask cloudaicompanion. instances. exportMetrics cloudaicompanion. instances. generateCode cloudaicompanion. instances. generateText cloudaicompanion. instances. queryEffectiveSetting cloudaicompanion. instances. queryEffectiveSettingBindings cloudaicompanion. licenses. selfAssign cloudaicompanion. operations. get cloudaicompanion.topics.create discoveryengine. accounts. create discoveryengine.agentFiles. discoveryengine. agentFiles. delete discoveryengine. agentFiles. download discoveryengine. agentFiles. import discoveryengine. agentFiles. list discoveryengine. agentFiles. upload discoveryengine. agentIamProposals. discoveryengine. agentIamProposals. create discoveryengine. agentIamProposals. delete discoveryengine. agentIamProposals. get discoveryengine. agentIamProposals. list discoveryengine.agents.create discoveryengine.agents.delete discoveryengine.agents.get discoveryengine. agents. getAgentView discoveryengine.agents.list discoveryengine. agents. listAvailableAgentViews discoveryengine. agents. requestReview discoveryengine.agents.update discoveryengine.answers.get discoveryengine. assistAnswers. get discoveryengine. assistants. assist discoveryengine. authorizations. storeUserAuthorization discoveryengine. cannedQueries. listActiveCannedQueryUserViews discoveryengine. completionConfigs. completeQuery discoveryengine. completionConfigs. removeSuggestion discoveryengine. dataConnectors. acquireAccessToken discoveryengine. dataConnectors. acquireAndStoreRefreshToken discoveryengine. dataConnectors. buildActionInvocation discoveryengine. dataConnectors. checkRefreshToken discoveryengine. dataConnectors. executeAction discoveryengine. dataConnectors. queryAvailableActions discoveryengine. engines. createEngineUserData discoveryengine. engines. generateMemories discoveryengine. engines. generatePersonalContext discoveryengine.engines.get discoveryengine. engines. getEngineUserData discoveryengine. engines. getPersonalContext discoveryengine. engines. updateEngineUserData discoveryengine. homepageDataConfigs. fetchDocuments discoveryengine. ideaForgeIdeas. discoveryengine. ideaForgeIdeas. create discoveryengine. ideaForgeIdeas. get discoveryengine. ideaForgeInstances. discoveryengine. ideaForgeInstances. get discoveryengine. ideaForgeInstances. start discoveryengine. locations. completeExternalIdentities discoveryengine. locations. fetchAgentCards discoveryengine.memories. discoveryengine. memories. delete discoveryengine.memories.list discoveryengine. memories. retrieve discoveryengine. memories. update discoveryengine. notebooks. create discoveryengine.notebooks.list discoveryengine. notificationMessages. discoveryengine. notificationMessages. ackAll discoveryengine. notificationMessages. list discoveryengine. notificationMessages. update discoveryengine. servingConfigs. answer discoveryengine. servingConfigs. recommend discoveryengine. servingConfigs. search discoveryengine.sessions. discoveryengine. sessions. addContextFile discoveryengine. sessions. create discoveryengine. sessions. delete discoveryengine. sessions. downloadFile discoveryengine. sessions. generateSummary discoveryengine.sessions.get discoveryengine.sessions.list discoveryengine. sessions. listSessionFileMetadata discoveryengine. sessions. recommendQuestions discoveryengine. sessions. removeContextFile discoveryengine. sessions. search discoveryengine. sessions. selectContextFiles discoveryengine. sessions. update discoveryengine. sessions. uploadFile discoveryengine. sharedContents. discoveryengine. sharedContents. create discoveryengine. sharedContents. delete discoveryengine. sharedContents. get discoveryengine. sharedContents. list discoveryengine. userEvents. create discoveryengine.users. discoveryengine.users.get discoveryengine.users.update discoveryengine. widgetConfigs. get resourcemanager.projects.get resourcemanager.projects.list Discovery Engine Viewer ( roles/ discoveryengine.viewer ) Grants read access to all discovery engine resources. discoveryengine.aclConfigs.get discoveryengine. agentFiles. list discoveryengine.agents.get discoveryengine. agents. getAgentView discoveryengine. agents. getIamPolicy discoveryengine.agents.list discoveryengine. agents. listAvailableAgentViews discoveryengine. alertPolicies. get discoveryengine.analytics. discoveryengine. analytics. acquireDashboardSession discoveryengine. analytics. refreshDashboardSessionTokens discoveryengine.answers.get discoveryengine. assistAnswers. get discoveryengine.assistants.get discoveryengine. assistants. list discoveryengine.branches. discoveryengine.branches.get discoveryengine.branches.list discoveryengine. cannedQueries. get discoveryengine. cannedQueries. list discoveryengine. cannedQueries. listActiveCannedQueryUserViews discoveryengine. cmekConfigs. get discoveryengine. cmekConfigs. list discoveryengine. collections. get discoveryengine. collections. list discoveryengine. completionConfigs. completeQuery discoveryengine. completionConfigs. get discoveryengine. connectorRuns. list discoveryengine.controls.get discoveryengine.controls.list discoveryengine. conversations. converse discoveryengine. conversations. get discoveryengine. conversations. list discoveryengine. dataConnectors. buildActionInvocation discoveryengine. dataConnectors. checkRefreshToken discoveryengine. dataConnectors. get discoveryengine. dataConnectors. queryAvailableActions discoveryengine. dataStores. completeQuery discoveryengine.dataStores.get discoveryengine. dataStores. list discoveryengine. dataStores. listCustomModels discoveryengine. documentProcessingConfigs. get discoveryengine. documents. batchGetDocumentsMetadata discoveryengine.documents.get discoveryengine.documents.list discoveryengine.engines.get discoveryengine. engines. getPersonalContext discoveryengine.engines.list discoveryengine. evaluations. get discoveryengine. evaluations. list discoveryengine. groundingConfigs. check discoveryengine. homepageDataConfigs. fetchDocuments discoveryengine. ideaForgeIdeas. get discoveryengine. ideaForgeInstances. get discoveryengine. identityMappingStores. get discoveryengine. identityMappingStores. list discoveryengine. identityMappingStores. listIdentityMappings discoveryengine. locations. completeExternalIdentities discoveryengine. locations. fetchAgentCards discoveryengine.memories.list discoveryengine. memories. retrieve discoveryengine.models.get discoveryengine.models.list discoveryengine. notificationMessages. list discoveryengine.operations. discoveryengine.operations.get discoveryengine. operations. list discoveryengine.projects.get discoveryengine. rankingConfigs. rank discoveryengine. sampleQueries. get discoveryengine. sampleQueries. list discoveryengine. sampleQuerySets. get discoveryengine. sampleQuerySets. list discoveryengine.schemas.get discoveryengine.schemas.list discoveryengine. schemas. preview discoveryengine. schemas. validate discoveryengine. servingConfigs. answer discoveryengine. servingConfigs. get discoveryengine. servingConfigs. list discoveryengine. servingConfigs. recommend discoveryengine. servingConfigs. search discoveryengine. sessions. downloadFile discoveryengine. sessions. generateSummary discoveryengine.sessions.get discoveryengine.sessions.list discoveryengine. sessions. listSessionFileMetadata discoveryengine. sessions. recommendQuestions discoveryengine. sharedContents. get discoveryengine. sharedContents. list discoveryengine. siteSearchEngines. get discoveryengine. targetSites. get discoveryengine. targetSites. list discoveryengine. userEvents. fetchStats discoveryengine.userStores.get discoveryengine. widgetConfigs. get resourcemanager.projects.get resourcemanager.projects.list Manage Vertex AI Search IAM You can get and set IAM allow policies and IAM roles using the Google Cloud Console.",
+          "The roles specific to Vertex AI Search provide only Vertex AI Search permissions, except for the following Google Cloud permissions, which are needed for general Google Cloud usage: resourcemanager.projects.get resourcemanager.projects.list serviceusage.services.list serviceusage.services.get The following table lists the Vertex AI Search IAM roles with a corresponding list of all the permissions for each role."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a2a.v1",
+      "cloudaicompanion.companions",
+      "cloudaicompanion.instances",
+      "cloudaicompanion.operations",
+      "cloudaicompanion.topics.create",
+      "conversations.converse",
+      "discoveryengine.aclConfigs",
+      "discoveryengine.aclConfigs.get",
+      "discoveryengine.admin",
+      "discoveryengine.agentFiles",
+      "discoveryengine.agents.create",
+      "discoveryengine.agents.delete",
+      "discoveryengine.agents.get",
+      "discoveryengine.agents.list",
+      "discoveryengine.agents.manage",
+      "discoveryengine.agents.update",
+      "discoveryengine.analytics",
+      "discoveryengine.answers.get",
+      "discoveryengine.assistants",
+      "discoveryengine.assistants.get",
+      "discoveryengine.branches",
+      "discoveryengine.branches.get",
+      "discoveryengine.branches.list",
+      "discoveryengine.cmekConfigs",
+      "discoveryengine.collections",
+      "discoveryengine.controls",
+      "discoveryengine.controls.get",
+      "discoveryengine.controls.list",
+      "discoveryengine.conversations.converse",
+      "discoveryengine.dataStores",
+      "discoveryengine.dataStores.get",
+      "discoveryengine.documents",
+      "discoveryengine.documents.get",
+      "discoveryengine.documents.list",
+      "discoveryengine.editor",
+      "discoveryengine.engines",
+      "discoveryengine.engines.create",
+      "discoveryengine.engines.delete",
+      "discoveryengine.engines.get",
+      "discoveryengine.engines.list",
+      "discoveryengine.engines.pause",
+      "discoveryengine.engines.resume",
+      "discoveryengine.engines.tune",
+      "discoveryengine.engines.update",
+      "discoveryengine.evaluations",
+      "discoveryengine.locations",
+      "discoveryengine.memories",
+      "discoveryengine.memories.list",
+      "discoveryengine.models",
+      "discoveryengine.models.create",
+      "discoveryengine.models.delete",
+      "discoveryengine.models.get",
+      "discoveryengine.models.list",
+      "discoveryengine.models.pause",
+      "discoveryengine.models.resume",
+      "discoveryengine.models.tune",
+      "discoveryengine.models.update",
+      "discoveryengine.notebooks.list",
+      "discoveryengine.operations",
+      "discoveryengine.operations.get",
+      "discoveryengine.projects",
+      "discoveryengine.projects.get",
+      "discoveryengine.schemas",
+      "discoveryengine.schemas.create",
+      "discoveryengine.schemas.delete",
+      "discoveryengine.schemas.get",
+      "discoveryengine.schemas.list",
+      "discoveryengine.schemas.update",
+      "discoveryengine.sessions",
+      "discoveryengine.sessions.get",
+      "discoveryengine.sessions.list",
+      "discoveryengine.sitemaps",
+      "discoveryengine.sitemaps.fetch",
+      "discoveryengine.targetSites",
+      "discoveryengine.user",
+      "discoveryengine.userEvents",
+      "discoveryengine.users",
+      "discoveryengine.users.get",
+      "discoveryengine.users.update",
+      "discoveryengine.userStores",
+      "discoveryengine.userStores.get",
+      "discoveryengine.viewer",
+      "monitoring.alertPolicies.get",
+      "monitoring.alertPolicies.list",
+      "monitoring.alerts",
+      "monitoring.alerts.get",
+      "monitoring.alerts.list",
+      "monitoring.dashboards.get",
+      "monitoring.dashboards.list",
+      "monitoring.groups.get",
+      "monitoring.groups.list",
+      "monitoring.services.get",
+      "monitoring.services.list",
+      "monitoring.slos.get",
+      "monitoring.slos.list",
+      "monitoring.snoozes.get",
+      "monitoring.snoozes.list",
+      "monitoring.timeSeries.list",
+      "projects.locations",
+      "projects.locations.authorizations",
+      "projects.locations.cmekConfigs",
+      "projects.locations.collections",
+      "projects.locations.collections.dataConnector",
+      "projects.locations.collections.dataConnector.connectorRuns",
+      "projects.locations.collections.dataConnector.operations",
+      "projects.locations.collections.dataStores",
+      "projects.locations.collections.dataStores.branches",
+      "projects.locations.collections.dataStores.branches.documents",
+      "projects.locations.collections.dataStores.branches.documents.chunks",
+      "projects.locations.collections.dataStores.branches.operations",
+      "projects.locations.collections.dataStores.completionConfig",
+      "projects.locations.collections.dataStores.completionSuggestions",
+      "projects.locations.collections.dataStores.controls",
+      "projects.locations.collections.dataStores.conversations",
+      "projects.locations.collections.dataStores.customModels",
+      "projects.locations.collections.dataStores.models.operations",
+      "projects.locations.collections.dataStores.operations",
+      "projects.locations.collections.dataStores.schemas",
+      "projects.locations.collections.dataStores.schemas.operations",
+      "projects.locations.collections.dataStores.servingConfigs",
+      "projects.locations.collections.dataStores.sessions",
+      "projects.locations.collections.dataStores.sessions.answers",
+      "projects.locations.collections.dataStores.siteSearchEngine",
+      "projects.locations.collections.dataStores.siteSearchEngine.operations",
+      "projects.locations.collections.dataStores.siteSearchEngine.sitemaps",
+      "projects.locations.collections.dataStores.siteSearchEngine.targetSites",
+      "projects.locations.collections.dataStores.siteSearchEngine.targetSites.operations",
+      "projects.locations.collections.dataStores.suggestionDenyListEntries",
+      "projects.locations.collections.dataStores.userEvents",
+      "projects.locations.collections.dataStores.widgetConfigs",
+      "projects.locations.collections.engines",
+      "projects.locations.collections.engines.analytics",
+      "projects.locations.collections.engines.assistants",
+      "projects.locations.collections.engines.assistants.agents",
+      "projects.locations.collections.engines.assistants.agents.a2a.v1",
+      "projects.locations.collections.engines.assistants.agents.a2a.v1.message",
+      "projects.locations.collections.engines.assistants.agents.a2a.v1.tasks",
+      "projects.locations.collections.engines.assistants.agents.a2a.v1.tasks.pushNotificationConfigs",
+      "projects.locations.collections.engines.assistants.agents.files",
+      "projects.locations.collections.engines.assistants.agents.operations",
+      "projects.locations.collections.engines.assistants.cannedQueries",
+      "projects.locations.collections.engines.completionConfig",
+      "projects.locations.collections.engines.controls",
+      "projects.locations.collections.engines.conversations",
+      "projects.locations.collections.engines.conversations.converse",
+      "projects.locations.collections.engines.operations",
+      "projects.locations.collections.engines.servingConfigs",
+      "projects.locations.collections.engines.sessions",
+      "projects.locations.collections.engines.sessions.alphaEvolveExperiments.operations",
+      "projects.locations.collections.engines.sessions.answers",
+      "projects.locations.collections.engines.sessions.assistAnswers",
+      "projects.locations.collections.engines.sessions.operations",
+      "projects.locations.collections.engines.widgetConfigs",
+      "projects.locations.collections.operations",
+      "projects.locations.dataStores",
+      "projects.locations.dataStores.branches",
+      "projects.locations.dataStores.branches.documents",
+      "projects.locations.dataStores.branches.documents.chunks",
+      "projects.locations.dataStores.branches.operations",
+      "projects.locations.dataStores.completionConfig",
+      "projects.locations.dataStores.completionSuggestions",
+      "projects.locations.dataStores.controls",
+      "projects.locations.dataStores.conversations",
+      "projects.locations.dataStores.models.operations",
+      "projects.locations.dataStores.operations",
+      "projects.locations.dataStores.schemas",
+      "projects.locations.dataStores.servingConfigs",
+      "projects.locations.dataStores.sessions",
+      "projects.locations.dataStores.sessions.answers",
+      "projects.locations.dataStores.siteSearchEngine",
+      "projects.locations.dataStores.siteSearchEngine.sitemaps",
+      "projects.locations.dataStores.siteSearchEngine.targetSites",
+      "projects.locations.dataStores.suggestionDenyListEntries",
+      "projects.locations.dataStores.userEvents",
+      "projects.locations.dataStores.widgetConfigs",
+      "projects.locations.evaluations",
+      "projects.locations.evaluations.operations",
+      "projects.locations.groundingConfigs",
+      "projects.locations.identityMappingStores",
+      "projects.locations.identityMappingStores.operations",
+      "projects.locations.licenseConfigs",
+      "projects.locations.notebooks",
+      "projects.locations.notebooks.audioOverviews",
+      "projects.locations.notebooks.sources",
+      "projects.locations.operations",
+      "projects.locations.podcasts.operations",
+      "projects.locations.rankingConfigs",
+      "projects.locations.requirements",
+      "projects.locations.sampleQuerySets",
+      "projects.locations.sampleQuerySets.operations",
+      "projects.locations.sampleQuerySets.sampleQueries",
+      "projects.locations.userEvents",
+      "projects.locations.userStores",
+      "projects.locations.userStores.licenseConfigsUsageStats",
+      "projects.locations.userStores.operations",
+      "projects.locations.userStores.userLicenses",
+      "projects.operations",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "stackdriver.projects.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/rest/v1alpha/projects.locations.collections.engines.conversations/converse",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/access-control"
+      ]
+    }
+  ]
+}

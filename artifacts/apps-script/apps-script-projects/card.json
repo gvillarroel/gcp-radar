@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Apps Script projects",
+  "feature_slug": "apps-script-projects",
+  "summary": "Apps Script supports projects as a development unit.",
+  "extended_definition": "Apps Script supports projects as a development unit.",
+  "lifecycle": {
+    "latest_feature_date": "2011-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/delete",
+      "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Assign permissions for Google Cloud projects \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Guides Send feedback Assign permissions for Google Cloud projects Stay organized with collections Save and categorize content based on your preferences.",
+          "Assign delete permission for all Cloud projects in an organization To give someone delete permission for all Cloud projects in an organization as a super administrator, follow these steps: Open the Google Cloud console at console.cloud.google.com .",
+          "Assign view permission for all Cloud projects in an organization To give someone view permission for all Cloud projects in your organization as a super administrator, follow these steps: Open the Cloud console at console.cloud.google.com ."
+        ]
+      },
+      {
+        "title": "Method: projects.deployments.create \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create",
+        "source_id": "site-api-reference",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.deployments.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag This content describes how to create a deployment of an Apps Script project using an HTTP POST request to the specified URL.",
+          "HTTP request POST https://script.googleapis.com/v1/projects/{scriptId}/deployments The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "Method: projects.deployments.delete \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/delete",
+        "source_id": "site-api-reference",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.deployments.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request DELETE https://script.googleapis.com/v1/projects/{scriptId}/deployments/{deploymentId} The URL uses gRPC Transcoding syntax.",
+          "Page Summary outlined flag This page details how to delete a deployment of an Apps Script project using a DELETE HTTP request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "developers.google.com",
+      "projects.create",
+      "projects.deployments",
+      "projects.deployments.create",
+      "projects.deployments.delete",
+      "projects.deployments.get",
+      "script.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/delete",
+        "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions"
+      ]
+    }
+  ]
+}

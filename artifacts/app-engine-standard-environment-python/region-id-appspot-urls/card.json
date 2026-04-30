@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.123Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Region ID appspot URLs",
+  "feature_slug": "region-id-appspot-urls",
+  "summary": "App Engine supports app URLs that include a region ID to improve request routing efficiency and reliability.",
+  "extended_definition": "App Engine supports app URLs that include a region ID to improve request routing efficiency and reliability.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REGION ID .r.appspot.com portion of the hostname, but includes a service, version, or instance name that does not exist, then the request is routed to the default service.",
+          "All of these URLs include the region ID. gcloud When you deploy an app or service, the gcloud app deploy command displays the URL after the deployment succeeds.",
+          "For apps created after February 2020, REGION ID .r is included in App Engine URLs."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "source_id": "site-docs-reference-3",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "REGION ID .r.appspot.com portion of the hostname, but includes a service, version, or instance name that does not exist, then the request is routed to the default service.",
+          "All of these URLs include the region ID. gcloud When you deploy an app or service, the gcloud app deploy command displays the URL after the deployment succeeds.",
+          "For apps created after February 2020, REGION ID .r is included in App Engine URLs."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For apps created after February 2020, REGION ID .r is included in App Engine URLs.",
+          "Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string \" -dot- \", for example: https:// VERSION ID -dot-default-dot- PROJECT ID .",
+          "REGION ID .r.appspot.com To use custom domains with HTTPS, you must first activate and configure SSL certificates for that domain ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "r.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+      ]
+    }
+  ]
+}

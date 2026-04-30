@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "me-central2 region availability",
+  "feature_slug": "me-central2-region-availability",
+  "summary": "Cloud SQL for SQL Server instances are available in the me-central2 (Dammam) region.",
+  "extended_definition": "Cloud SQL for SQL Server instances are available in the me-central2 (Dammam) region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/availability",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/availability",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You are returned to the instance page for the primary instance while the instance is updated. gcloud Create the regional instance: gcloud sql instances create REGIONAL INSTANCE NAME \\ --availability-type = REGIONAL \\ --database-version = SQLSERVER 2017 STANDARD \\ --cpu = NUMBER CPUS \\ --memory = MEMORY SIZE Configure the root user: gcloud sql users set-password root no-host \\ --instance = REGIONAL INSTANCE NAME \\ --password = PASSWORD For a complete list of available parameters, see the gcloud sql instances create reference page.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"SQLSERVER 2017 STANDARD\", } The output indicates availabilityType is REGIONAL .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"SQLSERVER 2019 STANDARD\" } The output indicates availabilityType is REGIONAL ."
+        ]
+      },
+      {
+        "title": "\"Availability in Cloud SQL \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/availability",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instances configured with regional availability, if the instance encounters a failure, then Cloud SQL automatically brings up the instance in the secondary zone with the same IP address and no data loss so that applications can resume operations on the database.",
+          "These downtimes are applicable to both standalone (zonal) and high availability (regional) instances.",
+          "Maintenance , which includes the following operations with sub-second downtime: Automatic maintenance that Cloud SQL performs every quarter Self-service maintenance that you can initiate at any time Maintenance simulation that you can initiate to test the sub-second downtime behavior What's next Learn about high availability (HA) Enable or disable high availability (HA) Read about disaster recovery (DR) View all the Google Cloud services available in locations worldwide ."
+        ]
+      },
+      {
+        "title": "Availability in Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/availability",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instances configured with regional availability, if the instance encounters a failure, then Cloud SQL automatically brings up the instance in the secondary zone with the same IP address and no data loss so that applications can resume operations on the database.",
+          "These downtimes are applicable to both standalone (zonal) and high availability (regional) instances.",
+          "Unplanned events and zonal outage For applications that require high availability, we recommend configuring the instance for regional availability, also referred to as the high availability (HA) configuration in Cloud SQL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/availability",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/availability"
+      ]
+    }
+  ]
+}

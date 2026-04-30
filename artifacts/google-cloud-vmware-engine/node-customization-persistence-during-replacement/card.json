@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Node customization persistence during replacement",
+  "feature_slug": "node-customization-persistence-during-replacement",
+  "summary": "Customizations from a failed node transfer to its replacement, including vSphere labels, custom attributes, tags, and affinity rules.",
+  "extended_definition": "Customizations from a failed node transfer to its replacement, including vSphere labels, custom attributes, tags, and affinity rules.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Availability and redundancy \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VMware Engine HA feature VMware HA feature Google Cloud feature Disk failure Yes Fast replacement of failed node About the vSAN Default Storage Policy N/A Fan failure Yes Redundant fans, fast replacement of failed node N/A N/A NIC failure Yes Redundant NIC, fast replacement of failed node N/A N/A Host power failure Yes Redundant power supply N/A N/A ESXi host failure Yes Fast replacement of failed node VMware vSphere High Availability N/A VM failure Yes N/A VMware vSphere High Availability Load balancer for stateless VMware VMs Leaf switch port failure Yes Redundant NIC N/A N/A Leaf switch failure Yes Redundant leaf switches N/A N/A Rack failure Yes Placement groups N/A N/A Network connectivity to on-premises Yes Redundant networking services N/A Redundant Dedicated Interconnect and Partner Interconnect circuits Network connectivity Yes N/A N/A Redundant Dedicated Interconnect and Partner Interconnect circuits Regional failure Yes N/A N/A Hosting regions Availability features The following sections describe availability features.",
+          "Fast replacement of a failed node VMware Engine continuously monitors the health of VMware clusters.",
+          "When VMware Engine detects an ESXi node failure, it adds a new ESXi host to the affected VMware cluster from its pool of readily available nodes and removes the failed node from the cluster."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If the secondary node or database is down during backup, Persistent Disk details of the secondary node won't be saved.",
+          "During this time, you need to apply to SAP to have the license from the source database transferred to a new license key.",
+          "You can mount snapshot backup images of an SAP HANA database as a standard mount for: Any manual operation or To Mount a backup for an integrity check Pre checks during mount Connector connectivity status: Verify that the Backup and DR agent is installed and secret is applied for host connectivity between the backup/recovery appliance and the Backup and DR agent."
+        ]
+      },
+      {
+        "title": "\"Private cloud maintenance and updates \\_|\\_ Google Cloud VMware Engine \\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, temporary network issues or software glitches can trigger similar alerts to hardware failures, and we want to avoid impacting your cluster with node replacement when it might not be the recommended action.",
+          "Automated node replacement for hardware failures : If our engineers confirm a hardware failure, the automated node replacement process begins immediately.",
+          "This ensures that we're addressing the correct issue and prevents unnecessary node replacements when a simpler solution (like a reboot) is recommended."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-high-availability-vmware",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    }
+  ]
+}

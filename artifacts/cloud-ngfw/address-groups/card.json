@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.553Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Address groups",
+  "feature_slug": "address-groups",
+  "summary": "Address groups are reusable collections of IPv4 or IPv6 CIDR ranges that can be referenced across firewall policy rules.",
+  "extended_definition": "Address groups are reusable collections of IPv4 or IPv6 CIDR ranges that can be referenced across firewall policy rules.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+      "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+      "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure address groups for firewall policies \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To add an item to an address group, run the following command: gcloud network-security address-groups add-items address-group-pc \\ --items 192.168.10.0/29 \\ --location global Remember, the IP range 192.168.10.0/29 is assigned to the subnet-consumer-allowed subnet of the vpc-consumer VPC network.",
+          "To create an address group, run the following command: gcloud network-security address-groups create address-group-pc \\ --type IPv4 \\ --capacity 1000 \\ --location global In the Authorize cloud shell dialog, click Authorize .",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Configure address groups for firewall policies Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Address groups for firewall policies \\_|\\_ Cloud Next Generation Firewall\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "source_id": "site-docs-root",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Use address groups Firewall policy rule components Google Threat Intelligence for firewall policy rules Fully qualified domain name objects Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Name: The address group name with the following format: A string 1-63 characters long Includes only alphanumeric characters Must not start with a number You can construct a unique URL identifier for an address group in the following format: <containerType>/<containerId>/locations/<location>/addressGroups/<address-group-name> For example, a global address group example-address-group in project myproject has the following unique 4-tuple identifier: projects/myproject/locations/global/addressGroups/example-address-group Each address group has an associated type that can be either IPv4 or IPv6, but not both.",
+          "Organization-scoped address groups Use organization-scoped address groups when you want to define a central list of IP addresses that can be used in high-level rules to provide consistent control for the entire organization and reduce the overhead for individual network and project owners to maintain common lists, such as trusted services and internal IP addresses."
+        ]
+      },
+      {
+        "title": "\"REST Resource: organizations.locations.addressGroups \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud NGFW Reference Send feedback REST Resource: organizations.locations.addressGroups Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods addItems Adds items to an address group. cloneItems Clones items from one address group to another. create Creates a new address group in a given project and location. delete Deletes an address group. get Gets details of a single address group. list Lists address groups in a given project and location. listReferences Lists references of an address group. patch Updates parameters of an address group. removeItems Removes items from an address group.",
+          "Possible values are \"IPv4\" or \"IPV6\". items[] string Optional."
+        ]
+      },
+      {
+        "title": "\"Method: organizations.locations.addressGroups.create \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Networking Cloud NGFW Reference Send feedback Method: organizations.locations.addressGroups.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Authorization requires the following IAM permission on the specified resource parent : networksecurity.addressGroups.create Query parameters Parameters addressGroupId string Required.",
+          "HTTP request POST https://networksecurity.googleapis.com/v1/{parent=organizations/ /locations/ }/addressGroups The URL uses gRPC Transcoding syntax."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networksecurity.addressGroups.create",
+      "networksecurity.googleapis.com",
+      "organizations.locations.addressGroups",
+      "organizations.locations.addressGroups.addItems",
+      "organizations.locations.addressGroups.cloneItems",
+      "organizations.locations.addressGroups.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-address-groups",
+        "https://docs.cloud.google.com/firewall/docs/address-groups-firewall-policies",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups",
+        "https://docs.cloud.google.com/firewall/docs/reference/network-security/rest/v1/organizations.locations.addressGroups/create"
+      ]
+    }
+  ]
+}

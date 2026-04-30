@@ -1,0 +1,220 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.553Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Runtime template Python version selection",
+  "feature_slug": "runtime-template-python-version-selection",
+  "summary": "Runtime templates can be configured to use a specific Python version or automatically use the latest available version.",
+  "extended_definition": "Runtime templates can be configured to use a specific Python version or automatically use the latest available version.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/create-runtime",
+      "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+      "https://docs.cloud.google.com/colab/docs/runtimes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Runtimes and runtime templates \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python version End of patch and support date End of availability date Python 3.12 To be determined To be determined Python 3.11 To be determined To be determined Python 3.10 February 23, 2026 August 17, 2026 Understand end of support dates Support for a Python version ends according to the following dates: End of patch and support date : After this date, the following changes take place: You can't create runtime templates that use this Python version.",
+          "Default runtime specifications Default runtimes and their corresponding default runtime templates include the following specifications: Specification Default Default with GPU Python version Latest available (currently Python 3.12) Latest available (currently Python 3.12) Machine type e2-standard-4 Depends on regional availability.",
+          "Change a runtime template's Python version To change a runtime template's Python version, you can use the Google Cloud console or the REST API."
+        ]
+      },
+      {
+        "title": "Create a runtime template in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates\" Select-Object -Expand Content If successful, the response body contains an instance of Operation .",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https:// REGION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /notebookRuntimeTemplates\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Your runtime template appears in the list on the Runtime templates tab. gcloud Before using any of the command data below, make the following replacements: DISPLAY NAME : the display name of your runtime template."
+        ]
+      },
+      {
+        "title": "\"Manage access to a runtime template in Colab Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID \\ --member = PRINCIPAL \\ --role = ROLE \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID --member = PRINCIPAL --role = ROLE --project = PROJECT ID --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates remove-iam-policy-binding RUNTIME TEMPLATE ID ^ --member = PRINCIPAL ^ --role = ROLE ^ --project = PROJECT ID ^ --region = REGION For more information about managing IAM policies for runtime templates from the command line, see the gcloud CLI documentation .",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID \\ --member = PRINCIPAL \\ --role = ROLE \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID --member = PRINCIPAL --role = ROLE --project = PROJECT ID --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtime-templates add-iam-policy-binding RUNTIME TEMPLATE ID ^ --member = PRINCIPAL ^ --role = ROLE ^ --project = PROJECT ID ^ --region = REGION For more information about managing IAM policies for runtime templates from the command line, see the gcloud CLI documentation .",
+          "The following sample uses the google colab runtime template iam policy Terraform resource to grant access to a Colab Enterprise runtime template. data \"google iam policy\" \"admin\" { binding { role = \"roles/viewer\" members = [ \"user:jane@example.com\" , ] } } resource \"google colab runtime template iam policy\" \"policy\" { project = google colab runtime template.runtime-template.project location = google colab runtime template.runtime-template.location runtime template = google colab runtime template.runtime-template.name policy data = data.google iam policy.admin.policy data } Colab Enterprise principals are users, groups, or domains You can grant access to users, groups, or domains."
+        ]
+      },
+      {
+        "title": "Create a runtime in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime",
+        "source_id": "site-iam-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sample uses the google colab runtime Terraform resource to create a Colab Enterprise runtime. resource \"google colab runtime template\" \"my template\" { name = \"{{index $.Vars \"runtime name\"}}\" display name = \"Runtime template full\" location = \"us-central1\" description = \"Full runtime template\" machine spec { machine type = \"n1-standard-2\" accelerator type = \"NVIDIA TESLA T4\" accelerator count = \"1\" } data persistent disk spec { disk type = \"pd-standard\" disk size gb = 200 } network spec { enable internet access = true } labels = { k = \"val\" } idle shutdown config { idle timeout = \"3600s\" } euc config { euc disabled = true } shielded vm config { enable secure boot = true } network tags = [ \"abc\", \"def\" ] encryption spec { kms key name = \"{{index $.Vars \"key name\"}}\" } } resource \"google colab runtime\" \"{{$.PrimaryResourceId}}\" { name = \"{{index $.Vars \"runtime name\"}}\" location = \"us-central1\" notebook runtime template ref { notebook runtime template = google colab runtime template.my template.id } display name = \"Runtime full\" runtime user = \"gterraformtestuser@gmail.com\" description = \"Full runtime\" desired state = \"ACTIVE\" auto upgrade = true depends on = [ google colab runtime template.my template ] } Troubleshoot This section shows you how to resolve issues with creating runtimes in Colab Enterprise.",
+          "If you try to create a default runtime without the permissions required to create a runtime template, then Colab Enterprise can't create the default runtime.",
+          "To resolve this issue, ask your administrator to grant you a role that includes the aiplatform.notebookRuntimeTemplates.create permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.notebookRuntimeTemplates.create",
+      "cmd.exe",
+      "data.google",
+      "example.com",
+      "gmail.com",
+      "policy.admin.policy",
+      "request.json",
+      "template.id",
+      "template.location",
+      "template.my",
+      "template.name",
+      "template.project",
+      "template.runtime"
+    ],
+    "missing_inventory_roles": [
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/runtimes",
+        "https://docs.cloud.google.com/colab/docs/create-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/manage-access-runtime-template",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    }
+  ]
+}

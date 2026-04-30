@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.794Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "IAM Conditions for Apigee Integration",
+  "feature_slug": "iam-conditions-for-apigee-integration",
+  "summary": "Adds support for IAM Conditions to enable attribute-based access control on Apigee Integration resources.",
+  "extended_definition": "Adds support for IAM Conditions to enable attribute-based access control on Apigee Integration resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+      "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add IAM conditions \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add IAM conditions Identity and Access Management (IAM) Conditions lets you to define and enforce conditional, attribute-based access control for Google Cloud resources, including Application Integration resources.",
+          "In Application Integration, you can enforce conditional access based on the following attributes: Date/time attributes: Use to set temporary (expiring), scheduled, or limited-duration access to Application Integration resources.",
+          "Resource attributes : Use to configure conditional access based on a resource name, resource type, or resource service attributes."
+        ]
+      },
+      {
+        "title": "\"Build integrations with Gemini Code Assist \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 85,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Configure Call REST API tasks If you have API Hub enabled in your project, then Gemini in Application Integration can assist you in providing contextually appropriate Call REST Endpoint task and task configuration recommendations based on the logical flow of your existing integration.",
+          "In Application Integration, Gemini Code Assist can assist you to do the following: Create integrations Configure connector tasks in an integration Configure Call REST API tasks in an integration Add edge conditions and append additional tasks to an integration Configure JavaScript tasks ( Preview ) Generate integration description For detailed information about Gemini for Google Cloud, see Gemini for Google Cloud overview .",
+          "Note: Gemini suggests one or more integration flows that qualifies your prompt: If you have enabled API Hub and Integration Connectors and met all prerequisites , then recommendations will contain Call REST Endpoint and Connectors tasks."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce opportunity to BigQuery order \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 81,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following edge condition controls the flow of the integration based on the validation of the account information: Add an edge connection from the Check account task to the Mapping for Account Creation task with the following edge condition: $account exists$ = False Add another edge connection from the Check account task to the Mapping for Order Creation task with the following edge condition: $account exists$ = True Sample integration flow The following figure shows a sample layout of the integration created using this tutorial.",
+          "Home Documentation Application development Application Integration Guides Send feedback Automate Salesforce opportunity to BigQuery order Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a new ServiceNow account Perform the following steps to configure a Connectors task that adds a new account to your ServiceNow instance: In the integration editor, click Tasks to display a list of available tasks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.serviceAccountCreator",
+      "integrations.googleapis.com",
+      "resourcemanager.projectIamAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountCreator",
+      "roles/resourcemanager.projectIamAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/add-iam-conditions",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/build-integrations-gemini"
+      ]
+    }
+  ]
+}

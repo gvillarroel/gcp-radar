@@ -1,0 +1,186 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.713Z",
+  "source_step08_card": "data/step-08/current/products/secure-source-manager/card.json",
+  "product_name": "Secure Source Manager",
+  "product_slug": "secure-source-manager",
+  "feature_name": "Branch protection",
+  "feature_slug": "branch-protection",
+  "summary": "Branch protection is now generally available in Secure Source Manager.",
+  "extended_definition": "Branch protection is now generally available in Secure Source Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+      "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+      "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build",
+      "https://docs.cloud.google.com/secure-source-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Branch protection overview \\_|\\_ Secure Source Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes branch protection in Secure Source Manager for administrators.",
+          "Repository administrators can configure branch protection to block code submission to specific branches based on the following criteria.",
+          "What's next Configure branch protection Connect to Cloud Build Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configure branch protection \\_|\\_ Secure Source Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "source_id": "site-docs-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to configure branch protection rules for a Secure Source Manager repository, ask your administrator to grant you the following IAM roles: Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance Secure Source Manager Repository Admin ( roles/securesourcemanager.repoAdmin ) on the Secure Source Manager repository To approve pull requests on protected branches in any repository in a Secure Source Manager instance: Secure Source Manager Repository Pull Request Approver ( roles/securesourcemanager.repoPullRequestApprover ) on the Google Cloud project for the instance Secure Source Manager Repository Writer ( roles/securesourcemanager.repoWriter ) on the Google Cloud project for the instance To approve pull requests on protected branches in a single repository: Secure Source Manager Repository Pull Request Approver ( roles/securesourcemanager.repoPullRequestApprover ) on the repository Secure Source Manager Repository Writer ( roles/securesourcemanager.repoWriter ) on the repository For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "BRANCH NAME PATTERN : the branch name or regex pattern, such as main . resource \"google secure source manager branch rule\" \"default\" { branch rule id = \" BRANCH RULE ID \" project = \" PROJECT ID \" location = \" LOCATION \" repository id = \" REPOSITORY ID \" include pattern = \" BRANCH NAME PATTERN \" minimum approvals count = 2 minimum reviews count = 2 require comments resolved = true require linear history = true require pull request = true disabled = false allow stale reviews = false } Modify a branch protection rule To modify a branch protection rule, do the following: In the Secure Source Manager web interface, select the repository with the branch protection rule you want to modify.",
+          "This page explains how to configure branch protection for Secure Source Manager repositories."
+        ]
+      },
+      {
+        "title": "Secure Source Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Instances and repositories Secure Source Manager instances are deployed to an available Google Cloud region and are accessible through their instance URIs.",
+          "For more information on protecting branches in Secure Source Manager, see Branch protection overview .",
+          "Security compliance Secure Source Manager is in compliance with the following certifications: FedRAMP High compliant HIPAA compliant Configure a private Secure Source Manager instance in a VPC Service Controls perimeter You can use Secure Source Manager in a VPC Service Controls perimeter in order to guard against data exfiltration."
+        ]
+      },
+      {
+        "title": "Connect to Cloud Build \\_|\\_ Secure Source Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to connect a Secure Source Manager repository to Cloud Build, ask your administrator to grant you the following IAM roles: Secure Source Manager Repository Writer ( roles/securesourcemanager.repoWriter ) on your repository Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "You can prevent commits with unsuccessful builds from merging into important branches if you configure a branch protection rule to require a successful status check from triggers configured in your triggers file.",
+          "This page details how to invoke builds automatically from Secure Source Manager using Cloud Build configuration files and a triggers YAML file in your Secure Source Manager repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoAdmin",
+      "securesourcemanager.repoPullRequestApprover",
+      "securesourcemanager.repoWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoAdmin",
+      "roles/securesourcemanager.repoPullRequestApprover",
+      "roles/securesourcemanager.repoWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/branch-protection-overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-branch-protection",
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    }
+  ]
+}

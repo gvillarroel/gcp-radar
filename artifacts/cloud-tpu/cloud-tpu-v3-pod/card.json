@@ -1,0 +1,97 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.112Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "Cloud TPU v3 Pod",
+  "feature_slug": "cloud-tpu-v3-pod",
+  "summary": "Cloud TPU v3 Pod provides larger and faster scalable TPU pod slices for large distributed TensorFlow 1.x training workloads; Cloud TPU v3 Pod provides larger and faster scalable TPU pod slices for large distributed training workloads.",
+  "extended_definition": "Cloud TPU v3 Pod provides larger and faster scalable TPU pod slices for large distributed TensorFlow 1.x training workloads; Cloud TPU v3 Pod provides larger and faster scalable TPU pod slices for large distributed training workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+      "https://docs.cloud.google.com/tpu/docs/quota",
+      "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud TPU quotas \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Cloud Quotas system does the following: Monitors your consumption of Google Cloud products and services Restricts your consumption of those resources Provides a way to request changes to the quota value and automate quota adjustments In most cases, when you attempt to consume more of a resource than its quota allows, the system blocks access to the resource, and the task that you're trying to perform fails.",
+          "If you are creating TPU slices in GKE , you use Compute Engine API quota, which is a different quota."
+        ]
+      },
+      {
+        "title": "TPU architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "For Cloud TPU v4, v5p, and TPU7x, ICI resiliency is enabled by default for slices that are one cube or larger, for example: v5p-128 when specifying accelerator type 4x4x4 when specifying accelerator config TPU versions The exact architecture of a TPU chip depends on the TPU version that you use.",
+          "Multislice versus single slice Multislice is a group of slices, extending TPU connectivity beyond the inter-chip interconnect (ICI) connections and leveraging the data-center network (DCN) for transmitting data beyond a slice.",
+          "Using this hybrid connectivity, Multislice enables parallelism across slices and lets you use a greater number of TPU cores for a single job than what a single slice can accommodate."
+        ]
+      },
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "source_id": "site-docs-root",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use larger topologies that have more than 64 TPU chips, the values you assign to {A}, {B}, and {C} must meet the following conditions: {A}, {B}, and {C} must be multiples of four.",
+          "The following describes how collection scheduling behavior depends on the type of TPU slice that you use: Multi-host TPU slice: GKE groups multi-host TPU slices to form a collection.",
+          "Benefits of using TPUs in GKE GKE provides full support for TPU node and node pool lifecycle management, including creating, configuring, and deleting TPU VMs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/quota",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/tpu/docs/quota",
+        "https://docs.cloud.google.com/tpu/docs/system-architecture-tpu-vm"
+      ]
+    }
+  ]
+}

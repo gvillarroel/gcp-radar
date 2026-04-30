@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Update Center",
+  "feature_slug": "update-center",
+  "summary": "Provides a console experience for viewing and managing private cloud updates, including scheduled version updates and patch status.",
+  "extended_definition": "Provides a console experience for viewing and managing private cloud updates, including scheduled version updates and patch status.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NodeTypeConfig () } request . cluster . node type configs [ \"standard-72\" ] . node count = node count request . update mask = \"nodeTypeConfigs. .nodeCount\" return client . update cluster ( request ) Add a new cluster to a private cloud To add a new cluster to an existing private cloud, do the following: Console To add a new cluster using the Google Cloud console, follow these steps: In the Google Cloud console, go to the Private clouds page.",
+          "NodeTypeConfig () } request . cluster . node type configs [ \"standard-72\" ] . node count = node count request . update mask = \"nodeTypeConfigs. .nodeCount\" return client . update cluster ( request ) Delete a cluster To delete a whole cluster, do the following: Console In the Google Cloud console, go to the Private clouds page.",
+          "Viewing a private cloud summary The summary provides information about your private cloud including its name, number of vSphere clusters, number of nodes, location, operational state, and more."
+        ]
+      },
+      {
+        "title": "\"Private cloud maintenance and updates \\_|\\_ Google Cloud VMware Engine \\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "During a VMware maintenance interval, the following services continue to function without any impact: VMware management plane and applications vCenter access All networking and storage Updates and upgrades VMware Engine is responsible for lifecycle management of VMware software (ESXi, vCenter, PSC, and NSX) in private clouds.",
+          "The following VMware elements in private clouds are backed up, maintained, and updated: ESXi vCenter Platform Services Controller vSAN NSX Backup and restore Backups include the following: Nightly incremental backups of vCenter, PSC, and DVS rules. vCenter built-in APIs to back up components at the application layer.",
+          "Update VMware add-ons and third-party solutions: Verify that VMware add-ons and third party solutions deployed on your private cloud vCenter are compatible with the post-upgrade versions mentioned previously."
+        ]
+      },
+      {
+        "title": "\"Overview of VMware Engine monitoring \\_|\\_ Google Cloud VMware Engine \\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists the classes of available logs for VMware Engine and the severity of the reported events: The following table lists the available logs for VMware Engine and the severity of the reported events: VMware component Issue notification Resolution notification Action owner VMware Engine node ALERT NOTICE VMware Engine Service Operations VMware vCenter CRITICAL NOTICE VMware Engine Service Operations VMware NSX Manager CRITICAL NOTICE VMware Engine Service Operations VMware HCX CRITICAL NOTICE VMware Engine Service Operations vSAN utilization ALERT Not applicable Customer Cluster auto-scale Issue dependent Issue dependent Issue dependent Private cloud operations (create, delete, add and remove nodes) Issue dependent Issue dependent Issue dependent Stretched private cloud issues ALERT NOTICE VMware Engine Service Operations You can access logs for VMware Engine in the following ways: In Logs Explorer , by using the following log name: projects/ PROJECT ID /logs/vmwareengine.googleapis.com%2Falerts In the Google Cloud console, by going to the Dashboard page .",
+          "VMware component Essential Contacts notification category Action owner VMware Engine node Technical VMware Engine Service Operations VMware vCenter Technical VMware Engine Service Operations VMware NSX Manager Technical VMware Engine Service Operations VMware HCX Technical VMware Engine Service Operations vSAN utilization Technical Customer Cluster auto-scale Technical Issue dependent Private cloud operations (create, delete, add and remove nodes) Technical Issue dependent Stretched private cloud issues Technical VMware Engine Service Operations Use of Essential Contacts by other VMware Engine features Other VMware Engine features also use service-related automatic email notifications, such as Update Center , which supports day-2 operations.",
+          "Use of Cloud Logging by other VMware Engine features Other VMware Engine features also generate service-related logs, such as Update Center , which supports day-2 operations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-maintenance-updates"
+      ]
+    }
+  ]
+}

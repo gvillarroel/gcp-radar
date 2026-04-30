@@ -1,0 +1,265 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.387Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "DNSRecordSet spec.rrdatas field",
+  "feature_slug": "dnsrecordset-spec-rrdatas-field",
+  "summary": "The DNSRecordSet resource includes a spec.rrdatas field for directly specifying record data values; deprecated on 2022-05-10.",
+  "extended_definition": "The DNSRecordSet resource includes a spec.rrdatas field for directly specifying record data values; deprecated on 2022-05-10.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-10",
+    "deprecation_date": "2022-05-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DNSRecordSet | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "source_id": "feature-recovery-http",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "We recommend that you use `spec.rrdatasRefs` instead. rrdatas[] Optional string rrdatasRefs Optional list (object) rrdatasRefs[] Optional object rrdatasRefs[].external Optional string Allowed value: The `address` field of a `ComputeAddress` resource. rrdatasRefs[].kind Optional string Kind of the referent.",
+          "DNSRecordSet Property Value Google Cloud Service Name Cloud DNS Google Cloud Service Documentation /dns/docs/ Google Cloud REST Resource Name v1beta2.resourceRecordSets Google Cloud REST Resource Documentation /dns/docs/reference/v1beta2/resourceRecordSets Config Connector Resource Short Names gcpdnsrecordset gcpdnsrecordsets dnsrecordset Config Connector Service Name dns.googleapis.com Config Connector Resource Fully Qualified Name dnsrecordsets.dns.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id Spec Schema managedZoneRef : external : string name : string namespace : string name : string routingPolicy : enableGeoFencing : boolean geo : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string location : string rrdatasRefs : - external : string kind : string name : string namespace : string primaryBackup : backupGeo : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string location : string rrdatasRefs : - external : string name : string namespace : string enableGeoFencingForBackups : boolean primary : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string trickleRatio : float wrr : - healthCheckedTargets : internalLoadBalancers : - ipAddressRef : external : string name : string namespace : string ipProtocol : string loadBalancerType : string networkRef : external : string name : string namespace : string port : string projectRef : external : string name : string namespace : string regionRef : external : string name : string namespace : string rrdatasRefs : - external : string kind : string name : string namespace : string weight : float rrdatas : - string rrdatasRefs : - external : string kind : string name : string namespace : string ttl : integer type : string Fields managedZoneRef Required object managedZoneRef.external Optional string Allowed value: The `name` field of a `DNSManagedZone` resource. managedZoneRef.name Optional string Name of the referent.",
+          "Sample YAML(s) DNS A Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-a spec : name : \"www.example.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-a rrdatas : - \"8.8.8.8\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-a spec : dnsName : \"example.com.\" DNS A Record Set With Compute Address Reference # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-computeaddressreference spec : name : \"www.compute-address-reference-example.com.\" type : A ttl : 300 managedZoneRef : name : dnsrecordset-dep-computeaddressreference rrdatasRefs : - name : dnsrecordset-dep-computeaddressreference kind : ComputeAddress --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-computeaddressreference spec : addressType : INTERNAL description : a test global address location : global ipVersion : IPV4 purpose : VPC_PEERING prefixLength : 16 networkRef : name : dnsrecordset-dep-computeaddressreference --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : dnsrecordset-dep-computeaddressreference spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-computeaddressreference spec : dnsName : \"compute-address-reference-example.com.\" DNS Aaaa Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-aaaa spec : name : \"www.example.com.\" type : \"AAAA\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-aaaa rrdatas : - \"8888:8888:8888:8888::\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-aaaa spec : dnsName : \"example.com.\" DNS Cname Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-cname spec : name : \"*.example.com.\" type : \"CNAME\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-cname rrdatas : - \".www.example.com.\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-cname spec : dnsName : \"example.com.\" DNS Mx Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-mx spec : name : \"mail.example.com.\" type : \"MX\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-mx rrdatas : - \"5 gmr-stmp-in.l.google.com.\" - \"10 alt1.gmr-stmp-in.l.google.com.\" - \"10 alt2.gmr-stmp-in.l.google.com.\" - \"10 alt3.gmr-stmp-in.l.google.com.\" - \"10 alt4.gmr-stmp-in.l.google.com.\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-mx spec : dnsName : \"example.com.\" DNS Ns Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-ns spec : name : \"example.com.\" type : \"NS\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-ns rrdatas : - \"ns-cloud-a1.googledomains.com.\" - \"ns-cloud-a2.googledomains.com.\" - \"ns-cloud-a3.googledomains.com.\" - \"ns-cloud-a4.googledomains.com.\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-ns spec : dnsName : \"example.com.\" DNS Routing Policy Geo # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-geo spec : name : \"www.kcc-sample-dnsrecordset-rp-geo.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp-geo routingPolicy : geo : - location : us-central1 rrdatasRefs : - external : \"1.2.3.4\" - external : \"1.2.3.5\" - location : us-west1 rrdatasRefs : - external : \"2.3.4.5\" - external : \"2.3.4.6\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp-geo spec : dnsName : \"kcc-sample-dnsrecordset-rp-geo.com.\" DNS Routing Policy Geo Health Checks # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-geo-hc spec : name : \"www.example.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp-geo-hc routingPolicy : geo : - location : us-central1 healthCheckedTargets : internalLoadBalancers : - ipAddressRef : name : dnsrecordset-dep-rp-geo-hc ipProtocol : tcp loadBalancerType : regionalL4ilb networkRef : name : dnsrecordset-dep-rp-geo-hc port : '80' projectRef : external : ${PROJECT_ID?} regionRef : name : dnsrecordset-dep-rp-geo-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-rp-geo-hc spec : addressType : INTERNAL location : us-central1 ipVersion : IPV4 purpose : SHARED_LOADBALANCER_VIP subnetworkRef : name : dnsrecordset-dep-rp-geo-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : dnsrecordset-dep-rp-geo-hc spec : healthChecks : - healthCheckRef : name : dnsrecordset-dep-rp-geo-hc loadBalancingScheme : INTERNAL location : us-central1 protocol : TCP backend : - balancingMode : CONNECTION group : instanceGroupRef : name : dnsrecordset-dep-rp-geo-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : dnsrecordset-dep-rp-geo-hc spec : backendServiceRef : name : dnsrecordset-dep-rp-geo-hc ipAddress : addressRef : name : dnsrecordset-dep-rp-geo-hc ipProtocol : \"TCP\" loadBalancingScheme : INTERNAL location : us-central1 networkRef : name : dnsrecordset-dep-rp-geo-hc subnetworkRef : name : dnsrecordset-dep-rp-geo-hc ports : - '80' allowGlobalAccess : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : dnsrecordset-dep-rp-geo-hc spec : httpHealthCheck : port : 80 location : us-central1 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : dnsrecordset-dep-rp-geo-hc spec : zone : us-central1-a networkRef : name : dnsrecordset-dep-rp-geo-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : dnsrecordset-dep-rp-geo-hc spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : dnsrecordset-dep-rp-geo-hc spec : ipCidrRange : 10.2.0.0/28 region : us-central1 networkRef : name : dnsrecordset-dep-rp-geo-hc --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp-geo-hc spec : dnsName : \"example.com.\" visibility : private privateVisibilityConfig : networks : - networkRef : name : dnsrecordset-dep-rp-geo-hc DNS Routing Policy Geo With Compute Address Reference # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-geo-reference spec : name : \"www.example.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp routingPolicy : geo : - location : us-central1 rrdatasRefs : - name : dnsrecordset-dep-computeaddressreference1 kind : ComputeAddress - location : us-west1 rrdatasRefs : - name : dnsrecordset-dep-computeaddressreference2 kind : ComputeAddress --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-computeaddressreference1 spec : addressType : INTERNAL description : a test global address location : global ipVersion : IPV4 purpose : VPC_PEERING prefixLength : 16 networkRef : name : dnsrecordset-dep-computenetworkreference --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-computeaddressreference2 spec : addressType : INTERNAL description : a test global address location : global ipVersion : IPV4 purpose : VPC_PEERING prefixLength : 16 networkRef : name : dnsrecordset-dep-computenetworkreference --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : dnsrecordset-dep-computenetworkreference spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp spec : dnsName : \"example.com.\" visibility : private privateVisibilityConfig : networks : - networkRef : name : dnsrecordset-dep-computenetworkreference DNS Routing Policy Primary Backup # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-pb-hc spec : name : \"www.example.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp-pb-hc routingPolicy : primaryBackup : primary : internalLoadBalancers : - ipAddressRef : name : dnsrecordset-dep-rp-pb-hc ipProtocol : tcp loadBalancerType : globalL7ilb networkRef : name : dnsrecordset-dep-rp-pb-hc port : '80' projectRef : external : ${PROJECT_ID?} backupGeo : - location : us-central1 rrdatasRefs : - external : \"1.2.3.4\" - external : \"1.2.3.5\" - location : us-west1 rrdatasRefs : - external : \"2.3.4.5\" - external : \"2.3.4.6\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-rp-pb-hc spec : addressType : INTERNAL location : us-central1 ipVersion : IPV4 purpose : SHARED_LOADBALANCER_VIP subnetworkRef : name : dnsrecordset-dep1-rp-pb-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : dnsrecordset-dep-rp-pb-hc spec : healthChecks : - healthCheckRef : name : dnsrecordset-dep-rp-pb-hc loadBalancingScheme : INTERNAL_MANAGED location : global protocol : HTTP backend : - balancingMode : UTILIZATION group : instanceGroupRef : name : dnsrecordset-dep-rp-pb-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : dnsrecordset-dep-rp-pb-hc spec : target : targetHTTPProxyRef : name : dnsrecordset-dep-rp-pb-hc ipAddress : addressRef : name : dnsrecordset-dep-rp-pb-hc ipProtocol : \"TCP\" loadBalancingScheme : INTERNAL_MANAGED location : global networkRef : name : dnsrecordset-dep-rp-pb-hc subnetworkRef : name : dnsrecordset-dep1-rp-pb-hc portRange : '80-80' allowGlobalAccess : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : dnsrecordset-dep-rp-pb-hc spec : httpHealthCheck : port : 80 location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : dnsrecordset-dep-rp-pb-hc spec : zone : us-central1-a networkRef : name : dnsrecordset-dep-rp-pb-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : dnsrecordset-dep-rp-pb-hc spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : dnsrecordset-dep1-rp-pb-hc spec : ipCidrRange : 10.2.0.0/28 region : us-central1 networkRef : name : dnsrecordset-dep-rp-pb-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : dnsrecordset-dep2-rp-pb-hc spec : ipCidrRange : 10.3.0.0/26 region : us-central1 purpose : GLOBAL_MANAGED_PROXY role : ACTIVE networkRef : name : dnsrecordset-dep-rp-pb-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeTargetHTTPProxy metadata : name : dnsrecordset-dep-rp-pb-hc spec : urlMapRef : name : dnsrecordset-dep-rp-pb-hc location : global --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeURLMap metadata : name : dnsrecordset-dep-rp-pb-hc spec : defaultService : backendServiceRef : name : dnsrecordset-dep-rp-pb-hc location : global --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp-pb-hc spec : dnsName : \"example.com.\" visibility : private privateVisibilityConfig : networks : - networkRef : name : dnsrecordset-dep-rp-pb-hc DNS Routing Policy Wrr # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-wrr spec : name : \"www.kcc-sample-dnsrecordset-rp-wrr.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp-wrr routingPolicy : wrr : - weight : 0.5 rrdatasRefs : - external : \"1.2.3.4\" - external : \"1.2.3.5\" - weight : 0.5 rrdatasRefs : - external : \"2.3.4.5\" - external : \"2.3.4.6\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp-wrr spec : dnsName : \"kcc-sample-dnsrecordset-rp-wrr.com.\" DNS Routing Policy Wrr Health Checks # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-rp-wrr-hc spec : name : \"www.example.com.\" type : \"A\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-rp-wrr-hc routingPolicy : wrr : - weight : 1 healthCheckedTargets : internalLoadBalancers : - ipAddressRef : name : dnsrecordset-dep-rp-wrr-hc ipProtocol : tcp loadBalancerType : regionalL4ilb networkRef : name : dnsrecordset-dep-rp-wrr-hc port : '80' projectRef : external : ${PROJECT_ID?} regionRef : name : dnsrecordset-dep-rp-wrr-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : dnsrecordset-dep-rp-wrr-hc spec : addressType : INTERNAL location : us-central1 ipVersion : IPV4 purpose : SHARED_LOADBALANCER_VIP subnetworkRef : name : dnsrecordset-dep-rp-wrr-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeBackendService metadata : name : dnsrecordset-dep-rp-wrr-hc spec : healthChecks : - healthCheckRef : name : dnsrecordset-dep-rp-wrr-hc loadBalancingScheme : INTERNAL location : us-central1 protocol : TCP backend : - balancingMode : CONNECTION group : instanceGroupRef : name : dnsrecordset-dep-rp-wrr-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeForwardingRule metadata : name : dnsrecordset-dep-rp-wrr-hc spec : backendServiceRef : name : dnsrecordset-dep-rp-wrr-hc ipAddress : addressRef : name : dnsrecordset-dep-rp-wrr-hc ipProtocol : \"TCP\" loadBalancingScheme : INTERNAL location : us-central1 networkRef : name : dnsrecordset-dep-rp-wrr-hc subnetworkRef : name : dnsrecordset-dep-rp-wrr-hc ports : - '80' allowGlobalAccess : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeHealthCheck metadata : name : dnsrecordset-dep-rp-wrr-hc spec : httpHealthCheck : port : 80 location : us-central1 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceGroup metadata : name : dnsrecordset-dep-rp-wrr-hc spec : zone : us-central1-a networkRef : name : dnsrecordset-dep-rp-wrr-hc --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : dnsrecordset-dep-rp-wrr-hc spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : dnsrecordset-dep-rp-wrr-hc spec : ipCidrRange : 10.2.0.0/28 region : us-central1 networkRef : name : dnsrecordset-dep-rp-wrr-hc --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-rp-wrr-hc spec : dnsName : \"example.com.\" visibility : private privateVisibilityConfig : networks : - networkRef : name : dnsrecordset-dep-rp-wrr-hc DNS Srv Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-srv spec : name : \"_example._tcp.example.com.\" type : \"SRV\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-srv rrdatas : - \"0 0 9 tcpserver.cnrm-dns-example.com.\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-srv spec : dnsName : \"example.com.\" DNS Txt Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-txt spec : name : \"example.com.\" type : \"TXT\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-txt rrdatas : - \"\\\"This is a sample DNS text record string\\\"\" - \"Text records are normally split on spaces\" - \"To prevent this, \\\"quote your text like this\\\"\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-txt spec : dnsName : \"example.com.\" Dnssec Dnskey Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-dnssecdnskey spec : name : \"secure.example.com.\" type : \"DNSKEY\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-dnssecdnskey rrdatas : - \"256 3 8 AwEAAcAPhPM4CQHqg6hZ49y2P3IdKZuF44QNCc50vjATD7W+je4va6djY5JpnNP0pIohKNYiCFap/b4Y9jjJGSOkOfkfBR8neI7X5LisMEGUjwRcrG8J9UYP1S1unTNqRcWyDYFH2q3KnIO08zImh5DiFt8yfCdKoqZUN1dup5hy0UWz\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-dnssecdnskey spec : dnsName : \"secure.example.com.\" dnssecConfig : state : \"transfer\" Dnssec Ds Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-dnssecds spec : name : \"host.secure.example.com.\" type : \"DS\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-dnssecds rrdatas : - \"31523 5 1 c8761ba5defc26ac7b78e076d7c47fa9f86b9fba\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-dnssecds spec : dnsName : \"secure.example.com.\" dnssecConfig : state : \"on\" Dnssec Ipsecvpnkey Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-dnssecipsecvpnkey spec : name : \"service.secure.example.com.\" type : \"IPSECKEY\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-dnssecipsecvpnkey rrdatas : - \"10 1 2 192.0.2.3 AQNRU3mG7TVTO2BkR47usntb102uFJtugbo6BSGvgqt4AQ==\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-dnssecipsecvpnkey spec : dnsName : \"secure.example.com.\" dnssecConfig : state : \"on\" Dnssec Sshfp Record Set # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSRecordSet metadata : name : dnsrecordset-sample-dnssecsshfp spec : name : \"host.secure.example.com.\" type : \"SSHFP\" ttl : 300 managedZoneRef : name : dnsrecordset-dep-dnssecsshfp rrdatas : - \"2 1 123456789abcdef67890123456789abcdef67890\" --- apiVersion : dns.cnrm.cloud.google.com/v1beta1 kind : DNSManagedZone metadata : name : dnsrecordset-dep-dnssecsshfp spec : dnsName : \"secure.example.com.\" dnssecConfig : state : \"on\" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : \"foo1\" foo2 : \"foo2\" bars : - br1 : \"1 br1\" br2 : \"1 br2\" - br1 : \"2 br1\" br2 : \"2 br2\" barz : bz1 : \"bz1\" bz2 : \"bz2\" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields.",
+          "Configure the cluster-level or namespace-level stateIntoSpec override When installing Config Connector, or updating the Config Connector installation, you can configure the cluster-level or namespace-level stateIntoSpec override to be Absent in the ConfigConnector CR or ConfigConnectorContext CR. spec : stateIntoSpec : Absent This makes Absent the default spec fields populating behavior for any new resources created in the cluster or in the namespace when you don't specify the cnrm.cloud.google.com/state-into-spec annotation in the new resource YAMLs."
+        ]
+      },
+      {
+        "title": "\"Managing resources with the resourceID field \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "Specifying the resourceID field You can specify the resourceID field in the resource's spec .",
+          "Acquiring a folder To acquire a folder using Config Connector with the resourceID field, complete the following steps: Copy the following contents into a file named folder.yaml . apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : cnrm.cloud.google.com/organization-id : ORG ID Remove the deletion-policy annotation if it is safe to delete the folder when the resource is deleted from your cluster. cnrm.cloud.google.com/deletion-policy : \"abandon\" name : folder-sample-for-acquisition spec : resourceID : ACQUIRED FOLDER ID displayName : ACQUIRED FOLDER DISPLAY NAME Replace the following: ORG ID with the numeric ID for your organization.",
+          "Copy the following contents into a file named bigquery-dataset.yaml . apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydataset-sample-for-creation spec : resourceID : bigquerydataset sample with resourceid defaultTableExpirationMs : 3600000 description : \"BigQuery Dataset Sample with the ResourceID Field\" friendlyName : bigquerydataset-sample-with-resourceid location : US Apply the YAML file to your cluster. kubectl apply --namespace CC NAMESPACE -f bigquery-dataset.yaml Replace CC NAMESPACE with the namespace Config Connector manages resources from."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a1.googledomains.com",
+      "a2.googledomains.com",
+      "a3.googledomains.com",
+      "a4.googledomains.com",
+      "alt1.gmr",
+      "alt2.gmr",
+      "alt3.gmr",
+      "alt4.gmr",
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "dataset.yaml",
+      "dns.cnrm.cloud.google.com",
+      "dns.googleapis.com",
+      "dnsrecordsets.dns.cnrm.cloud.google.com",
+      "example.com",
+      "folder.yaml",
+      "geo.com",
+      "host.secure.example.com",
+      "in.l.google.com",
+      "mail.example.com",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "secure.example.com",
+      "service.secure.example.com",
+      "spec.rrdatas",
+      "spec.rrdatasRefs",
+      "tcpserver.cnrm",
+      "v1beta2.resourceRecordSets",
+      "wrr.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dns/dnsrecordset",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    }
+  ]
+}

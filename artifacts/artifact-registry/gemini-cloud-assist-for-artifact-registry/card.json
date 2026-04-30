@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.080Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Gemini Cloud Assist for Artifact Registry",
+  "feature_slug": "gemini-cloud-assist-for-artifact-registry",
+  "summary": "Artifact Registry gained Gemini Cloud Assist integration to provide assisted insights about container images.",
+  "extended_definition": "Artifact Registry gained Gemini Cloud Assist integration to provide assisted insights about container images.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Learn about your container images with Gemini assistance \\_|\\_ Artifact\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "source_id": "site-docs-root-2",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To list your images in a repository, do the following: In Gemini Cloud Assist chat, enter the following prompt: List my images for REPOSITORY in LOCATION with the tag TAG Replace the following: REPOSITORY : the repository ID LOCATION : the location of the repository—for example, us-west1 TAG : a Docker tag—for example, latest The response includes a list of images that have the specified tag, repository, and location.",
+          "For example, the following prompt asks Gemini Cloud Assist to list repositories in the region us-west1 that have the label env:dev : List repositories for us-west1 with the label env:dev The response includes a list of repositories in the specified location that have the label env:dev .",
+          "Home Documentation Application development Artifact Registry Guides Send feedback Learn about your container images with Gemini assistance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you're new to using Terraform for Google Cloud, see the Get Started - Google Cloud page on the HashiCorp website. provider \"google\" { project = \" PROJECT-ID \" } resource \"google artifact registry repository\" \"my-repo\" { provider = google-beta location = \" LOCATION \" repository id = \" REPOSITORY \" description = \" DESCRIPTION \" format = \" FORMAT \" } resource \"google service account\" \"repo-account\" { provider = google-beta account id = \" ACCOUNT-ID \" display name = \"Repository Service Account\" } resource \"google artifact registry repository iam member\" \"repo-iam\" { provider = google-beta location = google artifact registry repository.my-repo.location repository = google artifact registry repository.my-repo.name role = \"roles/artifactregistry.reader\" member = \"serviceAccount:${google service account.repo-account.email}\" } ACCOUNT-ID is the ID of the service account.",
+          "Container images: Docker , Helm Language packages: Java , Node.js , Python , Go OS packages: Debian , RPM Other: Kubeflow Pipeline templates GitLab on Google Cloud The GitLab on Google Cloud integration uses Workload Identity Federation for authorization and authentication for GitLab workloads on Google Cloud without the need for service accounts or service account keys.",
+          "Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers ."
+        ]
+      },
+      {
+        "title": "Manage images \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.email",
+      "account.repo",
+      "artifactregistry.reader",
+      "example.com",
+      "repo.location",
+      "repo.name",
+      "repository.my"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/learn-about-your-container-images-with-gemini-assistance",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    }
+  ]
+}

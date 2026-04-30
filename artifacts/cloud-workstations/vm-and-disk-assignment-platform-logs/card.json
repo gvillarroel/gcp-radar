@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.383Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "VM and disk assignment platform logs",
+  "feature_slug": "vm-and-disk-assignment-platform-logs",
+  "summary": "Cloud Workstations writes vm_assignments and disk_assignments platform logs to Cloud Logging for newly created clusters.",
+  "extended_definition": "Cloud Workstations writes vm_assignments and disk_assignments platform logs to Cloud Logging for newly created clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+      "https://docs.cloud.google.com/workstations/docs/architecture",
+      "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+      "https://docs.cloud.google.com/workstations/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Workstations architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/architecture",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource pooling Administrators and platform teams can optionally pool VMs and persistent disks for faster workstation startup using the pool size workstation configuration option.",
+          "Cloud Workstations manages Google Cloud resources, such as Compute Engine VMs and persistent disks (PDs), to give you more visibility and control over your projects' resources.",
+          "When specified, the service pools the specified number of persistent disks and VMs and pre-pulls the container image onto the VM before workstation assignment."
+        ]
+      },
+      {
+        "title": "\"Customize your development environment \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "source_id": "site-docs-root-2",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes the workstation configuration parameters that allow you to customize the Cloud Workstations environment, including the VM type , home disk size, base container image, and more.",
+          "If not set, VMs run with a service account provided by the Cloud Workstations service, and the image must be publicly accessible. serviceAccountScopes[] string Optional.",
+          "It creates a persistent disk that mounts to the workstation VM at /home when the session starts and detaches when the session ends."
+        ]
+      },
+      {
+        "title": "Cloud Workstations overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workstations can be started or stopped on demand, and run on Compute Engine VMs in your project, with a persistent disk attached to store data between sessions.",
+          "Additionally, administrators and platform teams can configure an idle timeout or running timeout in the workstation configuration to help make sure that workstations shut down when they are no longer used, which reduces costs.",
+          "Administrators and platform teams can configure an idle timeout or running timeout in the workstation configuration to help make sure that workstations synchronize with configuration updates within a bounded period of time."
+        ]
+      },
+      {
+        "title": "\"Class WorkstationsAsyncClient (0.8.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Administrators and platform teams can also use Identity and Access Management (IAM) rules to grant access to teams or to individual developers. workstation cluster path workstation cluster path ( project : str , location : str , workstation cluster : str ) - > str Returns a fully-qualified workstation cluster string. workstation config path workstation config path ( project : str , location : str , workstation cluster : str , workstation config : str ) - > str Returns a fully-qualified workstation config string. workstation path workstation path ( project : str , location : str , workstation cluster : str , workstation config : str , workstation : str , ) - > str Returns a fully-qualified workstation string.",
+          "CreateWorkstationClusterRequest ( parent=\"parent value\", workstation cluster id=\"workstation cluster id value\", ) Make the request operation = client. create workstation cluster (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.workstations v1.types.CreateWorkstationClusterRequest , dict]] The request object.",
+          "CreateWorkstationConfigRequest ( parent=\"parent value\", workstation config id=\"workstation config id value\", ) Make the request operation = client. create workstation config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.workstations v1.types.CreateWorkstationConfigRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.types.CreateWorkstationClusterRequest",
+      "v1.types.CreateWorkstationConfigRequest",
+      "v1.types.CreateWorkstationRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/architecture",
+        "https://docs.cloud.google.com/workstations/docs/customize-development-environment",
+        "https://docs.cloud.google.com/workstations/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/workstations/latest/google.cloud.workstations_v1.services.workstations.WorkstationsAsyncClient"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.420Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "Point-in-time recovery log storage in Cloud Storage",
+  "feature_slug": "point-in-time-recovery-log-storage-in-cloud-storage",
+  "summary": "Cloud SQL for MySQL supports storing point-in-time recovery logs in Cloud Storage.",
+  "extended_definition": "Cloud SQL for MySQL supports storing point-in-time recovery logs in Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View audit logs for automated backups \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See how to perform a point-in-time recovery .",
+          "Learn more about point-in-time recovery .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://logging.googleapis.com/v2/entries:list\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"entries\": [ { \"protoPayload\": { \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\", \"status\": { \"message\": \"OK\" }, \"authenticationInfo\": {}, \"requestMetadata\": { \"requestAttributes\": {}, \"destinationAttributes\": {} }, \"serviceName\": \"cloudsql.googleapis.com\", \"methodName\": \"cloudsql.instances.automatedBackup\", \"resourceName\": \"projects/ PROJECT ID /instances/ INSTANCE NAME \", \"metadata\": { \"windowStartTime\": \"2022-12-15T13:00:00Z\", \"message\": \"\", \"windowStatus\": \"STATUS SUCCEEDED\", \"@type\": \"type.googleapis.com/speckle.AutomatedBackupEventLog\", \"windowEndTime\": \"2022-12-15T17:00:00Z\", \"backupCompletionTime\": \"2022-12-15T14:11:57.347Z\", \"backupStartTime\": \"2022-12-15T14:11:16.631Z\" } }, \"insertId\": \" LOG ENTRY UNIQUE IDENTIFIER \", \"resource\": { \"type\": \"cloudsql database\", \"labels\": { \"region\": \" REGION NAME \", \"project id\": \" PROJECT ID \", \"database id\": \" DATABASE ID \" } }, \"timestamp\": \"2022-12-15T14:11:57.391565Z\", \"severity\": \"INFO\", \"logName\": \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event\", \"receiveTimestamp\": \"2022-12-15T14:11:57.785814800Z\" }, ], } For more information about LOG ENTRY UNIQUE IDENTIFIER for the insertId field, see LogEntry ."
+        ]
+      },
+      {
+        "title": "\"Configure point-in-time recovery (PITR) \\_|\\_ Cloud SQL for MySQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure point-in-time recovery (PITR) Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL uses binary logging as the transaction logs for point-in-time recovery (PITR).",
+          "Click Save . gcloud Deactivate point-in-time recovery: gcloud sql instances patch INSTANCE NAME \\ --no-enable-bin-log Confirm your change: gcloud sql instances describe INSTANCE NAME In the backupConfiguration section, you see binaryLogEnabled: false if the change was successful."
+        ]
+      },
+      {
+        "title": "\"Perform point-in-time recovery (PITR) \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+        "source_id": "site-docs-reference-3",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Perform point-in-time recovery (PITR) Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server You can use point-in-time-recovery (PITR) to restore your primary Cloud SQL instances whether the instance is live, or is deleted.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ source-instance-id /clone\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ target-instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"CREATE\", \"name\": \" operation-id \", \"targetId\": \" target-instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Perform a PITR using the backup vault If your Cloud SQL instance is enabled to use enhanced backups , then you can perform point-in-time-recovery for your instance using the backup vault."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "cloudsql.instances.automatedBackup",
+      "example.com",
+      "instances.pointInTimeRestore",
+      "logging.googleapis.com",
+      "request.json",
+      "resource.type",
+      "speckle.AutomatedBackupEventLog",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    }
+  ]
+}

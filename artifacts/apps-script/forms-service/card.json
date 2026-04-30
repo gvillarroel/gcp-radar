@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Forms Service",
+  "feature_slug": "forms-service",
+  "summary": "Forms Service was added to create and modify Google Forms programmatically.",
+  "extended_definition": "Forms Service was added to create and modify Google Forms programmatically.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/html",
+      "https://developers.google.com/apps-script/guides/sheets",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added Forms Service , which allows scripts to create and modify Google Forms.",
+          "June 14, 2012 Feature Added the ability to create, modify, and remove Embedded Charts in Google Sheets.",
+          "Added Drive Service , which allows scripts to create and modify files and folders in Google Drive."
+        ]
+      },
+      {
+        "title": "HTML Service: Create and Serve HTML \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Code.gs // Use this code for Google Docs, Slides, Forms, or Sheets. function onOpen() { SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp. .createMenu('Dialog') .addItem('Open', 'openDialog') .addToUi(); } function openDialog() { var html = HtmlService.createHtmlOutputFromFile('Index'); SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp. .showModalDialog(html, 'Dialog title'); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> </head> <body> Hello, World! <input type=\"button\" value=\"Close\" onclick=\"google.script.host.close()\" /> </body> </html> The first time you want to display this user interface, you must either run the onOpen function manually in the script editor or reload the window for the Docs, Sheets, or Forms editor (which closes the script editor).",
+          "In Google Forms, custom user interfaces are only visible to an editor who opens the form to modify it, not to a user who opens the form to respond.",
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> </head> <body> Hello, World! </body> </html> Once that basic framework is in place, all you have to do is save a version of your script , then deploy your script as a web app ."
+        ]
+      },
+      {
+        "title": "Extend Google Sheets \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apps Script interacts with Sheets in two ways: any script can create or modify a spreadsheet if the script's user has appropriate permissions for it, and a script can also be bound to a spreadsheet.",
+          "Get started Apps Script includes special APIs to programmatically create, read, and edit Sheets.",
+          "You can programmatically create, read, and edit Google Sheets using Apps Script APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.error",
+      "console.info",
+      "console.warn",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/sheets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/sheets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/sheets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/sheets"
+      ]
+    }
+  ]
+}

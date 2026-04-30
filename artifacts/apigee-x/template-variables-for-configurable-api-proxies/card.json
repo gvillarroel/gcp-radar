@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Template variables for configurable API proxies",
+  "feature_slug": "template-variables-for-configurable-api-proxies",
+  "summary": "Configurable API proxies support template variables defined through Apigee property sets for archive deployments.",
+  "extended_definition": "Configurable API proxies support template variables defined through Apigee property sets for archive deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Flow variables reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table describes the properties of the target variable: Property Type Read/Write Description Scope begins target.basepath String Read only The resource path (not including the domain) to the target service, excluding query parameters, that is defined in the proxy's TargetEndpoint.",
+          "Understanding flow variable scope Configuring flows Tools and policies: The Debug tool lets you see the values of flow variables as you step through the API proxy flow.",
+          "Do not rely on undocumented variables in your API proxies and apps."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: <Properties> <Property name=\"response.payload.parse.limit\">15M</Property> </Properties> The minimum configurable limit is 10M and the maximum configurable limit is 30M.",
+          "For example: <Properties> <Property name=\"request.payload.parse.limit\">30M</Property> </Properties> The minimum configurable limit is 10M and the maximum configurable limit is 30M.",
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS ."
+        ]
+      },
+      {
+        "title": "JavaScript object model \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "source_id": "site-api-reference",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following JavaScript code example uses the context.flow property and calls the get/setVariable() methods on context . if ( context . flow == \"PROXY REQ FLOW\" ) { var username = context . getVariable ( \"request.formparam.user\" ); context . setVariable ( \"USER.name\" , username ); } These methods interact directly with flow variables .",
+          "Syntax context . getVariable ( \"variable-name\" ); Example To get the value for the current year: var year = context . getVariable ( 'system.time.year' ); context.setVariable() Sets the value for a custom variable or for any writable pre-defined variables .",
+          "Use the Flow property for JavaScript modules intended to be reused in multiple API proxies, in which the code is required to check the current Flow before executing logic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "class.allowed.count",
+      "class.available.count",
+      "class.exceed.count",
+      "class.total.exceed.count",
+      "class.used.count",
+      "context.flow",
+      "context.removeVariable",
+      "context.setVariable",
+      "features.SSLInfo.Enforce",
+      "myservice.com",
+      "proxy.pathsuffix",
+      "request.formparam.user",
+      "request.payload.parse.limit",
+      "response.payload.parse.limit",
+      "system.time.year",
+      "target.basepath"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/variables-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/javascript-object-model",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference"
+      ]
+    }
+  ]
+}

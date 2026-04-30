@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.558Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Strict act-as mode",
+  "feature_slug": "strict-act-as-mode",
+  "summary": "Strict act-as mode requires users to have iam.serviceAccounts.actAs on the service account used to run Dataform workflows; Strict act-as mode adds an additional security check for certain user actions in Dataform.",
+  "extended_definition": "Strict act-as mode requires users to have iam.serviceAccounts.actAs on the service account used to run Dataform workflows; Strict act-as mode adds an additional security check for certain user actions in Dataform.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/create-repository",
+      "https://docs.cloud.google.com/dataform/docs/repositories",
+      "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use strict act-as mode \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 354,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the required roles for creating a workflow configuration and required roles for creating a release configuration Effects of strict act-as mode on automatic releases and runs When strict act-as mode is enabled, it impacts automatic repository releases and automatic workflow executions as follows: For repositories that aren't connected to third-party repositories: You can't set a Cron schedule for automatic releases in release configurations.",
+          "Important: For existing repositories, we recommend enabling strict act-as mode, as this helps to ensure a more secure and predictable permissions model for your Dataform projects.",
+          "The strict act-as mode enables an additional security check for the following user actions in Dataform: Creating or updating a repository."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For existing repositories, we recommend using custom service accounts and enabling strict act-as mode to ensure a more secure and predictable permissions model.",
+          "Strict act-as mode Enables an additional security check that requires the iam.serviceAccounts.actAs permission on the service account.",
+          "For new repositories, strict act-as mode is enforced."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/repositories",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For existing repositories, we recommend using custom service accounts and enabling strict act-as mode to ensure a more secure and predictable permissions model.",
+          "Strict act-as mode Enables an additional security check that requires the iam.serviceAccounts.actAs permission on the service account.",
+          "For new repositories, strict act-as mode is enforced."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: We recommend enabling strict act-as mode on existing repositories, as this helps to ensure a more secure and predictable permissions model for your Dataform projects.",
+          "To mitigate this risk, we recommend enabling strict act-as mode on existing repositories.",
+          "These roles are required for strict act-as mode to work."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataform.googleapis.com",
+      "dataform.viewer",
+      "iam.serviceAccounts.actAs",
+      "repositories.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataform.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/strict-act-as-mode",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    }
+  ]
+}

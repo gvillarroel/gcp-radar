@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.463Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk",
+  "feature_name": "Google Sites customer usage report",
+  "feature_slug": "google-sites-customer-usage-report",
+  "summary": "The Google Sites customer usage report provides information about Google Sites usage in a domain.",
+  "extended_definition": "The Google Sites customer usage report provides information about Google Sites usage in a domain.",
+  "lifecycle": {
+    "latest_feature_date": "2014-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities",
+      "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Reports API: Customers Usage Report \\_|\\_ Admin console \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the request's query strings and response properties, see the API Reference and the customer usage report parameters reference .",
+          "The Customers usage report aggregates Google Workspace service usage information, for all users, across an entire domain.",
+          "The maxResults query string shows this report returns two events per report page: GET https://admin.googleapis.com/admin/reports/v1/usage/dates/2013-03-03 ?parameters=accounts:num 30day logins%2Caccounts:authorized apps&maxResults=2 JSON response for customer usage report { \"kind\" : \"reports#usageReports\" , \"warnings\" : [ { \"code\" : warning machine - readable code , \"message\" : warning human - readable message , \"data\" : [ { \"key\" : key for key - value pair that gives detailed warning information , \"value\" : value for key - value pair giving detailed warning information } ] } ], \"nextPageToken\" : \"N:NNN:NNN:N:C03az79cb\" , \"usageReports\" : [ { \"kind\" : \"usageReport\" , \"date\" : \"2013-03-03\" , \"entity\" : { \"type\" : \"CUSTOMER\" , \"customerId\" : \"C03az79cb\" }, \"parameters\" : [ { \"name\" : \"accounts:num 1day logins\" , \"intValue\" : \"1\" }, { \"name\" : \"accounts:num 30day logins\" , \"intValue\" : \"1\" }, { \"name\" : \"accounts:num 7day logins\" , \"intValue\" : \"1\" }, { \"name\" : \"accounts:num disabled accounts\" , \"intValue\" : \"5\" }, { \"name\" : \"accounts:authorized apps\" , \"msgValue\" : [ { \"client id\" : \"1234.apps.googleusercontent.com\" , \"client name\" : \"www.example.com\" , \"num users\" : 2 }, { \"client id\" : \"4567.apps.googleusercontent.com\" , \"client name\" : \"Example\" , \"num users\" : 1 }, ... ] } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Reports API: Users Usage Report \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON response for user report { \"kind\" : \"reports#usageReports\" , \"warnings\" : [ { \"code\" : warning machine - readable code , \"message\" : warning human - readable message , \"data\" : [ { \"key\" : key for key - value pair that gives detailed warning information , \"value\" : value for key - value pair giving detailed warning information } ] } ], \"nextPageToken\" : \"N:NNN:NNN:N:C03az79cb\" , \"usageReports\" : [ { \"kind\" : \"usageReport\" , \"date\" : \"2013-03-03\" , \"entity\" : { \"type\" : \"USER\" , \"customerId\" : \"C03az79cb\" , \"userEmail\" : \"liz@example.com\" , \"profileId\" : \" user's unique Google Workspace ID \" }, \"parameters\" : [ { \"name\" : \"accounts:is disabled\" , \"boolValue\" : false }, { \"name\" : \"accounts:disabled reason\" , \"stringValue\" : \" reason description \" }, { \"name\" : \"accounts:first name\" , \"stringValue\" : \"Liz\" }, { \"name\" : \"accounts:is 2sv enforced\" , \"boolValue\" : false }, { \"name\" : \"accounts:is 2sv enrolled\" , \"boolValue\" : false }, { \"name\" : \"accounts:last name\" , \"stringValue\" : \"Smith\" }, { \"name\" : \"accounts:creation time\" , \"datetimeValue\" : \"2010-10-28T10:26:35.000Z\" }, { \"name\" : \"accounts:last login time\" , \"datetimeValue\" : \"1970-01-01T00:00:00.000Z\" }, { \"name\" : \"accounts:last sso time\" , \"datetimeValue\" : \"1970-01-01T00:00:00.000Z\" } ] } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The user usage report returns Google Workspace service usage information for a particular user in your domain.",
+          "For information about the user usage report parameters, see the User Usage Parameters reference ."
+        ]
+      },
+      {
+        "title": "\"Reports API: Entities Usage Report \\_|\\_ Admin console \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about the entities usage report parameters, see the Entities Usage Parameters reference . applicationParameters is a comma-separated list of parameters you want to retrieve.",
+          "For information about the entities usage report parameters, see the Entities Usage Parameters reference .",
+          "In this example, the report is not available at the time the request is made. { \"kind\": \"reports#usageReports\", \"warnings\": [ { \"code\": \"PARTIAL DATA AVAILABLE\" \"message\": \"Data for date 2017-12-11 for application gplus is not available right now, please try again after a few hours.\" \"data\": [ { \"key\": \"date\" \"value\": \"2017-12-11\" } ] } ], \"usageReports\": [], } Each entry in the warnings array has the following parameters: code : machine-readable warning code message : human-readable warning message data : list of key-value pairs which give detailed warning information Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.googleapis.com",
+      "apps.googleusercontent.com",
+      "developers.google.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-customers",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-users",
+        "https://developers.google.com/workspace/admin/reports/v1/guides/manage-usage-entities"
+      ]
+    }
+  ]
+}

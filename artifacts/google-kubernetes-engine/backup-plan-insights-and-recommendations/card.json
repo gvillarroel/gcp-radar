@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Backup plan insights and recommendations",
+  "feature_slug": "backup-plan-insights-and-recommendations",
+  "summary": "GKE surfaces backup-plan insights and recommendations for unprotected clusters older than seven days.",
+  "extended_definition": "GKE surfaces backup-plan insights and recommendations for unprotected clusters older than seven days.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About GKE control plane authority \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "source_id": "site-iam-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Run your own certificate authorities and signing keys in GKE Encrypt GKE control plane data at rest with your keys Verify GKE control plane VM integrity Verify credential issuance and usage in GKE clusters Verify connections by Google personnel in the cluster control plane Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can optionally use your own encryption keys that you manage using Cloud KMS to encrypt the following resources: Control plane boot disk : the Compute Engine disk that each control plane VM uses to boot. etcd disk : the Compute Engine disk that's attached to each control plane VM and stores data for etcd instances in the cluster. etcd internal operational backup : the internal Google Cloud backup of etcd that's used for operational purposes like disaster recovery.",
+          "The following documents show you how to view and process the various types of control plane logs: Verify credential issuance and verification operations in GKE clusters Verify connections by Google personnel in the cluster control plane Additional resources about control plane security This section describes other methods that you can use to improve your confidence in your control plane security."
+        ]
+      },
+      {
+        "title": "\"Encrypt etcd and control plane boot disks \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "source_id": "site-iam-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the output, check that the cluster creation parameters included a key path that corresponds to the key that you set up in Cloud KMS, like in the following example: lines omitted for clarity userManagedKeysConfig: { controlPlaneDiskEncryptionKey: \"projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ KEY RING NAME /cryptoKeys/ KCP DISK KEY NAME \" gkeopsEtcdBackupEncryptionKey: \"projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ KEY RING NAME /cryptoKeys/ ETCD BACKUP KEY NAME \" } Use the gcloud CLI to verify keys To use the gcloud CLI to verify the encryption key, do the following: For the disk encryption key, run the following command: gcloud container clusters describe CLUSTER NAME \\ --location = LOCATION \\ --format = \"value(userManagedKeysConfig.controlPlaneDiskEncryptionKey)\" For the etcd internal backup encryption key, run the following command: gcloud container clusters describe CLUSTER NAME \\ --location = LOCATION \\ --format = \"value(userManagedKeysConfig.gkeopsEtcdBackupEncryptionKey)\" Rotate etcd and control plane disk encryption keys Preview — customer-managed credential rotation This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Create a cluster: gcloud container clusters create CLUSTER NAME \\ --location = LOCATION \\ --project = CLUSTER PROJECT ID \\ --control-plane-disk-encryption-key = PATH TO DISK KEY \\ --gkeops-etcd-backup-encryption-key = PATH TO ETCD BACKUP KEY \\ --service-account-signing-keys = PATH TO SIGNING KEY VERSION \\ --service-account-verification-keys = PATH TO VERIFICATION KEY VERSION \\ --cluster-ca = PATH TO CLUSTER CA \\ --etcd-peer-ca = PATH TO ETCD PEER CA \\ --etcd-api-ca = PATH TO ETCD API CA \\ --aggregation-ca = PATH TO AGGREGATION CA Replace the following: CLUSTER NAME : the name of your new cluster.",
+          "To create a cluster that only configures disk encryption using the keys that you created in this guide, run the following command: gcloud container clusters create CLUSTER NAME \\ --location = LOCATION \\ --project = CLUSTER PROJECT ID \\ --control-plane-disk-encryption-key = PATH TO DISK KEY \\ --gkeops-etcd-backup-encryption-key = PATH TO ETCD BACKUP KEY Replace the following: CLUSTER NAME : the name of your new cluster."
+        ]
+      },
+      {
+        "title": "\"Migrate your MySQL data from Persistent Disk to Hyperdisk by using Backup\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "source_id": "site-docs-root-2",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a restore plan by using these transformation rules: gcloud beta container backup-restore restore-plans create main-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --backup-plan = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan \\ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ TARGET CLUSTER PREFIX } -cluster \\ --namespaced-resource-restore-mode = merge-replace-on-conflict \\ --all-namespaces \\ --cluster-resource-conflict-policy = use-existing-version \\ --cluster-resource-scope-selected-group-kinds = cluster-resource-scope-all-group-kinds \\ --volume-data-restore-policy = restore-volume-data-from-backup \\ --transformation-rules-file = manifests/03-transformation-rule/volume.yaml Perform the restore: gcloud beta container backup-restore restores create first-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --restore-plan = main-restore \\ --backup = projects/ ${ PROJECT ID } /locations/us-central1/backupPlans/main-plan/backups/first-backup Verify the migration Verify that the applications are running on the new cluster and the data is intact.",
+          "Delete the GKE clusters: gcloud container clusters delete ${ KUBERNETES CLUSTER PREFIX } -cluster --location ${ ZONE } --quiet gcloud container clusters delete ${ TARGET CLUSTER PREFIX } -cluster --location ${ ZONE } --quiet Delete the backup and restore plans: Delete the restore plan gcloud beta container backup-restore restore-plans delete main-restore \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --quiet Delete the Backup gcloud beta container backup-restore backups delete first-backup \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --backup-plan = main-plan \\ --quiet Delete the backup plan gcloud beta container backup-restore backup-plans delete main-plan \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --quiet What's next Learn more about Backup for GKE .",
+          "Create a backup plan: gcloud beta container backup-restore backup-plans create main-plan \\ --project = ${ PROJECT ID } \\ --location = us-central1 \\ --cluster = projects/ ${ PROJECT ID } /locations/ ${ ZONE } /clusters/ ${ KUBERNETES CLUSTER PREFIX } -cluster \\ --selected-namespaces = namespace-a,namespace-b,default \\ --include-secrets \\ --include-volume-data \\ --target-rpo-minutes = 1440 \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 3 \\ --locked --selected-namespaces : backs up specific namespaces to avoid conflicts with system resources. --include-volume-data : helps to ensure the Persistent Disk data is backed up. --target-rpo-minutes : configures the Recovery Point Objective (RPO) based backup schedule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "volume.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypt-etcd-control-plane-disks",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+      ]
+    }
+  ]
+}

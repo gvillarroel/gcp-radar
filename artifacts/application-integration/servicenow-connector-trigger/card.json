@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.493Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "ServiceNow connector trigger",
+  "feature_slug": "servicenow-connector-trigger",
+  "summary": "A ServiceNow connector event trigger became available in preview in Application Integration.",
+  "extended_definition": "A ServiceNow connector event trigger became available in preview in Application Integration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ServiceNow trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 187,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following image shows a sample layout of the ServiceNow trigger configuration pane: Trigger output variable For each event, the ServiceNow trigger generates a ConnectorEventPayload output variable which you can use in your downstream tasks.",
+          "To configure the ServiceNow trigger , you can either use an existing ServiceNow connection available in Integration Connectors, or create a new ServiceNow connection using the inline connection creation option.",
+          "ServiceNow trigger The ServiceNow trigger is a Connector Event trigger that lets you invoke an integration based on the custom ServiceNow events that you've defined in your ServiceNow instance business rule ."
+        ]
+      },
+      {
+        "title": "Apache Kafka trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-apache-kafka-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To configure the Apache Kafka trigger , you can either use an existing Apache Kafka connection available in Integration Connectors, or create a new Apache Kafka connection using the inline connection creation option.",
+          "The Apache Kafka trigger is a Connector Event trigger that lets you invoke an integration based on the Apache Kafka events that you've subscribed to in your Apache Kafka connection.",
+          "Note that the Apache Kafka trigger is an Connector Event trigger , therefore you can only use a Apache Kafka connection with event subscription enabled to configure the trigger."
+        ]
+      },
+      {
+        "title": "Azure AD trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To configure the Azure AD trigger , you can either use an existing Azure AD connection available in Integration Connectors, or create a new Azure AD connection using the inline connection creation option.",
+          "Note that the Azure AD trigger is an Connector Event trigger , therefore you can only use an Azure AD connection with event subscription enabled to configure the trigger.",
+          "The Azure AD trigger is a Connector Event trigger that lets you invoke an integration based on the Azure AD events that you've subscribed to in your Azure AD connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

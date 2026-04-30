@@ -1,0 +1,221 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.713Z",
+  "source_step08_card": "data/step-08/current/products/secure-source-manager/card.json",
+  "product_name": "Secure Source Manager",
+  "product_slug": "secure-source-manager",
+  "feature_name": "Cloud Build integration",
+  "feature_slug": "cloud-build-integration",
+  "summary": "Secure Source Manager repositories can now define Cloud Build configurations and build triggers for automatic builds.",
+  "extended_definition": "Secure Source Manager repositories can now define Cloud Build configurations and build triggers for automatic builds.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+      "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build",
+      "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+      "https://docs.cloud.google.com/secure-source-manager/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Secure Source Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Notifications Secure Source Manager can send you notifications for events in pull requests and issues in which you're participating or for repositories you're watching.",
+          "Connect to other services You can invoke builds automatically using the following methods: Create a Secure Source Manager triggers file to connect to Cloud Build.",
+          "Developer Connect integration You can connect Secure Source Manager to Developer Connect to unify repository connections across Google Cloud services."
+        ]
+      },
+      {
+        "title": "\"Configure CI/CD to store terraform config-as-code \\_|\\_ Secure Source Manager\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "source_id": "site-docs-reference",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To re-authenticate after the initial credential setup, run the following gcloud CLI command: gcloud auth login Clone the solutions-terraform-cloudbuild-gitops repository to your local shell or working environment: git clone https://github.com/GoogleCloudPlatform/solutions-terraform-cloudbuild-gitops.git Add your Secure Source Manager repository as an upstream. git remote add google HTTPS REPO URL Where HTTPS REP URL is the HTTPS URL for your Secure Source Manager repository.",
+          "Replace PROJECT ID with your project ID. gcloud config set project PROJECT ID Enable the required APIs: gcloud services enable cloudbuild.googleapis.com compute.googleapis.com securesourcemanager.googleapis.com This step might take a few minutes to finish.",
+          "Modify the build configuration file To make the sample build configuration file work with Secure Source Manager, you need to make the following edits: Add a step to clone your repository."
+        ]
+      },
+      {
+        "title": "\"Connect Cloud Build to a Private Service Connect instance \\_|\\_ Secure Source\\",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To grant the service account permissions to access the Secure Source Manager instance, run the following command. gcloud projects add-iam-policy-binding INSTANCE PROJECT ID \\ --member = serviceAccount: SA EMAIL \\ --role = roles/securesourcemanager.instanceAccessor \\ --condition = None To grant the service account permissions to read from Secure Source Manager repositories, run the following command. gcloud projects add-iam-policy-binding INSTANCE PROJECT ID \\ --member = serviceAccount: SA EMAIL \\ --role = roles/securesourcemanager.repoReader \\ --condition = None Set up build logs When you specify your own service account for builds, you must store your build logs either in Cloud Logging or in a user-created Cloud Storage bucket.",
+          "Test access to Secure Source Manager from Cloud Build To confirm everything is working correctly, you can use the following build config file to test connectivity and pull source code from Secure Source Manager.",
+          "You can connect Cloud Build to a Secure Source Manager Private Service Connect instance using Cloud Build private pools ."
+        ]
+      },
+      {
+        "title": "Connect to Cloud Build \\_|\\_ Secure Source Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build",
+        "source_id": "site-docs-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to connect a Secure Source Manager repository to Cloud Build, ask your administrator to grant you the following IAM roles: Secure Source Manager Repository Writer ( roles/securesourcemanager.repoWriter ) on your repository Secure Source Manager Instance Accessor ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Required service account roles To create builds and get build status from Cloud Build, grant the Secure Source Manager service agent ( service- PROJECT-NUMBER @gcp-sa-sourcemanager.iam.gserviceaccount.com ) the following Identity and Access Management (IAM) roles: Cloud Build Editor role ( roles/cloudbuild.builds.editor ) on the project where you enabled Cloud Build.",
+          "To let Cloud Build read from your Secure Source Manager repository, grant the Cloud Build service account the following IAM roles: Secure Source Manager Instance Accessor role ( roles/securesourcemanager.instanceAccessor ) on the Secure Source Manager instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.builds.editor",
+      "cloudbuild.googleapis.com",
+      "compute.googleapis.com",
+      "github.com",
+      "gitops.git",
+      "securesourcemanager.googleapis.com",
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoReader",
+      "securesourcemanager.repoWriter",
+      "serviceusage.serviceUsageConsumer",
+      "sourcemanager.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoReader",
+      "roles/securesourcemanager.repoWriter",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-source-manager/docs/overview",
+        "https://docs.cloud.google.com/secure-source-manager/docs/configure-cicd-terraform-config-as-code",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build-private-service-connect",
+        "https://docs.cloud.google.com/secure-source-manager/docs/connect-cloud-build"
+      ]
+    }
+  ]
+}

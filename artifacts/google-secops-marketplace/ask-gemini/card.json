@@ -1,0 +1,210 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.939Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Ask Gemini",
+  "feature_slug": "ask-gemini",
+  "summary": "Adds an action that uses Gemini to assist with enrichment.",
+  "extended_definition": "Adds an action that uses Gemini to assist with enrichment.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+      "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Answer Threat Intelligence questions with Gemini \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can ask Gemini questions about MITRE tactics, techniques, and procedures (TTPs), and receive contextually relevant answers that include the following MITRE details: Tactic Technique Sub-technique Detection suggestions Procedures Mitigations Gemini returns a link to the curated detections Google SecOps makes available for each TTP.",
+          "Links are provided to any rule sets that might be available for monitoring the type of security issue you entered into Gemini.",
+          "You can also ask Gemini follow up questions to gain additional insight on a MITRE TTP and how it might impact your enterprise."
+        ]
+      },
+      {
+        "title": "\"Forwarder Management \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SERVICE ACCOUNT FILE is the full path to the apikeys-demo.json file ToDo: Replace this with the full path to your OAuth2 credentials SERVICE ACCOUNT FILE = '/customer-keys/apikeys-demo.json' Create a credential using the Google Developer Service Account Credential and Backstory API Scope. credentials = service account.Credentials.from service account file(SERVICE ACCOUNT FILE, scopes=SCOPES) Build a requests Session Object to make authorized OAuth requests. http session = requests.AuthorizedSession(credentials) Your endpoint GET POST PATCH etc. code will vary below Reference List example (for US region) url = 'https://backstory.googleapis.com/v2/lists/COLDRIVER SHA256' You might need another regional endpoint for your API call; see https://cloud.google.com/chronicle/docs/reference/ingestion-api#regional endpoints requests GET example response = http session.request(\"GET\", url) POST example uses json body = { \"foo\": \"bar\" } response = http session.request(\"POST\", url, json=body) PATCH example uses params and json params = { \"foo\": \"bar\" } response = http session.request(\"PATCH\", url, params=params, json=body) For more complete examples, see: https://github.com/chronicle/api-samples-python/ Backstory API query limits The Backstory API enforces limits on the volume of requests that can be made by any one customer against the Google SecOps platform.",
+          "PATCH https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56?updateMask=displayName,config.logType,config.metadata.assetNamespace,config.syslogSettings.protocol { \"display name\": \"UpdatedCollector\" \"config\": { \"metadata\": { \"asset namespace\": \"COLLECTOR\", }, \"log type\": \"CISCO ASA FIREWALL\", \"syslog settings\": { \"protocol\": \"TCP\", } } } Response example This is an example of the response returned for the request example above. { \"name\": \"forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56/collectors/98ab7cd6-54ef-3abc-d21e-1f23a4bcde56\", \"displayName\": \"UpdatedCollector\", \"config\": { \"logType\": \"CISCO ASA FIREWALL\", \"metadata\": { \"assetNamespace\": \"COLLECTOR\" }, \"maxSecondsPerBatch\": 10, \"maxBytesPerBatch\": \"1048576\", \"syslogSettings\": { \"protocol\": \"TCP\", \"address\": \"0.0.0.0\", \"port\": 10514, } }, \"state\": \"ACTIVE\" } Delete Collector Deletes a collector.",
+          "PATCH https://backstory.googleapis.com/v2/forwarders/12ab3cd4-56ef-7abc-d89e-1f23a4bcde56?updateMask=displayName,config.metadata.labels { \"display name\": \"UpdatedForwarder\", \"config\": { \"metadata\": { \"labels\": [ { \"key\": \"office\", \"value\": \"corporate\", } ] } } } Response example This is an example of the response returned for the request example above. { \"name\": \"forwarders/{forwarderUUID}\", \"displayName\": \"UpdatedForwarder\", \"config\": { \"uploadCompression\": \"false\", \"metadata\": { \"labels\": [ { \"key\": \"office\", \"value\": \"corporate\" } ] } }, \"state\": \"ACTIVE\" } Delete Forwarder Deletes a forwarder."
+        ]
+      },
+      {
+        "title": "\"Integrate ANY.RUN with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Entity Any/Run Report Entity identifier for which insight is created Value from api response Value from api response Value from api response Script result Script result name Value options Example is success True or False is success:False JSON result { \"error\" : false , \"data\" :{ \"analysis\" :{ \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" :{ \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" :{ \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" :{ \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" :[ ], \"options\" :{ \"timeout\" : 60 , \"additionalTime\" : 0 , \"fakeNet\" : false , \"heavyEvasion\" : false , \"mitm\" : false , \"tor\" :{ \"used\" : false , \"geo\" : \"fastest\" }, \"presentation\" : false , \"video\" : true , \"hideSource\" : false , \"network\" : true , \"privacy\" : \"bylink\" , \"privateSample\" : false , \"automatization\" :{ \"uac\" : false } }, \"scores\" :{ \"verdict\" :{ \"score\" : 100 , \"threatLevel\" : 2 , \"threatLevelText\" : \"Malicious activity\" }, \"specs\" :{ \"injects\" : false , \"autostart\" : false , \"cpuOverrun\" : false , \"crashedApps\" : false , \"crashedTask\" : false , \"debugOutput\" : false , \"executableDropped\" : false , \"exploitable\" : false , \"lowAccess\" : false , \"memOverrun\" : false , \"multiprocessing\" : true , } } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: if successful and got a report for at least one of the provided entities: \"Found ANY.RUN reports for the following entities: {0}\".format([entity.Identifier]).",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for the provided file: \"Successfully created analysis task for file: {0}\".format(file path).",
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result Option 1: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"taskid\" : \" TASK ID \" } } Option 2: If wait for report checkbox is not set, we return the info about the created analysis task (response to request 1) { \"error\" : false , \"data\" : { \"analysis\" : { \"uuid\" : \" UUID \" , \"permanentUrl\" : \"https://app.any.run/tasks/ UUID \" , \"reports\" : { \"IOC\" : \"https://api.any.run/report/ UUID /ioc/json\" , \"MISP\" : \"https://api.any.run/report/ UUID /summary/misp\" , \"HTML\" : \"https://api.any.run/report/ UUID /summary/html\" , \"graph\" : \"https://content.any.run/tasks/ UUID /graph\" }, \"sandbox\" : { \"name\" : \"ANY.RUN - Interactive Sandbox\" , \"plan\" : { \"name\" : \"Tester\" } }, \"duration\" : 60 , \"creation\" : 1602483368256 , \"creationText\" : \"2020-10-12T06:16:08.256Z\" , \"tags\" : [], \"options\" : { } } } } Case wall Result type Description Type Output message Action should not fail and not stop playbook execution: If successfully created analysis task for at least one of the provided entities: \"Created analysis tasks for the following entities: {0}\".format([entity.Identifier])."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali STAXX with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: if successful: \"Successfully connected to the Anomali STAXX server with the provided connection parameters!\" The action should fail and stop a playbook execution: If not successful: \"Failed to connect to the Anomali STAXX server!",
+          "To streamline and improve the mapping process for the connector, the default value resolves to a fallback value that is referenced from the code.",
+          "Verify SSL Checkbox Unchecked No If enabled, verifies that the SSL certificate for the connection to the Anomali STAXX server is valid."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.Credentials.from",
+      "api.any.run",
+      "app.any.run",
+      "backstory.googleapis.com",
+      "config.logType",
+      "config.metadata.assetNamespace",
+      "config.metadata.labels",
+      "config.syslogSettings.protocol",
+      "content.any.run",
+      "data.get",
+      "demo.json",
+      "entity.Identifier",
+      "github.com",
+      "requests.AuthorizedSession",
+      "session.request"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/answer-threat-intelligence-questions-gemini",
+        "https://docs.cloud.google.com/chronicle/docs/install/forwarder-management-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/any-run",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    }
+  ]
+}

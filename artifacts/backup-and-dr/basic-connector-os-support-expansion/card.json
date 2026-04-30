@@ -1,0 +1,249 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.209Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Basic connector OS support expansion",
+  "feature_slug": "basic-connector-os-support-expansion",
+  "summary": "Backup and DR added basic connector support for additional Linux distributions and versions, including Rocky Linux, RHEL, SLES, and OEL variants.",
+  "extended_definition": "Backup and DR added basic connector support for additional Linux distributions and versions, including Rocky Linux, RHEL, SLES, and OEL variants.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+      "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate containers that were deployed on VMs during VM creation \\_|\\_ Compute\\",
+        "url": "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example 1 Run a standalone container in a VM based on Container-Optimized OS: #!/bin/bash A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull busybox:latest Run docker container from image in docker hub docker run busybox:latest \\ echo \"hello world!\" Example 2 Run a web server container in a VM based on Container-Optimized OS: #!/bin/bash Enable incoming traffic iptables -A INPUT -j ACCEPT A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull nginx:latest Run docker container from image in docker hub docker run \\ --name = $CONTAINER NAME \\ --privileged \\ --restart = always \\ --tty \\ --detach \\ --network = \"host\" \\ nginx:latest Additional configuration options for container deployment This section describes the additional configuration parameters for deploying containers on your VMs.",
+          "For troubleshooting other issues, see the following documents: Cloud Logging overview Using Cloud Logging with Container-Optimized OS Troubleshooting the Docker daemon Troubleshoot and diagnose Troubleshoot Terraform Troubleshooting when running a basic web server Set up and manage network address translation with Public NAT Use cloud-init with Container-Optimized OS You can use cloud-init , an industry-standard and cross-platform solution, to deploy containers on VMs running Container-Optimized OS.",
+          "For more information about deploying containers on Batch, see the following documents: Get started Create and run a basic job GKE If you are running complex applications, microservices, continuous operation and need fine-grained control and scalability, Google Kubernetes Engine (GKE) (GKE) is the offering that is best suited."
+        ]
+      },
+      {
+        "title": "\"Protect and recover SAP HANA databases in Compute Engine instances \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can mount snapshot backup images of an SAP HANA database as a standard mount for: Any manual operation or To Mount a backup for an integrity check Pre checks during mount Connector connectivity status: Verify that the Backup and DR agent is installed and secret is applied for host connectivity between the backup/recovery appliance and the Backup and DR agent.",
+          "Note that the minimum billing period for the archive snapshot is 90 days irrespective of the retention period defined in the policy and that an archive type snapshot also has an additional retrieval charge if it is used in a mount or a restore job.",
+          "Discover and protect SAP HANA databases Note: If you are protecting a HANA database that has already been added and that already has LVM backup images, then you must change the capture method from LVM to Persistent Disk."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control",
+        "source_id": "site-api-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "See Basic roles for additional details.",
+          "Warning: Do not grant service agent roles to any principals except service agents . alloydb.operations.get cloudsql. instances. createBackupDrBackup cloudsql.instances.get compute.addresses.list compute.addresses.use compute.addresses.useInternal compute.diskTypes. compute.diskTypes.get compute.diskTypes.list compute.disks.create compute.disks.createSnapshot compute.disks.createTagBinding compute.disks.delete compute.disks.get compute.disks.list compute.disks.setLabels compute.disks.use compute.disks.useReadOnly compute.firewalls.list compute.globalOperations.get compute.images.create compute.images.delete compute.images.get compute.images.useReadOnly compute.instances.attachDisk compute.instances.create compute. instances. createTagBinding compute.instances.delete compute.instances.detachDisk compute.instances.get compute.instances.list compute. instances. listEffectiveTags compute. instances. pscInterfaceCreate compute. instances. setDeletionProtection compute.instances.setLabels compute.instances.setMetadata compute. instances. setServiceAccount compute.instances.setTags compute.instances.start compute.instances.stop compute. instances. updateDisplayDevice compute.instances.useReadOnly compute.machineTypes. compute.machineTypes.get compute.machineTypes.list compute.networks.list compute.nodeGroups.get compute.nodeGroups.list compute.nodeTemplates.get compute.projects.get compute.regionOperations.get compute.regions. compute.regions.get compute.regions.list compute.resourcePolicies.use compute.snapshots.create compute.snapshots.delete compute.snapshots.get compute.snapshots.setLabels compute.snapshots.useReadOnly compute.storagePools.use compute.subnetworks.list compute.subnetworks.use compute. subnetworks. useExternalIp compute.zoneOperations.get compute.zones.list file.backups.create file. instances. createCrossProjectBackup file.instances.get iam.serviceAccounts.actAs iam.serviceAccounts.get iam.serviceAccounts.list resourcemanager.projects.get resourcemanager.projects.list Basic roles Basic roles are project-level roles that predate IAM.",
+          "Basic roles include broad permissions that apply to all of your Google Cloud resources; in contrast, Backup and DR's predefined roles include fine-grained permissions that apply only to Backup and DR."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.operations.get",
+      "cloudsql.instances.get",
+      "compute.addresses.list",
+      "compute.addresses.use",
+      "compute.addresses.useInternal",
+      "compute.disks.create",
+      "compute.disks.createSnapshot",
+      "compute.disks.createTagBinding",
+      "compute.disks.delete",
+      "compute.disks.get",
+      "compute.disks.list",
+      "compute.disks.setLabels",
+      "compute.disks.use",
+      "compute.disks.useReadOnly",
+      "compute.diskTypes",
+      "compute.diskTypes.get",
+      "compute.diskTypes.list",
+      "compute.firewalls.list",
+      "compute.globalOperations.get",
+      "compute.images.create",
+      "compute.images.delete",
+      "compute.images.get",
+      "compute.images.useReadOnly",
+      "compute.instances.attachDisk",
+      "compute.instances.create",
+      "compute.instances.delete",
+      "compute.instances.detachDisk",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.instances.setLabels",
+      "compute.instances.setMetadata",
+      "compute.instances.setTags",
+      "compute.instances.start",
+      "compute.instances.stop",
+      "compute.instances.useReadOnly",
+      "compute.machineTypes",
+      "compute.machineTypes.get",
+      "compute.machineTypes.list",
+      "compute.networks.list",
+      "compute.nodeGroups.get",
+      "compute.nodeGroups.list",
+      "compute.nodeTemplates.get",
+      "compute.projects.get",
+      "compute.regionOperations.get",
+      "compute.regions",
+      "compute.regions.get",
+      "compute.regions.list",
+      "compute.resourcePolicies.use",
+      "compute.snapshots.create",
+      "compute.snapshots.delete",
+      "compute.snapshots.get",
+      "compute.snapshots.setLabels",
+      "compute.snapshots.useReadOnly",
+      "compute.storagePools.use",
+      "compute.subnetworks.list",
+      "compute.subnetworks.use",
+      "compute.zoneOperations.get",
+      "compute.zones.list",
+      "file.backups.create",
+      "file.instances.get",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccounts.get",
+      "iam.serviceAccounts.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/sap-hana-on-gce-backup-recovery",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-control"
+      ]
+    }
+  ]
+}

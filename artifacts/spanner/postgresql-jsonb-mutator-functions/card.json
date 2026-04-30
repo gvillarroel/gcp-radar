@@ -1,0 +1,166 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "PostgreSQL JSONB mutator functions",
+  "feature_slug": "postgresql-jsonb-mutator-functions",
+  "summary": "Spanner now supports PostgreSQL JSONB mutator functions, including jsonb_insert, jsonb_set, jsonb_set_lax, and jsonb_strip_nulls.",
+  "extended_definition": "Spanner now supports PostgreSQL JSONB mutator functions, including jsonb_insert, jsonb_set, jsonb_set_lax, and jsonb_strip_nulls.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dialect parity between GoogleSQL and PostgreSQL | Spanner | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 201,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Dialect parity between GoogleSQL and PostgreSQL | Spanner | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Spanner Start free Overview Guides Reference Samples Support Resources Technology areas More Overview Guides Reference Samples Support Resources Cross-product tools More Console Spanner All APIs & references Overview of APIs and client libraries Client libraries and drivers Client libraries Overview C++ reference C# reference Go reference Java reference Node.js reference PHP reference Python reference Ruby reference Drivers Overview of drivers JDBC drivers Overview Connect JDBC to a GoogleSQL-dialect database Connect JDBC to a PostgreSQL-dialect database Session management commands For GoogleSQL-dialect databases For PostgreSQL-dialect databases Spanner JDBC driver R2DBC driver Go database/sql driver pgx driver for Golang ADO.NET driver psycopg2 driver for Python psycopg3 driver for Python node-postgres driver for Node.js Spanner APIs REST reference Overview Standard API parameters Global and regional service endpoints v1 REST Resources projects.instanceConfigOperations Overview list projects.instanceConfigs Overview create delete get list patch projects.instanceConfigs.operations Overview cancel delete get list projects.instances Overview create delete get getIamPolicy list move patch setIamPolicy testIamPermissions projects.instances.backupOperations Overview list projects.instances.backups Overview copy create delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.instances.backups.operations Overview cancel delete get list projects.instances.databaseOperations Overview list projects.instances.databases Overview addSplitPoints changequorum create dropDatabase get getDdl getIamPolicy list patch restore setIamPolicy testIamPermissions updateDdl projects.instances.databases.backupSchedules Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.instances.databases.databaseRoles Overview list testIamPermissions projects.instances.databases.operations Overview cancel delete get list projects.instances.databases.sessions Overview adaptMessage adapter batchCreate batchWrite beginTransaction commit create delete executeBatchDml executeSql executeStreamingSql get list partitionQuery partitionRead read rollback streamingRead projects.instances.instancePartitionOperations Overview list projects.instances.instancePartitions Overview create delete get list patch projects.instances.instancePartitions.operations Overview cancel delete get list projects.instances.operations Overview cancel delete get list Types AutoscalingConfig ChangeQuorumMetadata Code CompactDatabaseMetadata CopyBackupMetadata CreateBackupMetadata CreateDatabaseMetadata CreateInstanceConfigMetadata CreateInstanceMetadata CreateInstancePartitionMetadata DatabaseDialect DdlStatementActionInfo DirectedReadOptions Edition EncryptionInfo ErrorInfo FulfillmentPeriod GetPolicyOptions Help KeySet ListOperationsResponse MoveInstanceMetadata MoveInstanceResponse MultiplexedSessionPrecommitToken Mutation OperationProgress OptimizeRestoredDatabaseMetadata PartialResultSet PartitionOptions PartitionResponse Policy QueryMode QueryOptions ReplicaSelection RequestOptions RestoreDatabaseMetadata ResultSet ResultSetMetadata ResultSetStats Status StructType TestIamPermissionsResponse Transaction TransactionOptions TransactionSelector Type UpdateDatabaseDdlMetadata UpdateDatabaseMetadata UpdateInstanceConfigMetadata UpdateInstanceMetadata UpdateInstancePartitionMetadata WaitOperationRequest RPC reference Overview google.iam.v1 google.longrunning google.rpc google.spanner.adapter.v1 google.spanner.admin.database.v1 google.spanner.admin.instance.v1 google.spanner.v1 google.type MCP reference Overview Tools get_instance list_instances list_configs create_instance delete_instance create_database drop_database get_database_ddl list_databases create_session execute_sql commit update_database_schema get_operation SQL in Spanner SQL syntax quick reference Dialect parity between GoogleSQL and PostgreSQL GoogleSQL General reference Overview of GoogleSQL Data types Lexical structure and syntax Conversion rules Collation Format elements Stored procedures Expressions Function calls Aggregate function calls Operators Conditional expressions Subqueries Query syntax Functions All functions Aggregate functions Overview ANY_VALUE ARRAY_AGG ARRAY_CONCAT_AGG AVG BIT_AND BIT_OR BIT_XOR COUNT COUNTIF LOGICAL_AND LOGICAL_OR MAX MIN STRING_AGG SUM Array functions Overview ARRAY ARRAY_CONCAT ARRAY_FILTER ARRAY_FIRST ARRAY_INCLUDES ARRAY_INCLUDES_ALL ARRAY_INCLUDES_ANY ARRAY_IS_DISTINCT ARRAY_LAST ARRAY_LENGTH ARRAY_MAX ARRAY_MIN ARRAY_REVERSE ARRAY_SLICE ARRAY_TO_STRING ARRAY_TRANSFORM GENERATE_ARRAY GENERATE_DATE_ARRAY JSON_ARRAY JSON_QUERY_ARRAY JSON_VALUE_ARRAY Bit functions Overview BIT_COUNT BIT_REVERSE Compression functions Overview ZSTD_COMPRESS ZSTD_DECOMPRESS_TO_BYTES ZSTD_DECOMPRESS_TO_STRING Conversion functions Overview CAST SAFE_CAST Date functions Overview ADDDATE CURRENT_DATE DATE DATE_ADD DATE_DIFF DATE_FROM_UNIX_DATE DATE_SUB DATE_TRUNC EXTRACT (date) FORMAT_DATE PARSE_DATE SUBDATE UNIX_DATE Debugging functions Overview ERROR Graph functions Overview DESTINATION_NODE_ID EDGES ELEMENT_DEFINITION_NAME ELEMENT_ID IS_ACYCLIC IS_FIRST IS_TRAIL LABELS NODES PATH PATH_FIRST PATH_LAST PATH_LENGTH PROPERTY_NAMES SOURCE_NODE_ID Hash functions Overview FARM_FINGERPRINT SHA1 SHA256 SHA512 Interval functions Overview EXTRACT (interval) JUSTIFY_DAYS JUSTIFY_HOURS JUSTIFY_INTERVAL MAKE_INTERVAL JSON functions Overview BOOL BOOL_ARRAY FLOAT64 FLOAT64_ARRAY FLOAT32 FLOAT32_ARRAY INT64 INT64_ARRAY JSON_ARRAY JSON_ARRAY_APPEND JSON_ARRAY_INSERT JSON_CONTAINS JSON_OBJECT JSON_QUERY JSON_QUERY_ARRAY JSON_REMOVE JSON_SET JSON_STRIP_NULLS JSON_TYPE JSON_VALUE JSON_VALUE_ARRAY LAX_BOOL LAX_FLOAT64 LAX_INT64 LAX_STRING PARSE_JSON SAFE_TO_JSON STRING (JSON) STRING_ARRAY TO_JSON TO_JSON_STRING Machine learning functions Overview AI.CLASSIFY AI.IF AI.SCORE ML.PREDICT Mathematical functions Overview ABS ACOS ACOSH APPROX_COSINE_DISTANCE APPROX_DOT_PRODUCT APPROX_EUCLIDEAN_DISTANCE ASIN ASINH ATAN ATAN2 ATANH CEIL CEILING COS COSH COSINE_DISTANCE DIV DOT_PRODUCT EXP EUCLIDEAN_DISTANCE FLOOR GREATEST IEEE_DIVIDE IS_INF IS_NAN LEAST LN LOG LOG10 MOD POW POWER ROUND SAFE_ADD SAFE_DIVIDE SAFE_MULTIPLY SAFE_NEGATE SAFE_SUBTRACT SIGN SIN SINH SQRT TAN TANH TRUNC Net functions Overview NET.HOST NET.IP_FROM_STRING NET.IP_NET_MASK NET.IP_TO_STRING NET.IP_TRUNC NET.IPV4_FROM_INT64 NET.IPV4_TO_INT64 NET.PUBLIC_SUFFIX NET.REG_DOMAIN NET.SAFE_IP_FROM_STRING Protocol buffer functions Overview REPLACE_FIELDS Search functions Overview DEBUG_TOKENLIST SCORE SCORE_NGRAMS SEARCH SEARCH_NGRAMS SEARCH_SUBSTRING SNIPPET TOKEN TOKENIZE_BOOL TOKENIZE_FULLTEXT TOKENIZE_JSON TOKENIZE_NGRAMS TOKENIZE_NUMBER TOKENIZE_SUBSTRING TOKENLIST_CONCAT Sequence functions Overview GET_INTERNAL_SEQUENCE_STATE GET_NEXT_SEQUENCE_VALUE Statistical aggregate functions Overview STDDEV STDDEV_SAMP VAR_SAMP VARIANCE String functions Overview BYTE_LENGTH CHAR_LENGTH CHARACTER_LENGTH CODE_POINTS_TO_BYTES CODE_POINTS_TO_STRING CONCAT ENDS_WITH FORMAT FROM_BASE32 FROM_BASE64 FROM_HEX LCASE LENGTH LOWER LPAD LTRIM NORMALIZE NORMALIZE_AND_CASEFOLD OCTET_LENGTH REGEXP_CONTAINS REGEXP_EXTRACT REGEXP_EXTRACT_ALL REGEXP_REPLACE REPEAT REPLACE REVERSE RPAD RTRIM SAFE_CONVERT_BYTES_TO_STRING SOUNDEX SPLIT SPLIT_SUBSTR STARTS_WITH STRPOS SUBSTR SUBSTRING TO_BASE32 TO_BASE64 TO_CODE_POINTS TO_HEX TRIM UPPER UCASE Timestamp functions Overview CURRENT_TIMESTAMP EXTRACT (timestamp) FORMAT_TIMESTAMP PARSE_TIMESTAMP PENDING_COMMIT_TIMESTAMP STRING (timestamp) TIMESTAMP TIMESTAMP_ADD TIMESTAMP_DIFF TIMESTAMP_MICROS TIMESTAMP_MILLIS TIMESTAMP_SECONDS TIMESTAMP_SUB TIMESTAMP_TRUNC UNIX_MICROS UNIX_MILLIS UNIX_SECONDS Utility functions Overview GENERATE_UUID MySQL functions All MySQL functions Date and time functions Overview DATE_FORMAT DAY DAYNAME DAYOFMONTH DAYOFWEEK DAYOFYEAR FROM_DAYS FROM_UNIXTIME HOUR MAKEDATE MICROSECOND MINUTE MONTH MONTHNAME PERIOD_ADD PERIOD_DIFF QUARTER SECOND STR_TO_DATE SYSDATE TIME TO_DAYS TO_SECONDS UNIX_TIMESTAMP UTC_DATE UTC_TIMESTAMP WEEK WEEKDAY WEEKOFYEAR YEAR Encryption and compression functions Overview SHA2 JSON functions Overview JSON_QUOTE JSON_UNQUOTE Numeric functions Overview DEGREES LOG2 PI RADIANS TRUNCATE String functions Overview BIT_LENGTH CHAR CONCAT_WS HEX INSERT LOCATE MID OCT ORD POSITION QUOTE REGEXP_LIKE REGEXP_SUBSTR SPACE STRCMP SUBSTRING_INDEX UNHEX Timestamp functions Overview DATEDIFF LOCALTIME LOCALTIMESTAMP NOW Utility functions Overview BIN_TO_UUID INET_ATON INET_NTOA INET6_ATON INET6_NTOA IS_IPV4 IS_IPV4_COMPAT IS_IPV4_MAPPED IS_IPV6 IS_UUID UUID UUID_TO_BIN Statements DDL (Data Definition Language) DML (Data Manipulation Language) Procedural language PostgreSQL Overview of PostgreSQL Lexical structure and syntax Data definition (DDL) Data manipulation (DML) Query syntax Subqueries Data types Functions Operators Stored procedures PostgreSQL system catalog tables PostgreSQL system catalog views Known issues in the PostgreSQL interface Information schema For GoogleSQL databases For PostgreSQL databases Query execution operators Overview Leaf operators Unary operators Binary operators N-ary operators Distributed operators Scalar subqueries Array subqueries Struct constructor GQL in Spanner Overview Spanner Graph and ISO standards Schema statements Overview CREATE PROPERTY GRAPH statement DROP PROPERTY GRAPH statement Query statements Overview GQL syntax Graph clause CALL statement FILTER statement FOR statement LET statement LIMIT statement MATCH statement NEXT statement OFFSET statement ORDER BY statement RETURN statement SKIP statement WITH statement Graph hints GQL within SQL Overview GRAPH_TABLE operator Patterns Overview Graph pattern Element pattern Subpath pattern Quantified path pattern Label expression Path search prefix Path mode Subqueries Overview ARRAY subquery EXISTS subquery IN subquery VALUE subquery Data types Overview Graph element type Graph path type Operators Overview Concatenation operator Logical operators ALL_DIFFERENT predicate IS DESTINATION predicate IS SOURCE predicate PROPERTY_EXISTS predicate SAME predicate Functions Overview DESTINATION_NODE_ID function EDGES function ELEMENT_DEFINITION_NAME function ELEMENT_ID function IS_ACYCLIC function IS_FIRST function IS_TRAIL function LABELS function NODES function PATH function PATH_FIRST function PATH_LAST function PATH_LENGTH function PROPERTY_NAMES function SOURCE_NODE_ID function Conditional expressions Overview CLIs gcloud command-line tool psql command-line tool AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Databases Spanner Reference Send feedback Dialect parity between GoogleSQL and PostgreSQL Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes the dialect differences between GoogleSQL and PostgreSQL and offers recommendations for using PostgreSQL approaches for specific GoogleSQL features.",
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer_id BIGINT PRIMARY KEY, first_name VARCHAR(1024), last_name VARCHAR(1024), singer_info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed_rows AS ( SELECT *, ABS(MOD(spanner.farm_fingerprint( CONCAT( singer_id::text, first_name, last_name, singer_info::text ) ), 100)) AS hash_value FROM singers ) -- Sample data SELECT * FROM hashed_rows WHERE hash_value < 10 -- sample roughly 10% LIMIT 10; /* Optional: LIMIT to a max of 10 rows to be returned */ VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x*x - 1)); APPROX_COSINE_DISTANCE No recommendation available."
+        ]
+      },
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page describes the dialect differences between GoogleSQL and PostgreSQL and offers recommendations for using PostgreSQL approaches for specific GoogleSQL features.",
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "TO BASE64 TO CODE POINTS TO HEX VAR SAMP Use the formula of the function explicitly (unbiased variance), as shown in the following: -- Use formula directly (unbiased) WITH numbers AS ( SELECT 1 AS x UNION ALL SELECT 2 UNION ALL SELECT 3 ), mean AS ( SELECT Avg(x)::float8 AS mean FROM numbers ) SELECT Sum(Power(numbers.x - mean.mean, 2)) / (Count(x) - 1) AS variance FROM numbers CROSS JOIN mean VARIANCE Use the formula of the function explicitly (unbiased variance), as shown in the following example: -- Use formula directly (unbiased VARIANCE like VAR SAMP) WITH numbers AS ( SELECT 1 AS x UNION ALL SELECT 2 UNION ALL SELECT 3 ), mean AS ( SELECT AVG(x)::float8 AS mean FROM numbers ) SELECT SUM(POWER(numbers.x - mean.mean, 2)) / (COUNT(x) - 1) AS variance FROM numbers CROSS JOIN mean What's next Learn more about Spanner's PostgreSQL language support ."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples Return information about each table in the user's schema: SELECT t . table schema , t . table catalog , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table schema NOT IN ( 'pg catalog' , 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables and views in the information schema for PostgreSQL-dialect databases: SELECT table name FROM information schema . tables WHERE table schema = \"information schema\" Return information about columns in the user table my table in the default schema: SELECT t . ordinal position , t . column name , t . data type , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table schema = 'public' AND t . table name = 'my table' ORDER BY t . ordinal position Return information about each index in the default schema in the current database: ## What's next {: #whats-next} + Learn about available Introspection tools to help you investigate database issues.",
+          "Differences from information schema for PostgreSQL The tables in the information schema for PostgreSQL-dialect databases include columns from the tables in the information schema for open source PostgreSQL and in some cases also include columns from Spanner.",
+          "The following sections describe the tables and views in the information schema for PostgreSQL-dialect databases. applicable roles This row-filtered view lists all role memberships that are explicitly granted to all database roles."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mean.mean",
+      "numbers.x",
+      "projects.instanceConfigOperations",
+      "projects.instanceConfigs",
+      "projects.instanceConfigs.operations",
+      "projects.instances",
+      "projects.instances.backupOperations",
+      "projects.instances.backups",
+      "projects.instances.backups.operations",
+      "projects.instances.databaseOperations",
+      "projects.instances.databases",
+      "projects.instances.databases.backupSchedules",
+      "projects.instances.databases.databaseRoles",
+      "projects.instances.databases.operations",
+      "projects.instances.databases.sessions",
+      "projects.instances.instancePartitionOperations",
+      "projects.instances.instancePartitions",
+      "projects.instances.instancePartitions.operations",
+      "projects.instances.operations",
+      "spanner.farm",
+      "spanner.farm_fingerprint"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+      ]
+    }
+  ]
+}

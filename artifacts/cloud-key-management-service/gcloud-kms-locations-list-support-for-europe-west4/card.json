@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.406Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "gcloud kms locations list support for europe-west4",
+  "feature_slug": "gcloud-kms-locations-list-support-for-europe-west4",
+  "summary": "The gcloud kms locations list command supports the europe-west4 region.",
+  "extended_definition": "The gcloud kms locations list command supports the europe-west4 region.",
+  "lifecycle": {
+    "latest_feature_date": "2018-01-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+      "https://docs.cloud.google.com/kms/docs/importing-a-key",
+      "https://docs.cloud.google.com/kms/docs/reference/libraries",
+      "https://docs.cloud.google.com/kms/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Key Management Service (KMS) API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations.ekmConnections Methods create POST /v1/{parent=projects/ /locations/ }/ekmConnections Creates a new EkmConnection in a given Project and Location. get GET /v1/{name=projects/ /locations/ /ekmConnections/ } Returns metadata for a given EkmConnection . getIamPolicy GET /v1/{resource=projects/ /locations/ /ekmConnections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent=projects/ /locations/ }/ekmConnections Lists EkmConnections . patch PATCH /v1/{ekmConnection.name=projects/ /locations/ /ekmConnections/ } Updates an EkmConnection 's metadata. setIamPolicy POST /v1/{resource=projects/ /locations/ /ekmConnections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /ekmConnections/ }:testIamPermissions Returns permissions that a caller has on the specified resource. verifyConnectivity GET /v1/{name=projects/ /locations/ /ekmConnections/ }:verifyConnectivity Verifies that Cloud KMS can successfully connect to the external key manager specified by an EkmConnection .",
+          "Select a location to see its regional service endpoint for this service. global europe-west3 europe-west8 europe-west9 me-central2 us-east1 us-east4 us-west2 us-west1 us-east7 us-central1 us-west3 us-central2 us-west4 us-west8 us-east5 us-south1 us in ca https://cloudkms.googleapis.com REST Resource: v1.folders Methods getAutokeyConfig GET /v1/{name=folders/ /autokeyConfig} Returns the AutokeyConfig for a folder or project. getKajPolicyConfig GET /v1/{name=folders/ /kajPolicyConfig} Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project. updateAutokeyConfig PATCH /v1/{autokeyConfig.name=folders/ /autokeyConfig} Updates the AutokeyConfig for a folder or a project. updateKajPolicyConfig PATCH /v1/{keyAccessJustificationsPolicyConfig.name=folders/ /kajPolicyConfig} Updates the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.",
+          "REST Resource: v1.projects.locations Methods generateRandomBytes POST /v1/{location=projects/ /locations/ }:generateRandomBytes Generate random bytes using the Cloud KMS randomness source in the provided location. get GET /v1/{name=projects/ /locations/ } Gets information about a location. getEkmConfig GET /v1/{name=projects/ /locations/ /ekmConfig} Returns the EkmConfig singleton resource for a given project and location. list GET /v1/{name=projects/ }/locations Lists information about the supported locations for this service. updateEkmConfig PATCH /v1/{ekmConfig.name=projects/ /locations/ /ekmConfig} Updates the EkmConfig singleton resource for a given project and location."
+        ]
+      },
+      {
+        "title": "\"Cloud KMS client libraries \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "KeyManagementServiceClient () Build the parent location name. location name = f \"projects/ { project id } /locations/ { location id } \" Call the API. key rings = client . list key rings ( request = { \"parent\" : location name }) Example of iterating over key rings. for key ring in key rings : print ( key ring . name ) return key rings Ruby TODO(developer): uncomment these values before running the sample. project id = \"my-project\" location id = \"us-east1\" Require the library. require \"google/cloud/kms\" Create the client. client = Google :: Cloud :: Kms . key management service Build the parent location name. location name = client . location path project : project id , location : location id Call the API. key rings = client . list key rings parent : location name Example of iterating over key rings. puts \"Key rings in #{ location name } \" key rings . each do key ring puts key ring . name end Next steps Learn how to programmatically encrypt and decrypt data.",
+          "Encrypting and decrypting data with a symmetric key Encrypting and decrypting data with an asymmetric key Additional resources C++ The following list contains links to more resources related to the client library for C++: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-cloud-kms on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "System . out . println ( \"key rings:\" ); for ( KeyRing keyRing : response . iterateAll ()) { System . out . printf ( \"%s%n\" , keyRing . getName ()); } } } } Node.js // // TODO(developer): Uncomment these variables before running the sample. // // const projectId = 'my-project'; // const locationId = 'us-east1'; // Imports the Cloud KMS library const { KeyManagementServiceClient } = require ( ' @google-cloud/kms ' ); // Instantiates a client const client = new KeyManagementServiceClient (); // Build the location name const locationName = client . locationPath ( projectId , locationId ); async function listKeyRings () { const [ keyRings ] = await client . listKeyRings ({ parent : locationName , }); for ( const keyRing of keyRings ) { console . log ( keyRing . name ); } return keyRings ; } return listKeyRings (); PHP use Google\\Cloud\\Kms\\V1\\Client\\KeyManagementServiceClient; use Google\\Cloud\\Kms\\V1\\ListKeyRingsRequest; function quickstart( string $projectId = 'my-project', string $locationId = 'us-east1' ) { // Create the Cloud KMS client. $client = new KeyManagementServiceClient(); // Build the parent location name. $locationName = $client->locationName($projectId, $locationId); // Call the API. $listKeyRingsRequest = (new ListKeyRingsRequest()) ->setParent($locationName); $keyRings = $client->listKeyRings($listKeyRingsRequest); // Example of iterating over key rings. printf('Key rings in %s:' ."
+        ]
+      },
+      {
+        "title": "\"Create and manage tags \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Key management Tags are displayed in the Tags column of the key ring. gcloud To get a list of tag bindings attached to a resource, use the gcloud resource-manager tags bindings list command: gcloud resource-manager tags bindings list \\ --parent= RESOURCE ID \\ --location= LOCATION Replace the following: RESOURCE ID is the full ID of the resource, including the API domain name to identify the type of resource ( //cloudkms.googleapis.com/ ).",
+          "For example, to attach a tag to projects/ PROJECT ID /locations/ LOCATION NAME /keyRings/ KEYRING NAME , the full ID is: //cloudkms.googleapis.com/projects/ PROJECT ID /locations/ LOCATION NAME /keyRings/ KEYRING NAME .",
+          "For example, to attach a tag to projects/ PROJECT ID /locations/ LOCATION NAME /keyRings/ KEYRING NAME , the full ID is: //cloudkms.googleapis.com/projects/ PROJECT ID /locations/ LOCATION NAME /keyRings/ KEYRING NAME ."
+        ]
+      },
+      {
+        "title": "\"Import a key version into Cloud KMS \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/importing-a-key",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a Single-tenant Cloud HSM key, add the --cryptoKeyBackend flag to this command and add the resource identifier of the Single-tenant Cloud HSM instance where you want to import the key: --crypto-key-backend = \"projects/ INSTANCE PROJECT /locations/ LOCATION /singleTenantHsmInstances/ INSTANCE NAME \" Go To run this code, first set up a Go development environment and install the Cloud KMS Go SDK . import ( \"context\" \"fmt\" \"io\" kms \"cloud.google.com/go/kms/apiv1\" \"cloud.google.com/go/kms/apiv1/kmspb\" ) // createKeyForImport creates a new asymmetric signing key in Cloud HSM. func createKeyForImport ( w io .",
+          "Create an empty, import-only key: curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys?cryptoKeyId= KEY NAME &skipInitialVersionCreation=true&importOnly=true\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --header \"x-goog-user-project: PROJECT ID \" \\ --data \"{\"purpose\":\" PURPOSE \", \"versionTemplate\":{\"protectionLevel\":\" PROTECTION LEVEL \",\"algorithm\":\" ALGORITHM \"}}\" See the CryptoKey.create API documentation for more information.",
+          "Use the location and keyring where you created the import job. gcloud kms import-jobs describe IMPORT JOB \\ --location LOCATION \\ --keyring KEY RING \\ --format=\"value(state)\" The output is similar to the following: state: ACTIVE Go To run this code, first set up a Go development environment and install the Cloud KMS Go SDK . import ( \"context\" \"fmt\" \"io\" kms \"cloud.google.com/go/kms/apiv1\" \"cloud.google.com/go/kms/apiv1/kmspb\" ) // checkStateImportJob checks the state of an ImportJob in KMS. func checkStateImportJob ( w io ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com",
+      "com.google.cloud",
+      "v1.folders",
+      "v1.projects.locations",
+      "v1.projects.locations.ekmConnections",
+      "v1.projects.locations.keyRings.cryptoKeys.cryptoKeyVersions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/libraries",
+        "https://docs.cloud.google.com/kms/docs/create-manage-tags",
+        "https://docs.cloud.google.com/kms/docs/importing-a-key"
+      ]
+    }
+  ]
+}

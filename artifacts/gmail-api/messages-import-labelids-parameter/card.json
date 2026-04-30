@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.333Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "messages.import labelIds parameter",
+  "feature_slug": "messages-import-labelids-parameter",
+  "summary": "The messages.import method can automatically apply labels from message.labelIds.",
+  "extended_definition": "The messages.import method can automatically apply labels from message.labelIds.",
+  "lifecycle": {
+    "latest_feature_date": "2015-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/list-messages",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.messages.import \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 197,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback Method: users.messages.import Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request Upload URI, for media upload requests: POST https://gmail.googleapis.com/upload/gmail/v1/users/{userId}/messages/import Metadata URI, for metadata-only requests: POST https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/import The URL uses gRPC Transcoding syntax.",
+          "This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing."
+        ]
+      },
+      {
+        "title": "Method: users.messages.get \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback Method: users.messages.get Stay organized with collections Save and categorize content based on your preferences.",
+          "The ID is also contained in the result when a message is inserted ( messages.insert ) or imported ( messages.import ).",
+          "Query parameters Parameters format enum ( Format ) The format to return the message in. metadataHeaders[] string When given and format is METADATA , only include headers specified."
+        ]
+      },
+      {
+        "title": "List Gmail messages \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/list-messages",
+        "source_id": "site-docs-root",
+        "final_score": 80,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Lists the user's Gmail messages. \"\"\" creds = None The file token.json stores the user's access and refresh tokens, and is created automatically when the authorization flow completes for the first time. if os . path . exists ( \"token.json\" ): creds = Credentials . from authorized user file ( \"token.json\" , SCOPES ) If there are no (valid) credentials available, let the user log in. if not creds or not creds . valid : if creds and creds . expired and creds . refresh token : creds . refresh ( Request ()) else : flow = InstalledAppFlow . from client secrets file ( \"credentials.json\" , SCOPES ) creds = flow . run local server ( port = 0 ) Save the credentials for the next run with open ( \"token.json\" , \"w\" ) as token : token . write ( creds . to json ()) try : Call the Gmail API service = build ( \"gmail\" , \"v1\" , credentials = creds ) results = ( service . users () . messages () . list ( userId = \"me\" , labelIds = [ \"INBOX\" ]) . execute () ) messages = results . get ( \"messages\" , []) if not messages : print ( \"No messages found.\" ) return print ( \"Messages:\" ) for message in messages : print ( f 'Message ID: { message [ \"id\" ] } ' ) msg = ( service . users () . messages () . get ( userId = \"me\" , id = message [ \"id\" ]) . execute () ) print ( f ' Subject: { msg [ \"snippet\" ] } ' ) except HttpError as error : TODO(developer) - Handle errors from gmail API. print ( f \"An error occurred: { error } \" ) if name == \" main \" : main () The messages.list method returns a response body that contains the following: messages[] : An array of Message resources. nextPageToken : For requests with multiple pages of results, a token that can be used with subsequent calls to list more messages. resultSizeEstimate : An estimated total number of results.",
+          "List messages The messages.list method supports several query parameters to filter the messages: maxResults : Maximum number of messages to return (defaults to 100, maximum 500). pageToken : Token to retrieve a specific page of results. q : Query string to filter messages, such as from:someuser@example.com is:unread . labelIds : Only return messages with labels that match all specified label IDs. includeSpamTrash : Include messages from SPAM and TRASH in the results.",
+          "The code handles pagination to retrieve all messages matching the query. gmail/snippet/list messages.py View on GitHub import os.path from google.auth.transport.requests import Request from google.oauth2.credentials import Credentials from google auth oauthlib.flow import InstalledAppFlow from googleapiclient.discovery import build from googleapiclient.errors import HttpError If modifying these scopes, delete the file token.json."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credentials.json",
+      "developers.google.com",
+      "example.com",
+      "gmail.googleapis.com",
+      "googleapiclient.discovery",
+      "googleapiclient.errors",
+      "message.id",
+      "message.labelIds",
+      "messages.get",
+      "messages.import",
+      "messages.insert",
+      "messages.list",
+      "messages.py",
+      "oauthlib.flow",
+      "os.path",
+      "token.json",
+      "users.messages",
+      "users.messages.batchModify",
+      "users.messages.get",
+      "users.messages.import",
+      "users.messages.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/guides/list-messages"
+      ]
+    }
+  ]
+}

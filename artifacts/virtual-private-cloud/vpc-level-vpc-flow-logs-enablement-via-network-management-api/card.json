@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "VPC-level VPC Flow Logs enablement via Network Management API",
+  "feature_slug": "vpc-level-vpc-flow-logs-enablement-via-network-management-api",
+  "summary": "Enables turning on VPC Flow Logs for a VPC network through the Network Management API in Preview.",
+  "extended_definition": "Enables turning on VPC Flow Logs for a VPC network through the Network Management API in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+      "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+      "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+      "https://docs.cloud.google.com/vpc/docs/flow-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "VPC Flow Logs \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration scope Generates flow logs for these resources Steps to enable Organization All VM instances and Cloud Run resources in all subnets in the organization All VLAN attachments in the organization All Cloud VPN tunnels in the organization Enable VPC Flow Logs for an organization VPC network All VM instances and Cloud Run resources in all subnets in the VPC network All VLAN attachments in the VPC network All Cloud VPN tunnels in the VPC network Enable VPC Flow Logs for a VPC network Subnet All VM instances and Cloud Run resources in a specific subnet Enable VPC Flow Logs for a subnet: Recommended: Enable VPC Flow Logs for a subnet (Network Management API) Enable VPC Flow Logs for a subnet (Compute Engine API) VLAN attachment A specific VLAN attachment Enable VPC Flow Logs for a VLAN attachment Cloud VPN tunnel A specific Cloud VPN tunnel Enable VPC Flow Logs for a Cloud VPN tunnel You can use filtering to customize these configuration scopes.",
+          "For example, if an incident occurs, you can examine the following: Which IP addresses have communicated with each other and when Which IPs are compromised by analyzing all the incoming and outgoing network flows Supported configurations You can enable VPC Flow Logs at the organization and project levels.",
+          "An organization-level VPC Flow Logs configuration enables flow logs for all subnets, VLAN attachments, and Cloud VPN tunnels in all VPC networks in the organization."
+        ]
+      },
+      {
+        "title": "\"About VPC Flow Logs records \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "source_id": "site-docs-root-2",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cross-project annotations If VPC Flow Logs is enabled at the organization level , flows through Shared VPC, VPC Network Peering, and Network Connectivity Center are annotated with cross-project annotations.",
+          "3 If VPC Flow Logs is configured at the organization level, by default, log records for cross-project flows include details about both sides of the flow.",
+          "If VPC Flow Logs is enabled at the project level, flows between resources in different projects aren't annotated with cross-project annotations."
+        ]
+      },
+      {
+        "title": "Access flow logs \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "source_id": "site-docs-root-2",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "Logs you want to view Query All flow logs resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") Logs for a specific configuration resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" resource.labels.name=\" CONFIG NAME \" Logs for VM instances in a specific VPC network resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src vpc.vpc name=\" NETWORK NAME \" OR jsonPayload.dest vpc.vpc name=\" NETWORK NAME \") Logs for VM instances in a specific subnet resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src vpc.subnetwork name=\" SUBNET NAME \" OR jsonPayload.dest vpc.subnetwork name=\" SUBNET NAME \") Logs for a specific VM instance resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src instance.vm name=\" VM NAME \" OR jsonPayload.dest instance.vm name=\" VM NAME \") Logs for a specific Google Kubernetes Engine cluster resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") (jsonPayload.src gke details.cluster.cluster name=\" CLUSTER NAME \" OR jsonPayload.dest gke details.cluster.cluster name=\" CLUSTER NAME \") Logs for only egress VM traffic from a subnet resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.reporter=\"SRC\" AND jsonPayload.src vpc.subnetwork name=\" SUBNET NAME \" AND (jsonPayload.dest vpc.subnetwork name!=\" SUBNET NAME \" OR NOT jsonPayload.dest vpc.subnetwork name: ) Logs for only egress VM traffic from a VPC network resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.reporter=\"SRC\" AND jsonPayload.src vpc.vpc name=\" VPC NAME \" AND (jsonPayload.dest vpc.vpc name!=\" VPC NAME \" OR NOT jsonPayload.dest vpc: ) Logs for traffic to a specific subnet range resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") ip in net(jsonPayload.connection.dest ip, \" SUBNET RANGE \") Logs for an individual destination port resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.connection.dest port= PORT jsonPayload.connection.protocol= PROTOCOL Logs for multiple destination ports resource.type=(\"vpc flow logs config\" OR \"gce subnetwork\") logName=(\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" OR \"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\") jsonPayload.connection.dest port=( PORT 1 OR PORT 2 ) jsonPayload.connection.protocol= PROTOCOL Logs for a specific source Cloud VPN tunnel resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"SRC GATEWAY\" labels.target resource name=\"projects/ PROJECT NUMBER /regions/ REGION /vpnTunnels/ NAME \" Logs for all destination VLAN attachments resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"DEST GATEWAY\" jsonPayload.dest gateway.type=\"INTERCONNECT ATTACHMENT\" Logs for all destination VLAN attachments in a specific region resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"DEST GATEWAY\" jsonPayload.dest gateway.type=\"INTERCONNECT ATTACHMENT\" jsonPayload.dest gateway.location=\" REGION \" Replace the following: PROJECT ID : the project ID CONFIG NAME : the name of the VPC Flow Logs configuration SUBNET NAME : the name of the subnet VM NAME : the name of the VM SUBNET RANGE : a CIDR range, such as 192.168.1.0/24 CLUSTER NAME : the name of the GKE cluster VPC NAME : the name of the VPC network PORT 1 and PORT 2 : the destination ports PROTOCOL : the communication protocol PROJECT NUMBER : the project number of the Cloud VPN tunnel REGION : the region of the VLAN attachment or Cloud VPN tunnel NAME : the name of the Cloud VPN tunnel Route logs to BigQuery, Pub/Sub, and custom targets You can route flow logs from Logging to a destination of your choice as described in the Routing and storage overview in the Logging documentation.",
+          "In the query editor field, enter a query: For example, to view flow logs for a specific source Cloud VPN tunnel, enter the following query: resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" jsonPayload.reporter=\"SRC GATEWAY\" labels.target resource name=\"projects/ PROJECT NUMBER /regions/ REGION /vpnTunnels/ NAME \" Replace the following: PROJECT ID : the Google Cloud project ID of the Cloud VPN tunnel PROJECT NUMBER : the project number of the Cloud VPN tunnel REGION : the region of the Cloud VPN tunnel NAME : the name of the Cloud VPN tunnel If you enabled VPC Flow Logs for a subnet by using the Compute Engine API, the query must target compute.googleapis.com .",
+          "Log Resource type and log name networkmanagement.googleapis.com/vpc flows Collects logs for configurations that are managed by the Network Management API. resource.type=\"vpc flow logs config\" logName=\"projects/ PROJECT ID /logs/networkmanagement.googleapis.com%2Fvpc flows\" compute.googleapis.com/vpc flows Collects logs for configurations that are managed by the Compute Engine API. resource.type=\"gce subnetwork\" logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fvpc flows\" Replace PROJECT ID with the Google Cloud project ID of the reporting resource."
+        ]
+      },
+      {
+        "title": "\"Flow Analyzer overview \\_|\\_ Network Intelligence Center - Flow Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "In Flow Analyzer, you can do the following: Query logs reported by VPC Flow Logs Use SQL filters to refine your queries Sort query results by total traffic, aggregate packets, or latency View traffic for a specific time period View the top five flows with the highest traffic or latency, for the selected time period View resources with the highest traffic or latency, for the selected time period View traffic details for specific source and destination pairs in your query results How it works VPC Flow Logs samples packets in your VPC network to generate flow logs, which can be stored in Cloud Logging or routed to supported destinations, such as BigQuery or a third-party platform through Pub/Sub.",
+          "VPC Flow Logs can be used for network monitoring, forensics, real-time security analysis, and expense optimization.",
+          "You can choose one of the following four approaches to determine which VPC Flow Logs contribute to the computed metrics and how they are evaluated: Source endpoint : the number of bytes sent or packets sent reported at the source endpoint of a flow Destination endpoint : the number of bytes sent or packets sent reported at the destination endpoint of a flow Sum of source and destination endpoint : the sum of bytes sent or packets sent reported by both endpoints of a flow Average of source and destination endpoint : an average of bytes sent or packets sent reported by both endpoints of a flow if both the source and the destination information are available in VPC Flow Logs Traffic deduplication To prevent traffic reported at the source and destination VMs from being counted twice, you can choose the Average of source and destination endpoint sampling option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "connection.dest",
+      "connection.protocol",
+      "details.cluster.cluster",
+      "gateway.location",
+      "gateway.type",
+      "instance.vm",
+      "labels.target",
+      "networkmanagement.googleapis.com",
+      "resource.labels.name",
+      "resource.type",
+      "vpc.subnetwork",
+      "vpc.vpc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/flow-logs",
+        "https://docs.cloud.google.com/vpc/docs/about-flow-logs-records",
+        "https://docs.cloud.google.com/vpc/docs/access-flow-logs",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Drive trash state checks",
+  "feature_slug": "drive-trash-state-checks",
+  "summary": "File and Folder objects can now report whether an item is in the trash.",
+  "extended_definition": "File and Folder objects can now report whether an item is in the trash.",
+  "lifecycle": {
+    "latest_feature_date": "2012-04-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/drive",
+      "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the following DriveApp methods, which allow scripts to save the state of a file or folder iterator and resume at a later time.",
+          "August 31, 2021 Feature The Drive Service has added three new methods to the file and folder classes to manage the use of resource keys when sharing files and folders. getSecurityUpdateEligible() : Gets whether a file for folder is eligible to apply the security update that requires a resource key for access when it's shared using a link. getSecurityUpdateEnabled() : Gets whether a file or folder requires a resource key for access when it's shared using a link. setSecurityUpdateEnabled(enabled) : Sets whether the file or folder requires a resource key for access when it's shared using a link.",
+          "October 08, 2013 Feature Added the following FormApp methods, which allow scripts to work with progress bars, custom closed-form messages, and YouTube videos. + Form.hasProgressBar() + Form.setProgressBar(enabled) + Form.getCustomClosedFormMessage() + Form.setCustomClosedFormMessage(message) + Form.addVideoItem() September 23, 2013 Feature Added the following DriveApp methods, which allow scripts to get the owner of a File or Folder."
+        ]
+      },
+      {
+        "title": "Advanced Drive Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/drive",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Files . create ( folderMetadata ); Logger . log ( 'Folder ID: ' + folder . id ); } Search for files The following code sample shows how to search for files using a query string. / Searches for files with a specific name. / function searchFiles () { var query = 'name contains \"Project Plan\" and trashed = false' ; var files = Drive .",
+          "Files . create ( file , image , { fields : \"id,size\" }); console . log ( \"ID: %s, File size (bytes): %s\" , file . id , file . size ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed to upload file with error %s\" , err . message ); } } Create a folder The following code sample shows how to create a folder in Drive. / Creates a new folder. / function createFolder () { var folderMetadata = { 'name' : 'New Folder' , 'mimeType' : 'application/vnd.google-apps.folder' }; var folder = Drive .",
+          "Files . list ({ 'q' : query , 'fields' : 'files(id, name, mimeType)' }); if ( files . files && files . files . length > 0 ) { for ( var i = 0 ; i < files . files . length ; i ++ ) { var file = files . files [ i ]; Logger . log ( '%s (ID: %s)' , file . name , file . id ); } } else { Logger . log ( 'No files found.' ); } } List folders The following code sample shows how to list the top-level folders in the user's Drive."
+        ]
+      },
+      {
+        "title": "Fix errors in your converted code \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the API is critical for the workflow the user can implement the unimplemented handler method in the generated code, else comment out the throw statement. @param {Object} CallingObject represents the parent object using which the API has been called. @param {string} Password @param {boolean} DrawingObjects @param {boolean} Contents @param {boolean} Scenarios @param {boolean} UserInterfaceOnly / function api chart protect ( CallingObject , Password , DrawingObjects , Contents , Scenarios , UserInterfaceOnly ) { var ranges = CallingObject . getChart (). getRanges (); for ( var i = 0 ; i ranges . length ; i ++ ) { // Note that this does not lock the range for the document owner . ranges [ i ] . protect (); } } Example 2: Unsupported object type When the object type is unknown, the unimplemented API error is added to the variant resolution.gs file.",
+          "Menu objects are created as a new object type that mimics the behavior of CommandBars . // Our Implementation of CommandBar using Menu objects . function CommandBar ( name ) { this . name = name ; // Create a menu object to represent the commandbar . this . menu = SpreadsheetApp . getUi (). createMenu ( name ); // Create methods for retrieving or updating the name of the object this . getName = function () { return this . name ; } ; this . updateName = function ( name ) { this . name = name ; } ; // ======================================================================== // Implement other methods of CommandBar objects that are used in the script . // ===================================================================== return this ; } // Our implementation of the collection of CommandBars that exists in VBA function CommandBars () { this . commandBars = [] ; this . getCommandBar = function ( name ) { for ( var i = 0 ; i this . commandBars . length ; i ++ ) { if ( ! this . commandBars [ i ] . getName () == name ) { return this . commandBars [ i ] ; } } // No commandBar with the name exists , create a new one and return . var commandBar = new CommandBar ( name ); this . commandBars . push ( commandBar ); return commandBar ; } ; return this ; } // Create a global object that represents CommandBars collection . var GlobalCommandBars = new CommandBars (); 3.3 Modify the handle resolve name function in the variant resolution.gs file to handle the new object type.",
+          "Suppose there are two files being opened by workbook.open in the VBA code: File 1: C:\\Data\\abc.xlsx File 2: C:\\Data\\xyz.xlsx The following code shows how the Macro Converter replaces Workbook.open with Apps Script everywhere Workbook.open is used to open File 1: var spreadSheetId = handle mso excel get google spreadsheet id ( \"C:\\Data \\a bc.xlsx\" ); var spreadSheet = SpreadsheetApp . openById ( spreadSheetId ); The below error is added to the unimplemented constructs.gs file in the Apps Script project: / Method to return the spreadsheet id manually . @ param { string } FileName ID of the spreadsheet to be opened . @ return { string } return the spreadsheet id . / function handle mso excel get google spreadsheet id ( FileName ) { // Upload the Excel files being opened by the API to Google Drive and convert // them to Google Sheets . // Determine the spreadsheet ID of the Google Sheets file created . // Implement this method to return the corresponding spreadsheet ID when given // the original file path as parameter . throw new Error ( 'Please return the spreadsheet ID corresponding to filename: ' + FileName ); return ' ' ; } As instructed by the comments in the previous sample, you need to convert the target files to Sheets files on Drive."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "abc.xlsx",
+      "apps.folder",
+      "bc.xlsx",
+      "constructs.gs",
+      "developers.google.com",
+      "drive.gs",
+      "resolution.gs",
+      "vnd.google",
+      "workbook.open",
+      "xyz.xlsx"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/drive",
+        "https://developers.google.com/apps-script/guides/macro-converter/fix-conversion-errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.535Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api",
+  "feature_name": "enforceExpansiveAccess query parameter",
+  "feature_slug": "enforceexpansiveaccess-query-parameter",
+  "summary": "This request parameter for permissions methods is deprecated and should be replaced by folders with limited access settings; deprecated on 2026-02-25.",
+  "extended_definition": "This request parameter for permissions methods is deprecated and should be replaced by folders with limited access settings; deprecated on 2026-02-25.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-25",
+    "deprecation_date": "2026-02-25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+      "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+      "https://developers.google.com/workspace/drive/api/guides/file-metadata",
+      "https://developers.google.com/workspace/drive/api/guides/manage-comments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Return specific fields \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request In this example, we provide the file ID path parameter and multiple fields, including certain fields of the nested permissions resource, as a query parameter in the request.",
+          "Request In this example, we provide the file ID path parameter and multiple fields as a query parameter in the request.",
+          "GET https : //www.googleapis.com/drive/v3/files/ FILE ID ?fields=name,starred,shared,permissions(kind,type,role) Response { \"name\" : \"File1\" , \"starred\" : false , \"shared\" : true , \"permissions\" : [ { \"kind\" : \"drive#permission\" , \"type\" : \"user\" , \"role\" : \"owner\" } ] } Alternative system parameters Query parameters that apply to all Google Drive API operations are documented at System Parameters ."
+        ]
+      },
+      {
+        "title": "Manage comments and replies \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request In this example, we provide the fileId path parameter, the includeDeleted query parameter, and multiple fields.",
+          "For an unanchored comment, omit the 'anchor' property. comment body = { 'content' : COMMENT TEXT } Create the comment request. comment = ( service . comments () . create ( fileId = FILE ID , fields = \" \" , body = comment body ) . execute () ) print ( f \"Comment ID: { comment . get ( 'id' ) } \" ) return comment except HttpError as error : print ( f \"An error occurred: { error } \" ) return None create unanchored comment () Important: We recommend you check that a user has the correct permissions to add comments.",
+          "POST https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID /replies?fields=id,comment Request body { \"action\": \"resolve\", \"content\": \"This comment has been resolved.\" } Get a comment To get a comment on a file, use the get method on the comments resource with the fileId and commentId parameters."
+        ]
+      },
+      {
+        "title": "Implement shared drive support \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To begin, you must include the supportsAllDrives=true query parameter in your requests when your app performs the following operations: Drive API v3 files.get files.list files.create files.update files.copy files.delete changes.list changes.getStartPageToken permissions.list permissions.get permissions.create permissions.update permissions.delete Drive API v2 files.get files.list files.insert files.update files.patch files.copy files.trash files.untrash files.delete files.touch children.insert parents.insert changes.list changes.getStartPageToken changes.get permissions.list permissions.get permissions.insert permissions.update permissions.patch permissions.delete The supportsAllDrives=true parameter informs Google Drive that your application is designed to handle files on shared drives.",
+          "Note that the response might include incompleteSearch:true , indicating that some corpora were not searched for this request.",
+          "The list method contains the following shared drive-specific query parameters: driveId : ID of the shared drive to search. corpora : Bodies of items (files or documents) to which the query applies."
+        ]
+      },
+      {
+        "title": "Manage file metadata \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/file-metadata",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Return a list of thumbnails The following code sample shows a list method request with multiple fields as a query parameter to return the thumbnailLink metadata for a list of files.",
+          "Return a specific thumbnail The following code sample shows a get method request with multiple fields as a query parameter to return the thumbnailLink metadata for a specific file.",
+          "For example, a user might own a file with full permissions, but the Drive API will block attempts to modify or download the file if your app only has the drive.metadata.readonly scope."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "changes.get",
+      "changes.getStartPageToken",
+      "changes.list",
+      "children.insert",
+      "developers.google.com",
+      "drive.metadata.readonly",
+      "files.copy",
+      "files.create",
+      "files.delete",
+      "files.get",
+      "files.insert",
+      "files.list",
+      "files.patch",
+      "files.touch",
+      "files.trash",
+      "files.untrash",
+      "files.update",
+      "parents.insert",
+      "permissions.create",
+      "permissions.delete",
+      "permissions.get",
+      "permissions.insert",
+      "permissions.list",
+      "permissions.patch",
+      "permissions.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/file-metadata"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/file-metadata"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/file-metadata"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/fields-parameter",
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/enable-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/file-metadata"
+      ]
+    }
+  ]
+}

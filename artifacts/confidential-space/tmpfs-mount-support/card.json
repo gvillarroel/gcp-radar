@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.275Z",
+  "source_step08_card": "data/step-08/current/products/confidential-space/card.json",
+  "product_name": "Confidential Space",
+  "product_slug": "confidential-space",
+  "feature_name": "tmpfs mount support",
+  "feature_slug": "tmpfs-mount-support",
+  "summary": "Confidential Space workloads support tmpfs mounts.",
+  "extended_definition": "Confidential Space workloads support tmpfs mounts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy workloads \\_|\\_ Confidential Space \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's an example that creates a Confidential VM, and runs a Docker container called WORKLOAD CONTAINER NAME : CPU-based workloads gcloud compute instances create INSTANCE NAME \\ --confidential-compute-type = CONFIDENTIAL COMPUTING TECHNOLOGY \\ --machine-type = MACHINE TYPE NAME \\ --maintenance-policy = MAINTENANCE POLICY \\ --shielded-secure-boot \\ --image-project = confidential-space-images \\ --image-family = IMAGE FAMILY \\ --metadata = \"^ ^tee-image-reference=us-docker.pkg.dev/ WORKLOAD AUTHOR PROJECT ID / REPOSITORY NAME / WORKLOAD CONTAINER NAME :latest\" \\ --service-account = WORKLOAD SERVICE ACCOUNT NAME @ WORKLOAD OPERATOR PROJECT ID .iam.gserviceaccount.com \\ --scopes = cloud-platform \\ --zone = ZONE NAME \\ --project = PROJECT ID Provide the following values: INSTANCE NAME : The name of the new VM instance.",
+          "Example tee-signed-image-repos=us-docker.pkg.dev/projectA/repo/example,us-docker.pkg.dev/projectB/repo/example,us-docker.pkg.dev/projectC/repo/example Scaling For scaling and high availability of production Confidential Space workloads, see Managed Instance Groups .",
+          "Choose one of the following: confidential-space for production workloads confidential-space-debug for debug workloads WORKLOAD AUTHOR PROJECT : The ID of the project that hosts the Artifact Registry repository that the workload container is stored in."
+        ]
+      },
+      {
+        "title": "\"Create and customize workloads \\_|\\_ Confidential Space \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In-memory scratch mounts Confidential Space supports adding in-memory scratch spaces.",
+          "Home Documentation Security Confidential Space Guides Send feedback Create and customize workloads Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use tee-mount to specify tmpfs mounts in the running container using semicolon-separated configurations."
+        ]
+      },
+      {
+        "title": "\"Workload metadata variables \\_|\\_ Confidential Space \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A mount definition consists of a comma-separated list of key-value pairs, requiring type , source , and destination . destination must be an absolute path and type / source must be tmpfs .",
+          "Home Documentation Security Confidential Space Reference Send feedback Workload metadata variables Stay organized with collections Save and categorize content based on your preferences.",
+          "Workload operator You can change the Confidential Space workload VM behavior by passing variables into the --metadata option when you create the VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-customize-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/deploy-workloads",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/metadata-variables"
+      ]
+    }
+  ]
+}

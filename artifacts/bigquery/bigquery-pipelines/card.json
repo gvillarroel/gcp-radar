@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery pipelines",
+  "feature_slug": "bigquery-pipelines",
+  "summary": "BigQuery Studio now supports scheduled pipelines composed of SQL queries or notebooks, with runtime and sharing options.",
+  "extended_definition": "BigQuery Studio now supports scheduled pipelines composed of SQL queries or notebooks, with runtime and sharing options.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Move your data to BigQuery with millisecond latency BigQuery materialization connector BigQuery Batch Query Connector Partner Advantage page Direct link Fivetran Fivetran Data Pipelines Solution Fivetran Data Pipelines Category ETL & Data Integration Description Fivetran is a leader in automated data integration and delivers ready-to-use connectors that automatically adapt as schemas and APIs change, ensuring consistent, reliable access to data.",
+          "Partner references Google BigQuery integration Connect to BigQuery monitoring Partner Advantage page Direct link Unravel Data Solution Unravel Platform Category Data Quality, Observability, & FinOps Description Unravel is a DataOps platform that enables data teams to intelligently optimize, automatically troubleshoot, and proactively control the costs of data pipelines and applications.",
+          "Partner references Automated Pipelines for Google Cloud BigQuery Fivetran for BigQuery implementation Partner Advantage page Direct link HVR hub Solution HVR hub Category ETL & Data Integration Description HVR is a scalable enterprise data replication and validation platform that lets you simplify high-volume, real-time data movement."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . df manuals agg The results look similar to the following: +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ manual.uri manual.version manual.authorizer manual.details chunks.uri chunks.version chunks.authorizer chunks.details +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ gs://cloud-samples-data/bigquery/ 1742492785900455 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pef\", gs://cloud-samples-data/bigquery/ 1745875761227129 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"c9032b037693d15a33210d638c763d0e\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"5a1116cce4978ec1b094d8e8b49a1d7c\", crittercuisine 5000 user manual.pdf \"size\":566105,\"updated\":1742492785941000}} crittercuisine 5000 user manual page1.pdf \"size\":504583,\"updated\":1745875761266000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ crittercuisine 5000 user manual page1.pdf 1745875760613874 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"94d03ec65d28b173bc87eac7e587b325\", crittercuisine 5000 user manual page2.pdf \"size\":94622,\"updated\":1745875760649000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ ... ... ... ... +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ Run the following to generate a single response from a Gemini model based on the analysis of an array of ObjectRef values: SQL WITH manuals AS ( SELECT OBJ .",
+          "For more information, see Set up ADC for a local development environment . df products mm [[ \"product name\" , \"image\" ]] The results look similar to the following: +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ product name image.uri image.version image.authorizer image.details +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ AquaClear Aquarium Background gs://cloud-samples-data/bigquery/ 1234567891011 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"image/png\", tutorials/cymbal-pets/images/ \"md5 hash\":\"494f63b9b137975ff3e7a11b060edb1d\", aquaclear-aquarium-background.png \"size\":1282805,\"updated\":1742492680017000}} +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ AquaClear Aquarium gs://cloud-samples-data/bigquery/ 2345678910112 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"image/png\", Gravel Vacuum tutorials/cymbal-pets/images/ \"md5 hash\":\"b7bfc2e2641a77a402a1937bcf0003fd\", aquaclear-aquarium-gravel-vacuum.png \"size\":820254,\"updated\":1742492682411000}} +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ ... ... ... ... +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ Generate product information by using a Gemini model Use a Gemini model to generate the following data for the pet store products: Add an image description column to the products mm table.",
+          "DataFrame ( { \"uri\" : [ \"gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/images/cozy-naps-cat-scratching-post-with-condo.png\" ] } ) . cache () df image [ \"image\" ] = bbq . obj . make ref ( df image [ \"uri\" ], \"us.cymbal conn\" ) df search = bbq . ai . generate embedding ( embedding model , bbq . obj . get access url ( bbq . obj . fetch metadata ( df image [ \"image\" ]), \"R\" ), ) search result = bbq . vector search ( \"cymbal pets.products embedding\" , \"embedding\" , df search [ \"embedding\" ] ) search result The results look similar to the following: +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ query.embedding base.product id base.embedding base.image.uri base.image.version base.image.authorizer base.image.details distance +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ -0.0112330541 181 -0.0112330541 gs://cloud-samples-data/bigquery/ 12345678910 myproject.region.myconnection {\"gcs metadata\":{\"content type\": 0.0 0.0142525584 0.0142525584 tutorials/cymbal-pets/images/ \"image/png\",\"md5 hash\":\"21234567hst16555w60j\", 0.0135886827 0.0135886827 cozy-naps-cat-scratching-post-with-condo.png \"size\":828318,\"updated\":1742492688982000}} 0.0149955815 0.0149955815 ... ... +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ -0.0112330541 187 -0.0190353896 gs://cloud-samples-data/bigquery/ 23456789101 myproject.region.myconnection {\"gcs metadata\":{\"content type\": 0.4216330832.."
+        ]
+      },
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the task succeeds, you will find the translated SQL in the response message: { \"name\" : \"projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\" , \"tasks\" : { \"string\" : { \"id\" : \"0fedba98-7654-3210-1234-56789abcdef\" , \"type\" : \"HiveQL2BigQuery Translation\" , / ... / \"taskResult\" : { \"translationTaskResult\" : { \"translatedLiterals\" : [ { \"relativePath\" : \"sql/input file\" , \"literalString\" : \"-- Translation time: 2023-10-05T21:50:49.885839Z\\n-- Translation job ID: projects/123456789/locations/us/workflows/12345678-9abc-def1-2345-6789abcdef00\\n-- Source: input file\\n-- Translated from: Hive\\n-- Translated to: BigQuery\\n\\nSELECT\\n 1\\n;\\n\" } ], \"reportLogMessages\" : [ ... ] } }, / ... / } }, \"state\" : \"COMPLETED\" , \"createTime\" : \"2023-10-05T21:50:49.543221Z\" , \"lastUpdateTime\" : \"2023-10-05T21:50:50.462758Z\" } Explore the translation output After running the translation job, retrieve the results by specifying the translation job workflow ID using the following command: curl \\ -H \"Content-Type:application/json\" \\ -H \"Authorization:Bearer TOKEN \" -X GET https://bigquerymigration.googleapis.com/v2alpha/projects/ PROJECT ID /locations/ LOCATION /workflows/ WORKFLOW ID Replace the following: TOKEN : the token for authentication.",
+          "Supported task types The translation API can translate the following SQL dialects into GoogleSQL: Amazon Redshift SQL - Redshift2BigQuery Translation Apache HiveQL and Beeline CLI - HiveQL2BigQuery Translation Apache Impala - Impala2BigQuery Translation Apache Spark SQL - SparkSQL2BigQuery Translation Azure Synapse T-SQL - AzureSynapse2BigQuery Translation GoogleSQL (BigQuery) - Bigquery2Bigquery Translation Greenplum SQL - Greenplum2BigQuery Translation IBM Db2 SQL - Db22BigQuery Translation IBM Netezza SQL and NZPLSQL - Netezza2BigQuery Translation MySQL SQL - MySQL2BigQuery Translation Oracle SQL, PL/SQL, Exadata - Oracle2BigQuery Translation PostgreSQL SQL - Postgresql2BigQuery Translation Presto or Trino SQL - Presto2BigQuery Translation Snowflake SQL - Snowflake2BigQuery Translation SQLite - SQLite2BigQuery Translation SQL Server T-SQL - SQLServer2BigQuery Translation Teradata and Teradata Vantage - Teradata2BigQuery Translation Vertica SQL - Vertica2BigQuery Translation Handling unsupported SQL functions with helper UDFs When translating SQL from a source dialect to BigQuery, some functions might not have a direct equivalent.",
+          "The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { \"tasks\" : { \"task name\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translation details\" : { \"target base uri\" : \"gs://my data bucket/teradata/output/\" , \"source target mapping\" : { \"source spec\" : { \"base uri\" : \"gs://my data bucket/teradata/input/\" } }, \"target types\" : \"suggestion\" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "background.png",
+      "base.embedding",
+      "base.image.authorizer",
+      "base.image.details",
+      "base.image.uri",
+      "base.image.version",
+      "base.product",
+      "bigquerymigration.googleapis.com",
+      "chunk.rfind",
+      "chunks.append",
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "condo.png",
+      "config.yaml",
+      "image.authorizer",
+      "image.details",
+      "image.uri",
+      "image.version",
+      "io.BytesIO",
+      "json.loads",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "myproject.region.myconnection",
+      "page.extract",
+      "page1.pdf",
+      "page2.pdf",
+      "pets.products",
+      "query.embedding",
+      "reader.pages",
+      "req.read",
+      "urllib.request",
+      "us.cymbal",
+      "vacuum.png"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/api-sql-translator"
+      ]
+    }
+  ]
+}

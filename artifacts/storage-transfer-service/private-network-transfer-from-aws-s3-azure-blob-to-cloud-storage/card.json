@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.111Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "Private-network transfer from AWS S3/Azure Blob to Cloud Storage",
+  "feature_slug": "private-network-transfer-from-aws-s3-azure-blob-to-cloud-storage",
+  "summary": "Storage Transfer Service now enables transfers from AWS S3 or Azure Blob Storage to Cloud Storage over private connectivity using Cross-Cloud Interconnect or Partner Interconnect.",
+  "extended_definition": "Storage Transfer Service now enables transfers from AWS S3 or Azure Blob Storage to Cloud Storage over private connectivity using Cross-Cloud Interconnect or Partner Interconnect.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+      "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from AWS or Azure over a customer-managed private network \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AWS POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { \"status\" : \"ENABLED\" , \"projectId\" : \" PROJECT ID \" , \"transferSpec\" : { \"awsS3DataSource\" : { \"privateNetworkService\" : \" SERVICE SELF LINK \" , \"bucketName\" : \" S3 BUCKET NAME \" , \"awsAccessKey\" : { \"accessKeyId\" : \" ACCESS KEY ID \" , \"secretAccessKey\" : \" SECRET ACCESS KEY \" } }, \"gcsDataSink\" : { \"bucketName\" : \" GCS BUCKET NAME \" } } } Azure POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { \"status\" : \"ENABLED\" , \"projectId\" : \" PROJECT ID \" , \"transferSpec\" : { \"azureBlobStorageDataSource\" : { \"privateNetworkService\" : \" SERVICE SELF LINK \" , \"storageAccount\" : \" AZURE SOURCE NAME \" , \"container\" : \" AZURE CONTAINER \" , \"azureCredentials\" : { \"sasToken\" : \" AZURE SAS TOKEN \" , } }, \"gcsDataSink\" : { \"bucketName\" : \" GCS BUCKET NAME \" } } } Replace the following: SERVICE SELF LINK is the self-link of the Service Directory service.",
+          "A private network connection, established using either Google Cloud Cross-Cloud Interconnect or Partner Interconnect, can offer significant advantages for data transfer between AWS or Azure and Cloud Storage: Potential cost optimization : Potentially achieve egress cost savings.",
+          "Home Documentation Storage Storage Transfer Service Send feedback Transfer from AWS or Azure over a customer-managed private network Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "TransferSpec \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"objectConditions\" : { object ( ObjectConditions ) } , \"transferOptions\" : { object ( TransferOptions ) } , \"transferManifest\" : { object ( TransferManifest ) } , \"sourceAgentPoolName\" : string , \"sinkAgentPoolName\" : string , // Union field data sink can be only one of the following: \"gcsDataSink\" : { object ( GcsData ) } , \"posixDataSink\" : { object ( PosixFilesystem ) } // End of list of possible types for union field data sink . // Union field data source can be only one of the following: \"gcsDataSource\" : { object ( GcsData ) } , \"awsS3DataSource\" : { object ( AwsS3Data ) } , \"httpDataSource\" : { object ( HttpData ) } , \"posixDataSource\" : { object ( PosixFilesystem ) } , \"azureBlobStorageDataSource\" : { object ( AzureBlobStorageData ) } , \"awsS3CompatibleDataSource\" : { object ( AwsS3CompatibleData ) } , \"hdfsDataSource\" : { object ( HdfsData ) } // End of list of possible types for union field data source . // Union field intermediate data location can be only one of the following: \"gcsIntermediateDataLocation\" : { object ( GcsData ) } // End of list of possible types for union field intermediate data location . } Fields objectConditions object ( ObjectConditions ) Only objects that satisfy these object conditions are included in the set of data source and data sink objects.",
+          "JSON representation { \"storageAccount\" : string , \"azureCredentials\" : { object ( AzureCredentials ) } , \"container\" : string , \"path\" : string , \"credentialsSecret\" : string , \"federatedIdentityConfig\" : { object ( FederatedIdentityConfig ) } , // Union field private network can be only one of the following: \"privateNetworkService\" : string // End of list of possible types for union field private network . } Fields storageAccount string Required.",
+          "This network is shared between other users of Storage Transfer Service. privateNetworkService string Service Directory Service to be used as the endpoint for transfers from a customer-managed private network."
+        ]
+      },
+      {
+        "title": "\"Class AzureBlobStorageData (1.20.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData",
+        "source_id": "site-python-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If federated identity config is specified, do not specify azure credentials][google.storagetransfer.v1.AzureBlobStorageData.azure credentials] or credentials secret][google.storagetransfer.v1.AzureBlobStorageData.credentials secret] .",
+          "Format: projects/{project number}/secrets/{secret name} federated identity config google.cloud.storage transfer v1.types.AzureBlobStorageData.FederatedIdentityConfig Optional.",
+          "See [Configure access to a source: Microsoft Azure Blob Storage] (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret manager) for more information."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storagetransfer.googleapis.com",
+      "v1.types.AzureBlobStorageData.FederatedIdentityConfig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/customer-managed-private-network",
+        "https://docs.cloud.google.com/storage-transfer/docs/reference/rest/v1/TransferSpec",
+        "https://docs.cloud.google.com/python/docs/reference/storagetransfer/latest/google.cloud.storage_transfer_v1.types.AzureBlobStorageData"
+      ]
+    }
+  ]
+}

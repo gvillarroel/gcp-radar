@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Private IP for Vertex AI custom training",
+  "feature_slug": "private-ip-for-vertex-ai-custom-training",
+  "summary": "Vertex AI now enables private IP usage for custom training traffic via VPC Network Peering.",
+  "extended_definition": "Vertex AI now enables private IP usage for custom training traffic via VPC Network Peering.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/cleanup",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Setup a service account and a Cloud Storage bucket Create a Vertex AI TensorBoard instance Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Profiler Vertex AI TensorBoard Profile model training performance using Cloud Profiler in custom training with prebuilt container .",
+          "Tutorial steps Prepare your custom training code and load your training code as a Python package to a prebuilt container Create and run a custom training job that enables Profiler View the Profiler dashboard to debug your model training performance Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI TensorBoard Vertex AI Pipelines Vertex AI TensorBoard integration with Vertex AI Pipelines .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models ."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Train a custom image classification model \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, run the following notebooks in the environment of your choice: \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for batch prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for online prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub This page shows you how to run a TensorFlow Keras training application on Vertex AI.",
+          "Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Run a custom training pipeline This section describes using the training package that you uploaded to Cloud Storage to run a Vertex AI custom training pipeline.",
+          "Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Train a custom image classification model Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Clean up your project \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/cleanup",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Clean up your project Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to delete your custom job, do the following: In the Google Cloud console, in the Vertex AI section, go to the Training pipelines page.",
+          "Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Delete Vertex AI resources This section describes how to delete all of the Vertex AI resources that you created for this tutorial."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/cleanup"
+      ]
+    }
+  ]
+}

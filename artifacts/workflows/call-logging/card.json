@@ -1,0 +1,175 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:07.127Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Call logging",
+  "feature_slug": "call-logging",
+  "summary": "Call logging records workflow call activity for observability and troubleshooting.",
+  "extended_definition": "Call logging records workflow call activity for observability and troubleshooting.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+      "https://docs.cloud.google.com/workflows/docs/log-workflow",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Send execution logs to Cloud Logging \\_|\\_ Workflows \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Custom logs To create a log entry in Logging during a workflow execution, define a step in the workflow that makes a call to the standard library sys.log function: YAML - step1 : assign : - varA : \"Hello\" - varB : \"World\" - logStep : call : sys.log args : text : TEXT severity : SEVERITY - step2 : return : ${varA + \" \" + varB} JSON [ { \"step1\" : { \"assign\" : [ { \"varA\" : \"Hello\" }, { \"varB\" : \"World\" } ] } }, { \"logStep\" : { \"call\" : \"sys.log\" , \"args\" : { \"text\" : \" TEXT \" , \"severity\" : \" SEVERITY \" } } }, { \"step2\" : { \"return\" : \"${varA + \" \" + varB}\" } } ] When creating a log entry, define the following: TEXT : required.",
+          "Required permissions To apply call logging or send custom logs to Logging, a workflow must be associated with a service account that includes the logging.logEntries.create permission (for example, the roles/logging.logWriter role).",
+          "Call logging You can set a flag so that each call step during the execution of your workflow is logged, and step names, function names, function arguments, and call responses are returned."
+        ]
+      },
+      {
+        "title": "\"Audit logging for workflow executions \\_|\\_ Workflows \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods DATA READ google.cloud.workflows.executions.v1.Events.ListCallbacks google.cloud.workflows.executions.v1.ExecutionHistory.GetStepEntry google.cloud.workflows.executions.v1.ExecutionHistory.ListStepEntries google.cloud.workflows.executions.v1.Executions.ExportData google.cloud.workflows.executions.v1.Executions.GetExecution google.cloud.workflows.executions.v1.Executions.ListExecutions google.cloud.workflows.executions.v1alpha1.Executions.GetExecution google.cloud.workflows.executions.v1alpha1.Executions.ListExecutions google.cloud.workflows.executions.v1beta.Executions.GetExecution google.cloud.workflows.executions.v1beta.Executions.ListExecutions DATA WRITE google.cloud.workflows.executions.v1.Events.SendHttpCallback google.cloud.workflows.executions.v1.Executions.CancelExecution google.cloud.workflows.executions.v1.Executions.CreateExecution google.cloud.workflows.executions.v1.Executions.DeleteExecutionHistory google.cloud.workflows.executions.v1.Executions.TriggerPubsubExecution google.cloud.workflows.executions.v1alpha1.Executions.CancelExecution google.cloud.workflows.executions.v1alpha1.Executions.CreateExecution google.cloud.workflows.executions.v1beta.Executions.CancelExecution google.cloud.workflows.executions.v1beta.Executions.CreateExecution API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Workflows. google.cloud.workflows.executions.v1.Events The following audit logs are associated with methods belonging to google.cloud.workflows.executions.v1.Events .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.workflows.executions.v1.Events.ListCallbacks\" SendHttpCallback Method : google.cloud.workflows.executions.v1.Events.SendHttpCallback Audit log type : Data access Permissions : workflows.callbacks.send - DATA WRITE Method is a long-running or streaming operation : No.",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Workflows audit logs use the service name workflowexecutions.googleapis.com ."
+        ]
+      },
+      {
+        "title": "\"Pause and resume a workflow using callbacks and Google Sheets \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Deploy . gcloud Create a source code file for your workflow: touch workflows-awaits-callback-sheets.yaml In a text editor, copy the following workflow to your source code file: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : \"10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g\" - before sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here before waiting for callback from sheets\"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here after receiving callback from sheets\"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - workflow id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW ID\")} - execution id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW EXECUTION ID\")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${\"Sheet1!A1:G1\"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : \"ROWS\" values : - [ \"${project id}\" , \"${location}\" , \"${workflow id}\" , \"${execution id}\" , \"${callback details.url}\" , \"\" , \"FALSE\" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${\"Started waiting for callback from sheet \" + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${\"Stopped waiting for callback from sheet \" + sheetId} except : as : e steps : - log error : call : sys.log args : severity : \"ERROR\" text : ${\"Received error \" + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${\"Approved by \" + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .",
+          "In the workflow editor, enter the following definition for your workflow: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : \"10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g\" - before sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here before waiting for callback from sheets\"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here after receiving callback from sheets\"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - workflow id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW ID\")} - execution id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW EXECUTION ID\")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${\"Sheet1!A1:G1\"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : \"ROWS\" values : - [ \"${project id}\" , \"${location}\" , \"${workflow id}\" , \"${execution id}\" , \"${callback details.url}\" , \"\" , \"FALSE\" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${\"Started waiting for callback from sheet \" + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${\"Stopped waiting for callback from sheet \" + sheetId} except : as : e steps : - log error : call : sys.log args : severity : \"ERROR\" text : ${\"Received error \" + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${\"Approved by \" + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .",
+          "Replace any code in the script editor with the following code which reads the data in your spreadsheet and passes it along as input to a workflow execution: function handleEdit ( e ) { var range = e . range . getA1Notation (); var sheet = e . source ; if ( range . length > 1 && range [ 0 ] === ' G ' ) { if ( e . value == \"TRUE\" ) { Logger . log ( \"Approved: TRUE\" ); var row = range . slice ( 1 ); var url = sheet . getRange ( ' E ' + row ). getCell ( 1 , 1 ). getValue (); var approver = sheet . getRange ( ' F ' + row ). getCell ( 1 , 1 ). getValue (); callback ( url , approver ); } else { Logger . log ( \"Approved: FALSE\" ); } } } function callback ( url , approver ) { const headers = { \"Authorization\" : \"Bearer \" + ScriptApp . getOAuthToken () }; var payload = { ' approver ' : approver }; const params = { \"method\" : ' POST ' , \"contentType\" : ' application / json ' , \"headers\" : headers , \"payload\" : JSON . stringify ( payload ) }; Logger . log ( \"Workflow callback request to \" + url ); var response = UrlFetchApp . fetch ( url , params ); Logger . log ( response ); } Click Save save ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.workflows.executions.v1.Execution.CallLogLevel",
+      "details.url",
+      "developer.gserviceaccount.com",
+      "e.message",
+      "events.await",
+      "events.create",
+      "googleapis.sheets.v4.spreadsheets.values.append",
+      "logging.logEntries.create",
+      "logging.logWriter",
+      "projects.locations.workflows.executions",
+      "request.body",
+      "request.body.approver",
+      "request.http",
+      "sheets.yaml",
+      "sys.get",
+      "sys.log",
+      "workflowexecutions.googleapis.com",
+      "workflows.callbacks.send"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/log-workflow",
+        "https://docs.cloud.google.com/workflows/docs/audit-logging-workflow-executions",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    }
+  ]
+}

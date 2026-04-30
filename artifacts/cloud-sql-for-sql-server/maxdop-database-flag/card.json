@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "MAXDOP database flag",
+  "feature_slug": "maxdop-database-flag",
+  "summary": "The MAXDOP database flag limits the maximum number of threads used to run a single query in a parallel plan.",
+  "extended_definition": "The MAXDOP database flag limits the maximum number of threads used to run a single query in a parallel plan.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure database flags \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using the max degree of parallelism (MAXDOP) flag, you can control the number of threads at three levels: Instance level, using database flags Database scope, using TSQL Query level, using query hints Note that if the instance is resized, then the flag value remains unchanged. max server memory (mb) The max server memory (mb) flag limits the amount of memory that Cloud SQL can allocate for its internal pools.",
+          "This flag lets you limit the maximum number of threads used when running a single query in a parallel plan.",
+          "To check the numa node configuration, use a code snippet similar to the following: SELECT socket count,cores per socket,numa node count FROM sys.dm os sys info While you can use MAXDOP to limit the maximum number of processors you want to allow for parallel plan execution, you can also use the cost threshold for parallelism feature to indicate the minimum cost you want to set for a single processor before expanding parallel operations to another processor."
+        ]
+      },
+      {
+        "title": "\"General best practices \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The value is ignored when maxdop is set to 1 . max degree of parallelism (MAXDOP) To reduce database waits due to parallelism, adjust this value based on specific recommendations about the number of logical processors available.",
+          "Trace flag settings Trace flags in SQL Server are used to set certain characteristics, alter the behavior of SQL Server databases, or debug issues in SQL Server.",
+          "If your instance is already at the maximum number of CPUs, you must shard your database to multiple instances."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configurable limits Instances per project The maximum number of instances you can have in a single project depends on the network architecture of those instances: New SQL network architecture: You can have up to 1000 instances per project.",
+          "Value Limit Maximum number of saved queries per project (including saved queries for other Google Cloud products) 10,000 Maximum size for each query 1 MiB Cloud SQL storage limits Dedicated core: Up to 64 TB.",
+          "Maximum concurrent connections The actual number of user connections allowed depends on the version of SQL Server that you are using, and also the limits of your application or applications and hardware."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com",
+      "sys.dm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/best-practices",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+      ]
+    }
+  ]
+}

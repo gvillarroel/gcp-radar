@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Full-text search",
+  "feature_slug": "full-text-search",
+  "summary": "Spanner full-text search became generally available.",
+  "extended_definition": "Spanner full-text search became generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "PREDICT ( MODEL EmbeddingsModel , ( SELECT \"I'd like to buy a starter bike for my 3 year old child\" AS content )) )) AS distance FROM products WHERE inventoryCount > 0 ORDER BY distance LIMIT 5 ; Click Run to return the products that best match your search text.",
+          "The following example demonstrates how to register a Vertex AI text embedding model , which is then used to perform similarity search to find similar products in a database.",
+          "Spanner vector search is available only in the Enterprise edition or Enterprise Plus edition."
+        ]
+      },
+      {
+        "title": "Build context sets using Gemini CLI \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about the context set file and facets, see Context sets overview Generate value search queries If you want to generate value searches that specify how the system should search for and match specific values within a concept type, then you can use the /generate targeted value searches command.",
+          "To build an agent context file, perform the following high-level steps: Prepare your environment Generate targeted templates Generate targeted facets Generate targeted value searches Optional.",
+          "These files contain templates, facets, and value searches that provide context for generating SQL queries from natural language."
+        ]
+      },
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: A Spanner free trial instance supports Standard edition features, and Enterprise edition features, such as KNN vector distance functions , full-text search , and Spanner Graph .",
+          "For a full list of all available instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "Run the gcloud spanner samples run command to download the sample application and start the backend gRPC service and workload generator for the given sample application: gcloud spanner samples run APPNAME --instance-id INSTANCE ID For more information and a list of other available commands for the sample application, see the gcloud CLI documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/build-context-gemini-cli"
+      ]
+    }
+  ]
+}

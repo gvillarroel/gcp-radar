@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.127Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Metrics Explorer",
+  "feature_slug": "metrics-explorer",
+  "summary": "Metrics Explorer lets users select monitored resource types and metrics and aggregate data across instances.",
+  "extended_definition": "Metrics Explorer lets users select monitored resource types and metrics and aggregate data across instances.",
+  "lifecycle": {
+    "latest_feature_date": "2016-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The simplest way to verify that your Prometheus data is being ingested is to use the Cloud Monitoring Metrics Explorer page in the Google Cloud console: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "For Prometheus metrics, the monitored-resource type is prometheus target .",
+          "Setting up the example requires the following resources, which you might have to install: git curl make python3 Go language, version 1.19 or higher Create or configure your application To obtain and run the JSON Exporter, use the following procedure: Clone the json exporter repository and check out the exporter by running the following commands: git clone https://github.com/prometheus-community/json exporter.git cd json exporter git checkout v0.5.0 Build the exporter by running the following command: make build Start the Python HTTP server by running the following command: python3 -m http.server 8000 & Start the JSON Exporter by running the following command: ./json exporter --config.file examples/config.yml & Query the JSON Exporter to verify that it is running and exposing metrics on port 7979: curl \"http://localhost:7979/probe?module=default&target=http://localhost:8000/examples/data.json\" If the query was successful, then you see output that resembles the following: HELP example global value Example of a top-level global value scrape in the json TYPE example global value untyped example global value{environment=\"beta\",location=\"planet-mars\"} 1234 HELP example value active Example of sub-level value scrapes from a json TYPE example value active untyped example value active{environment=\"beta\",id=\"id-A\"} 1 example value active{environment=\"beta\",id=\"id-C\"} 1 HELP example value boolean Example of sub-level value scrapes from a json TYPE example value boolean untyped example value boolean{environment=\"beta\",id=\"id-A\"} 1 example value boolean{environment=\"beta\",id=\"id-C\"} 0 HELP example value count Example of sub-level value scrapes from a json TYPE example value count untyped example value count{environment=\"beta\",id=\"id-A\"} 1 example value count{environment=\"beta\",id=\"id-C\"} 3 In this output, the strings like example value active are the metric names, with labels and values in braces."
+        ]
+      },
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { \"name\": \"projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter\", \"labels\": [ { \"key\": \"instance name\" }, { \"key\": \"machine type\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"prometheus.googleapis.com/otlp test cumulative/counter\", \"monitoredResourceTypes\": [ \"prometheus target\" ] } Monitoring API { \"name\": \"projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative\", \"labels\": [ { \"key\": \"instrumentation source\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"workload.googleapis.com/otlp.test.cumulative\", \"monitoredResourceTypes\": [ \"gce instance\", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.",
+          "These metrics are ingested into Cloud Monitoring with the following metric types, which function as names: prometheus.googleapis.com/otlp test gauge/gauge prometheus.googleapis.com/otlp test cumulative/counter Metrics ingested by using the Prometheus API are written against the monitored-resource type prometheus target .",
+          "These metrics are ingested into Cloud Monitoring with the following metric types, which function as names: workload.googleapis.com/otlp.test.gauge workload.googleapis.com/otlp.test.cumulative Metrics ingested by using the Monitoring API are written against the monitored-resource type gce instance ."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "View the volume of excluded metrics To see the volume of excluded bytes or samples as a chart in Metrics Explorer, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Find the metric in the table, and then click more vert Actions to do any of the following: To view a chart that displays the current metric, select View in Metrics Explorer .",
+          "To analyze any of these charts in more detail, click more vert More options and select View in Metrics Explorer ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.file",
+      "config.yml",
+      "data.json",
+      "exporter.git",
+      "github.com",
+      "http.server",
+      "otlp.test.cumulative",
+      "otlp.test.gauge",
+      "prometheus.googleapis.com",
+      "v0.5.0",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    }
+  ]
+}

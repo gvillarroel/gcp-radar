@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Cloud Build automated deployment for GKE workloads",
+  "feature_slug": "cloud-build-automated-deployment-for-gke-workloads",
+  "summary": "Cloud Build can automatically deploy existing GKE workloads.",
+  "extended_definition": "Cloud Build can automatically deploy existing GKE workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modern CI/CD with GKE: A software delivery framework \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Examples of the tasks that you can standardize across the organization include the following: Artifact building and storage Testing methodologies for various languages Deployment steps Policy checks Security scanning The second repository that operators maintain stores best practices for configuring an application.",
+          "A case for modern CI/CD CI/CD is a software development approach that lets you automate the build, test, and deployment phases of software development by using a number of tools and repeatable processes.",
+          "That doesn't mean that operations and security teams aren't involved but that their initial input from a deployment and security perspective is automatically handled through the provisioning process."
+        ]
+      },
+      {
+        "title": "\"Deploy a stateful MySQL cluster on GKE \\_|\\_ Kubernetes Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A Deployment is a Kubernetes API object that lets you run multiple replicas of Pods that are distributed among the nodes in a cluster.. apiVersion : apps/v1 kind : Deployment metadata : name : prepare-three-zone-ha labels : app : prepare-three-zone-ha spec : replicas : 3 selector : matchLabels : app : prepare-three-zone-ha template : metadata : labels : app : prepare-three-zone-ha spec : affinity : Tell Kubernetes to avoid scheduling a replica in a zone where there is already a replica with the label \"app: prepare-three-zone-ha\" podAntiAffinity : requiredDuringSchedulingIgnoredDuringExecution : - labelSelector : matchExpressions : - key : app operator : In values : - prepare-three-zone-ha topologyKey : \"topology.kubernetes.io/zone\" containers : - name : prepare-three-zone-ha image : busybox:latest command : - \"/bin/sh\" - \"-c\" - \"while true; do sleep 3600; done\" resources : limits : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" requests : cpu : \"500m\" ephemeral-storage : \"10Mi\" memory : \"0.5Gi\" kubectl apply -f prepare-for-ha.yaml By default, Autopilot provisions resources in two zones.",
+          "To deploy a MySQL Router, follow these steps: In the Cloud Shell terminal, deploy the MySQL Router. kubectl apply -n mysql1 -f c1-router.yaml The output is similar to the following: configmap/mysql-router-config created service/mysql-router created deployment.apps/mysql-router created Check the readiness of the MySQL Router deployment. kubectl -n mysql1 get deployment mysql-router --watch When all three Pods are ready, the output is similar to the following: NAME READY UP-TO-DATE AVAILABLE AGE mysql-router 3/3 3 0 3m36s If you see a PodUnschedulable error in the console, wait a minute or two while GKE provisions more nodes.",
+          "To deploy the MySQL StatefulSet, follow these steps: Create a namespace for the StatefulSet. kubectl create namespace mysql1 Create the MySQL secret. apiVersion : v1 kind : Secret metadata : name : mysql-secret type : Opaque data : password : UGFzc3dvcmQkMTIzNDU2 # Password$123456 admin-password : UGFzc3dvcmQkMTIzNDU2 # Password$123456 kubectl apply -n mysql1 -f secret.yaml The password is deployed with each Pod, and is used by management scripts and commands for MySQL InnoDB Cluster and ClusterSet deployment in this tutorial."
+        ]
+      },
+      {
+        "title": "\"GitOps-style continuous delivery with Cloud Build \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "If successful, Cloud Build copies the manifest on the production branch. steps : This step deploys the new version of our container image in the hello-cloudbuild Kubernetes Engine cluster. - name : 'gcr.io/cloud-builders/kubectl' id : Deploy args : - 'apply' - '-f' - 'kubernetes.yaml' env : - 'CLOUDSDK COMPUTE REGION=us-central1' - 'CLOUDSDK CONTAINER CLUSTER=hello-cloudbuild' This step copies the applied manifest to the production branch The COMMIT SHA variable is automatically replaced by Cloud Build. - name : 'gcr.io/cloud-builders/git' id : Copy to production branch entrypoint : /bin/sh args : - '-c' - set -x && \\ Configure Git to create commits with Cloud Build's service account git config user.email $(gcloud auth list --filter=status:ACTIVE --format='value(account)') && \\ Switch to the production branch and copy the kubernetes.yaml file from the candidate branch git fetch origin production && git checkout production && \\ git checkout $COMMIT SHA kubernetes.yaml && \\ Commit the kubernetes.yaml file with a descriptive commit message git commit -m \"Manifest from commit $COMMIT SHA $(git log --format=%B -n 1 $COMMIT SHA)\" && \\ Push the changes back to Cloud Source Repository git push origin production Create a candidate branch and push both branches for them to be available in Cloud Source Repositories. git checkout -b candidate git push origin production git push origin candidate Grant the Source Repository Writer IAM role to the Cloud Build service account for the hello-cloudbuild-env repository.",
+          "In Cloud Shell, clone the hello-cloudbuild-env repository and create the production branch. cd gcloud source repos clone hello-cloudbuild-env cd /kubernetes-engine-samples/management/gitops-style-delivery/ git checkout -b production Copy the cloudbuild-delivery.yaml file available in the hello-cloudbuild-app repository and commit the change. cd /kubernetes-engine-samples/management/gitops-style-delivery/ cp /hello-cloudbuild-app/cloudbuild-delivery.yaml /kubernetes-engine-samples/management/gitops-style-delivery/cloudbuild.yaml git add . git commit -m \"Create cloudbuild.yaml for deployment\" The cloudbuild-delivery.yaml file describes the deployment process to be run in Cloud Build.",
+          "When you finish this tutorial, you have a system where you can easily: Distinguish between failed and successful deployments by looking at the Cloud Build history, Access the manifest currently used by looking at the production branch of the env repository, Rollback to any previous version by re-executing the corresponding Cloud Build build."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml",
+      "delivery.yaml",
+      "deployment.apps",
+      "gcr.io",
+      "ha.yaml",
+      "kubernetes.yaml",
+      "router.yaml",
+      "secret.yaml",
+      "statefulset.apps",
+      "topology.kubernetes.io",
+      "user.email"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/modern-cicd-gke-user-guide",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/mysql",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build"
+      ]
+    }
+  ]
+}

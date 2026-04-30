@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner free trial instances",
+  "feature_slug": "spanner-free-trial-instances",
+  "summary": "Spanner free trial instances now automatically create and preload a sample ecommerce database when launched from the Google Cloud Console, enabling users to run preloaded queries and explore Spanner capabilities; Adds a simplified workflow to create Spanner free trial instances for 90-day exploration, including support for relational databases in GoogleSQL/PostgreSQL and NoSQL models.",
+  "extended_definition": "Spanner free trial instances now automatically create and preload a sample ecommerce database when launched from the Google Cloud Console, enabling users to run preloaded queries and explore Spanner capabilities; Adds a simplified workflow to create Spanner free trial instances for 90-day exploration, including support for relational databases in GoogleSQL/PostgreSQL and NoSQL models.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Spanner free trial instance and sample application \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, to create a free trial instance named trial-instance with the display name Trial Instance using the regional instance configuration regional-us-east5 , run the following: gcloud spanner instances create trial - instance -- config = regional - us - east5 \\ -- instance - type = free - instance -- description = \"Trial Instance\" Note: Use the instance ID, not the display name, when referring to an instance in gcloud CLI commands.",
+          "For more information, see Free trial instances overview . gcloud To create a free trial instance, use the gcloud spanner instances create command. gcloud spanner instances create INSTANCE ID \\ -- instance - type = free - instance -- config = INSTANCE CONFIG \\ -- description = INSTANCE DESCRIPTION Replace the following: INSTANCE ID : a permanent identifier that is unique within your Google Cloud project.",
+          "Note: You can only create one free trial instance per project lifecycle, and a maximum of five free trial instances per Cloud Billing account."
+        ]
+      },
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: To explore Spanner using a 90-day free trial instance, see Create a Spanner free trial instance .",
+          "If not, enable it manually: Enable Spanner API To get the permissions that you need to create instances and databases, ask your administrator to grant you the Cloud Spanner Admin (roles/spanner.admin) IAM role on your project.",
+          "Go to Spanner instances Click the instance you created, for example Test Instance ."
+        ]
+      },
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also, if you're using a free trial instance, you can't create another free trial instance after you delete your first free trial instance.",
+          "Note: To explore Spanner using a 90-day free trial instance, see Create a Spanner free trial instance .",
+          "You can create one free trial instance per project lifecycle."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/spanner.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/free-trial-quickstart",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+      ]
+    }
+  ]
+}

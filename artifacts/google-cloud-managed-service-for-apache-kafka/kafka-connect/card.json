@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.843Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-managed-service-for-apache-kafka/card.json",
+  "product_name": "Google Cloud Managed Service for Apache Kafka",
+  "product_slug": "google-cloud-managed-service-for-apache-kafka",
+  "feature_name": "Kafka Connect",
+  "feature_slug": "kafka-connect",
+  "summary": "Kafka Connect lets you stream data at scale between Managed Service for Apache Kafka clusters and other systems; Managed Service for Apache Kafka supports Kafka Connect with curated built-in connector plugins hosted in Connect clusters.",
+  "extended_definition": "Kafka Connect lets you stream data at scale between Managed Service for Apache Kafka clusters and other systems; Managed Service for Apache Kafka supports Kafka Connect with curated built-in connector plugins hosted in Connect clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/connect-cluster/connectors-overview",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+      "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp/tools_list/create_connect_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connectors overview \\_|\\_ Google Cloud Managed Service for Apache Kafka\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/connect-cluster/connectors-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to configure a sink connector to disregard messages that contain a DoNotProcess header key, you would add the following configuration to your connector: transforms=dropMessage transforms.dropMessage.type=org.apache.kafka.connect.transforms.Filter transforms.dropMessage.predicate=hasKey predicates=hasKey predicates.hasKey.type=org.apache.kafka.connect.transforms.predicates.HasHeaderKey predicates.hasKey.name=DoNotProcess This configuration does the following: Configures a predicate named hasKey of type org.apache.kafka.connect.transforms.predicates.HasHeaderKey .",
+          "The available connector types include: MirrorMaker 2.0 connectors Source connector Checkpoint connector Heartbeat connector BigQuery Sink connector Cloud Storage Sink connector Pub/Sub Source connector Pub/Sub Sink connector MirrorMaker 2.0 connectors are specifically designed for data replication and disaster recovery between Kafka clusters.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Connectors overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Kafka overview \\_|\\_ Google Cloud Managed Service\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+        "source_id": "site-docs-root",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can synchronize the data between two clusters by using tools such as MirrorMaker 2.0 from Kafka Connect.",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Managed Service for Apache Kafka overview Stay organized with collections Save and categorize content based on your preferences.",
+          "These connectors let you connect your Managed Service for Apache Kafka clusters to various systems, including other Kafka deployments and Google Cloud services like BigQuery, Cloud Storage, and Pub/Sub."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: managedkafka \\_|\\_ Google Cloud Managed Service for\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp/tools_list/create_connect_cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://managedkafka.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create connect cluster\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for CreateConnectCluster.",
+          "Format: projects/<project-id>/secrets/<secret-name>/versions/<version-id> . config (optional): Key-value pairs for Kafka Connect worker configuration overrides. labels (optional): Key-value pairs to help you organize your Connect clusters.",
+          "You must also specify the connect cluster configuration, including: kafka cluster (required): The full resource name of the Managed Service for Kafka cluster this Connect cluster will attach to."
+        ]
+      },
+      {
+        "title": "\"Choose Cloud Managed Service for Apache Kafka or Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub",
+        "source_id": "site-iam-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automatic storage management Yes Yes Automatic software upgrades Yes Yes Customer support Yes Yes Kafka Connect Service Not applicable With user-provided Connect services Schema support Yes With user-provided schema registry Compatible with ks qIDB, KSQL No Yes Support for OSS connectors Yes for Kafka and Flink connectors No Integration with Data Lake and Data Warehouse Yes Yes Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Google Cloud Managed Service for Apache Kafka Guides Send feedback Choose Cloud Managed Service for Apache Kafka or Pub/Sub Stay organized with collections Save and categorize content based on your preferences.",
+          "If you plan to use independent messaging systems in different on-premises or cloud-provider environments, Managed Service for Apache Kafka can give you a more consistent experience across your applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "managedkafka.googleapis.com",
+      "org.apache.kafka.connect.transforms.Filter",
+      "org.apache.kafka.connect.transforms.predicates.HasHeaderKey",
+      "predicates.hasKey.name",
+      "predicates.hasKey.type",
+      "transforms.dropMessage.predicate",
+      "transforms.dropMessage.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/connect-cluster/connectors-overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp/tools_list/create_connect_cluster",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/connect-cluster/connectors-overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp/tools_list/create_connect_cluster",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/connect-cluster/connectors-overview",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/limitations",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/reference/mcp/tools_list/create_connect_cluster",
+        "https://docs.cloud.google.com/managed-service-for-apache-kafka/docs/choose-kafka-pubsub"
+      ]
+    }
+  ]
+}

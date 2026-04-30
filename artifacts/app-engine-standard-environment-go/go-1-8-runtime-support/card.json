@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.506Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go",
+  "feature_name": "Go 1.8 runtime support",
+  "feature_slug": "go-1-8-runtime-support",
+  "summary": "App Engine standard environment supports running applications on the Go 1.8 runtime; App Engine standard environment added beta support for deploying applications with the Go 1.8 runtime; deprecated on 2018-08-01.",
+  "extended_definition": "App Engine standard environment supports running applications on the Go 1.8 runtime; App Engine standard environment added beta support for deploying applications with the Go 1.8 runtime; deprecated on 2018-08-01.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-27",
+    "deprecation_date": "2018-08-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/go111"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Go runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Go runtime is the software stack responsible for installing your web service's code and its dependencies and running your service.",
+          "The following table lists the endpoints where you can make HTTP requests for specific metadata: Metadata endpoint Description /computeMetadata/v1/project/numeric-project-id The project number assigned to your project. /computeMetadata/v1/project/project-id The project ID assigned to your project. /computeMetadata/v1/instance/region The region the instance is running in. /computeMetadata/v1/instance/service-accounts/default/aliases /computeMetadata/v1/instance/service-accounts/default/email The default service account email assigned to your project. /computeMetadata/v1/instance/service-accounts/default/ Lists all the default service accounts for your project. /computeMetadata/v1/instance/service-accounts/default/scopes Lists all the supported scopes for the default service accounts. /computeMetadata/v1/instance/service-accounts/default/token Returns the auth token that can be used to authenticate your application to other Google Cloud APIs.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using a runtime that supports buildpacks , you can define build environment variables in your app.yaml file.",
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "For Python, these variables are available in the os.environ dictionary: env variables : DJANGO SETTINGS MODULE : \"myapp.settings\" Also see the list of runtime environment variables that cannot be overwritten. error handlers Optional."
+        ]
+      },
+      {
+        "title": "\"Go runtime environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go111",
+        "source_id": "site-docs-reference-4",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Go runtime is the software stack responsible for installing your web service's code and its dependencies and running your service.",
+          "The following table lists the endpoints where you can make HTTP requests for specific metadata: Metadata endpoint Description /computeMetadata/v1/project/numeric-project-id The project number assigned to your project. /computeMetadata/v1/project/project-id The project ID assigned to your project. /computeMetadata/v1/instance/region The region the instance is running in. /computeMetadata/v1/instance/service-accounts/default/aliases /computeMetadata/v1/instance/service-accounts/default/email The default service account email assigned to your project. /computeMetadata/v1/instance/service-accounts/default/ Lists all the default service accounts for your project. /computeMetadata/v1/instance/service-accounts/default/scopes Lists all the supported scopes for the default service accounts. /computeMetadata/v1/instance/service-accounts/default/token Returns the auth token that can be used to authenticate your application to other Google Cloud APIs.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Go runtime environment Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "myapp.settings",
+      "os.environ"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go111"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/go111"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.291Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech",
+  "feature_name": "Text-to-Speech voice support for ms-MY (Malay",
+  "feature_slug": "text-to-speech-voice-support-for-ms-my-malay",
+  "summary": "Text-to-Speech added a supported voice for the ms-MY locale (Malay, Malaysia).",
+  "extended_definition": "Text-to-Speech added a supported voice for the ms-MY locale (Malay, Malaysia).",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+      "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+      "https://docs.cloud.google.com/text-to-speech/docs/voices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chirp 3: Instant Custom Voice \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSONDecodeError as e : print ( f \"Error decoding JSON response: { e } \" ) except Exception as e : print ( f \"An unexpected error occurred: { e } \" ) Synthesize with an instant custom voice using the REST API Use the voice cloning key to synthesize audio using the REST API. import requests , os , json , base64 from IPython.display import Audio , display def synthesize text with cloned voice ( access token , project id , voice key , text ): url = \"https://texttospeech.googleapis.com/v1beta1/text:synthesize\" request body = { \"input\" : { \"text\" : text }, \"voice\" : { \"language code\" : \"en-US\" , \"voice clone\" : { \"voice cloning key\" : voice key , } }, \"audioConfig\" : { Supported audio encoding values are LINEAR16, PCM, MP3, and M4A. \"audioEncoding\" : \"LINEAR16\" , } } try : headers = { \"Authorization\" : f \"Bearer { access token } \" , \"x-goog-user-project\" : project id , \"Content-Type\" : \"application/json; charset=utf-8\" } response = requests . post ( url , headers = headers , json = request body ) response . raise for status () response json = response . json () audio content = response json . get ( \"audioContent\" ) if audio content : display ( Audio ( base64 . b64decode ( audio content ), rate = 24000 )) else : print ( \"Error: Audio content not found in the response.\" ) print ( response json ) except requests . exceptions .",
+          "You must use the provided consent statement script for your chosen language. import requests , os , json def create instant custom voice key ( access token , project id , reference audio bytes , consent audio bytes ): url = \"https://texttospeech.googleapis.com/v1beta1/voices:generateVoiceCloningKey\" request body = { \"reference audio\" : { Supported audio encoding values are LINEAR16, PCM, MP3, and M4A. \"audio config\" : { \"audio encoding\" : \"LINEAR16\" }, \"content\" : reference audio bytes , }, \"voice talent consent\" : { Supported audio encoding values are LINEAR16, PCM, MP3, and M4A. \"audio config\" : { \"audio encoding\" : \"LINEAR16\" }, \"content\" : consent audio bytes , }, \"consent script\" : \"I am the owner of this voice and I consent to Google using this voice to create a synthetic voice model.\" , \"language code\" : \"en-US\" , } try : headers = { \"Authorization\" : f \"Bearer { access token } \" , \"x-goog-user-project\" : project id , \"Content-Type\" : \"application/json; charset=utf-8\" , } response = requests . post ( url , headers = headers , json = request body ) response . raise for status () response json = response . json () return response json . get ( \"voiceCloningKey\" ) except requests . exceptions .",
+          "TextToSpeechClient () with open ( 'voice cloning key.txt' , 'r' ) as f : key = f . read () perform voice cloning with simulated streaming ( voice cloning key = key , simulated streamed text = [ 'Hello world!' , 'This is the second text chunk.' , 'This simulates streaming text for synthesis.' , ], language code = 'en-US' , synthesis output path = 'streaming output.wav' , tts client = client , ) Use Chirp 3: HD voice controls Instant Custom Voice supports the same pace control, pause control, and custom pronunciation features that Chirp 3: HD voices supports."
+        ]
+      },
+      {
+        "title": "Chirp 3: HD voices \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "source_id": "site-docs-reference-2",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Language BCP-47 Code Arabic (Generic) ar-XA Bengali (India) bn-IN Bulgarian (Bulgaria) bg-BG Chinese (Hong Kong) yue-HK Croatian (Croatia) hr-HR Czech (Czech Republic) cs-CZ Danish (Denmark) da-DK Dutch (Belgium) nl-BE Dutch (Netherlands) nl-NL English (Australia) en-AU English (India) en-IN English (United Kingdom) en-GB English (United States) en-US Estonian (Estonia) et-EE Finnish (Finland) fi-FI French (Canada) fr-CA French (France) fr-FR German (Germany) de-DE Greek (Greece) el-GR Gujarati (India) gu-IN Hebrew (Israel) he-IL Hindi (India) hi-IN Hungarian (Hungary) hu-HU Indonesian (Indonesia) id-ID Italian (Italy) it-IT Japanese (Japan) ja-JP Kannada (India) kn-IN Korean (South Korea) ko-KR Latvian (Latvia) lv-LV Lithuanian (Lithuania) lt-LT Malayalam (India) ml-IN Mandarin Chinese (China) cmn-CN Marathi (India) mr-IN Norwegian Bokmål (Norway) nb-NO Polish (Poland) pl-PL Portuguese (Brazil) pt-BR Punjabi (India) pa-IN Romanian (Romania) ro-RO Russian (Russia) ru-RU Serbian (Cyrillic) sr-RS Slovak (Slovakia) sk-SK Slovenian (Slovenia) sl-SI Spanish (Spain) es-ES Spanish (United States) es-US Swahili (Kenya) sw-KE Swedish (Sweden) sv-SE Tamil (India) ta-IN Telugu (India) te-IN Thai (Thailand) th-TH Turkish (Turkey) tr-TR Ukrainian (Ukraine) uk-UA Urdu (India) ur-IN Vietnamese (Vietnam) vi-VN Regional availability Chirp 3: HD voices are available in the following Google Cloud regions respectively: Google Cloud Zone Launch Readiness global GA us GA eu GA asia-southeast1 GA europe-west2 GA asia-northeast1 GA Supported output formats The default response format is LINEAR16, but other formats which are supported include: API Method Format streaming ALAW, MULAW, OGG OPUS and PCM batch ALAW, MULAW, MP3, OGG OPUS and PCM Use Chirp 3: HD voices Discover how to use Chirp 3: HD voices to synthesize speech.",
+          "Sample SynthesizeSpeechRequest using custom pronunciations: { \"audio config\" : { \"audio encoding\" : \"LINEAR16\" , }, \"input\" : { \"text\" : \"There is a dog in the boat\" , \"custom pronunciations\" : { \"phrase\" : \"dog\" , \"phonetic encoding\" : \"PHONETIC ENCODING X SAMPA\" , \"pronunciation\" : \"\\\"k{t\" , } }, \"voice\" : { \"language code\" : \"en-US\" , \"name\" : \"en-us-Chirp3-HD-Leda\" , } } Sample StreamingSynthesizeConfig using custom pronunciations: { \"streaming audio config\" : { \"audio encoding\" : \"LINEAR16\" , }, \"voice\" : { \"language code\" : \"en-US\" , \"name\" : \"en-us-Chirp3-HD-Leda\" , } \"custom pronunciations\" : { \"phrase\" : \"dog\" , \"phonetic encoding\" : \"PHONETIC ENCODING X SAMPA\" , \"pronunciation\" : \"\\\"k{t\" , } } Custom pronunciations audio samples: Custom pronunciations applied Output None Your browser doesn't support the audio element. \"dog\" pronounced as \"\"k{t\" Your browser doesn't support the audio element.",
+          "MP3 ) response = client . synthesize speech ( input = input text , voice = voice , audio config = audio config , ) The response's audio content is binary. with open ( \"output.mp3\" , \"wb\" ) as out : out . write ( response . audio content ) print ( 'Audio content written to file \"output.mp3\"' ) Scripting and prompting tips Creating engaging and natural-sounding audio from text requires understanding the nuances of spoken language and translating them into script form."
+        ]
+      },
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/voices",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "key.txt",
+      "output.mp3",
+      "output.wav",
+      "texttospeech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-instant-custom-voice",
+        "https://docs.cloud.google.com/text-to-speech/docs/chirp3-hd",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    }
+  ]
+}

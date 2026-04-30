@@ -1,0 +1,224 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.832Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logging API v1 sinks and logs-based metrics",
+  "feature_slug": "logging-api-v1-sinks-and-logs-based-metrics",
+  "summary": "The v1 API support for export sinks and logs-based metrics is being retired in favor of migration to v2; deprecated on mid-July, 2017.",
+  "extended_definition": "The v1 API support for export sinks and logs-based metrics is being retired in favor of migration to v2; deprecated on mid-July, 2017.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-01",
+    "deprecation_date": "mid-July, 2017",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+      "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Log-based metrics overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By default, user-defined log-based metrics are calculated from all logs received by the Logging API for the Google Cloud project, regardless of any inclusion filters or exclusion filters that might apply to the Google Cloud project.",
+          "In Cloud Monitoring, log-based metrics use the following naming patterns: System: logging.googleapis.com/ SYSTEM METRIC NAME User-defined: logging.googleapis.com/user/ USER METRIC NAME Note that user-defined log-based metrics include the string user .",
+          "Data types for log-based metrics Log-based metrics can extract data from logs to create metrics of the following types: Counter: these metrics count the number of log entries that match a specified filter within a specific period."
+        ]
+      },
+      {
+        "title": "Cloud Logging API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2 REST Resource: v2.billingAccounts REST Resource: v2.billingAccounts.exclusions REST Resource: v2.billingAccounts.locations.buckets REST Resource: v2.billingAccounts.locations.buckets.links REST Resource: v2.billingAccounts.locations.buckets.views REST Resource: v2.billingAccounts.locations.buckets.views.logs REST Resource: v2.billingAccounts.locations.operations REST Resource: v2.billingAccounts.locations.recentQueries REST Resource: v2.billingAccounts.locations.savedQueries REST Resource: v2.billingAccounts.logs REST Resource: v2.billingAccounts.sinks REST Resource: v2.entries REST Resource: v2.exclusions REST Resource: v2.folders REST Resource: v2.folders.exclusions REST Resource: v2.folders.locations.buckets REST Resource: v2.folders.locations.buckets.links REST Resource: v2.folders.locations.buckets.views REST Resource: v2.folders.locations.buckets.views.logs REST Resource: v2.folders.locations.logScopes REST Resource: v2.folders.locations.operations REST Resource: v2.folders.locations.recentQueries REST Resource: v2.folders.locations.savedQueries REST Resource: v2.folders.logs REST Resource: v2.folders.sinks REST Resource: v2.locations.buckets REST Resource: v2.locations.buckets.links REST Resource: v2.locations.buckets.views REST Resource: v2.locations.operations REST Resource: v2.logs REST Resource: v2.monitoredResourceDescriptors REST Resource: v2.organizations REST Resource: v2.organizations.exclusions REST Resource: v2.organizations.locations.buckets REST Resource: v2.organizations.locations.buckets.links REST Resource: v2.organizations.locations.buckets.views REST Resource: v2.organizations.locations.buckets.views.logs REST Resource: v2.organizations.locations.logScopes REST Resource: v2.organizations.locations.operations REST Resource: v2.organizations.locations.recentQueries REST Resource: v2.organizations.locations.savedQueries REST Resource: v2.organizations.logs REST Resource: v2.organizations.sinks REST Resource: v2.projects REST Resource: v2.projects.exclusions REST Resource: v2.projects.locations.buckets REST Resource: v2.projects.locations.buckets.links REST Resource: v2.projects.locations.buckets.views REST Resource: v2.projects.locations.buckets.views.logs REST Resource: v2.projects.locations.logScopes REST Resource: v2.projects.locations.operations REST Resource: v2.projects.locations.recentQueries REST Resource: v2.projects.locations.savedQueries REST Resource: v2.projects.logs REST Resource: v2.projects.metrics REST Resource: v2.projects.sinks REST Resource: v2.sinks Service: logging.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v2.projects.metrics Methods create POST /v2/{parent=projects/ }/metrics Creates a logs-based metric. delete DELETE /v2/{metricName=projects/ /metrics/ } Deletes a logs-based metric. get GET /v2/{metricName=projects/ /metrics/ } Gets a logs-based metric. list GET /v2/{parent=projects/ }/metrics Lists logs-based metrics. update PUT /v2/{metricName=projects/ /metrics/ } Creates or updates a logs-based metric.",
+          "REST Resource: v2.billingAccounts.sinks Methods create POST /v2/{parent=billingAccounts/ }/sinks Creates a sink that exports specified log entries to a destination. delete DELETE /v2/{sinkName=billingAccounts/ /sinks/ } Deletes a sink. get GET /v2/{sinkName=billingAccounts/ /sinks/ } Gets a sink. list GET /v2/{parent=billingAccounts/ }/sinks Lists sinks. patch PATCH /v2/{sinkName=billingAccounts/ /sinks/ } Updates a sink. update PUT /v2/{sinkName=billingAccounts/ /sinks/ } Updates a sink."
+        ]
+      },
+      {
+        "title": "Command-line interface \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/api/gcloud-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must also have the IAM role that corresponds to the log's location, and to your use case: Use case IAM role List logs Logging/Logs Viewer Tail logs Logging/Logs Viewer Delete logs Logging/Logging Admin Write logs Logging/Logs Writer Read logs Logging/Logs Viewer Read Data Access audit logs Logging/Private Logs Viewer List sinks Logging/Logs Viewer Create sinks Logging/Logs Configuration Writer Update sinks Logging/Logs Configuration Writer Delete sinks Logging/Logs Configuration Writer List metrics Logging/Logs Viewer Create basic metrics Logging/Logs Configuration Writer Create advanced metrics Logging/Logs Configuration Writer Update metrics Logging/Logs Configuration Writer Delete metrics Logging/Logs Configuration Writer Create log scopes Logging/Logs Configuration Writer For additional information on required Logging IAM roles and permissions, go to Access control .",
+          "Examples Update the destination of a project sink: gcloud logging sinks update PROJECT ID storage.googleapis.com/my-second-gcs-bucket Deleting sinks Use the gcloud logging sinks delete command, corresponding to the API method projects.sinks.delete : You stop routing its log entries when you delete a sink: gcloud logging sinks delete SINK NAME Examples Delete sink syslog-sink-1 in the current project: gcloud logging sinks delete syslog-sink-1 Log-based metrics To manage log-based metrics, use the gcloud logging metrics command group, corresponding to the API methods at projects.metrics .",
+          "The destination is an existing Cloud Storage bucket in the current project. gcloud logging sinks create folder-logs \\ storage.googleapis.com/my-folder-bucket \\ --folder= FOLDER ID --log-filter=\"logName:logs/cloudaudit.googleapis.com%2Factivity\" The following command creates an aggregated sink, routing all Admin Activity audit logs from a folder and from all folders and projects contained in the folder: gcloud logging sinks create folder-logs --include-children \\ storage.googleapis.com/my-folder-bucket \\ --folder= FOLDER ID --log-filter=\"logName:logs/cloudaudit.googleapis.com%2Factivity\" Listing or describing sinks Use the gcloud logging sinks list or gcloud logging sinks describe commands, corresponding to the API methods projects.sinks.list and projects.sinks.get , respectively: gcloud logging sinks list gcloud logging sinks describe SINK NAME Examples List sinks in the current project: gcloud logging sinks list NAME DESTINATION FILTER google-sink-1481139614360-9906 storage.googleapis.com/my-second-gcs-bucket logName = \"projects/my-gcp-project-id/logs/syslog\" pubsub-logs-sink pubsub.googleapis.com/projects/my-gcp-project-id/topics/my-pubsub-logs-topic logName = \"projects/my-gcp-project-id/logs/pubsubtestlog\" test-sink-v4 storage.googleapis.com/my-gcs-bucket severity=CRITICAL List sinks in a folder: gcloud logging sinks list --folder= FOLDER ID NAME DESTINATION FILTER folder-logs storage.googleapis.com/my-folder-bucket logName:activity List sinks in an organization: gcloud logging sinks list --organization= ORGANIZATION ID NAME DESTINATION FILTER organization-logs storage.googleapis.com/my-org-bucket logName:activity Describe sinks in the current project test-sink-v4 : gcloud logging sinks describe test-sink-v4 Output: destination : storage . googleapis . com / my - gcs - bucket filter : severity = CRITICAL name : test - sink - v4 outputVersionFormat : V2 writerIdentity : serviceAccount : test - sink - v4 @logging - PROJECT ID . iam.gserviceaccount.com Describe sinks in a folder: gcloud logging sinks describe test-sink-v4 --folder= FOLDER ID Output: destination: storage.googleapis.com/my-gcs-bucket filter: severity=CRITICAL name: test-sink-v4 Describe sinks in an organization: gcloud logging sinks describe test-sink-v4 --organization= ORGANIZATION ID Output: createTime : [ TIMESTAMP ] description : Test Sink destination : storage . googleapis . com / my - gcs - bucket filter : severity = CRITICAL name : test - sink - v4 updateTime : [ TIMESTAMP ] writerIdentity : serviceAccount : test - sink - v4 @logging - PROJECT ID . iam.gserviceaccount.com Updating sinks Use the gcloud logging sinks update command, corresponding to the API method projects.sink.update : You can update a sink to change the destination or the query: gcloud logging sinks update SINK NAME NEW DESTINATION --log-filter= NEW FILTER You can omit the NEW DESTINATION or --log-filter if those parts don't change."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.googleapis.com",
+      "cloudaudit.googleapis.com",
+      "iam.gserviceaccount.com",
+      "logging.googleapis.com",
+      "projects.metrics",
+      "projects.metrics.delete",
+      "projects.sink.update",
+      "projects.sinks.delete",
+      "projects.sinks.get",
+      "projects.sinks.list",
+      "pubsub.googleapis.com",
+      "storage.googleapis.com",
+      "v2.billingAccounts",
+      "v2.billingAccounts.exclusions",
+      "v2.billingAccounts.locations.buckets",
+      "v2.billingAccounts.locations.buckets.links",
+      "v2.billingAccounts.locations.buckets.views",
+      "v2.billingAccounts.locations.buckets.views.logs",
+      "v2.billingAccounts.locations.operations",
+      "v2.billingAccounts.locations.recentQueries",
+      "v2.billingAccounts.locations.savedQueries",
+      "v2.billingAccounts.logs",
+      "v2.billingAccounts.sinks",
+      "v2.entries",
+      "v2.exclusions",
+      "v2.folders",
+      "v2.folders.exclusions",
+      "v2.folders.locations.buckets",
+      "v2.folders.locations.buckets.links",
+      "v2.folders.locations.buckets.views",
+      "v2.folders.locations.buckets.views.logs",
+      "v2.folders.locations.logScopes",
+      "v2.folders.locations.operations",
+      "v2.folders.locations.recentQueries",
+      "v2.folders.locations.savedQueries",
+      "v2.folders.logs",
+      "v2.folders.sinks",
+      "v2.locations.buckets",
+      "v2.locations.buckets.links",
+      "v2.locations.buckets.views",
+      "v2.locations.operations",
+      "v2.logs",
+      "v2.monitoredResourceDescriptors",
+      "v2.organizations",
+      "v2.organizations.exclusions",
+      "v2.organizations.locations.buckets",
+      "v2.organizations.locations.buckets.links",
+      "v2.organizations.locations.buckets.views",
+      "v2.organizations.locations.buckets.views.logs",
+      "v2.organizations.locations.logScopes",
+      "v2.organizations.locations.operations",
+      "v2.organizations.locations.recentQueries",
+      "v2.organizations.locations.savedQueries",
+      "v2.organizations.logs",
+      "v2.organizations.sinks",
+      "v2.projects",
+      "v2.projects.exclusions",
+      "v2.projects.locations.buckets",
+      "v2.projects.locations.buckets.links",
+      "v2.projects.locations.buckets.views",
+      "v2.projects.locations.buckets.views.logs",
+      "v2.projects.locations.logScopes",
+      "v2.projects.locations.operations",
+      "v2.projects.locations.recentQueries",
+      "v2.projects.locations.savedQueries",
+      "v2.projects.logs",
+      "v2.projects.metrics",
+      "v2.projects.sinks",
+      "v2.sinks"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest",
+        "https://docs.cloud.google.com/logging/docs/api/gcloud-logging"
+      ]
+    }
+  ]
+}

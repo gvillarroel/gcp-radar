@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Maps Service API key authentication",
+  "feature_slug": "maps-service-api-key-authentication",
+  "summary": "Maps Service API key authentication lets scripts authenticate with an API key and optionally a signing key.",
+  "extended_definition": "Maps Service API key authentication lets scripts authenticate with an API key and optionally a signing key.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/service-account",
+      "https://developers.google.com/apps-script/guides/services/authorization",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Generally Available: To authenticate to the Maps service, you can now use an API key with the new methods setAuthenticationByKey(apiKey) and setAuthenticationByKey(apiKey, signingKey) .",
+          "We've also updated the Apps Script code samples to use the Advanced Chat Service in the following Chat API developer guides: Authenticate as an app Authenticate as a user Try it - Respond to Incidents September 26, 2023 Change The email address that sends notifications about errors in triggers has been updated from apps-scripts-notifications@google.com to noreply-apps-scripts-notifications@google.com .",
+          "March 05, 2026 Deprecated Deprecated: The method setAuthentication(clientId, signingKey) has been deprecated and is scheduled for sunset in June 2026."
+        ]
+      },
+      {
+        "title": "\"Authenticate as an Google Apps Script project using service accounts \\_\\",
+        "url": "https://developers.google.com/apps-script/guides/service-account",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Related topics Create access credentials Authenticate as a Google Chat app Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Google Workspace Apps Script Guides Send feedback Authenticate as an Google Apps Script project using service accounts Stay organized with collections Save and categorize content based on your preferences.",
+          "Consider using service account authentication for these reasons: Better performance with Google Cloud APIs and services : Many Google Cloud APIs are designed for service account authentication."
+        ]
+      },
+      {
+        "title": "Authorization for Google Services \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/services/authorization",
+        "source_id": "site-docs-root-2",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permissions and types of scripts The user identity that a script runs with — and thus the data it can access — varies based on the scenario in which the script is run, as shown in the following table.",
+          "Authorization lifecycle for add-ons Add-ons for Sheets, Docs, Slides, and Forms generally follow the same authorization model as scripts that are bound to a document.",
+          "Re-authentication behavior with Apps Script Apps Script does not enforce the re-authentication frequency that is configured in Google Cloud service settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "scripts.run"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/service-account",
+        "https://developers.google.com/apps-script/guides/services/authorization"
+      ]
+    }
+  ]
+}

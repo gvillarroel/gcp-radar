@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.716Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "Map export skipEmptyTiles option",
+  "feature_slug": "map-export-skipemptytiles-option",
+  "summary": "Adds a skipEmptyTiles option to Export.map.toCloudStorage() to skip writing empty map tiles.",
+  "extended_definition": "Adds a skipEmptyTiles option to Export.map.toCloudStorage() to skip writing empty map tiles.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can see a complete list of table upload options by visiting the Table Manifest guide or with: earthengine upload table -h external image To create an asset backed by an external image, run the upload image command with a manifest: earthengine upload external image --manifest /tmp/foo.json An example manifest is: { \"name\" : \"projects/{project}/assets/cogdemo1\" , \"tilesets\" : [ { \"id\" : \"0\" , \"sources\" : [{ \"uris\" : [ \"gs://ee-docs-demos/COG demo.tif\" ] }] } ], \"properties\" : { \"source\" : \"https://code.earthengine.google.com/d541cf8b268b2f9d8f834c255698201d\" }, \"startTime\" : \"2016-01-01T00:00:00.000000000Z\" , \"endTime\" : \"2016-12-31T15:01:23.000000000Z\" } See the Cloud GeoTIFF guide and the Image Manifest guide for more details on constructing the manifest.",
+          "The options are also described in the Image Manifest guide. table To upload a Shapefile, CSV, or TFRecord from Google Cloud Storage to an Earth Engine table asset, you can use any of: earthengine upload table --asset id=projects/my-project/assets/myUploadedShapefile gs://bucket/foo.shp earthengine upload table --asset id=projects/my-project/assets/myUploadedCSV gs://bucket/foo.csv earthengine upload table --asset id=projects/my-project/assets/myUploadedTFRecord gs://bucket/foo.tfrecord Note: when uploading Shapefiles, you only need to specify the path to the .shp file.",
+          "Authenticate () Command execution To run command line utilities, like the Earth Engine CLI, you need to prepend command calls with an exclamation point. !earthengine -h Set a Cloud project Use the --project option to set a Cloud project for each individual earthengine command. !earthengine --project my-project <command> Alternatively, set a default project to be used by all earthengine calls using the set project command."
+        ]
+      },
+      {
+        "title": "About Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides",
+        "source_id": "site-docs-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more advanced options or externally trained models, integration with Vertex AI is provided, allowing models to be brought to Earth Engine's data or enabling the construction of deep learning models and neural network-based analyses.",
+          "When ready, users can export raster and vector results to Google Cloud Storage, BigQuery, or Google Drive, as well as download data locally in formats compatible with pandas, NumPy, and Xarray.",
+          "The platform facilitates the full analysis workflow, from interactive visualization and exploration to exporting results and creating interactive web applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 2 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "code.earthengine.google.com",
+      "demo.tif",
+      "developers.google.com",
+      "foo.csv",
+      "foo.json",
+      "foo.shp",
+      "foo.tfrecord",
+      "map.toCloudStorage"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides"
+      ]
+    }
+  ]
+}

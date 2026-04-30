@@ -1,0 +1,156 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.321Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vpn/card.json",
+  "product_name": "Cloud VPN",
+  "product_slug": "cloud-vpn",
+  "feature_name": "Peer VPN configuration templates",
+  "feature_slug": "peer-vpn-configuration-templates",
+  "summary": "Cloud VPN lets you download third-party peer VPN device configuration templates from the Google Cloud console.",
+  "extended_definition": "Cloud VPN lets you download third-party peer VPN device configuration templates from the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure the peer VPN gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next To download a configuration template for your peer VPN device, see Download a peer VPN configuration template .",
+          "For the VPN to be established, the values for the external peer VPN gateway resource must match the configuration on your physical peer gateway: The number of interfaces on your physical VPN gateway External IP address or addresses for one or more peer gateways or interfaces BGP endpoint IP address or addresses The IKE pre-shared key (shared secret) The ASN number When you configure the BGP sessions for HA VPN and enable IPv6, you have the option of configuring IPv6 next hop addresses.",
+          "To complete your configuration, configure the following resources on your peer VPN gateway: Corresponding VPN tunnels to Cloud VPN Border Gateway Protocol (BGP) sessions if you are using dynamic routing with Cloud Router Firewall rules IKE settings For best practices when setting up your peer gateway, see your peer gateway documentation or manufacturer."
+        ]
+      },
+      {
+        "title": "Create an HA VPN gateway to a peer VPN gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "For instructions on how to select your template and to view a list of supported vendors, see Download a peer VPN configuration template .",
+          "If you want to download a configuration template for your peer VPN device, click Download configuration .",
+          "You can also download the configuration template later by going to the Peer VPN gateways page."
+        ]
+      },
+      {
+        "title": "Use third-party VPNs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page provides Google-tested interoperability guides and vendor-specific notes for peer third-party VPN devices or services that you can use to connect to Cloud VPN.",
+          "Some third-party device configuration templates are available for download from the Google Cloud console.",
+          "For more information, see Download a peer VPN configuration template ."
+        ]
+      },
+      {
+        "title": "Cloud VPN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Restricting peer IP addresses through a Cloud VPN tunnel If you're an Organization Policy Administrator ( roles/orgpolicy.policyAdmin ) , you can create a policy constraint that restricts the IP addresses that users can specify for peer VPN gateways.",
+          "Factors that affect bandwidth The bandwidth is influenced by a number of factors, including the following: The network connection between the Cloud VPN gateway and your peer gateway: Network bandwidth between the two gateways.",
+          "Configure two VPN tunnels from the perspective of the Cloud VPN gateway: If you have two peer VPN gateway devices , each of the tunnels from each interface on the Cloud VPN gateway must be connected to its own peer gateway."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "orgpolicy.policyAdmin",
+      "result.bgpPeerStatus",
+      "routers.getRouterStatus"
+    ],
+    "missing_inventory_roles": [
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/configuring-peer-gateway",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/how-to/interop-guides",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    }
+  ]
+}

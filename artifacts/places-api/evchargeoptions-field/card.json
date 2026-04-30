@@ -1,0 +1,190 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.962Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api",
+  "feature_name": "evChargeOptions field",
+  "feature_slug": "evchargeoptions-field",
+  "summary": "This field returns the number of electric vehicle chargers at a station.",
+  "extended_definition": "This field returns the number of electric vehicle chargers at a station.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+      "https://developers.google.com/maps/documentation/places/web-service/text-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Text Search (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only four results are returned. curl -X POST -d '{ \"textQuery\": \"EV Charging Station Mountain View\", \"pageSize\": 4, \"evOptions\": { \"minimumChargingRateKw\": 10, \"connectorTypes\": [\"EV CONNECTOR TYPE J1772\",\"EV CONNECTOR TYPE TESLA\"] } }' \\ -H 'Content-Type: application/json' -H 'X-Goog-Api-Key: API KEY ' \\ -H \"X-Goog-FieldMask: places.displayName,places.evChargeOptions\" \\ 'https://places.googleapis.com/v1/places:searchText' The request returns the following response: { \"places\" : [ { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 16 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE CHADEMO\" , \"maxChargeRateKw\" : 100 , \"count\" : 8 , \"availableCount\" : 5 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 100 , \"count\" : 2 , \"availableCount\" : 2 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 350 , \"count\" : 6 , \"availableCount\" : 3 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 6 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 100 , \"count\" : 4 , \"availableCount\" : 3 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 350 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 2 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"EVgo Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 5 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE J1772\" , \"maxChargeRateKw\" : 3.5999999046325684 , \"count\" : 1 , \"availableCount\" : 0 , \"outOfServiceCount\" : 1 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CHADEMO\" , \"maxChargeRateKw\" : 50 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" }, { \"type\" : \"EV CONNECTOR TYPE CCS COMBO 1\" , \"maxChargeRateKw\" : 50 , \"count\" : 2 , \"availableCount\" : 0 , \"outOfServiceCount\" : 0 , \"availabilityLastUpdateTime\" : \"2024-01-10T19:10:00Z\" } ] } }, { \"displayName\" : { \"text\" : \"Electric Vehicle Charging Station\" , \"languageCode\" : \"en\" }, \"evChargeOptions\" : { \"connectorCount\" : 10 , \"connectorAggregation\" : [ { \"type\" : \"EV CONNECTOR TYPE OTHER\" , \"maxChargeRateKw\" : 210 , \"count\" : 10 } ] } } ] } Search for service area businesses Use the includePureServiceAreaBusinesses parameter to search for businesses without a physical service address (for example, a mobile cleaning service or a food truck).",
+          "The following fields trigger the Text Search Enterprise SKU : places.currentOpeningHours places.currentSecondaryOpeningHours places.internationalPhoneNumber places.nationalPhoneNumber places.priceLevel places.priceRange places.rating places.regularOpeningHours places.regularSecondaryOpeningHours places.userRatingCount places.websiteUri The following fields trigger the Text Search Enterprise + Atmosphere SKU : places.allowsDogs places.curbsidePickup places.delivery places.dineIn places.editorialSummary places.evChargeAmenitySummary places.evChargeOptions places.fuelOptions places.generativeSummary places.goodForChildren places.goodForGroups places.goodForWatchingSports places.liveMusic places.menuForChildren places.neighborhoodSummary places.parkingOptions places.paymentOptions places.outdoorSeating places.reservable places.restroom places.reviews places.reviewSummary routingSummaries places.servesBeer places.servesBreakfast places.servesBrunch places.servesCocktails places.servesCoffee places.servesDessert places.servesDinner places.servesLunch places.servesVegetarianFood places.servesWine places.takeout Text Search and Nearby Search only textQuery The text string on which to search.",
+          "This request only returns the first 10 results for places that are open. curl -X POST -d '{ \"textQuery\" : \"vegetarian food\", \"pageSize\" : \"10\", \"locationRestriction\": { \"rectangle\": { \"low\": { \"latitude\": 40.477398, \"longitude\": -74.259087 }, \"high\": { \"latitude\": 40.91618, \"longitude\": -73.70018 } } } }' \\ -H 'Content-Type: application/json' \\ -H 'X-Goog-Api-Key: API KEY ' \\ -H 'X-Goog-FieldMask: places.id,places.formattedAddress' \\ 'https://places.googleapis.com/v1/places:searchText' Bias to an area using locationBias The following example shows a Text Search (New) request for \"vegetarian food\" biased to a location within 500 meters of a point in downtown San Francisco."
+        ]
+      },
+      {
+        "title": "Package google.maps.places.v1 \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "source_id": "site-api-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Fields name string A reference representing this place review which may be used to look up this place review again (also called the API \"resource\" name: places/{place id}/reviews/{review} ). relative publish time description string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text LocalizedText The localized text of the review. original text LocalizedText The review text in its original language. rating double A number between 1.0 and 5.0, also called the number of stars. author attribution AuthorAttribution This review's author. publish time Timestamp Timestamp for the review. flag content uri string A link where users can flag a problem with the review. google maps uri string A link to show the review on Google Maps. visit date Date The date when the author visited the place.",
+          "Fields type EVConnectorType The connector type of this aggregation. max charge rate kw double The static max charging rate in kw of each connector in the aggregation. count int32 Number of connectors in this aggregation. availability last update time Timestamp The timestamp when the connector availability information in this aggregation was last updated. available count int32 Number of connectors in this aggregation that are currently available. out of service count int32 Number of connectors in this aggregation that are currently out of service.",
+          "X hours and 15 minutes. user rating count int32 The total number of reviews (with or without text) for this place. takeout bool Specifies if the business supports takeout. delivery bool Specifies if the business supports delivery. dine in bool Specifies if the business supports indoor or outdoor seating options. curbside pickup bool Specifies if the business supports curbside pickup. reservable bool Specifies if the place supports reservations. serves breakfast bool Specifies if the place serves breakfast. serves lunch bool Specifies if the place serves lunch. serves dinner bool Specifies if the place serves dinner. serves beer bool Specifies if the place serves beer. serves wine bool Specifies if the place serves wine. serves brunch bool Specifies if the place serves brunch. serves vegetarian food bool Specifies if the place serves vegetarian food. outdoor seating bool Place provides outdoor seating. live music bool Place provides live music. menu for children bool Place has a children's menu. serves cocktails bool Place serves cocktails. serves dessert bool Place serves dessert. serves coffee bool Place serves coffee. good for children bool Place is good for children. allows dogs bool Place allows dogs. restroom bool Place has restroom. good for groups bool Place accommodates groups. good for watching sports bool Place is suitable for watching sports. accessibility options AccessibilityOptions Information about the accessibility options a place offers. pure service area business bool Indicates whether the place is a pure service area business."
+        ]
+      },
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"id\" : string , \"displayName\" : { object ( LocalizedText ) } , \"types\" : [ string ] , \"primaryType\" : string , \"primaryTypeDisplayName\" : { object ( LocalizedText ) } , \"googleMapsTypeLabel\" : { object ( LocalizedText ) } , \"nationalPhoneNumber\" : string , \"internationalPhoneNumber\" : string , \"formattedAddress\" : string , \"shortFormattedAddress\" : string , \"postalAddress\" : { object ( PostalAddress ) } , \"addressComponents\" : [ { object ( AddressComponent ) } ] , \"plusCode\" : { object ( PlusCode ) } , \"location\" : { object ( LatLng ) } , \"viewport\" : { object ( Viewport ) } , \"rating\" : number , \"googleMapsUri\" : string , \"websiteUri\" : string , \"reviews\" : [ { object ( Review ) } ] , \"regularOpeningHours\" : { object ( OpeningHours ) } , \"timeZone\" : { object ( TimeZone ) } , \"photos\" : [ { object ( Photo ) } ] , \"adrFormatAddress\" : string , \"businessStatus\" : enum ( BusinessStatus ) , \"openingDate\" : { object ( Date ) } , \"priceLevel\" : enum ( PriceLevel ) , \"attributions\" : [ { object ( Attribution ) } ] , \"iconMaskBaseUri\" : string , \"iconBackgroundColor\" : string , \"currentOpeningHours\" : { object ( OpeningHours ) } , \"currentSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"regularSecondaryOpeningHours\" : [ { object ( OpeningHours ) } ] , \"editorialSummary\" : { object ( LocalizedText ) } , \"paymentOptions\" : { object ( PaymentOptions ) } , \"parkingOptions\" : { object ( ParkingOptions ) } , \"subDestinations\" : [ { object ( SubDestination ) } ] , \"fuelOptions\" : { object ( FuelOptions ) } , \"evChargeOptions\" : { object ( EVChargeOptions ) } , \"generativeSummary\" : { object ( GenerativeSummary ) } , \"containingPlaces\" : [ { object ( ContainingPlace ) } ] , \"addressDescriptor\" : { object ( AddressDescriptor ) } , \"googleMapsLinks\" : { object ( GoogleMapsLinks ) } , \"priceRange\" : { object ( PriceRange ) } , \"reviewSummary\" : { object ( ReviewSummary ) } , \"evChargeAmenitySummary\" : { object ( EvChargeAmenitySummary ) } , \"neighborhoodSummary\" : { object ( NeighborhoodSummary ) } , \"consumerAlert\" : { object ( ConsumerAlert ) } , \"movedPlace\" : string , \"movedPlaceId\" : string , \"utcOffsetMinutes\" : integer , \"userRatingCount\" : integer , \"takeout\" : boolean , \"delivery\" : boolean , \"dineIn\" : boolean , \"curbsidePickup\" : boolean , \"reservable\" : boolean , \"servesBreakfast\" : boolean , \"servesLunch\" : boolean , \"servesDinner\" : boolean , \"servesBeer\" : boolean , \"servesWine\" : boolean , \"servesBrunch\" : boolean , \"servesVegetarianFood\" : boolean , \"outdoorSeating\" : boolean , \"liveMusic\" : boolean , \"menuForChildren\" : boolean , \"servesCocktails\" : boolean , \"servesDessert\" : boolean , \"servesCoffee\" : boolean , \"goodForChildren\" : boolean , \"allowsDogs\" : boolean , \"restroom\" : boolean , \"goodForGroups\" : boolean , \"goodForWatchingSports\" : boolean , \"accessibilityOptions\" : { object ( AccessibilityOptions ) } , \"pureServiceAreaBusiness\" : boolean } Fields name string This Place's resource name, in places/{placeId} format.",
+          "JSON representation { \"name\" : string , \"relativePublishTimeDescription\" : string , \"text\" : { object ( LocalizedText ) } , \"originalText\" : { object ( LocalizedText ) } , \"rating\" : number , \"authorAttribution\" : { object ( AuthorAttribution ) } , \"publishTime\" : string , \"flagContentUri\" : string , \"googleMapsUri\" : string , \"visitDate\" : { object ( Date ) } } Fields name string A reference representing this place review which may be used to look up this place review again (also called the API \"resource\" name: places/{placeId}/reviews/{review} ). relativePublishTimeDescription string A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. text object ( LocalizedText ) The localized text of the review. originalText object ( LocalizedText ) The review text in its original language. rating number A number between 1.0 and 5.0, also called the number of stars. authorAttribution object ( AuthorAttribution ) This review's author. publishTime string ( Timestamp format) Timestamp for the review.",
+          "JSON representation { \"type\" : enum ( EVConnectorType ) , \"maxChargeRateKw\" : number , \"count\" : integer , \"availabilityLastUpdateTime\" : string , \"availableCount\" : integer , \"outOfServiceCount\" : integer } Fields type enum ( EVConnectorType ) The connector type of this aggregation. maxChargeRateKw number The static max charging rate in kw of each connector in the aggregation. count integer Number of connectors in this aggregation. availabilityLastUpdateTime string ( Timestamp format) The timestamp when the connector availability information in this aggregation was last updated."
+        ]
+      },
+      {
+        "title": "Place Data Fields \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields",
+        "source_id": "site-docs-root-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Basic Data Field Places API (Legacy) Places Library, Maps JavaScript API Places SDK for Android (Legacy) Places SDK for iOS (Legacy) Address Components address components address components Place.Field.ADDRESS COMPONENTS GMSPlaceFieldAddressComponents Address adr address adr address --- --- Business Status business status business status Place.Field.BUSINESS STATUS GMSPlaceFieldBusinessStatus Formatted Address formatted address formatted address Place.Field.FORMATTED ADDRESS GMSPlaceFieldFormattedAddress Viewport geometry/viewport geometry.viewport Place.Field.VIEWPORT GMSPlaceFieldViewport Location geometry/location geometry.location Place.Field.LOCATION GMSPlaceFieldCoordinate Icon icon icon --- --- Icon Mask Base URI icon mask base uri icon mask base uri Place.Field.ICON MASK URL GMSPlaceFieldIconImageURL Icon Background Color icon background color icon background color Place.Field.ICON BACKGROUND COLOR GMSPlaceFieldIconBackgroundColor Name name name Place.Field.DISPLAY NAME GMSPlaceFieldName Permanently Closed ( deprecated ) permanently closed permanently closed --- --- Photo photos photos Place.Field.PHOTO METADATAS GMSPlaceFieldPhotos Place ID place id place id Place.Field.ID GMSPlaceFieldPlaceID Plus Code plus code plus code Place.Field.PLUS CODE GMSPlaceFieldPlusCode Type type type Place.Field.TYPES GMSPlaceFieldTypes URL url url --- --- UTC Offset utc offset utc offset minutes Place.Field.UTC OFFSET GMSPlaceFieldUTCOffsetMinutes Vicinity vicinity vicinity --- --- Wheelchair Accessible Entrance wheelchair accessible entrance --- Place.Field.ACCESSIBILITY OPTIONS GMSPlaceFieldWheelchairAccessibleEntrance Contact Data Fields Field Places API (Legacy) Places Library, Maps JavaScript API Places SDK for Android (Legacy) Places SDK for iOS (Legacy) Phone Number formatted phone number formatted phone number --- --- International Phone Number international phone number international phone number Place.Field.INTERNATIONAL PHONE NUMBER GMSPlaceFieldPhoneNumber Opening Hours opening hours opening hours Place.Field.OPENING HOURS GMSPlaceFieldOpeningHours Current Opening Hours current opening hours --- Place.Field.CURRENT OPENING HOURS GMSPlaceFieldCurrentOpeningHours Secondary Opening Hours secondary opening hours --- Place.Field.SECONDARY OPENING HOURS GMSPlaceFieldSecondaryOpeningHours Website website website Place.Field.WEBSITE URI GMSPlaceFieldWebsite Atmosphere Data Fields Field Places API (Legacy) Places Library, Maps JavaScript API Places SDK for Android (Legacy) Places SDK for iOS (Legacy) Curbside Pickup curbside pickup --- Place.Field.CURBSIDE PICKUP GMSPlaceFieldCurbsidePickup Delivery delivery --- Place.Field.DELIVERY GMSPlaceFieldDelivery Dine-in dine in --- Place.Field.DINE IN GMSPlaceFieldDineIn Editorial Summary editorial summary --- Place.Field.EDITORIAL SUMMARY GMSPlaceFieldEditorialSummary Price Level price level price level Place.Field.PRICE LEVEL GMSPlaceFieldPriceLevel Rating rating rating Place.Field.RATING GMSPlaceFieldRating Reservable reservable --- Place.Field.RESERVABLE GMSPlaceFieldReservable Reviews reviews reviews Place.Field.REVIEWS --- Serves Beer serves beer --- Place.Field.SERVES BEER GMSPlaceFieldServesBeer Serves Breakfast serves breakfast --- Place.Field.SERVES BREAKFAST GMSPlaceFieldServesBreakfast Serves Brunch serves brunch --- Place.Field.SERVES BRUNCH GMSPlaceFieldServesBrunch Serves Dinner serves dinner --- Place.Field.SERVES DINNER GMSPlaceFieldServesDinner Serves Lunch serves lunch --- Place.Field.SERVES LUNCH GMSPlaceFieldServesLunch Serves Vegetarian Food serves vegetarian food --- Place.Field.SERVES VEGETARIAN FOOD GMSPlaceFieldServesVegetarianFood Serves Wine serves wine --- Place.Field.SERVES WINE GMSPlaceFieldServesWine Takeout takeout --- Place.Field.TAKEOUT GMSPlaceFieldTakeout User Ratings Total user ratings total user ratings total Place.Field.USER RATINGS COUNT GMSPlaceFieldUserRatingsTotal Places API (Legacy) fields support Find Place (Legacy) , Nearby Search (Legacy) , and Text Search (Legacy) requests all return a subset of the fields that are returned by Place Details (Legacy) requests.",
+          "These methods do NOT return the following fields: address component adr address curbside pickup current opening hours delivery dine in editorial summary formatted phone number international phone number opening hours.periods opening hours.special days opening hours.type opening hours.weekday text reservable secondary opening hours reviews serves beer serves breakfast serves brunch serves dinner serves lunch serves vegetarian food serves wine takeout type url user ratings total utc offset minutes vicinity website wheelchair accessible entrance To return one or more of these data fields for a place, make a Place Details (Legacy) request, pass a place ID, and specify which fields to return.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "geometry.location",
+      "geometry.viewport",
+      "hours.periods",
+      "hours.special",
+      "hours.type",
+      "hours.weekday",
+      "places.addressDescriptor",
+      "places.allowsDogs",
+      "places.businessStatus",
+      "places.curbsidePickup",
+      "places.currentOpeningHours",
+      "places.currentSecondaryOpeningHours",
+      "places.delivery",
+      "places.dineIn",
+      "places.displayName",
+      "places.editorialSummary",
+      "places.evChargeAmenitySummary",
+      "places.evChargeOptions",
+      "places.formattedAddress",
+      "places.fuelOptions",
+      "places.generativeSummary",
+      "places.goodForChildren",
+      "places.goodForGroups",
+      "places.goodForWatchingSports",
+      "places.googleapis.com",
+      "places.id",
+      "places.internationalPhoneNumber",
+      "places.liveMusic",
+      "places.menuForChildren",
+      "places.nationalPhoneNumber",
+      "places.neighborhoodSummary",
+      "places.openingDate",
+      "places.outdoorSeating",
+      "places.parkingOptions",
+      "places.paymentOptions",
+      "places.priceLevel",
+      "places.priceRange",
+      "places.rating",
+      "places.regularOpeningHours",
+      "places.regularSecondaryOpeningHours",
+      "places.reservable",
+      "places.restroom",
+      "places.reviews",
+      "places.reviewSummary",
+      "places.servesBeer",
+      "places.servesBreakfast",
+      "places.servesBrunch",
+      "places.servesCocktails",
+      "places.servesCoffee",
+      "places.servesDessert",
+      "places.servesDinner",
+      "places.servesLunch",
+      "places.servesVegetarianFood",
+      "places.servesWine",
+      "places.takeout",
+      "places.userRatingCount",
+      "places.websiteUri"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/text-search",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/legacy/place-data-fields"
+      ]
+    }
+  ]
+}

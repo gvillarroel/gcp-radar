@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "SELECT FOR UPDATE query support",
+  "feature_slug": "select-for-update-query-support",
+  "summary": "Spanner now supports SELECT ... FOR UPDATE syntax in GoogleSQL and PostgreSQL dialects to enable exclusive locks during scans and reduce concurrent-write aborts.",
+  "extended_definition": "Spanner now supports SELECT ... FOR UPDATE syntax in GoogleSQL and PostgreSQL dialects to enable exclusive locks during scans and reduce concurrent-write aborts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "UPDATE singers SET birthdate = NULL , firstname = 'Kena' , lastname = '' , singerinfo = NULL WHERE singerid = '3' ; SELECT FROM singers WHERE singerid = '3' ; Edit the UPDATE statement's SET clause to update only the birth date: GoogleSQL -- Change values in the SET clause to update the row where the WHERE condition is true.",
+          "Then, enter the following query in the query editor: GoogleSQL SELECT FROM Singers ; PostgreSQL SELECT FROM singers ; Click play circle Run .",
+          "The Google Cloud console displays the Singers table's Spanner Studio page with a new query tab that contains the INSERT statement that you edit to insert a row in the Singers table and view the result of that insertion: GoogleSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column."
+        ]
+      },
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Ruby require \"google/cloud/spanner\" def spanner add and drop database role project id :, instance id :, database id : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new role parent = \"new parent\" role child = \"new child\" db path = admin client . database path project : project id , instance : instance id , database : database id job = admin client . update database ddl database : db path , statements : [ \"CREATE ROLE #{ role parent } \" , \"GRANT SELECT ON TABLE Singers TO ROLE #{ role parent } \" , \"CREATE ROLE #{ role child } \" , \"GRANT ROLE #{ role parent } TO ROLE #{ role child } \" ] job . wait until done! puts \"Created roles #{ role parent } and #{ role child } and granted privileges\" job = admin client . update database ddl database : db path , statements : [ \"REVOKE ROLE #{ role parent } FROM ROLE #{ role child } \" , \"DROP ROLE #{ role child } \" ] job . wait until done! puts \"Revoked privileges and dropped role #{ role child } \" end More information About fine-grained access control Fine-grained access control for change streams Fine-grained access control privileges GoogleSQL DDL reference Make schema updates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To drop the role, go to the Spanner Studio page and enter the following statement: DROP ROLE ROLE NAME ; Click Submit . gcloud To revoke all privileges for a role and then drop the role, use the gcloud spanner databases ddl update command as follows: GoogleSQL gcloud spanner databases ddl update DATABASE NAME \\ --instance = INSTANCE NAME \\ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE ROLE NAME ; DROP ROLE ROLE NAME ;' PostgreSQL gcloud spanner databases ddl update DATABASE NAME \\ --instance = INSTANCE NAME \\ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE NAME ; DROP ROLE ROLE NAME ;' Valid values for PERMISSIONS are SELECT , INSERT , UPDATE , and DELETE .",
+          "For example, to grant SELECT , INSERT , and UPDATE on the employees and contractors tables to the database role hr analyst in the database hrdb1 in the instance hr , enter the following statement: GoogleSQL gcloud spanner databases ddl update hrdb1 --instance = hr \\ --ddl = 'CREATE ROLE hr analyst; GRANT SELECT, INSERT, UPDATE ON TABLE employees, contractors TO ROLE hr analyst;' PostgreSQL gcloud spanner databases ddl update hrdb1 --instance = hr \\ --ddl = 'CREATE ROLE hr analyst; GRANT SELECT, INSERT, UPDATE ON TABLE employees, contractors TO hr analyst;' Note: Use the same case for schema object names that you used when you created the objects."
+        ]
+      },
+      {
+        "title": "\"Change stream partitions, records, and queries \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/details",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Assuming a change stream SingersNameStream exists in the database, the query syntax for GoogleSQL is the following: SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp , end timestamp , partition token , heartbeat milliseconds , read options ) The read function accepts the following arguments: Argument name Type Required?",
+          "GoogleSQL SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 1\" , heartbeat milliseconds = > 10000 ); SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 2\" , heartbeat milliseconds = > 10000 ); SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:00:01Z\" , end timestamp = > NULL , partition token = > \"child token 3\" , heartbeat milliseconds = > 10000 ); PostgreSQL SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 1' , 10000 , NULL ); SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 2' , 10000 , NULL ); SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:00:01Z' , NULL , 'child token 3' , 10000 , NULL ); The query on child token 2 finishes after returning another child partition record.",
+          "The query workflow design should appoint one parent to wait and schedule the query on child token 4 . child par t i t io ns record : { \"record type\" : \"child partitions\" , \"start timestamp\" : \"2022-05-01T09:30:15Z\" , \"record sequence\" : \"1000012389\" , \"child partitions\" : [ { \"token\" : \"child token 4\" , \"parent partition tokens\" : [ \"child token 2\" , \"child token 3\" ], } ], } GoogleSQL SELECT ChangeRecord FROM READ SingersNameStream ( start timestamp = > \"2022-05-01T09:30:15Z\" , end timestamp = > NULL , partition token = > \"child token 4\" , heartbeat milliseconds = > 10000 ); PostgreSQL SELECT FROM \"spanner\" . \"read json SingersNameStream\" ( '2022-05-01T09:30:15Z' , NULL , 'child token 4' , 10000 , NULL ); Find examples of handling and parsing change stream records in the Apache Beam SpannerIO Dataflow connector on GitHub ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/details"
+      ]
+    }
+  ]
+}

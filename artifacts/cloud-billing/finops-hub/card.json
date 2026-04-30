@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.607Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "FinOps Hub",
+  "feature_slug": "finops-hub",
+  "summary": "Introduces FinOps Hub (Preview) to monitor savings, recommend optimization opportunities, and set optimization goals using usage and commitment insights.",
+  "extended_definition": "Introduces FinOps Hub (Preview) to monitor savings, recommend optimization opportunities, and set optimization goals using usage and commitment insights.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+      "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+      "https://docs.cloud.google.com/billing/docs/how-to/finops-utilization-insights"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Optimize costs with FinOps hub \\_|\\_ Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "With the FinOps hub, you can monitor and communicate your current savings, explore new recommended opportunities to optimize costs, and plan your optimization goals.",
+          "How potential savings are determined The FinOps hub considers four optimization practices to create cost-saving recommendations: Turning off idle resources Right-sizing instances Other configuration changes for certain resources Purchasing committed use discounts (CUDs) Metrics throughout the hub reflect how well you're using those optimizations and identify additional optimization opportunities to reduce costs and improve FinOps practices.",
+          "The FinOps hub dashboard The FinOps hub dashboard summarizes your current cost optimizations and introduces Google Cloud-recommended optimizations."
+        ]
+      },
+      {
+        "title": "\"Review and apply FinOps hub Recommendations \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "source_id": "site-docs-root-2",
+        "final_score": 202,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permissions required to access the FinOps hub Recommendations To access the FinOps hub and view available recommendations, the FinOps score and CUDs optimization metrics, you need either the Billing Account Administrator or the Billing Account Viewer role for your Cloud Billing account.",
+          "Use the optimization category tabs to focus your list of recommendations to a specific savings category, such as switching off idle resources, right-sizing instances, or purchasing additional CUDs.",
+          "In the FinOps hub , from the Potential savings/month chart, click View all recommendations ."
+        ]
+      },
+      {
+        "title": "\"Review utilization and wasted usage insights \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/finops-utilization-insights",
+        "source_id": "site-docs-root-2",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The FinOps hub Utilization insights dashboard focuses on insights and recommendations for workload optimization and waste reduction.",
+          "Supported services and optimization categories The Utilization insights dashboard provides recommendations about potentially wasted usage for the following services and optimization categories: Service Optimization categories Compute Engine Idle VM instances Overprovisioned VM instances Underprovisioned VM instances Idle disks Suboptimal configuration: Identified as VM instances using custom machine configurations that appear identical to standard, predefined machine types.",
+          "Resources FinOps hub Google Cloud Well-Architected Framework: Cost optimization Optimize costs with committed use discounts Purchasing spend-based committed use discounts Purchasing resource-based committed use discounts Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "billing.accounts.getSpendingInformation",
+      "billing.finOpsBenchmarkInformation.get",
+      "billing.finOpsHealthInformation.get",
+      "recommender.costRecommendations.listAll"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-utilization-insights"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-utilization-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-hub",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-recommendations-dashboard",
+        "https://docs.cloud.google.com/billing/docs/how-to/finops-utilization-insights"
+      ]
+    }
+  ]
+}

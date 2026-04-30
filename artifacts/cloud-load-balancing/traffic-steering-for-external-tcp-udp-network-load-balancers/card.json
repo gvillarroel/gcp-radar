@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Traffic steering for external TCP/UDP network load balancers",
+  "feature_slug": "traffic-steering-for-external-tcp-udp-network-load-balancers",
+  "summary": "External TCP/UDP network load balancer forwarding rules can direct traffic from specific source IP ranges to specific backend services or target instances.",
+  "extended_definition": "External TCP/UDP network load balancer forwarding rules can direct traffic from specific source IP ranges to specific backend services or target instances.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+      "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use UDP with regional external passthrough Network Load Balancers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "source_id": "site-docs-root",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On each Linux virtual machine (VM) running on Compute Engine that is a backend of a Google Cloud regional external passthrough Network Load Balancer, an entry in the local routing table routes traffic that's destined for the load balancer's IP address to the network interface controller (NIC).",
+          "Regional external passthrough Network Load Balancer Regional external passthrough Network Load Balancers are passthrough load balancers; they process incoming packets and deliver them to backend servers with the packets intact.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Use UDP with regional external passthrough Network Load Balancers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Traffic steering Forwarding rules for regional external passthrough Network Load Balancers can be configured to direct traffic coming from a specific source IP address or a range of IP addresses to a specific backend service (or target instance).",
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover.",
+          "Regional external passthrough Network Load Balancers can receive traffic from: Any client on the internet Google Cloud VMs with external IPs Google Cloud VMs that have internet access through Cloud NAT or instance-based NAT Regional external passthrough Network Load Balancers are not proxies ."
+        ]
+      },
+      {
+        "title": "\"Regional external passthrough Network Load Balancer logging and monitoring\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource types Regional external passthrough Network Load Balancers use the following resource types: tcp lb rule udp lb rule loadbalancing.googleapis.com/ExternalNetworkLoadBalancerRule A regional external passthrough Network Load Balancer can support TCP, UDP, ESP, GRE, ICMP, and ICMPv6 traffic.",
+          "Example API requests Get all bytes sent from all regional external passthrough Network Load Balancers in the project during 12:00-12:02 PM UTC on 2019-07-01 with 1m aggregates. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/egress bytes count\" interval.start time: 2019-07-01T12:00:00Z interval.end time: 2019-07-01T12:02:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.perSeriesAligner: ALIGN SUM Get median RTT measurement over all regional external passthrough Network Load Balancers in the project during 12:19-12:20 PM UTC on 2019-07-01, broken down by client country. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/rtt latencies\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2019-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client country aggregation.perSeriesAligner: ALIGN PERCENTILE 50 Get total bytes from a specific regional external passthrough Network Load Balancer during 12:19-12:20 PM UTC on 2019-07-01, broken down by endpoint zone and client continent. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND resource.label.load balancer name = \"netlb-bs-1\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/ingress bytes count\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2017-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client continent aggregation.groupByFields: resource.label.endpoint zone aggregation.perSeriesAligner: ALIGN SUM What's next Read conceptual information about regional external passthrough Network Load Balancers Set up a regional external passthrough Network Load Balancer Read about Monitoring Metrics, time series, and resources Read about forwarding rules Read about troubleshoot logging issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For backend service-based regional external passthrough Network Load Balancers, the name of the backend service. forwarding rule name string The name of the forwarding rule. forwarding rule network tier string The network tier of the forwarding rule. backend name string The name of the backend that handled the connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aggregation.alignmentPeriod",
+      "aggregation.crossSeriesReducer",
+      "aggregation.groupByFields",
+      "aggregation.perSeriesAligner",
+      "interval.end",
+      "interval.start",
+      "loadbalancing.googleapis.com",
+      "metric.label.client",
+      "metric.name",
+      "resource.label.endpoint",
+      "resource.label.load",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/udp-with-network-load-balancing",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    }
+  ]
+}

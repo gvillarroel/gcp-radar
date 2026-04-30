@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.922Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Microsoft Visual C++ runtime support",
+  "feature_slug": "microsoft-visual-c-runtime-support",
+  "summary": "The Windows IIS migration flow can discover installed Microsoft Visual C++ runtime libraries and install them in the migrated container.",
+  "extended_definition": "The Windows IIS migration flow can discover installed Microsoft Visual C++ runtime libraries and install them in the migrated container.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can modify the list of runtimes in the migration plan by adding or removing members of msvcRuntimes : The complete list of possible values are: (The 2015 runtime also includes support for 2017, 2019, and 2022) msvcRuntimes : - MSVC2012 x64 - MSVC2013 x64 - MSVC2015 x64 - MSVC2012 x86 - MSVC2013 x86 - MSVC2015 x86 The pathEnvVarAdditionalEntries section Windows IIS applications might have non-default PATH environment variable entries, which are automatically detected on the source VM and included in the migration plan.",
+          "The msvcRuntimes section When migrating an application, it might have a dependency on a specific version or versions of the Microsoft Visual C++ Runtime (MSVCRT).",
+          "The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM."
+        ]
+      },
+      {
+        "title": "Set up for migration \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up the Linux source machine Note: If you're going to migrate Windows IIS applications, you don't need to perform the steps to set up the Windows source machine for migration.",
+          "Download or upgrade Migrate to Containers CLI To download or upgrade Migrate to Containers CLI on a Windows machine, perform the following steps: cmd Find the latest version of Migrate to Containers CLI: curl -s https://m2c-cli-release.storage.googleapis.com/latest Download the latest version of Migrate to Containers CLI: curl -O \"https://m2c-cli-release.storage.googleapis.com/ VERSION /windows/amd64/m2c.exe\" Replace VERSION with the latest version of Migrate to Containers CLI.",
+          "Unpack the offline Migrate to Containers CLI plugins bundle: ./m2c plugins unpack -i m2c-offline-bundle-linux.tar To add support for offline data migration, specify a container registry that is available in your local network: ./m2c plugins unpack -i m2c-offline-bundle-linux.tar --registry HOSTNAME Replace HOSTNAME with the container registry hostname."
+        ]
+      },
+      {
+        "title": "Create a migration plan \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Learn how to customize the migration plan for the following: Linux VMs Tomcat WebSphere Liberty WebSphere traditional JBoss Apache WordPress Windows IIS services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a migration plan for Windows IIS services To perform the analysis, run the following command: ./m2c analyze -s PATH TO IMAGE -p windows-iis-container -o ANALYSIS OUTPUT PATH Replace the following: PATH TO IMAGE : the path to source machine disk image.",
+          "To retrieve these values, check the running Tomcat server process: ps aux grep catalina To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p tomcat-container \\ -o ANALYSIS OUTPUT PATH \\ -r catalina-home= PATH TO CATALINA HOME \\ -r catalina-base= PATH TO CATALINA BASE \\ -r java-version= JAVA VERSION Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created PATH TO CATALINA HOME : path to the root of the Tomcat installation PATH TO CATALINA BASE : path to the root of the runtime configuration of the Tomcat instance that you're migrating."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "curl.exe",
+      "jboss.home.dir",
+      "linux.tar",
+      "m2c.exe",
+      "powershell.exe",
+      "probe.ps1",
+      "release.storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/prepare-for-migration"
+      ]
+    }
+  ]
+}

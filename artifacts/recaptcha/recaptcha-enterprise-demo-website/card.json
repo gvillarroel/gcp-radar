@@ -1,0 +1,194 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.254Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha",
+  "feature_name": "reCAPTCHA Enterprise demo website",
+  "feature_slug": "recaptcha-enterprise-demo-website",
+  "summary": "Shows how reCAPTCHA Enterprise works in a Google Cloud console demo website.",
+  "extended_definition": "Shows how reCAPTCHA Enterprise works in a Google Cloud console demo website.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+      "https://docs.cloud.google.com/recaptcha/docs/quickstart-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Test reCAPTCHA in a demo website \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test reCAPTCHA in a demo website This document shows you how to deploy a demo website on Google Cloud, which is a sample website integrated with reCAPTCHA, to understand how reCAPTCHA works.",
+          "A demo website helps you do the following: Understand your users' experience with reCAPTCHA.",
+          "Enable the API Make sure that you have the following role or roles on the project: reCAPTCHA Enterprise Admin, reCAPTCHA Enterprise Agent Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceAsyncClient (1.29.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample search related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample list related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample list related account groups(): Create a client client = recaptchaenterprise v1 ."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (1.29.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample search related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample list related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample list related account groups(): Create a client client = recaptchaenterprise v1 ."
+        ]
+      },
+      {
+        "title": "\"Configure multi-factor authentication \\_|\\_ reCAPTCHA \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to trigger the MFA challenge with a call to challengeAccount() : grecaptcha . enterprise . challengeAccount ( KEY ID , { 'account-token' : REQUEST TOKEN FROM ASSESSMENT , 'container' : CONTAINER HTML COMPONENT ID }). then ( newToken = > { // Handle the new token. }); If the challengeAccount() request is successful, the HTML component is displayed to enter the PIN received.",
+          "Append an additional twofactor parameter to your execute() function as shown in the following sample code: grecaptcha . enterprise . execute ( KEY ID , { action : 'login' , twofactor : true }). then ( token = > { // Handle the generated token. }); Replace KEY ID with the score-based key that you created for your website.",
+          "The following example shows a sample assessment that you receive upon creating a new assessment using the new token obtained from the website: { [ ... ], \"accountVerification\" : { \"endpoints\" : [{ \"emailAddress\" : \"foo@bar.com\" , \"requestToken\" : \"tplIUFvvJUIpLaOH0hIVj2H71t5Z9mDK2RhB1SAGSIUOgOIsBv\" , \"lastVerificationTime\" : \"2020-03-23 08:27:12 PST\" , }], \"latestVerificationResult\" : \"SUCCESS USER VERIFIED\" } } The latestVerificationResult field can show a different status as listed in the following table: Verification result status Description SUCCESS USER VERIFIED The user was successfully verified."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.com",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesFixedSizeCollection",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPage",
+      "googleapis.dev",
+      "options.html",
+      "recaptchaenterprise.googleapis.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/quickstart-app",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/integrate-account-verification"
+      ]
+    }
+  ]
+}

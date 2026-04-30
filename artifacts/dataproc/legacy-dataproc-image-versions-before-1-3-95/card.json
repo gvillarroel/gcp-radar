@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Legacy Dataproc image versions before 1.3.95",
+  "feature_slug": "legacy-dataproc-image-versions-before-1-3-95",
+  "summary": "Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28.",
+  "extended_definition": "Dataproc image versions earlier than 1.3.95, 1.4.77, 1.5.53, and 2.0.27 were deprecated for cluster creation; deprecated on 2022-02-28.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-15",
+    "deprecation_date": "2022-02-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+      "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Managed Service for Apache Spark custom image \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: The image name must match the regular expression a-z with no underscores or spaces, and less than 64 characters. --dataproc-version : the Managed Service for Apache Spark image version to use in your custom image.",
+          "Advanced usage: If you use your own process to create a custom Managed Service for Apache Spark image, you must add the goog-dataproc-version label manually to your custom image, as follows: Extract the goog-dataproc-version label from the base Managed Service for Apache Spark image used to create the custom image. gcloud compute images describe ${BASE DATAPROC IMAGE} \\ --project cloud-dataproc \\ --format=\"value(labels.goog-dataproc-version)\" Set the label on the custom image. gcloud compute images add-labels IMAGE NAME --labels= [KEY=VALUE,...] Use a custom image You specify the custom image when you create a Managed Service for Apache Spark cluster.",
+          "The REST response lists additional information about the image, including the selfLink , which is the image URI. { ... \"name\": \"my-custom-image\", \"selfLink\": \"projects/ PROJECT ID /global/images/ CUSTOM IMAGE NAME \" , \"sourceDisk\": ..., ... } Create a cluster with a custom image create a cluster with using the gcloud CLI, the Managed Service for Apache Spark API, or the Google Cloud console. gcloud CLI Create a Managed Service for Apache Spark cluster with a custom image using the dataproc clusters create command with the --image flag."
+        ]
+      },
+      {
+        "title": "Auxiliary versions \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Enable Dataproc Metastore Required Roles To get the permission that you need to create a Dataproc Metastore that uses auxiliary versions, ask your administrator to grant you the following IAM roles on your project, based on the principle of least privilege: Grant full control of Dataproc Metastore resources ( roles/metastore.editor ) Grant full access to all Dataproc Metastore resources, including IAM policy administration ( roles/metastore.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "You can check the active account by running gcloud auth list . curl -X POST -s -i \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -d '{\"network\":\"projects/ PROJECT ID /global/networks/default\", \"port\": 9083, \"hive metastore config\": {\"auxiliary versions\": {\"aux-version1\": {\"version\": \" AUX VERSION \"} } } }' \\ -H \"Content-Type:application/json\" \\ https://metastore.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /services?service id= SERVICE ID Replace the following: SERVICE ID : the name of your new Dataproc Metastore service.",
+          "You can check the active account by running gcloud auth list . curl -X PATCH -s -i \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -d '{\"hive metastore config\": {\"auxiliary versions\": {\"aux-version1\": {\"version\": \" AUX VERSION } } } }' \\ -H \"Content-Type:application/json\" \\ https://metastore.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /services/ SERVICE ID ?update mask=hive metastore config.auxiliary versions Replace the following: SERVICE ID : the name of your Dataproc Metastore service."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark driver node groups \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Managed Service for Apache Spark driver node groups are supported in clusters created with 2.0.52 and later image versions . gcloud gcloud dataproc clusters create CLUSTER NAME \\ --region= REGION \\ --driver-pool-size= SIZE \\ --driver-pool-id= NODE GROUP ID Required flags: CLUSTER NAME : The cluster name, which must be unique within a project.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\": \" PROJECT ID \", \"clusterName\": \" CLUSTER NAME \", \"config\": { ... \"auxiliaryNodeGroups\": [ { \"nodeGroup\": { \"name\": \"projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ NODE GROUP ID \", \"roles\": [ \"DRIVER\" ], \"nodeGroupConfig\": { \"numInstances\": SIZE , \"instanceNames\": [ \" CLUSTER NAME -np-q1gp\", \" CLUSTER NAME -np-xfc0\" ], \"imageUri\": \"https://www.googleapis.com/compute/v1/projects/cloud-dataproc-ci/global/images/dataproc-2-0-deb10-...-rc01\", \"machineTypeUri\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ REGION -a/machineTypes/n1-standard-4\", \"diskConfig\": { \"bootDiskSizeGb\": 1000, \"bootDiskType\": \"pd-standard\" }, \"managedGroupConfig\": { \"instanceTemplateName\": \"dataproc-2a8224d2-...\", \"instanceGroupManagerName\": \"dataproc-2a8224d2-...\" }, \"minCpuPlatform\": \"AUTOMATIC\", \"preemptibility\": \"NON PREEMPTIBLE\" } }, \"nodeGroupId\": \" NODE GROUP ID \" } ] }, } Get driver node group cluster metadata You can use the gcloud dataproc node-groups describe command or the Managed Service for Apache Spark API to get driver node group metadata. gcloud gcloud dataproc node-groups describe NODE GROUP ID \\ --cluster= CLUSTER NAME \\ --region= REGION Required flags: NODE GROUP ID : You can run gcloud dataproc clusters describe CLUSTER NAME to list the node group ID.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME nodeGroups/ Node GROUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ NODE GROUP ID \", \"roles\": [ \"DRIVER\" ], \"nodeGroupConfig\": { \"numInstances\": 5, \"imageUri\": \"https://www.googleapis.com/compute/v1/projects/cloud-dataproc-ci/global/images/dataproc-2-0-deb10-...-rc01\", \"machineTypeUri\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ REGION -a/machineTypes/n1-standard-4\", \"diskConfig\": { \"bootDiskSizeGb\": 1000, \"bootDiskType\": \"pd-standard\" }, \"managedGroupConfig\": { \"instanceTemplateName\": \"dataproc-driver-pool-mcia3j656h2fy\", \"instanceGroupManagerName\": \"dataproc-driver-pool-mcia3j656h2fy\" }, \"minCpuPlatform\": \"AUTOMATIC\", \"preemptibility\": \"NON PREEMPTIBLE\" } } Resize a driver node group You can use the gcloud dataproc node-groups resize command or the Managed Service for Apache Spark API to add or remove driver nodes from a cluster driver node group. gcloud gcloud dataproc node-groups resize NODE GROUP ID \\ --cluster= CLUSTER NAME \\ --region= REGION \\ --size= SIZE Required flags: NODE GROUP ID : You can run gcloud dataproc clusters describe CLUSTER NAME to list the node group ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.auxiliary",
+      "dataproc.conscrypt.provider.enable",
+      "dataproc.custom.properties",
+      "dataproc.googleapis.com",
+      "dataproc.logging.stackdriver.enable",
+      "examples.jar",
+      "labels.goog",
+      "macbeth.txt",
+      "metastore.admin",
+      "metastore.editor",
+      "metastore.googleapis.com",
+      "org.apache.spark.examples.JavaWordCount",
+      "org.apache.spark.examples.SparkPi",
+      "pi.py",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.admin",
+      "roles/metastore.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/auxiliary-versions"
+      ]
+    }
+  ]
+}

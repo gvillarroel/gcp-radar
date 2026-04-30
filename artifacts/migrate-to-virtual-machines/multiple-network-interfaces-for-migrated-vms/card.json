@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.023Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Multiple network interfaces for migrated VMs",
+  "feature_slug": "multiple-network-interfaces-for-migrated-vms",
+  "summary": "Supports configuring multiple network interfaces on migrated virtual machines.",
+  "extended_definition": "Supports configuring multiple network interfaces on migrated virtual machines.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you add additional network interfaces, be aware of the following considerations: Attaching multiple network interfaces to the same VPC network is supported only if the additional network interfaces are attached to the same VPC network as the nic0 interface.",
+          "For more information, see Multiple network interfaces and Creating instances with multiple network interfaces .",
+          "For example, you can add additional licenses using this URL format: https://www.googleapis.com/compute/beta/projects/windows-sql-cloud/global/licenses/sql-server-2012-enterprise Sole tenancy Node affinity labels Compute Engine supports the deployment of migrated workloads to sole-tenant nodes ."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you add additional network interfaces, be aware of the following considerations: Attaching multiple network interfaces to the same VPC network is supported only if the additional network interfaces are attached to the same VPC network as the nic0 interface.",
+          "For more information, see Multiple network interfaces and Creating instances with multiple network interfaces .",
+          "For example, you can add additional licenses using this URL format: https://www.googleapis.com/compute/beta/projects/windows-sql-cloud/global/licenses/sql-server-2012-enterprise Sole tenancy Node affinity labels Compute Engine supports the deployment of migrated workloads to sole-tenant nodes ."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Creating instances with multiple network interfaces . machineImageTargetDefaults.osAdaptationParameters.generalize Set this flag to true if you want to generalize the machine image.",
+          "Before you add additional network interfaces, be aware of the following considerations: Attaching multiple network interfaces to the same VPC network is not supported.",
+          "Attempting to set an unsupported license type causes an error when you attempt to import the machine image. machineImageTargetDefaults.osAdaptationParameters.network interfaces Migrate to Virtual Machines lets you optionally create a machine images with multiple network interfaces (NICs)."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Creating instances with multiple network interfaces . machineImageTargetDefaults.osAdaptationParameters.generalize Set this flag to true if you want to generalize the machine image.",
+          "Before you add additional network interfaces, be aware of the following considerations: Attaching multiple network interfaces to the same VPC network is not supported.",
+          "Attempting to set an unsupported license type causes an error when you attempt to import the machine image. machineImageTargetDefaults.osAdaptationParameters.network interfaces Migrate to Virtual Machines lets you optionally create a machine images with multiple network interfaces (NICs)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Organization Policy dry run",
+  "feature_slug": "organization-policy-dry-run",
+  "summary": "Dry-run mode lets you test organization policies before they are enforced.",
+  "extended_definition": "Dry-run mode lets you test organization policies before they are enforced.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to make anotheradmin@gcp-test.com an Organization Administrator, change the previous example as follows: { \"bindings\" : [ { \"members\" : [ \"user:testuser1@gcp-test.com\" ], \"role\" : \"roles/editor\" }, { \"members\" : [ \"user:admin@gcp-test.com\" , \"user:anotheradmin@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.organizationAdmin\" }, { \"members\" : [ \"user:testuser20@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.projectCreator\" }, ], \"etag\" : \"BwU1aRxWk30=\" } Update the organization resource's allow policy by running the following command: gcloud alpha organizations set-iam-policy <var>ORGANIZATION ID</var> policy.json API Request: POST h tt ps : //cloudresourcemanager.googleapis.com/v3/organizations/12345:setIamPolicy { \"policy\" : { \"version\" : \"0\" , \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKHHiQ=\" } } Response: { \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKJUiQ=\" } The setIamPolicy() method lets you grant roles to users by attaching an allow policy to the organization resource.",
+          "In the Info Panel , under Permissions , click Expand a role and display all members who have that role. gcloud Get the allow policy for the organization resource using the get-iam-policy command: gcloud alpha organizations get-iam-policy <var>ORGANIZATION ID</var> --format json > <var>FILENAME.JSON</var> The command outputs the allow policy, which looks similar to the following: bindings : - members : - user:testuser1@gcp-test.com role : roles/editor - members : - user:admin@gcp-test.com role:roles/resourcemanager.organizationAdmin - members : - user:testuser2@gcp-test.com role : roles/resourcemanager.projectCreator etag\" : \"BwU1aRxWk30=\" API The following code snippet returns the allow policy for the organization resource https://cloudresourcemanager.googleapis.com/v3/organizations/12345 .",
+          "Click Add . gcloud To set an organization resource's allow policy using the gcloud command: Get the allow policy for the organization resource using the get-iam-policy command and output the policy to a JSON file: gcloud alpha organizations get-iam-policy <var>ORGANIZATION ID</var> --format json > <var>FILENAME.JSON</var> The contents of the JSON file looks similar to the following: { \"bindings\" : [ { \"members\" : [ \"user:testuser1@gcp-test.com\" ], \"role\" : \"roles/editor\" }, { \"members\" : [ \"user:admin@gcp-test.com\" , ], \"role\" : \"roles/resourcemanager.organizationAdmin\" }, { \"members\" : [ \"user:testuser2@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.projectCreator\" }, ], \"etag\" : \"BwU1aRxWk30=\" } Open the JSON file in a text editor."
+        ]
+      },
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file.",
+          "To enforce the organization policy in dry-run mode , run the following command with the dryRunSpec flag: gcloud org-policies set-policy POLICY PATH --update-mask = dryRunSpec Replace POLICY PATH with the full path to your organization policy YAML file."
+        ]
+      },
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on.",
+          "Test the policy Create a project with project ID sampleDemoProject in the organization: gcloud projects create sampleDemoProject \\ --organization = ORGANIZATION ID The output is the following: PERMISSION DENIED: The caller does not have permission Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy with the org-policies set-policy command and the spec flag: gcloud org-policies set-policy POLICY PATH --update-mask = spec Replace POLICY PATH with the full path to your organization policy YAML file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "cloudresourcemanager.googleapis.com",
+      "gmail.com",
+      "orgpolicy.policyAdmin",
+      "policy.json",
+      "resource.matchTag",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.projectCreator",
+      "test.com",
+      "variables.examples.principal"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/orgpolicy.policyAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    }
+  ]
+}

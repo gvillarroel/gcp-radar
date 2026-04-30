@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.313Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python",
+  "feature_name": "Session affinity",
+  "feature_slug": "session-affinity",
+  "summary": "App Engine flexible environment supports session affinity to keep related requests on the same instance.",
+  "extended_definition": "App Engine flexible environment supports session affinity to keep related requests on the same instance.",
+  "lifecycle": {
+    "latest_feature_date": "2019-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed",
+      "https://docs.cloud.google.com/appengine/docs/flexible/python/using-websockets-and-session-affinity"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating persistent connections with WebSockets \\_|\\_ App Engine flexible\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/python/using-websockets-and-session-affinity",
+        "source_id": "site-docs-reference-2",
+        "final_score": 116,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Clone the sample app Copy the sample apps to your local machine, and navigate to the websockets directory: git clone https://github.com/GoogleCloudPlatform/python-docs-samples cd python-docs-samples/appengine/flexible/websockets/ Run the sample locally To run locally, you need to use Gunicorn with the flask socket worker: $ gunicorn -b 127 .0.0.1:8080 -k flask sockets.worker main:app Deploy and run the sample on App Engine To deploy your application to the App Engine flexible environment, run the following command from the directory where your app.yaml is located: gcloud app deploy You can then direct your browser to https:// PROJECT ID .",
+          "To enable session affinity for your App Engine version, add the following entry to your app.yaml file: network: session affinity: true Once the version is deployed with the updated app.yaml, new requests will start serving from the same instance as long as that instance is available.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Creating persistent connections with WebSockets Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences.",
+          "Unsupported HTTP requests The following features are not supported by App Engine flexible environment: HTTP/2 traffic to the backend service.",
+          "When deploying to Google App Engine, a webserver process such as Gunicorn will serve the app. app . run ( host = \"127.0.0.1\" , port = 8080 , debug = True ) Quotas and limits App Engine automatically allocates resources to your application as traffic increases."
+        ]
+      },
+      {
+        "title": "\"How requests are routed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Inconsistent metrics when App Engine flexible environment uses Cloud Load Balancing The App Engine flexible environment dashboard displays all metrics only for requests routed through a flexible environment managed backend.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are routed Stay organized with collections Save and categorize content based on your preferences.",
+          "If you use App Engine flexible environment with Cloud Load Balancing, then certain metrics in the App Engine metrics table are reported as metrics from the loadbalancing table instead."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "github.com",
+      "sockets.worker"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/python/using-websockets-and-session-affinity",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-routed",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+      ]
+    }
+  ]
+}

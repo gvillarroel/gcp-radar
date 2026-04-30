@@ -1,0 +1,249 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.387Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "Dataflow job skip wait on termination directive",
+  "feature_slug": "dataflow-job-skip-wait-on-termination-directive",
+  "summary": "DataflowFlexTemplateJob and DataflowJob support the cnrm.cloud.google.com/skip-wait-on-job-termination directive to avoid waiting for job termination.",
+  "extended_definition": "DataflowFlexTemplateJob and DataflowJob support the cnrm.cloud.google.com/skip-wait-on-job-termination directive to avoid waiting for job termination.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DataflowFlexTemplateJob | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "source_id": "feature-recovery-http",
+        "final_score": 417,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Property Value Google Cloud Service Name Cloud Dataflow Google Cloud Service Documentation /dataflow/docs/ Google Cloud REST Resource Name v1b3.projects.jobs Google Cloud REST Resource Documentation /dataflow/docs/reference/rest/v1b3/projects.jobs Config Connector Resource Short Names gcpdataflowflextemplatejob gcpdataflowflextemplatejobs dataflowflextemplatejob Config Connector Service Name dataflow.googleapis.com Config Connector Resource Fully Qualified Name dataflowflextemplatejobs.dataflow.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/on-delete cnrm.cloud.google.com/project-id cnrm.cloud.google.com/skip-wait-on-job-termination Spec Schema additionalExperiments : - string autoscalingAlgorithm : string containerSpecGcsPath : string enableStreamingEngine : boolean ipConfiguration : string kmsKeyNameRef : external : string name : string namespace : string launcherMachineType : string machineType : string maxWorkers : integer networkRef : external : string name : string namespace : string numWorkers : integer parameters : {} region : string sdkContainerImage : string serviceAccountEmailRef : external : string name : string namespace : string stagingLocation : string subnetworkRef : external : string name : string namespace : string tempLocation : string transformNameMapping : {} Fields additionalExperiments Optional list (string) Additional experiment flags for the job. additionalExperiments[] Optional string autoscalingAlgorithm Optional string The algorithm to use for autoscaling containerSpecGcsPath Required string Cloud Storage path to a file with json serialized ContainerSpec as content. enableStreamingEngine Optional boolean Whether to enable Streaming Engine for the job. ipConfiguration Optional string Configuration for VM IPs. kmsKeyNameRef Optional object The Cloud KMS key for the job. kmsKeyNameRef.external Optional string A reference to an externally managed KMSCryptoKey.",
+          "Replace ${PROJECT_ID?} with your project ID. name : ${PROJECT_ID?}-dataflowflextemplatejob-dep-batch Streaming Dataflow Flex Template Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dataflow.cnrm.cloud.google.com/v1beta1 kind : DataflowFlexTemplateJob metadata : annotations : cnrm.cloud.google.com/on-delete : \"drain\" name : dataflowflextemplatejob-sample-streaming spec : region : us-central1 # This is a public, Google-maintained Dataflow Job flex template of a streaming job containerSpecGcsPath : gs://dataflow-templates/2020-08-31-00_RC00/flex/PubSub_Avro_to_BigQuery parameters : # This is a public, Google-maintained Avro schema file expressly for this sample. schemaPath : gs://config-connector-samples/dataflowflextemplate/numbers.avsc # Replace ${PROJECT_ID?} with your project ID. inputSubscription : projects/${PROJECT_ID?}/subscriptions/dataflowflextemplatejob-dep-streaming outputTopic : projects/${PROJECT_ID?}/topics/dataflowflextemplatejob-dep1-streaming outputTableSpec : ${PROJECT_ID?}:dataflowflextemplatejobdepstreaming.dataflowflextemplatejobdepstreaming createDisposition : CREATE_NEVER --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : dataflowflextemplatejobdepstreaming spec : location : us-central1 --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : dataflowflextemplatejobdepstreaming spec : datasetRef : name : dataflowflextemplatejobdepstreaming --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubSubscription metadata : name : dataflowflextemplatejob-dep-streaming spec : topicRef : name : dataflowflextemplatejob-dep0-streaming --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : dataflowflextemplatejob-dep0-streaming --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : dataflowflextemplatejob-dep1-streaming Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Sample YAML(s) Batch Dataflow Flex Template Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : dataflow.cnrm.cloud.google.com/v1beta1 kind : DataflowFlexTemplateJob metadata : annotations : cnrm.cloud.google.com/on-delete : \"cancel\" name : dataflowflextemplatejob-sample-batch spec : region : us-central1 # This is a public, Google-maintained Dataflow Job flex template of a batch job containerSpecGcsPath : gs://dataflow-templates/2022-10-03-00_RC00/flex/File_Format_Conversion parameters : inputFileFormat : csv outputFileFormat : avro # This is a public, Google-maintained csv file expressly for this sample. inputFileSpec : gs://config-connector-samples/dataflowflextemplate/numbertest.csv # Replace ${PROJECT_ID?} with your project ID. outputBucket : gs://${PROJECT_ID?}-dataflowflextemplatejob-dep-batch # This is a public, Google-maintained Avro schema file expressly for this sample. schema : gs://config-connector-samples/dataflowflextemplate/numbers.avsc --- apiVersion : storage.cnrm.cloud.google.com/v1beta1 kind : StorageBucket metadata : # StorageBucket names must be globally unique."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This skips populating unspecified fields into the Kubernetes resource spec: metadata : annotations : cnrm.cloud.google.com/state-into-spec : absent This annotation has a default value of merge if not specified, which means Config Connector populates all unspecified fields into spec.",
+          "To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : \"foo1\" foo2 : \"foo2\" bars : - br1 : \"1 br1\" br2 : \"1 br2\" - br1 : \"2 br1\" br2 : \"2 br2\" barz : bz1 : \"bz1\" bz2 : \"bz2\" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields.",
+          "Configure the cluster-level or namespace-level stateIntoSpec override When installing Config Connector, or updating the Config Connector installation, you can configure the cluster-level or namespace-level stateIntoSpec override to be Absent in the ConfigConnector CR or ConfigConnectorContext CR. spec : stateIntoSpec : Absent This makes Absent the default spec fields populating behavior for any new resources created in the cluster or in the namespace when you don't specify the cnrm.cloud.google.com/state-into-spec annotation in the new resource YAMLs."
+        ]
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pick a version from the list that meets the requirements . failed calling webhook Symptom You cannot uninstall Config Connector and receive an error similar to the following: error during reconciliation: error building deployment objects: error finalizing the deletion of Config Connector system components deployed by ConfigConnector controller: error waiting for CRDs to be deleted: error deleting CRD accesscontextmanageraccesslevels.accesscontextmanager.cnrm.cloud.google.com: Internal error occurred: failed calling webhook \"abandon-on-uninstall.cnrm.cloud.google.com\" : failed to call webhook: Post \"https://abandon-on-uninstall.cnrm-system.svc:443/abandon-on-uninstall?timeout=3s\" : service \"abandon-on-uninstall\" not found Cause This issue can occur when using the Config Connector add-on and disabling Config Connector before removing the Config Connector CRDs .",
+          "Resolution To resolve this error, you must first manually delete the webhooks: kubectl delete validatingwebhookconfiguration abandon-on-uninstall.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete validatingwebhookconfiguration validating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true kubectl delete mutatingwebhookconfiguration mutating-webhook.cnrm.cloud.google.com --ignore-not-found --wait = true You can then proceed to uninstall Config Connector.",
+          "For example, if you want to look for the initial delete requests for a BigQueryDataset resource named foo in namespace bar , you would run a query like the following: resource . type = \"k8s cluster\" resource . labels . project id = \"my-project-id\" resource . labels . cluster name = \"my-cluster-name\" protoPayload . methodName = \"com.google.cloud.cnrm.bigquery.v1beta1.bigquerydatasets.delete\" protoPayload . resourceName = \"bigquery.cnrm.cloud.google.com/v1beta1/namespaces/bar/bigquerydatasets/foo\" Using this query, you would look for the first delete request and then check authenticationInfo.principalEmail of that delete log message to determine the cause of the deletion."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanageraccesslevels.accesscontextmanager.cnrm.cloud.google.com",
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "com.google.cloud.cnrm.bigquery.v1beta1.bigquerydatasets.delete",
+      "dataflow.cnrm.cloud.google.com",
+      "dataflow.googleapis.com",
+      "dataflowflextemplatejobdepstreaming.dataflowflextemplatejobdepstreaming",
+      "dataflowflextemplatejobs.dataflow.cnrm.cloud.google.com",
+      "metadata.name",
+      "numbers.avsc",
+      "numbertest.csv",
+      "project.iam",
+      "projects.jobs",
+      "pubsub.cnrm.cloud.google.com",
+      "sql.cnrm.cloud.google.com",
+      "storage.cnrm.cloud.google.com",
+      "system.svc",
+      "test.example",
+      "uninstall.cnrm",
+      "uninstall.cnrm.cloud.google.com",
+      "v1b3.projects.jobs",
+      "webhook.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/dataflow/dataflowflextemplatejob",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+      ]
+    }
+  ]
+}

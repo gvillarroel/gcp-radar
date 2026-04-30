@@ -1,0 +1,153 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery data definition language",
+  "feature_slug": "bigquery-data-definition-language",
+  "summary": "BigQuery Data Definition Language supports SQL statements for defining and modifying schema objects; BigQuery supports data definition language statements.",
+  "extended_definition": "BigQuery Data Definition Language supports SQL statements for defining and modifying schema objects; BigQuery supports data definition language statements.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SCHEMATA view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "source_id": "site-docs-reference-3",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to get the SCHEMATA view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Before you begin To query the SCHEMATA view for dataset metadata, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "SCHEMATA_LINKS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "source_id": "site-docs-reference-3",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to query the INFORMATION SCHEMA.SCHEMATA LINKS view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Required permission To query the INFORMATION SCHEMA.SCHEMATA LINKS view, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "SCHEMATA_OPTIONS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options",
+        "source_id": "site-docs-reference-3",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to get the SCHEMATA OPTIONS view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Before you begin To query the SCHEMATA OPTIONS view for dataset metadata, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.get",
+      "bigquery.dataViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-options"
+      ]
+    }
+  ]
+}

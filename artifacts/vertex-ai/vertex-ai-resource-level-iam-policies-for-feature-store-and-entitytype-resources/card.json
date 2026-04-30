@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI resource-level IAM policies for Feature Store and EntityType resources",
+  "feature_slug": "vertex-ai-resource-level-iam-policies-for-feature-store-and-entitytype-resources",
+  "summary": "Vertex AI now supports applying IAM policies at the individual Feature Store and EntityType resource level.",
+  "extended_definition": "Vertex AI now supports applying IAM policies at the individual Feature Store and EntityType resource level.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control access to Vertex AI Feature Store (Legacy) resources \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "source_id": "site-docs-reference-3",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can set resource-level Identity and Access Management (IAM) policies on the following Vertex AI Feature Store (Legacy) resources: Featurestore : When you set an Identity and Access Management policy on a featurestore, the policy applies to the featurestore and all entity types created in that featurestore.",
+          "You can control access to Vertex AI Feature Store (Legacy) resources by setting IAM policies at different levels of the resource hierarchy .",
+          "Home Documentation AI and ML Vertex AI Send feedback Control access to Vertex AI Feature Store (Legacy) resources Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const minNodeCount = <MINIMUM NO OF NODES>; // const maxNodeCount = <MAXIMUM NO OF NODES>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function updateFeaturestore () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const featurestore = { name : parent , onlineServingConfig : { scaling : { minNodeCount : minNodeCount , maxNodeCount : maxNodeCount , }, }, }; const request = { featurestore : featurestore , }; // Update Featurestore request const [ operation ] = await featurestoreServiceClient . updateFeaturestore ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Update featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } updateFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function getFeaturestore () { // Configure the parent resource const name = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const request = { name : name , }; // Get Featurestore request const [ response ] = await featurestoreServiceClient . getFeaturestore ( request , { timeout : Number ( timeout )} ); console . log ( 'Get featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } getFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function listFeaturestores () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } ; const request = { parent : parent , }; // List featurestores request const [ response ] = await featurestoreServiceClient . listFeaturestores ( request , { timeout : Number ( timeout )} ); console . log ( 'List featurestores response' ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } listFeaturestores (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python ."
+        ]
+      },
+      {
+        "title": "Introduction to Vertex AI Feature Store (Legacy) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quotas and limits Vertex AI Feature Store (Legacy) enforces quotas and limits to help you manage resources by setting your own usage limits and to protect the community of Google Cloud users by preventing unforeseen spikes in usage.",
+          "Vertex AI Feature Store (Legacy) is a fully managed solution, which manages and scales the underlying infrastructure such as storage and compute resources.",
+          "What's next Learn about the Vertex AI Feature Store (Legacy) data model and its resources ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/overview"
+      ]
+    }
+  ]
+}

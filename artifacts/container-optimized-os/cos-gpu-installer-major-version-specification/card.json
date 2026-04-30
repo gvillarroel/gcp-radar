@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:53.733Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "cos-gpu-installer major version specification",
+  "feature_slug": "cos-gpu-installer-major-version-specification",
+  "summary": "Cos-gpu-installer supports selecting the major version of the GPU driver to install; cos-gpu-installer supports selecting the major version of the GPU driver to install.",
+  "extended_definition": "Cos-gpu-installer supports selecting the major version of the GPU driver to install; cos-gpu-installer supports selecting the major version of the GPU driver to install.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Versioning scheme \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Choosing the right Container-Optimized OS version On Compute Engine, the image families for Container-Optimized OS can guide you in selecting the correct image for your intended purpose.",
+          "A tiered testing setup like this should help to minimize issues when rolling out newer major versions of Container-Optimized OS images to your production environment.",
+          "Milestones and Build Numbers Major versions of Container-Optimized OS images are identified using what we call milestones ."
+        ]
+      },
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "For a complete list of supported versions, see the release notes of the major Container-Optimized OS LTS milestones.",
+          "Be aware that this might introduce compatibility changes due to potential major version updates across COS releases.",
+          "You may also check all the GPU driver versions supported by the GPU on your Container-Optimized OS VM instance by running the following command: sudo cos-extensions list Identify the required CUDA toolkit version If your applications use CUDA , install NVIDIA's CUDA toolkit in your containers."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "If any of the CIS Level 1 or Level 2 scans fail, the textproto file will contain the list of all failing checks, such as in the following example: cat /var/lib/google/cis scanner scan result.textproto Output start time: { seconds: 1648241700 nanos: 763152171 } end time: { seconds: 1648241700 nanos: 812992527 } scanner version: \"1.1.4.3\" benchmark version: \"1.0.0\" status: { status: SUCCEEDED } non compliant benchmarks: { id: \"etc-passwd-permissions\" compliance occurrence: { non compliant files: { path: \"/etc/passwd\" reason: \"File permission is 0664, expected the following bits to be set: 0444 and the following bits to be clear: 0133\" } } } compliant benchmarks: { id: \"etc-passwd-permissions\" compliance occurrence: {} } To mitigate the failed checks, use the CIS Benchmark and follow the steps in the Remediation section for the failing check to make the instance compliant.",
+          "The systemd service supports all of the CIS Level 2 recommendations except for the following: 4.1.1.2 Ensure Logging is running (ID: logging-service-running) This recommendation is opted-out by default but can be re-enabled by deleting the ID from the opted-out list which can be found in the /etc/cis-scanner/env vars file.",
+          "Level 1 Recommendations at this level are meant to be applicable to the majority of environments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "result.textproto"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance"
+      ]
+    }
+  ]
+}

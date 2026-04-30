@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Event-driven Cloud Storage to BigQuery transfers",
+  "feature_slug": "event-driven-cloud-storage-to-bigquery-transfers",
+  "summary": "Transfers from Cloud Storage to BigQuery can run automatically when data is added or modified in a bucket.",
+  "extended_definition": "Transfers from Cloud Storage to BigQuery can run automatically when data is added or modified in a bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Cloud Storage data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can set up an Event driven transfer to automatically schedule data transfers at lower intervals.",
+          "Value ; import java.io.IOException ; import java.util.HashMap ; import java.util.Map ; // Sample to create google cloud storage transfer config public class CreateCloudStorageTransfer { public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample. final String projectId = \"MY PROJECT ID\" ; String datasetId = \"MY DATASET ID\" ; String tableId = \"MY TABLE ID\" ; // GCS Uri String sourceUri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" ; String fileFormat = \"CSV\" ; String fieldDelimiter = \",\" ; String skipLeadingRows = \"1\" ; Map<String , Value > params = new HashMap <> (); params . put ( \"destination table name template\" , Value . newBuilder (). setStringValue ( tableId ). build ()); params . put ( \"data path template\" , Value . newBuilder (). setStringValue ( sourceUri ). build ()); params . put ( \"write disposition\" , Value . newBuilder (). setStringValue ( \"APPEND\" ). build ()); params . put ( \"file format\" , Value . newBuilder (). setStringValue ( fileFormat ). build ()); params . put ( \"field delimiter\" , Value . newBuilder (). setStringValue ( fieldDelimiter ). build ()); params . put ( \"skip leading rows\" , Value . newBuilder (). setStringValue ( skipLeadingRows ). build ()); TransferConfig transferConfig = TransferConfig . newBuilder () . setDestinationDatasetId ( datasetId ) . setDisplayName ( \"Your Google Cloud Storage Config Name\" ) . setDataSourceId ( \"google cloud storage\" ) . setParams ( Struct . newBuilder (). putAllFields ( params ). build ()) . setSchedule ( \"every 24 hours\" ) . build (); createCloudStorageTransfer ( projectId , transferConfig ); } public static void createCloudStorageTransfer ( String projectId , TransferConfig transferConfig ) throws IOException { try ( DataTransferServiceClient client = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = client . createTransferConfig ( request ); System . out . println ( \"Cloud storage transfer created successfully :\" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( \"Cloud storage transfer was not created.\" + ex . toString ()); } } } Specify encryption key with transfers You can specify customer-managed encryption keys (CMEKs) to encrypt data for a transfer run.",
+          "Limitations Recurring data transfers from Cloud Storage to BigQuery are subject to the following limitations: All files matching the patterns defined by either a wildcard or by runtime parameters for your data transfer must share the same schema you defined for the destination table, or the transfer will fail."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Blob Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data source Parameterized URI or data path Parameterized destination table name Evaluated URI or data path Evaluated destination table name Cloud Storage gs://bucket/events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } gs://bucket/events-20180215/ .csv mytable$20180215 Amazon S3 s3://bucket/events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } s3://bucket/events-20180215/ .csv mytable$20180215 Blob Storage events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } events-20180215/ .csv mytable$20180215 What's next Learn more about setting up an Azure Blob Storage transfer .",
+          "Data source Source URI or data path Parameterized destination table name Evaluated destination table name Cloud Storage gs://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Amazon S3 s3://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Blob Storage .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 This use case transfers today's data into a table partitioned on today's date.",
+          "Runtime parameters in Blob Storage transfers When you set up a data transfer in Cloud Storage, Azure Blob Storage, or Amazon Simple Storage Service (Amazon S3), you can parameterize the URI (or data path) and the destination table."
+        ]
+      },
+      {
+        "title": "\"Runtime parameters in Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data source Parameterized URI or data path Parameterized destination table name Evaluated URI or data path Evaluated destination table name Cloud Storage gs://bucket/events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } gs://bucket/events-20180215/ .csv mytable$20180215 Amazon S3 s3://bucket/events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } s3://bucket/events-20180215/ .csv mytable$20180215 Blob Storage events-{ run time \"%Y%m%d\" }/ .csv mytable${ run time \"%Y%m%d\" } events-20180215/ .csv mytable$20180215 What's next Learn about setting up a Cloud Storage transfer .",
+          "Data source Source URI or data path Parameterized destination table name Evaluated destination table name Cloud Storage gs://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Amazon S3 s3://bucket/ .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 Blob Storage .csv mytable${ run time \"%Y%m%d\" } mytable$20180215 This use case transfers today's data into a table partitioned on today's date.",
+          "Runtime parameters in Cloud Storage transfers When you set up a data transfer in Cloud Storage, Azure Blob Storage, or Amazon Simple Storage Service (Amazon S3), you can parameterize the URI (or data path) and the destination table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "java.io.IOException",
+      "java.util.HashMap",
+      "java.util.Map",
+      "states.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer-parameters",
+        "https://docs.cloud.google.com/bigquery/docs/gcs-transfer-parameters"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.633Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud",
+  "feature_name": "SAPHanaSR-angi support for SAP HANA high-availability clusters",
+  "feature_slug": "saphanasr-angi-support-for-sap-hana-high-availability-clusters",
+  "summary": "SAP HANA high-availability clusters on SLES 15 SP6 for SAP and later can use the SAPHanaSR-angi package, with automatic installation and configuration in the latest Terraform module.",
+  "extended_definition": "SAP HANA high-availability clusters on SLES 15 SP6 for SAP and later can use the SAPHanaSR-angi package, with automatic installation and configuration in the latest Terraform module.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"HA scale-up cluster configuration guide for SAP HANA on SLES \\_|\\_ SAP on\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Getting support for SAP HANA on SLES If you need help resolving a problem with high-availability clusters for SAP HANA on SLES, gather the required diagnostic information and contact Cloud Customer Care.",
+          "SLES for SAP 15 SP5 or earlier Cluster Summary: Stack: corosync Current DC: hana-ha-vm-1 (version 2.0.4+20200616.2deceaa3a-3.15.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Fri Oct 7 21:52:46 2022 Last change: Fri Oct 7 21:51:42 2022 by root via crm attribute on hana-ha-vm-1 2 nodes configured 10 resource instances configured Node List: Online: [ hana-ha-vm-1 hana-ha-vm-2 ] Active Resources: STONITH-hana-ha-vm-1 (stonith:fence gce): Started hana-ha-vm-2 STONITH-hana-ha-vm-2 (stonith:fence gce): Started hana-ha-vm-1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started hana-ha-vm-1 rsc vip hc-primary (ocf::heartbeat:anything): Started hana-ha-vm-1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ hana-ha-vm-1 hana-ha-vm-2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ hana-ha-vm-1 ] Slaves: [ hana-ha-vm-2 ] Resource Group: g-secondary: rsc vip int-secondary (ocf::heartbeat:IPaddr2): Started hana-ha-vm-2 rsc healthcheck-secondary (ocf::heartbeat:anything): Started hana-ha-vm-2 SLES for SAP 15 SP6 or later Cluster Summary: Stack: corosync Current DC: hana-ha-vm-1 (version 2.1.7+20231219.0f7f88312-150600.6.3.1-2.1.7+20231219.0f7f88312) - partition with quorum Last updated: Tue Oct 15 05:46:18 2024 Last change: Tue Oct 15 05:46:18 2024 by root via via crm attribute on hana-ha-vm-1 2 nodes configured 10 resource instances configured Node List: Online: [ hana-ha-vm-1 hana-ha-vm-2 ] Active Resources: STONITH-hana-ha-vm-1 (stonith:fence gce): Started hana-ha-vm-2 STONITH-hana-ha-vm-2 (stonith:fence gce): Started hana-ha-vm-1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started hana-ha-vm-1 rsc vip hc-primary (ocf::heartbeat:anything): Started hana-ha-vm-1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ hana-ha-vm-1 hana-ha-vm-2 ] Clone Set: cln SAPHanaFileSystem HA1 HDB00 [rsc SAPHanaFileSystem HA1 HDB00]: Started: [ hana-ha-vm-1 hana-ha-vm-2 ] Clone Set: mst SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ hana-ha-vm-1 ] Slaves: [ hana-ha-vm-2 ] Resource Group: g-secondary: rsc vip int-secondary (ocf::heartbeat:IPaddr2): Started hana-ha-vm-2 rsc healthcheck-secondary (ocf::heartbeat:anything): Started hana-ha-vm-2 Evaluate your SAP HANA workload To automate continuous validation checks for your SAP HANA high-availability workloads running on Google Cloud, you can use Workload Manager .",
+          "On both the primary and secondary site, complete the following steps: As SID LC adm , stop SAP HANA: HDB stop As root or SID LC adm , open the global.ini file for editing: vi /hana/shared/ SID /global/hdb/custom/config/global.ini Add the following definitions to the global.ini file: SLES for SAP 15 SP5 or earlier [ha dr provider SAPHanaSR] provider = SAPHanaSR path = /usr/share/SAPHanaSR/ execution order = 1 [ha dr provider suschksrv] provider = susChkSrv path = /usr/share/SAPHanaSR/ execution order = 3 action on lost = stop [trace] ha dr saphanasr = info SLES for SAP 15 SP6 or later [ha dr provider susHanaSR] provider = susHanaSR path = /usr/share/SAPHanaSR-angi execution order = 1 [ha dr provider suschksrv] provider = susChkSrv path = /usr/share/SAPHanaSR-angi execution order = 3 action on lost = stop [ha dr provider susTkOver] provider = susTkOver path = /usr/share/SAPHanaSR-angi execution order = 2 sustkover timeout = 30 [trace] ha dr sushanasr = info ha dr suschksrv = info ha dr sustkover = info The action on lost parameter defines the action that the hook must take when it identifies a lost indexserver ."
+        ]
+      },
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Create to create your firewall rule. gcloud Create a firewall rule by using the following command: $ gcloud compute firewall-rules create FIREWALL NAME --direction=INGRESS --priority=1000 \\ --network= NETWORK NAME --action=ALLOW --rules= PROTOCOL : PORT \\ --source-ranges IP RANGE --target-tags= NETWORK TAGS Creating a high-availability Linux cluster with SAP HANA installed The following instructions use the Cloud Deployment Manager to create a RHEL or SLES cluster with two SAP HANA systems: a primary single-host SAP HANA system on one VM instance and a standby SAP HANA system on another VM instance in the same Compute Engine region.",
+          "A virtual IP (VIP) that uses a level 4 TCP internal load balancer implementation, including: A reservation of the IP address that you select for the VIP Two Compute Engine instance groups A TCP internal load balancer A Compute Engine health check In RHEL HA clusters: The Red Hat high-availability pattern The Red Hat resource agent and fencing packages In SLES HA clusters: The SUSE high-availability pattern.",
+          "This guide shows you how to automate the deployment of SAP HANA in a Red Hat Enterprise Linux (RHEL) or SUSE Linux Enterprise Server (SLES) high-availability (HA) cluster that uses an internal passthrough Network Load Balancer to manage the virtual IP (VIP) address."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP Business Suite on SAP HANA on Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "In both cases, you start by setting up two Compute Engine compute instances in separate zones for maximum redundancy, each with its own SAP HANA database. on SAP HANA The following diagram shows an SAP Business Suite on SAP HANA architecture that uses a Linux cluster to achieve high availability on both the application and the SAP HANA database side: The following diagrams show an SAP HANA database that is highly available during both normal operation and a takeover operation: Normal operation: Takeover operation: To combine both high availability and disaster recovery for the database, you can use SAP HANA System Replication.",
+          "Single points of failure An SAP Business Suite system on SAP HANA, has some common single points of failure that can impact the availability of the system: SAP Central Services such as Message Server and Enqueue Server SAP Application Server SAP HANA database SAP Web Dispatcher, if used as a frontend for HTTP/HTTPS access to the system Shared storage such as NFS There are multiple options for reducing the impact of such single points of failure, and these options involve deploying the system using high-availability solutions, replication services, or using other functionalities that protect the system from failures.",
+          "You can update your existing clusters from ENSA1 to ENSA2 by completing the steps described in the following SAP Notes: 2641322 - Installation of ENSA2 and update from ENSA1 to ENSA2 when using the Red Hat HA solutions for SAP 2641019 - Installation of ENSA2 and update from ENSA1 to ENSA2 in SUSE HA environment The following diagram shows an SAP Business Suite system using a Pacemaker cluster to limit the single points of failure from both the Message Server and the Enqueue Server: Details about the deployment of the high availability system and Linux clustering across zones are covered later in this document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "corosync.conf",
+      "corosync.log",
+      "global.ini"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-business-suite-on-hana"
+      ]
+    }
+  ]
+}

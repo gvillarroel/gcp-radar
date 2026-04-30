@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.087Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Project folder resource support",
+  "feature_slug": "project-folder-resource-support",
+  "summary": "Deployment Manager supports creating and acquiring project folders through the gcp-types/cloudresourcemanager-v2:folders type provider.",
+  "extended_definition": "Deployment Manager supports creating and acquiring project folders through the gcp-types/cloudresourcemanager-v2:folders type provider.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration",
+      "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quickstart: Manage Google Cloud resources as a deployment | Cloud Deployment Manager | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Cloud Deployment Manager Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console Cloud Deployment Manager Product overview Getting started Deprecation Cloud Deployment Manager deprecation Composite types deprecation How-to guides All how-to guides Walkthrough: explore best practices Overview Installation and setup Understanding configurations Deploying your resources Understanding references Understanding reusable templates Using multiple templates Understanding template properties and using environment variables Exploring helper scripts Updating deployments Building a configuration Configurations overview Creating a basic configuration Previewing a configuration Setting access control in a configuration Creating reusable templates Creating a basic template Defining template properties Using deployment-specific environment variables Creating helper scripts Importing Python libraries Adding a template as a composite type Describing, listing, and deleting types Defining schemas for templates Storing templates on an external host Migrating templates to Python 3 Using references Exposing information using outputs Creating explicit dependencies Creating deployments Creating a deployment using gcloud or the API Creating deployments with Google Cloud Marketplace Updating a deployment Adding labels to a deployment Deleting a deployment Viewing a manifest Sharing resources across projects Using images from other projects Sharing types across projects (Advanced) Adding a new API as a type provider One-page guide to integrating with deployment manager API requirements for integrating an API Adding an API as a type provider Setting advanced API options Using a type provider in a configuration Best practices for adding a type provider Storing and retrieving data at runtime Creating and deleting runtimeconfig resources Setting and getting data Deleting a variable Watching a variable for changes Creating a waiter Migration guides Replacing usage of Actions Replacing the setIamPolicy Action with a supported resource type Creating custom type providers with custom backends Converting composite types to supported templates Using DM Convert to transition to Terraform or KRM Using DM Convert to transition to Terraform or Kubernetes Resource Model (KRM) Converting your Deployment Manager configurations with DM Convert Troubleshooting DM Convert Best practices for using DM Convert Concepts All concepts Deployment Manager fundamentals Deployment Manager audit logging Access control with IAM Best practices for using Deployment Manager Overview of Runtime Configurator Runtime Configurator fundamentals Access control options for Runtime Configurator Tutorials All tutorials Create a network load-balanced logbook application (Python) Create a HTTP load-balanced logbook application Create a container-optimized deployment Structure Deployment Manager for use at scale Deploy an SAP HANA cluster using Deployment Manager Solutions that use Deployment Manager AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Cloud Deployment Manager will reach end of support on March 31, 2026 .",
+          "Check on your new deployment To check the status of the deployment, run the following command: gcloud deployment-manager deployments describe quickstart-deployment You see a description of the deployment, including its start and end time, the resources created, and any warnings or errors: fingerprint: xmVVeTtPq-5rr8F-vWFlrg == id: '54660732508021769' insertTime: '2016-03-09T04:45:26.032-08:00' manifest: https://www.googleapis.com/deploymentmanager/v2/projects/myproject/global/deployments/my-first-deployment/manifests/manifest-1457527526037 name: quickstart-deployment operation: endTime: '2016-03-09T04:46:19.480-08:00' id: '8993923014899639305' kind: deploymentmanager#operation name: operation-1457527525951-52d9d126f4618-f1ca6e72-3404bd3b operationType: insert progress: 100 startTime: '2016-03-09T04:45:27.275-08:00' status: DONE ... resources: NAME TYPE STATE ERRORS quickstart-deployment-vm compute.v1.instance COMPLETED - Review your resources After you have created the deployment, you can review your resources in Google Cloud console.",
+          "For a list # of properties, see the API reference for the resource. zone : us-central1-f # Replace [MY_PROJECT] with your project ID machineType : https://www.googleapis.com/compute/v1/projects/[MY_PROJECT]/zones/us-central1-f/machineTypes/f1-micro disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : # See a full list of image families at https://cloud.google.com/compute/docs/images#os-compute-support # The format of the sourceImage URL is: https://www.googleapis.com/compute/v1/projects/[IMAGE_PROJECT]/global/images/family/[FAMILY_NAME] sourceImage : https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-11 # Replace [MY_PROJECT] with your project ID networkInterfaces : - network : https://www.googleapis.com/compute/v1/projects/[MY_PROJECT]/global/networks/default # Access Config required to give the instance a public IP address accessConfigs : - name : External NAT type : ONE_TO_ONE_NAT This basic configuration file describes a deployment that contains one virtual machine instance with the following properties: Machine type: f1-micro Image family: debian-11 Zone: us-central1-f Root persistent disk: boot A randomly assigned external IP address Replace all instances of [MY_PROJECT] with your project ID."
+        ]
+      },
+      {
+        "title": "\"Adding a template as a composite type \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "source_id": "site-docs-root-2",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the composite field, define: The top-level schema The contents of your imported templates The contents of your top-level template The API request body has the following structure: POST https : // www . googleapis . com / deploymentmanager / v2beta / projects /[ PROJECT ID ]/ global / compositeTypes { \"composite\" : { \"files\" : { \"schema\" : \"[CONTENTS OF SCHEMA]\" , \"imports\" : [ { \"name\": \"[TEMPLATE FILE ] \", \" content \": \" [ CONTENTS OF TEMPLATE FILE ] \" }, { \" name \": \" [ ANOTHER TEMPLATE IF NECESSARY ] \", \" content \": \" [ CONTENTS OF TEMPLATES ] \" } ], \" template \": \" [ TOP-LEVEL TEMPLATE CONTENTS ] \", \" templateFileType \": \" [ FILE TYPE ] \" } }, \" name \": \" [ TYPE NAME ] \" } For an example on how to construct these requests, see Creating an autoscaled managed instance group composite type .",
+          "Replace [PROJECT ID] with your project ID: resources : - name : ha - service - example type : [ PROJECT ID ]/ composite : ha - service - example properties : dockerImage : gcr . io / deployment - manager - examples / nodejsservicestatic zones : - us - central1 - b - us - central1 - a Save the configuration as example-config.yaml .",
+          "For example, the following command deploys a composite type called autoscaled-igm : gcloud deployment - manager deployments create my - igm \\ -- composite - type example - project / composite : autoscaled - igm You can also set properties of your composite type using the --properties flag: gcloud deployment - manager deployments create my - igm \\ -- composite - type example - project / composite : autoscaled - igm \\ -- properties zone : us - central1 - a Keep in mind that: All values are parsed as YAML values."
+        ]
+      },
+      {
+        "title": "\"Creating a Basic Configuration \\_|\\_ Cloud Deployment Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. resources : - name : vm-created-by-deployment-manager type : compute.v1.instance properties : zone : us-central1-a machineType : zones/us-central1-a/machineTypes/n1-standard-1 disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : sourceImage : projects/debian-cloud/global/images/family/debian-11 networkInterfaces : - network : global/networks/default - name : big-query-dataset type : bigquery.v2.dataset properties : datasetReference : datasetId : example id Supported resource types and properties See the full list of supported Google-managed resources in the Supported Resource Types documentation.",
+          "See the License for the specific language governing permissions and limitations under the License. resources : - name : vm-created-by-deployment-manager type : compute.v1.instance properties : zone : us-central1-a machineType : zones/us-central1-a/machineTypes/n1-standard-1 disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : sourceImage : projects/debian-cloud/global/images/family/debian-11 networkInterfaces : - network : global/networks/default To determine the properties of a resource, you use the API documentation for the resource: See the request format in the insert or create method for the resource.",
+          "For example, if you are creating a Compute Engine instance using the API, you must provide an array of disks to attach to the instance, in the following format: \"disks\" : [ { \"type\" : \"PERSISTENT\" , \"deviceName\" : \"disk1\" , ... }, { \"type\" : \"PERSISTENT\" , \"deviceName\" : \"disk2\" , ... } ] In your Deployment Manager configuration, you add these disks using the following syntax: disks : - deviceName : disk1 type : PERSISTENT ... - deviceName : disk2 type : PERSISTENT You can also provide any writable property of that resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.v2.dataset",
+      "compute.v1.instance",
+      "config.yaml",
+      "vm.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/manage-cloud-resources-deployment",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/composite-types/creating-composite-types",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/create-basic-configuration"
+      ]
+    }
+  ]
+}

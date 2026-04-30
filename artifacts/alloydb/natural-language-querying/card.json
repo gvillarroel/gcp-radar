@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:40.710Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Natural language querying",
+  "feature_slug": "natural-language-querying",
+  "summary": "AlloyDB Omni can query databases by using natural language.",
+  "extended_definition": "AlloyDB Omni can query databases by using natural language.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+      "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate SQL queries using natural language questions \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To use natural language to get results from your database using the alloydb ai nl.get sql function, use the following example: SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ); The following JSON output is returned: { \"sql\": \"SELECT T3.balance FROM public.client AS T1 INNER JOIN public.account AS T2 ON T1.district id = T2.district id INNER JOIN public.trans AS T3 ON T2.account id = T3.account id WHERE T1.client id = 4 AND T3.trans id = 851\", \"prompt\": \"\", \"retries\": 0, \"error msg\": \"\", \"nl question\": \"What is the sum that client number 4's account has following transaction 851?\" } Optional: To extract the generated SQL query as a text string, add ->>'sql' : SELECT alloydb ai nl . get sql ( 'my app config' , -- nl config 'What is the sum that client number 4''s account has following transaction 851?' -- nl question ) - >> 'sql' ; The ->> operator is used to extract a JSON value as text.",
+          "To associate a column with a concept type, run the following query: SELECT alloydb ai nl . associate concept type ( column names in = > 'my schema.country.country name' , concept type in = > 'country name' , nl config id in = > 'my app config' ); To create a value index based on all the columns that are part of a natural language config and are associated with a concept type, run the following statement: SELECT alloydb ai nl . create value index ( nl config id in = > 'my app config' ); When you associate concept types to new columns, refresh the value index to reflect the changes.",
+          "To add general context for application-specific rules and application or domain-specific terminology, follow these steps: To add a general context item for the specified configuration, run the following query: SELECT alloydb ai nl . g manage configuration ( 'add general context' , 'my app config' , general context in = > '{\"If the user asks for a good seat, assume that means a window or aisle seat.\"}' ); The preceding statement helps AlloyDB AI natural language provide higher quality responses to users' natural language questions."
+        ]
+      },
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Gemini Data Analytics Source and Gemini Data Analytics QueryData Tool. kind : source name : gda-api-source type : cloud-gemini-data-analytics projectId : \" PROJECT ID \" --- kind : tool name : cloud gda query tool type : cloud-gemini-data-analytics-query source : gda-api-source description : Use this tool to send natural language queries to the Gemini Data Analytics API and receive SQL, natural language answers, and explanations. location : \" REGION ID \" context : datasourceReferences : alloydb : databaseReference : projectId : \" PROJECT ID \" region : \" REGION ID \" clusterId : \" CLUSTER ID \" instanceId : \" INSTANCE ID \" databaseId : \" DATABASE ID \" agentContextReference : contextSetId : \" CONTEXT SET ID \" generationOptions : generateQueryResult : true generateNaturalLanguageAnswer : true generateExplanation : true generateDisambiguationQuestion : true Replace the following: PROJECT ID : Your Google Cloud project ID.",
+          "To generate template context, perform the following steps: Run the /generate targeted templates command and follow the workflow: /generate targeted templates Provide the natural language query that you want to add to the query template in the terminal.",
+          "You can use this response to observe the tool responses such as generated SQL query, result set, intent explanation, disambiguation question, and natural language answer, to help you confirm the correctness of your agent's responses."
+        ]
+      },
+      {
+        "title": "Test QueryData \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A3 contains the data of region.\" , \"context\" : { \"datasource references\" : [ { \"alloydb\" : { \"database reference\" : { \"project id\" : \"context-set-project\" , \"region\" : \"us-central1\" , \"cluster id\" : \"sqlgen-magic\" , \"instance id\" : \"context-set-primary\" , \"database id\" : \"financial\" }, \"agent context reference\" : { \"context set id\" : \"projects/context-set-project/locations/us-east1/contextSets/bdf pg all templates\" } } } ] }, \"generation options\" : { \"generate query result\" : true , \"generate natural language answer\" : true , \"generate disambiguation question\" : true , \"generate explanation\" : true } } The request body contains the following fields: prompt : The natural language question from the end user. context : Contains information about the data sources. datasource references : Specifies the data source type. alloydb : Required when querying the database.",
+          "This field changes based on the database you are querying. database reference : Specifies information related to your database instance. cluster id : The cluster ID of the database instance. project id : The project ID of the database instance. region : The region of the AlloyDB instance. instance id : The instance ID of the AlloyDB instance. database id : The ID of the database. agent context reference : Links to authored context in the database. context set id : The complete context set ID of the context stored in the database.",
+          "I will join these two tables on their respective district IDs.\" , \"query result\" : { \"columns\" : [ { \"name\" : \"count\" } ], \"rows\" : [ { \"values\" : [ { \"value\" : \"2\" } ] } ], \"total row count\" : 1 }, \"natural language answer\" : \"There are 2 accounts in Prague that are eligible for loans.\" } What's next Learn more about context sets ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "nl.get",
+      "public.account",
+      "public.client",
+      "public.trans",
+      "schema.country.country"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/inspect-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language"
+      ]
+    }
+  ]
+}

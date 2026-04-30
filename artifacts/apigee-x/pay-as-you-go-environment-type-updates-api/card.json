@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Pay-as-you-go environment type updates API",
+  "feature_slug": "pay-as-you-go-environment-type-updates-api",
+  "summary": "Apigee APIs can upgrade or downgrade the type of an existing Pay-as-you-go environment.",
+  "extended_definition": "Apigee APIs can upgrade or downgrade the type of an existing Pay-as-you-go environment.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create and deploy a Vector Search index To create and deploy a Vector Search index: Create a Vector Search index that allows streaming updates: ACCESS TOKEN = $( gcloud auth print-access-token ) && curl --location --request POST \\ \"https:// $REGION -aiplatform.googleapis.com/v1/projects/ $PROJECT ID /locations/ $REGION /indexes\" \\ --header \"Authorization: Bearer $ACCESS TOKEN \" \\ --header 'Content-Type: application/json' \\ --data-raw \\ '{ \"displayName\": \"semantic-cache-index\", \"description\": \"semantic-cache-index\", \"metadata\": { \"config\": { \"dimensions\": \"768\", \"approximateNeighborsCount\": 150, \"distanceMeasureType\": \"DOT PRODUCT DISTANCE\", \"featureNormType\": \"NONE\", \"algorithmConfig\": { \"treeAhConfig\": { \"leafNodeEmbeddingCount\": \"10000\", \"fractionLeafNodesToSearch\": 0.05 } }, \"shardSize\": \"SHARD SIZE MEDIUM\" }, }, \"indexUpdateMethod\": \"STREAM UPDATE\" }' The $REGION defines the region where the Vector Search index deploys.",
+          "When this operation completes, you should see a response similar to the following: { \"name\" : \"projects/976063410430/locations/us-west1/indexes/5695338290484346880/operations/9084564741162008576\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.aiplatform.v1.CreateIndexOperationMetadata\" , \"genericMetadata\" : { \"createTime\" : \"2025-04-25T18:45:27.996136Z\" , \"updateTime\" : \"2025-04-25T18:45:27.996136Z\" } } } For more information on creating Vector Search indexes, see Create an index .",
+          "To confirm that the environment variables are set correctly, run the following command and review the output: echo $PROJECT ID $REGION $RUNTIME HOSTNAME Set the project Set the Google Cloud project in your development environment: gcloud auth login gcloud config set project $PROJECT ID Overview The semantic caching policies help Apigee users with LLM models to intelligently serve identical or semantically similar prompts efficiently, minimizing backend API calls and reducing resource consumption."
+        ]
+      },
+      {
+        "title": "Understanding APIs and API proxies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In an API proxy configuration, there are two types of endpoints: ProxyEndpoint: Defines the way client apps consume your APIs.",
+          "Home Documentation Application development Apigee Guides Send feedback Understanding APIs and API proxies Stay organized with collections Save and categorize content based on your preferences.",
+          "By defining stable, simplified entry points to application logic and data, APIs enable developers to easily access and reuse application logic built by other developers."
+        ]
+      },
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This page applies to Apigee and Apigee hybrid . orgs path.developers.apps.keys.create API % endsetvar % --> orgs path.environments.analytics.reports.dailysupp API % endsetvar % --> orgs path.environments analytics reports dailysummary d1 results API % endsetvar % --> This page describes how to automatically register APIs from Google Cloud projects to API hub.",
+          "Additional attributes representing the Apigee instance type ( Apigee X and Hybrid Environment and Apigee X and Hybrid Organization ) are automatically created and added to any proxy API deployments that are imported.",
+          "This auto-registration process enables API hub to register API resources from multiple Google Cloud services, ensuring that all your APIs are captured in the central repository and that your API data remains synchronized with your API deployments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "path.developers.apps.keys.create",
+      "path.environments",
+      "path.environments.analytics.reports.dailysupp",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-apis-and-api-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    }
+  ]
+}

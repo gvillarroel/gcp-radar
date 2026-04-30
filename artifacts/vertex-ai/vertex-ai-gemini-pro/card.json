@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Gemini Pro",
+  "feature_slug": "vertex-ai-gemini-pro",
+  "summary": "Introduces Vertex AI Gemini Pro, a multimodal language model, in Preview.",
+  "extended_definition": "Introduces Vertex AI Gemini Pro, a multimodal language model, in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+      "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Send text prompts to Gemini using Vertex AI Studio \\_|\\_ Generative\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+        "source_id": "site-docs-reference-3",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use Vertex AI Studio to design, test, and manage prompts for Google's Gemini large language models (LLMs) and third-party models.",
+          "Enable the API Sample prompts in Vertex AI Studio A prompt is a natural language request submitted to a language model that generates a response.",
+          "Test the Gemini flash model using a summarization text prompt Send a summarization text prompt to the Gemini API in Vertex AI."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Gemini Multimodal Live API, if store context bool is specified, Gemini will leverage it to automatically memorize the interactions between the client and Gemini, and retrieve context when needed to augment the response generation for users' ongoing and future interactions.",
+          "This field is for use with Gemini 1.5 models; google search is used for Gemini 2.0 and newer models.",
+          "Currently only supported for Gemini Multimodal Live API."
+        ]
+      },
+      {
+        "title": "Vertex AI deprecations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+        "source_id": "site-docs-reference-3",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AutoML Text September 15, 2024 June 15, 2025 Starting on September 15, 2024, you can only customize Text classification, entity extraction, and sentiment analysis objectives by moving to Vertex AI Gemini prompts and tuning.",
+          "Training or updating models for Vertex AI AutoML for Text classification, entity extraction, and sentiment analysis objectives will no longer be available.",
+          "Legacy AutoML Natural Language July 31, 2023 August 7, 2024 New models can no longer be trained nor deployed on the legacy platform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+        "https://docs.cloud.google.com/vertex-ai/docs/generative-ai/start/quickstarts/quickstart",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
+      ]
+    }
+  ]
+}

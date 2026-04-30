@@ -1,0 +1,75 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "A3 Ultra VM support in GKE",
+  "feature_slug": "a3-ultra-vm-support-in-gke",
+  "summary": "This feature lets GKE run A3 Ultra VMs with NVIDIA H200 Tensor Core GPUs, including GPUDirect RDMA support on Standard clusters.",
+  "extended_definition": "This feature lets GKE run A3 Ultra VMs with NVIDIA H200 Tensor Core GPUs, including GPUDirect RDMA support on Standard clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/tutorials/train-model-ray-pytorch",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/train-model-gpus-standard"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Train a model with GPUs on GKE Standard mode \\_|\\_ GKE AI/ML\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/quickstarts/train-model-gpus-standard",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "This feature is available for the A3 Ultra and A4 machine types.",
+          "To consume a specific reservation block, configure your ComputeClass resource as shown in this example: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : specific-reservations spec : nodePoolAutoCreation : enabled : true priorities : - machineFamily : a3 gpu : type : nvidia-h200-141gb count : 8 reservations : specific : - name : a3ultra-specific-reservation reservationBlock : name : RESERVATION BLOCK NAME affinity : Specific Replace RESERVATION BLOCK NAME with the target reservation block name.",
+          "For more information, see the following: Plan TPUs in GKE Multi-host TPU slice node pools Schedule TPU collections for inference workloads Node pool configuration The nodePoolConfig field in your ComputeClass specification lets you apply configuration that is reflected in all nodes within the node pools created using that class."
+        ]
+      },
+      {
+        "title": "\"Train a model with PyTorch, Ray, and Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/tutorials/train-model-ray-pytorch",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "priorities.nodepools"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

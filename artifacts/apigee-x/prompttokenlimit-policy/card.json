@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "PromptTokenLimit policy",
+  "feature_slug": "prompttokenlimit-policy",
+  "summary": "The PromptTokenLimit policy rate-limits requests based on the token count of a user's prompt message.",
+  "extended_definition": "The PromptTokenLimit policy rate-limits requests based on the token count of a user's prompt message.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with LLM token policies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 234,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following PromptTokenLimit policy example limits the token rate to 1,000 tokens per minute: <PromptTokenLimit continueOnError=\"false\" enabled=\"true\" name=\"PTL-limitTokens-1\"> <DisplayName>Limit Prompt Tokens</DisplayName> <!-- The rate at which to limit tokens.",
+          "This document describes how to get started with the following LLM token policies: PromptTokenLimit policy : Protects targets from token abuse by throttling tokens based on the user prompt message.",
+          "PromptTokenLimit policy limitations The policy currently only supports text-based tokens."
+        ]
+      },
+      {
+        "title": "Comparing rate-limiting policies \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 228,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the comparison chart below to help you decide which policy to use for your rate-limiting use case: Quota SpikeArrest LLMTokenQuota PromptTokenLimit Use it to: Limit the number of API proxy calls a developer app or developer can make over a specific period of time.",
+          "Protect your API proxy's target backend against token abuse, massive prompts, and potential denial-of-service attempts by limiting the rate of tokens sent in the input by throttling requests based on the number of tokens in the user's prompt message.",
+          "While Quota and SpikeArrest focus on request counts, the PromptTokenLimit and LLMTokenQuota policies manage and control consumption based on tokens, which is crucial for AI and Large Language Model (LLM) workloads."
+        ]
+      },
+      {
+        "title": "Rate-limiting \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 202,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Specialized rate-limiting policies In addition to the general-purpose Quota and SpikeArrest policies, Apigee also provides the LLMTokenQuota policy and the PromptTokenLimit policy for APIs that interact with Large Language Models (LLMs).",
+          "General-purpose policies SpikeArrest policy Quota policy Specialized rate-limiting policies LLMTokenQuota policy PromptTokenLimit policy SpikeArrest policy The SpikeArrest policy protects against traffic surges.",
+          "These policies allow you to enforce quotas and rate limits on the number of tokens used, which can be a more granular way to control costs and usage than simple request counting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "key.apiproduct.developer.llmQuota.interval",
+      "key.apiproduct.developer.llmQuota.limit",
+      "key.apiproduct.developer.llmQuota.timeunit",
+      "verifyapikey.verify"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-ai-token-policies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/rate-limiting",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/comparing-quota-and-spike-arrest-policies"
+      ]
+    }
+  ]
+}

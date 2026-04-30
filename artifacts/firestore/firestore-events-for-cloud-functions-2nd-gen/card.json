@@ -1,0 +1,129 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore events for Cloud Functions (2nd gen)",
+  "feature_slug": "firestore-events-for-cloud-functions-2nd-gen",
+  "summary": "Firestore and Eventarc events are supported for Cloud Functions (2nd gen); Firestore can emit Firestore events for Cloud Functions (2nd gen).",
+  "extended_definition": "Firestore and Eventarc events are supported for Cloud Functions (2nd gen); Firestore can emit Firestore events for Cloud Functions (2nd gen).",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/eventarc",
+      "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+      "https://docs.cloud.google.com/python/docs/reference/firestore/latest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create event-driven architectures with Eventarc \\_|\\_ Firestore in Native\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/eventarc",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The trigger can route events to a supported destination : Cloud Run functions (2nd gen) which supports the Cloud Client Libraries and the Firebase SDK Cloud Run Google Kubernetes Engine Workflows Eventarc offers a standardized solution to manage the flow of state changes, called events , between decoupled microservices.",
+          "Cloud Run functions (1st gen) retrieves the trigger definition during the evaluation of the database write, and changes to the trigger during evaluation can affect if Firestore emits an event or not.",
+          "Firestore triggers for Eventarc retrieve the trigger definition at the start of a database write operation and uses that definition to decide if Firestore should emit an event."
+        ]
+      },
+      {
+        "title": "\"Extend Firestore with event triggers using Cloud Run functions \\_|\\_ Firestore\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "InvalidProtocolBufferException ; import io.cloudevents.CloudEvent ; import java.util.Map ; import java.util.concurrent.ExecutionException ; import java.util.logging.Logger ; public class FirebaseFirestoreReactive implements CloudEventsFunction { private static final Logger logger = Logger . getLogger ( FirebaseFirestoreReactive . class . getName ()); private final Firestore firestore ; private static final String FIELD KEY = \"original\" ; private static final String APPLICATION PROTOBUF = \"application/protobuf\" ; public FirebaseFirestoreReactive () { this ( FirestoreOptions . getDefaultInstance (). getService ()); } public FirebaseFirestoreReactive ( Firestore firestore ) { this . firestore = firestore ; } @Override public void accept ( CloudEvent event ) throws InvalidProtocolBufferException , InterruptedException , ExecutionException { if ( event . getData () == null ) { logger . warning ( \"No data found in event!\" ); return ; } if ( ! event . getDataContentType (). equals ( APPLICATION PROTOBUF )) { logger . warning ( String . format ( \"Found unexpected content type %s, expected %s\" , event . getDataContentType (), APPLICATION PROTOBUF )); return ; } DocumentEventData firestoreEventData = DocumentEventData . parseFrom ( event . getData (). toBytes ()); // Get the fields from the post-operation document snapshot // https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents#Document Map<String , Value > fields = firestoreEventData . getValue (). getFieldsMap (); if ( ! fields . containsKey ( FIELD KEY )) { logger . warning ( \"Document does not contain original field\" ); return ; } String currValue = fields . get ( FIELD KEY ). getStringValue (); String newValue = currValue . toUpperCase (); if ( currValue . equals ( newValue )) { logger . info ( \"Value is already upper-case\" ); return ; } // Retrieve the document name from the resource path: // projects/{project id}/databases/{database id}/documents/{document path} String affectedDoc = firestoreEventData . getValue () . getName () . split ( \"/documents/\" ) [ 1 ] . replace ( \"\\\"\" , \"\" ); logger . info ( String . format ( \"Replacing values: %s --> %s\" , currValue , newValue )); // Wait for the async call to complete this . firestore . document ( affectedDoc ) . set ( Map . of ( FIELD KEY , newValue ), SetOptions . merge ()) . get (); } } C# using CloudNative.CloudEvents ; using Google.Cloud.Firestore ; using Google.Cloud.Functions.Framework ; using Google.Cloud.Functions.Hosting ; using Google.Events.Protobuf.Cloud.Firestore.V1 ; using Microsoft.AspNetCore.Hosting ; using Microsoft.Extensions.DependencyInjection ; using Microsoft.Extensions.Logging ; using System.Collections.Generic ; using System.Threading ; using System.Threading.Tasks ; namespace FirestoreReactive ; public class Startup : FunctionsStartup { public override void ConfigureServices ( WebHostBuilderContext context , IServiceCollection services ) = > services .",
+          "InvalidProtocolBufferException ; import io.cloudevents.CloudEvent ; import java.util.logging.Logger ; public class FirebaseFirestore implements CloudEventsFunction { private static final Logger logger = Logger . getLogger ( FirebaseFirestore . class . getName ()); @Override public void accept ( CloudEvent event ) throws InvalidProtocolBufferException { DocumentEventData firestoreEventData = DocumentEventData . parseFrom ( event . getData (). toBytes ()); logger . info ( \"Function triggered by event on: \" + event . getSource ()); logger . info ( \"Event type: \" + event . getType ()); logger . info ( \"Old value:\" ); logger . info ( firestoreEventData . getOldValue (). toString ()); logger . info ( \"New value:\" ); logger . info ( firestoreEventData . getValue (). toString ()); } } C# using CloudNative.CloudEvents ; using Google.Cloud.Functions.Framework ; using Google.Events.Protobuf.Cloud.Firestore.V1 ; using Microsoft.Extensions.Logging ; using System.Collections.Generic ; using System.Linq ; using System.Threading ; using System.Threading.Tasks ; namespace FirebaseFirestore ; public class Function : ICloudEventFunction<DocumentEventData> { private readonly ILogger logger ; public Function ( ILogger<Function> logger ) = > logger = logger ; public Task HandleAsync ( CloudEvent cloudEvent , DocumentEventData data , CancellationToken cancellationToken ) { logger .",
+          "ParseFromString ( cloud event . data ) path parts = firestore payload . value . name . split ( \"/\" ) separator idx = path parts . index ( \"documents\" ) collection path = path parts [ separator idx + 1 ] document path = \"/\" . join ( path parts [( separator idx + 2 ) :]) print ( f \"Collection path: { collection path } \" ) print ( f \"Document path: { document path } \" ) affected doc = client . collection ( collection path ) . document ( document path ) cur value = firestore payload . value . fields [ \"original\" ] . string value new value = cur value . upper () if cur value != new value : print ( f \"Replacing value: { cur value } --> { new value } \" ) affected doc . set ({ \"original\" : new value }) else : Value is already upper-case Don't perform a second write (which can trigger an infinite loop) print ( \"Value is already upper-case.\" ) Go // Package upper contains a Firestore Cloud Function. package upper import ( \"context\" \"errors\" \"fmt\" \"log\" \"os\" \"strings\" \"cloud.google.com/go/firestore\" firebase \"firebase.google.com/go/v4\" \"github.com/GoogleCloudPlatform/functions-framework-go/functions\" \"github.com/cloudevents/sdk-go/v2/event\" \"github.com/googleapis/google-cloudevents-go/cloud/firestoredata\" \"google.golang.org/protobuf/proto\" ) // set the GOOGLE CLOUD PROJECT environment variable when deploying. var projectID = os ."
+        ]
+      },
+      {
+        "title": "Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/firestore/latest",
+        "source_id": "site-python-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This configures handling of logging events (at level logging.DEBUG or higher) from this library in a default manner, emitting the logged messages in a structured format.",
+          "Code-Based Examples Configuring a handler for all Google-based loggers import logging from google.cloud import library v1 base logger = logging.getLogger(\"google\") base logger.addHandler(logging.StreamHandler()) base logger.setLevel(logging.DEBUG) Configuring a handler for a specific Google module (for a client library called library v1 ): import logging from google.cloud import library v1 base logger = logging.getLogger(\"google.cloud.library v1\") base logger.addHandler(logging.StreamHandler()) base logger.setLevel(logging.DEBUG) Logging details Regardless of which of the mechanisms above you use to configure logging for this library, by default logging events are not propagated up to the root logger from the google-level logger.",
+          "The Google-specific logging configurations (default handlers for environment-based configuration; not propagating logging events to the root logger) get executed the first time any client library is instantiated in your application, and only if the affected loggers have not been previously configured. (This is the reason for 2.i. above.) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudevents.http",
+      "data.proto",
+      "firebase.google.com",
+      "github.com",
+      "io.cloudevents.CloudEvent",
+      "java.util.concurrent.ExecutionException",
+      "java.util.logging.Logger",
+      "java.util.Map",
+      "logger.addHandler",
+      "logger.setLevel",
+      "logging.DEBUG",
+      "logging.getLogger",
+      "logging.StreamHandler",
+      "projects.databases.documents"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/eventarc",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/python/docs/reference/firestore/latest"
+      ]
+    }
+  ]
+}

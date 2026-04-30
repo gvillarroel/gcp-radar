@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.087Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Private Catalog template integration",
+  "feature_slug": "private-catalog-template-integration",
+  "summary": "Deployment Manager templates can be used in Private Catalog.",
+  "extended_definition": "Deployment Manager templates can be used in Private Catalog.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+      "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Storing Templates on an External Host \\_|\\_ Cloud Deployment Manager \\_\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "source_id": "site-docs-root-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: resources : - name : my - salt - cluster type : gs : //v2/saltstack/salt cluster.jinja For a GitHub URL: resources : - name : my - salt - cluster type : https : //raw.githubusercontent.com/GoogleCloudPlatform/deploymentmanager-samples/master/examples/v2/single vm/vm template.jinja If an external template imports other templates or if there is an accompanying schema, you can store the related files in the same directory or relative subdirectory and include these other templates with a relative URL.",
+          "Hosting templates externally has certain advantages over storing your templates locally: Easily share templates with others Ensure that configurations are always using the most up-to-date template Automatically manage relevant imports and schemas Deployment Manager always fetches the latest version of external templates each time you redeploy your configuration.",
+          "Home Documentation Infrastructure as code Cloud Deployment Manager Guides Send feedback Storing Templates on an External Host Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Using multiple templates \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. imports : - path : vm-template.py - path : vm-template-2.py - path : network-template.py - path : firewall-template.py - path : compute-engine-template.py resources : - name : compute-engine-setup type : compute-engine-template.py Saving the configuration and deploying it Run this command to deploy the configuration: gcloud deployment-manager deployments create deployment-with-many-templates \\ --config config-with-many-templates.yaml To view the deployment, run: gcloud deployment-manager deployments describe deployment-with-many-templates Looking ahead: template properties and environment variables Next, you will replace some hard-coded parts of templates with reusable patterns such as custom template and environment variables.",
+          "See the License for the specific language governing permissions and limitations under the License. \"\"\"Creates the Compute Engine.\"\"\" def GenerateConfig ( context ): \"\"\"Creates the Compute Engine with network and firewall.\"\"\" resources = [{ 'name' : 'vm-1' , 'type' : 'vm-template.py' }, { 'name' : 'vm-2' , 'type' : 'vm-template-2.py' }, { 'name' : 'network-1' , 'type' : 'network-template.py' }, { 'name' : 'firewall-1' , 'type' : 'firewall-template.py' }] return { 'resources' : resources } Viewing the configuration Open the configuration file for the deployment: cd deploymentmanager-samples/examples/v2/step by step guide/step6 use multiple templates/python nano config-with-many-templates.yaml # use your preferred text editor Notice that the configuration did not directly call the other templates.",
+          "Opening the template for a network Open the template named compute-engine-template.py : cd deploymentmanager-samples/examples/v2/step by step guide/step6 use multiple templates/python nano compute-engine-template.py # use your preferred text editor This template imports other templates, for all the resources in the deployment: vm-template.py , vm-template-2.py for virtual machines (VMs), network-template.py for a network, and firewall-template.py for a firewall rule."
+        ]
+      },
+      {
+        "title": "\"Creating a Basic Template \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template",
+        "source_id": "site-docs-reference-2",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you create a file named resource type.txt with the following string: compute.v1.instance Import it into your configuration and provide the content inline like so: imports : - path : resource type.txt resources : - name : my-vm type : {{ imports [ \"resource type.txt\" ] }} # Resolves to \"compute.v1.instance\" properties : zone : us-central1-a machineType : zones/us-central1-a/machineTypes/f1-micro disks : - deviceName : boot type : PERSISTENT boot : true autoDelete : true initializeParams : sourceImage : projects/debian-cloud/global/images/family/debian-9 networkInterfaces : - network : global/networks/default accessConfigs : - name : External NAT type : ONE TO ONE NAT Deploying templates Once you import a template, use it as a type in your configuration: Jinja imports : - path : vm-template.jinja resources : - name : my-vm type : vm-template.jinja Python imports : - path : vm-template.py resources : - name : my-vm type : vm-template.py If you did not provide a name for your template, call the template using the template path: imports : - path : path / to / my vm template . jinja resources : - name : my - first - virtual - machine type : path / to / my vm template . jinja Deploying templates directly with the command-line tool Instead of creating a top-level configuration file, Deployment Manager offers the ability to deploy a template directly in the Google Cloud CLI.",
+          "For examples of templates that you can use in your own deployments, see the Deployment Manager GitHub repository .",
+          "Deployment Manager accepts both Jinja and Python templates."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.jinja",
+      "compute.v1.instance",
+      "raw.githubusercontent.com",
+      "template.jinja",
+      "template.py",
+      "templates.yaml",
+      "type.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/hosting-templates-externally",
+        "https://docs.cloud.google.com/deployment-manager/docs/step-by-step-guide/using-multiple-templates",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/templates/create-basic-template"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.070Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "re.capture_all()",
+  "feature_slug": "re-capture-all",
+  "summary": "The re.capture_all function returns every non-overlapping regular expression match in a string.",
+  "extended_definition": "The re.capture_all function returns every non-overlapping regular expression match in a string.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can omit events where no match occurs by excluding the empty string, which is especially important when you are using re.capture() with an inequality: // Exclude the empty string to omit events where no match occurs. \"\" != re.capture($e.network.email.from , \"@(. )\") // Exclude a specific string with an inequality. \"google.com\" != re.capture($e.network.email.from , \"@(. )\") re.capture all Supported in: Rules Search Dashboards re.capture all( stringText , regex ) Description Use the re.capture all() function to extract every non-overlapping match of a regular expression from a string.",
+          "Since re.capture all() returns an array, you can use arrays.join string() to merge these matches into a single, readable list. rule CaptureAllIPs { meta: author = \"user@example.com\" events: $e.network.http.user agent != \"\" $captured ips = arrays.join string(re.capture all($e.network.http.user agent, \\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}), \", \") condition: $e } Known limitations Single capturing group: The regular expression used with re.capture all() must not contain more than one capturing group.",
+          "The following example contains one capture group. \"google.com\" = re.capture($e.network.email.from , \"@(. )\") Example 3 If the regular expression does not match any substring in the text, the function returns an empty string."
+        ]
+      },
+      {
+        "title": "Detection Engine | Google Security Operations | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "If a continuationTime greater than 168h0m0s is passed, then the API returns an HTTP 400 error. include_simulated_detections bool Optional If true, returns simulated detections in addition to regular detections.",
+          "The default is 100. page_token string Optional Use to retrieve another page of detections. include_simulated_detections bool Optional If true, returns simulated detections in addition to regular detections.",
+          "Use the following format to specify the rule: {ruleId}@v_{int64}_{int64} include_simulated_detections bool Optional If true, returns simulated detections in addition to regular detections."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "Search for events that use multiple keys with the same name, using a regular expression: additional.fields.key = /myKeynumber / Use regular expressions and the nocase operator: additional.fields[\"pod name\"] = /br/ additional.fields[\"pod name\"] = bar nocase Use block and single-line comments.",
+          "The following are examples: metadata.log type = \"PCAP DNS\" network.dns.answers.name = \"dns-A901F3j.hat.example.com\" If the result includes the text Possible value match , the name-value pair contains the UDM field name and a regular expression containing the search term."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "additional.fields.key",
+      "additional.fields.value.string",
+      "arrays.join",
+      "e.network.email.from",
+      "e.network.http.user",
+      "example.com",
+      "hat.example.com",
+      "metadata.ingestion",
+      "metadata.log",
+      "network.dns.answers.name",
+      "projects.locations.instances",
+      "projects.locations.instances.alertGroupingRules",
+      "projects.locations.instances.analytics",
+      "projects.locations.instances.analytics.entities.analyticValues",
+      "projects.locations.instances.announcements",
+      "projects.locations.instances.bigQueryAccess",
+      "projects.locations.instances.bigQueryExport",
+      "projects.locations.instances.calculatedFieldDefinitions",
+      "projects.locations.instances.caseCloseDefinitions",
+      "projects.locations.instances.caseQueueFilters",
+      "projects.locations.instances.cases",
+      "projects.locations.instances.cases.alerts.customFieldValues",
+      "projects.locations.instances.cases.caseAlerts",
+      "projects.locations.instances.cases.caseAlerts.connectorEvents",
+      "projects.locations.instances.cases.caseAlerts.contextProperties",
+      "projects.locations.instances.cases.caseAlerts.involvedEntities",
+      "projects.locations.instances.cases.caseComments",
+      "projects.locations.instances.cases.caseEvidenceDatas",
+      "projects.locations.instances.cases.caseWallRecords",
+      "projects.locations.instances.cases.chatMessages",
+      "projects.locations.instances.cases.chatMessages.attachments",
+      "projects.locations.instances.cases.contextProperties",
+      "projects.locations.instances.cases.customFieldValues",
+      "projects.locations.instances.caseStageDefinitions",
+      "projects.locations.instances.caseTagDefinitions",
+      "projects.locations.instances.contentHub.contentPacks",
+      "projects.locations.instances.contentHub.featuredContentNativeDashboards",
+      "projects.locations.instances.contentHub.featuredContentPlaybooks",
+      "projects.locations.instances.contentHub.featuredContentRules",
+      "projects.locations.instances.contentHub.featuredContentSearchQueries",
+      "projects.locations.instances.contextProperties",
+      "projects.locations.instances.coverageDetails",
+      "projects.locations.instances.curatedRules",
+      "projects.locations.instances.curatedRuleSetCategories",
+      "projects.locations.instances.curatedRuleSetCategories.curatedRuleSets",
+      "projects.locations.instances.curatedRuleSetCategories.curatedRuleSets.curatedRuleSetDeployments",
+      "projects.locations.instances.customFields",
+      "projects.locations.instances.customLists",
+      "projects.locations.instances.dashboardCharts",
+      "projects.locations.instances.dashboardQueries",
+      "projects.locations.instances.dashboards",
+      "projects.locations.instances.dashboardScheduledReports",
+      "projects.locations.instances.dataAccessLabels",
+      "projects.locations.instances.dataAccessScopes",
+      "projects.locations.instances.dataExports",
+      "projects.locations.instances.dataTableOperationErrors",
+      "projects.locations.instances.dataTables",
+      "projects.locations.instances.dataTables.dataTableRows",
+      "projects.locations.instances.dataTaps",
+      "projects.locations.instances.dynamicParameters",
+      "projects.locations.instances.emailTemplates",
+      "projects.locations.instances.enrichmentAgent",
+      "projects.locations.instances.enrichmentControls",
+      "projects.locations.instances.entities",
+      "projects.locations.instances.entitiesBlocklists",
+      "projects.locations.instances.entityRiskScores",
+      "projects.locations.instances.environmentGroups",
+      "projects.locations.instances.environments",
+      "projects.locations.instances.errorNotificationConfigs",
+      "projects.locations.instances.events",
+      "projects.locations.instances.federationGroups",
+      "projects.locations.instances.feedPacks",
+      "projects.locations.instances.feeds",
+      "projects.locations.instances.feedServiceAccounts",
+      "projects.locations.instances.feedSourceTypeSchemas",
+      "projects.locations.instances.feedSourceTypeSchemas.logTypeSchemas",
+      "projects.locations.instances.findingsGraph",
+      "projects.locations.instances.findingsRefinements",
+      "projects.locations.instances.formDynamicParameters",
+      "projects.locations.instances.forwarders",
+      "projects.locations.instances.forwarders.collectors",
+      "projects.locations.instances.ingestionLogLabels",
+      "projects.locations.instances.ingestionLogNamespaces",
+      "projects.locations.instances.integrations",
+      "projects.locations.instances.integrations.actions",
+      "projects.locations.instances.integrations.actions.revisions",
+      "projects.locations.instances.integrations.connectors",
+      "projects.locations.instances.integrations.connectors.connectorInstances",
+      "projects.locations.instances.integrations.connectors.connectorInstances.logs",
+      "projects.locations.instances.integrations.connectors.contextProperties",
+      "projects.locations.instances.integrations.connectors.revisions",
+      "projects.locations.instances.integrations.integrationInstances",
+      "projects.locations.instances.integrations.jobs",
+      "projects.locations.instances.integrations.jobs.contextProperties",
+      "projects.locations.instances.integrations.jobs.jobInstances",
+      "projects.locations.instances.integrations.jobs.jobInstances.logs",
+      "projects.locations.instances.integrations.jobs.revisions",
+      "projects.locations.instances.integrations.logicalOperators",
+      "projects.locations.instances.integrations.logicalOperators.revisions",
+      "projects.locations.instances.integrations.managers",
+      "projects.locations.instances.integrations.managers.revisions",
+      "projects.locations.instances.integrations.transformers",
+      "projects.locations.instances.integrations.transformers.revisions",
+      "projects.locations.instances.investigations",
+      "projects.locations.instances.investigations.investigationComments",
+      "projects.locations.instances.investigations.investigationSteps",
+      "projects.locations.instances.iocAssociations",
+      "projects.locations.instances.iocs",
+      "projects.locations.instances.labsExperiments",
+      "projects.locations.instances.labsExperiments.executions",
+      "projects.locations.instances.legacy",
+      "projects.locations.instances.legacyAdvancedReports",
+      "projects.locations.instances.legacyCaseFederationPlatforms",
+      "projects.locations.instances.legacyCases",
+      "projects.locations.instances.legacyConfiguration",
+      "projects.locations.instances.legacyFederatedCases",
+      "projects.locations.instances.legacyPlaybooks",
+      "projects.locations.instances.legacyPublisher",
+      "projects.locations.instances.legacySdk",
+      "projects.locations.instances.legacySearches",
+      "projects.locations.instances.legacySoarAudit",
+      "projects.locations.instances.legacySoarDashboard",
+      "projects.locations.instances.legacySoarIdpMappingGroups",
+      "projects.locations.instances.legacySoarPermissionGroups",
+      "projects.locations.instances.legacySoarReports",
+      "projects.locations.instances.legacySoarSettings",
+      "projects.locations.instances.legacySoarUsers",
+      "projects.locations.instances.legacySoarUsers.attachments",
+      "projects.locations.instances.legacySoarUsers.userNotifications",
+      "projects.locations.instances.legacySoarUsers.workdeskContacts",
+      "projects.locations.instances.legacySoarUsers.workdeskLinks",
+      "projects.locations.instances.legacySoarUsers.workdeskNotes",
+      "projects.locations.instances.legacySystem",
+      "projects.locations.instances.legacySystemMetadata",
+      "projects.locations.instances.logProcessingPipelines",
+      "projects.locations.instances.logs",
+      "projects.locations.instances.logTypes",
+      "projects.locations.instances.logTypes.analysisReports",
+      "projects.locations.instances.logTypes.logs",
+      "projects.locations.instances.logTypes.logTypeSettings",
+      "projects.locations.instances.logTypes.parserExtensions",
+      "projects.locations.instances.logTypes.parserExtensions.extensionValidationReports",
+      "projects.locations.instances.logTypes.parserExtensions.extensionValidationReports.validationErrors",
+      "projects.locations.instances.logTypes.parserExtensions.validationReports",
+      "projects.locations.instances.logTypes.parserExtensions.validationReports.parsingErrors",
+      "projects.locations.instances.logTypes.parsers",
+      "projects.locations.instances.logTypes.parsers.analysisReports",
+      "projects.locations.instances.logTypes.parsers.validationReports",
+      "projects.locations.instances.logTypes.parsers.validationReports.parsingErrors",
+      "projects.locations.instances.managedDomainSettings",
+      "projects.locations.instances.marketplaceIntegrations",
+      "projects.locations.instances.metricDefinitions",
+      "projects.locations.instances.moduleSettings",
+      "projects.locations.instances.moduleSettings.properties",
+      "projects.locations.instances.nativeDashboards",
+      "projects.locations.instances.notebooks",
+      "projects.locations.instances.ontologyRecords",
+      "projects.locations.instances.ontologyRecords.mappingRules",
+      "projects.locations.instances.ontologyRecords.visualFamilies",
+      "projects.locations.instances.operations",
+      "projects.locations.instances.propertySchemaDefinitions",
+      "projects.locations.instances.referenceLists",
+      "projects.locations.instances.remoteAgents",
+      "projects.locations.instances.requestTemplates",
+      "projects.locations.instances.ruleExecutionErrors",
+      "projects.locations.instances.rules",
+      "projects.locations.instances.rules.deployments",
+      "projects.locations.instances.rules.retrohunts",
+      "projects.locations.instances.savedColumnSets",
+      "projects.locations.instances.searchSessions.searchedResults",
+      "projects.locations.instances.sharedPreferenceSets",
+      "projects.locations.instances.slaDefinitions",
+      "projects.locations.instances.soarDomains",
+      "projects.locations.instances.soarNetworks",
+      "projects.locations.instances.socRoles",
+      "projects.locations.instances.systemNotifications",
+      "projects.locations.instances.tasks",
+      "projects.locations.instances.tenants",
+      "projects.locations.instances.threatCollections",
+      "projects.locations.instances.uniqueEntities",
+      "projects.locations.instances.users",
+      "projects.locations.instances.users.conversations",
+      "projects.locations.instances.users.conversations.messages",
+      "projects.locations.instances.users.savedColumnSets",
+      "projects.locations.instances.users.searchQueries",
+      "projects.locations.instances.views",
+      "projects.locations.instances.watchlists",
+      "projects.locations.instances.watchlists.entities",
+      "projects.locations.instances.webhooks",
+      "re.capture",
+      "re.capture_all",
+      "value.bool",
+      "value.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.856Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "ee.Filter.area",
+  "feature_slug": "ee-filter-area",
+  "summary": "This filter evaluates features using their area.",
+  "extended_definition": "This filter evaluates features using their area.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/charts_image",
+      "https://developers.google.com/earth-engine/guides/debugging",
+      "https://developers.google.com/earth-engine/guides/getstarted"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }; var noProblem = someFeatures . filterBounds ( image . geometry ()) . map ( functionToMap ); print ( noProblem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def function to map ( feature ): dictionary = image . reduceRegion ( reducer = ee .",
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' ))} ) no problem = some features . filterBounds ( image . geometry ()) . map ( function to map ) display ( no problem ) Profiler The profiler provides information about EECU-time and memory usage (per algorithm and asset) resulting from the computation performed while it's enabled.",
+          "Feature ( some features . filter ( ee ."
+        ]
+      },
+      {
+        "title": "\"Get Started with Earth Engine \\_|\\_ Google Earth Engine \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/earth-engine/guides/getstarted",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Point ( - 122.262 , 37.8719 )) . filterDate ( '2014-06-01' , '2014-10-01' ); // Map the function over the collection. var ndviCollection = collection . map ( addNDVI ); Another common task is adding a new property (or 'attribute' or 'field') to features in a FeatureCollection .",
+          "Point ( - 118.2294 , 34.039 ), { property1 : 200 , property2 : 300 }), ]); // Map the function over the collection. var featureCollection = features . map ( addField ); // Print a selected property of one Feature. print ( featureCollection . first (). get ( 'sum' )); // Print the entire FeatureCollection. print ( featureCollection ); Note the cast to ee.Number required for the property value to be recognized as a number in order to use the add() method).",
+          "The following example demonstrates multiple concepts: filtering, mapping, reducing and the use of a cloud mask: Code Editor (JavaScript) // This function gets NDVI from a Landsat 8 image. var addNDVI = function ( image ) { return image . addBands ( image . normalizedDifference ([ 'B5' , 'B4' ])); }; // This function masks cloudy pixels. var cloudMask = function ( image ) { var clouds = ee ."
+        ]
+      },
+      {
+        "title": "Image Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_image",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reducer . mean (), scale : 500 , seriesProperty : 'label' , xLabels : xPropVals }) . setChartType ( 'LineChart' ) . setOptions ({ title : 'Average Ecoregion Precipitation by Month' , hAxis : { title : 'Month' , titleTextStyle : { italic : false , bold : true }, ticks : xPropLabels }, vAxis : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true } }, colors : [ 'f0af07' , '0f8755' , '76b349' ], lineSize : 5 }); Area chart The previous column chart can be rendered as an area chart by changing the .setChartType() input from 'ColumnChart' to 'AreaChart' . var chart = ui .",
+          "Reducer . mean (), scale : 500 , seriesProperty : 'label' , xLabels : xPropVals }) . setChartType ( 'AreaChart' ) . setOptions ({ title : 'Average Ecoregion Precipitation by Month' , hAxis : { title : 'Month' , titleTextStyle : { italic : false , bold : true }, ticks : xPropLabels }, vAxis : { title : 'Precipitation (mm)' , titleTextStyle : { italic : false , bold : true } }, colors : [ 'f0af07' , '0f8755' , '76b349' ], lineSize : 5 }); Pie chart Average monthly precipitation is displayed as a proportion of the average total annual precipitation for a forest ecoregion.",
+          "Filter . date ( '2018-06-01' , '2018-09-01' )) . select ( 'sur refl b0[0-7]' ) . mean (); // Reorder reflectance bands by ascending wavelength and // add the classified ecoregions image as a band to the SR collection and var modisSrClass = modisSr . select ([ 2 , 3 , 0 , 1 , 4 , 5 , 6 ]). addBands ( regionsBand ); // Define a list of MODIS SR wavelengths for x-axis labels. var wavelengths = [ 469 , 555 , 655 , 858 , 1240 , 1640 , 2130 ]; // Define the chart and print it to the console. var chart = ui ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Filter.area",
+      "ee.Number",
+      "geemap.core",
+      "ui.Chart.image.byClass",
+      "ui.Chart.image.byRegion",
+      "ui.Chart.image.histogram",
+      "ui.Chart.image.regions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/charts_image"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/getstarted",
+        "https://developers.google.com/earth-engine/guides/charts_image"
+      ]
+    }
+  ]
+}

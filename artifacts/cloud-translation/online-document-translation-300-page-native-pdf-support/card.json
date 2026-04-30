@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.228Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation",
+  "feature_name": "Online document translation 300-page native PDF support",
+  "feature_slug": "online-document-translation-300-page-native-pdf-support",
+  "summary": "Online document translation supports native PDF documents up to 300 pages.",
+  "extended_definition": "Online document translation supports native PDF documents up to 300 pages.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+      "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+      "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+      "https://docs.cloud.google.com/translate/docs/setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Upgrade AutoML resources \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Legacy Native Import data into datasets when using the API Use CSV file to specify source file locations in Cloud Storage Specify TMX and TSV files locations in Cloud Storage Export data Supports exporting segment pairs from a dataset or data from the model evaluation, which includes the test set along with model predictions Supports exporting segment pairs from a dataset only View data splits by source file The Google Cloud console shows a list of source files that were used to populate a dataset and how the data was split for each file.",
+          "Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.",
+          "For example, if you have commands that call the deprecated AutoML API and reference legacy resource IDs, you need to update those commands to call the Cloud Translation API and reference the native resource IDs."
+        ]
+      },
+      {
+        "title": "Batch requests (Advanced) \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "source_id": "site-iam-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "TranslationServiceClient () Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { \"input uri\" : input uri } location = \"us-central1\" input configs element = { \"gcs source\" : gcs source , \"mime type\" : \"text/plain\" , # Can be \"text/plain\" or \"text/html\". } gcs destination = { \"output uri prefix\" : output uri } output config = { \"gcs destination\" : gcs destination } parent = f \"projects/ { project id } /locations/ { location } \" model path = \"projects/ {} /locations/ {} /models/ {} \" . format ( project id , location , model id # The location of AutoML model. ) Supported language codes: https://cloud.google.com/translate/docs/languages models = { \"ja\" : model path } # takes a target lang as key. operation = client . batch translate text ( request = { \"parent\" : parent , \"source language code\" : \"en\" , \"target language codes\" : [ \"ja\" ], # Up to 10 language codes here. \"input configs\" : [ input configs element ], \"output config\" : output config , \"models\" : models , } ) print ( \"Waiting for operation to complete...\" ) response = operation . result () Display the translation for each input text provided. print ( f \"Total Characters: { response . total characters } \" ) print ( f \"Translated Characters: { response . translated characters } \" ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "TranslationServiceClient () location = \"us-central1\" Supported file types: https://cloud.google.com/translate/docs/supported-formats gcs source = { \"input uri\" : input uri } input configs element = { \"gcs source\" : gcs source , \"mime type\" : \"text/plain\" , # Can be \"text/plain\" or \"text/html\". } gcs destination = { \"output uri prefix\" : output uri } output config = { \"gcs destination\" : gcs destination } parent = f \"projects/ { project id } /locations/ { location } \" Supported language codes: https://cloud.google.com/translate/docs/languages operation = client . batch translate text ( request = { \"parent\" : parent , \"source language code\" : \"en\" , \"target language codes\" : [ \"ja\" ], # Up to 10 language codes here. \"input configs\" : [ input configs element ], \"output config\" : output config , } ) print ( \"Waiting for operation to complete...\" ) response = operation . result ( timeout ) print ( f \"Total Characters: { response . total characters } \" ) print ( f \"Translated Characters: { response . translated characters } \" ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "TranslateTextGlossaryConfig ( glossary = glossary path ) glossaries = { \"ja\" : glossary config } # target lang as key operation = client . batch translate text ( request = { \"parent\" : parent , \"source language code\" : \"en\" , \"target language codes\" : target language codes , \"input configs\" : input configs , \"output config\" : output config , \"models\" : models , \"glossaries\" : glossaries , } ) print ( \"Waiting for operation to complete...\" ) response = operation . result () Display the translation for each input text provided print ( f \"Total Characters: { response . total characters } \" ) print ( f \"Translated Characters: { response . translated characters } \" ) return response Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Overview of the Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "source_id": "site-iam-reference",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.",
+          "Document Translation Document Translation lets you directly translate existing documents, such as PDF and DOCX files, to a target language.",
+          "Document Translation : This feature lets you translate documents such as PDF files while preserving their original format and layout."
+        ]
+      },
+      {
+        "title": "Setup \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/setup",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Try Cloud Translation free Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Cloud Translation Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information about Cloud Translation pricing, see the pricing page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/setup"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/batch-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/setup"
+      ]
+    }
+  ]
+}

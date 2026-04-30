@@ -1,0 +1,107 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.832Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Elasticsearch Log Collection in Ops Agent",
+  "feature_slug": "elasticsearch-log-collection-in-ops-agent",
+  "summary": "Ops Agent can collect Elasticsearch logs for Cloud Logging.",
+  "extended_definition": "Ops Agent can collect Elasticsearch logs for Cloud Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Elasticsearch 7.9+ \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from Elasticsearch, you must create a receiver for the logs that Elasticsearch produces and then create a pipeline for the new receiver.",
+          "If empty, the receiver uses the system root CA. cert file Path to the TLS certificate to use for mTLS-required connections. collection interval 60s A time duration value, such as 30s or 5m . endpoint http://localhost:92002 The base URL for the Elasticsearch REST API. insecure true Sets whether or not to use a secure TLS connection.",
+          "The elasticsearch gc logs contain the following fields in the LogEntry : Field Type Description jsonPayload.gc run number The run of the garbage collector jsonPayload.message string Log message jsonPayload.type string The type of the log record severity string ( LogSeverity ) Log entry level (translated)."
+        ]
+      },
+      {
+        "title": "Elasticsearch 8.0+ and 9.0+ \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open a PowerShell terminal with administrator privileges by right-clicking the PowerShell icon and selecting Run as Administrator To restart the agent, run the following PowerShell command: Restart-Service google-cloud-ops-agent -Force To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: Get-Service google-cloud-ops-agent Configure logs collection To ingest logs from Elasticsearch, you must create a receiver for the logs that Elasticsearch produces and then create a pipeline for the new receiver.",
+          "The elasticsearch json logs contain the following fields in the LogEntry : Field Type Description jsonPayload.ecs.version string ECS version jsonPayload.elasticsearch.cluster.name string The name of the cluster emitting the log record in ECS format jsonPayload.elasticsearch.cluster.uuid string The UUID of the cluster emitting the log record in ECS format jsonPayload.elasticsearch.node.name string The name of the node emitting the log record in ECS format jsonPayload.event string Event information in ECS format jsonPayload.log string Log details in ECS format jsonPayload.log.level string Log entry level in ECS format jsonPayload.log.logger string The logger component that emitted the log in ECS format jsonPayload.message string Log message jsonPayload.process.thread.name string The name of the thread that emitted the log in ECS format jsonPayload.service.name string The name of the service emitting the log in ECS format severity string ( LogSeverity ) Log entry severity level The elasticsearch gc logs contain the following fields in the LogEntry : Field Type Description jsonPayload.gc run number The run of the garbage collector jsonPayload.message string Log message jsonPayload.type string The type of the log record severity string ( LogSeverity ) Log entry level (translated).",
+          "If empty, the receiver uses the system root CA. cert file Path to the TLS certificate to use for mTLS-required connections. collection interval 60s A time duration value, such as 30s or 5m . endpoint https://localhost:9200 The base URL for the Elasticsearch REST API."
+        ]
+      },
+      {
+        "title": "\"Install and manage the Ops Agent by using VM Extension Manager policies\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Observability Cloud Logging Guides Send feedback Install and manage the Ops Agent by using VM Extension Manager policies Stay organized with collections Save and categorize content based on your preferences.",
+          "Verify that the Ops Agent is collecting telemetry If the Ops Agent has been successfully installed and is running correctly, then it sends metrics to Cloud Monitoring and logs to Cloud Logging.",
+          "When the Ops Agent has been installed on the VM and is collecting logs and metrics, the agent's status is marked with a green checkmark next to the Ops Agent label."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ecs.version",
+      "elasticsearch.cluster.name",
+      "elasticsearch.cluster.uuid",
+      "elasticsearch.node.name",
+      "log.level",
+      "log.logger",
+      "process.thread.name",
+      "service.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/elasticsearch9",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-vmem-policies"
+      ]
+    }
+  ]
+}

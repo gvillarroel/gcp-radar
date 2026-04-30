@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.650Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor",
+  "feature_name": "Asset renaming",
+  "feature_slug": "asset-renaming",
+  "summary": "Assets can be renamed.",
+  "extended_definition": "Assets can be renamed.",
+  "lifecycle": {
+    "latest_feature_date": "2015-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+      "https://developers.google.com/earth-engine/guides/access",
+      "https://developers.google.com/earth-engine/guides/audit_logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud GeoTiff-Backed Earth Engine Assets \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The band order of the resulting asset is mixed from the input COGs (e.g. output band 0 is from Tileset 0, while output band 1 is from Tileset 1). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo2' , 'uriPrefix' : 'gs://ee-docs-demos/external image demo/' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'b4b3b2.tif' ] } ] }, { 'id' : '1' , 'sources' : [ { 'uris' : [ 'b5b6b7.tif' ] } ] }, ], 'bands' : [ { 'id' : 'red' , 'tilesetId' : '0' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge3' , 'tilesetId' : '1' , 'tilesetBandIndex' : 2 }, { 'id' : 'rededge2' , 'tilesetId' : '1' , 'tilesetBandIndex' : 1 }, { 'id' : 'green' , 'tilesetId' : '0' , 'tilesetBandIndex' : 1 }, { 'id' : 'blue' , 'tilesetId' : '1' , 'tilesetBandIndex' : 0 }, { 'id' : 'rededge1' , 'tilesetId' : '0' , 'tilesetBandIndex' : 2 }, ], }, } pprint ( request ) Details on COG-backed assets Location The Cloud Storage bucket location must be one of: The US multi-region Any US dual-region that includes US-CENTRAL1 The region US-CENTRAL1 Storage class The storage class of the bucket must be \"Standard storage\".",
+          "If no bands are specified, the resulting asset will contain all the bands of the GeoTIFF with the band names encoded in the GeoTIFF (in this case, \"vis-red\", \"vis-green\", and \"vis-blue\"). request = { 'imageManifest' : { 'name' : f 'projects/ { ee project } /assets/cogdemo1' , 'tilesets' : [ { 'id' : '0' , 'sources' : [ { 'uris' : [ 'gs://ee-docs-demos/COG demo.tif' ] } ] } ], 'properties' : { 'version' : '1.1' }, 'startTime' : '2016-01-01T00:00:00.000000000Z' , 'endTime' : '2016-12-31T15:01:23.000000000Z' , }, } pprint ( request ) More than one Tileset It is possible to specify an ImageManifest with more than one Tileset where each band of the resulting asset is backed by one of the bands of a Tileset using the tilesetId and tilesetBandIndex fields.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-21 UTC.\"],[],[\"This document details how to create Earth Engine assets backed by Cloud Optimized GeoTIFFs (COGs)."
+        ]
+      },
+      {
+        "title": "Earth Engine access \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access",
+        "source_id": "site-docs-root-2",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For programmatic asset deletion of an asset with ID projects/{project-id}/assets/{asset-id} (e.g., projects/my-project/assets/my-asset ): Python client ee . data . deleteAsset ( 'projects/ my-project /assets/ my-asset ' ) JavaScript client Note that the Code Editor's security sandbox prevents this call from working in that environment. ee . data . deleteAsset ( 'projects/ my-project /assets/ my-asset ' ) Command-line tool Use the rm command: earthengine rm projects/ my-project /assets/ my-asset Note: for legacy user-owned assets, the path structure is users/{user-id}/{asset-id} .",
+          "Register the project for commercial or noncommercial use Edit the following URL for your project, visit the page, and complete the registration flow. https://code.earthengine.google.com/register?project= my-project Create an assets folder (optional) You can create an Earth Engine assets folder associated with a Cloud project to which you have access using the earthengine create folder command using a path as described here .",
+          "Cloud projects When a Cloud project is deleted , it triggers the deletion of Earth Engine data associated with that project (including, for example, any assets stored in the project root, any project-level EE Apps, Monitoring data, etc.)."
+        ]
+      },
+      {
+        "title": "Earth Engine audit logging \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/audit_logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.earthengine.v1.EarthEngine.GetIamPolicy google.earthengine.v1alpha.EarthEngine.GetIamPolicy google.earthengine.v1beta.EarthEngine.GetIamPolicy google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations google.longrunning.Operations.WaitOperation ADMIN WRITE google.earthengine.v1.EarthEngine.SetIamPolicy google.earthengine.v1alpha.EarthEngine.SetIamPolicy google.earthengine.v1beta.EarthEngine.SetIamPolicy google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.earthengine.v1.EarthEngine.ComputeFeatures google.earthengine.v1.EarthEngine.ComputeImages google.earthengine.v1.EarthEngine.ComputePixels google.earthengine.v1.EarthEngine.ComputeValue google.earthengine.v1.EarthEngine.CopyAsset google.earthengine.v1.EarthEngine.CreateFeatureView google.earthengine.v1.EarthEngine.CreateFilmstripThumbnail google.earthengine.v1.EarthEngine.CreateMap google.earthengine.v1.EarthEngine.CreateTable google.earthengine.v1.EarthEngine.CreateThumbnail google.earthengine.v1.EarthEngine.CreateVideoThumbnail google.earthengine.v1.EarthEngine.ExportClassifier (LRO) google.earthengine.v1.EarthEngine.ExportImage (LRO) google.earthengine.v1.EarthEngine.ExportMap (LRO) google.earthengine.v1.EarthEngine.ExportTable (LRO) google.earthengine.v1.EarthEngine.ExportVideo (LRO) google.earthengine.v1.EarthEngine.ExportVideoMap (LRO) google.earthengine.v1.EarthEngine.GetAsset google.earthengine.v1.EarthEngine.GetPixels google.earthengine.v1.EarthEngine.GetProjectConfig google.earthengine.v1.EarthEngine.ImportImage (LRO) google.earthengine.v1.EarthEngine.ImportTable (LRO) google.earthengine.v1.EarthEngine.ListAlgorithms google.earthengine.v1.EarthEngine.ListAssets google.earthengine.v1.EarthEngine.ListFeatures google.earthengine.v1alpha.EarthEngine.ComputeFeatures google.earthengine.v1alpha.EarthEngine.ComputeImages google.earthengine.v1alpha.EarthEngine.ComputePixels google.earthengine.v1alpha.EarthEngine.ComputeValue google.earthengine.v1alpha.EarthEngine.CopyAsset google.earthengine.v1alpha.EarthEngine.CreateFeatureView google.earthengine.v1alpha.EarthEngine.CreateFilmstripThumbnail google.earthengine.v1alpha.EarthEngine.CreateMap google.earthengine.v1alpha.EarthEngine.CreateTable google.earthengine.v1alpha.EarthEngine.CreateThumbnail google.earthengine.v1alpha.EarthEngine.CreateVideoThumbnail google.earthengine.v1alpha.EarthEngine.ExportClassifier (LRO) google.earthengine.v1alpha.EarthEngine.ExportImage (LRO) google.earthengine.v1alpha.EarthEngine.ExportMap (LRO) google.earthengine.v1alpha.EarthEngine.ExportTable (LRO) google.earthengine.v1alpha.EarthEngine.ExportVideo (LRO) google.earthengine.v1alpha.EarthEngine.ExportVideoMap (LRO) google.earthengine.v1alpha.EarthEngine.GetAsset google.earthengine.v1alpha.EarthEngine.GetPixels google.earthengine.v1alpha.EarthEngine.GetProjectConfig google.earthengine.v1alpha.EarthEngine.ImportExternalImage google.earthengine.v1alpha.EarthEngine.ImportImage (LRO) google.earthengine.v1alpha.EarthEngine.ImportTable (LRO) google.earthengine.v1alpha.EarthEngine.ListAlgorithms google.earthengine.v1alpha.EarthEngine.ListAssets google.earthengine.v1alpha.EarthEngine.ListFeatures google.earthengine.v1alpha.EarthEngine.ListImages google.earthengine.v1beta.EarthEngine.ComputeFeatures google.earthengine.v1beta.EarthEngine.ComputeImages google.earthengine.v1beta.EarthEngine.ComputePixels google.earthengine.v1beta.EarthEngine.ComputeValue google.earthengine.v1beta.EarthEngine.CopyAsset google.earthengine.v1beta.EarthEngine.CreateFeatureView google.earthengine.v1beta.EarthEngine.CreateFilmstripThumbnail google.earthengine.v1beta.EarthEngine.CreateMap google.earthengine.v1beta.EarthEngine.CreateTable google.earthengine.v1beta.EarthEngine.CreateThumbnail google.earthengine.v1beta.EarthEngine.CreateVideoThumbnail google.earthengine.v1beta.EarthEngine.ExportClassifier (LRO) google.earthengine.v1beta.EarthEngine.ExportImage (LRO) google.earthengine.v1beta.EarthEngine.ExportMap (LRO) google.earthengine.v1beta.EarthEngine.ExportTable (LRO) google.earthengine.v1beta.EarthEngine.ExportVideo (LRO) google.earthengine.v1beta.EarthEngine.ExportVideoMap (LRO) google.earthengine.v1beta.EarthEngine.GetAsset google.earthengine.v1beta.EarthEngine.GetPixels google.earthengine.v1beta.EarthEngine.GetProjectConfig google.earthengine.v1beta.EarthEngine.ImportImage (LRO) google.earthengine.v1beta.EarthEngine.ImportTable (LRO) google.earthengine.v1beta.EarthEngine.ListAlgorithms google.earthengine.v1beta.EarthEngine.ListAssets google.earthengine.v1beta.EarthEngine.ListFeatures DATA WRITE google.earthengine.v1.EarthEngine.CopyAsset google.earthengine.v1.EarthEngine.CreateAsset google.earthengine.v1.EarthEngine.DeleteAsset google.earthengine.v1.EarthEngine.ExportClassifier (LRO) google.earthengine.v1.EarthEngine.ImportImage (LRO) google.earthengine.v1.EarthEngine.ImportTable (LRO) google.earthengine.v1.EarthEngine.MoveAsset google.earthengine.v1.EarthEngine.UpdateAsset google.earthengine.v1.EarthEngine.UpdateProjectConfig google.earthengine.v1alpha.EarthEngine.CopyAsset google.earthengine.v1alpha.EarthEngine.CreateAsset google.earthengine.v1alpha.EarthEngine.DeleteAsset google.earthengine.v1alpha.EarthEngine.ExportClassifier (LRO) google.earthengine.v1alpha.EarthEngine.ExportImage (LRO) google.earthengine.v1alpha.EarthEngine.ImportImage (LRO) google.earthengine.v1alpha.EarthEngine.ImportTable (LRO) google.earthengine.v1alpha.EarthEngine.MoveAsset google.earthengine.v1alpha.EarthEngine.UpdateAsset google.earthengine.v1alpha.EarthEngine.UpdateProjectConfig google.earthengine.v1beta.EarthEngine.CopyAsset google.earthengine.v1beta.EarthEngine.CreateAsset google.earthengine.v1beta.EarthEngine.DeleteAsset google.earthengine.v1beta.EarthEngine.ExportClassifier (LRO) google.earthengine.v1beta.EarthEngine.ExportImage (LRO) google.earthengine.v1beta.EarthEngine.ImportImage (LRO) google.earthengine.v1beta.EarthEngine.ImportTable (LRO) google.earthengine.v1beta.EarthEngine.MoveAsset google.earthengine.v1beta.EarthEngine.UpdateAsset google.earthengine.v1beta.EarthEngine.UpdateProjectConfig API interface audit logs For information about how and which permissions are evaluated for each method, see the Cloud Identity and Access Management documentation for Cloud Earth Engine. google.earthengine.v1.EarthEngine The following audit logs are associated with methods belonging to google.earthengine.v1.EarthEngine .",
+          "Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.DeleteAsset\" ExportClassifier Method : google.earthengine.v1alpha.EarthEngine.ExportClassifier Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportClassifier\" ExportImage Method : google.earthengine.v1alpha.EarthEngine.ExportImage Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportImage\" ExportMap Method : google.earthengine.v1alpha.EarthEngine.ExportMap Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportMap\" ExportTable Method : google.earthengine.v1alpha.EarthEngine.ExportTable Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportTable\" ExportVideo Method : google.earthengine.v1alpha.EarthEngine.ExportVideo Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportVideo\" ExportVideoMap Method : google.earthengine.v1alpha.EarthEngine.ExportVideoMap Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1alpha.EarthEngine.ExportVideoMap\" GetAsset Method : google.earthengine.v1alpha.EarthEngine.GetAsset Audit log type : Data access Permissions : earthengine.assets.get - DATA READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.DeleteAsset\" ExportClassifier Method : google.earthengine.v1beta.EarthEngine.ExportClassifier Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportClassifier\" ExportImage Method : google.earthengine.v1beta.EarthEngine.ExportImage Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportImage\" ExportMap Method : google.earthengine.v1beta.EarthEngine.ExportMap Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportMap\" ExportTable Method : google.earthengine.v1beta.EarthEngine.ExportTable Audit log type : Data access Permissions : earthengine.assets.create - DATA WRITE earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportTable\" ExportVideo Method : google.earthengine.v1beta.EarthEngine.ExportVideo Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportVideo\" ExportVideoMap Method : google.earthengine.v1beta.EarthEngine.ExportVideoMap Audit log type : Data access Permissions : earthengine.exports.create - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.earthengine.v1beta.EarthEngine.ExportVideoMap\" GetAsset Method : google.earthengine.v1beta.EarthEngine.GetAsset Audit log type : Data access Permissions : earthengine.assets.get - DATA READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "b4b3b2.tif",
+      "b5b6b7.tif",
+      "code.earthengine.google.com",
+      "demo.tif",
+      "developers.google.com",
+      "e.g",
+      "earthengine.assets.create",
+      "earthengine.assets.get",
+      "earthengine.exports.create",
+      "out.tif"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/Earth_Engine_asset_from_cloud_geotiff",
+        "https://developers.google.com/earth-engine/guides/access",
+        "https://developers.google.com/earth-engine/guides/audit_logging"
+      ]
+    }
+  ]
+}

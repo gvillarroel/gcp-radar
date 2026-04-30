@@ -1,0 +1,201 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE Multi-cluster Services pod-specific addressing",
+  "feature_slug": "gke-multi-cluster-services-pod-specific-addressing",
+  "summary": "Enables pod-specific addressing for GKE Multi-cluster Services.",
+  "extended_definition": "Enables pod-specific addressing for GKE Multi-cluster Services.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Harden your cluster's security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default security configurations The following sections describe options that are configured by default in new clusters to mitigate specific security concerns, like vulnerabilities or risks.",
+          "You can use the following methods for admission control in GKE clusters: Policy Controller : control workload admission at scale across multiple GKE clusters.",
+          "PodSecurity admission controller : enforce the Kubernetes Pod Security Standards by applying predefined policies to entire clusters or to specific namespaces."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following versions of GKE or later have been updated to address the providerID issue: 1.33.1-gke.1386000 1.32.4-gke.1533000 1.31.9-gke.1119000 1.30.12-gke.1208000 Optionally, if you cannot upgrade, implement the following validating admission policy on your cluster to mitigate the providerID issue: apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicy metadata : name : validate - node - providerid spec : failurePolicy : Fail matchConstraints : resourceRules : - apiGroups : [ \"\" ] apiVersions : [ \"v1\" ] operations : [ \"CREATE\", \"UPDATE\" ] resources : [ \"nodes\" ] matchConditions : - name : \"has-providerid\" expression : \"has(object.spec.providerID)\" validations : - expression : \"object.spec.providerID == '' object.spec.providerID.endsWith('/' + object.metadata.name)\" message : \"node.spec.providerID must match the node name\" --- apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicyBinding metadata : name : validate - node - providerid - binding spec : policyName : validate - node - providerid validationActions : [ Deny ] Use node restricted labels when isolating workloads to specific nodes as a security control If you are using labels for node isolation, as described in Kubernetes documentation , use node restricted labels (for example, labels of the form node-restriction.kubernetes.io/example-constraint ) in node affinity and node selector terms used for workload isolation.",
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \\ --scope = 'organizations/ ORGANIZATION ID ' \\ --asset-types = 'k8s.io/Pod' \\ --query = 'labels.\"app.kubernetes.io/name\"=\"ingress-nginx\"' Replace ORGANIZATION ID with your organization resource ID."
+        ]
+      },
+      {
+        "title": "\"Serve LLMs using multi-host TPUs on GKE with JetStream and Pathways \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create one TPU v6e node pool with a 4x4 topology and four nodes each: gcloud container node-pools create multihost-np \\ --project = ${ PROJECT ID } \\ --location = ${ CONTROL PLANE LOCATION } \\ --node-locations = ${ NODE LOCATION } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ${ MACHINE TYPE } \\ --num-nodes = ${ WORKERS PER SLICE } \\ --tpu-topology = ${ TOPOLOGY } \\ --scopes cloud-platform \\ --placement-type = COMPACT \\ --workload-metadata = GCE METADATA Note: The --workload-metadata=GCE METADATA denotes that the node pool has Workload Identity Federation for GKE disabled.",
+          "In this guide, you will walk through how to provision a GKE cluster with the multi-host TPU slices and use the Pathways on Cloud binaries, launch the JetStream Server with MaxText framework, and make multi-host inference requests.",
+          "Deploy JetStream Pathways with disaggregated serving Save the following manifest as jetstream-pathways-disagg-llama-2-70b-2-2x4.yaml : apiVersion : leaderworkerset.x-k8s.io/v1 kind : LeaderWorkerSet metadata : name : jetstream-pathways annotations : leaderworkerset.sigs.k8s.io/subgroup-exclusive-topology : cloud.google.com/gke-nodepool spec : replicas : 1 leaderWorkerTemplate : subGroupPolicy : subGroupSize : 2 leaderTemplate : metadata : labels : app : jetstream-pathways spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v6e-slice cloud.google.com/gke-tpu-topology : 2x4 tolerations : - key : \"google.com/tpu\" operator : \"Exists\" effect : \"NoSchedule\" containers : - name : pathways-proxy image : us-docker.pkg.dev/cloud-tpu-v2-images/pathways/proxy server:jax-0.5.3 args : - --resource manager address=$(LWS LEADER ADDRESS):38677 - --server port=38681 - --gcs scratch location=gs://cloud-pathways-staging/tmp - --xla jf auto cross replica sharding=false - --xla tpu enable windowed einsum for reduce scatter=false - --xla tpu enable windowed einsum for all gather=false - --xla tpu prefer latch optimized rhs layouts=true - --xla tpu enable experimental fusion cost model=false - --xla tpu dot dot fusion duplicated=false - --xla tpu dot dot fusion=true - --xla jf conv input fusion=true - --xla jf conv output fusion=true - --xla tpu rwb fusion=false - --xla tpu copy fusion pad unpad ratio=0 - --xla tpu licm size inflation ratio=1 - --xla tpu copy elision analysis allowance=150000 - --xla tpu copy insertion use region analysis limit=10000 - --xla tpu order dot after layout=true - --xla jf rematerialization percent shared memory limit=100 - --xla tpu use repeated instance for preferred prefetch time=true - --xla tpu enforce prefetch fifo order=false - --xla tpu prefetch interval picker size override=6000000 - --xla tpu async copy bandwidth scaling factor=1 - --xla tpu nd short transfer max chunks=-1 - --xla tpu enable aggressive broadcast priority update=true - --xla tpu alternate memory benefit scaling factor for large buffers=SQRT - --xla tpu memory bound loop optimizer options=enabled:true - --xla tpu enable copy fusion=true - --xla tpu enable cross program prefetch freeing=false - --xla tpu enable dot strength reduction=true - --xla tpu layout use dot grouping=false - --xla tpu msa inefficient use to copy ratio=0.5 - --xla tpu reduce loop fusion dup with unfusable user=false - --xla tpu vector load fusion window=1024 - --xla tpu vector store fusion window=256 - --xla jf conv reshape fusion=false - --xla tpu input conv multi users=false - --xla tpu enable multi level input dot dot fusion=false - --xla tpu enable multi level output dot dot fusion=false - --xla tpu dot dot fusion separable convs only=false - --xla tpu enable multi level nested loop fusion=true - --xla tpu nested dot fusion=true - --xla tpu enable multi level nested dot fusion=false - --xla jf enable multi output fusion=true - --xla tpu use lp llo scheduler for dot dot fusions=false - --xla tpu enable flash attention=true imagePullPolicy : Always ports : - containerPort : 38681 - name : pathways-rm env : - name : HOST ADDRESS value : \"$(LWS LEADER ADDRESS)\" - name : TPU SKIP MDS QUERY value : \"true\" image : us-docker.pkg.dev/cloud-tpu-v2-images/pathways/server:jax-0.5.3 args : - --server port=38677 - --gcs scratch location=PATHWAYS BUCKET - --node type=resource manager - --instance count=2 - --instance type=tpuv6e:2x4 imagePullPolicy : Always ports : - containerPort : 38677 - name : jax-tpu image : us-docker.pkg.dev/cloud-tpu-images/inference/jetstream-pathways:v0.2.0 args : - MaxText/configs/base.yml - tokenizer path=assets/tokenizer.llama2 - load parameters path=CHECKPOINT PATH - max prefill predict length=1024 - max target length=2048 - model name=llama2-70b - ici fsdp parallelism=1 - ici autoregressive parallelism=1 - ici tensor parallelism=-1 - scan layers=false - weight dtype=bfloat16 - per device batch size=27 - checkpoint is quantized=true - quantization=int8 - quantize kvcache=true - compute axis order=0,2,1,3 - ar cache axis order=0,2,1,3 - stack prefill result cache=True - inference server=ExperimentalMaxtextDisaggregatedServer 8 - inference benchmark test=True - enable model warmup=True env : - name : LOG LEVEL value : \"INFO\" imagePullPolicy : Always securityContext : capabilities : add : [ \"SYS PTRACE\" , \"NET ADMIN\" , \"SYS TIME\" ] ports : - containerPort : 9000 startupProbe : httpGet : path : /healthcheck port : 8000 scheme : HTTP periodSeconds : 1 initialDelaySeconds : 240 failureThreshold : 10000 livenessProbe : httpGet : path : /healthcheck port : 8000 scheme : HTTP periodSeconds : 60 failureThreshold : 100 readinessProbe : httpGet : path : /healthcheck port : 8000 scheme : HTTP periodSeconds : 60 failureThreshold : 100 - name : jetstream-http image : us-docker.pkg.dev/cloud-tpu-images/inference/jetstream-http:v0.2.3 imagePullPolicy : Always ports : - containerPort : 8000 size : 5 workerTemplate : spec : nodeSelector : cloud.google.com/gke-tpu-accelerator : tpu-v6e-slice cloud.google.com/gke-tpu-topology : 2x4 containers : - name : worker args : - --server port=38679 - --resource manager address=$(LWS LEADER ADDRESS):38677 - --gcs scratch location=PATHWAYS BUCKET image : us-docker.pkg.dev/cloud-tpu-v2-images/pathways/server:jax-0.5.3 imagePullPolicy : Always ports : - containerPort : 38679 resources : limits : google.com/tpu : \"4\" --- apiVersion : v1 kind : Service metadata : name : jetstream-svc spec : selector : app : jetstream-pathways ports : - protocol : TCP name : jetstream-http port : 8000 targetPort : 8000 Set the value of the load parameters path field to your checkpoint path that was produced in the checkpoint conversion process."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "asm.2",
+      "asm.4",
+      "asm.8",
+      "base.yml",
+      "container.googleapis.com",
+      "docker.pkg.dev",
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "k8s.io",
+      "leaderworkerset.sigs.k8s.io",
+      "leaderworkerset.x",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "restriction.kubernetes.io",
+      "tokenizer.llama2",
+      "v0.2.0",
+      "v0.2.3"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-multihost-tpu-jetstream"
+      ]
+    }
+  ]
+}

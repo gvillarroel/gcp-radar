@@ -1,0 +1,214 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "VPC Service Controls organization policies",
+  "feature_slug": "vpc-service-controls-organization-policies",
+  "summary": "Provides organization policies for VPC Service Controls to help create secure perimeters against data exfiltration.",
+  "extended_definition": "Provides organization policies for VPC Service Controls to help create secure perimeters against data exfiltration.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+      "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "source_id": "site-docs-reference-2",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Refer to following sample command: gcloud resource-manager folders create \\ --display-name=\"Test Async Folder\" \\ --organization=2518 \\ --async The output provides an operation name (e.g., fc.8572) and shows done: false .",
+          "This provides them with a high degree of flexibility in assigning allow, deny, or organization policies at the right level of granularity.",
+          "The Create Folder response: { \"name\" : \"operations/fc.123456789\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\" , \"displayName\" : \" DISPLAY NAME \" , \"operationType\" : \"CREATE\" } } The Get Operation curl request: curl -H \"Authorization: Bearer ${bearer token}\" \\ https://cloudresourcemanager.googleapis.com/v3/operations/fc.123456789 The Get Operation response: { \"name\" : \"operations/fc.123456789\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\" , \"displayName\" : \" DISPLAY NAME \" , \"operationType\" : \"CREATE\" }, \"done\" : true , \"response\" : { \"@type\" : \"type.googleapis.com/google.cloud.resourcemanager.v3.Folder\" , \"name\" : \"folders/12345\" , \"parent\" : \"organizations/123\" , \"displayName\" : \" DISPLAY NAME \" , \"lifecycleState\" : \"ACTIVE\" , \"createTime\" : \"2017-07-19T23:29:26.018Z\" , \"updateTime\" : \"2017-07-19T23:29:26.046Z\" } } Add tags during folder creation Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "\"Access control for projects with IAM \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "source_id": "site-iam-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Folder resourcemanager. organizations. get resourcemanager. projects. create Project Deleter ( roles/ resourcemanager.projectDeleter ) Provides access to delete Google Cloud projects.",
+          "The role is granted on the organization resource or folder that contains the projects: Method Required permission(s) resourcemanager.projects.create resourcemanager.projects.create resourcemanager.projects.delete resourcemanager.projects.delete resourcemanager.projects.get resourcemanager.projects.get Granting this permission will also grant access to get the name of the billing account associated with the project through the Billing API method billing.projects.getBillingInfo . resourcemanager.projects.getIamPolicy resourcemanager.projects.getIamPolicy resourcemanager.projects.list resourcemanager.projects.list resourcemanager.projects.search resourcemanager.projects.get resourcemanager.projects.setIamPolicy resourcemanager.projects.setIamPolicy resourcemanager.projects.testIamPermissions Does not require any permission. resourcemanager.projects.undelete resourcemanager.projects.undelete resourcemanager.projects.patch To update a project's metadata, requires resourcemanager.projects.update permission.",
+          "Lowest-level resources where you can grant this role: Project iam.policybindings. iam.policybindings.get iam.policybindings.list resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Browser ( roles/ browser ) Read access to browse the hierarchy for a project, including the folder, organization, and allow policy."
+        ]
+      },
+      {
+        "title": "Resource Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key capabilities for managing Google Cloud resources Resource Manager provides the following capabilities to help you govern your cloud environment: Centralized control with the organization resource : The organization resource represents your organization (for example, your company).",
+          "Integration with other Google Cloud services for resource management Resource Manager is central to managing your Google Cloud resources, and provides the structure and foundational capabilities that let you effectively use and govern other critical services, such as Organization Policy, Tags, and Essential Contacts: Tags : Resource Manager works with Tags, which lets you attach arbitrary key-value pairs to resources.",
+          "For example, moving a project into an organization resource updates its allow and deny policies to inherit from the policies of the organization resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.projects.getBillingInfo",
+      "cloudresourcemanager.googleapis.com",
+      "e.g",
+      "fc.123456789",
+      "fc.8572",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "projects.move",
+      "resourcemanager.projectDeleter",
+      "resourcemanager.projects.create",
+      "resourcemanager.projects.delete",
+      "resourcemanager.projects.getIamPolicy",
+      "resourcemanager.projects.patch",
+      "resourcemanager.projects.search",
+      "resourcemanager.projects.setIamPolicy",
+      "resourcemanager.projects.testIamPermissions",
+      "resourcemanager.projects.undelete",
+      "resourcemanager.projects.update",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-folders",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-proj",
+        "https://docs.cloud.google.com/resource-manager/docs/resource-manager-overview"
+      ]
+    }
+  ]
+}

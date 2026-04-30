@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore support for australia-southeast2 region",
+  "feature_slug": "firestore-support-for-australia-southeast2-region",
+  "summary": "Firestore is available in the australia-southeast2 (Melbourne) region.",
+  "extended_definition": "Firestore is available in the australia-southeast2 (Melbourne) region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/locations",
+      "https://docs.cloud.google.com/firestore/docs/reference/rest",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add and update data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 35,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If not supplied, the client falls back to the default project inferred from the environment. firestore = Google :: Cloud :: Firestore . new project id : project id puts \"Created Cloud Firestore client with given project ID.\" quickstart . rb Set a document To create or overwrite a single document, use the following language-specific set() methods: Web version 9 Use the setDoc() method: import { doc , setDoc } from \"firebase/firestore\" ; // Add a new document in collection \"cities\" await setDoc ( doc ( db , \"cities\" , \"LA\" ), { name : \"Los Angeles\" , state : \"CA\" , country : \"USA\" }); set document . js Web version 8 Use the set() method: // Add a new document in collection \"cities\" db . collection ( \"cities\" ). doc ( \"LA\" ). set ({ name : \"Los Angeles\" , state : \"CA\" , country : \"USA\" }) . then (() = > { console . log ( \"Document successfully written!\" ); }) . catch (( error ) = > { console . error ( \"Error writing document: \" , error ); }); test . firestore . js Swift Use the setData() method: Note: This product is not available on watchOS and App Clip targets. // Add a new document in collection \"cities\" do { try await db . collection ( \"cities\" ). document ( \"LA\" ). setData ([ \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" ]) print ( \"Document successfully written!\" ) } catch { print ( \"Error writing document: \\( error ) \" ) } ViewController . swift Objective-C Use the setData: method: Note: This product is not available on watchOS and App Clip targets. // Add a new document in collection \"cities\" [[[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"LA\" ] setData : @{ @\"name\" : @\"Los Angeles\" , @\"state\" : @\"CA\" , @\"country\" : @\"USA\" } completion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error writing document: %@\" , error ); } else { NSLog ( @\"Document successfully written!\" ); } }]; ViewController . m Kotlin Android Use the set() method: val city = hashMapOf ( \"name\" to \"Los Angeles\" , \"state\" to \"CA\" , \"country\" to \"USA\" , ) db . collection ( \"cities\" ). document ( \"LA\" ) . set ( city ) . addOnSuccessListener { Log . d ( TAG , \"DocumentSnapshot successfully written!\" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Error writing document\" , e ) } DocSnippets . kt Java Android Use the set() method: Map<String , Object > city = new HashMap <> (); city . put ( \"name\" , \"Los Angeles\" ); city . put ( \"state\" , \"CA\" ); city . put ( \"country\" , \"USA\" ); db . collection ( \"cities\" ). document ( \"LA\" ) . set ( city ) . addOnSuccessListener ( new OnSuccessListener<Void> () { @Override public void onSuccess ( Void aVoid ) { Log . d ( TAG , \"DocumentSnapshot successfully written!\" ); } }) . addOnFailureListener ( new OnFailureListener () { @Override public void onFailure ( @NonNull Exception e ) { Log . w ( TAG , \"Error writing document\" , e ); } }); DocSnippets . java Dart Use the set() method: final city = < String , String > { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" }; db . collection ( \"cities\" ) . doc ( \"LA\" ) . set ( city ) . onError (( e , ) = > print ( \"Error writing document: $ e \" )); firestore . dart Java Use the set() method: // Create a Map to store the data we want to set Map<String , Object > docData = new HashMap <> (); docData . put ( \"name\" , \"Los Angeles\" ); docData . put ( \"state\" , \"CA\" ); docData . put ( \"country\" , \"USA\" ); docData . put ( \"regions\" , Arrays . asList ( \"west coast\" , \"socal\" )); // Add a new document (asynchronously) in collection \"cities\" with id \"LA\" ApiFuture<WriteResult> future = db . collection ( \"cities\" ). document ( \"LA\" ). set ( docData ); // ... // future.get() blocks on response System . out . println ( \"Update time : \" + future . get (). getUpdateTime ()); ManageDataSnippets . java Python Use the set() method: data = { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" } Add a new doc in collection 'cities' with ID 'LA' db . collection ( \"cities\" ) . document ( \"LA\" ) . set ( data ) snippets . py Python (Async) Use the set() method: data = { \"name\" : \"Los Angeles\" , \"state\" : \"CA\" , \"country\" : \"USA\" } Add a new doc in collection 'cities' with ID 'LA' await db . collection ( \"cities\" ) . document ( \"LA\" ) . set ( data ) snippets . py C++ Use the Set() method: // Add a new document in collection 'cities' db - > Collection ( \"cities\" ) .",
+          "For more information, see Set up authentication for a local development environment . class City { / @var string / public $name; / @var string / public $state; / @var string / public $country; / @var bool / public $capital; / @var int / public $population; / @var array<string> / public $regions; / @param array<string> $regions / public function construct( string $name, string $state, string $country, bool $capital = false, int $population = 0, array $regions = [] ) { $this->name = $name; $this->state = $state; $this->country = $country; $this->capital = $capital; $this->population = $population; $this->regions = $regions; } / @param array<mixed> $source / public static function fromArray(array $source): City { // implementation of fromArray is excluded for brevity ... } / @return array<mixed> / public function toArray(): array { // implementation of toArray is excluded for brevity ... } public function toString() { // implementation of toString is excluded for brevity ... } } Unity [FirestoreData] public class City { [FirestoreProperty] public string Name { get ; set ; } [FirestoreProperty] public string State { get ; set ; } [FirestoreProperty] public string Country { get ; set ; } [FirestoreProperty] public bool Capital { get ; set ; } [FirestoreProperty] public long Population { get ; set ; } } C# [FirestoreData] public class City { [FirestoreProperty] public string Name { get ; set ; } [FirestoreProperty] public string State { get ; set ; } [FirestoreProperty] public string Country { get ; set ; } [FirestoreProperty] public bool Capital { get ; set ; } [FirestoreProperty] public long Population { get ; set ; } } Program . cs Ruby // This isn 't supported in Ruby Web version 9 import { doc , setDoc } from \"firebase/firestore\" ; // Set with cityConverter const ref = doc ( db , \"cities\" , \"LA\" ). withConverter ( cityConverter ); await setDoc ( ref , new City ( \"Los Angeles\" , \"CA\" , \"USA\" )); set custom object . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Set with cityConverter db . collection ( \"cities\" ). doc ( \"LA\" ) . withConverter ( cityConverter ) . set ( new City ( \"Los Angeles\" , \"CA\" , \"USA\" )); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let city = City ( name : \"Los Angeles\" , state : \"CA\" , country : \"USA\" , isCapital : false , population : 5000000 ) do { try db . collection ( \"cities\" ). document ( \"LA\" ). setData ( from : city ) } catch let error { print ( \"Error writing city to Firestore: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // This isn't supported in Objective-C.",
+          "FieldValue . arrayRemove ( \"east coast\" ) }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let washingtonRef = db . collection ( \"cities\" ). document ( \"DC\" ) // Atomically add a new region to the \"regions\" array field. washingtonRef . updateData ([ \"regions\" : FieldValue . arrayUnion ([ \"greater virginia\" ]) ]) // Atomically remove a region from the \"regions\" array field. washingtonRef . updateData ([ \"regions\" : FieldValue . arrayRemove ([ \"east coast\" ]) ]) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets."
+        ]
+      },
+      {
+        "title": "Locations \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/locations",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Firestore supports the following multi-region locations: Standard edition Multi-region name Multi-region description Read-Write regions Witness region eur3 Europe europe-west1 (Belgium), europe-west4 (Netherlands) europe-north1 (Finland) nam5 United States (Central) us-central1 (Iowa), us-central2 (Oklahoma—private GCP region) us-east1 (South Carolina) nam7 United States (Central and East) us-central1 (Iowa), us-east4 (Northern Virginia) us-central2 (Oklahoma—private Google Cloud region) Enterprise edition Multi-region name Multi-region description Read-Write regions Witness region eur3 Europe europe-west1 (Belgium), europe-west4 (Netherlands) europe-north1 (Finland) nam5 United States (Central) us-central1 (Iowa), us-central2 (Oklahoma—private GCP region) us-east1 (South Carolina) nam7 United States (Central and East) us-central1 (Iowa), us-east4 (Northern Virginia) us-central2 (Oklahoma—private Google Cloud region) Note: If your project already has an App Engine app with a location of either us-central or europe-west , then your default Firestore database will be considered multi-regional .",
+          "For a comprehensive explanation of pricing per region and per region type, see: Firestore Standard edition pricing Firestore Enterprise edition pricing View the location of your databases Use one of the following methods to view the location setting for your databases: Run the gcloud firestore databases list command.",
+          "Johannesburg Location SLA Your Firestore location type determines the Service Level Agreement (SLA) uptime percentage: Covered service Monthly uptime percentage Firestore Multi-Region = 99.999% Firestore Regional = 99.99% Location pricing Your Firestore location determines the cost of database operations."
+        ]
+      },
+      {
+        "title": "Cloud Firestore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://firestore.googleapis.com REST Resource: v1beta2.projects.databases Methods exportDocuments POST /v1beta2/{name=projects/ /databases/ }:exportDocuments Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. importDocuments POST /v1beta2/{name=projects/ /databases/ }:importDocuments Imports documents into Google Cloud Firestore.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://firestore.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.",
+          "A service that is available in multiple regions might have multiple regional endpoints."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "database.name",
+      "firestore.googleapis.com",
+      "future.get",
+      "v1.projects.databases",
+      "v1beta2.projects.databases"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/locations",
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/locations",
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data"
+      ]
+    }
+  ]
+}

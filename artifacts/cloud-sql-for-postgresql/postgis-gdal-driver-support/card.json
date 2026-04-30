@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.861Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "PostGIS GDAL driver support",
+  "feature_slug": "postgis-gdal-driver-support",
+  "summary": "Cloud SQL for PostgreSQL supports the PostGIS GDAL driver.",
+  "extended_definition": "Cloud SQL for PostgreSQL supports the PostGIS GDAL driver.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+      "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL built-in database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"About client-side encryption \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "URL . create ( drivername = \"postgresql+pg8000\" , username = db user , # e.g. \"my-database-user\" password = db pass , # e.g. \"my-database-password\" database = db name , # e.g. \"my-database-name\" query = { \"unix sock\" : \" {} / {} /.s.PGSQL.5432\" . format ( db socket dir , instance connection name # e.g. \"/cloudsql\" ) # i.e \"<PROJECT-NAME>:<INSTANCE-REGION>:<INSTANCE-NAME>\" }, ), ) print ( \"Created Unix socket connection pool\" ) return pool def init db ( db user : str , db pass : str , db name : str , table name : str , instance connection name : str = None , db socket dir : str = None , db host : str = None , ) - > sqlalchemy . engine . base .",
+          "Tink supports envelope encryption in C++, Java, Go, and Python using the AEAD API: public interface Aead { byte [] encrypt ( final byte [] plaintext, final byte [] associatedData ) throws… byte [] decrypt ( final byte [] ciphertext, final byte [] associatedData ) throws… } Besides the normal message/ciphertext argument, the encrypt and decrypt methods support optional associated data.",
+          "URL . create ( drivername = \"postgresql+pg8000\" , username = db user , # e.g. \"my-database-user\" password = db pass , # e.g. \"my-database-password\" host = db hostname , # e.g. \"127.0.0.1\" port = db port , # e.g."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "source_id": "site-iam-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "i.e",
+      "s.PGSQL.5432"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/client-side-encryption",
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.683Z",
+  "source_step08_card": "data/step-08/current/products/cloud-router/card.json",
+  "product_name": "Cloud Router",
+  "product_slug": "cloud-router",
+  "feature_name": "BGP session administrative control",
+  "feature_slug": "bgp-session-administrative-control",
+  "summary": "BGP session administrative control lets you enable and disable Cloud Router BGP sessions.",
+  "extended_definition": "BGP session administrative control lets you enable and disable Cloud Router BGP sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For additional troubleshooting information, see the following: Troubleshoot BGP peering Troubleshoot BGP routes and route selection Troubleshoot Cloud Router log messages BGP session failed to establish Check that the settings on your on-premises BGP router and the settings on your Cloud Router are correct.",
+          "BGP session closes If your on-premises router advertises more than 5,000 prefixes, then the Cloud Router closes the BGP session and does not attempt to re-establish it until the BGP peering is reset manually.",
+          "The IPv4 and IPv6 addresses that you can use for a BGP session depend on the product you use."
+        ]
+      },
+      {
+        "title": "Establish BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable IPv6 route exchange on your IPv4 BGP session, you need to configure a IPv4 and IPv6 (dual stack) HA VPN tunnel or Dedicated Interconnect VLAN attachment.",
+          "BGP peering addresses BGP sessions for the following products use IPv4 link-local addresses in the 169.254.0.0/16 range as BGP peering addresses: For Dedicated Interconnect, you can either specify candidate IPv4 link-local addresses for BGP peering addresses, or Google Cloud can select unused IPv4 link-local addresses automatically.",
+          "You configure these BGP sessions by assigning two interfaces on Cloud Router, one IPv4 and one IPv6, to the same HA VPN tunnel or Cloud Interconnect VLAN attachment."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot BGP routes and route selection \\_|\\_ Cloud Router \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command: gcloud compute routers describe ROUTER-NAME In the output, check the following values: bgpPeers.enableIpv4 is true bgpPeers.ipv4NexthopAddress and bgpPeers.peerIpv4NexthopAddress are present Some on-premises IPv4 or IPv6 prefixes aren't reachable If you are experiencing traffic loss, ping errors, or other problems when attempting to reach on-premises IPv4 or IPv6 destinations that are within prefixes learned by Cloud Router, there are a variety of possible causes.",
+          "The BGP session is enabled to advertise IPv6 routes and the next-hop is an IPv6 address.",
+          "The output is similar to the following; look for the routeStatus set to active : kind : compute#routerStatusResponse result : bestRoutesForRouter : - asPaths : - asLists : - 65200 pathSegmentType : AS SEQUENCE creationTimestamp : '2024-03-22T13:57:15.533-07:00' destRange : 10.128.0.0/20 kind : compute#route network : https://www.googleapis.com/compute/v1/projects/ PROJECT /global/networks/ VPC NAME nextHopIp : 169.254.73.246 nextHopVpnTunnel : https://www.googleapis.com/compute/v1/projects/ PROJECT /regions/ REGION /vpnTunnels/ VPN NAME priority : 100 routeStatus : ACTIVE routeType : BGP bgpPeerStatus : - advertisedRoutes : - destRange : 10.128.0.0/20 kind : compute#route network : https://www.googleapis.com/compute/v1/projects/ PROJECT /global/networks/aneta-vpc nextHopIp : 169.254.73.245 nextHopVpnTunnel : https://www.googleapis.com/compute/v1/projects/ PROJECT /regions/ REGION /vpnTunnels/ VPN NAME priority : 100 routeType : BGP enableIpv6 : false ipAddress : 169.254.73.245 linkedVpnTunnel : https://www.googleapis.com/compute/v1/projects/ PROJECT /regions/ REGION /vpnTunnels/ VPN NAME md5AuthEnabled : false name : aneta-bgp numLearnedRoutes : 1 peerIpAddress : 169.254.73.246 state : Established status : UP uptime : 10 hours, 11 minutes, 0 seconds uptimeSeconds : '36660' network : https://www.googleapis.com/compute/v1/projects/ PROJECT /global/networks/ VPC NAME The bestRoutesForRouter.routeStatus value displays ACTIVE for an active route, and DROPPED for a filtered route."
+        ]
+      },
+      {
+        "title": "Troubleshoot BGP sessions \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For additional troubleshooting information, see the following: Troubleshoot BGP peering Troubleshoot BGP routes and route selection Troubleshoot Cloud Router log messages BGP session failed to establish Check that the settings on your on-premises BGP router and the settings on your Cloud Router are correct.",
+          "BGP session closes If your on-premises router advertises more than 5,000 prefixes, then the Cloud Router closes the BGP session and does not attempt to re-establish it until the BGP peering is reset manually.",
+          "The IPv4 and IPv6 addresses that you can use for a BGP session depend on the product you use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bgp.asn"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-sessions",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/configuring-bgp",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/support/troubleshoot-bgp-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/resources/troubleshooting"
+      ]
+    }
+  ]
+}

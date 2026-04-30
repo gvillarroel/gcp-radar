@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.964Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Custom Extractor nested extraction",
+  "feature_slug": "custom-extractor-nested-extraction",
+  "summary": "Custom Extractor supports three levels of nesting for extracting structured data from complex documents and tables.",
+  "extended_definition": "Custom Extractor supports three levels of nesting for extracting structured data from complex documents and tables.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+      "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Three levels of nesting is only supported if using generative AI (\"Foundation\") model types within the Custom Extractor.",
+          "Three-level nesting Custom Extractor now provides three levels of nesting.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// LOCATION -documentai.googleapis.com/v1beta3/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process\" Select-Object -Expand Content Custom extractor with signature detection Preview This product is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Custom extractor overview \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom extractor supports a wide range of use cases with three different modes.",
+          "Overview The goal of the custom extractor is to enable Document AI users to build custom entity extraction solutions for new document types for which no pre-trained processors are available.",
+          "For more information on evaluation concepts and metrics, see Evaluate Performance Previous arrow back Form Parser Next Custom extractor mechanisms arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Custom extractor with generative AI \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Derived fields in the custom extractor Custom extractor supports derived fields in the following models: pretrained-foundation-model-v1.4-2025-02-05 as General Availability (GA) pretrained-foundation-model-v1.5-2025-05-05 as Preview pretrained-foundation-model-v1.5-pro-2025-06-20 as Preview You can enable these features in the console UI when creating or editing labels in your document schema.",
+          "Previous arrow back Custom extractor with generative AI Next Pretrained overview arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Signature detection in custom extractor Document AI's custom extractor supports signature detection in custom extractor models pretrained-foundation-model-v1.4-2025-02-05 and pretrained-foundation-model-v1.5-2025-05-05 ."
+        ]
+      },
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "For automated version upgrades, see Previous arrow back Custom extractor overview Next Automated schema extraction arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Note: Good examples of property descriptions include location information and text patterns of the property values, which help disambiguate potential sources of confusion in the document, guiding the model with rules that ensure more reliable and consistent extractions, regardless of the specific document structure or content variations.",
+          "Custom extractor uses the label names you define and previous annotations to make it quicker and easier to label documents at scale with auto-labeling ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "request.json",
+      "v1.4",
+      "v1.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/ce-with-genai",
+        "https://docs.cloud.google.com/document-ai/docs/custom-extractor-overview",
+        "https://docs.cloud.google.com/document-ai/docs/ce-derived-signature",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms"
+      ]
+    }
+  ]
+}

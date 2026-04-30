@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.535Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api",
+  "feature_name": "Google Drive comment and reply events",
+  "feature_slug": "google-drive-comment-and-reply-events",
+  "summary": "Google Drive events can now report when users post comments or replies in Docs, Sheets, or Slides files.",
+  "extended_definition": "Google Drive events can now report when users post comments or replies in Docs, Sheets, or Slides files.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/about-changes",
+      "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+      "https://developers.google.com/workspace/drive/api/guides/events-overview",
+      "https://developers.google.com/workspace/drive/api/guides/manage-comments"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage comments and replies \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PATCH https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID ?fields=id,comment Request body { \"content\": \"This comment is now updated.\" } Delete a comment To delete a comment on a file, use the delete method on the comments resource with the fileId and commentId parameters.",
+          "POST https://www.googleapis.com/drive/v3/files/ FILE ID /comments/ COMMENT ID /replies?fields=id,comment Request body { \"content\": \"This is a reply to a comment.\" } Resolve a comment A comment can only be resolved by posting a reply to a comment.",
+          "Comment constraints The following constraints are enforced when working with anchored and unanchored comments with the Drive API: Comment type File type Anchored Developers can can define their own format for the anchor specification."
+        ]
+      },
+      {
+        "title": "Work with events from Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Google Workspace Events API Google Drive API Google Drive Activity API Source of events Files, folders, and shared drives changes.watch and files.watch DriveActivity Supported events AccessProposal Approval Comment File Permission Reply For a list of supported event types, see Event types for creating subscriptions in the Google Workspace Events API documentation.",
+          "Here are some examples of how you can use events: Observe and respond to changes in a file, folder, or shared drive, such as when a file is edited or a new revision is uploaded.",
+          "Test your Drive subscription To test that you're receiving Drive events, you can trigger an event and pull messages to the Pub/Sub subscription."
+        ]
+      },
+      {
+        "title": "Shared drives overview \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following are the rules for organizerCount and memberCount fields: Only administrators can manage a shared drive with an organizerCount of zero.",
+          "For example, a user that has role=commenter for a shared drive cannot have their access level reduced at another point within the folder hierarchy.",
+          "An individual user can be a member of a shared drive and have file access permissions for files contained within the shared drive."
+        ]
+      },
+      {
+        "title": "\"Track changes for users and shared drives \\_|\\_ Google Drive \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/drive/api/guides/about-changes",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Changes that appear on a shared drive change log If a user is a member of a shared drive, they can access that shared drive's change log which contains: Any changes to the shared drive itself, such as addition or removal of a member Direct changes to the items contained in the shared drive.",
+          "Home Google Workspace Google Drive Guides Send feedback Track changes for users and shared drives Stay organized with collections Save and categorize content based on your preferences.",
+          "To track changes for all items visible to a user, both the user change log and the change logs for all shared drives the user is a member of need to be replayed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "changes.watch",
+      "developers.google.com",
+      "files.watch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-changes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-changes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-changes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/manage-comments",
+        "https://developers.google.com/workspace/drive/api/guides/events-overview",
+        "https://developers.google.com/workspace/drive/api/guides/about-shareddrives",
+        "https://developers.google.com/workspace/drive/api/guides/about-changes"
+      ]
+    }
+  ]
+}

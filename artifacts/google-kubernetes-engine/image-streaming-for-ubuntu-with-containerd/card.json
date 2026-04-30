@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Image streaming for Ubuntu with containerd",
+  "feature_slug": "image-streaming-for-ubuntu-with-containerd",
+  "summary": "Image streaming is generally available for Ubuntu with containerd nodes on GKE.",
+  "extended_definition": "Image streaming is generally available for Ubuntu with containerd nodes on GKE.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Node images \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "source_id": "site-docs-reference-2",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Node images release notes Container-Optimized OS Google provides comprehensive documentation for Container-Optimized OS: Container-Optimized OS documentation Release Notes Ubuntu Periodically, Google updates the Ubuntu images that are available for use on your cluster's Nodes.",
+          "Node image source projects The available node images for GKE clusters are contained in the following source projects: Container-Optimized OS images: gke-node-images Ubuntu images: ubuntu-os-gke-cloud Windows Server images: gke-windows-node-images In addition to the source projects listed above, GKE also uses the following source projects for exclusive usage by the GKE team : ubuntu-os-gke-cloud-private (reserved for exclusive usage of the GKE team) ubuntu-os-gke-cloud-devel (reserved for exclusive usage of the GKE team) You might need to know the source project names while setting up highly-secure clusters.",
+          "Linux node image comparison The following sections compare the operational aspects of the Container-Optimized OS and Ubuntu node images, including: Software package management System initialization Logs collection File system layout Storage driver support Software package manager The cos and cos containerd node images use a minimal root file system with built-in support for the Docker (containerd) container runtime, which also serves as the software package manager for installing software on the host."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Upgrade your clusters to the following GKE on Azure version: 1.21.6-gke.1500 and later (available in February) If you use Ubuntu node images, this version does not address CVE-2021-22600.",
+          "Upgrade your clusters to the following GKE on AWS version: 1.21.6-gke.1500 and later (available in February) If you use Ubuntu node images, this version does not address CVE-2021-22600.",
+          "GDC software for VMware Nodes: The OpenSSL library included in the GDC software for VMware Node OS images (Container-Optimized OS and Ubuntu) contains the vulnerable code."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "The worker nodes use a specific version of containerd, based on the operating system and GKE minor version: Container-Optimized OS and Ubuntu nodes (Linux) : Linux nodes that run GKE 1.32 or earlier, with containerd node images, use containerd 1.7 or earlier versions.",
+          "How GKE is transitioning to containerd 2 Review the following timeline to understand how GKE is transitioning existing clusters to use containerd 2: For Linux nodes with 1.32 and Windows Server nodes with 1.34, GKE uses containerd 1.7. containerd 1.7 deprecated both Docker Schema 1 images and the Container Runtime Interface (CRI) v1alpha2 API.",
+          "For Linux nodes with 1.33 and Windows Server nodes with 1.35, GKE uses containerd 2.0, which removes support for Docker Schema 1 images and the CRI v1alpha2 API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1500"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    }
+  ]
+}

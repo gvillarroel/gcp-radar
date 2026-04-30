@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.716Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "Service account credentials key data support",
+  "feature_slug": "service-account-credentials-key-data-support",
+  "summary": "Ee.ServiceAccountCredentials() accepts key data in addition to key filenames.",
+  "extended_definition": "Ee.ServiceAccountCredentials() accepts key data in addition to key filenames.",
+  "lifecycle": {
+    "latest_feature_date": "2013-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service account credentials To use the CLI with a service account's credentials, use the service account file flag to point to a JSON file containing the service account's key. earthengine --service account file=service account creds.json Usage in Colab The Earth Engine Command Line Tool is preinstalled and ready for use in Google Colab .",
+          "Additionally, if you have permission to view the plan configuration , the output contains: planMaxConcurrentExports , a number indicating the maximum number of batch tasks that can run in parallel across all users and projects that use the billing account. set To update the project's configuration, use the set sub-command.",
+          "Authentication is required to use the tool and can be done using the authenticate command or service account credentials."
+        ]
+      },
+      {
+        "title": "\"Image computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ServiceAccountCredentials ( SERVICE ACCOUNT , KEY ) ee .",
+          "Credentials . from service account file ( KEY ) scoped credentials = credentials . with scopes ( [ 'https://www.googleapis.com/auth/cloud-platform' ]) session = AuthorizedSession ( scoped credentials ) url = 'https://earthengine.googleapis.com/v1beta/projects/earthengine-public/assets/LANDSAT' response = session . get ( url ) from pprint import pprint import json pprint ( json . loads ( response . content )) Serialize a computation Before you can send a request to compute something, the computation needs to be put into the Earth Engine expression graph format.",
+          "INSERT YOUR SERVICE ACCOUNT HERE SERVICE ACCOUNT = 'your-service-account@your-project.iam.gserviceaccount.com' KEY = 'key.json' !gcloud iam service-accounts keys create {KEY} --iam-account {SERVICE ACCOUNT} Start an AuthorizedSession and test your credentials Test the private key by using it to get credentials."
+        ]
+      },
+      {
+        "title": "\"Table computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ServiceAccountCredentials ( SERVICE ACCOUNT , KEY ) ee .",
+          "Credentials . from service account file ( KEY ) scoped credentials = credentials . with scopes ( [ 'https://www.googleapis.com/auth/cloud-platform' ]) session = AuthorizedSession ( scoped credentials ) url = 'https://earthengine.googleapis.com/v1beta/projects/earthengine-public/assets/LANDSAT' response = session . get ( url ) from pprint import pprint import json pprint ( json . loads ( response . content )) Serialize a computation Before you can send a request to compute something, the computation needs to be put into the Earth Engine expression graph format.",
+          "INSERT YOUR SERVICE ACCOUNT HERE SERVICE ACCOUNT = 'your-service-account@your-project.iam.gserviceaccount.com' KEY = 'key.json' !gcloud iam service-accounts keys create {KEY} --iam-account {SERVICE ACCOUNT} Start an AuthorizedSession and test your credentials Test the private key by using it to get credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "creds.json",
+      "developers.google.com",
+      "earthengine.googleapis.com",
+      "key.json",
+      "project.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    }
+  ]
+}

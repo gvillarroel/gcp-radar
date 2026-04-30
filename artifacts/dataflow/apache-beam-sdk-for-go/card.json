@@ -1,0 +1,162 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.239Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Apache Beam SDK for Go",
+  "feature_slug": "apache-beam-sdk-for-go",
+  "summary": "The Apache Beam SDK for Go lets you create batch and streaming Dataflow pipelines in Go; The Apache Beam SDK for Go lets you create batch Dataflow pipelines in Go.",
+  "extended_definition": "The Apache Beam SDK for Go lets you create batch and streaming Dataflow pipelines in Go; The Apache Beam SDK for Go lets you create batch Dataflow pipelines in Go.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+      "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+      "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Install the Apache Beam SDK \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up your development environment For information about setting up your Google Cloud project and development environment to use Dataflow, follow one of the tutorials: Create a Dataflow pipeline using Java Create a Dataflow pipeline using Python Create a Dataflow pipeline using Go Source code and examples The Apache Beam source code is available in the Apache Beam repository on GitHub.",
+          "To install the latest version of the Apache Beam SDK for Go, run the the following command: go get -u github.com/apache/beam/sdks/v2/go/pkg/beam Note: Version numbers have the form major.minor.patch and are incremented as follows: major version for incompatible API changes, minor version for new functionality added in a backward-compatible manner, and patch version for forward-compatible bug fixes.",
+          "Install Python wheel by running the following command: pip install wheel Install the latest version of the Apache Beam SDK for Python by running the following command from a virtual environment: pip install 'apache-beam[gcp]' Depending on the connection, the installation might take some time."
+        ]
+      },
+      {
+        "title": "\"Use customer-managed encryption keys \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys",
+        "source_id": "site-docs-reference-2",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specifying gcpTempLocation is required. mvn compile exec:java -Dexec.mainClass = org.apache.beam.examples.WordCount \\ -Dexec.args = \"--inputFile=gs://dataflow-samples/shakespeare/kinglear.txt \\ --output=gs:// STORAGE BUCKET /counts \\ --runner=DataflowRunner --project= PROJECT ID \\ --gcpTempLocation=gs:// STORAGE BUCKET /tmp \\ --dataflowKmsKey= KMS KEY \" -Pdataflow-runner Python Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key.",
+          "Specifying gcpTempLocation is required. python -m apache beam.examples.wordcount \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output gs:// STORAGE BUCKET /counts \\ --runner DataflowRunner \\ --region HOST GCP REGION \\ --project PROJECT ID \\ --temp location gs:// STORAGE BUCKET /tmp/ \\ --dataflow kms key = KMS KEY Go Dataflow does not support creating default Cloud Storage paths for temporary files when using a Cloud KMS key.",
+          "Support and limitations Cloud KMS is supported in the following Apache Beam SDK versions: Java SDK versions 2.13.0 and later Python SDK versions 2.13.0 and later Go SDK versions 2.40.0 and later Cloud KMS with Dataflow supports regional keys ."
+        ]
+      },
+      {
+        "title": "Create a Dataflow pipeline using Go \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command once for each of the following IAM roles: roles/dataflow.admin roles/dataflow.worker roles/storage.objectAdmin gcloud projects remove-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = SERVICE ACCOUNT ROLE Optional: Revoke the authentication credentials that you created, and delete the local credential file. gcloud auth application-default revoke Optional: Revoke credentials from the gcloud CLI. gcloud auth revoke What's next Programming model for Apache Beam Setting pipeline options Pipeline options reference Deploying a pipeline Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Create a Dataflow pipeline using Go This page shows you how to use the Apache Beam SDK for Go to build a program that defines a pipeline.",
+          "To run the latest version of the Beam wordcount example on your local machine, perform the following steps: Use the git clone command to clone the apache/beam GitHub repository: git clone https://github.com/apache/beam.git Switch to the beam/sdks/go directory: cd beam/sdks/go Use the following command to run the pipeline: go run examples/wordcount/wordcount.go \\ --input gs://dataflow-samples/shakespeare/kinglear.txt \\ --output outputs The input flag specifies the file to read, and the output flag specifies the filename for the frequency count output."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.examples.wordcount",
+      "beam.git",
+      "dataflow.admin",
+      "dataflow.worker",
+      "developer.gserviceaccount.com",
+      "github.com",
+      "kinglear.txt",
+      "major.minor.patch",
+      "org.apache.beam.examples.WordCount",
+      "storage.objectAdmin",
+      "wordcount.go"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataflow.admin",
+      "roles/dataflow.worker",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/installing-beam-sdk",
+        "https://docs.cloud.google.com/dataflow/docs/guides/create-pipeline-go",
+        "https://docs.cloud.google.com/dataflow/docs/guides/customer-managed-encryption-keys"
+      ]
+    }
+  ]
+}

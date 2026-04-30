@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.254Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha",
+  "feature_name": "reCAPTCHA Enterprise platform logging",
+  "feature_slug": "recaptcha-enterprise-platform-logging",
+  "summary": "Enables platform logging for reCAPTCHA Enterprise API calls.",
+  "extended_definition": "Enables platform logging for reCAPTCHA Enterprise API calls.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceAsyncClient (1.29.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample search related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample list related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample list related account groups(): Create a client client = recaptchaenterprise v1 ."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (1.29.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample search related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample list related account group memberships(): Create a client client = recaptchaenterprise v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample list related account groups(): Create a client client = recaptchaenterprise v1 ."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (3.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-java-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request object method variants only take one parameter, a request object, which must be constructed before the call. annotateAssessment(AnnotateAssessmentRequest request) \"Flattened\" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method. annotateAssessment(AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) annotateAssessment(String name, AnnotateAssessmentRequest.Annotation annotation) Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service. annotateAssessmentCallable() CreateKey Creates a new reCAPTCHA Enterprise key.",
+          "Request object method variants only take one parameter, a request object, which must be constructed before the call. getMetrics(GetMetricsRequest request) \"Flattened\" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method. getMetrics(MetricsName name) getMetrics(String name) Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service. getMetricsCallable() CreateFirewallPolicy Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can be executed.",
+          "Request object method variants only take one parameter, a request object, which must be constructed before the call. deleteKey(DeleteKeyRequest request) \"Flattened\" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method. deleteKey(KeyName name) deleteKey(String name) Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service. deleteKeyCallable() MigrateKey Migrates an existing key from reCAPTCHA to reCAPTCHA Enterprise."
+        ]
+      },
+      {
+        "title": "reCAPTCHA audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name reCAPTCHA audit logs use the service name recaptchaenterprise.googleapis.com .",
+          "Permission type Methods ADMIN READ google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.GetFirewallPolicy google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.GetKey google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.GetMetrics google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ListFirewallPolicies google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ListIpOverrides google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ListKeys google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ListRelatedAccountGroupMemberships google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ListRelatedAccountGroups google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.RetrieveLegacySecretKey google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.SearchRelatedAccountGroupMemberships ADMIN WRITE google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.AddIpOverride google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.CreateFirewallPolicy google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.CreateKey google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.DeleteFirewallPolicy google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.DeleteKey google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.MigrateKey google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.RemoveIpOverride google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.ReorderFirewallPolicies google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.UpdateFirewallPolicy google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.UpdateKey DATA WRITE google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService.CreateAssessment API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for reCAPTCHA. google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService The following audit logs are associated with methods belonging to google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService .",
+          "Filter for this service: protoPayload . serviceName = \"recaptchaenterprise.googleapis.com\" Methods by permission type DATA WRITE audit logs for CreateAssessment and AnnotateAssessment methods are deprecated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPage",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPage",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListIpOverridesPagedResponse",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPage",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse",
+      "googleapis.dev",
+      "options.html",
+      "recaptchaenterprise.googleapis.com",
+      "recaptchaenterprise.relatedaccountgroupmemberships.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/recaptcha/docs/audit-logging"
+      ]
+    }
+  ]
+}

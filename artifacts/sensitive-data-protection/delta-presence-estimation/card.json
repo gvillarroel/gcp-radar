@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "delta-presence estimation",
+  "feature_slug": "delta-presence-estimation",
+  "summary": "Adds delta-presence estimation as a risk metric for datasets where membership is sensitive.",
+  "extended_definition": "Adds delta-presence estimation as a risk metric for datasets where membership is sensitive.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Computing \\u03B4-presence for a dataset \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute δ -presence metrics To compute a δ -presence estimate using Sensitive Data Protection, send a request to the following URL, where PROJECT ID indicates your project identifier : https://dlp.googleapis.com/v2/projects/ PROJECT ID /dlpJobs The request contains a RiskAnalysisJobConfig object, which is composed of the following: A PrivacyMetric object.",
+          "This is where you specify that you want to calculate δ -presence by specifying a DeltaPresenceEstimationConfig object containing the following: quasiIds[] : Required.",
+          "For more information, see the reference page for the DeltaPresenceEstimationConfig object, as well as Risk analysis terms and techniques ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.dlpJobs \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "source_id": "site-docs-root-3",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: DlpJob JSON representation DlpJobType JobState AnalyzeDataSourceRiskDetails JSON representation PrivacyMetric JSON representation NumericalStatsConfig JSON representation CategoricalStatsConfig JSON representation KAnonymityConfig JSON representation EntityId JSON representation LDiversityConfig JSON representation KMapEstimationConfig JSON representation TaggedField JSON representation AuxiliaryTable JSON representation QuasiIdField JSON representation DeltaPresenceEstimationConfig JSON representation QuasiId JSON representation StatisticalTable JSON representation QuasiIdentifierField JSON representation NumericalStatsResult JSON representation CategoricalStatsResult JSON representation CategoricalStatsHistogramBucket JSON representation ValueFrequency JSON representation KAnonymityResult JSON representation KAnonymityHistogramBucket JSON representation KAnonymityEquivalenceClass JSON representation LDiversityResult JSON representation LDiversityHistogramBucket JSON representation LDiversityEquivalenceClass JSON representation KMapEstimationResult JSON representation KMapEstimationHistogramBucket JSON representation KMapEstimationQuasiIdValues JSON representation DeltaPresenceEstimationResult JSON representation DeltaPresenceEstimationHistogramBucket JSON representation DeltaPresenceEstimationQuasiIdValues JSON representation RequestedRiskAnalysisOptions JSON representation RiskAnalysisJobConfig JSON representation InspectDataSourceDetails JSON representation RequestedOptions JSON representation Result JSON representation InfoTypeStats JSON representation HybridInspectStatistics JSON representation ActionDetails JSON representation DeidentifyDataSourceDetails JSON representation RequestedDeidentifyOptions JSON representation DeidentifyDataSourceStats JSON representation Methods Resource: DlpJob Combines all of the information about a DLP job.",
+          "JSON representation { \"requestedPrivacyMetric\" : { object ( PrivacyMetric ) } , \"requestedSourceTable\" : { object ( BigQueryTable ) } , \"requestedOptions\" : { object ( RequestedRiskAnalysisOptions ) } , // Union field result can be only one of the following: \"numericalStatsResult\" : { object ( NumericalStatsResult ) } , \"categoricalStatsResult\" : { object ( CategoricalStatsResult ) } , \"kAnonymityResult\" : { object ( KAnonymityResult ) } , \"lDiversityResult\" : { object ( LDiversityResult ) } , \"kMapEstimationResult\" : { object ( KMapEstimationResult ) } , \"deltaPresenceEstimationResult\" : { object ( DeltaPresenceEstimationResult ) } // End of list of possible types for union field result . } Fields requestedPrivacyMetric object ( PrivacyMetric ) Privacy metric to compute. requestedSourceTable object ( BigQueryTable ) Input dataset to compute metrics over. requestedOptions object ( RequestedRiskAnalysisOptions ) The configuration used for this job.",
+          "Values associated with this metric. result can be only one of the following: numericalStatsResult object ( NumericalStatsResult ) Numerical stats result categoricalStatsResult object ( CategoricalStatsResult ) Categorical stats result kAnonymityResult object ( KAnonymityResult ) K-anonymity result lDiversityResult object ( LDiversityResult ) L-divesity result kMapEstimationResult object ( KMapEstimationResult ) K-map result deltaPresenceEstimationResult object ( DeltaPresenceEstimationResult ) Delta-presence result PrivacyMetric Privacy metric to compute for reidentification risk analysis."
+        ]
+      },
+      {
+        "title": "\"Re-identification risk analysis \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "But since only two individuals share these quasi-identifiers in the larger population, an attacker can deduce that both of them suffer from the genetic disease. δ -presence quantifies this particular risk by computing the ratio of people with certain quasi-identifiers that are in the dataset. δ -presence, like the other risk metrics, requires you to determine which columns of your database are quasi-identifiers.",
+          "About δ -presence Delta-presence ( δ -presence) estimates the risk associated with an attacker who wants to find out whether their target is in the dataset.",
+          "Like the other risk metrics, δ -presence requires you to determine which columns of your database are quasi-identifiers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.googleapis.com",
+      "projects.dlpJobs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/compute-d-presence",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis"
+      ]
+    }
+  ]
+}

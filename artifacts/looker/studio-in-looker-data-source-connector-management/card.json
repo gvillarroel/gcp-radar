@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.075Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Studio in Looker data source connector management",
+  "feature_slug": "studio-in-looker-data-source-connector-management",
+  "summary": "Looker admins can manage the data source connectors available in Studio in Looker.",
+  "extended_definition": "Looker admins can manage the data source connectors available in Studio in Looker.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+      "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connect to Google BigQuery \\_|\\_ Data Studio \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable the BigQuery Storage Read API, grant the following permissions to your BigQuery user who is connected to Data Studio: bigquery.readsessions.create bigquery.readsessions.getData Quotas and general limits The maximum number of rows that can be returned using the BigQuery Connector is 2 million rows.",
+          "When you connect to a table that is partitioned on a DATE , DATETIME , or TIMESTAMP field, Data Studio can use that field as the date range dimension for charts that are based on this data source.",
+          "BigQuery dialog If you have owner credentials on the BigQuery data source, Data Studio will display a BigQuery icon in the upper right corner of any chart that uses BigQuery."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "They can also view and edit that data source's configuration in Looker Studio. create table calculations explore Instance Wide NN Users can view, edit, or add table calculations create custom fields explore Instance Wide NN Users can view, edit, or add custom fields ; users who have only the explore permission can only view custom fields. can create forecast explore Instance Wide NN Users can create and edit forecasts in visualizations; users who don't have this permission can only view existing forecasts in the content to which they have access. can override vis config explore Instance Wide NN Users can access the Chart Config Editor , which lets them modify the Highchart API JSON values of a visualization and customize the visualization appearance and format. save content see looks Instance Wide NN This permission is a parent permission of save dashboards , save looks , and create public looks .",
+          "Users must have download with limit and/or download without limit permissions to download the content. create public looks save looks Model Specific Users can mark a saved Look as public , which will then generate URLs that grant access to that Look without authentication. download with limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector.",
+          "Users can email content deliveries or alert notifications to email addresses with any domain, regardless of whether the Email domain allowlist on the Settings page of the Admin panel contains any email domains. create alerts see looks Instance Wide NN This permission applies to dashboards in Looker and to charts in Looker Studio that use the Looker connector."
+        ]
+      },
+      {
+        "title": "Load Facebook Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following command creates a Facebook Ads data transfer in the default project with all the required parameters: bq mk --transfer config --target dataset = mydataset --data source = facebook ads --display name = 'My Transfer' --params = '{\"connector.authentication.oauth.clientId\": \"1650000000\", \"connector.authentication.oauth.clientSecret\":\"TBA99550\", \"connector.authentication.oauth.refreshToken\":\"abcdef\", \"connector.authorizedAdAccountsOnly\":true, \"connector.actionCollections\":[\"Actions\", \"Conversions\"], \"connector.genericBreakdowns\":[\"PublisherPlatform\", \"PlatformPosition\"], \"connector.actionBreakdowns\":[\"ActionDevice\", \"ActionType\"]}' API Use the projects.locations.transferConfigs.create method and supply an instance of the TransferConfig resource.",
+          "PERMISSION DENIED The credentials are invalid UNAUTHENTICATED Authentication is required SERVICE UNAVAILABLE The service is temporarily unable to handle this data transfer DEADLINE EXCEEDED The data transfer did not finish within the maximum duration of six hours NOT FOUND A requested resource is not found INTERNAL Something else caused the connector to fail FAILED PRECONDITION This error can appear with the message There was an issue connecting to Facebook Ads API.",
+          "If you intend to set up transfer run notifications for Pub/Sub, ensure that you have the pubsub.topics.setIamPolicy Identity and Access Management (IAM) permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "connector.actionBreakdowns",
+      "connector.actionCollections",
+      "connector.authentication.oauth.clientId",
+      "connector.authentication.oauth.clientSecret",
+      "connector.authentication.oauth.refreshToken",
+      "connector.authorizedAdAccountsOnly",
+      "connector.genericBreakdowns",
+      "projects.locations.transferConfigs.create",
+      "pubsub.topics.setIamPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/bigquery/docs/facebook-ads-transfer"
+      ]
+    }
+  ]
+}

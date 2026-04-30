@@ -1,0 +1,203 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable Admin Activity audit logging",
+  "feature_slug": "cloud-bigtable-admin-activity-audit-logging",
+  "summary": "Admin Activity audit logging for Cloud Bigtable became generally available; Cloud Bigtable Admin Activity audit logging was introduced in beta.",
+  "extended_definition": "Admin Activity audit logging for Cloud Bigtable became generally available; Cloud Bigtable Admin Activity audit logging was introduced in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+      "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+      "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Bigtable Admin API audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "source_id": "site-docs-root-2",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.CreateAppProfile\" CreateCluster Method : google.bigtable.admin.v2.BigtableInstanceAdmin.CreateCluster Audit log type : Admin activity Permissions : bigtable.clusters.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.CreateCluster\" CreateInstance Method : google.bigtable.admin.v2.BigtableInstanceAdmin.CreateInstance Audit log type : Admin activity Permissions : bigtable.clusters.create - ADMIN WRITE bigtable.instances.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.CreateInstance\" CreateLogicalView Method : google.bigtable.admin.v2.BigtableInstanceAdmin.CreateLogicalView Audit log type : Admin activity Permissions : bigtable.logicalViews.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.CreateLogicalView\" CreateMaterializedView Method : google.bigtable.admin.v2.BigtableInstanceAdmin.CreateMaterializedView Audit log type : Admin activity Permissions : bigtable.materializedViews.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.CreateMaterializedView\" DeleteAppProfile Method : google.bigtable.admin.v2.BigtableInstanceAdmin.DeleteAppProfile Audit log type : Admin activity Permissions : bigtable.appProfiles.delete - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableTableAdmin.CheckConsistency\" CopyBackup Method : google.bigtable.admin.v2.BigtableTableAdmin.CopyBackup Audit log type : Admin activity Permissions : bigtable.backups.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableTableAdmin.CopyBackup\" CreateAuthorizedView Method : google.bigtable.admin.v2.BigtableTableAdmin.CreateAuthorizedView Audit log type : Admin activity Permissions : bigtable.authorizedViews.create - ADMIN WRITE bigtable.tables.mutateRows - DATA WRITE bigtable.tables.readRows - DATA READ Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableTableAdmin.CreateAuthorizedView\" CreateBackup Method : google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup Audit log type : Admin activity Permissions : bigtable.backups.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableTableAdmin.CreateBackup\" CreateTable Method : google.bigtable.admin.v2.BigtableTableAdmin.CreateTable Audit log type : Admin activity Permissions : bigtable.tables.create - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.ListMaterializedViews\" PartialUpdateCluster Method : google.bigtable.admin.v2.BigtableInstanceAdmin.PartialUpdateCluster Audit log type : Admin activity Permissions : bigtable.clusters.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.PartialUpdateCluster\" PartialUpdateInstance Method : google.bigtable.admin.v2.BigtableInstanceAdmin.PartialUpdateInstance Audit log type : Admin activity Permissions : bigtable.instances.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.bigtable.admin.v2.BigtableInstanceAdmin.PartialUpdateInstance\" SetIamPolicy Method : google.bigtable.admin.v2.BigtableInstanceAdmin.SetIamPolicy Audit log type : Admin activity Permissions : bigtable.instances.setIamPolicy - ADMIN WRITE Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "Cloud Bigtable API audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Methods that require an IAM permission with the type property value of ADMIN WRITE generate Admin Activity audit logs.",
+          "Permission type Methods ADMIN READ google.bigtable.v2.Bigtable.PingAndWarm DATA READ google.bigtable.v2.Bigtable.ExecuteQuery google.bigtable.v2.Bigtable.GenerateInitialChangeStreamPartitions google.bigtable.v2.Bigtable.PrepareQuery google.bigtable.v2.Bigtable.ReadChangeStream google.bigtable.v2.Bigtable.ReadModifyWriteRow google.bigtable.v2.Bigtable.ReadRows google.bigtable.v2.Bigtable.SampleRowKeys DATA WRITE google.bigtable.v2.Bigtable.CheckAndMutateRow google.bigtable.v2.Bigtable.MutateRow google.bigtable.v2.Bigtable.MutateRows google.bigtable.v2.Bigtable.ReadModifyWriteRow API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud Bigtable API. google.bigtable.v2.Bigtable The following audit logs are associated with methods belonging to google.bigtable.v2.Bigtable .",
+          "Filter for this method : protoPayload.methodName=\"google.bigtable.v2.Bigtable.MutateRow\" MutateRows Method : google.bigtable.v2.Bigtable.MutateRows Audit log type : Data access Permissions : bigtable.tables.mutateRows - DATA WRITE Method is a long-running or streaming operation : Streaming RPC Filter for this method : protoPayload.methodName=\"google.bigtable.v2.Bigtable.MutateRows\" PingAndWarm Method : google.bigtable.v2.Bigtable.PingAndWarm Audit log type : Data access Permissions : bigtable.instances.ping - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "\"Class BigtableTableAdminAsyncClient (2.35.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. snapshot path snapshot path ( project : str , instance : str , cluster : str , snapshot : str ) - > str Returns a fully-qualified snapshot string. snapshot table snapshot table ( request : typing .",
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. get mtls endpoint and cert source get mtls endpoint and cert source ( client options : typing .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.bigtable import admin v2 async def sample restore table(): Create a client client = admin v2.BigtableTableAdminAsyncClient() Initialize request argument(s) request = admin v2.RestoreTableRequest( backup=\"backup value\", parent=\"parent value\", table id=\"table id value\", ) Make the request operation = await client.restore table(request=request) print(\"Waiting for operation to complete...\") response = await operation.result() Handle the response print(response) Handle LRO2 optimize operation = await operation.optimize restore table operation() if optimize operation: print(\"Waiting for table optimization to complete...\") response = await optimize operation.result() Parameters Name Description request Union[ google.cloud.bigtable admin v2.types.RestoreTableRequest , dict] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "bigtable.appProfiles.delete",
+      "bigtable.appProfiles.update",
+      "bigtable.authorizedViews.create",
+      "bigtable.backups.create",
+      "bigtable.clusters.create",
+      "bigtable.clusters.update",
+      "bigtable.instances.create",
+      "bigtable.instances.ping",
+      "bigtable.instances.setIamPolicy",
+      "bigtable.instances.update",
+      "bigtable.logicalViews.create",
+      "bigtable.materializedViews.create",
+      "bigtable.tables.create",
+      "bigtable.tables.mutateRows",
+      "bigtable.tables.readRows",
+      "client.restore",
+      "example.com",
+      "googleapis.dev",
+      "operation.optimize",
+      "operation.result",
+      "options.html",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "v2.BigtableTableAdminAsyncClient",
+      "v2.RestoreTableRequest",
+      "v2.types.CheckConsistencyResponse",
+      "v2.types.RestoreTableRequest"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging-bigtableadmin",
+        "https://docs.cloud.google.com/bigtable/docs/audit-logging",
+        "https://docs.cloud.google.com/python/docs/reference/bigtable/latest/google.cloud.bigtable_admin_v2.overlay.services.bigtable_table_admin.BigtableTableAdminAsyncClient"
+      ]
+    }
+  ]
+}

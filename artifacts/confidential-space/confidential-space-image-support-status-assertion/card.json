@@ -1,0 +1,220 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.275Z",
+  "source_step08_card": "data/step-08/current/products/confidential-space/card.json",
+  "product_name": "Confidential Space",
+  "product_slug": "confidential-space",
+  "feature_name": "Confidential Space image support status assertion",
+  "feature_slug": "confidential-space-image-support-status-assertion",
+  "summary": "The assertion.submods.confidential_space.support_attributes attestation claim can verify the support status of the Confidential Space image in use.",
+  "extended_definition": "The assertion.submods.confidential_space.support_attributes attestation claim can verify the support status of the Confidential Space image in use.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment",
+      "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Membuat dan memberikan akses ke resource rahasia | Confidential Space | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 395,
+        "relevance": "",
+        "evidence_snippets": [
+          "Misalnya, Anda dapat mengenkripsi file rahasia di Cloud Storage dengan Cloud KMS, sehingga Anda perlu memberikan izin akun layanan untuk mendekripsi data tersebut: gcloud kms keys add-iam-policy-binding \\ projects/ DATA_COLLABORATOR_PROJECT_ID /locations/global/keyRings/ DATA_COLLABORATOR_KEYRING_NAME /cryptoKeys/ DATA_COLLABORATOR_KEY_NAME \\ --member = serviceAccount: DATA_COLLABORATOR_SERVICE_ACCOUNT_NAME @ DATA_COLLABORATOR_PROJECT_ID .iam.gserviceaccount.com \\ --role = roles/cloudkms.cryptoKeyDecrypter Menyiapkan WIP dan penyedia Untuk menyiapkan WIP dan penyedia, selesaikan petunjuk berikut di setiap project kolaborator data: Buat WIP: gcloud iam workload-identity-pools create DATA_COLLABORATOR_POOL_NAME \\ --location = global Lampirkan akun layanan yang akan di-impersonate ke WIP, dengan peran roles/iam.workloadIdentityUser : gcloud iam service-accounts add-iam-policy-binding \\ DATA_COLLABORATOR_SERVICE_ACCOUNT_NAME @ DATA_COLLABORATOR_PROJECT_ID .iam.gserviceaccount.com \\ --member = \"principalSet://iam.googleapis.com/projects/ DATA_COLLABORATOR_PROJECT_NUMBER /locations/global/workloadIdentityPools/ DATA_COLLABORATOR_POOL_NAME /*\" \\ --role = roles/iam.workloadIdentityUser Buat penyedia OIDC di WIP, dan tentukan akun layanan workload di dalamnya sehingga dapat meniru akun layanan kolaborator data: gcloud iam workload-identity-pools providers create-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = DATA_COLLABORATOR_POOL_NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=assertion.sub\" \\ --attribute-condition = \"assertion.submods.container.image_digest == ' WORKLOAD_CONTAINER_IMAGE_DIGEST ' \\ && ' WORKLOAD_SERVICE_ACCOUNT_NAME @ WORKLOAD_OPERATOR_PROJECT_ID .iam.gserviceaccount.com' in assertion.google_service_accounts \\ && assertion.swname == 'CONFIDENTIAL_SPACE' \\ && 'STABLE' in assertion.submods.confidential_space.support_attributes\" Contoh ini menggunakan nilai berikut: issuer-uri https://confidentialcomputing.googleapis.com/ , yang berarti Pengesahan Google Cloud digunakan sebagai layanan pengesahan. allowed-audiences dari https://sts.googleapis.com .",
+          "Menyiapkan WIP dan penyedia Untuk menyiapkan WIP dan penyedia, selesaikan petunjuk berikut: Buat WIP: gcloud iam workload-identity-pools create DATA_COLLABORATOR_POOL_NAME \\ --location = global Membuat penyedia OIDC di WIP: gcloud iam workload-identity-pools providers create-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = DATA_COLLABORATOR_POOL_NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=\\\"gcpcs::\\\"+assertion.submods.container.image_digest+\\\"::\\\"+assertion.submods.gce.project_number+\\\"::\\\"+assertion.submods.gce.instance_id,attribute.image_digest=assertion.submods.container.image_digest\" \\ --attribute-condition = \"assertion.swname == 'CONFIDENTIAL_SPACE' \\ && 'STABLE' in assertion.submods.confidential_space.support_attributes\" Contoh ini menggunakan nilai berikut: issuer-uri https://confidentialcomputing.googleapis.com/ , yang berarti Pengesahan Google Cloud digunakan sebagai layanan pengesahan. allowed-audiences dari https://sts.googleapis.com .",
+          "Jika kondisi ini cocok dengan pernyataan workload, maka workload diizinkan untuk mengakses resource sebagai identitas gabungan: assertion.submods.container.image_digest == ' WORKLOAD_CONTAINER_IMAGE_DIGEST ' : Memverifikasi bahwa ringkasan image container workload cocok dengan nilai yang diharapkan. ' WORKLOAD_SERVICE_ACCOUNT_NAME @ WORKLOAD_PROJECT_ID .iam.gserviceaccount.com' in assertion.google_service_accounts : Memverifikasi bahwa akun layanan yang terlampir pada beban kerja cocok dengan akun layanan yang diharapkan, lalu menggunakannya untuk meniru identitas akun layanan kolaborator data. assertion.swname == 'CONFIDENTIAL_SPACE' : Memverifikasi bahwa Confidential Space adalah software yang berjalan di VM, dengan semua jaminan keamanan bawaannya . 'STABLE' in assertion.submods.confidential_space.support_attributes : Memverifikasi bahwa image Confidential Space produksi sedang digunakan, dan memiliki STABLE atribut dukungan ."
+        ]
+      },
+      {
+        "title": "Attestation assertions | Confidential Space | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 381,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following code verifies that the debug version of the Confidential Space image is being used: assertion.dbgstat == \"enable\" The following code verifies that the production version of the Confidential Space image is being used: assertion.dbgstat == \"disabled-since-boot\" assertion.submods.confidential_space.support_attributes String array Verifies the security version of the production Confidential Space image that's running on the Confidential VM instance, using its support attributes.",
+          "Example The following code verifies that a stable version of the Confidential Space image is being used: \"STABLE\" in assertion.submods.confidential_space.support_attributes assertion.swname Enumeration Verifies the software running on the attesting entity.",
+          "We recommend using assertion.submods.confidential_space.support_attributes instead to target the latest version of an image."
+        ]
+      },
+      {
+        "title": "Create your first Confidential Space environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alex and Bola need to add a support attributes assertion to their providers to verify that the production Confidential Space image is used for the workload: Switch to Alex's project: gcloud config set project ALEX PROJECT ID Enter the following command to update the provider for Alex: gcloud iam workload-identity-pools providers update-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = ALEX POOL NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=\\\"gcpcs\\ ::\\\"+assertion.submods.container.image digest+\\\"\\ ::\\\"+assertion.submods.gce.project number+\\\"\\ ::\\\"+assertion.submods.gce.instance id,\\ attribute.image digest=assertion.submods.container.image digest\" \\ --attribute-condition = \"assertion.swname == 'CONFIDENTIAL SPACE' \\ && 'STABLE' in assertion.submods.confidential space.support attributes \" Switch to Bola's project: gcloud config set project BOLA PROJECT ID Enter the following command to update the provider for Bola: gcloud iam workload-identity-pools providers update-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = BOLA POOL NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=\\\"gcpcs\\ ::\\\"+assertion.submods.container.image digest+\\\"\\ ::\\\"+assertion.submods.gce.project number+\\\"\\ ::\\\"+assertion.submods.gce.instance id,\\ attribute.image digest=assertion.submods.container.image digest\" \\ --attribute-condition = \"assertion.swname == 'CONFIDENTIAL SPACE' \\ && 'STABLE' in assertion.submods.confidential space.support attributes \" Deploy the production workload Bola needs to create a separate VM instance to run the production workload.",
+          "To set up the providers for Alex and Bola with the required conditions, complete the following steps: Enter the following command to create the provider for Alex: gcloud iam workload-identity-pools providers create-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = ALEX POOL NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=\\\"gcpcs\\ ::\\\"+assertion.submods.container.image digest+\\\"\\ ::\\\"+assertion.submods.gce.project number+\\\"\\ ::\\\"+assertion.submods.gce.instance id,\\ attribute.image digest=assertion.submods.container.image digest\" \\ --attribute-condition = \"assertion.swname == 'CONFIDENTIAL SPACE'\" Get Alex's project number for the next command: gcloud projects describe ALEX PROJECT ID --format = \"value(projectNumber)\" Grant the federated identity defined by Alex's provider the cloudkms.cryptoKeyDecrypter role, specifying the image digest attribute so only workload containers with the specified digest can decrypt their KMS keys: gcloud kms keys add-iam-policy-binding \\ \"projects/ ALEX PROJECT ID /locations/global/\\ keyRings/ ALEX KEYRING NAME /\\ cryptoKeys/ ALEX KEY NAME \" \\ --member = \"principalSet://iam.googleapis.com/\\ projects/ ALEX PROJECT NUMBER /locations/global/\\ workloadIdentityPools/ ALEX POOL NAME /\\ attribute.image digest/ WORKLOAD CONTAINER IMAGE DIGEST \" \\ --role = roles/cloudkms.cryptoKeyDecrypter Switch to Bola's project: gcloud config set project BOLA PROJECT ID Enter the following command to create the provider for Bola: gcloud iam workload-identity-pools providers create-oidc attestation-verifier \\ --location = global \\ --workload-identity-pool = BOLA POOL NAME \\ --issuer-uri = \"https://confidentialcomputing.googleapis.com/\" \\ --allowed-audiences = \"https://sts.googleapis.com\" \\ --attribute-mapping = \"google.subject=\\\"gcpcs\\ ::\\\"+assertion.submods.container.image digest+\\\"\\ ::\\\"+assertion.submods.gce.project number+\\\"\\ ::\\\"+assertion.submods.gce.instance id,\\ attribute.image digest=assertion.submods.container.image digest\" \\ --attribute-condition = \"assertion.swname == 'CONFIDENTIAL SPACE'\" Get Bola's project number for the next command: gcloud projects describe BOLA PROJECT ID --format = \"value(projectNumber)\" Grant the federated identity defined by Bola's provider the cloudkms.cryptoKeyDecrypter role, specifying the image digest attribute so only workload containers with the specified digest can decrypt their KMS keys: gcloud kms keys add-iam-policy-binding \\ \"projects/ BOLA PROJECT ID /locations/global/\\ keyRings/ BOLA KEYRING NAME /\\ cryptoKeys/ BOLA KEY NAME \" \\ --member = \"principalSet://iam.googleapis.com/\\ projects/ BOLA PROJECT NUMBER /locations/global/\\ workloadIdentityPools/ BOLA POOL NAME /\\ attribute.image digest/ WORKLOAD CONTAINER IMAGE DIGEST \" \\ --role = roles/cloudkms.cryptoKeyDecrypter Test the workload With providers added to both Alex and Bola's workload identity pools and the required resources in place, it's time for the workload operator to test the workload.",
+          "Enter the following command in Bola's Cloud Shell to test the workload: gcloud compute instances create WORKLOAD VM 2 NAME \\ --confidential-compute-type = SEV \\ --shielded-secure-boot \\ --scopes = cloud-platform \\ --zone = us-west1-b \\ --maintenance-policy = MIGRATE \\ --min-cpu-platform = \"AMD Milan\" \\ --image-project = confidential-space-images \\ --image-family = confidential-space-debug \\ --service-account = WORKLOAD SERVICE ACCOUNT NAME @ BOLA PROJECT ID .iam.gserviceaccount.com \\ --metadata = \"^ ^tee-image-reference=us-docker.pkg.dev/\\ ALEX PROJECT ID / REPOSITORY NAME / WORKLOAD CONTAINER NAME :latest\\ tee-container-log-redirect=true\\ tee-env-COLLAB 1 NAME=Alex\\ tee-env-COLLAB 2 NAME=Bola\\ tee-env-COLLAB 1 ENCRYPTED SALARY= ALEX ENCRYPTED SALARY FILE \\ tee-env-COLLAB 2 ENCRYPTED SALARY= BOLA ENCRYPTED SALARY FILE \\ tee-env-COLLAB 1 INPUT BUCKET= ALEX INPUT BUCKET NAME \\ tee-env-COLLAB 2 INPUT BUCKET= BOLA INPUT BUCKET NAME \\ tee-env-COLLAB 1 OUTPUT BUCKET= ALEX OUTPUT BUCKET NAME \\ tee-env-COLLAB 2 OUTPUT BUCKET= BOLA OUTPUT BUCKET NAME \\ tee-env-COLLAB 1 KEYRING NAME= ALEX KEYRING NAME \\ tee-env-COLLAB 2 KEYRING NAME= BOLA KEYRING NAME \\ tee-env-COLLAB 1 KEY NAME= ALEX KEY NAME \\ tee-env-COLLAB 2 KEY NAME= BOLA KEY NAME \\ tee-env-COLLAB 1 PROJECT ID= ALEX PROJECT ID \\ tee-env-COLLAB 2 PROJECT ID= BOLA PROJECT ID \\ tee-env-COLLAB 1 PROJECT NUMBER= ALEX PROJECT NUMBER \\ tee-env-COLLAB 2 PROJECT NUMBER= BOLA PROJECT NUMBER \\ tee-env-COLLAB 1 POOL NAME= ALEX POOL NAME \\ tee-env-COLLAB 2 POOL NAME= BOLA POOL NAME \" Note: For more sensitive data or to make managing environment variables easier, instead of using tee-env- as part of the VM instance metadata you can store the needed values somewhere like Secret Manager ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "assertion.dbgstat",
+      "assertion.google_service_accounts",
+      "assertion.sub",
+      "assertion.submods.confidential",
+      "assertion.submods.confidential_space.support_attributes",
+      "assertion.submods.container.image",
+      "assertion.submods.container.image_digest",
+      "assertion.submods.gce.instance",
+      "assertion.submods.gce.instance_id",
+      "assertion.submods.gce.project",
+      "assertion.submods.gce.project_number",
+      "assertion.swname",
+      "attribute.image",
+      "attribute.image_digest",
+      "cloudkms.cryptoKeyDecrypter",
+      "confidentialcomputing.googleapis.com",
+      "docker.pkg.dev",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "space.support",
+      "sts.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyDecrypter",
+      "roles/iam.workloadIdentityUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-grant-access-confidential-resources",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/reference/attestation-assertions",
+        "https://docs.cloud.google.com/confidential-computing/confidential-space/docs/create-your-first-confidential-space-environment"
+      ]
+    }
+  ]
+}

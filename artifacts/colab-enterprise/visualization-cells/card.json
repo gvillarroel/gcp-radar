@@ -1,0 +1,204 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.553Z",
+  "source_step08_card": "data/step-08/current/products/colab-enterprise/card.json",
+  "product_name": "Colab Enterprise",
+  "product_slug": "colab-enterprise",
+  "feature_name": "Visualization cells",
+  "feature_slug": "visualization-cells",
+  "summary": "Visualization cells let you create interactive and editable charts directly in a Colab Enterprise notebook.",
+  "extended_definition": "Visualization cells let you create interactive and editable charts directly in a Colab Enterprise notebook.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+      "https://docs.cloud.google.com/colab/docs/create-runtime",
+      "https://docs.cloud.google.com/colab/docs/experiments",
+      "https://docs.cloud.google.com/colab/docs/use-code-completion"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use code completion and code generation \\_|\\_ Colab Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use code completion and code generation This document describes how you can use Gemini in Colab Enterprise, which is a product in the Gemini for Google Cloud portfolio, to help you write and generate code in a Colab Enterprise notebook.",
+          "For more ways to write and edit code with Gemini assistance, see the following: Chat about your notebook with Gemini Explain code cells Explain and fix errors Use the Data Science Agent Learn how Gemini for Google Cloud uses your data .",
+          "For example, if you enter import p , Colab Enterprise might suggest a code completion that imports pandas as pd followed by a line that reads a CSV file and stores the contents in a pandas dataframe."
+        ]
+      },
+      {
+        "title": "Create an experiment \\_|\\_ Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/experiments",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you need to create your Cloud Storage bucket, find and uncomment the following line of code: ! gcloud storage buckets create {BUCKET URI} --location={REGION} --project={PROJECT ID} Run the code cells that the side panel added to your notebook.",
+          "You can create, manage, and delete runs by using Vertex AI Experiments in the Google Cloud console or through the Vertex AI API.",
+          "Vertex AI Experiments Vertex AI Experiments helps you track and analyze different model architectures, hyperparameters, and training environments by letting you track the steps, inputs, and outputs of an experiment run."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a Colab Enterprise notebook by using the Google Cloud\\",
+        "url": "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the APIs Required roles To get the permissions that you need to create a Colab Enterprise notebook and run the notebook's code on a runtime, ask your administrator to grant you the Colab Enterprise User ( roles/aiplatform.colabEnterpriseUser ) IAM role on the project.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources.",
+          "When you finish the tasks that are described in this document, you can avoid continued billing by deleting the resources that you created."
+        ]
+      },
+      {
+        "title": "Create a runtime in Colab Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/colab/docs/create-runtime",
+        "source_id": "site-iam-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtimes create --display-name = \" DISPLAY NAME \" \\ --runtime-template = RUNTIME TEMPLATE ID \\ --project = PROJECT ID \\ --region = REGION Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtimes create --display-name = \" DISPLAY NAME \" --runtime-template = RUNTIME TEMPLATE ID --project = PROJECT ID ` --region = REGION Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud colab runtimes create --display-name = \" DISPLAY NAME \" ^ --runtime-template = RUNTIME TEMPLATE ID ^ --project = PROJECT ID ^ --region = REGION By default, when you create a runtime, you automatically have the required permissions to start and delete that runtime.",
+          "By default, when you create a runtime, you automatically have the required permissions to start and delete that runtime. gcloud Before using any of the command data below, make the following replacements: DISPLAY NAME : the display name for your runtime.",
+          "Create a runtime This page shows you how to create, start, and delete a runtime in Colab Enterprise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.colabEnterpriseUser",
+      "cloudaicompanion.user",
+      "cmd.exe",
+      "gmail.com",
+      "template.id",
+      "template.my"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.colabEnterpriseUser",
+      "roles/cloudaicompanion.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/colab/docs/use-code-completion",
+        "https://docs.cloud.google.com/colab/docs/experiments",
+        "https://docs.cloud.google.com/colab/docs/create-console-quickstart",
+        "https://docs.cloud.google.com/colab/docs/create-runtime"
+      ]
+    }
+  ]
+}

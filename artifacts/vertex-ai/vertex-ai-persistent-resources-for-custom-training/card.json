@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI persistent resources for custom training",
+  "feature_slug": "vertex-ai-persistent-resources-for-custom-training",
+  "summary": "Vertex AI introduced persistent resources for custom training, providing a long-running compute cluster that can be reused for multiple custom training jobs without repeated provisioning.",
+  "extended_definition": "Vertex AI introduced persistent resources for custom training, providing a long-running compute cluster that can be reused for multiple custom training jobs without repeated provisioning.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute pipeline using componentlevel settings for machine resources Convert the selfcontained training component into a Vertex AI CustomJob .",
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models ."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Train a custom image classification model \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom/training",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, run the following notebooks in the environment of your choice: \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for batch prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Use the Vertex AI SDK for Python to train and deploy a custom image classification model for online prediction.\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub This page shows you how to run a TensorFlow Keras training application on Vertex AI.",
+          "Activate Cloud Shell In the Cloud Shell session, run the following command: cd hello-custom-sample Run a custom training pipeline This section describes using the training package that you uploaded to Cloud Storage to run a Vertex AI custom training pipeline.",
+          "After a few moments, you can view this resource on the Custom jobs page of the Training section: Go to Custom jobs The custom job runs the training application using the computing resources that you specified in this section."
+        ]
+      },
+      {
+        "title": "\"Hello custom training: Set up your project and environment \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/image-classification-custom",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download sample code Download sample code to use for the rest of the tutorial. gcloud storage cp gs://cloud-samples-data/ai-platform/hello-custom/hello-custom-sample-v1.tar.gz - tar -xzv To optionally view the sample code files, run the following command: ls -lpR hello-custom-sample The hello-custom-sample directory has four items: trainer/ : A directory of TensorFlow Keras code for training the flower classification model. setup.py : A configuration file for packaging the trainer/ directory into a Python source distribution that Vertex AI can use. function/ : A directory of Python code for a Cloud Run function that can receive and preprocess prediction requests from a web browser, send them to Vertex AI, process the prediction responses, and send them back to the browser. webapp/ : A directory with code and markup for a web app that gets flower classification predictions from Vertex AI.",
+          "Home Documentation AI and ML Vertex AI Send feedback Hello custom training: Set up your project and environment Stay organized with collections Save and categorize content based on your preferences.",
+          "As you follow the tutorial, use the bucket for several purposes: Store training code for Vertex AI to use in a custom training job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "setup.py",
+      "v1.tar.gz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

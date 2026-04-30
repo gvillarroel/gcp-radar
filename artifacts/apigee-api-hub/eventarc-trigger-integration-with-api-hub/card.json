@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.619Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "Eventarc trigger integration with API hub",
+  "feature_slug": "eventarc-trigger-integration-with-api-hub",
+  "summary": "API hub is now integrated with Google Cloud Eventarc so users can create Eventarc triggers for API hub events and launch custom workflows.",
+  "extended_definition": "API hub is now integrated with Google Cloud Eventarc so users can create Eventarc triggers for API hub events and launch custom workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an Eventarc trigger \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Apigee Guides Send feedback Create an Eventarc trigger Stay organized with collections Save and categorize content based on your preferences.",
+          "This quickstart shows you how to create and configure an Eventarc trigger that executes a Cloud Run service when an API is updated in API hub.",
+          "Create an Eventarc trigger In the Google Cloud console, go to the Eventarc Triggers page."
+        ]
+      },
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "It also collates the response of each run in curatedAPIMetadataList , where each element of the array has the response from one particular run. /application-integration/docs/configure-private-trigger\">Private Trigger (Enrich each API with spec) Trigger ID: private trigger/test-curate-1 Private 1 Invokes the sub-integration for each element in apiMetaData .",
+          "The following table provides details about each element to help you understand how the curation logic works: Component Configuration Description API trigger API Trigger ID: api trigger/test-custom-curation API 1 Receives data from the API hub plugin instance to invoke the integration for custom curation.",
+          "For Each Loop Task (For Each API) List to iterate: apiData.apiMetadataList.apiMetadata Sub-integration details: Integration name: enrich-with-spec-yaml Trigger ID: private trigger/test-curate-1 Private 1 Iterates over the apiMetadata list and calls the sub-integration for each API resource."
+        ]
+      },
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select one or more of the following to filter this page: Select product API hub API Monitoring/Analytics Apigee Apigee in VS Code Archive deployments Connectors Documentation hybrid Integration Integrated portal Monetization UI Select status FIXED OPEN Apigee 1-10 Apigee 1-9 hybrid 1.16 hybrid 1.15 hybrid 1.14 hybrid 1.13 hybrid 1.12 hybrid 1.11 hybrid 1.10 hybrid 1.9 hybrid 1.8 hybrid 1.7 hybrid 1.6 hybrid 1.5 hybrid 1.4 hybrid 1.3 This section lists known issues for Apigee components.",
+          "N/A Integrated portal OPEN Portal admin Simultaneous portal updates (such as page, theme, CSS, or script edits) by multiple users is not supported at this time.",
+          "310384001 hybrid 1.11.0 OPEN Cert validation failures may return a 502 instead of a 503 error response when users add the tag <Enforce>true</Enforce> in the target <SSLInfo> block for default validation of TLS target endpoint certificates."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/quickstart-create-event-triggers",
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    }
+  ]
+}

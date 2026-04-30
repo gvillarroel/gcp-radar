@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.127Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "VM Instances dashboard operations menu",
+  "feature_slug": "vm-instances-dashboard-operations-menu",
+  "summary": "The Compute Engine VM Instances dashboard includes an Operations menu with shortcuts to Monitoring metrics and Logging logs.",
+  "extended_definition": "The Compute Engine VM Instances dashboard includes an Operations menu with shortcuts to Monitoring metrics and Logging logs.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, when a Google Cloud project contains multiple Compute Engine VM instances, the CPU utilization for each VM instance is a unique time series.",
+          "System and application metrics that the Ops Agent collects about system resources and applications running on Compute Engine instances.",
+          "Examples of monitored resources include Compute Engine instances and App Engine applications."
+        ]
+      },
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Monitoring \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compute Engine In the Google Cloud console, go to the VM instances page: Go to VM instances If you use the search bar to find this page, then select the result whose subheading is Compute Engine .",
+          "If you are running very old Compute Engine instances or if you created Compute Engine instances without the default credentials, then you might not have the proper credentials.",
+          "The Ops Agent collects logs and metrics on Compute Engine instances, sending your logs to Cloud Logging and your metrics to Cloud Monitoring."
+        ]
+      },
+      {
+        "title": "Application Monitoring supported infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compute Engine MIGs (Regional and zonal) Traffic : instance/network/received bytes count Saturation : instance/cpu/utilization Dataproc Metastore service (Regional and multi-regional) Traffic : The metric depends on whether the service is single- or multi-region: Single: service/request count .",
+          "The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period.",
+          "P95 latency : reasoning engine/request latencies Google Cloud MCP servers (Global) Traffic : mcp/request count Server error rate : The ratio of the number of requests with a response status of 5xx to the total number of requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
+      ]
+    }
+  ]
+}

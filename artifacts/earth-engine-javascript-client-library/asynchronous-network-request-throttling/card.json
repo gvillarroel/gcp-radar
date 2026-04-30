@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.716Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "Asynchronous network request throttling",
+  "feature_slug": "asynchronous-network-request-throttling",
+  "summary": "Adds throttling for asynchronous network requests made by the client library.",
+  "extended_definition": "Adds throttling for asynchronous network requests made by the client library.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs",
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+      "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API Reference \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See this reference for methods available through the client libraries: The ee package for formulating requests to Earth Engine.",
+          "Client Libraries (JavaScript and Python) translate code into server requests.",
+          "Client Libraries The open source JavaScript and Python Client libraries ( GitHub repo ) translate Earth Engine code into request objects sent to Earth Engine servers."
+        ]
+      },
+      {
+        "title": "\"Image computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make a GET request through the session to check that the credentials work. from google.auth.transport.requests import AuthorizedSession from google.oauth2 import service account credentials = service account .",
+          "Before sending a request to compute something, the computation needs to be put into the Earth Engine expression graph format by serializing the computation defined with the client API.",
+          "Making compute requests through the REST API corresponds to a POST request to one of the compute endpoints, for example computePixels , computeFeatures , or the generic value.compute ."
+        ]
+      },
+      {
+        "title": "\"Table computations with the Earth Engine REST API \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Authentication is required to make requests to Google Cloud and Earth Engine, which can be done by logging in with your Google Cloud project and using a service account key file to obtain credentials for an authorized session.",
+          "Make a GET request through the session to check that the credentials work. from google.auth.transport.requests import AuthorizedSession from google.oauth2 import service account credentials = service account .",
+          "Authenticate to Google Cloud The first thing to do is login so that you can make authenticated requests to Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "value.compute"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_image",
+        "https://developers.google.com/earth-engine/Earth_Engine_REST_API_compute_table"
+      ]
+    }
+  ]
+}

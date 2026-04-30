@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.553Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Intrusion prevention service",
+  "feature_slug": "intrusion-prevention-service",
+  "summary": "Intrusion prevention service safeguards workload traffic from threats such as malware, spyware, and command-and-control attacks; Intrusion prevention service safeguards workload traffic from threats such as malware, spyware, and command-and-control attacks.",
+  "extended_definition": "Intrusion prevention service safeguards workload traffic from threats such as malware, spyware, and command-and-control attacks; Intrusion prevention service safeguards workload traffic from threats such as malware, spyware, and command-and-control attacks.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+      "https://docs.cloud.google.com/firewall/docs/about-threats",
+      "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Intrusion detection and prevention service overview \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How intrusion detection and prevention service works Intrusion detection and prevention service processes the traffic in the following sequence: Firewall policy rules are applied to the traffic to and from the virtual machine (VM) instances or Google Kubernetes Engine (GKE) clusters, in the network.",
+          "Cloud NGFW intrusion detection and prevention service works by creating Google-managed zonal firewall endpoints that use packet intercept technology to transparently inspect the workloads for the configured threat signatures and protect them against threats.",
+          "Cloud Next Generation Firewall intrusion detection and prevention service continuously monitors your Google Cloud workload traffic for any malicious activity and takes preemptive actions to prevent it."
+        ]
+      },
+      {
+        "title": "\"Set up intrusion detection and prevention service in your network \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Intrusion detection and prevention service monitors your Google Cloud workload traffic for any malicious activity and takes preemptive actions to prevent it.",
+          "Click Create . gcloud To create a security profile group, run the following command: gcloud network-security security-profile-groups \\ create sec-profile-group-ips \\ --organization ORGANIZATION ID \\ --location global \\ --project PROJECT ID \\ --threat-prevention-profile \\ organizations/ ORGANIZATION ID /locations/global/securityProfiles/sec-profile-ips \\ --description \"Security profile group to set up intrusion detection and prevention service.\" Replace the following: ORGANIZATION ID : the organization where the security profile group is created.",
+          "Click Create . gcloud To create a security profile, run the following command: gcloud network-security security-profiles \\ threat-prevention \\ create sec-profile-ips \\ --organization ORGANIZATION ID \\ --location global \\ --project PROJECT ID \\ --description \"Security profile to set up intrusion detection and prevention service.\" Replace the following: ORGANIZATION ID : the organization where the security profile is created."
+        ]
+      },
+      {
+        "title": "\"Threat signatures overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To set up an alert or to deny network traffic for all supported network protocols, use the following commands: To set up an alert action on antivirus threats for all supported protocols: gcloud network-security security-profiles threat-prevention add-override NAME \\ --antivirus SMB,IMAP,HTTP,HTTP2,FTP,SMTP,POP3 \\ --action ALERT \\ --organization ORGANIZATION ID \\ --location LOCATION \\ --project PROJECT ID Replace the following: NAME : the name of the security profile; you can specify the name as a string or as a unique URL identifier.",
+          "What's next View threats Intrusion detection and prevention service overview Configure intrusion detection and prevention service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Default signature set Cloud NGFW provides a default set of threat signatures that help you to safeguard your network workloads from threats."
+        ]
+      },
+      {
+        "title": "\"URL filtering service overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/about-url-filtering",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the URL filtering service allows the egress traffic, the intrusion detection and prevention service (if enabled) can further scan the traffic for threats.",
+          "You can use the URL filtering service along with the intrusion detection and prevention service to deny traffic to malicious URLs, prevent access to malicious command-and-control (C2) servers, and detect malware in executable files.",
+          "A firewall policy rule references a security profile group to enable either the URL filtering service or the intrusion detection and prevention service, or both, for the network traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/about-intrusion-prevention",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/set-up-ips-tutorial",
+        "https://docs.cloud.google.com/firewall/docs/about-threats",
+        "https://docs.cloud.google.com/firewall/docs/about-url-filtering"
+      ]
+    }
+  ]
+}

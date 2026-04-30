@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "PodSecurityPolicy",
+  "feature_slug": "podsecuritypolicy",
+  "summary": "PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; deprecated on 2022-09-14.",
+  "extended_definition": "PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; PodSecurityPolicy is a Kubernetes policy API for governing pod security settings; deprecated on 2022-09-14.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-14",
+    "deprecation_date": "2022-09-14",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following versions of GKE or later have been updated to address the providerID issue: 1.33.1-gke.1386000 1.32.4-gke.1533000 1.31.9-gke.1119000 1.30.12-gke.1208000 Optionally, if you cannot upgrade, implement the following validating admission policy on your cluster to mitigate the providerID issue: apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicy metadata : name : validate - node - providerid spec : failurePolicy : Fail matchConstraints : resourceRules : - apiGroups : [ \"\" ] apiVersions : [ \"v1\" ] operations : [ \"CREATE\", \"UPDATE\" ] resources : [ \"nodes\" ] matchConditions : - name : \"has-providerid\" expression : \"has(object.spec.providerID)\" validations : - expression : \"object.spec.providerID == '' object.spec.providerID.endsWith('/' + object.metadata.name)\" message : \"node.spec.providerID must match the node name\" --- apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicyBinding metadata : name : validate - node - providerid - binding spec : policyName : validate - node - providerid validationActions : [ Deny ] Use node restricted labels when isolating workloads to specific nodes as a security control If you are using labels for node isolation, as described in Kubernetes documentation , use node restricted labels (for example, labels of the form node-restriction.kubernetes.io/example-constraint ) in node affinity and node selector terms used for workload isolation.",
+          "No action is needed None GCP-2023-014 Published: 2023-06-15 Updated: 2023-08-11 Reference: CVE-2023-2727 , CVE-2023-2728 2023-08-11 Update: Added patch versions for GKE on VMware, GKE on AWS, GKE on Azure, and GKE on Bare Metal GKE Description Severity Two new security issues were discovered in Kubernetes where users may be able to launch containers that bypass policy restrictions when using ephemeral containers and either ImagePolicyWebhook (CVE-2023-2727) or the ServiceAccount admission plugin (CVE-2023-2728).",
+          "The following upcoming GKE on AWS versions or newer will include the fix for this vulnerability, and this bulletin will be updated when they are available: 1.5.0-gke.6 1.4.3-gke.7 Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ..."
+        ]
+      },
+      {
+        "title": "\"About the security posture dashboard \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "GKE security posture dashboard pricing The pricing for the capabilities of the security posture dashboard is as follows, applicable to standalone GKE clusters and fleet GKE clusters: GKE security posture dashboard pricing Workload configuration auditing No extra charge Security bulletin surfacing No extra charge (Deprecated) Container OS vulnerability scanning No extra charge (Deprecated) Advanced vulnerability insights Uses Artifact Analysis pricing.",
+          "Cluster-specific feature enablement The GKE-specific capabilities in the security posture dashboard are categorized as follows: Kubernetes security posture : The security posture of Kubernetes objects and resources in the cluster, such as Pod specifications.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE security Send feedback About the security posture dashboard Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "For additional protection, as of 11 July 2023, new 1.27+ clusters also have a policy rule to enforce the securityContext settings and reject Pods that use unsafe sysctls.",
+          "Autopilot This page describes the security features, configurations, and settings in Google Kubernetes Engine (GKE) Autopilot mode.",
+          "Industry surveys show that 76% of containers run as root, so Autopilot allows running as root to enable most workloads Built-in security configurations In addition to the Pod Security Standards, Google applies many security settings in Autopilot based on industry best practices and our expertise."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "gke.6",
+      "gke.7",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "restriction.kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security"
+      ]
+    }
+  ]
+}

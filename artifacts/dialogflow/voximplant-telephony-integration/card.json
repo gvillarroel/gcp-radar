@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.476Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Voximplant telephony integration",
+  "feature_slug": "voximplant-telephony-integration",
+  "summary": "Dialogflow includes a one-click integration with the Voximplant telephony partner.",
+  "extended_definition": "Dialogflow includes a one-click integration with the Voximplant telephony partner.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "DTMF for telephony integrations \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback DTMF for telephony integrations Stay organized with collections Save and categorize content based on your preferences.",
+          "You can enable and configure DTMF (Dual-tone multi-frequency signaling) for telephony integrations .",
+          "In the Dialogflow Console, click Test Agent in the upper right hand corner of the screen."
+        ]
+      },
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "For partner telephony integrations , the URL for the audio file must be accessible by the partner.",
+          "Partner telephony integrations may or may not support partial response at this time.",
+          "Telephony transfer call Note: Call transfer is only available for Dialogflow CX Phone Gateway ."
+        ]
+      },
+      {
+        "title": "Mega agents \\_|\\_ Dialogflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "source_id": "site-iam-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner built-in telephony integrations ( AudioCodes , Avaya , SignalWire , Voximplant ) are not supported.",
+          "If you plan on using any integrations for the mega agent, the automatically created service- project-number @gcp-sa-dialogflow.iam.gserviceaccount.com service account for the mega agent's project must have a role on that project that includes permission to make detect intent calls.",
+          "You can use the Dialogflow Messenger integration as an easy way to do this, or you could setup your desired integration for the mega agent prior to configuring sub-agents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/dtmf",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega"
+      ]
+    }
+  ]
+}

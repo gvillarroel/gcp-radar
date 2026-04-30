@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "SoapService",
+  "feature_slug": "soapservice",
+  "summary": "SoapService was deprecated; deprecated on 2013-07-09.",
+  "extended_definition": "SoapService was deprecated; deprecated on 2013-07-09.",
+  "lifecycle": {
+    "latest_feature_date": "2013-07-09",
+    "deprecation_date": "2013-07-09",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/tables",
+      "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "July 09, 2013 Deprecated Deprecated the old Xml service, SoapService , and support for the JavaScript feature E4X.",
+          "FileIterator.getContinuationToken() FolderIterator.getContinuationToken() DriveApp.continueFileIterator(continuationToken) DriveApp.continueFolderIterator(continuationToken) Deprecated The UiApp widgets Hyperlink , InlineHyperlink , LayoutPanel , and RichTextArea have now been disabled, as announced on March 13, 2013 and documented in the Apps Script sunset schedule .",
+          "September 09, 2013 Deprecated Deprecated the DocumentApp methods getFootnotes() , getLinkUrl() , setLinkUrl(url) , and isAtDocumentEnd() in the classes FooterSection , FootnoteSection , and HeaderSection , as well as the methods getNextSibling() and getPreviousSibling() in the classes FooterSection and HeaderSection ."
+        ]
+      },
+      {
+        "title": "Apps Script Sunset Schedule \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/tables",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Deprecated Sunset Behavior after sunset date setAuthentication(clientId, signingKey) March 03, 2026 June 01, 2026 This method is unavailable and existing scripts fail when using this method.",
+          "DecoratedPopupPanel DockLayoutPanel DockPanel StackLayoutPanel TabLayoutPanel Old XML service Jul 9, 2013 Service no longer appears in autocomplete, although existing scripts should still function.",
+          "Page Summary outlined flag Apps Script features are marked as deprecated before they are shut down, allowing time for migration to supported alternatives."
+        ]
+      },
+      {
+        "title": "Class BooleanCondition \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 33,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns null if underlining is unaffected. // Logs the boolean condition underline setting for each conditional format rule // on a sheet. const sheet = SpreadsheetApp . getActiveSheet (); const rules = sheet . getConditionalFormatRules (); for ( const rule of rules ) { const underline = rule . getBooleanCondition (). getUnderline (); Logger . log ( Underline: ${ underline } ); } Return Boolean null — whether or not the boolean condition underlines the text, or null if underlining is unaffected Deprecated methods getBackground() Deprecated.",
+          "Returns null if not set. // Logs the boolean condition background color for each conditional format rule // on a sheet. const sheet = SpreadsheetApp . getActiveSheet (); const rules = sheet . getConditionalFormatRules (); for ( const rule of rules ) { const color = rule . getBooleanCondition (). getBackground (); Logger . log ( Background color: ${ color } ); } Return String null — The background color string, or null if not set for this condition. getFontColor() Deprecated.",
+          "Deprecated methods Method Return type Brief description get Background() String null Gets the background color string for this boolean condition. get Font Color() String null Gets the font color string for this boolean condition."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/advanced/tables",
+        "https://developers.google.com/apps-script/reference/spreadsheet/boolean-condition"
+      ]
+    }
+  ]
+}

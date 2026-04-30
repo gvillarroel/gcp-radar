@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable CMEK support for multi-region replicated instances",
+  "feature_slug": "cloud-bigtable-cmek-support-for-multi-region-replicated-instances",
+  "summary": "Enables customer-managed encryption keys (CMEK) for Cloud Bigtable instances replicated across multiple regions.",
+  "extended_definition": "Enables customer-managed encryption keys (CMEK) for Cloud Bigtable instances replicated across multiple regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/backups",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Bigtable \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "source_id": "site-docs-reference-2",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Flexibility: You can use the same CMEK key in multiple projects, instances, or clusters, or you can use separate keys, depending on your business needs.",
+          "Cross-region protection: You can enable CMEK in instances that have clusters in any region where Bigtable is available.",
+          "CMEK-protected Bigtable resources (instances, clusters, tables, or backups) tied to a key that has been made inaccessible as the result of a user-triggered action (such as disabling or destroying a key, or by revoking the Encrypter/Decrypter role) for more than 30 consecutive days are automatically deleted ."
+        ]
+      },
+      {
+        "title": "Bigtable backups overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable replication and automated backup to create daily backups in multiple regions, so that if a table becomes corrupted on one cluster, you have one or more backups that don't share storage on the corrupted cluster.",
+          "CMEK When you create a backup in a cluster that is protected by a customer-managed encryption key (CMEK) , the backup is pinned to the primary version of the cluster's CMEK key at the time it is taken.",
+          "In replicated instances where automated backup is enabled, the storage costs might be higher because a backup is created on each cluster daily."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster size considerations When you size a Bigtable instance to prepare for migrating a Cassandra workload, there are considerations when you compare single-data center Cassandra clusters to single-cluster Bigtable instances, and Cassandra multiple-data center clusters to multi-cluster Bigtable instances.",
+          "Because a write to Colossus is replicated multiple times, the durability is ensured even if nodal hardware failure occurs before the data is persisted to an SSTable for the row range.",
+          "Geographic replication and consistency Bigtable and Cassandra handle geographic (also known as multi- region ) replication and consistency differently."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cmek",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "HTML Service CSS3 support",
+  "feature_slug": "html-service-css3-support",
+  "summary": "HTML Service supports most CSS3 features within the Caja security sandbox.",
+  "extended_definition": "HTML Service supports most CSS3 features within the Caja security sandbox.",
+  "lifecycle": {
+    "latest_feature_date": "2013-09-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/html",
+      "https://developers.google.com/apps-script/guides/html/communication",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "File.getOwner() Folder.getOwner() September 16, 2013 Feature HTML Service now supports most CSS3 features.",
+          "To check whether the Caja security sandbox in HTML Service supports a specific feature, see the CSS whitelist definitions in Caja's public repository .",
+          "A notable exception is the :nth-child() pseudo-selector, which remains unsupported, along with a small number of obscure or non-standardized CSS3 features."
+        ]
+      },
+      {
+        "title": "HTML Service: Create and Serve HTML \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/html",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Within the HTML file, you can write most standard HTML, CSS, and client-side JavaScript.",
+          "These examples include a few extra features for convenience: the onOpen function creates a custom menu that helps you open the interface, and the button in the HTML file calls google.script.host.close to close the interface.",
+          "To use the HTML service, you need to create HTML files within your Apps Script project where you can write standard HTML, CSS, and client-side JavaScript, along with template scriptlets."
+        ]
+      },
+      {
+        "title": "\"HTML Service: Communicate with Server Functions \\_|\\_ Apps Script \\_|\\_\\",
+        "url": "https://developers.google.com/apps-script/guides/html/communication",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function processForm(formObject) { var formBlob = formObject.myFile; var driveFile = DriveApp.createFile(formBlob); return driveFile.getUrl(); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> // Prevent forms from submitting. function preventFormSubmit() { var forms = document.querySelectorAll('form'); for (var i = 0; i < forms.length; i++) { forms[i].addEventListener('submit', function(event) { event.preventDefault(); }); } } window.addEventListener('load', preventFormSubmit); function handleFormSubmit(formObject) { google.script.run.withSuccessHandler(updateUrl).processForm(formObject); } function updateUrl(url) { var div = document.getElementById('output'); div.innerHTML = '<a href=\"' + url + '\">Got it!</a>'; } </script> </head> <body> <form id=\"myForm\" onsubmit=\"handleFormSubmit(this)\"> <input name=\"myFile\" type=\"file\" /> <input type=\"submit\" value=\"Submit\" /> </form> <div id=\"output\"></div> </body> </html> Script runners Think of google.script.run as a builder for a \"script runner.\" If you add a success handler, failure handler, or user object to a script runner, you aren't changing the existing runner; instead, you get back a new script runner with new behavior.",
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function getBankBalance() { var email = Session.getActiveUser().getEmail() return deepSecret (email); } function deepSecret (email) { // Do some secret calculations return email + ' has $1,000,000 in the bank.'; } var obj = { objectMethod: function() { // More secret calculations } }; Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> function onSuccess(balance) { var div = document.getElementById('output'); div.innerHTML = balance; } google.script.run.withSuccessHandler(onSuccess) .getBankBalance(); </script> </head> <body> <div id=\"output\">No result yet...</div> </body> </html> Resize dialogs in Google Workspace applications Custom dialog boxes in Google Docs, Google Sheets, or Forms can be resized by calling the google.script.host methods setWidth(width) or setHeight(height) in client-side code. (To set the initial size of a dialog, use the HtmlOutput methods setWidth(width) and setHeight(height) .) Note that dialogs don't re-center in the parent window when resized, and it is not possible to resize sidebars .",
+          "Code.gs function doGet() { return HtmlService.createHtmlOutputFromFile('Index'); } function getEmail() { return Session.getActiveUser().getEmail(); } Index.html <!DOCTYPE html> <html> <head> <base target=\" top\"> <script> function updateButton(email, button) { button.value = 'Clicked by ' + email; } </script> </head> <body> <input type=\"button\" value=\"Not Clicked\" onclick=\"google.script.run .withSuccessHandler(updateButton) .withUserObject(this) .getEmail()\" /> <input type=\"button\" value=\"Not Clicked\" onclick=\"google.script.run .withSuccessHandler(updateButton) .withUserObject(this) .getEmail()\" /> </body> </html> Forms If you call a server function with a form element as a parameter, the form becomes a single object with field names as keys and field values as values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "button.value",
+      "developers.google.com",
+      "div.innerHTML",
+      "document.getElementById",
+      "document.querySelectorAll",
+      "error.message",
+      "event.preventDefault",
+      "forms.length",
+      "window.addEventListener"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/html",
+        "https://developers.google.com/apps-script/guides/html/communication"
+      ]
+    }
+  ]
+}

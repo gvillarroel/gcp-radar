@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.533Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Risk Assessment v2 monitoring alerts",
+  "feature_slug": "risk-assessment-v2-monitoring-alerts",
+  "summary": "Risk Assessment v2 preview adds alerting on security monitoring conditions so changes in security scores can trigger Cloud Monitoring alerts.",
+  "extended_definition": "Risk Assessment v2 preview adds alerting on security monitoring conditions so changes in security scores can trigger Cloud Monitoring alerts.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Monitoring conditions and alerts Advanced API Security allows you to add monitoring conditions to Risk Assessment.",
+          "Once you create a monitoring condition, Risk Assessment publishes security score metrics to Cloud Monitoring.",
+          "Start by Viewing risk assessments in the Apigee UI and then selecting the Monitoring Conditions tab."
+        ]
+      },
+      {
+        "title": "Security alerts \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 178,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: Create a risk assessment monitoring condition monitoring alert (Risk Assessment v2) This example creates a new Cloud Monitoring alerting policy for a Risk Assessment monitoring condition that alerts if the security score on any of its monitored proxies falls below a certain threshold.",
+          "Required roles To set up alerts and notification channels in Cloud Monitoring, you need to be assigned the following roles: roles/monitoring.alertPolicyEditor roles/monitoring.notificationChannelEditor Limitations For alerting, the following limitations apply: The maximum number of alerting policies is 500 for all Apigee subscription levels.",
+          "Note: You can configure security alerts for Risk Assessment v1 and Risk Assessment v2 security scores."
+        ]
+      },
+      {
+        "title": "\"Manage monitoring conditions for multiple Apigee organizations and gateways\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In addition to the IAM roles and permissions, if you will be managing monitoring conditions and alerts, you must have the additional permissions or follow the steps for managing monitoring conditions and alerts described in Required roles for risk assessment Learn about Cloud Monitoring features and functionality.",
+          "REST To view the list of configured monitoring conditions, make a GET request to the securityMonitoringConditions API. curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB\" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To view the list of monitoring conditions for a specific gateway, send a GET request as follows: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=api hub gateway%3D GATEWAY ID \" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To view the list of monitoring conditions for a specific security profile, send a GET request as follows: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions?risk assessment type=API HUB&filter=profile%3D PROFILE ID \" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" To see details on a specific monitoring condition, use the following GET request: curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?risk assessment type=API HUB\" \\ -X GET \\ -H \"Authorization: Bearer $TOKEN\" Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project.",
+          "This example uses an update mask to update a monitoring condition so that it includes specific deployments instead of all deployments. curl \"https://apigee.googleapis.com/v1/organizations/ APIGEE ORG /securityMonitoringConditions/ CONDITION ID ?update mask=include\" \\ -X PATCH \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"risk assessment type\": \"API HUB\", \"include\": { \"resources\": [ { \"type\": \"API HUB DEPLOYMENT\", \"name\": \" DEPLOYMENT ID 1 \" }, { \"type\": \"API HUB DEPLOYMENT\", \"name\": \" DEPLOYMENT ID 2 \" } ] } }' Replace the following: APIGEE ORG : Name of the Apigee organization provisioned in your Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "monitoring.alertPolicyEditor",
+      "monitoring.notificationChannelEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/monitoring.alertPolicyEditor",
+      "roles/monitoring.notificationChannelEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-alerts",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-monitoring-conditions-multi-gateway"
+      ]
+    }
+  ]
+}

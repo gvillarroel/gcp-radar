@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.851Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Vertex AI Search natural language query filters",
+  "feature_slug": "vertex-ai-search-natural-language-query-filters",
+  "summary": "Natural language query filtering converts user queries against structured data stores into a residual query plus machine-generated filters for custom search apps attached to a single structured data store.",
+  "extended_definition": "Natural language query filtering converts user queries against structured data stores into a residual query plus machine-generated filters for custom search apps attached to a single structured data store.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Server behavior defaults to DISABLED . geoSearchQueryDetectionFieldNames[] string Field names used for location-based filtering, where geolocation filters are detected in natural language search queries.",
+          "SearchParams JSON representation { \"maxReturnResults\" : integer , \"filter\" : string , \"boostSpec\" : { object ( BoostSpec ) } , \"orderBy\" : string , \"searchResultMode\" : enum ( SearchResultMode ) , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } } Fields maxReturnResults integer Number of search results to return.",
+          "NaturalLanguageQueryUnderstandingSpec JSON representation { \"filterExtractionCondition\" : enum ( FilterExtractionCondition ) , \"geoSearchQueryDetectionFieldNames\" : [ string ] , \"extractedFilterBehavior\" : enum ( ExtractedFilterBehavior ) , \"allowedFieldNames\" : [ string ] } Fields filterExtractionCondition enum ( FilterExtractionCondition ) The condition under which filter extraction should occur."
+        ]
+      },
+      {
+        "title": "\"Introduction to custom search \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Retrieval and ranking: There are several sub-components to retrieval and ranking of results: Query understanding for search: Vertex AI Search analyzes a search query using the following: Natural language processing: To understand the intent.",
+          "Key capabilities The key capabilities of Vertex AI Search are as follows: High-quality search: Leverages Google's search expertise to understand user intent, even with complex queries and natural language queries.",
+          "Data ingestion : Vertex AI Search offers different types of ingestion for data from different sources, such as: Crawling for website data Ingesting structured and unstructured data from Cloud Storage and BigQuery or through the REST API Search and browse configuration : Field settings : Control how fields are configured for search and answer generation, such as searchable, retrievable, or indexable."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Server behavior defaults to DISABLED . geoSearchQueryDetectionFieldNames[] string Field names used for location-based filtering, where geolocation filters are detected in natural language search queries.",
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required.",
+          "SearchResponse JSON representation { \"results\" : [ { object ( SearchResult ) } ] , \"facets\" : [ { object ( Facet ) } ] , \"guidedSearchResult\" : { object ( GuidedSearchResult ) } , \"totalSize\" : integer , \"attributionToken\" : string , \"redirectUri\" : string , \"nextPageToken\" : string , \"correctedQuery\" : string , \"suggestedQuery\" : string , \"summary\" : { object ( Summary ) } , \"appliedControls\" : [ string ] , \"geoSearchDebugInfo\" : [ { object ( GeoSearchDebugInfo ) } ] , \"queryExpansionInfo\" : { object ( QueryExpansionInfo ) } , \"naturalLanguageQueryUnderstandingInfo\" : { object ( NaturalLanguageQueryUnderstandingInfo ) } , \"sessionInfo\" : { object ( SessionInfo ) } , \"oneBoxResults\" : [ { object ( OneBoxResult ) } ] , \"searchLinkPromotions\" : [ { object ( SearchLinkPromotion ) } ] , \"semanticState\" : enum ( SemanticState ) } Fields results[] object ( SearchResult ) A list of matched documents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/conversational_search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/about-generic-search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ]
+}

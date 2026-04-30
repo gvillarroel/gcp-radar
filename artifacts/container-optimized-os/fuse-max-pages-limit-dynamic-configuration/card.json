@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:53.733Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "FUSE max pages limit dynamic configuration",
+  "feature_slug": "fuse-max-pages-limit-dynamic-configuration",
+  "summary": "Container-Optimized OS supports dynamically configuring the FUSE max pages limit; Container-Optimized OS supports dynamically configuring the FUSE max pages limit.",
+  "extended_definition": "Container-Optimized OS supports dynamically configuring the FUSE max pages limit; Container-Optimized OS supports dynamically configuring the FUSE max pages limit.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known Limitations Compatibility with gcplogs driver Starting with milestone 89 , if the logging agent included with Container-Optimized OS is enabled and Docker gcplogs logging driver is enabled for one or more containers, excessive warning logs may be output by the included logging agent.",
+          "However, if you have a custom logging configuration, you might experience breakage when migrating workloads to images that are based on a different architecture or to a newer version of Container-Optimized OS.",
+          "Logging agent configuration compatibility The logging agent is a fluentd-based container on x86-based Container-Optimized OS images and a fluent-bit binary on Arm-based Container-Optimized OS images."
+        ]
+      },
+      {
+        "title": "\"Running containers on instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Status: Downloaded newer image for gcr.io/google-containers/busybox:latest hello world Accessing private images in Artifact Registry or Container Registry Starting with milestone 60 releases, docker-credential-gcr is pre-installed in Container-Optimized OS images.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Running containers on instances Stay organized with collections Save and categorize content based on your preferences.",
+          "You can run a Docker container on a machine running Container-Optimized OS in much the same way as you would on most other node image distributions, by using the docker run command."
+        ]
+      },
+      {
+        "title": "\"Configuring the host firewall \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Consider the following cloud-init example: #cloud-config write files : - path : /etc/systemd/system/config-firewall.service permissions : 0644 owner : root content : [Unit] Description=Configures the host firewall [Service] Type=oneshot RemainAfterExit=true ExecStart=/sbin/iptables -A INPUT -p tcp --dport 80 -j ACCEPT - path : /etc/systemd/system/myhttp.service permissions : 0644 owner : root content : [Unit] Description=My HTTP service After=docker.service config-firewall.service Wants=docker.service config-firewall.service [Service] Restart=always ExecStart=/usr/bin/docker run --rm --name=%n --net=host nginx ExecStop=-/usr/bin/docker exec %n -s quit runcmd : - systemctl daemon-reload - systemctl start myhttp.service Using this cloud-init configuration with a VM running Container-Optimized OS will result in the following behaviors on every boot: The host firewall will be configured to allow incoming TCP connections on port 80.",
+          "Warning: The default firewall configuration might be different if you are using Container-Optimized OS through another Google Cloud product like Containers on Compute Engine or Google Kubernetes Engine.",
+          "You can see the exact host firewall configuration by running sudo iptables -L on a VM instance running Container-Optimized OS."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "docker.service",
+      "firewall.service",
+      "gcr.io",
+      "myhttp.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/firewall",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    }
+  ]
+}

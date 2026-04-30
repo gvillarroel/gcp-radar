@@ -1,0 +1,96 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.856Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Number cast aliases",
+  "feature_slug": "number-cast-aliases",
+  "summary": "Adds Number casting aliases that match the Image casting helpers.",
+  "extended_definition": "Adds Number casting aliases that match the Image casting helpers.",
+  "lifecycle": {
+    "latest_feature_date": "2014-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/arrays_array_images",
+      "https://developers.google.com/earth-engine/guides/debugging",
+      "https://developers.google.com/earth-engine/guides/exporting_images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }; var noProblem = someFeatures . filterBounds ( image . geometry ()) . map ( functionToMap ); print ( noProblem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def function to map ( feature ): dictionary = image . reduceRegion ( reducer = ee .",
+          "Image ( 'COPERNICUS/S2 HARMONIZED/20160625T100617 20160625T170310 T33UVR' ); // Error: Image.select: Pattern 'nonBand' did not match any bands. print ( s2image . select ([ 'nonBand' ])); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a Sentinel-2 image. s2image = ee .",
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }); // Error in map(ID=2): // Number.divide: Parameter 'left' is required. print ( problem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) image = ee ."
+        ]
+      },
+      {
+        "title": "Arrays and Array Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key actions include: creating a TC coefficient array; confirming its dimensions using length(); extracting a sub-matrix (e.g., 'greenness') using slice(); converting multi-band Landsat images into Array Images with toArray() for per-pixel band value arrays; performing matrix multiplication; casting to regular, single band images with arrayGet(), and using arrayProject() and arrayFlatten() for multi band array images.\\n\"]]",
+          "Using the 2-D array image, left multiply by an image where each pixel contains a 2-D matrix of greenness coefficients: Code Editor (JavaScript) // Do a matrix multiplication: 1x6 times 6x1. // Cast the greenness Array to an Image prior to multiplication. var greennessArrayImage = ee .",
+          "Cast the greenness Array to an Image prior to multiplication. greenness array image = ee ."
+        ]
+      },
+      {
+        "title": "Exporting Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_images",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also set the image's PixelType by casting the data to a specific type using image methods toShort() or toInt() , for example.",
+          "If the crsTransform specified in an export do not match the crsTransform of the original image, the output pixels will be resampled (using nearest neighbor by default), which will make the resulting image be shifted relative to the original image.",
+          "To sum up, if you need to match the exported image's pixels to a specific image, make sure to use the crs and crsTransform parameters for full control of the grid. to Drive To export an image to your Drive account, use Export.image.toDrive() ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "e.g",
+      "ee.Algorithms.FMask.matchClouds",
+      "geemap.core",
+      "image.toDrive"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/debugging",
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/guides/exporting_images"
+      ]
+    }
+  ]
+}

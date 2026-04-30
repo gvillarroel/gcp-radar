@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.790Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Supported services metadata retrieval",
+  "feature_slug": "supported-services-metadata-retrieval",
+  "summary": "Lets users programmatically retrieve VPC Service Controls supported services and the associated supported methods and permissions.",
+  "extended_definition": "Lets users programmatically retrieve VPC Service Controls supported services and the associated supported methods and permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "List supported methods for a service To retrieve the list of methods and permissions supported by VPC Service Controls for a service, run the following command: gcloud access-context-manager supported-services describe SERVICE ADDRESS Replace SERVICE ADDRESS with the service name of the product or service.",
+          "List all supported services To retrieve the complete list of all VPC Service Controls supported products and services, run the following command: gcloud access-context-manager supported-services list You get a response with a list of products and services.",
+          "You get a response with a list of methods and permissions. availableOnRestrictedVip: RESTRICTED VIP STATUS knownLimitations: LIMITATIONS STATUS name: SERVICE ADDRESS serviceSupportStage: SERVICE STATUS supportedMethods: METHODS LIST . . . title: SERVICE NAME In this response, METHODS LIST lists all the methods and permissions supported by VPC Service Controls for the specified service."
+        ]
+      },
+      {
+        "title": "\"Retrieve VPC Service Controls errors from audit logs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To retrieve all VPC Service Controls errors that have occurred in the past week, run the following command: gcloud logging read \\ 'protoPayload.metadata.@type:\"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\"' \\ --freshness = 7d To retrieve logs that were generated between specific dates, run the following command: gcloud logging read \\ 'protoPayload.metadata.@type:\"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\" AND timestamp>=\" START DATETIME \" AND timestamp<=\" END DATETIME \"' START DATETIME and END DATETIME are formatted date and time strings.",
+          "To obtain VPC Service Controls logs for a different period, use one of the following commands: To retrieve logs that were generated within a certain period from the current date, run the following command: gcloud logging read \\ 'protoPayload.metadata.@type:\"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\"' \\ --freshness = DURATION DURATION is a formatted period of time.",
+          "For example, to obtain all VPC Service Controls errors that have occurred between March 22, 2019 and March 26, 2019: gcloud logging read \\ 'protoPayload.metadata.@type:\"type.googleapis.com/google.cloud.audit.VpcServiceControlAuditMetadata\" AND timestamp>=\"2019-03-22T23:59:59Z\" AND timestamp<=\"2019-03-26T00:00:00Z\"' What's next Learn how to diagnose an access denial in violation analyzer and view its comprehensive evaluation report."
+        ]
+      },
+      {
+        "title": "Best practices for enabling VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a log sink that includes all relevant VPC Service Controls log messages, use the following filter: logName = \"projects/ $PROJECT /logs/cloudaudit.googleapis.com%2Fpolicy\" For maximum security, disallow access to unsupported services.",
+          "The following are some common access patterns: Data access patterns : Services outside the perimeter store or retrieve data that resides in the perimeter.",
+          "In the VPC Service Controls service perimeter , under Restricted Services > Services to protect , add all supported services."
+        ]
+      },
+      {
+        "title": "VPC Service Controls audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Dry run mode for service perimeters . metadata.vpcServiceControlsTroubleshootToken A troubleshooting token that lets you diagnose the violation using the violation analyzer . metadata.vpcServiceControlsUniqueId The Unique Identifier of the VPC Service Controls violation described in the record. metadata.violationReason The reason for the violation.",
+          "Audited operations The following table summarizes which API operations correspond to each audit log type in VPC Service Controls: Audit logs category VPC Service Controls methods Policy Denied audit logs The methods of the services that integrate with VPC Service Controls are supported.",
+          "These access levels might not be specified in the violated perimeter and thus can cause NO MATCHING ACCESS LEVEL violation. metadata.intermediateServices The list of the services involved in the request chain."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudlocationfinder.googleapis.com",
+      "metadata.intermediateServices",
+      "metadata.violationReason",
+      "metadata.vpcServiceControlsTroubleshootToken",
+      "metadata.vpcServiceControlsUniqueId",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/retrieve-troubleshoot-errors",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/enable",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/audit-logging"
+      ]
+    }
+  ]
+}

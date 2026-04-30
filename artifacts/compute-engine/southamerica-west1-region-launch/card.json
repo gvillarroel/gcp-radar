@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.644Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "southamerica-west1 region launch",
+  "feature_slug": "southamerica-west1-region-launch",
+  "summary": "The Santiago southamerica-west1 region launched with E2, N2, and C2 VM support across all zones.",
+  "extended_definition": "The Santiago southamerica-west1 region launched with E2, N2, and C2 VM support across all zones.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate an existing workload to a stateful managed instance group \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/migrate-workload-to-stateful-mig",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a regional MIG, replace --zone= ZONE with --region= REGION . gcloud compute instance-groups managed create my-mig \\ --size=0 \\ --template=https://www.googleapis.com/compute/v1/projects/ my-project /global/instanceTemplates/ my-instance-template \\ --zone= europe-west1-c The output is similar to the following: Created [https://www.googleapis.com/compute/v1/projects/ my-project /zones/ europe-west1-c /instanceGroupManagers/my-mig].",
+          "Alternatively, if your application is installed, configured, and launched solely by using a startup script, skip this step and proceed to Create an instance template .",
+          "How does your application start: is it pre-configured on a boot disk or is it installed, configured, and launched by a startup script?"
+        ]
+      },
+      {
+        "title": "\"Locations supported for data transfer \\_|\\_ Network Connectivity Center\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ghislain, Belgium, Europe europe-west2-a europe-west2-b europe-west2-c London, England, Europe europe-west3-a europe-west3-b europe-west3-c Frankfurt, Germany, Europe europe-west4-a europe-west4-b europe-west4-c Amsterdam, Netherlands, Europe europe-west6-a europe-west6-b europe-west6-c Zurich, Switzerland, Europe europe-west8-a europe-west8-b europe-west8-c Milan, Italy, Europe europe-west9-a europe-west9-b europe-west9-c Paris, France, Europe europe-west12-a europe-west12-b europe-west12-c Turin, Italy, Europe me-central1-a me-central1-b me-central1-c Doha, Qatar, Middle East me-west1-a me-west1-b me-west1-c Tel Aviv, Israel, Middle East northamerica-northeast1-a northamerica-northeast1-b northamerica-northeast1-c Montréal, Québec, North America northamerica-northeast2-a northamerica-northeast2-b northamerica-northeast2-c Toronto, Ontario, North America northamerica-south1-a northamerica-south1-b northamerica-south1-c Queretaro, Mexico, North America us-central1-a us-central1-b us-central1-c us-central1-f Council Bluffs, Iowa, North America us-east1-b us-east1-c us-east1-d Moncks Corner, South Carolina, North America us-east4-a us-east4-b us-east4-c Ashburn, Virginia, North America us-east5-a us-east5-b us-east5-c Columbus, Ohio, North America us-south1-a us-south1-b us-south1-c Dallas, Texas, North America us-west1-a us-west1-b us-west1-c The Dalles, Oregon, North America us-west2-a us-west2-b us-west2-c Los Angeles, California, North America us-west3-a us-west3-b us-west3-c Salt Lake City, Utah, North America us-west4-a us-west4-b us-west4-c Las Vegas, Nevada, North America southamerica-east1-a southamerica-east1-b southamerica-east1-c Osasco, São Paulo, Brazil, South America southamerica-west1-a southamerica-west1-b southamerica-west1-c Santiago, Chile, South America What's next To learn more about NCC, see the NCC overview .",
+          "Africa APAC Europe Middle East North America South America Zones Location africa-south1-a africa-south1-b africa-south1-c Johannesburg, South Africa, Africa asia-east1-a asia-east1-b asia-east1-c Taiwan, APAC asia-northeast1-a asia-northeast1-b asia-northeast1-c Tokyo, Japan, APAC asia-northeast2-a asia-northeast2-b asia-northeast2-c Osaka, Japan, APAC asia-northeast3-a asia-northeast3-b asia-northeast3-c Seoul, South Korea, APAC asia-south1-a asia-south1-b asia-south1-c Mumbai, India, APAC asia-south2-a asia-south2-b asia-south2-c Delhi, India, APAC asia-southeast1-a asia-southeast1-b asia-southeast1-c Singapore, APAC asia-southeast2-a asia-southeast2-b asia-southeast2-c Jakarta, Indonesia, APAC australia-southeast1-a australia-southeast1-b australia-southeast1-c Sydney, Australia, APAC australia-southeast2-a australia-southeast2-b australia-southeast2-c Melbourne, Australia, APAC europe-north1-a europe-north1-b europe-north1-c Hamina, Finland, Europe europe-north2-a europe-north2-b europe-north2-c Stockholm, Sweden, Europe europe-southwest1-a europe-southwest1-b europe-southwest1-c Madrid, Spain, Europe europe-west1-a europe-west1-b europe-west1-c St.",
+          "Supported regions include all of those in the following countries: Africa South Africa APAC Australia, India, Indonesia, Japan, Korea, Singapore, Taiwan Europe Belgium, Finland, France, Germany, Italy, Netherlands, Spain, Sweden, Switzerland, United Kingdom Middle East Israel, Qatar North America Canada, Mexico, United States South America Brazil, Chile Any restrictions on the use of telecommunications services in your customer agreement are not applicable to the use of NCC's data transfer functionality in these locations."
+        ]
+      },
+      {
+        "title": "Cloud VPN | Google Cloud",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/pricing",
+        "source_id": "site-docs-reference-3",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Iowa (us-central1) Johannesburg (africa-south1) Taiwan (asia-east1) Hong Kong (asia-east2) Tokyo (asia-northeast1) Osaka (asia-northeast2) Seoul (asia-northeast3) Mumbai (asia-south1) Delhi (asia-south2) Singapore (asia-southeast1) Jakarta (asia-southeast2) Bangkok (asia-southeast3) Sydney (australia-southeast1) Melbourne (australia-southeast2) Warsaw (europe-central2) Finland (europe-north1) Stockholm (europe-north2) Madrid (europe-southwest1) Belgium (europe-west1) Berlin (europe-west10) Turin (europe-west12) London (europe-west2) Frankfurt (europe-west3) Netherlands (europe-west4) Zurich (europe-west6) Milan (europe-west8) Paris (europe-west9) Doha (me-central1) Dammam (me-central2) Tel Aviv (me-west1) Montreal (northamerica-northeast1) Toronto (northamerica-northeast2) Mexico (northamerica-south1) Sao Paulo (southamerica-east1) Santiago (southamerica-west1) Iowa (us-central1) Oklahoma (us-central2) South Carolina (us-east1) Northern Virginia (us-east4) Columbus (us-east5) Alabama (us-east7) Dallas (us-south1) Oregon (us-west1) Los Angeles (us-west2) Salt Lake City (us-west3) Las Vegas (us-west4) Phoenix (us-west8) Hourly Hourly Monthly Monthly Component billed Price (USD) Hourly charge for each tunnel attached to the gateway.",
+          "One unused external IP address in southamerica-east1 ($0.015) x 720 hours = $10.80. $10.80 Grand total $5,030.80 What's next To find pricing information for other Network Connectivity products, see Network Connectivity pricing .",
+          "No charge for a reserved external IP address that is used by a tunnel. $1,732.00 southamerica-east1 gateway ($0.075) x 0 tunnels x 720 hours = no charge No data transfer out."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.023Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Hyperdisk Storage Pools support",
+  "feature_slug": "hyperdisk-storage-pools-support",
+  "summary": "Migrating VMs can use Hyperdisk Storage Pools for large-scale storage needs.",
+  "extended_definition": "Migrating VMs can use Hyperdisk Storage Pools for large-scale storage needs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use Hyperdisk Storage Pools to create and manage disks in pools and use the disks across multiple workloads.",
+          "Select Enable storage pool if you need large-scale storage for your data and want to use a Hyperdisk Storage Pool.",
+          "For more information on Hyperdisk Storage Pools, see About Hyperdisk Storage Pools ."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use Hyperdisk Storage Pools to create and manage disks in pools and use the disks across multiple workloads.",
+          "Select Enable storage pool if you need large-scale storage for your data and want to use a Hyperdisk Storage Pool.",
+          "For more information on Hyperdisk Storage Pools, see About Hyperdisk Storage Pools ."
+        ]
+      },
+      {
+        "title": "Migrate to Virtual Machines best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ensure that the guest OS is correctly configured in VMWare Before migrating your VMs, ensure that VMWare vCenter is not reporting any warnings related to the guest operating system (OS) .",
+          "If your VMs and physical servers aren't prepared for the migration, there can be unexpected results for the migration attempt, such as failure to migrate the VMs.",
+          "For example, after analyzing the migration plan, you might determine values for the following: The expected migration duration The expected number of VMs to migrate for each time unit The total migration cost The migration cost per VM The available network throughput The compatibility of the tools you're using for backup and disaster recovery with the target environment Consider all deployment environments for your applications when you analyze the migration plan."
+        ]
+      },
+      {
+        "title": "Migration journey with Migrate to Virtual Machines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend that you use test clones to validate if your VMs function properly in Google Cloud before migrating them.",
+          "You can also optionally add one or more target projects to use as destinations for the migrated VMs.",
+          "To group the VMs to migrate, you can use the information gathered during the assessment phase ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-getting-started"
+      ]
+    }
+  ]
+}

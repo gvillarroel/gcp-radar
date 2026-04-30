@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Packet Mirroring Direction Control",
+  "feature_slug": "packet-mirroring-direction-control",
+  "summary": "Packet Mirroring supports configuration of traffic direction for mirrored packets in Google Cloud Virtual Private Cloud.",
+  "extended_definition": "Packet Mirroring supports configuration of traffic direction for mirrored packets in Google Cloud Virtual Private Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+      "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About published services \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Producer type Producer configuration (published service) Supported producer backends PROXY protocol (TCP traffic only) IP version Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups IPv4 IPv6 Internal protocol forwarding (target instance) Not applicable IPv4 IPv6 Port mapping services Port mapping NEG IPv4 IPv6 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups Regional internet NEGs IPv4 Regional internal proxy Network Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Private Service Connect NEGs Instance groups IPv4 Secure Web Proxy Not applicable IPv4 Different load balancers support different port configurations; some load balancers support a single port, some support a range of ports, and some support all ports.",
+          "Packet Mirroring can't mirror packets for Private Service Connect published services traffic.",
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints."
+        ]
+      },
+      {
+        "title": "\"Measuring reachability \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "source_id": "site-iam-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The packet header contains the following components: A network protocol A source endpoint, consisting of one of the following: A VM instance name A source IP address A source App Engine service A Cloud Run function (1st gen) environment A Cloud Run service A Cloud SQL instance name A cluster name for a GKE control plane A destination endpoint, consisting of one of the following and a port number: A VM instance name A destination IP address A Cloud SQL instance name A cluster name for a GKE control plane A Private Service Connect endpoint Note: You cannot select an external server as a Cloud SQL instance endpoint.",
+          "It does not check to see whether a valid server is running on the destination, whether operating system firewall rules might block the traffic, or if security software blocks a packet carrying a virus payload.",
+          "It is augmented by the live data plane analysis feature, which sends packets to verify the state of the data plane and provide baseline information for supported configurations."
+        ]
+      },
+      {
+        "title": "\"Reasons for dropped test packets \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "source_id": "site-iam-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Probable cause The packet from the source endpoint to the external IP address of the Google APIs and services is routed through the Cloud VPN tunnel, but such a configuration is not supported.",
+          "Route next hop forwarding rule type is invalid The packet is sent to a destination using an invalid route with the next hop forwarding rule ( next-hop-ilb ) not being a forwarding rule of the internal passthrough Network Load Balancer.",
+          "Route next hop instance has a NIC in the wrong network The packet is sent to a destination using an invalid route with the next hop Compute Engine instance not having a network interface controller (NIC) in the route's network."
+        ]
+      },
+      {
+        "title": "\"Access APIs from VMs with external IP addresses \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Basic configuration : Confirm that you have default routes with next hop default-internet-gateway and a destination range of 0.0.0.0/0 (for IPv4 traffic) and ::/0 (for IPv6 traffic, if needed).",
+          "To check the configuration of custom routes for Google APIs and services in a given network, follow these directions.",
+          "To check the configuration of a default route in a given network, follow these directions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "appengine.google.com",
+      "appspot.com",
+      "backupdr.cloud.google.com",
+      "backupdr.googleusercontent.com",
+      "cloudfunctions.net",
+      "cloudproxy.app",
+      "composer.cloud.google.com",
+      "composer.googleusercontent.com",
+      "datafusion.cloud.google.com",
+      "datafusion.googleusercontent.com",
+      "dataproc.cloud.google.com",
+      "dataproc.googleusercontent.com",
+      "developerconnect.dev",
+      "dl.google.com",
+      "gcr.io",
+      "gke.goog",
+      "googleapis.com",
+      "gstatic.com",
+      "kernels.googleusercontent.com",
+      "ltsapis.goog",
+      "notebook.cloud.google.com",
+      "notebook.googleusercontent.com",
+      "notebooks.byoid.googleusercontent.com",
+      "notebooks.cloud.google.com",
+      "notebooks.googleusercontent.com",
+      "packages.cloud.google.com",
+      "pkg.dev",
+      "pki.goog",
+      "private.googleapis.com",
+      "run.app",
+      "source.developers.google.com",
+      "storage.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-vpc-hosted-services",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/reachability",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/states/reasons-dropped-packets",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-external-ip"
+      ]
+    }
+  ]
+}

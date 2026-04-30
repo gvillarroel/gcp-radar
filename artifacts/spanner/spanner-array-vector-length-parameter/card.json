@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner ARRAY VECTOR LENGTH parameter",
+  "feature_slug": "spanner-array-vector-length-parameter",
+  "summary": "Spanner added a VECTOR LENGTH parameter to the ARRAY type to allow fixed-size arrays for vector search.",
+  "extended_definition": "Spanner added a VECTOR LENGTH parameter to the ARRAY type to allow fixed-size arrays for vector search.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "For arrays, the value ARRAY. character maximum length BIGINT The declared maximum length for character and bit string data types.",
+          "Tables created with a PRIMARY KEY clause have a pseudo-index entry generated with the name PRIMARY KEY , which allows the fields of the primary key to be identified. index type character varying The type of the index.",
+          "Includes the subtype if an ARRAY is returned. spanner determinism character varying The user specified determinism of the function ( DETERMINISTIC , NOT DETERMINISTIC STABLE , or NOT DETERMINISTIC VOLATILE )."
+        ]
+      },
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "In a new tab in Spanner Studio , copy and paste the following DDL statement to re-create the productDescriptionEmbedding column: ALTER TABLE products DROP COLUMN productDescriptionEmbedding ; ALTER TABLE products ADD COLUMN productDescriptionEmbedding ARRAY<FLOAT32> ( vector length = > VECTOR LENGTH VALUE ); Replace VECTOR LENGTH VALUE with the maximum output dimensions of the embedding model you've chosen.",
+          "CREATE TABLE products ( categoryId INT64 NOT NULL , productId INT64 NOT NULL , productName STRING ( MAX ) NOT NULL , productDescription STRING ( MAX ) NOT NULL , productDescriptionEmbedding ARRAY<FLOAT32> , createTime TIMESTAMP NOT NULL OPTIONS ( allow commit timestamp = true ), inventoryCount INT64 NOT NULL , priceInCents INT64 , ) PRIMARY KEY ( categoryId , productId ); Don't make any changes in Show encryption options .",
+          "Copy and paste the following DDL statement to create the vector index: CREATE VECTOR INDEX ProductDescriptionEmbeddingIndex ON products ( productDescriptionEmbedding ) WHERE productDescriptionEmbedding IS NOT NULL OPTIONS ( distance type = 'COSINE' ); Click Run ."
+        ]
+      },
+      {
+        "title": "\"Commit timestamps in PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition this update expects the LastUpdateTime column added by applying the DDL statement \"ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS (allow commit timestamp=true)\" Example: @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function update data with timestamp column(string $instanceId, string $databaseId): void { $spanner = new SpannerClient(); $instance = $spanner->instance($instanceId); $database = $instance->database($databaseId); $operation = $database->transaction(['singleUse' => true]) ->updateBatch('Albums', [ ['SingerId' => 1, 'AlbumId' => 1, 'MarketingBudget' => 1000000, 'LastUpdateTime' => $spanner->commitTimestamp()], ['SingerId' => 2, 'AlbumId' => 2, 'MarketingBudget' => 750000, 'LastUpdateTime' => $spanner->commitTimestamp()], ]) ->commit(); print('Updated data.' .",
+          "You can add the column by running the add column sample or by running this DDL statement against your database: ALTER TABLE Albums ADD COLUMN MarketingBudget INT64 In addition this update expects the LastUpdateTime column added by applying this DDL statement against your database: ALTER TABLE Albums ADD COLUMN LastUpdateTime TIMESTAMP OPTIONS(allow commit timestamp=true) \"\"\" spanner client = spanner .",
+          "CreateInsertCommand ( \"Performances\" , new SpannerParameterCollection { { \"SingerId\" , SpannerDbType ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/commit-timestamp-postgresql"
+      ]
+    }
+  ]
+}

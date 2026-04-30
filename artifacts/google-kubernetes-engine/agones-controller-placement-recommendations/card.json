@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Agones controller placement recommendations",
+  "feature_slug": "agones-controller-placement-recommendations",
+  "summary": "GKE provides recommendations and insights when the Agones controller is not installed on dedicated nodes.",
+  "extended_definition": "GKE provides recommendations and insights when the Agones controller is not installed on dedicated nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature and API deprecations \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container Registry May 15, 2023 March 18, 2025 Transition from Container Registry to Artifact Registry in GKE No GKE Compliance dashboard (Preview) January 28, 2025 June 30, 2025 Posture management feature deprecations No Workload vulnerability scanning GKE security posture dashboard Standard tier: July 23, 2024 Advanced Vulnerability Insights: June 16, 2025 Standard tier: July 31, 2025 Advanced Vulnerability Insights: June 16, 2026 Vulnerability scanning removal from GKE Standard edition Yes Supply chain concerns - Binary Authorization (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations No Kubernetes security posture - advanced tier (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations Yes containerd 1.7 features GKE version 1.32 GKE version 1.33 Migrate nodes to containerd 2 Yes Linux cgroupv1 mode GKE version 1.31 TBD Migrate nodes to Linux cgroupv2 No Vulnerability scanning removal from GKE standard edition July 23, 2024 July 31, 2025 Vulnerability scanning removal from GKE Standard edition No TLS certificates signed with SHA-1 algorithm GKE version 1.24 GKE version 1.29 SHA-1 TLS certificates support removal Yes Built-in authentication plugin for Kubernetes clients GKE version 1.22 GKE version 1.25 Deprecated authentication plugin for Kubernetes clients No PodSecurityPolicy GKE version 1.21 GKE version 1.25 PodSecurityPolicy deprecation Yes Docker-based node images GKE version 1.20 GKE version 1.24 Docker node image deprecation Yes X.509 Common Name field in webhook certificates GKE version 1.19 GKE version 1.23 Webhook certificates CN field deprecation Yes Kubernetes API deprecations The following table provides an overview of Kubernetes APIs that are deprecated and no longer served, sorted by Kubernetes version: Kubernetes version More information Does GKE detect and report usage?",
+          "Windows Server Semi-Annual Channel (SAC) node images N/A August 9, 2022 Windows Server SAC end of servicing No Saxml for multi-host serving on TPUs and GKE N/A April 24, 2025 Release note No What's next Viewing deprecation insights and recommendations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In the next sections, learn about how GKE makes this process easier by detecting usage of deprecated Kubernetes features and APIs, sharing insights about this usage, and providing recommendations about how to migrate to features and APIs compatible with upcoming minor versions."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Version requirements Clusters receive these insights and recommendations if they're running the following versions or later: 1.28.15-gke.1159000 1.29.9-gke.1541000 1.30.5-gke.1355000 1.31.1-gke.1621000 Get insights and recommendations Follow the instructions to view insights and recommendations .",
+          "Use insights and recommendations or Cloud Logging As explained in the Identify affected clusters section, you can use insights and recommendations to find clusters with Linux nodes that use Docker Schema 1 images if your cluster is running a minimum version or later.",
+          "When viewing insights in the Google Cloud console, see the sidebar panel Migrate your containerd configuration off deprecated CRI registry auths field or Migrate your containerd configuration off deprecated CRI registry mirrors field ."
+        ]
+      },
+      {
+        "title": "\"About the security posture dashboard \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Actionable recommendations : When available, the security posture dashboard provides action items to fix discovered concerns.",
+          "Autopilot Standard This page provides an overview of the security posture dashboard in the Google Cloud console, which provides you with opinionated, actionable recommendations to improve your security posture.",
+          "Usage as part of a broad security strategy The security posture dashboard provides insights about your workload security posture at the runtime phase of the software delivery lifecycle."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.1159000",
+      "gke.1355000",
+      "gke.1541000",
+      "gke.1621000"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-security-posture-dashboard"
+      ]
+    }
+  ]
+}

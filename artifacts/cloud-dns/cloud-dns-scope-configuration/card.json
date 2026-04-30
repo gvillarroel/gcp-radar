@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.149Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "feature_name": "Cloud DNS scope configuration",
+  "feature_slug": "cloud-dns-scope-configuration",
+  "summary": "Cloud DNS now supports configuring zone scopes.",
+  "extended_definition": "Cloud DNS now supports configuring zone scopes.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+      "https://docs.cloud.google.com/dns/docs/dnssec-config",
+      "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+      "https://docs.cloud.google.com/dns/docs/zones"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate or transfer DNSSEC-enabled zones \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "source_id": "site-iam-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Migrating a DNSSEC zone has the following limitations: You can only migrate a zone while maintaining the DNSSEC chain of trust if the new operator and registrar support DNSSEC migration, including importing DNSKEY records, setting multiple DS records, and preventing automatic key rotation during migration.",
+          "Permissions dns.dnsKeys.create to create DNSKEYS dns.dnsKeys.delete to delete DNSKEYS dns.dnsKeys.list to list DNSKEYS dns.dnsKeys.update to update DNSKEYS Roles roles/dns.admin Before you begin DNSSEC migration is complex and requires coordination to migrate a zone between operators without incurring outages.",
+          "Do not attempt zone migration if the zone contains any record types that rely on DNSSEC authenticity and integrity guarantees because migrating a zone in these conditions might cause loss of functionality or security."
+        ]
+      },
+      {
+        "title": "Manage DNSSEC configuration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To verify that you have the right configuration in place and to cross-check the DS record before placing it in the parent zone, use the following tools: DNSViz Verisign DNSSEC debugger Zonemaster You can use the Verisign DNSSEC debugger and Zonemaster sites to validate your DNSSEC configuration before you update your registrar with your Cloud DNS name servers or DS record.",
+          "Terraform resource \"google dns managed zone\" \"example\" { name = \"example-zone-name\" dns name = \"example.com.\" description = \"Example Signed Zone\" dnssec config { state = \"on\" } } Enable DNSSEC when creating zones To enable DNSSEC when you are creating a zone, follow these steps.",
+          "To sign existing large zones, consider setting up a new zone with the same DNS name with DNSSEC enabled, populating it with your resource record sets in additional operations, and changing your delegation to point to the name server set for the new zone that has DNSSEC enabled."
+        ]
+      },
+      {
+        "title": "Configure DNS routing policies and health checks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Console Start the configuration In the Google Cloud console, go to the Cloud DNS zones page.",
+          "Console Start the configuration In the Google Cloud console, go to the Cloud DNS zones page.",
+          "POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones/ MANAGED ZONE /rrsets { \"name\": \" RRSET NAME \", \"type\": \" RRSET TYPE \", \"ttl\": TTL , \"routingPolicy\": { \"primaryBackup\": { \"trickleTraffic\": TRICKLE TRAFFIC , \"primaryTargets\": { \"internalLoadBalancers\": [ { \"ipAddress\": \" IP ADDRESS \" \"ipProtocol\": \" IP PROTOCOL \" \"loadBalancerType\": \" LOAD BALANCER TYPE \" \"networkUrl\": \" NETWORK URL \" \"port\": \" PORT NUMBER \" \"project\": \" PROJECT ID \" \"region\": \" REGION \" } ] }, \"backupGeoTargets\": { \"enableFencing\": ENABLE FENCING , \"items\": [ { \"location\": \" LOCATION \", \"rrdatas\": [ \" RRDATA \" ] }, { \"location\": \" LOCATION \", \"rrdatas\": [ \" RRDATA \" ] } ] } } } } Replace the following: PROJECT ID : the ID of the project MANAGED ZONE : the managed zone that this ResourceRecordSet is affiliated with, such as service-zone ; the name of this ResourceRecordSet must have the DNS name of the managed zone as its suffix RRSET NAME : the DNS name that matches the incoming queries with this zone's DNS name as its suffix, such as service.example.com RRSET TYPE : the resource record type of this ResourceRecordSet , such as A TTL : the TTL, in seconds, in which the resolver caches this ResourceRecordSet , such as 30 TRICKLE TRAFFIC : the ratio of traffic to send to the backup targets even when the primaries are healthy; the ratio must be between 0 and 1, such as 0.1 IP ADDRESS : the IP address that the forwarding rule serves PORT NUMBER : the port number IP PROTOCOL : defines the protocol used for the health check; valid options are tcp and udp NETWORK URL : the network URL to which this forwarding rule applies PORT NUMBER : the port number of the internal load balancer REGION : the region in which you created the forwarding rule ENABLE FENCING : for GEO routing policies, this determines whether traffic should failover across regions if all endpoints in a region are unhealthy."
+        ]
+      },
+      {
+        "title": "Create, modify, and delete zones \\_|\\_ Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/zones",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "For detailed instructions about how to create a Service Directory DNS zone, see Configuring a Service Directory DNS zone .",
+          "The following sections describe how to create the type of managed zone that Cloud DNS supports.",
+          "Update public zones You can change the description or DNSSEC configuration of a public zone."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dns.Dns.ZoneOption",
+      "dns.admin",
+      "dns.dnsKeys.create",
+      "dns.dnsKeys.delete",
+      "dns.dnsKeys.list",
+      "dns.dnsKeys.update",
+      "dns.googleapis.com",
+      "example.com",
+      "example.private",
+      "network.network",
+      "private.example.com",
+      "service.example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/dns.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/dnssec-migrate",
+        "https://docs.cloud.google.com/dns/docs/dnssec-config",
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/zones"
+      ]
+    }
+  ]
+}

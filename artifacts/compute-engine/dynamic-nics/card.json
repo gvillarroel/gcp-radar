@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.644Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine",
+  "feature_name": "Dynamic NICs",
+  "feature_slug": "dynamic-nics",
+  "summary": "Dynamic NICs let you add or remove network interfaces on an instance without restarting or recreating it and increase total interfaces up to 16 on supported machine types; Dynamic NICs let you add or remove network interfaces on an instance without restarting or recreating it.",
+  "extended_definition": "Dynamic NICs let you add or remove network interfaces on an instance without restarting or recreating it and increase total interfaces up to 16 on supported machine types; Dynamic NICs let you add or remove network interfaces on an instance without restarting or recreating it.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/support/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Work with hubs and spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to create a spoke that contains two router appliance instances, use the following request: POST https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /spokes/ SPOKE NAME { \"hub\": \" HUB NAME \", \"labels\": {\" KEY \": \" VALUE \"}, \"linkedRouterApplianceInstances\": { \"instances\": [ { \"virtualMachine\": \" ROUTER APPLIANCE URI \", \"ipAddress\": \" IP ADDRESS \", }, { \"virtualMachine\": \" ROUTER APPLIANCE URI 2 , \"ipAddress\": \" IP ADDRESS 2 \", } ], \"siteToSiteDataTransfer\": BOOLEAN \"includeExportRanges\": [INCLUDE EXPORT RANGES,...] \"excludeExportRanges\": [EXCLUDE EXPORT RANGES,...] \"includeImportRanges\": [INCLUDE IMPORT RANGES,...] \"excludeImportRanges\": [EXCLUDE IMPORT RANGES,...] } } Replace the following values: PROJECT ID : the project ID of your project REGION : the Google Cloud region where you want to locate the spoke—for example, us-west1 SPOKE NAME : the name for the spoke HUB NAME : the name of the hub that you are attaching the spoke to KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text ROUTER APPLIANCE URI : the URI of the first router appliance instance—for example, https://www.googleapis.com/compute/projects/ PROJECT ID /zones/ ZONE /instances/ INSTANCE NAME IP ADDRESS : the internal IP address of the first router appliance instance ROUTER APPLIANCE URI 2 : the URI of the second router appliance instance IP ADDRESS 2 : the internal IP address of the second router appliance instance BOOLEAN : a value that determines whether site-to-site data transfer is enabled for this spoke; for more information about this use case, see Site-to-site data transfer overview INCLUDE EXPORT RANGES : a comma-delimited list of keywords, IP address ranges, or a combination of keywords and IP address ranges that define which dynamic routes can be exported to the hub.",
+          "For example, to create a spoke that contains two VLAN attachments and has the import of subnet IP address ranges to this spoke enabled, use the following request: POST https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /spokes/ SPOKE NAME { \"hub\": \" HUB NAME \", \"labels\": {\" KEY \": \" VALUE \"}, \"linkedInterconnectAttachments\": { \"uris\": [ \" VLAN ATTACHMENT NAME \", \" VLAN ATTACHMENT NAME 2 \" ], \"siteToSiteDataTransfer\": BOOLEAN \"includeExportRanges\": [INCLUDE EXPORT RANGES,...] \"excludeExportRanges\": [EXCLUDE EXPORT RANGES,...] \"includeImportRanges\": [INCLUDE IMPORT RANGES,...] \"excludeImportRanges\": [EXCLUDE IMPORT RANGES,...] } } Replace the following values: PROJECT ID : the project ID of your project REGION : the Google Cloud region where you want to locate the spoke—for example, us-west1 SPOKE NAME : the name for the spoke HUB NAME : the name of the hub that you are attaching the spoke to KEY : the key in the key-value pair for the optional label text VALUE : the value in the key-value pair for the optional label text VLAN ATTACHMENT NAME : the name of the first VLAN attachment to add to the spoke VLAN ATTACHMENT NAME 2 : the name of the second VLAN attachment BOOLEAN : a value that determines whether site-to-site data transfer is enabled for this spoke; for more information about this use case, see Site-to-site data transfer overview INCLUDE EXPORT RANGES : a comma-delimited list of keywords, IP address ranges, or a combination of keywords and IP address ranges that define which dynamic routes can be exported to the hub.",
+          "If your hub is configured to use star topology , specify the group that the spoke belongs to by using the --group flag. gcloud network-connectivity spokes linked-interconnect-attachments create SPOKE NAME \\ --hub= HUB NAME \\ [--description=\" DESCRIPTION \"] \\ --group=\" GROUP \" \\ --interconnect-attachments= VLAN ATTACHMENT NAME , VLAN ATTACHMENT NAME 2 \\ --region= REGION \\ --labels=\" KEY \"=\" VALUE \" \\ --include-export-ranges= [INCLUDE EXPORT RANGES,...] \\ --exclude-export-ranges= [EXCLUDE EXPORT RANGES,...] \\ --include-import-ranges= [INCLUDE IMPORT RANGES,...] \\ --exclude-import-ranges= [EXCLUDE IMPORT RANGES,...] Replace the following values: SPOKE NAME : the name for the spoke HUB NAME : the name of the hub, in URI format, that you are attaching the spoke to—for example, projects/myproject/locations/global/hubs/us-west-to-uk DESCRIPTION : an optional description of the spoke GROUP : the group that this spoke belongs to—for example, center VLAN ATTACHMENT NAME : the name of the first VLAN attachment to add to the spoke VLAN ATTACHMENT NAME 2 : the name of the second VLAN attachment; if you include a second attachment, make sure you omit a space between the comma and the name of the attachment REGION : the Google Cloud region where the spoke is located KEY : the key in the key-value pair for the label text VALUE : the value in the key-value pair for the label text INCLUDE EXPORT RANGES : a comma-delimited list of keywords, IP address ranges, or a combination of keywords and IP address ranges that define which dynamic routes can be exported to the hub."
+        ]
+      },
+      {
+        "title": "\"Router appliance overview \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "For VMs that have multiple network interfaces configured as part of the router appliance instance, you can establish BGP sessions with Cloud Routers that are in the same subnet as the VM interface.",
+          "Important: For Cloud Routers in different regions to exchange routes with each other, you must enable global dynamic routing mode in your VPC network.",
+          "This configuration provides end-to-end dynamic route exchange and data plane connectivity between Customer network A and Customer network B ."
+        ]
+      },
+      {
+        "title": "Troubleshoot Network Connectivity Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/support/troubleshooting",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Routes aren't distributed between regions If routes aren't being distributed properly between regions, verify that the VPC network's dynamic routing mode is set to global .",
+          "Troubleshoot NCC Gateway spokes You can view the services and routers that are connected to your NCC Gateway by using the gcloud network-connectivity spokes describe command on the NCC Gateway spoke resource. gcloud gcloud network-connectivity spokes describe SPOKE NAME \\ --region REGION Replace the following: SPOKE NAME : the name of the NCC Gateway spoke REGION : the region in which the spoke resides The output is similar to the following: createTime: '2022-11-25T06:06:11.572019860Z' hub: projects/PROJECT/locations/REGION/hubs/HUB gateway: ipRangeReservation: 10.1.2.0/24 asn: 65123 routers: projects/PROJECT/locations/REGION/routers/ROUTER name: projects/PROJECT/locations/REGION/spokes/SPOKE state: ACTIVE uniqueId: 8ca10af0-ee69-43c2-b0b4-61e8f53d410b updateTime: '2023-12-27T21:26:47.786506888Z' You can view the application VPC routing table and the created hub route table route that is propagated to your VPC route table with next hop as hub by using the gcloud compute routes list command : gcloud gcloud compute routes list \\ --filter=\"network= NETWORK \" Replace NETWORK with the name of the VPC network.",
+          "You can check the propagated connection status by using the gcloud network-connectivity hubs query-status command : gcloud gcloud network-connectivity hubs query-status HUB NAME \\ --filter='psc propagation status.source spoke=\" SOURCE SPOKE NAME \" AND psc propagation status.target spoke=\" TARGET SPOKE NAME \" AND psc propagation status.source forwarding rule=\" ENDPOINT NAME \" Replace the following values: HUB NAME : the name of the hub for which you want to check the connection propagation status SOURCE SPOKE NAME : the name of the source spoke TARGET SPOKE NAME : the name of the target spoke ENDPOINT NAME : the name of the endpoint For detailed information about how to use these flags, see the gcloud network-connectivity hubs query-status command page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkconnectivity.googleapis.com",
+      "status.source",
+      "status.target"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/how-to/working-with-hubs-spokes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ra-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/support/troubleshooting"
+      ]
+    }
+  ]
+}

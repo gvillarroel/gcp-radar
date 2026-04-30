@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Feature Store streaming ingestion",
+  "feature_slug": "vertex-ai-feature-store-streaming-ingestion",
+  "summary": "Makes streaming ingestion in Vertex AI Feature Store generally available; Vertex AI Feature Store supports streaming ingestion to ingest feature data in near real time.",
+  "extended_definition": "Makes streaming ingestion in Vertex AI Feature Store generally available; Vertex AI Feature Store supports streaming ingestion to ingest feature data in near real time.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Streaming import \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "source_id": "site-docs-reference-3",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, you can import streaming event data and, within a few seconds, Vertex AI Feature Store (Legacy) makes that data available for online serving scenarios.",
+          "To learn more, run the \"Example Feature Store workflow with sample data\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Streaming import lets you make real-time updates to feature values.",
+          "EntityType ( entity type name = entity type id , featurestore id = featurestore id ) my data = { \"movie 01\" : { \"title\" : \"The Shawshank Redemption\" , \"average rating\" : 4.7 , \"genre\" : \"Drama\" , }, } my entity type . write feature values ( instances = my data ) Additional languages You can install and use the following Vertex AI client libraries to call the Vertex AI API."
+        ]
+      },
+      {
+        "title": "Monitoring \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "source_id": "site-docs-reference-3",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View metrics for streaming ingestion to offline storage You can monitor the Offline storage write for streaming write metric for Vertex AI Feature Store (Legacy) in the Metrics Explorer .",
+          "Example query for all anomalies generated for a particular featurestore logName= \"projects/model-monitoring-demo/logs/aiplatform.googleapis.com%2FFfeaturestore log\" resource.labels.resource co nta i ner =<projec t nu mber > resource.labels. featurest ore id= < featurest ore id > Example of an anomaly log entry { \"insertId\" : \"ktbx5jf7vdn7b\" , \"jsonPayload\" : { \"threshold\" : 0.001 , \"featureName\" : \"projects/<project number>/locations/us-central1/featurestores/<featurestore id>/entityTypes/<entity type id>/features/<feature id>\" , \"deviation\" : 1 , \"@type\" : \"type.googleapis.com/google.cloud.aiplatform.logging.FeatureAnomalyLogEntry\" , \"objective\" : \"Featurestore Monitoring Snapshot Drift Anomaly\" }, \"resource\" : { \"type\" : \"aiplatform.googleapis.com/Featurestore\" , \"labels\" : { \"resource container\" : \"<project number>\" , \"location\" : \"us-central1\" , \"featurestore id\" : \"<featurestore id>\" } }, \"timestamp\" : \"2022-02-06T00:54:06.455501Z\" , \"severity\" : \"WARNING\" , \"logName\" : \"projects/model-monitoring-demo/logs/aiplatform.googleapis.com%2Ffeaturestore log\" , \"receiveTimestamp\" : \"2022-02-06T00:54:06.476107155Z\" } Monitor offline storage write errors for streaming ingestion Use the Google Cloud console to monitor write errors to the offline storage during streaming ingestion.",
+          "Web UI In the Google Cloud console, go to the Metrics Explorer : Go to the Metrics Explorer Specify the data to appear on the chart: Resource & Metric : Select the metric Vertex AI Feature Store > Offline storage write for streaming write ."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const minNodeCount = <MINIMUM NO OF NODES>; // const maxNodeCount = <MAXIMUM NO OF NODES>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function updateFeaturestore () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const featurestore = { name : parent , onlineServingConfig : { scaling : { minNodeCount : minNodeCount , maxNodeCount : maxNodeCount , }, }, }; const request = { featurestore : featurestore , }; // Update Featurestore request const [ operation ] = await featurestoreServiceClient . updateFeaturestore ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Update featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } updateFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function getFeaturestore () { // Configure the parent resource const name = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const request = { name : name , }; // Get Featurestore request const [ response ] = await featurestoreServiceClient . getFeaturestore ( request , { timeout : Number ( timeout )} ); console . log ( 'Get featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } getFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function listFeaturestores () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } ; const request = { parent : parent , }; // List featurestores request const [ response ] = await featurestoreServiceClient . listFeaturestores ( request , { timeout : Number ( timeout )} ); console . log ( 'List featurestores response' ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } listFeaturestores (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "resource.labels",
+      "resource.labels.resource",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/monitoring",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    }
+  ]
+}

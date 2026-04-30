@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "GKE insights and recommendations",
+  "feature_slug": "gke-insights-and-recommendations",
+  "summary": "GKE insights and recommendations help identify clusters that need version upgrades, version-skew fixes, or maintenance windows.",
+  "extended_definition": "GKE insights and recommendations help identify clusters that need version upgrades, version-skew fixes, or maintenance windows.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 174,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use insights and recommendations or Cloud Logging As explained in the Identify affected clusters section, you can use insights and recommendations to find clusters with Linux nodes that use Docker Schema 1 images if your cluster is running a minimum version or later.",
+          "Version requirements Clusters receive these insights and recommendations if they're running the following versions or later: 1.28.15-gke.1159000 1.29.9-gke.1541000 1.30.5-gke.1355000 1.31.1-gke.1621000 Get insights and recommendations Follow the instructions to view insights and recommendations .",
+          "Identify affected clusters GKE monitors your clusters and uses the Recommender service to deliver guidance through insights and recommendations for identifying Linux nodes in your cluster that use these deprecated features."
+        ]
+      },
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Prepare to use the command line interface If you use the gcloud CLI to run Inference Quickstart, you also need to run these additional commands: Enable the gkerecommender.googleapis.com API: gcloud services enable gkerecommender.googleapis.com Set the billing quota project that you use for API calls: gcloud config set billing/quota project PROJECT ID Check that your gcloud CLI version is at least 536.0.1.",
+          "Deep Research 256 4,096 1:16 Enable detailed investigations and studies by analyzing and synthesizing vast amounts of data to find specific information, identify patterns, and uncover insights.",
+          "Enabling these features provides more insights to help you monitor the performance and status of workloads and the underlying infrastructure."
+        ]
+      },
+      {
+        "title": "\"Autopilot partners \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sysdig Secure DevOps Platform The Sysdig Secure Devops Platform helps you implement container security practices in your GKE Autopilot clusters, including monitoring and securing workloads using the Sysdig agent.",
+          "Datadog Datadog provides visibility into containerized apps running on GKE Autopilot by collecting metrics, logs, and traces, which helps to identify performance issues and provide context for troubleshooting.",
+          "Its eBPF-based sensor for GKE Autopilot clusters provides runtime context for posture management, real-time threat detection, and defense measures, to help ensure security."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.1159000",
+      "gke.1355000",
+      "gke.1541000",
+      "gke.1621000",
+      "gkerecommender.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/resources/autopilot-partners"
+      ]
+    }
+  ]
+}

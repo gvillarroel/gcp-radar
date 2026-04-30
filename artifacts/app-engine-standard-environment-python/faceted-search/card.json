@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.123Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python",
+  "feature_name": "Faceted Search",
+  "feature_slug": "faceted-search",
+  "summary": "Faceted Search reached general availability in App Engine.",
+  "extended_definition": "Faceted Search reached general availability in App Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2015-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Faceted search \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+        "source_id": "site-docs-reference-required-11",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use this parameter to override the default behavior of faceted search. options = FacetOptions(discover facet limit=5, discover facet value limit=10, depth=6000); Parameter Description Default discover facet limit Number of facets to discover if facet discovery is turned on.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Faceted search Stay organized with collections Save and categorize content based on your preferences.",
+          "Retrieving facet results When you use faceted search parameters in a query, the aggregated facet information comes with the query result itself."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Search API imposes these limits to ensure the reliability of the service: 100 aggregated minutes of query execution time per minute, within an app and an index .",
+          "This limit may be increased to up to 200GB by submitting a request from the Google Cloud console App Engine Search page.",
+          "Refer to the Java , Python , and Go documentation for a detailed description of each type of Search call."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the scheduler might spawn a new instance before the actual maximum number of requests is reached. max pending latency The maximum amount of time that App Engine should allow a request to wait in the pending queue before starting additional instances to handle requests so that pending latency is reduced.",
+          "The error code can be one of the following: over quota Indicates the app has exceeded a resource quota timeout Served if a deadline is reached before there is a response from your app.",
+          "When this threshold is reached, it is a signal to scale up, and results in an increase in the number of instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/services/search/facet-search",
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+      ]
+    }
+  ]
+}

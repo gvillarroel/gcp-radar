@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.426Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "Conditional project ACLs",
+  "feature_slug": "conditional-project-acls",
+  "summary": "Allows project ACL conditions based on document schema ID or property name.",
+  "extended_definition": "Allows project ACL conditions based on document schema ID or property name.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview",
+      "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Conditional Notifications - where documents meeting a certain conditions can trigger/notify a workflow via a Pub/Sub topic or a Web API call: for example, Trigger: OnUpdate; Condition: (DocType=Invoice and TotalAmount>$1000) -> send Pub/Sub Notification Policy Management and Compliance Enforcement : conditional notifications and scheduled notifications can be used to trigger workflows that enforce policies (for example, records management, retention and disposition, legal holds) on specific documents in Document AI Warehouse.",
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Search within a root-folder hierarchy Operators for search keywords: \"\" exact match, or, + and, - exclude Organization : Flexible Folder management Documents can be cataloged into one or more folders, based on application (for example, an ID card is placed in a KYC folder, Loan folder, Bank Account folder), without replicating the document."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Conditional Notifications - where documents meeting a certain conditions can trigger/notify a workflow via a Pub/Sub topic or a Web API call: for example, Trigger: OnUpdate; Condition: (DocType=Invoice and TotalAmount>$1000) -> send Pub/Sub Notification Policy Management and Compliance Enforcement : conditional notifications and scheduled notifications can be used to trigger workflows that enforce policies (for example, records management, retention and disposition, legal holds) on specific documents in Document AI Warehouse.",
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Search within a root-folder hierarchy Operators for search keywords: \"\" exact match, or, + and, - exclude Organization : Flexible Folder management Documents can be cataloged into one or more folders, based on application (for example, an ID card is placed in a KYC folder, Loan folder, Bank Account folder), without replicating the document."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document",
+        "source_id": "site-api-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"pageNumber\" : integer , \"image\" : { object ( Image ) } , \"transforms\" : [ { object ( Matrix ) } ] , \"dimension\" : { object ( Dimension ) } , \"layout\" : { object ( Layout ) } , \"detectedLanguages\" : [ { object ( DetectedLanguage ) } ] , \"blocks\" : [ { object ( Block ) } ] , \"paragraphs\" : [ { object ( Paragraph ) } ] , \"lines\" : [ { object ( Line ) } ] , \"tokens\" : [ { object ( Token ) } ] , \"visualElements\" : [ { object ( VisualElement ) } ] , \"tables\" : [ { object ( Table ) } ] , \"formFields\" : [ { object ( FormField ) } ] , \"symbols\" : [ { object ( Symbol ) } ] , \"detectedBarcodes\" : [ { object ( DetectedBarcode ) } ] , \"imageQualityScores\" : { object ( ImageQualityScores ) } , \"provenance\" : { object ( Provenance ) } } Fields pageNumber integer 1-based index for current page in a parent Document .",
+          "JSON representation { \"shardIndex\" : string , \"shardCount\" : string , \"textOffset\" : string } Fields shardIndex string ( int64 format) The 0-based index of this shard. shardCount string ( int64 format) Total number of shards. textOffset string ( int64 format) The index of the first character in Document.text in the overall document global text.",
+          "Format: projects/{projectNumber}/locations/{location}/documentSchemas/{document schema id}. properties[] object ( Property ) List of values that are user supplied metadata. updateTime string ( Timestamp format) Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs/reference/rest/v1/Document"
+      ]
+    }
+  ]
+}

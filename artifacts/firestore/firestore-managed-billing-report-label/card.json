@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore managed billing report label",
+  "feature_slug": "firestore-managed-billing-report-label",
+  "summary": "The `goog-firestoremanaged` billing report label lets you view costs for Firestore import and export operations.",
+  "extended_definition": "The `goog-firestoremanaged` billing report label lets you view costs for Firestore import and export operations.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.",
+          "Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.",
+          "An alert reports the success or failure of your managed import request. gcloud Use the gcloud firestore import command to import all entities that were previously exported with the managed export service. gcloud firestore import gs:// bucket-name/file-path/file-name .overall export metadata \\ --async \\ --database= DATABASE where bucket-name/file-path/file-name is the path to your overall export metadata file within your Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.",
+          "Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.",
+          "This command will not delete export files from Cloud Storage. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for export and import operations You are required to enable billing for your Google Cloud project before you use the managed export and import service."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Cloud Billing reports page , you can use this label to view costs related to import and export operations: Note: Export and import operations executed before September 8th, 2020 did not apply the goog-firestoremanaged label.",
+          "Viewing export and import costs Export and import operations apply the goog-firestoremanaged:exportimport label to billed operations.",
+          "This command will not delete export files from Cloud Storage. gcloud firestore operations delete [OPERATION NAME] Billing and pricing for export and import operations You are required to enable billing for your Google Cloud project before you use the managed export and import service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

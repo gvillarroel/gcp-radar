@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.316Z",
+  "source_step08_card": "data/step-08/current/products/recommender/card.json",
+  "product_name": "Recommender",
+  "product_slug": "recommender",
+  "feature_name": "Recommendation Hub",
+  "feature_slug": "recommendation-hub",
+  "summary": "A centralized page for viewing recommendations with organization and folder views, custom sorting, and filtering; Recommendation Hub lets you view, prioritize, and apply recommendations in the Google Cloud Console.",
+  "extended_definition": "A centralized page for viewing recommendations with organization and folder views, custom sorting, and filtering; Recommendation Hub lets you view, prioritize, and apply recommendations in the Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+      "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+      "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+      "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class ListRecommendationsAsyncPager (2.21.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.recommender v1.types.ListRecommendationsRequest The initial request object. response google.cloud.recommender v1.types.ListRecommendationsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListRecommendationsAsyncPager (2.21.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through list recommendations requests."
+        ]
+      },
+      {
+        "title": "\"Class ListRecommendationsPager (2.21.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "source_id": "site-python-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.recommender v1.types.ListRecommendationsRequest The initial request object. response google.cloud.recommender v1.types.ListRecommendationsResponse The initial response object. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListRecommendationsPager (2.21.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Union [ str , bytes ]]] = () ) A pager for iterating through list recommendations requests."
+        ]
+      },
+      {
+        "title": "\"Export recommendations to BigQuery \\_|\\_ Recommender \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT FROM < project > . < dataset > . recommendations export WHERE DATE ( PARTITIONTIME ) = \"<date>\" and \"<folder id>\" in unnest ( ancestors . folder ids ) Viewing recommendations for the latest available date exported so far DECLARE max date TIMESTAMP ; SET max date = ( SELECT MAX ( PARTITIONTIME ) FROM < project > . < dataset > . recommendations export ); SELECT FROM < project > . < dataset > . recommendations export WHERE PARTITIONTIME = max date Use Sheets to explore BigQuery data As an alternative to executing queries on BigQuery, you can access, analyze, visualize, and share billions of rows of BigQuery data from your spreadsheet with Connected Sheets, the new BigQuery data connector.",
+          "Viewing cost savings for recommendations where the recommendation duration is displayed in days SELECT name , recommender , target resources , case primary impact . cost projection . cost . units is null when true then round ( primary impact . cost projection . cost . nanos power ( 10 , - 9 ), 2 ) else round ( primary impact . cost projection . cost . units + ( primary impact . cost projection . cost . nanos power ( 10 , - 9 )), 2 ) end as dollar amt , primary impact . cost projection . duration . seconds / ( 60 60 24 ) as duration in days FROM < project > . < dataset > . recommendations export WHERE DATE ( PARTITIONTIME ) = \"<date>\" and primary impact . category = \"COST\" Viewing the list of unused IAM roles SELECT FROM < project > . < dataset > . recommendations export WHERE DATE ( PARTITIONTIME ) = \"<date>\" and recommender = \"google.iam.policy.Recommender\" and recommender subtype = \"REMOVE ROLE\" Viewing a list of granted roles that must be replaced by smaller roles SELECT FROM < project > . < dataset > . recommendations export WHERE DATE ( PARTITIONTIME ) = \"<date>\" and recommender = \"google.iam.policy.Recommender\" and recommender subtype = \"REPLACE ROLE\" Viewing insights for a recommendation SELECT recommendations . name as recommendation name , insights . name as insight name , recommendations . cloud entity id , recommendations . cloud entity type , recommendations . recommender , recommendations . recommender subtype , recommendations . description , recommendations . target resources , recommendations . recommendation details , recommendations . state , recommendations . last refresh time as recommendation last refresh time , insights . insight type , insights . insight subtype , insights . category , insights . description , insights . insight details , insights . state , insights . last refresh time as insight last refresh time FROM < project > . < dataset > . recommendations export as recommendations , < project > . < dataset > . insights export as insights WHERE DATE ( recommendations .",
+          "This organization corresponds to the one that the export is being set up for. recommender.resources.export - Allows you to export recommendations to BigQuery The following permissions are required to export negotiated prices for cost savings recommendations: billing.resourceCosts.get at project level - Allows exporting negotiated prices for project level recommendations billing.accounts.getSpendingInformation at billing account level - Allows exporting negotiated prices for billing account level recommendations Without these permissions, cost savings recommendations will be exported with standard prices instead of negotiated prices."
+        ]
+      },
+      {
+        "title": "Change risk recommendations \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Viewing the change risk recommendations In addition to the usage model discussed above, you can use the standard approach for Recommender service to view the change risk recommendations and insights for a Project, Service account or an IAM Policy: Google Cloud console API gcloud Google Cloud console You can view change risk recommendations and insights on the product pages themselves.",
+          "Method not visible to labels: {PUBLIC}' Make sure that the project config is set to a project that is allowlisted for using Alpha Recommender API with the following command: gcloud config set project PROJECT ID Project IAM policy binding deletion The following command deletes a Project IAM Policy Binding: gcloud alpha projects remove-iam-policy-binding PROJECT ID --member = YOUR EMAIL@DOMAIN.COM --role = roles/owner --recommend = yes You will see the following supported risky changes with recommendations: You are about to delete the role [roles/owner].",
+          "For example, if you try to delete a highly used project, or modify an IAM policy that could be an essential dependency based on its recent usage activity, change risk recommendations can help prevent unintended issues by proactively warning you about the risks associated with a given change."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.getSpendingInformation",
+      "billing.resourceCosts.get",
+      "console.cloud.google.com",
+      "core.retry.AsyncRetry",
+      "core.retry.Retry",
+      "iam.gserviceaccount.com",
+      "recommender.resources.export",
+      "v1.types.ListRecommendationsRequest",
+      "v1.types.ListRecommendationsResponse"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsPager",
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.172Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Vertex AI Workbench startup script dependency removal",
+  "feature_slug": "vertex-ai-workbench-startup-script-dependency-removal",
+  "summary": "The Vertex AI Workbench M139 release removed the startup script dependency on the gs://dl-platform-public-configs location for instances.",
+  "extended_definition": "The Vertex AI Workbench M139 release removed the startup script dependency on the gs://dl-platform-public-configs location for instances.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-training-script",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.instances.getInstanceHealth \\_|\\_ Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "source_id": "site-api-reference-2",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Method: projects.locations.instances.getInstanceHealth Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create a training script \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-training-script",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "ArgumentParser () parser . add argument ( '--label column' , required = True , type = str ) parser . add argument ( '--epochs' , default = 10 , type = int ) parser . add argument ( '--batch size' , default = 10 , type = int ) args = parser . parse args () Set up training variables LABEL COLUMN = args . label column See https://cloud.google.com/vertex-ai/docs/workbench/managed/executor#explicit-project-selection for issues regarding permissions.",
+          "Home Documentation AI and ML Vertex AI Send feedback Create a training script Stay organized with collections Save and categorize content based on your preferences.",
+          "RMSprop ( lr = 0.001 ) model . compile ( loss = \"categorical crossentropy\" , metrics = [ \"accuracy\" ], optimizer = optimizer ) return model Create the model model = create model ( num features = dataset train . flat shapes [ 0 ] . dims [ 0 ] . value ) Set up datasets dataset train = dataset train . batch ( args . batch size ) dataset validation = dataset validation . batch ( args . batch size ) Train the model model . fit ( dataset train , epochs = args . epochs , validation data = dataset validation ) tf . saved model . save ( model , os . getenv ( \"AIP MODEL DIR\" )) After you create the script, it appears in the root folder of your notebook: Define arguments for your training script You pass the following command-line arguments to your training script: label column - This identifies the column in your data that contains what you want to predict."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "source_id": "site-api-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookSoftwareConfig JSON representation { \"env\" : [ { object ( EnvVar ) } ] , \"postStartupScriptConfig\" : { object ( PostStartupScriptConfig ) } , // Union field runtime image can be only one of the following: \"colabImage\" : { object ( ColabImage ) } // End of list of possible types for union field runtime image . } Fields env[] object ( EnvVar ) Optional.",
+          "PostStartupScriptConfig JSON representation { \"postStartupScript\" : string , \"postStartupScriptUrl\" : string , \"postStartupScriptBehavior\" : enum ( PostStartupScriptBehavior ) } Fields postStartupScript string Optional.",
+          "Example: gs://bucket/script.sh postStartupScriptBehavior enum ( PostStartupScriptBehavior ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "projects.locations.instances",
+      "projects.locations.instances.getInstanceHealth",
+      "script.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction/create-training-script"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.794Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "Connectors task filter clause",
+  "feature_slug": "connectors-task-filter-clause",
+  "summary": "Adds a filter clause option to Connectors task operations to limit the amount of data processed during entity operations.",
+  "extended_definition": "Adds a filter clause option to Connectors task operations to limit the amount of data processed during entity operations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task",
+      "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 240,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A filter clause can be applied only for the following entity operations: List Delete Update When you select any of these operations, the Task Input section of the Connectors task displays the Filter clause field automatically.",
+          "Filter clause for entity operations You can restrict the records that are processed by the Connectors task using the Filter clause variable, which is available as a Task Input .",
+          "Add a filter clause To add a filter clause, perform the following steps: Click the Connectors task element on the designer to view the Connectors task configuration pane."
+        ]
+      },
+      {
+        "title": "Data Mapping task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the integration editor navigation bar, click Tasks to view the list of available tasks and connectors.",
+          "For information about the usage limits that apply to the Data Mapping task, see Usage limits .",
+          "Data type Supported mapping functions Boolean AND , EQUALS , NAND , NOR , NOT , OR , TO JSON , TO STRING , XNOR , XOR Boolean array APPEND , APPEND ALL , CONTAINS , FILTER , FOR EACH , GET , REMOVE , REMOVE AT , SET , SIZE , TO JSON , TO SET Double ADD , DIVIDE , CEIL , EQUALS , EXPONENT , GREATER THAN , GREATER THAN EQUAL TO , FLOOR , LESS THAN , LESS THAN EQUAL TO , MOD , MULTIPLY , ROUND , SUBTRACT , TO JSON , TO STRING Double array APPEND , APPEND ALL , AVG , CONTAINS , FILTER , FOR EACH , GET , MAX , MIN , REMOVE , REMOVE AT , SET , SIZE , SUM , TO JSON , TO SET Integer ADD , DIVIDE , EPOCH TO HUMAN READABLE TIME , EQUALS , EXPONENT , GREATER THAN , GREATER THAN EQUAL TO , LESS THAN , LESS THAN EQUAL TO , MOD , MULTIPLY , SUBTRACT , TO DOUBLE , TO JSON , TO STRING Integer array APPEND , APPEND ALL , AVG , CONTAINS , FILTER , FOR EACH , GET , MAX , MIN , REMOVE , REMOVE AT , SET , SIZE , SUM , TO JSON , TO SET JSON APPEND ELEMENT , FLATTEN , FILTER , FOR EACH , GET ELEMENT , GET PROPERTY , MERGE , REMOVE PROPERTY , RESOLVE TEMPLATE , SET PROPERTY, SIZE , TO BOOLEAN , TO BOOLEAN ARRAY , TO DOUBLE , TO DOUBLE ARRAY , TO INT , TO INT ARRAY , TO STRING , TO STRING ARRAY String CONCAT , CONTAINS , DECODE BASE64 STRING , EQUALS , EQUALS IGNORE CASE , LENGTH , REPLACE ALL , RESOLVE TEMPLATE , SPLIT , SUBSTRING , TO BASE 64 , TO BOOLEAN , TO DOUBLE , TO INT , TO JSON , TO LOWERCASE , TO UPPERCASE String array APPEND , APPEND ALL , CONTAINS , FILTER , FOR EACH , GET , REMOVE , REMOVE AT , SET , SIZE , TO JSON , TO SET For more information about each of the data mapping functions, see Data Mapping Functions Reference ."
+        ]
+      },
+      {
+        "title": "Data Transformer task \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Unlike variables, constants are not accessible to other tasks or triggers in your integration and are only limited to be used in the Data Transformation task where these are created.",
+          "In the Data Transformer (preview) Task Editor page, select one of the following options: By default, the Diagram mode opens.",
+          "Quotas and limits For information about the usage limits that apply to the Data Transformer task, see Usage limits ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-connectors-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-mapping-task",
+        "https://docs.cloud.google.com/application-integration/docs/configure-data-transformer-script-task"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "SQL Server Audit",
+  "feature_slug": "sql-server-audit",
+  "summary": "SQL Server Audit support tracks and logs server-level and database-level events in Cloud SQL.",
+  "extended_definition": "SQL Server Audit support tracks and logs server-level and database-level events in Cloud SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL for SQL Server audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ cloudsql.backupRuns.get cloudsql.backupRuns.list cloudsql.backups.list cloudsql.instances.get (LRO) cloudsql.instances.list cloudsql.instances.listServerCas cloudsql.operations.get cloudsql.operations.list cloudsql.sslCerts.get cloudsql.sslCerts.list ADMIN WRITE cloudsql.backupRuns.create (LRO) cloudsql.backupRuns.delete (LRO) cloudsql.backups.create (LRO) cloudsql.backups.delete (LRO) cloudsql.backups.update (LRO) cloudsql.instances.addServerCa (LRO) cloudsql.instances.clone (LRO) cloudsql.instances.connect cloudsql.instances.create (LRO) cloudsql.instances.delete (LRO) cloudsql.instances.demoteMaster (LRO) cloudsql.instances.failover (LRO) cloudsql.instances.migrate (LRO) cloudsql.instances.promoteReplica (LRO) cloudsql.instances.reencrypt (LRO) cloudsql.instances.resetSslConfig (LRO) cloudsql.instances.restart (LRO) cloudsql.instances.restoreBackup (LRO) cloudsql.instances.rotateServerCa (LRO) cloudsql.instances.startReplica (LRO) cloudsql.instances.stopReplica (LRO) cloudsql.instances.truncateLog (LRO) cloudsql.instances.update (LRO) cloudsql.sslCerts.create (LRO) cloudsql.sslCerts.delete (LRO) DATA READ cloudsql.databases.get cloudsql.databases.list cloudsql.instances.export (LRO) cloudsql.users.get cloudsql.users.list DATA WRITE cloudsql.databases.create (LRO) cloudsql.databases.delete (LRO) cloudsql.databases.update (LRO) cloudsql.instances.executeSql cloudsql.instances.import (LRO) cloudsql.instances.login cloudsql.users.create (LRO) cloudsql.users.delete (LRO) cloudsql.users.update (LRO) API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Cloud SQL. cloudsql.backupRuns The following audit logs are associated with methods belonging to cloudsql.backupRuns . create Method : cloudsql.backupRuns.create Audit log type : Admin activity Permissions : cloudsql.backupRuns.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.backupRuns.create\" delete Method : cloudsql.backupRuns.delete Audit log type : Admin activity Permissions : cloudsql.backupRuns.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.backupRuns.delete\" get Method : cloudsql.backupRuns.get Audit log type : Data access Permissions : cloudsql.backupRuns.get - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"cloudsql.databases.list\" update Method : cloudsql.databases.update Audit log type : Data access Permissions : cloudsql.databases.update - DATA WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.databases.update\" cloudsql.instances The following audit logs are associated with methods belonging to cloudsql.instances . addServerCa Method : cloudsql.instances.addServerCa Audit log type : Admin activity Permissions : cloudsql.instances.addServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.addServerCa\" clone Method : cloudsql.instances.clone Audit log type : Admin activity Permissions : cloudsql.instances.clone - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.clone\" connect Method : cloudsql.instances.connect Audit log type : Admin activity Permissions : cloudsql.instances.connect - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"cloudsql.instances.query\" reencrypt Method : cloudsql.instances.reencrypt Audit log type : Admin activity Permissions : cloudsql.instances.reencrypt - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.reencrypt\" resetSslConfig Method : cloudsql.instances.resetSslConfig Audit log type : Admin activity Permissions : cloudsql.instances.resetSslConfig - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.resetSslConfig\" restart Method : cloudsql.instances.restart Audit log type : Admin activity Permissions : cloudsql.instances.restart - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.restart\" restoreBackup Method : cloudsql.instances.restoreBackup Audit log type : Admin activity Permissions : cloudsql.instances.restoreBackup - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.restoreBackup\" rotateServerCa Method : cloudsql.instances.rotateServerCa Audit log type : Admin activity Permissions : cloudsql.instances.rotateServerCa - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.rotateServerCa\" startReplica Method : cloudsql.instances.startReplica Audit log type : Admin activity Permissions : cloudsql.instances.startReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.startReplica\" stopReplica Method : cloudsql.instances.stopReplica Audit log type : Admin activity Permissions : cloudsql.instances.stopReplica - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.stopReplica\" truncateLog Method : cloudsql.instances.truncateLog Audit log type : Admin activity Permissions : cloudsql.instances.truncateLog - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.truncateLog\" update Method : cloudsql.instances.update Audit log type : Admin activity Permissions : cloudsql.instances.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"cloudsql.instances.update\" cloudsql.operations The following audit logs are associated with methods belonging to cloudsql.operations . get Method : cloudsql.operations.get Audit log type : Data access Permissions : cloudsql.instances.get - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      },
+      {
+        "title": "\"View audit logs for automated backups \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback View audit logs for automated backups Stay organized with collections Save and categorize content based on your preferences.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://logging.googleapis.com/v2/entries:list\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"entries\": [ { \"protoPayload\": { \"@type\": \"type.googleapis.com/google.cloud.audit.AuditLog\", \"status\": { \"message\": \"OK\" }, \"authenticationInfo\": {}, \"requestMetadata\": { \"requestAttributes\": {}, \"destinationAttributes\": {} }, \"serviceName\": \"cloudsql.googleapis.com\", \"methodName\": \"cloudsql.instances.automatedBackup\", \"resourceName\": \"projects/ PROJECT ID /instances/ INSTANCE NAME \", \"metadata\": { \"windowStartTime\": \"2022-12-15T13:00:00Z\", \"message\": \"\", \"windowStatus\": \"STATUS SUCCEEDED\", \"@type\": \"type.googleapis.com/speckle.AutomatedBackupEventLog\", \"windowEndTime\": \"2022-12-15T17:00:00Z\", \"backupCompletionTime\": \"2022-12-15T14:11:57.347Z\", \"backupStartTime\": \"2022-12-15T14:11:16.631Z\" } }, \"insertId\": \" LOG ENTRY UNIQUE IDENTIFIER \", \"resource\": { \"type\": \"cloudsql database\", \"labels\": { \"region\": \" REGION NAME \", \"project id\": \" PROJECT ID \", \"database id\": \" DATABASE ID \" } }, \"timestamp\": \"2022-12-15T14:11:57.391565Z\", \"severity\": \"INFO\", \"logName\": \"projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event\", \"receiveTimestamp\": \"2022-12-15T14:11:57.785814800Z\" }, ], } For more information about LOG ENTRY UNIQUE IDENTIFIER for the insertId field, see LogEntry .",
+          "HTTP method and URL: POST https://logging.googleapis.com/v2/entries:list Request JSON body: { \"resourceNames\": [ \"projects/ PROJECT ID \" ], \"pageSize\": 5, \"filter\": \"logName=projects/ PROJECT ID /logs/cloudaudit.googleapis.com%2Fsystem event AND protoPayload.methodName = cloudsql.instances.automatedBackup AND resource.type=cloudsql database\", \"orderBy\": \"timestamp desc\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GAUGE , INT64 , By cloudsql database Tracks the size in bytes of stored SQLServer XEvents files on an instance.",
+          "GAUGE , INT64 , By cloudsql database Tracks the size in bytes of stored SQLServer audit files on an instance.",
+          "After sampling, data is not visible for up to 165 seconds. upload status : Upload status of latest audit file. database/sqlserver/connections/connection reset count GA (project) Connection resets DELTA , INT64 , 1 cloudsql database Total number of logins started from the connection pool since the last restart of SQL Server service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.backupRuns",
+      "cloudsql.backupRuns.create",
+      "cloudsql.backupRuns.delete",
+      "cloudsql.backupRuns.get",
+      "cloudsql.backupRuns.list",
+      "cloudsql.backupRuns.update",
+      "cloudsql.backups.create",
+      "cloudsql.backups.delete",
+      "cloudsql.backups.list",
+      "cloudsql.backups.update",
+      "cloudsql.databases",
+      "cloudsql.databases.create",
+      "cloudsql.databases.delete",
+      "cloudsql.databases.get",
+      "cloudsql.databases.list",
+      "cloudsql.databases.update",
+      "cloudsql.googleapis.com",
+      "cloudsql.instances",
+      "cloudsql.instances.addServerCa",
+      "cloudsql.instances.automatedBackup",
+      "cloudsql.instances.clone",
+      "cloudsql.instances.connect",
+      "cloudsql.instances.create",
+      "cloudsql.instances.delete",
+      "cloudsql.instances.demoteMaster",
+      "cloudsql.instances.executeSql",
+      "cloudsql.instances.export",
+      "cloudsql.instances.failover",
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "cloudsql.instances.list",
+      "cloudsql.instances.listServerCas",
+      "cloudsql.instances.login",
+      "cloudsql.instances.migrate",
+      "cloudsql.instances.promoteReplica",
+      "cloudsql.instances.query",
+      "cloudsql.instances.reencrypt",
+      "cloudsql.instances.resetSslConfig",
+      "cloudsql.instances.restart",
+      "cloudsql.instances.restoreBackup",
+      "cloudsql.instances.rotateServerCa",
+      "cloudsql.instances.startReplica",
+      "cloudsql.instances.stopReplica",
+      "cloudsql.instances.truncateLog",
+      "cloudsql.instances.update",
+      "cloudsql.operations",
+      "cloudsql.operations.get",
+      "cloudsql.operations.list",
+      "cloudsql.sslCerts.create",
+      "cloudsql.sslCerts.delete",
+      "cloudsql.sslCerts.get",
+      "cloudsql.sslCerts.list",
+      "cloudsql.users.create",
+      "cloudsql.users.delete",
+      "cloudsql.users.get",
+      "cloudsql.users.list",
+      "cloudsql.users.update",
+      "logging.googleapis.com",
+      "request.json",
+      "resource.type",
+      "speckle.AutomatedBackupEventLog",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/audit-logging",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/view-audit-logs-for-automated-backups",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/metrics"
+      ]
+    }
+  ]
+}

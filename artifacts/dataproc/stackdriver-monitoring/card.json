@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Stackdriver Monitoring",
+  "feature_slug": "stackdriver-monitoring",
+  "summary": "Stackdriver Monitoring is automatically enabled on Dataproc clusters to collect and report cluster and job metrics; Stackdriver Monitoring is automatically enabled on Dataproc clusters to collect and report cluster and job metrics.",
+  "extended_definition": "Stackdriver Monitoring is automatically enabled on Dataproc clusters to collect and report cluster and job metrics; Stackdriver Monitoring is automatically enabled on Dataproc clusters to collect and report cluster and job metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2018-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed Service for Apache Spark metrics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable custom metric collection You can use the gcloud CLI or the Dataproc API to enable the collection of custom metrics from one or more metric sources. gcloud CLI Custom metric collection Use the gcloud dataproc clusters create --metric-sources flag to enable the collection of custom metrics from one or more metric sources. gcloud dataproc clusters create cluster-name \\ --metric-sources= METRIC SOURCE(s) \\ ... other flags Notes: --metric-sources : Required to enable custom metric collection.",
+          "Managed Service for Apache Spark resource metric collection Cloud Monitoring collects metrics related to the following Managed Service for Apache Spark resources: Cloud Dataproc Cluster Cloud Dataproc Job Cloud Dataproc Batch Cloud Dataproc Session Managed Service for Apache Spark resource metrics are collected in the following format: dataproc.googleapis.com/ RESOURCE / METRIC , and include the collection of several OSS metrics.",
+          "Google Cloud Observability collects and ingests metrics, events, and metadata from Managed Service for Apache Spark clusters, including per-cluster HDFS, YARN, job, and operation metrics, to generate insights via dashboards and charts (see Cloud Monitoring Managed Service for Apache Spark metrics )."
+        ]
+      },
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "If this source is enabled, Dataproc enables the monitoring agent in Compute Engine, and collects monitoring agent metrics, which are published with an agent.googleapis.com prefix.",
+          "SINGLE NODE https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/single-node-clusters ZERO SCALE Clusters that can use only secondary workers and be scaled down to zero secondary worker nodes.",
+          "For example, if both SPARK and YARN metric sources are enabled, and overrides are provided for Spark metrics only, all YARN metrics are collected."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access service metrics in Monitoring Dataproc Metastore service resource metrics are automatically enabled on Dataproc Metastore services.",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Cloud Monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "Console In the Google Cloud console, go to the Cloud Monitoring > Metrics explorer page: Go to the Metrics explorer page From the \"Find resource type and metric\" drop-down list, select the resource Dataproc Metastore Service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "dataproc.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-metrics",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/monitoring"
+      ]
+    }
+  ]
+}

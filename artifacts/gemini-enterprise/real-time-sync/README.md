@@ -1,0 +1,39 @@
+# Real-time sync
+
+Product: Gemini Enterprise
+Feature slug: `real-time-sync`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Real-time sync uses webhooks to notify connectors when source data is created, updated, or deleted, and is in Public Preview for Jira Cloud, Confluence Cloud, Microsoft OneDrive, Microsoft SharePoint Online, and ServiceNow.
+
+## Lifecycle
+
+- Latest feature date: 2025-09-15
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- auth
+- authorization
+- encrypt
+- identity
+- key
+- permission
+- role
+- token
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete](https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store)
+- [https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store](https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store)

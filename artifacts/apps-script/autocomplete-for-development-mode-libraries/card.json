@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Autocomplete for development-mode libraries",
+  "feature_slug": "autocomplete-for-development-mode-libraries",
+  "summary": "Autocomplete now works for included libraries when they are added in development mode.",
+  "extended_definition": "Autocomplete now works for included libraries when they are added in development mode.",
+  "lifecycle": {
+    "latest_feature_date": "2012-07-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/libraries",
+      "https://developers.google.com/apps-script/releases",
+      "https://developers.google.com/apps-script/samples/custom-functions/fact-check"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the ability to support autocomplete for included libraries when they are included in development mode.",
+          "Issue 1811 : The debugger can now step into libraries used in development mode.",
+          "February 14, 2022 Feature Owners receive email alerts when someone outside the owner's organization edits a script project in the new integrated development environment (IDE)."
+        ]
+      },
+      {
+        "title": "Libraries \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's an example: / Raises a number to the given power , and returns the result . @ param { number } base the number we ' re raising to a power @ param { number } exp the exponent we ' re raising the base to @ return { number } the result of the exponential calculation / function power ( base, exp ) { ... } Resource scoping There are two types of resources when you are working with libraries: shared and not-shared.",
+          "Best practices Here are some guidelines to follow when writing a library: Choose a meaningful name for your project since it's used as the default identifier when your library is included by others.",
+          "Home Google Workspace Apps Script Guides Send feedback Libraries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Fact-check statements with an ADK AI agent and Gemini model \\_|\\_ Apps Script\\",
+        "url": "https://developers.google.com/apps-script/samples/custom-functions/fact-check",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Samples Send feedback Fact-check statements with an ADK AI agent and Gemini model Stay organized with collections Save and categorize content based on your preferences.",
+          "Download this GitHub repository: Download In your preferred local development environment, extract the downloaded archive file and open the adk-samples/python/agents/llm-auditor directory. unzip adk-samples-main.zip cd adk-samples-main/python/agents/llm-auditor Create a new Cloud Storage bucket dedicated to the ADK agent. gcloud storage buckets create gs:// CLOUD STORAGE BUCKET NAME --project = PROJECT ID --location = PROJECT LOCATION Replace the following: CLOUD STORAGE BUCKET NAME with a unique bucket name you want to use.",
+          "Next steps Plan travels with an AI agent accessible across Google Workspace Build Gemini Enterprise agents that are tightly integrated with Workspace data stores, APIs, and add ons Build Vertex AI agents that are tightly integrated with Workspace data stores, APIs, and add ons Custom functions in Sheets Extending Sheets Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "main.zip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries",
+        "https://developers.google.com/apps-script/samples/custom-functions/fact-check"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries",
+        "https://developers.google.com/apps-script/samples/custom-functions/fact-check"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries",
+        "https://developers.google.com/apps-script/samples/custom-functions/fact-check"
+      ]
+    }
+  ]
+}

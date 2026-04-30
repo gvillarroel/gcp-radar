@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.758Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Inverted-regex build triggers on specified branches",
+  "feature_slug": "inverted-regex-build-triggers-on-specified-branches",
+  "summary": "Cloud Build build triggers can use inverted regex matching and be restricted to specified branches.",
+  "extended_definition": "Cloud Build build triggers can use inverted regex matching and be restricted to specified branches.",
+  "lifecycle": {
+    "latest_feature_date": "2019-05-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/api/reference/rest",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Only the service account specified in the gcloud builds triggers create command is used for builds invoked with triggers.",
+          "If you specified a service account in your build config, it will be ignored during build execution when using triggers.",
+          "Only the service account specified on your trigger will be used for builds executed by triggers."
+        ]
+      },
+      {
+        "title": "Cloud Build API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v2.projects.locations.connections Methods create POST /v2/{parent=projects/ /locations/ }/connections Creates a Connection. delete DELETE /v2/{name=projects/ /locations/ /connections/ } Deletes a single connection. fetchLinkableRepositories GET /v2/{connection=projects/ /locations/ /connections/ }:fetchLinkableRepositories FetchLinkableRepositories get repositories from SCM that are accessible and could be added to the connection. get GET /v2/{name=projects/ /locations/ /connections/ } Gets details of a single connection. getIamPolicy GET /v2/{resource=projects/ /locations/ /connections/ }:getIamPolicy Gets the access control policy for a resource. list GET /v2/{parent=projects/ /locations/ }/connections Lists Connections in a given project and location. patch PATCH /v2/{connection.name=projects/ /locations/ /connections/ } Updates a single connection. processWebhook POST /v2/{parent=projects/ /locations/ }/connections:processWebhook ProcessWebhook is called by the external SCM for notifying of events. setIamPolicy POST /v2/{resource=projects/ /locations/ /connections/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v2/{resource=projects/ /locations/ /connections/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v2.projects.locations REST Resource: v2.projects.locations.connections REST Resource: v2.projects.locations.connections.repositories REST Resource: v2.projects.locations.operations REST Resource: v1 REST Resource: v1.githubDotComWebhook REST Resource: v1.locations REST Resource: v1.operations REST Resource: v1.projects.builds REST Resource: v1.projects.githubEnterpriseConfigs REST Resource: v1.projects.locations REST Resource: v1.projects.locations.bitbucketServerConfigs REST Resource: v1.projects.locations.bitbucketServerConfigs.connectedRepositories REST Resource: v1.projects.locations.bitbucketServerConfigs.repos REST Resource: v1.projects.locations.builds REST Resource: v1.projects.locations.gitLabConfigs REST Resource: v1.projects.locations.gitLabConfigs.connectedRepositories REST Resource: v1.projects.locations.gitLabConfigs.repos REST Resource: v1.projects.locations.githubEnterpriseConfigs REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.triggers REST Resource: v1.projects.locations.workerPools REST Resource: v1.projects.triggers Service: cloudbuild.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v2.projects.locations.connections.repositories Methods accessReadToken POST /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:accessReadToken Fetches read token of a given repository. accessReadWriteToken POST /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:accessReadWriteToken Fetches read/write token of a given repository. batchCreate POST /v2/{parent=projects/ /locations/ /connections/ }/repositories:batchCreate Creates multiple repositories inside a connection. create POST /v2/{parent=projects/ /locations/ /connections/ }/repositories Creates a Repository. delete DELETE /v2/{name=projects/ /locations/ /connections/ /repositories/ } Deletes a single repository. fetchGitRefs GET /v2/{repository=projects/ /locations/ /connections/ /repositories/ }:fetchGitRefs Fetch the list of branches or tags for a given repository. get GET /v2/{name=projects/ /locations/ /connections/ /repositories/ } Gets details of a single repository. list GET /v2/{parent=projects/ /locations/ /connections/ }/repositories Lists Repositories in a given connection."
+        ]
+      },
+      {
+        "title": "\"Connect to a Bitbucket Data Center host \\_|\\_ Cloud Build \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On the Triggers page, when you click Run , the Run trigger page opens and shows a Failed to list branches.",
+          "This way, you can configure build triggers to build repositories from Bitbucket Data Center and build repositories from Bitbucket Data Center in a private network .",
+          "If no value is specified for the IP address, the IP address is automatically assigned a range within the peered VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.googleapis.com",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage",
+      "connection.name",
+      "trigger.resourceName",
+      "v1.githubDotComWebhook",
+      "v1.locations",
+      "v1.operations",
+      "v1.projects.builds",
+      "v1.projects.githubEnterpriseConfigs",
+      "v1.projects.locations",
+      "v1.projects.locations.bitbucketServerConfigs",
+      "v1.projects.locations.bitbucketServerConfigs.connectedRepositories",
+      "v1.projects.locations.bitbucketServerConfigs.repos",
+      "v1.projects.locations.builds",
+      "v1.projects.locations.githubEnterpriseConfigs",
+      "v1.projects.locations.gitLabConfigs",
+      "v1.projects.locations.gitLabConfigs.connectedRepositories",
+      "v1.projects.locations.gitLabConfigs.repos",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.triggers",
+      "v1.projects.locations.workerPools",
+      "v1.projects.triggers",
+      "v2.projects.locations",
+      "v2.projects.locations.connections",
+      "v2.projects.locations.connections.repositories",
+      "v2.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "https://docs.cloud.google.com/build/docs/api/reference/rest",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-data-center"
+      ]
+    }
+  ]
+}

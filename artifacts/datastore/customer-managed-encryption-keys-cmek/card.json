@@ -1,0 +1,126 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.968Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore",
+  "feature_name": "Customer-managed encryption keys (CMEK)",
+  "feature_slug": "customer-managed-encryption-keys-cmek",
+  "summary": "Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys; Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys.",
+  "extended_definition": "Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys; Customer-managed encryption keys let Datastore data be protected with user-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/best-practices",
+      "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/concepts/encryption-at-rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 393,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Datastore mode, see Use CMEK .",
+          "Home Documentation Databases Datastore Guides Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Datastore mode."
+        ]
+      },
+      {
+        "title": "Server-Side Encryption \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/encryption-at-rest",
+        "source_id": "site-iam-reference",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "Key management With server-side encryption, you can either let Google manage cryptographic keys on your behalf or use customer-managed encryption keys (CMEK) to manage the keys yourself.",
+          "Warning: Firestore in Datastore mode does not know if your data has already been encrypted client-side, nor does Datastore mode have any knowledge of your client-side encryption keys.",
+          "Each Datastore mode object's data and metadata is encrypted and each encryption key is itself encrypted with a regularly rotated set of keystore master keys."
+        ]
+      },
+      {
+        "title": "Cloud Datastore best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you delete a large number of Datastore entities across a small range of keys then queries across this part of the index will be slower until compaction has completed.",
+          "Deletions Avoid deleting large numbers of Datastore entities across a small range of keys.",
+          "If you are using Datastore, you can get slow writes due to a hot tablet if you have a sudden increase in the write rate to a small range of keys that exceeds the capacity of a single tablet server."
+        ]
+      },
+      {
+        "title": "Best Practices \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you delete a large number of Datastore mode entities across a small range of keys then queries across this part of the index will be slower until compaction has completed.",
+          "If you do have a key or indexed property that will be monotonically increasing then you can prepend a random hash to ensure that the keys are sharded onto multiple tablets.",
+          "Deletions Avoid deleting large numbers of entities across a small range of keys."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastore.BaseDatastoreBatchWriter",
+      "com.google.cloud.datastore.Datastore",
+      "com.google.cloud.datastore.DatastoreBatchWriter"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/encryption-at-rest",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/encryption-at-rest",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/concepts/encryption-at-rest",
+        "https://docs.cloud.google.com/datastore/docs/cloud-datastore-best-practices",
+        "https://docs.cloud.google.com/datastore/docs/best-practices"
+      ]
+    }
+  ]
+}

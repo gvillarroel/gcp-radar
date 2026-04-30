@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.758Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build private pool peered VPC IP range control",
+  "feature_slug": "cloud-build-private-pool-peered-vpc-ip-range-control",
+  "summary": "Cloud Build private pools can now set peeredNetworkIpRange to consume fewer IP addresses in peered VPCs.",
+  "extended_definition": "Cloud Build private pools can now set peeredNetworkIpRange to consume fewer IP addresses in peered VPCs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network",
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Build repositories from Bitbucket Data Center in a private network \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Allocate an internal IP range in the VPC that the Cloud Build producer network can use to allocate to VMs maintaining a connection with private repositories.",
+          "To learn how to run builds using a private pool, see Running builds in a private pool .",
+          "If you have not created a private pool, see create a new private pool ."
+        ]
+      },
+      {
+        "title": "\"Build repositories from Bitbucket Server in a private network \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is to accommodate, at a minimum, both your triggers and your worker pools, because each service connection tries to claim an IP range with a prefix length of /24 .",
+          "Allocate an internal IP range in the VPC that the Cloud Build producer network can use to allocate to VMs maintaining a connection with private repositories.",
+          "Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool."
+        ]
+      },
+      {
+        "title": "\"Build repositories from GitHub Enterprise in a private network \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the APIs If you have not created a private pool, follow the instructions in Create and manage private pools to create a private pool.",
+          "Additionally, your private network needs to be configured to route this range through the Cloud VPN or Cloud Interconnect connection.",
+          "If your connection uses a Cloud Router, you can configure your connection to communicate the range to your private network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-server-private-network",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise-private-network"
+      ]
+    }
+  ]
+}

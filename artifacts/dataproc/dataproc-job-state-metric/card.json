@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc job state metric",
+  "feature_slug": "dataproc-job-state-metric",
+  "summary": "Dataproc provides the dataproc.googleapis.com/job/state metric for monitoring job states and querying job IDs in MQL.",
+  "extended_definition": "Dataproc provides the dataproc.googleapis.com/job/state metric for monitoring job states and querying job IDs in MQL.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+      "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed Service for Apache Spark driver node groups \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ Node GROUP ID :resize\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /regions/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.dataproc.v1.NodeGroupOperationMetadata\", \"nodeGroupId\": \" NODE GROUP ID \", \"clusterUuid\": \" CLUSTER UUID \", \"status\": { \"state\": \"PENDING\", \"innerState\": \"PENDING\", \"stateStartTime\": \"2022-12-01T23:34:53.064308Z\" }, \"operationType\": \"RESIZE\", \"description\": \"Scale \"up or \"down\" a GCE node pool to SIZE nodes.\" } } Delete a driver node group cluster When you delete a Managed Service for Apache Spark cluster , node groups associated with the cluster are deleted.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /jobs:submit\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"reference\": { \"projectId\": \" PROJECT ID \", \"jobId\": \"job-id\" }, \"placement\": { \"clusterName\": \" CLUSTER NAME \", \"clusterUuid\": \"cluster-Uuid\" }, \"sparkJob\": { \"mainClass\": \"org.apache.spark.examples.SparkPi\", \"args\": [ \"1000\" ], \"jarFileUris\": [ \"file:///usr/lib/spark/examples/jars/spark-examples.jar\" ] }, \"status\": { \"state\": \"PENDING\", \"stateStartTime\": \"start-time\" }, \"jobUuid\": \"job-Uuid\" } Python Install the client library Set up application default credentials Run the code See Setting Up a Python Development Environment .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT ID /regions/ REGION /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\": \" PROJECT ID \", \"clusterName\": \" CLUSTER NAME \", \"config\": { ... \"auxiliaryNodeGroups\": [ { \"nodeGroup\": { \"name\": \"projects/ PROJECT ID /regions/ REGION /clusters/ CLUSTER NAME /nodeGroups/ NODE GROUP ID \", \"roles\": [ \"DRIVER\" ], \"nodeGroupConfig\": { \"numInstances\": SIZE , \"instanceNames\": [ \" CLUSTER NAME -np-q1gp\", \" CLUSTER NAME -np-xfc0\" ], \"imageUri\": \"https://www.googleapis.com/compute/v1/projects/cloud-dataproc-ci/global/images/dataproc-2-0-deb10-...-rc01\", \"machineTypeUri\": \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /zones/ REGION -a/machineTypes/n1-standard-4\", \"diskConfig\": { \"bootDiskSizeGb\": 1000, \"bootDiskType\": \"pd-standard\" }, \"managedGroupConfig\": { \"instanceTemplateName\": \"dataproc-2a8224d2-...\", \"instanceGroupManagerName\": \"dataproc-2a8224d2-...\" }, \"minCpuPlatform\": \"AUTOMATIC\", \"preemptibility\": \"NON PREEMPTIBLE\" } }, \"nodeGroupId\": \" NODE GROUP ID \" } ] }, } Get driver node group cluster metadata You can use the gcloud dataproc node-groups describe command or the Managed Service for Apache Spark API to get driver node group metadata. gcloud gcloud dataproc node-groups describe NODE GROUP ID \\ --cluster= CLUSTER NAME \\ --region= REGION Required flags: NODE GROUP ID : You can run gcloud dataproc clusters describe CLUSTER NAME to list the node group ID."
+        ]
+      },
+      {
+        "title": "\"Create metric alerts \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can modify the query by filtering on the job id to apply it to a specific job: sum by (job id) ({ \" name \"=\"dataproc.googleapis.com/job/state\", \"monitored resource\"=\"cloud dataproc job\", \"state\"=\"ERROR\", \"job id\"=\"1234567890\" }) != 0 Cluster capacity deviation alert Managed Service for Apache Spark emits the dataproc.googleapis.com/cluster/capacity deviation metric, which reports the difference between the expected node count in the cluster and the active YARN node count.",
+          "Failed Managed Service for Apache Spark job alert You can also use the dataproc.googleapis.com/job/state metric (see Long-running Managed Service for Apache Spark job alert ) to alert you when a Managed Service for Apache Spark job fails.",
+          "Long-running Managed Service for Apache Spark job alert Managed Service for Apache Spark emits the dataproc.googleapis.com/job/state metric, which tracks how long a job has been in different states."
+        ]
+      },
+      {
+        "title": "\"Create a cluster \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataproc.googleapis.com/v1/projects/ PROJECT /regions/ REGION /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT /regions/ REGION /operations/b5706e31......\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.dataproc.v1.ClusterOperationMetadata\", \"clusterName\": \" CLUSTER NAME \", \"clusterUuid\": \"5fe882b2-...\", \"status\": { \"state\": \"PENDING\", \"innerState\": \"PENDING\", \"stateStartTime\": \"2019-11-21T00:37:56.220Z\" }, \"operationType\": \"CREATE\", \"description\": \"Create cluster with 2 workers\", \"warnings\": [ \"For PD-Standard without local SSDs, we strongly recommend provisioning 1TB ...\"\" ] } } Note: You can click the Equivalent REST or command line links at the bottom of the left panel of the Managed Service for Apache Spark Google Cloud console Create a cluster page to have the Console construct an equivalent API REST request or gcloud tool command to use in your code or from the command line to create a cluster.",
+          "ClusterControllerClient ( client options = { \"api endpoint\" : f \" { region } -dataproc.googleapis.com:443\" } ) Create the cluster config. cluster = { \"project id\" : project id , \"cluster name\" : cluster name , \"config\" : { \"master config\" : { \"num instances\" : 1 , \"machine type uri\" : \"n1-standard-2\" }, \"worker config\" : { \"num instances\" : 2 , \"machine type uri\" : \"n1-standard-2\" }, }, } Create the cluster. operation = cluster client . create cluster ( request = { \"project id\" : project id , \"region\" : region , \"cluster\" : cluster } ) result = operation . result () Output a success message. print ( f \"Cluster created successfully: { result . cluster name } \" ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ PROJECT /regions/ REGION /clusters Request JSON body: { \"project id\":\" PROJECT \", \"cluster name\":\" CLUSTER NAME \", \"config\":{ \"master config\":{ \"num instances\":1, \"machine type uri\":\"n1-standard-2\", \"image uri\":\"\" }, \"softwareConfig\": { \"imageVersion\": \"\", \"properties\": {}, \"optionalComponents\": [] }, \"worker config\":{ \"num instances\":2, \"machine type uri\":\"n1-standard-2\", \"image uri\":\"\" }, \"gce cluster config\":{ \"zone uri\":\" ZONE \" } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.googleapis.com",
+      "examples.jar",
+      "org.apache.spark.examples.SparkPi",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/node-groups/dataproc-driver-node-groups",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-alerts",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster"
+      ]
+    }
+  ]
+}

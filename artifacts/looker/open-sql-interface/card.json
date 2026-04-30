@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.075Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Open SQL Interface",
+  "feature_slug": "open-sql-interface",
+  "summary": "The Open SQL Interface now supports Explores that use the conditionally_filters parameter and enables previously disabled Explores; The Open SQL Interface is generally available and the corresponding Looker Labs toggle is removed.",
+  "extended_definition": "The Open SQL Interface now supports Explores that use the conditionally_filters parameter and enables previously disabled Explores; The Open SQL Interface is generally available and the corresponding Looker Labs toggle is removed.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Queries \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "A SQL Interface query section that appears when a query has been issued through the Open SQL Interface .",
+          "Queries that are issued from the Open SQL Interface have a Source value of Sql interface .",
+          "An Open in SQL Runner link that will open the query in SQL Runner ."
+        ]
+      },
+      {
+        "title": "Admin settings - Self-service Explores \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "source_id": "site-docs-reference",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enabling the APIs to support Google Sheets uploads To support uploading data from Google Sheets, the following APIs must be enabled in the Google Cloud console by an IAM user with the IAM roles/serviceusage.serviceUsageAdmin permission: This API must be enabled in the Google Cloud project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page: BigQuery API: Required for all BigQuery operations These APIs must be enabled in the Google Cloud project that is associated with the service account used to upload data (the service account that is used for PDT processes on your BigQuery connection , which may or may not be the same as the Google Cloud project that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page): BigQuery API: Required for all BigQuery operations Google Sheets API: Required for retrieving the names of each sheet in a Google Sheets document Google Drive API: Required for BigQuery to read files from Drive Perform the following steps to enable the APIs: From the Google Cloud console Open project picker , select the project that houses the BigQuery connection that is specified in the Default BigQuery connection drop-down menu of the Self-service Explores admin page.",
+          "The Data uploads table shows the following information about the data uploads on your instance: The name of the self-service Explore, which is also a hyperlink that opens the self-service Explore The owner of the data upload The date that the data was uploaded A Delete button that allows Looker admins to delete the file upload and its associated self-service Explore Looker admins can open any self-service Explore on the instance by using the links in the Data uploads table.",
+          "To create the OAuth client and enter the credentials in your Looker instance, follow these steps: In the Google Cloud console, use the Google Cloud console Open project picker to select the Google Cloud project that is associated with the service account used to upload data (the service account that is used for PDT processes on your BigQuery connection )."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Looker only supports OpenID Connect authentication using OpenID Connect's Authorization Code Flow .",
+          "The following section is from an example of a discovery document: { \"issuer\": \"https://accounts.google.com\", \"authorization endpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\", \"token endpoint\": \"https://www.googleapis.com/oauth2/v4/token\", \"userinfo endpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\", \"revocation endpoint\": \"https://accounts.google.com/o/oauth2/revoke\", \"jwks uri\": \"https://www.googleapis.com/oauth2/v3/certs\", \"response types supported\": [ \"code\", \"token\", \"id token\", \"code token\" \"code id token\", \"token id token\", \"code token id token\", \"none\" ], \"subject types supported\": [ \"public\" ], \"id token signing alg values supported\": [ \"RS256\" ], \"scopes supported\": [ \"openid\", \"email\", \"profile\" ], \"token endpoint auth methods supported\": [ \"client secret post\", \"client secret basic\" ], \"claims supported\": [ \"aud\", \"email\", \"email verified\", \"exp\", \"family name\", \"given name\", \"iat\", \"iss\", \"locale\", \"name\", \"picture\", \"sub\" ], Configuring OpenID Connect auth settings To configure OpenID Connect authentication for your Looker instance, select OpenID Connect from the Authentication section of the Admin panel.",
+          "Your Looker groups will still mirror your OpenID Connect configuration, but you will be able to do additional group and user management within Looker, such as adding OpenID Connect users to Looker-specific groups or assigning Looker roles directly to OpenID Connect users."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-queries",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-self-service-explore",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect"
+      ]
+    }
+  ]
+}

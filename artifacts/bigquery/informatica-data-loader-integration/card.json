@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Informatica Data Loader integration",
+  "feature_slug": "informatica-data-loader-integration",
+  "summary": "Informatica Data Loader connectors can load data into BigQuery.",
+  "extended_definition": "Informatica Data Loader connectors can load data into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-load-append"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery as a source in Hevo Load Data from Shopify to BigQuery in Minutes Build Your Single Source of Truth with BigQuery Partner Advantage page Direct link Hightouch Solution Hightouch Reverse ETL Category ETL & Data Integration Description Hightouch is the easiest way to sync customer data from a data warehouse into tools like CRMs, email, and ad networks.",
+          "Partner references Bed Bath & Beyond uses Nexla for rapid data replication into BigQuery Top national retail chain uses Nexla Partner Advantage page Direct link Portable Solution Portable ETL Category ETL & Data Integration Description A cloud-based ELT (Extract, Load, Transform) platform that enables no-code data pipeline creation.",
+          "The solution involves the following steps: Get the data Connect Analyze Automate Partner references Move your marketing data into BigQuery The easiest way to move data from your Google BigQuery warehouse Supermetrics for BigQuery: Overview Supermetrics for BigQuery (video tutorial) Partner Advantage page Direct link Tableau Solution Tableau Prep Builder Category ETL & Data Integration Description Tableau Prep Builder is a tool in the Tableau product suite designed to make preparing your data easy and intuitive."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "CsvOptions csvOptions = CsvOptions . newBuilder (). setSkipLeadingRows ( 1 ). build (); TableId tableId = TableId . of ( datasetName , tableName ); LoadJobConfiguration loadConfig = LoadJobConfiguration . newBuilder ( tableId , sourceUri , csvOptions ). setSchema ( schema ). build (); // Load data from a GCS CSV file into the table Job job = bigquery . create ( JobInfo . of ( loadConfig )); // Blocks until this load table job completes its execution, either failing or succeeding. job = job . waitFor (); if ( job . isDone ()) { System . out . println ( \"CSV from GCS successfully added during load append job\" ); } else { System . out . println ( \"BigQuery was unable to load into the table due to an error:\" + job . getStatus (). getError ()); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . require \"google/cloud/bigquery\" def load table gcs csv dataset id = \"your dataset id\" bigquery = Google :: Cloud :: Bigquery . new dataset = bigquery . dataset dataset id gcs uri = \"gs://cloud-samples-data/bigquery/us-states/us-states.csv\" table id = \"us states\" load job = dataset . load job table id , gcs uri , skip leading : 1 do schema schema . string \"name\" schema . string \"post abbr\" end puts \"Starting job #{ load job . job id } \" load job . wait until done! # Waits for table load to complete. puts \"Job finished.\" table = dataset . table table id puts \"Loaded #{ table . rows count } rows to table #{ table . id } \" end Loading CSV data into a table that uses column-based time partitioning To load CSV data from Cloud Storage into a BigQuery table that uses column-based time partitioning: Go Before trying this sample, follow the Go setup instructions in the BigQuery quickstart using client libraries .",
+          "To replace the rows in an existing table, set the writeDisposition value in the metadata parameter to 'WRITE TRUNCATE' . // Import the Google Cloud client libraries const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const { Storage } = require ( ' @google-cloud/storage ' ); // Instantiate clients const bigquery = new BigQuery (); const storage = new Storage (); / This sample loads the CSV file at https://storage.googleapis.com/cloud-samples-data/bigquery/us-states/us-states.csv TODO(developer): Replace the following lines with the path to your file. / const bucketName = 'cloud-samples-data' ; const filename = 'bigquery/us-states/us-states.csv' ; async function loadCSVFromGCSTruncate () { / Imports a GCS file into a table and overwrites table data if table already exists. / / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Configure the load job."
+        ]
+      },
+      {
+        "title": "Add a column using a load job \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-load-append",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client libraries const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate client const bigquery = new BigQuery (); async function addColumnLoadAppend () { // Adds a new column to a BigQuery table while appending rows via a load job. / TODO(developer): Uncomment the following lines before running the sample. / // const fileName = '/path/to/file.csv'; // const datasetId = 'my dataset'; // const tableId = 'my table'; // In this example, the existing table contains only the 'Name', 'Age', // & 'Weight' columns. 'REQUIRED' fields cannot be added to an existing // schema, so the additional column must be 'NULLABLE'. const schema = 'Name:STRING, Age:INTEGER, Weight:FLOAT, IsMagic:BOOLEAN' ; // Retrieve destination table reference const [ table ] = await bigquery . dataset ( datasetId ). table ( tableId ). get (); const destinationTableRef = table . metadata . tableReference ; // Set load job options const options = { schema : schema , schemaUpdateOptions : [ 'ALLOW FIELD ADDITION' ], writeDisposition : 'WRITE APPEND' , destinationTable : destinationTableRef , }; // Load data from a local file into the table const [ job ] = await bigquery . dataset ( datasetId ) . table ( tableId ) . load ( fileName , options ); console . log ( Job ${ job . id } completed. ); console . log ( 'New Schema:' ); console . log ( job . configuration . load . schema . fields ); // Check the job's status for errors const errors = job . status . errors ; if ( errors && errors . length > 0 ) { throw errors ; } } PHP Before trying this sample, follow the PHP setup instructions in the BigQuery quickstart using client libraries .",
+          "Job job = loadJob . waitFor (); // Check for errors if ( job . isDone () && job . getStatus (). getError () == null ) { System . out . println ( \"Column successfully added during load append job\" ); } else { System . out . println ( \"BigQuery was unable to load into the table due to an error:\" + job . getStatus (). getError ()); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "JobId jobId = JobId . of ( UUID . randomUUID (). toString ()); Job loadJob = bigquery . create ( JobInfo . newBuilder ( loadJobConfig ). setJobId ( jobId ). build ()); // Load data from a GCS parquet file into the table // Blocks until this load table job completes its execution, either failing or succeeding."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "column.csv",
+      "file.csv",
+      "states.csv",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-load-append"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-load-append"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-add-column-load-append"
+      ]
+    }
+  ]
+}

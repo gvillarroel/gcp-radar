@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.363Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine",
+  "feature_name": "Goerli-Prater testnet node deployment",
+  "feature_slug": "goerli-prater-testnet-node-deployment",
+  "summary": "The Testnet option creates nodes that connect to the Goerli-Prater Ethereum network.",
+  "extended_definition": "Goerli-Prater in Blockchain Node Engine is an Ethereum testnet network option, described as \"The Ethereum Testnet based on Goerli protocol.\" It appears as a documented node network option in the service API references, but the docs also state that this option is not currently available when creating new blockchain nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.",
+          "Methods create Creates a new blockchain node in a given project and location. delete Deletes a single blockchain node. get Gets details of a single blockchain node. list Lists blockchain nodes in a given project and location. patch Updates the parameters of a single blockchain node.",
+          "Note this option is not currently available when creating new blockchain nodes."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "TESTNET GOERLI PRATER The Ethereum Testnet based on Goerli protocol.",
+          "The fully qualified name of the blockchain node to delete. e.g. projects/my-project/locations/us-central1/blockchainNodes/my-node . request id string Optional.",
+          "Note this option is not currently available when creating new blockchain nodes."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.blockchainNodes.create \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Blockchain Node Engine Reference Send feedback Method: projects.locations.blockchainNodes.create Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request Path parameters Query parameters Request body Response body Authorization scopes IAM Permissions Creates a new blockchain node in a given project and location.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: blockchainnodeengine.blockchainNodes.create For more information, see the IAM documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "The REST and RPC references define the Goerli-Prater testnet option for Ethereum nodes, and the create-method documentation confirms the node creation API while noting current availability constraints for this testnet option."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blockchainnodeengine.blockchainNodes.create",
+      "blockchainnodeengine.googleapis.com",
+      "e.g",
+      "projects.locations.blockchainNodes",
+      "projects.locations.blockchainNodes.create",
+      "projects.locations.blockchainNodes.delete",
+      "projects.locations.blockchainNodes.get",
+      "projects.locations.blockchainNodes.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes/create"
+      ]
+    }
+  ]
+}

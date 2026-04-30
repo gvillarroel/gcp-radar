@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Data profile infoType detection percentages",
+  "feature_slug": "data-profile-infotype-detection-percentages",
+  "summary": "New data profiles show the approximate percentage of non-null rows where each non-predicted infoType is detected.",
+  "extended_definition": "New data profiles show the approximate percentage of non-null rows where each non-predicted infoType is detected.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze data profiles stored in BigQuery \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example shows you how to create a report containing a table that shows each infoType reported in your data profiles and its corresponding frequency.",
+          "List all bucket paths, clusters, and file extensions scanned where a credit card number, person name, or US Social Security number was detected SELECT file store profile . file store path , summaries . file cluster type . cluster , STRING AGG ( scanned file extensions . file extension ) AS scanned extensions FROM TABLE OR VIEW LEFT JOIN UNNEST ( file store profile . file cluster summaries ) as summaries LEFT JOIN UNNEST ( summaries . file store info type summaries ) as info types LEFT JOIN UNNEST ( summaries . file extensions scanned ) as scanned file extensions WHERE file store profile . data source type . data source = 'google/storage/bucket' AND info types . info type . name IN ( 'CREDIT CARD NUMBER' , 'PERSON NAME' , 'US SOCIAL SECURITY NUMBER' ) GROUP BY 1 , 2 ; This query uses the following built-in infoTypes : CREDIT CARD NUMBER : represents a credit card number PERSON NAME : represents the full name of a person US SOCIAL SECURITY NUMBER represents a US Social Security number For more information, see File store data profiles .",
+          "List table profiles that contain columns of credit card numbers, US Social Security numbers, and person names SELECT table full resource , COUNT ( ) AS count findings FROM ( SELECT DISTINCT column profile . table full resource , column profile . column info type . info type . name FROM TABLE OR VIEW WHERE column profile . column info type . info type . name IN ( 'PERSON NAME' , 'CREDIT CARD NUMBER' , 'US SOCIAL SECURITY NUMBER' ) ORDER BY column profile . table full resource ) ot1 GROUP BY table full resource increase this number to match the total distinct infoTypes that must be present HAVING count findings > = 3 This query uses the following built-in infoTypes : CREDIT CARD NUMBER : represents a credit card number PERSON NAME : represents the full name of a person US SOCIAL SECURITY NUMBER represents a US Social Security number For information about how to remediate these findings, see Recommended strategies for mitigating data risk ."
+        ]
+      },
+      {
+        "title": "\"Overview of sensitive data discovery \\_|\\_ Sensitive Data Protection \\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles",
+        "source_id": "site-docs-reference-3",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have data in a region that Sensitive Data Protection doesn't support, then the discovery service skips those data resources and shows an error when you view the data profiles .",
+          "The following image shows a list of column-level data profiles.",
+          "It includes the following settings: Scope (organization, folder, or project) of the discovery operation Type of resource to profile Inspection templates to use Scan frequency Specific subsets of data that should be included in or excluded from discovery Actions that you want Sensitive Data Protection to take after discovery—for example, which Google Cloud services to publish the profiles to Service agent to use for discovery operations For information about how to create an organization-level or project-level discovery scan configuration, see the following pages: Discovery type Create an organization-level scan configuration Create a project-level scan configuration 1 Discovery for BigQuery data Profile BigQuery data in an organization or folder Profile BigQuery data in a single project Discovery for Cloud SQL data Profile Cloud SQL data in an organization or folder Profile Cloud SQL data in a single project Discovery for Cloud Storage data Profile Cloud Storage data in an organization or folder Profile Cloud Storage data in a single project Discovery for Vertex AI data Profile Vertex AI data in an organization or folder Profile Vertex AI data in a single project Discovery for Amazon S3 data Discovery for Amazon S3 data Not applicable Discovery for Azure Blob Storage data Discovery for Azure Blob Storage data Not applicable Secrets discovery (no profiles generated) Configure secrets discovery at the organization level Configure secrets discovery at the project level 1 Not suitable for customers who have an organization-level discovery subscription, such as one provided through Security Command Center Scan configuration scopes You can create a scan configuration at the following levels: Organization Folder Project Single data resource At the organization and folder levels, if two or more active scan configurations have the same project in their scope, Sensitive Data Protection determines which scan configuration can generate profiles for that project."
+        ]
+      },
+      {
+        "title": "\"Profile Amazon S3 data \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "source_id": "site-docs-reference-3",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID .",
+          "Using the exported data profiles and the exported sample findings, you can run queries to get more information about the specific items that were flagged, the infoTypes they matched, their exact locations, their calculated sensitivity levels, and other details.",
+          "Example query: Show sample findings related to file store data profiles This example requires both Save data profile copies to BigQuery and Save sample discovery findings to BigQuery to be enabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.admin",
+      "dlp.columnDataProfiles.list",
+      "dlp.dataProfilesReader",
+      "dlp.fileStoreProfiles.list",
+      "dlp.inspectTemplates.create",
+      "dlp.jobs.create",
+      "dlp.jobs.list",
+      "dlp.jobTriggers.create",
+      "dlp.jobTriggers.list",
+      "dlp.projectDataProfiles.list",
+      "dlp.reader",
+      "dlp.tableDataProfiles.list",
+      "iam.securityAdmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizations.get",
+      "resourcemanager.organizations.getIamPolicy",
+      "resourcemanager.organizations.setIamPolicy",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projects.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/dlp.admin",
+      "roles/dlp.dataProfilesReader",
+      "roles/dlp.reader",
+      "roles/iam.securityAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.projectCreator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/analyze-data-profiles",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-amazon-s3",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles"
+      ]
+    }
+  ]
+}

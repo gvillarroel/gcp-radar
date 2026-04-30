@@ -1,0 +1,233 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.387Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "KCC workload GOMEMLIMIT",
+  "feature_slug": "kcc-workload-gomemlimit",
+  "summary": "Config Connector set GOMEMLIMIT for KCC workloads to improve memory management and stability.",
+  "extended_definition": "Config Connector set GOMEMLIMIT for KCC workloads to improve memory management and stability.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ContainerAttachedCluster | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "source_id": "feature-recovery-http",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prepare the cluster, follow the steps to deploy an install-agent into the target cluster: Get the manifest yaml file for the install-agent: gcloud container attached clusters generate-install-manifest my-cluster --location=GOOGLE_CLOUD_REGION --platform-version=PLATFORM_VERSION --output-file=manifest.yaml Example command: gcloud container attached clusters generate-install-manifest kcc-attached-cluster --location=us-west1 --platform-version=1.25.0-gke.5 --output-file=manifest.yaml Check out the target cluster and get the kubeconfig context: Amazon Elastic Kubernetes Service cluster: aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER Azure Kubernetes Service cluster: az aks get-credentials -n $CLUSTER -g $AZURE_RESOURCE_GROUP export KUBECONFIG_CONTEXT=$(kubectl config current-context) Apply the manifest.yaml file to the target cluster: (Optional if you used the previous command to switch context) kubectl use-context $KUBECONFIG_CONTEXT kubectl apply -f manifest.yaml You should see the following logs: namespace/gke-install created serviceaccount/gke-install-agent created clusterrolebinding.rbac.authorization.k8s.io/multicloud-install-agent-admin created deployment.apps/gke-multicloud-agent created Switch back to the Google Kubernetes Engine(GKE) cluster with Config Connector installed: Run kubectl config get-contexts to see all configured contexts.",
+          "Sample YAML(s) Container Attached Cluster Basic # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-basic spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : \"Test attached cluster basic sample\" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: \"eks\", \"aks\". distribution : ${DISTRIBUTION?} oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-basic --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-basic annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : \"${ORG_ID?}\" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Container Attached Cluster Full # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-full spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : \"Test attached cluster full sample\" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: \"eks\", \"aks\". distribution : ${DISTRIBUTION?} annotations : label-one : \"value-one\" authorization : admin_users : [ \"user1@example.com\" , \"user2@example.com\" ] oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-full loggingConfig : componentConfig : enableComponents : [ \"SYSTEM_COMPONENTS\" , \"WORKLOADS\" ] monitoringConfig : managedPrometheusConfig : enabled : true --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-full annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : \"${ORG_ID?}\" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Container Attached Cluster Ignore Errors # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : containerattached.cnrm.cloud.google.com/v1beta1 kind : ContainerAttachedCluster metadata : name : containerattachedcluster-sample-ignore-errors spec : # Replace ${ATTACHED_CLUSTER_NAME?} with the name of the underlying attached cluster resourceID : ${ATTACHED_CLUSTER_NAME?} location : us-west1 projectRef : # Replace ${PROJECT_ID?} with your Google Cloud project id external : ${PROJECT_ID?} description : \"Test attached cluster ignore errors sample\" # Replace ${DISTRIBUTION?} with the Kubernetes distribution of the underlying attached cluster # Supported values: \"eks\", \"aks\". distribution : ${DISTRIBUTION?} oidcConfig : # Replace ${ISSUER_URL?} with the OIDC issuer URL of the underlying attached cluster issuerUrl : ${ISSUER_URL?} # Replace ${ATTACHED_CLUSTER_PLATFORM_VERSION?} with the platform version of the underlying attached cluster platformVersion : ${ATTACHED_CLUSTER_PLATFORM_VERSION?} fleet : projectRef : name : containerattachedcluster-dep-ignore-errors deletionPolicy : \"DELETE_IGNORE_ERRORS\" --- apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project metadata : name : containerattachedcluster-dep-ignore-errors annotations : cnrm.cloud.google.com/deletion-policy : abandon spec : # Replace ${PROJECT_ID?} with your Google Cloud project id resourceID : ${PROJECT_ID?} organizationRef : # Replace ${ORG_ID?} with your Google Cloud ord id your project associates to external : \"${ORG_ID?}\" # Replace ${PROJECT_ID?} with your Google Cloud project id name : ${PROJECT_ID?} Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "This field indicates how GCP services validate KSA tokens in order to allow system workloads (such as GKE Connect and telemetry agents) to authenticate back to GCP."
+        ]
+      },
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : container.cnrm.cloud.google.com/v1beta1 kind : ContainerCluster metadata : labels : availability : dev target-audience : development name : containercluster-sample-routesbased spec : description : A routes-based cluster confined to one zone configured for development. location : us-central1-a initialNodeCount : 1 networkingMode : ROUTES clusterIpv4Cidr : 10.96.0.0/14 masterAuthorizedNetworksConfig : cidrBlocks : - displayName : Trusted external network cidrBlock : 10.2.0.0/16 addonsConfig : gcePersistentDiskCsiDriverConfig : enabled : true kalmConfig : enabled : true horizontalPodAutoscaling : disabled : true httpLoadBalancing : disabled : false loggingConfig : enableComponents : - \"SYSTEM COMPONENTS\" - \"WORKLOADS\" monitoringConfig : enableComponents : - \"SYSTEM COMPONENTS\" workloadIdentityConfig : Replace ${PROJECT ID?} with your project ID. workloadPool : \"${PROJECT ID?}.svc.id.goog\" Vpc Native Container Cluster Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Valid values include SYSTEM COMPONENTS, APISERVER, SCHEDULER, CONTROLLER MANAGER, STORAGE, HPA, POD, DAEMONSET, DEPLOYMENT, STATEFULSET and WORKLOADS. monitoringConfig.enableComponents[] Optional string monitoringConfig.managedPrometheus Optional object Configuration for Google Cloud Managed Services for Prometheus. monitoringConfig.managedPrometheus.enabled Required boolean Whether or not the managed collection is enabled. monitoringService Optional string The monitoring service that the cluster should write metrics to.",
+          "By default, no private IPv6 access to or from Google Services (all access will be via IPv4). protectConfig Optional object Enable/Disable Protect API features for the cluster. protectConfig.workloadConfig Optional object WorkloadConfig defines which actions are enabled for a cluster's workload configurations. protectConfig.workloadConfig.auditMode Required string Sets which mode of auditing should be used for the cluster's workloads."
+        ]
+      },
+      {
+        "title": "ContainerNodePool \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool",
+        "source_id": "site-docs-root-2",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "Whether the nodes are created as spot VM instances. nodeConfig.tags Optional list (string) The list of instance tags applied to all nodes. nodeConfig.tags[] Optional string nodeConfig.taint Optional list (object) List of Kubernetes taints to be applied to each node. nodeConfig.taint[] Optional object nodeConfig.taint[].effect Required string Effect for taint. nodeConfig.taint[].key Required string Key for taint. nodeConfig.taint[].value Required string Value for taint. nodeConfig.workloadMetadataConfig Optional object The workload metadata configuration for this node. nodeConfig.workloadMetadataConfig.mode Optional string Mode is the configuration for how to expose metadata to workloads running on the node. nodeConfig.workloadMetadataConfig.nodeMetadata Optional string DEPRECATED.",
+          "This is useful for running workloads on sole tenant nodes. nodeConfig.nodeGroupRef.external Optional string Allowed value: The name field of a ComputeNodeGroup resource. nodeConfig.nodeGroupRef.name Optional string Name of the referent.",
+          "NodeMetadata is the configuration for how to expose metadata to the workloads running on the node. nodeCount Optional integer The number of nodes per instance group."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusterrolebinding.rbac.authorization.k8s.io",
+      "cnrm.cloud.google.com",
+      "container.cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerattached.cnrm.cloud.google.com",
+      "containernodepools.container.cnrm.cloud.google.com",
+      "deployment.apps",
+      "example.com",
+      "gke.5",
+      "manifest.yaml",
+      "projects.locations.clusters.nodePools",
+      "resourcemanager.cnrm.cloud.google.com",
+      "svc.id.goog",
+      "v1.projects.locations.clusters.nodePools"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/containerattached/containerattachedcluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containernodepool"
+      ]
+    }
+  ]
+}

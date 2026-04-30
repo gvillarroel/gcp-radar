@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery ORC data loading",
+  "feature_slug": "bigquery-orc-data-loading",
+  "summary": "BigQuery supports loading data in ORC format.",
+  "extended_definition": "BigQuery supports loading data in ORC format.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "source_id": "site-docs-root",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about loading from Dataflow to BigQuery, see Write from Dataflow to BigQuery .",
+          "Methods of loading or accessing external data In the BigQuery page, in the Add data dialog , you can view all available methods to load data into BigQuery or access data from BigQuery.",
+          "For batch or incremental loading of data from Cloud Storage and other supported data sources, we recommend using the BigQuery Data Transfer Service ."
+        ]
+      },
+      {
+        "title": "Batch loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Loading data from Cloud Storage BigQuery supports loading data from any of the following Cloud Storage storage classes : Standard Nearline Coldline Archive To learn how to load data into BigQuery, see the page for your data format: CSV JSON Avro Parquet ORC Datastore exports Firestore exports To learn how to configure a recurring load from Cloud Storage into BigQuery, see Cloud Storage transfers .",
+          "Loading compressed and uncompressed data For Avro, Parquet, and ORC formats, BigQuery supports loading files where the file data has been compressed using a supported codec.",
+          "To load a local file of another format, set the format parameter of the Table#load job method to the appropriate format. require \"google/cloud/bigquery\" def load from file dataset id = \"your dataset id\" , file path = \"path/to/file.csv\" bigquery = Google :: Cloud :: Bigquery . new dataset = bigquery . dataset dataset id table id = \"new table id\" Infer the config.location based on the location of the referenced dataset. load job = dataset . load job table id , file path do config config . skip leading = 1 config . autodetect = true end load job . wait until done! # Waits for table load to complete. table = dataset . table table id puts \"Loaded #{ table . rows count } rows into #{ table . id } \" end Limitations Loading data from a local data source is subject to the following limitations: Wildcards and comma-separated lists are not supported when you load files from a local data source."
+        ]
+      },
+      {
+        "title": "Load Blob Storage data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Depending on the format of your Blob Storage source data, there may be additional limitations: CSV limitations JSON limitations Limitations on nested and repeated data Data transfers to BigQuery Omni locations are not supported.",
+          "For more information about how BigQuery Data Transfer Service ingests data using either WRITE APPEND or WRITE TRUNCATE , see Data ingestion for Azure Blob transfers .",
+          "For information about how CMEK works with the BigQuery Data Transfer Service, see Specify encryption key with transfers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.location",
+      "file.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data",
+        "https://docs.cloud.google.com/bigquery/docs/blob-storage-transfer"
+      ]
+    }
+  ]
+}

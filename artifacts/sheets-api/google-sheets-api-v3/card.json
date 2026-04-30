@@ -1,0 +1,223 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.409Z",
+  "source_step08_card": "data/step-08/current/products/sheets-api/card.json",
+  "product_name": "Sheets API",
+  "product_slug": "sheets-api",
+  "feature_name": "Google Sheets API v3",
+  "feature_slug": "google-sheets-api-v3",
+  "summary": "Google Sheets API v3 was turned down; deprecated on 2021-08-02.",
+  "extended_definition": "Google Sheets API v3 was turned down; deprecated on 2021-08-02.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-02",
+    "deprecation_date": "2021-08-02",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/sheets/api/guides/concepts",
+      "https://developers.google.com/workspace/sheets/api/guides/conditional-format",
+      "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+      "https://developers.google.com/workspace/sheets/api/guides/migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate from Sheets API v3 \\_|\\_ Google Sheets \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: The Google Sheets API v3 was turned down on August 2, 2021.",
+          "The Sheets API v4 does not use projection; rather, it allows you more control over what data is returned. v3 API There are only two possible projection settings in the Sheets API v3. full projection returns all the available information, whereas basic returns a smaller, fixed subset of data (for the worksheets, list, and cells feeds).",
+          "Projection The term projection is used by the Sheets API v3 to refer to the set of data that is returned by a given API call—either all of it, or a fixed subset defined within the API."
+        ]
+      },
+      {
+        "title": "Connected Sheets \\_|\\_ Google Sheets \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Related topics Choose Google Sheets API scopes Get started with BigQuery data in Google Sheets BigQuery documentation BigQuery: Using Connected Sheets Connected Sheets video tutorial Using Connected Sheets for Looker Looker Introduction Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If your application requests any BigQuery Connected Sheets data, it must provide an OAuth 2.0 token that grants bigquery.readonly scope, in addition to the other scopes required for a regular Google Sheets API request.",
+          "For more information, see Choose Google Sheets API scopes ."
+        ]
+      },
+      {
+        "title": "Google Sheets API Overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Sheets API lets you: Create spreadsheets Read and write spreadsheet cell values Update spreadsheet formatting Manage Connected Sheets The following is a list of common terms used in the Sheets API: Spreadsheet The primary object in Google Sheets.",
+          "Home Google Workspace Google Sheets Guides Send feedback Google Sheets API Overview Stay organized with collections Save and categorize content based on your preferences.",
+          "To learn how to configure and run a Sheets API app, try the JavaScript quickstart ."
+        ]
+      },
+      {
+        "title": "Conditional formatting \\_|\\_ Google Sheets \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/sheets/api/guides/conditional-format",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "BatchUpdateSpreadsheetRequest body = new BatchUpdateSpreadsheetRequest () . setRequests ( requests ); result = service . spreadsheets () . batchUpdate ( spreadsheetId , body ) . execute (); System . out . printf ( \"%d cells updated.\" , result . getReplies (). size ()); } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 404 ) { System . out . printf ( \"Spreadsheet not found with id '%s'.\\n\" , spreadsheetId ); } else { throw e ; } } return result ; } } JavaScript sheets/snippets/sheets conditional formatting.js View on GitHub function conditionalFormatting ( spreadsheetId , callback ) { const myRange = { sheetId : 0 , startRowIndex : 1 , endRowIndex : 11 , startColumnIndex : 0 , endColumnIndex : 4 , }; const requests = [{ addConditionalFormatRule : { rule : { ranges : [ myRange ], booleanRule : { condition : { type : 'CUSTOM FORMULA' , values : [{ userEnteredValue : '=GT($D2,median($D$2:$D$11))' }], }, format : { textFormat : { foregroundColor : { red : 0.8 }}, }, }, }, index : 0 , }, }, { addConditionalFormatRule : { rule : { ranges : [ myRange ], booleanRule : { condition : { type : 'CUSTOM FORMULA' , values : [{ userEnteredValue : '=LT($D2,median($D$2:$D$11))' }], }, format : { backgroundColor : { red : 1 , green : 0.4 , blue : 0.4 }, }, }, }, index : 0 , }, }]; const body = { requests , }; try { gapi . client . sheets . spreadsheets . batchUpdate ({ spreadsheetId : spreadsheetId , resource : body , }). then (( response ) = > { const result = response . result ; console . log ( ${ result . replies . length } cells updated. ); if ( callback ) callback ( response ); }); } catch ( err ) { document . getElementById ( 'content' ). innerText = err . message ; return ; } } Node.js sheets/snippets/sheets conditional formatting.js View on GitHub import { GoogleAuth } from 'google-auth-library' ; import { google } from 'googleapis' ; / Applies conditional formatting to a spreadsheet. @param {string} spreadsheetId The ID of the spreadsheet. @return {Promise<object>} The response from the batch update. / async function conditionalFormatting ( spreadsheetId ) { // Authenticate with Google and get an authorized client. const auth = new GoogleAuth ({ scopes : 'https://www.googleapis.com/auth/spreadsheets' , }); // Create a new Sheets API client. const service = google . sheets ({ version : 'v4' , auth }); // The range to apply the conditional formatting to. const myRange = { sheetId : 0 , startRowIndex : 1 , endRowIndex : 11 , startColumnIndex : 0 , endColumnIndex : 4 , }; // The requests to apply conditional formatting. const requests = [ { addConditionalFormatRule : { rule : { ranges : [ myRange ], booleanRule : { condition : { type : 'CUSTOM FORMULA' , values : [{ userEnteredValue : '=GT($D2,median($D$2:$D$11))' }], }, format : { textFormat : { foregroundColor : { red : 0.8 }}, }, }, }, index : 0 , }, }, { addConditionalFormatRule : { rule : { ranges : [ myRange ], booleanRule : { condition : { type : 'CUSTOM FORMULA' , values : [{ userEnteredValue : '=LT($D2,median($D$2:$D$11))' }], }, format : { backgroundColor : { red : 1 , green : 0.4 , blue : 0.4 }, }, }, }, index : 0 , }, }, ]; // Create the batch update request. const resource = { requests , }; // Execute the batch update request. const response = await service . spreadsheets . batchUpdate ({ spreadsheetId , resource , }); console . log ( ${ response . data . replies . length } cells updated. ); return response ; } PHP sheets/snippets/src/SpreadsheetConditionalFormatting.php View on GitHub < ?php use Google\\Client; use Google\\Service\\Drive; use Google\\Service\\Sheets\\BatchUpdateSpreadsheetRequest; use Google\\Service\\Sheets\\Request; function conditionalFormatting($spreadsheetId) { / Load pre-authorized user credentials from the environment.",
+          "Apps Script sheets/api/spreadsheet snippets.gs View on GitHub / conditional formatting @param {string} spreadsheetId spreadsheet ID @returns { } spreadsheet / Snippets . prototype . conditionalFormatting = ( spreadsheetId ) = > { try { const myRange = Sheets . newGridRange (); myRange . sheetId = 0 ; myRange . startRowIndex = 0 ; myRange . endRowIndex = 11 ; myRange . startColumnIndex = 0 ; myRange . endColumnIndex = 4 ; // Request 1 const rule1ConditionalValue = Sheets . newConditionValue (); rule1ConditionalValue . userEnteredValue = \"=GT($D2,median($D$2:$D$11))\" ; const rule1ConditionFormat = Sheets . newCellFormat (); rule1ConditionFormat . textFormat = Sheets . newTextFormat (); rule1ConditionFormat . textFormat . foregroundColor = Sheets . newColor (); rule1ConditionFormat . textFormat . foregroundColor . red = 0.8 ; const rule1Condition = Sheets . newBooleanCondition (); rule1Condition . type = \"CUSTOM FORMULA\" ; rule1Condition . values = [ rule1ConditionalValue ]; const rule1BooleanRule = Sheets . newBooleanRule (); rule1BooleanRule . condition = rule1Condition ; rule1BooleanRule . format = rule1ConditionFormat ; const rule1 = Sheets . newConditionalFormatRule (); rule1 . ranges = [ myRange ]; rule1 . booleanRule = rule1BooleanRule ; const request1 = Sheets . newRequest (); const addConditionalFormatRuleRequest1 = Sheets . newAddConditionalFormatRuleRequest (); addConditionalFormatRuleRequest1 . rule = rule1 ; addConditionalFormatRuleRequest1 . index = 0 ; request1 . addConditionalFormatRule = addConditionalFormatRuleRequest1 ; // Request 2 const rule2ConditionalValue = Sheets . newConditionValue (); rule2ConditionalValue . userEnteredValue = \"=LT($D2,median($D$2:$D$11))\" ; const rule2ConditionFormat = Sheets . newCellFormat (); rule2ConditionFormat . textFormat = Sheets . newTextFormat (); rule2ConditionFormat . textFormat . foregroundColor = Sheets . newColor (); rule2ConditionFormat . textFormat . foregroundColor . red = 1 ; rule2ConditionFormat . textFormat . foregroundColor . green = 0.4 ; rule2ConditionFormat . textFormat . foregroundColor . blue = 0.4 ; const rule2Condition = Sheets . newBooleanCondition (); rule2Condition . type = \"CUSTOM FORMULA\" ; rule2Condition . values = [ rule2ConditionalValue ]; const rule2BooleanRule = Sheets . newBooleanRule (); rule2BooleanRule . condition = rule2Condition ; rule2BooleanRule . format = rule2ConditionFormat ; const rule2 = Sheets . newConditionalFormatRule (); rule2 . ranges = [ myRange ]; rule2 . booleanRule = rule2BooleanRule ; const request2 = Sheets . newRequest (); const addConditionalFormatRuleRequest2 = Sheets . newAddConditionalFormatRuleRequest (); addConditionalFormatRuleRequest2 . rule = rule2 ; addConditionalFormatRuleRequest2 . index = 0 ; request2 . addConditionalFormatRule = addConditionalFormatRuleRequest2 ; // Batch send the requests const requests = [ request1 , request2 ]; const batchUpdate = Sheets . newBatchUpdateSpreadsheetRequest (); batchUpdate . requests = requests ; const response = Sheets .",
+          "Spreadsheets . batchUpdate ( batchUpdate , spreadsheetId , ); return response ; } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } }; Java sheets/snippets/src/main/java/ConditionalFormatting.java View on GitHub import com.google.api.client.googleapis.json.GoogleJsonError ; import com.google.api.client.googleapis.json.GoogleJsonResponseException ; import com.google.api.client.http.HttpRequestInitializer ; import com.google.api.client.http.javanet.NetHttpTransport ; import com.google.api.client.json.gson.GsonFactory ; import com.google.api.services.sheets.v4.Sheets ; import com.google.api.services.sheets.v4.SheetsScopes ; import com.google.api.services.sheets.v4.model.AddConditionalFormatRuleRequest ; import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest ; import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetResponse ; import com.google.api.services.sheets.v4.model.BooleanCondition ; import com.google.api.services.sheets.v4.model.BooleanRule ; import com.google.api.services.sheets.v4.model.CellFormat ; import com.google.api.services.sheets.v4.model.Color ; import com.google.api.services.sheets.v4.model.ConditionValue ; import com.google.api.services.sheets.v4.model.ConditionalFormatRule ; import com.google.api.services.sheets.v4.model.GridRange ; import com.google.api.services.sheets.v4.model.Request ; import com.google.api.services.sheets.v4.model.TextFormat ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.io.IOException ; import java.util.Arrays ; import java.util.Collections ; import java.util.List ; / Class to demonstrate the use of Spreadsheet Conditional Formatting API / public class ConditionalFormatting { / Create conditional formatting. @param spreadsheetId - Id of the spreadsheet. @return updated changes count. @throws IOException - if credentials file not found. / public static BatchUpdateSpreadsheetResponse conditionalFormat ( String spreadsheetId ) throws IOException { / Load pre-authorized user credentials from the environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a9.com",
+      "bigquery.readonly",
+      "com.google.api.client.googleapis.json.GoogleJsonError",
+      "com.google.api.client.googleapis.json.GoogleJsonResponseException",
+      "com.google.api.client.http.HttpRequestInitializer",
+      "com.google.api.client.http.javanet.NetHttpTransport",
+      "com.google.api.client.json.gson.GsonFactory",
+      "com.google.api.services.sheets.v4.model.AddConditionalFormatRuleRequest",
+      "com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest",
+      "com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetResponse",
+      "com.google.api.services.sheets.v4.model.BooleanCondition",
+      "com.google.api.services.sheets.v4.model.BooleanRule",
+      "com.google.api.services.sheets.v4.model.CellFormat",
+      "com.google.api.services.sheets.v4.model.Color",
+      "com.google.api.services.sheets.v4.model.ConditionalFormatRule",
+      "com.google.api.services.sheets.v4.model.ConditionValue",
+      "com.google.api.services.sheets.v4.model.GridRange",
+      "com.google.api.services.sheets.v4.model.Request",
+      "com.google.api.services.sheets.v4.model.TextFormat",
+      "com.google.api.services.sheets.v4.Sheets",
+      "com.google.api.services.sheets.v4.SheetsScopes",
+      "com.google.auth.http.HttpCredentialsAdapter",
+      "com.google.auth.oauth2.GoogleCredentials",
+      "developers.google.com",
+      "formatting.js",
+      "formatting.py",
+      "googleapiclient.discovery",
+      "googleapiclient.errors",
+      "java.io.IOException",
+      "java.util.Arrays",
+      "java.util.Collections",
+      "java.util.List",
+      "schemas.google.com",
+      "snippets.gs",
+      "spreadsheets.batchUpdate",
+      "spreadsheets.get",
+      "spreadsheets.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/sheets/api/guides/migration",
+        "https://developers.google.com/workspace/sheets/api/guides/connected-sheets",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/guides/conditional-format"
+      ]
+    }
+  ]
+}

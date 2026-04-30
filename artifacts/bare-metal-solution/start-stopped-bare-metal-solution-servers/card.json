@@ -1,0 +1,164 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.328Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Start stopped Bare Metal Solution servers",
+  "feature_slug": "start-stopped-bare-metal-solution-servers",
+  "summary": "Allows operators to start a Bare Metal Solution server that has stopped.",
+  "extended_definition": "Allows operators to start a Bare Metal Solution server that has stopped.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+      "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Installing http server sudo yum install httpd sudo systemctl restart httpd Testing curl http://127.0.0.1:80 Create an instance group. gcloud compute instance-groups unmanaged create INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group Add the VM to the instance group. gcloud compute instance-groups unmanaged add-instances INSTANCE GROUP NAME --project= PROJECT ID --zone= ZONE --instances= VM NAME Replace the following: INSTANCE GROUP NAME : the name of the instance group PROJECT ID : the ID of the project ZONE : the zone in which to create the instance group VM NAME : the name of the VM Create an internal passthrough Network Load Balancer: Start your configuration In the Google Cloud console, go to the Load balancing page.",
+          "The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \\ --peer-name bgp-session-name \\ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network.",
+          "Start by logging in as the root user: sudo su - To change the root password, issue the passwd command and follow the prompts: passwd To return to the customeradmin user prompt, exit the root user prompt: exit Remember to store your passwords in a safe place for recovery purposes."
+        ]
+      },
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = \"projects/\" + project + \"/locations/global\" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f \" - { volume . name } \" ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f \"Unable to list bms resources for project { project } : { e } \" ) except PermissionDenied as e : errors . append ( f \"Unable to access folder or project: { e } \" ) return \" \\n \" . join ( output ), \" \\n \" . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( \"Only one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( \"Either one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is not None : parent = f \"organizations/ { ORGANIZATION ID . value } \" else : parent = f \"folders/ { FOLDER ID . value } \" volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( \"=================== Flat list of volumes in the folder or organization\" \" ===================\" ) print ( volumes ) print ( \"=================== List of folders or projects with errors\" \" ===================\" ) print ( errors ) if name == \" main \" : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.",
+          "Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares\" -d \\ '{ \"name\": \"projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME \", \"labels\": { \"nfsKey1\": \"some value\", \"key2\": \"another value\", }, \"requestedSizeGib\": \" SIZE GIB \", \"storageType\": \" STORAGE TYPE \", \"allowedClients\": [ { \"network\": \"projects/ PROJECT ID /locations/ REGION /networks/ NETWORK NAME \", \"allowedClientsCidr\": \" IP ADDRESS RANGE \", \"mountPermissions\": \" MOUNT PERMISSIONS \", \"allowDev\": ALLOW DEV , \"allowSuid\": ALLOW SUID , \"noRootSquash\": ENABLE ROOT SQUASH , } ], }' Because creating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation .",
+          "Copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME ?updateMask=allowed clients%2Clabels\" -d \\ '{ \"name\": \"projects/ PROJECT ID /locations/ REGION /nfsShares/ NFS VOLUME NAME \", \"labels\": { \"newKey\": \"newVal\", }, \"allowedClients\": [ { \"network\": \"projects/ PROJECT ID /locations/ REGION /networks/ NFS VOLUME NAME \", \"allowedClientsCidr\": \" IP ADDRESS RANGE \", \"mountPermissions\": \" MOUNT PERMISSIONS \", \"allowDev\": ALLOW DEV , \"allowSuid\": ALLOW SUID , \"noRootSquash\": ENABLE ROOT SQUASH , } ], }' Because updating an NFS volume takes a while to complete, you can check the status by following the steps in View the status of a long-running operation ."
+        ]
+      },
+      {
+        "title": "\"SAP NetWeaver planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "This host can provide a single point of fortification or audit and can be started and stopped to enable or disable inbound SSH communication from the internet.",
+          "VM instances with local SSDs attached cannot be stopped and then restarted.",
+          "The following guides provide generally useful information about how to deploy VMs: Creating and Starting an Instance Creating Windows Server Instances Creating SQL Server Instances For detailed information and instructions about deploying your SAP NetWeaver system on Compute Engine VMs, see the following: Overview of Linux deployment for SAP NetWeaver Overview of Windows deployment for SAP NetWeaver Automation for SAP NetWeaver deployments Google Cloud provides Terraform configuration files that you can use to automate the deployment of Google Cloud infrastructure for SAP NetWeaver with Linux."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/sap/docs/netweaver-planning-guide"
+      ]
+    }
+  ]
+}

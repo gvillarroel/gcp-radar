@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.476Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Facebook Workplace integration",
+  "feature_slug": "facebook-workplace-integration",
+  "summary": "Dialogflow includes an integration with Facebook Workplace.",
+  "extended_definition": "Dialogflow includes an integration with Facebook Workplace.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+      "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mega agents \\_|\\_ Dialogflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "source_id": "site-iam-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Hangouts Chat, Dialogflow Messenger, Facebook Messenger, and Facebook Workplace integrations each automatically create this special service account.",
+          "If you plan on using any integrations for the mega agent, the automatically created service- project-number @gcp-sa-dialogflow.iam.gserviceaccount.com service account for the mega agent's project must have a role on that project that includes permission to make detect intent calls.",
+          "You can use the Dialogflow Messenger integration as an easy way to do this, or you could setup your desired integration for the mega agent prior to configuring sub-agents."
+        ]
+      },
+      {
+        "title": "Analytics \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/analytics",
+        "source_id": "site-iam-reference",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Common metrics The following common metrics are displayed on multiple chart types: Interactions : For most views, interactions include detect intent request counts via direct API calls and indirect calls via integrations (except for Google Assistant).",
+          "For example: OK PERMISSION DENIED INTERNAL DEADLINE EXCEEDED Integrations view This view charts session and interaction counts for all requests (except Google Assistant) by integration type .",
+          "See: tag consumed api Creating a Dashboard with Stackdriver SLI Monitoring Metrics Limitations The following limitations apply: Google Assistant integration data is not supported."
+        ]
+      },
+      {
+        "title": "Call companion \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "source_id": "site-docs-root",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable call companion: For a new telephony integration: Follow the steps to enable Dialogflow CX Phone Gateway , and check the Enable call companion option for a new conversation profile.",
+          "If you are using Dialogflow CX Messenger , go to the left-hand navigation menu and click Manage > Integrations > Dialogflow CX Messenger > Manage .",
+          "Settings You can customize the following fields for the Dialogflow CX Messenger UI or call companion UI: Company name or title Font Logo (must be stored in a Google Cloud bucket, format: gs://<bucket name>/<object name> ) Text color (select the color or enter hex code) Background color (select the color or enter hex code) User input background color (select the color or enter hex code) Agent response background color (select the color or enter hex code) Customize the UI Select an agent with call companion enabled and click Agent Settings , then the Multimodal tab."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-mega",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/call-companion",
+        "https://docs.cloud.google.com/dialogflow/es/docs/analytics"
+      ]
+    }
+  ]
+}

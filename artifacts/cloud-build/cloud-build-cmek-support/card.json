@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.758Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build",
+  "feature_name": "Cloud Build CMEK support",
+  "feature_slug": "cloud-build-cmek-support",
+  "summary": "Cloud Build added support for customer-managed encryption keys (CMEK) for compliance.",
+  "extended_definition": "Cloud Build added support for customer-managed encryption keys (CMEK) for compliance.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/access-github-from-build",
+      "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+      "https://docs.cloud.google.com/build/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customer-managed encryption keys Cloud Build provides customer-managed encryption keys (CMEK) compliance by default.",
+          "Cloud Build provides CMEK compliance by encrypting the build-time persistent disk (PD) with an ephemeral key that is generated for each build.",
+          "For more information, see CMEK compliance in Cloud Build ."
+        ]
+      },
+      {
+        "title": "\"Accessing GitHub from a build via SSH keys \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/access-github-from-build",
+        "source_id": "site-docs-root-2",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "The keys are often collected from the remote hosts when connecting to them for the first time, but they can also be added manually.",
+          "In your workingdir directory, create a file named known hosts.github and add the public SSH key to this file: ssh-keyscan -t rsa github.com > known hosts.github In the next section when you configure the build, you'll add instructions in the Cloud Build config file to copy the contents of known hosts.github to the known hosts file in Cloud Build's build environment.",
+          "Home Documentation Application development Cloud Build Guides Send feedback Accessing GitHub from a build via SSH keys Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connect to a GitLab Enterprise Edition host \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "source_id": "site-docs-root-2",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Enable customer-managed encryption keys for Secret Manager .",
+          "Optional: If you want to manage the encryption keys used to encrypt the access tokens for your GitLab Enterprise Edition repositories, then go to the Encryption section and choose a Cloud Key Management Service key.",
+          "In the Host details section, select or enter the following information: GitLab host : Select Self-managed GitLab Enterprise Edition ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "hosts.github"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "https://docs.cloud.google.com/build/docs/access-github-from-build"
+      ]
+    }
+  ]
+}

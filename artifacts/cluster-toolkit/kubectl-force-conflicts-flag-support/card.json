@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.460Z",
+  "source_step08_card": "data/step-08/current/products/cluster-toolkit/card.json",
+  "product_name": "Cluster Toolkit",
+  "product_slug": "cluster-toolkit",
+  "feature_name": "kubectl force_conflicts flag support",
+  "feature_slug": "kubectl-force-conflicts-flag-support",
+  "summary": "Cluster Toolkit adds a force_conflicts flag for applying manifests with kubectl.",
+  "extended_definition": "Cluster Toolkit adds a force_conflicts flag for applying manifests with kubectl.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/cluster-deployment-files",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+      "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-cluster-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy an A3 Mega Slurm cluster for ML training \\_|\\_ Cluster Toolkit \\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "To redeploy the cluster using an existing image run the following command from the main Cluster Toolkit directory : ./gcluster deploy -d \\ examples/machine-learning/a3-megagpu-8g/a3mega-slurm-deployment.yaml \\ examples/machine-learning/a3-megagpu-8g/a3mega-slurm-blueprint.yaml \\ --only primary,cluster --auto-approve -w This command is only for redeployments where an image already exists as it only redeploys the cluster and its infrastructure.",
+          "To learn how to cleanly destroy infrastructure and for advanced manual deployment instructions, see the deployment folder located at the root of the Cluster Toolkit directory: DEPLOYMENT FOLDER /instructions.txt Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To go to the main Cluster Toolkit working directory, run the following command. cd cluster-toolkit Set up Cloud Storage bucket Cluster blueprints use Terraform modules to provision Cloud infrastructure."
+        ]
+      },
+      {
+        "title": "Cluster deployment files \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/cluster-deployment-files",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Variable precedence For variables that are specified in the vars section of blueprints and deployment files, the following precedence is enforced: If a variable is specified in both the deployment file and blueprint, the value in the deployment file takes precedence If a variable is specified in the deployment file and the --vars flag of gcluster create or gcluster deploy commands, then the value supplied in the --vars flag takes precedence Any variable that isn't specified in the deployment file or --vars flag, uses the value from the blueprint If terraform backend defaults is set in a deployment file, then it replaces all terraform backend defaults settings in the blueprint.",
+          "Common use cases for using deployment files include the following: Specifying a deployment name that must be unique to each deployment Specifying project id , region , or zone that might vary across deployments Specifying an alternative Terraform remote state configuration What can be specified in a deployment file The following shows the parameters that can be set in a deployment file. vars: project id: PROJECT ID deployment name: DEPLOYMENT NAME region: REGION zone: ZONE terraform backend defaults: type: gcs configuration: bucket: BUCKET NAME Using deployment files Deployment files are supported in Cluster Toolkit v1.29.0 and later.",
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Cluster deployment files Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Cluster deployment overview \\_|\\_ Cluster Toolkit \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-cluster-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get help at the command line For a full list of flags that you can use, run the --help flag on gcluster or on any of the sub-commands. ./gcluster --help ./gcluster deploy --help Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Pro Tip: For a full step-by-step example walkthrough on the setup, deployment, and submission of jobs on a cluster that is created by using Cluster Toolkit, see Deploy a Slurm cluster .",
+          "If you are using any of the example cluster blueprints provided by Cluster Toolkit, you need to set the project ID by using either the --vars flag or --deployment-file (or -d ) flag."
+        ]
+      },
+      {
+        "title": "\"Deploy an A3 Mega GKE cluster for ML training \\_|\\_ Cluster Toolkit \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "To go to the main Cluster Toolkit blueprint's working directory, run the following command from the CLI. cd cluster-toolkit Create a Cloud Storage bucket to store the state of the Terraform deployment: gcloud storage buckets create gs:// BUCKET NAME \\ --default-storage-class = STANDARD \\ --project = PROJECT ID \\ --location = COMPUTE REGION TERRAFORM STATE \\ --uniform-bucket-level-access gcloud storage buckets update gs:// BUCKET NAME --versioning Replace the following variables: BUCKET NAME : the name of the new Cloud Storage bucket.",
+          "Clean up resources created by Cluster Toolkit To avoid recurring charges for the resources used on this page, clean up the resources provisioned by Cluster Toolkit, including the VPC networks and GKE cluster: cd /cluster-toolkit ./gcluster destroy CLUSTER NAME / Replace CLUSTER NAME with the name of your cluster.",
+          "Home Documentation Compute Cluster Toolkit Guides Send feedback Deploy an A3 Mega GKE cluster for ML training Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blueprint.yaml",
+      "deployment.yaml",
+      "instructions.txt",
+      "v1.29.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-cluster",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/cluster-deployment-files",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-cluster-overview",
+        "https://docs.cloud.google.com/cluster-toolkit/docs/deploy/deploy-a3-mega-gke-cluster"
+      ]
+    }
+  ]
+}

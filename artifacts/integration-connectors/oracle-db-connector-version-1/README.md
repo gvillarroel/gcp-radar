@@ -1,0 +1,43 @@
+# Oracle DB connector version 1
+
+Product: Integration Connectors
+Feature slug: `oracle-db-connector-version-1`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Version 1 of the Oracle DB connector is deprecated and support ends on 2024-04-20; deprecated on 2024-04-20.
+
+## Lifecycle
+
+- Latest feature date: 2024-02-19
+- Deprecation date: 2024-04-20
+- Status: deprecation_noted
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- certificate
+- firewall
+- iam
+- key
+- logging
+- permission
+- private
+- role
+- secret
+- security
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/alloydb/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/apachecouchdb/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/cockroachdb/configure)
+- [https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure](https://docs.cloud.google.com/integration-connectors/docs/connectors/db2/configure)

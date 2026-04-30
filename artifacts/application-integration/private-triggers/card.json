@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.493Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Private triggers",
+  "feature_slug": "private-triggers",
+  "summary": "Application Integration now supports private triggers to split large flows into multiple subflows.",
+  "extended_definition": "Application Integration now supports private triggers to split large flows into multiple subflows.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+      "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Private triggers \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Private triggers Private triggers enable you to break large flows into various subflows.",
+          "Private triggers can be invoked from the following flow control tasks: Call Integration For Each Loop For Each Parallel While Loop Quotas and limits The execution of private triggers shares the Maximum cumulative size of all the integration data limit, which is set to 30 MB, with the parent integration.",
+          "Limitation If your private trigger workflow contains any of the following async tasks, then you can't trigger the private workflow from the main workflow with the SYNC execution strategy: Timer task Suspend task Approval task What's next Learn about all tasks and triggers ."
+        ]
+      },
+      {
+        "title": "SAP ERP trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "This field identifies the type of event associated with the incoming event request. { \"event type\" : \"user.created\" , ... // other request fields ... } Select Enable private connectivity for secured connectivity between your backend application and your connection.",
+          "Custom read table functions The connector includes a custom read-table RFC, Z CUSTOM READ TABLE that is similar to the SAP RFC READ TABLE , but with a larger buffer to address the DATA BUFFER EXCEEDED problem and bypass RFC READ TABLE limitations.",
+          "If you want to establish a private connection to your backend systems, select Endpoint attachment from the list, and then select the required endpoint attachment from the Endpoint Attachment list."
+        ]
+      },
+      {
+        "title": "\"All triggers and tasks \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Triggers API trigger Private trigger Cloud Pub/Sub trigger Schedule trigger Salesforce trigger Cloud Scheduler trigger Error Catcher trigger Connector Event triggers Apache Kafka trigger HL7 trigger IBM MQ trigger Jira Cloud trigger Jira Server Data Center trigger HubSpot trigger Rabbit MQ trigger SAP Gateway trigger SAP ERP trigger ServiceNow trigger Solace trigger TIBCO EMS trigger Webhook trigger Zendesk trigger Tasks for Google Cloud services AI Platform - Prediction task Apps Script task Cloud Function task Cloud KMS - decrypt Cloud KMS - encrypt Dataflow - Create Job task Drive - List task Doc AI - Batch Process task Doc AI - Operation task Doc AI - Process task Firestore - Batch Get task Firestore - Batch Write task Firestore - Document Get task Language - Annotate Text task Language - Classify Text task Secret Manager - Access task Sheets - Append task Sheets - Batch Get task Sheets - Get task Translate - Document task Translate - Text task Vertex AI - Predict task Workflows - Execute task Integration tasks Data Mapping task Call Integration task For Each Parallel task For Each Loop task While Loop task Approval task Send Email task Suspend task Timer task JavaScript task Return task Connectors task Call REST Endpoint task Data transformer script task Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "All triggers and tasks This page introduces the various configurable triggers and tasks available in Application Integration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "user.created"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-private-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/all-triggers-tasks",
+        "https://docs.cloud.google.com/application-integration/docs/configure-sap-erp-trigger"
+      ]
+    }
+  ]
+}

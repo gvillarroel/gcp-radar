@@ -1,0 +1,103 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.886Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN cache invalidation by cache tags",
+  "feature_slug": "cloud-cdn-cache-invalidation-by-cache-tags",
+  "summary": "Cloud CDN supports cache-tag-based invalidation with higher request rates and support for all invalidation matchers; Cloud CDN supports cache-tag-based invalidation with improved performance and higher rate limits.",
+  "extended_definition": "Cloud CDN supports cache-tag-based invalidation with higher request rates and support for all invalidation matchers; Cloud CDN supports cache-tag-based invalidation with improved performance and higher rate limits.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+      "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+      "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cache invalidation overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud CDN supports the use of cache tags and invalidation matchers, such as host and URL path, for invalidation requests.",
+          "Invalidation by cache tags Cache tags (or surrogate keys ) let you invalidate content based on arbitrary metadata.",
+          "Home Documentation Networking Cloud CDN Guides Send feedback Cache invalidation overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Invalidate cached content \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content",
+        "source_id": "site-docs-root",
+        "final_score": 31,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify a directory for invalidation, use the following sample JSON request body: { \"path\": \"/images/ \" } To invalidate a directory for only one host, use the following sample JSON request body: { \"host\": \"host1.com\", \"path\": \"/images/ \" } Invalidate by cache tags Console In the Google Cloud console, go to the Cloud CDN page.",
+          "POST https://compute.googleapis.com/compute/beta/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify cache tags for invalidation, use the following sample JSON request body: { \"cacheTags\": [ \"tag1\", \"tag2\" ] } You can specify a single tag or a comma-separated list of tags.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/ URL MAP NAME /invalidateCache Replace the following: PROJECT ID : your Google Cloud console project ID URL MAP NAME : the name of the URL map To specify a URL path for invalidation, use the following sample JSON request body: { \"path\": \"/ \" } To invalidate the URL path for only one host, use the following sample JSON request body: { \"host\": \"host1.com\", \"path\": \"/ \" } See the status of your invalidation request Cloud CDN emits two log lines per invalidation, one when the invalidation is accepted and the other when it's complete."
+        ]
+      },
+      {
+        "title": "Enable dynamic compression \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/dynamic-compression",
+        "source_id": "site-docs-reference-2",
+        "final_score": 27,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To learn about invalidating caches, see Cache invalidation overview .",
+          "For a new backend service, use the create command: gcloud compute backend-services create BACKEND SERVICE NAME \\ --compression-mode=AUTOMATIC For an existing backend service, use the update command: gcloud compute backend-services update BACKEND SERVICE NAME \\ --compression-mode=AUTOMATIC For a new backend bucket, use the create command: gcloud compute backend-buckets create BACKEND BUCKET NAME --compression-mode=AUTOMATIC For an existing backend bucket, use the update command: gcloud compute backend-buckets update BACKEND BUCKET NAME --compression-mode=AUTOMATIC The compression-mode can be one of the following: AUTOMATIC : Automatically uses the best compression based on the Accept-Encoding header sent by the client.",
+          "Use one of the following commands: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET Add the following snippet to the JSON request body: \"compressionMode\": AUTOMATIC The compression-mode can be one of the following: AUTOMATIC (recommended): Automatically uses the best compression based on the Accept-Encoding header sent by the client."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "file.jpg",
+      "host1.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/cache-invalidation-overview",
+        "https://docs.cloud.google.com/cdn/docs/invalidating-cached-content",
+        "https://docs.cloud.google.com/cdn/docs/dynamic-compression"
+      ]
+    }
+  ]
+}

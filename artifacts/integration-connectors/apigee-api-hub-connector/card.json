@@ -1,0 +1,174 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.917Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Apigee API hub connector",
+  "feature_slug": "apigee-api-hub-connector",
+  "summary": "The Apigee API hub connector lets you discover, manage, and govern APIs in Apigee API hub.",
+  "extended_definition": "The Apigee API hub connector lets you discover, manage, and govern APIs in Apigee API hub.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee API hub \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 370,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Apigee API hub The Apigee API hub connector lets you manage, discover, and govern APIs within your organization's portfolio.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in the Apigee API hub, you must re-authorize your Apigee API hub connection.",
+          "System limitations The Apigee API hub connector can process a maximum of 20 transactions per second, per node , and throttles any transactions beyond this limit."
+        ]
+      },
+      {
+        "title": "Connectors API \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.connections REST Resource: v1.projects.locations.connections.connectionSchemaMetadata REST Resource: v1.projects.locations.connections.eventSubscriptions REST Resource: v1.projects.locations.connections.runtimeActionSchemas REST Resource: v1.projects.locations.connections.runtimeEntitySchemas REST Resource: v1.projects.locations.customConnectors REST Resource: v1.projects.locations.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.endpointAttachments REST Resource: v1.projects.locations.global REST Resource: v1.projects.locations.global.customConnectors REST Resource: v1.projects.locations.global.customConnectors.customConnectorVersions REST Resource: v1.projects.locations.global.managedZones REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.providers REST Resource: v1.projects.locations.providers.connectors REST Resource: v1.projects.locations.providers.connectors.versions REST Resource: v1.projects.locations.providers.connectors.versions.eventtypes Service: connectors.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service provides the following discovery document: https://connectors.googleapis.com/$discovery/rest?version=v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://connectors.googleapis.com REST Resource: v1.projects.locations Methods get GET /v1/{name=projects/ /locations/ } Gets information about a location. getRegionalSettings GET /v1/{name=projects/ /locations/ /regionalSettings} GetRegionalSettings gets settings of a region. getRuntimeConfig GET /v1/{name=projects/ /locations/ /runtimeConfig} Gets the runtimeConfig of a location. list GET /v1/{name=projects/ }/locations Lists information about the supported locations for this service. updateRegionalSettings PATCH /v1/{regionalSettings.name=projects/ /locations/ /regionalSettings} Update the settings of a region."
+        ]
+      },
+      {
+        "title": "\"Azure Data Lake Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Azure Data Lake Storage The Azure Data Lake Storage connector lets you connect to Azure Data Lake Storage and use SQL to retrieve and update the Azure Data Lake Storage data.",
+          "Use the Azure Data Lake Storage connection in an integration After you create the connection, it becomes available in both Apigee Integration and Application Integration."
+        ]
+      },
+      {
+        "title": "Amazon S3 \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Use the Amazon S3 connection in an integration After you create the connection, it becomes available in both Apigee Integration and Application Integration.",
+          "To understand how to create and use the Connectors task in Apigee Integration, see Connectors task ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connectors.googleapis.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "v1.projects.locations",
+      "v1.projects.locations.connections",
+      "v1.projects.locations.connections.connectionSchemaMetadata",
+      "v1.projects.locations.connections.eventSubscriptions",
+      "v1.projects.locations.connections.runtimeActionSchemas",
+      "v1.projects.locations.connections.runtimeEntitySchemas",
+      "v1.projects.locations.customConnectors",
+      "v1.projects.locations.customConnectors.customConnectorVersions",
+      "v1.projects.locations.endpointAttachments",
+      "v1.projects.locations.global",
+      "v1.projects.locations.global.customConnectors",
+      "v1.projects.locations.global.customConnectors.customConnectorVersions",
+      "v1.projects.locations.global.managedZones",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.providers",
+      "v1.projects.locations.providers.connectors",
+      "v1.projects.locations.providers.connectors.versions",
+      "v1.projects.locations.providers.connectors.versions.eventtypes"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/reference/rest",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/amazons3/configure"
+      ]
+    }
+  ]
+}

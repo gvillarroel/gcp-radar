@@ -1,0 +1,212 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.806Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Vertex AI Agent Engine Runtime IAM agent identity management",
+  "feature_slug": "vertex-ai-agent-engine-runtime-iam-agent-identity-management",
+  "summary": "Users can use IAM to create agent identities for access and authentication management when using agents on Vertex AI Agent Engine Runtime.",
+  "extended_definition": "Users can use IAM to create agent identities for access and authentication management when using agents on Vertex AI Agent Engine Runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 372,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to use Identity Access Management (IAM) agent identity to provide security and access management features when using agents on Vertex AI Agent Engine Runtime.",
+          "Restrict access to these credentials based on Agent ID (a principal identifier ): Create the secret container gcloud secrets create my-app-oauth-secret Add the actual client secret to Secret Manager gcloud secrets versions add my-app-oauth-secret --data-file=oauth-secret Grant agent identity access to the secret gcloud secrets add-iam-policy-binding my-app-oauth-secret \\ --role='roles/secretmanager.secretAccessor' \\ --member=\"principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID \" \\ Once the secret is stored, the agent can access these credentials during runtime using its principal identifier and standard Google Cloud authentication library automatically as part of Application Default Credential.",
+          "This page covers the following topics: Creating an agent with agent identity : Create an agent such that the agent automatically receives a unique identity when you deploy to Vertex AI Agent Engine Runtime."
+        ]
+      },
+      {
+        "title": "\"Managing access for deployed agents \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then run the following command: gcloud projects get-iam-policy PROJECT ID OR NUMBER \\ --flatten = \"bindings[].members\" \\ --filter = \"bindings.members:serviceAccount: PRINCIPAL \" \\ --format = \"value(bindings.role)\" where PROJECT ID OR NUMBER is the ID or number for your project, and PRINCIPAL is based on the service account that was used when the agent is deployed on Vertex AI Agent Engine.",
+          "GetIamPolicyRequest ( resource = f \"projects/ { project id } \" )) for binding in policy . bindings : for member in binding . members : if principal in member : print ( binding . role ) Where the PRINCIPAL is based on the service account that was used when the agent is deployed on Vertex AI Agent Engine.",
+          "Service accounts If you used service accounts to set up the identity and permissions for your agent , agents that you deploy on Vertex AI Agent Engine run using either the AI Platform Reasoning Engine Service Agent or your custom service account."
+        ]
+      },
+      {
+        "title": "Deploy an agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "source_id": "site-docs-root",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the agent does not depend on any environment variables, you can set it to None : env vars = None If you are using secrets as environment variables with an agent that is configured to use agent identity , grant the secretmanager.versions.access permission (included in the roles/secretmanager.secretAccessor role) to the Vertex AI Service Agent , which has the following format: service- PROJECT NUMBER @gcp-sa-aiplatform.iam.gserviceaccount.com Your configured agent identity is used at runtime, but the Vertex AI Service Agent is used to fetch secrets during deployment.",
+          "Python Object To deploy the agent on Vertex AI, use client.agent engines.create to pass in the local agent object along with any optional configurations : remote agent = client . agent engines . create ( agent = local agent , # Optional. config = { \"requirements\" : requirements , # Optional. \"extra packages\" : extra packages , # Optional. \"gcs dir name\" : gcs dir name , # Optional. \"display name\" : display name , # Optional. \"description\" : description , # Optional. \"labels\" : labels , # Optional. \"env vars\" : env vars , # Optional. \"build options\" : build options , # Optional. \"identity type\" : identity type , # Optional. \"service account\" : service account , # Optional. \"min instances\" : min instances , # Optional. \"max instances\" : max instances , # Optional. \"resource limits\" : resource limits , # Optional. \"container concurrency\" : container concurrency , # Optional \"encryption spec\" : encryption spec , # Optional. \"agent framework\" : agent framework , # Optional. }, ) Deployment takes a few minutes, during which the following steps happen in the background: A bundle of the following artifacts are generated locally: .pkl a pickle file corresponding to local agent. requirements.txt a text file containing the package requirements . dependencies.tar.gz a tar file containing any extra packages .",
+          "The default value is 9 . remote agent = client . agent engines . create ( agent = local agent , config = { \"min instances\" : 1 , \"max instances\" : 10 , \"resource limits\" : { \"cpu\" : \"4\" , \"memory\" : \"8Gi\" }, \"container concurrency\" : 9 , ... other configs } ) For best practices on how to optimize runtime resources, see Optimize and scale Vertex AI Agent Engine Runtime ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Develop and deploy agents on Vertex AI Agent Engine \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the APIs To get the permissions that you need to use Vertex AI Agent Engine, ask your administrator to grant you the following IAM roles on your project: Vertex AI User ( roles/aiplatform.user ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Develop and deploy agents on Vertex AI Agent Engine This page demonstrates how to create and deploy an agent to Vertex AI Agent Engine Runtime using the following agent frameworks: LangGraph LangChain AG2 LlamaIndex Query Pipeline (preview) This quickstart guides you through the following steps: Set up your Google Cloud project.",
+          "Deploy the agent to Vertex AI Agent Engine Runtime."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.iam.gserviceaccount.com",
+      "aiplatform.user",
+      "bindings.members",
+      "bindings.role",
+      "client.agent",
+      "dependencies.tar.gz",
+      "engines.create",
+      "requirements.txt",
+      "secretmanager.secretAccessor",
+      "secretmanager.versions.access",
+      "storage.admin",
+      "system.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/secretmanager.secretAccessor",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/manage/access",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/quickstart"
+      ]
+    }
+  ]
+}

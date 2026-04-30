@@ -1,0 +1,119 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.851Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Datetime and geolocation field detection for structured data imports",
+  "feature_slug": "datetime-and-geolocation-field-detection-for-structured-data-imports",
+  "summary": "Structured data imports can automatically detect datetime and geolocation fields and assign corresponding schema types, with an option to force detected datetime fields to string and geolocation fields to object.",
+  "extended_definition": "Structured data imports can automatically detect datetime and geolocation fields and assign corresponding schema types, with an option to force detected datetime fields to string and geolocation fields to object.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use structured data for advanced website indexing \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Such tags can be used with advanced indexing when you add custom structured data attributes to the data store schema . <!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Your web page title</title> <!-- Robots instructions for crawlers and for Vertex AI Search. --> <meta name=\"robots\" content=\"index,follow\"> <!-- Vertex AI Search can use custom datetime fields to filter, boost, and order. --> <meta name=\"lastModified\" content=\"2024-09-06\"> <!-- Vertex AI Search can filter by category or tags. --> <meta name=\"category\" content=\"archived\"> <meta name=\"tags\" content=\"legacy,interesting,faq\"> <!-- Vertex AI Search can index these common HTML tags. --> <meta name=\"description\" content=\"A description of your web page's content.\"> <meta name=\"author\" content=\"Your name or organization\"> <meta name=\"keywords\" content=\"relevant,keywords,separated,by,commas\"> <link rel=\"canonical\" href=\"https://www.yourwebsite.com/this-page\"> <meta property=\"og:title\" content=\"Your Webpage Title\"> <meta property=\"og:description\" content=\"A description of your webpage's content.\"> <meta property=\"og:image\" content=\"https://www.yourwebsite.com/image.jpg\"> <meta property=\"og:url\" content=\"https://www.yourwebsite.com/this-page\"> <meta property=\"og:type\" content=\"website\"> <meta name=\"twitter:card\" content=\"summary large image\"> <meta name=\"twitter:title\" content=\"Your customized Webpage Title\"> <meta name=\"twitter:description\" content=\"A description of your webpage's content.\"> <meta name=\"twitter:image\" content=\"https://www.yourwebsite.com/image.jpg\"> </head> <body> ... </body> </html> Example use case for PageMaps Suppose you have several web pages that contain food recipes.",
+          "The following is an example of a schema update for a website: { \"type\" : \"object\" , \"properties\" : { \" CUSTOM ATTRIBUTE \" : { \"type\" : \"array\" , \"items\" : { \"type\" : \" DATA TYPE \" , \"searchable\" : true , \"retrievable\" : true , \"indexable\" : true , \"siteSearchMetatagName\" : \" METATAG NAME \" , \"siteSearchStructuredDataSources\" : [ \" STRUCTURED DATA SOURCE 1 \" , \" STRUCTURED DATA SOURCE 2 \" ] } }, \" IDENTIFIER FOR SCHEMA ORG FIELD \" : { \"type\" : \"array\" , \"items\" : { \"type\" : \" DATA TYPE SCHEMA ORG FIELD \" , \"searchable\" : true , \"retrievable\" : true , \"indexable\" : true , \"siteSearchSchemaOrgPaths\" : [ \" root.",
+          "STRUCTURED DATA SOURCE N : an array consisting of one or both of the following structured data sources where the CUSTOM ATTRIBUTE attribute can be found: If the custom attribute can be found as a meta tag, specify METATAGS If the custom attribute can be found as a PageMap attribute, specify PAGEMAP If the custom attribute can be found as a schema.org data, specify SCHEMA ORG If the siteSearchStructuredDataSources field is absent or left empty, the values from all three data sources are merged in an array."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Server behavior defaults to DISABLED . geoSearchQueryDetectionFieldNames[] string Field names used for location-based filtering, where geolocation filters are detected in natural language search queries.",
+          "NaturalLanguageQueryUnderstandingInfo JSON representation { \"extractedFilters\" : string , \"rewrittenQuery\" : string , \"classifiedIntents\" : [ string ] , \"structuredExtractedFilter\" : { object ( StructuredExtractedFilter ) } } Fields extractedFilters string The filters that were extracted from the input query. rewrittenQuery string Rewritten input query minus the extracted filters. classifiedIntents[] string The classified intents from the input query. structuredExtractedFilter object ( StructuredExtractedFilter ) The filters that were extracted from the input query represented in a structured form.",
+          "UserLabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string NaturalLanguageQueryUnderstandingSpec JSON representation { \"filterExtractionCondition\" : enum ( FilterExtractionCondition ) , \"geoSearchQueryDetectionFieldNames\" : [ string ] , \"extractedFilterBehavior\" : enum ( ExtractedFilterBehavior ) , \"allowedFieldNames\" : [ string ] } Fields filterExtractionCondition enum ( FilterExtractionCondition ) The condition under which filter extraction should occur."
+        ]
+      },
+      {
+        "title": "\"Create a custom recommendations data store \\_|\\_ Vertex AI Search \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "This flag cannot be specified if data store.starting schema is specified. / // const skipDefaultSchemaCreation = true // Imports the Discoveryengine library const { DataStoreServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1 ; // Instantiates a client const discoveryengineClient = new DataStoreServiceClient (); async function callCreateDataStore () { // Construct request const request = { parent , dataStore , dataStoreId , }; // Run request const [ operation ] = await discoveryengineClient . createDataStore ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callCreateDataStore (); Import documents / This snippet has been automatically generated and should be regarded as a code template only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "image.jpg",
+      "schema.org",
+      "store.starting"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/add-website-metadata",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    }
+  ]
+}

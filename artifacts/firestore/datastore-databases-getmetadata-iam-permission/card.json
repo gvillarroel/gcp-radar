@@ -1,0 +1,297 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "datastore.databases.getMetadata IAM permission",
+  "feature_slug": "datastore-databases-getmetadata-iam-permission",
+  "summary": "The datastore.databases.getMetadata permission can be included in custom IAM roles for Firestore.",
+  "extended_definition": "The datastore.databases.getMetadata permission can be included in custom IAM roles for Firestore.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/access/iam",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Firestore roles and permissions | Identity and Access Management (IAM) | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "source_id": "feature-recovery-http",
+        "final_score": 321,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warning: Do not grant service agent roles to any principals except service agents . storage.buckets.get storage.objects.create storage.objects.delete storage.objects.get storage.objects.list Firestore permissions Permission Included in roles datastore. backupSchedules. create Owner ( roles/ owner ) Editor ( roles/ editor ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Backup Schedules Admin ( roles/ datastore.backupSchedulesAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore. backupSchedules. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Backup Schedules Admin ( roles/ datastore.backupSchedulesAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore.backupSchedules.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Backup Schedules Admin ( roles/ datastore.backupSchedulesAdmin ) Cloud Datastore Backup Schedules Viewer ( roles/ datastore.backupSchedulesViewer ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) Support User ( roles/ iam.supportUser ) datastore.backupSchedules.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Cloud Datastore Backup Schedules Admin ( roles/ datastore.backupSchedulesAdmin ) Cloud Datastore Backup Schedules Viewer ( roles/ datastore.backupSchedulesViewer ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) datastore. backupSchedules. update Owner ( roles/ owner ) Editor ( roles/ editor ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Backup Schedules Admin ( roles/ datastore.backupSchedulesAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore.backups.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Backups Admin ( roles/ datastore.backupsAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore.backups.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Firebase Editor ( roles/ firebase.editor ) Firebase Viewer ( roles/ firebase.viewer ) Cloud Datastore Backups Admin ( roles/ datastore.backupsAdmin ) Cloud Datastore Backups Viewer ( roles/ datastore.backupsViewer ) Cloud Datastore Owner ( roles/ datastore.owner ) Cloud Datastore Restore Admin ( roles/ datastore.restoreAdmin ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Firebase Develop Viewer ( roles/ firebase.developViewer ) Databases Admin ( roles/ iam.databasesAdmin ) Support User ( roles/ iam.supportUser ) datastore.backups.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Datastore Admin ( roles/ datastore.admin ) Datastore Editor ( roles/ datastore.editor ) Firebase Admin ( roles/ firebase.admin ) Firebase Editor ( roles/ firebase.editor ) Firebase Viewer ( roles/ firebase.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Cloud Datastore Backups Admin ( roles/ datastore.backupsAdmin ) Cloud Datastore Backups Viewer ( roles/ datastore.backupsViewer ) Cloud Datastore Owner ( roles/ datastore.owner ) Cloud Datastore Restore Admin ( roles/ datastore.restoreAdmin ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Firebase Develop Viewer ( roles/ firebase.developViewer ) Databases Admin ( roles/ iam.databasesAdmin ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) datastore. backups. restoreDatabase Owner ( roles/ owner ) Datastore Admin ( roles/ datastore.admin ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Owner ( roles/ datastore.owner ) Cloud Datastore Restore Admin ( roles/ datastore.restoreAdmin ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore.databases.bulkDelete Owner ( roles/ owner ) Datastore Admin ( roles/ datastore.admin ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Bulk Admin ( roles/ datastore.bulkAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) datastore.databases.clone Owner ( roles/ owner ) Datastore Admin ( roles/ datastore.admin ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Clone Admin ( roles/ datastore.cloneAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Firebase Develop Admin ( roles/ firebase.developAdmin ) datastore.databases.create Owner ( roles/ owner ) Datastore Admin ( roles/ datastore.admin ) Firebase Admin ( roles/ firebase.admin ) Cloud Datastore Clone Admin ( roles/ datastore.cloneAdmin ) Cloud Datastore Owner ( roles/ datastore.owner ) Cloud Datastore Restore Admin ( roles/ datastore.restoreAdmin ) Firebase Develop Admin ( roles/ firebase.developAdmin ) Databases Admin ( roles/ iam.databasesAdmin ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Firestore roles Role Permissions Datastore Admin ( roles/ datastore.admin ) Admin role for datastore appengine.applications.get databasesconsole.locations.* databasesconsole.locations.get databasesconsole. locations. list databasesconsole. studioQueries. search datastore.* datastore. backupSchedules. create datastore. backupSchedules. delete datastore.backupSchedules.get datastore.backupSchedules.list datastore. backupSchedules. update datastore.backups.delete datastore.backups.get datastore.backups.list datastore. backups. restoreDatabase datastore.databases.bulkDelete datastore.databases.clone datastore.databases.create datastore. databases. createTagBinding datastore.databases.delete datastore. databases. deleteTagBinding datastore.databases.export datastore.databases.get datastore. databases. getMetadata datastore.databases.import datastore.databases.list datastore. databases. listEffectiveTags datastore. databases. listTagBindings datastore.databases.update datastore.entities.allocateIds datastore.entities.create datastore.entities.delete datastore.entities.get datastore.entities.list datastore.entities.update datastore.insights.get datastore. keyVisualizerScans. get datastore. keyVisualizerScans. list datastore.locations.get datastore.locations.list datastore.namespaces.get datastore.namespaces.list datastore.operations.cancel datastore.operations.delete datastore.operations.get datastore.operations.list datastore.schemas.create datastore.schemas.delete datastore.schemas.get datastore.schemas.list datastore.schemas.update datastore.statistics.get datastore.statistics.list datastore.userCreds.create datastore.userCreds.delete datastore.userCreds.get datastore.userCreds.list datastore.userCreds.update resourcemanager.projects.get resourcemanager.projects.list Datastore Editor ( roles/ datastore.editor ) Editor role for datastore appengine.applications.get databasesconsole.locations.* databasesconsole.locations.get databasesconsole. locations. list databasesconsole. studioQueries. search datastore.backupSchedules.* datastore. backupSchedules. create datastore. backupSchedules. delete datastore.backupSchedules.get datastore.backupSchedules.list datastore. backupSchedules. update datastore.backups.delete datastore.backups.get datastore.backups.list datastore.databases.get datastore. databases. getMetadata datastore.databases.list datastore. databases. listEffectiveTags datastore. databases. listTagBindings datastore.databases.update datastore.entities.* datastore.entities.allocateIds datastore.entities.create datastore.entities.delete datastore.entities.get datastore.entities.list datastore.entities.update datastore.insights.get datastore.keyVisualizerScans.* datastore. keyVisualizerScans. get datastore. keyVisualizerScans. list datastore.namespaces.* datastore.namespaces.get datastore.namespaces.list datastore.operations.get datastore.operations.list datastore.schemas.* datastore.schemas.create datastore.schemas.delete datastore.schemas.get datastore.schemas.list datastore.schemas.update datastore.statistics.* datastore.statistics.get datastore.statistics.list datastore.userCreds.* datastore.userCreds.create datastore.userCreds.delete datastore.userCreds.get datastore.userCreds.list datastore.userCreds.update resourcemanager.projects.get resourcemanager.projects.list Cloud Datastore User ( roles/ datastore.user ) Provides read/write access to data in a Datastore database.",
+          "Lowest-level resources where you can grant this role: Project appengine.applications.get databasesconsole.locations.* databasesconsole.locations.get databasesconsole. locations. list databasesconsole. studioQueries.* databasesconsole. studioQueries. create databasesconsole. studioQueries. delete databasesconsole. studioQueries. get databasesconsole. studioQueries. list databasesconsole. studioQueries. search databasesconsole. studioQueries. update datastore.* datastore. backupSchedules. create datastore. backupSchedules. delete datastore.backupSchedules.get datastore.backupSchedules.list datastore. backupSchedules. update datastore.backups.delete datastore.backups.get datastore.backups.list datastore. backups. restoreDatabase datastore.databases.bulkDelete datastore.databases.clone datastore.databases.create datastore. databases. createTagBinding datastore.databases.delete datastore. databases. deleteTagBinding datastore.databases.export datastore.databases.get datastore. databases. getMetadata datastore.databases.import datastore.databases.list datastore. databases. listEffectiveTags datastore. databases. listTagBindings datastore.databases.update datastore.entities.allocateIds datastore.entities.create datastore.entities.delete datastore.entities.get datastore.entities.list datastore.entities.update datastore.insights.get datastore. keyVisualizerScans. get datastore. keyVisualizerScans. list datastore.locations.get datastore.locations.list datastore.namespaces.get datastore.namespaces.list datastore.operations.cancel datastore.operations.delete datastore.operations.get datastore.operations.list datastore.schemas.create datastore.schemas.delete datastore.schemas.get datastore.schemas.list datastore.schemas.update datastore.statistics.get datastore.statistics.list datastore.userCreds.create datastore.userCreds.delete datastore.userCreds.get datastore.userCreds.list datastore.userCreds.update resourcemanager.projects.get resourcemanager.projects.list Cloud Datastore Restore Admin ( roles/ datastore.restoreAdmin ) Restore into Cloud Datastore Databases from Cloud Datastore Backups. datastore.backups.get datastore.backups.list datastore. backups. restoreDatabase datastore.databases.create datastore. databases. getMetadata datastore.databases.list datastore.operations.get datastore.operations.list Cloud Datastore User Creds Admin ( roles/ datastore.userCredsAdmin ) Manage user creds in Cloud Datastore. datastore. databases. getMetadata datastore.databases.list datastore.userCreds.* datastore.userCreds.create datastore.userCreds.delete datastore.userCreds.get datastore.userCreds.list datastore.userCreds.update Cloud Datastore User Creds Viewer ( roles/ datastore.userCredsViewer ) Read access to user creds in Cloud Datastore. datastore.userCreds.get datastore.userCreds.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      },
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Database permission name Description datastore.databases.get Begin or rollback a transaction. datastore.databases.getMetadata Read metadata from a database. datastore.databases.list List databases in a project. datastore.databases.create Create a database. datastore.databases.update Update a database. datastore.databases.delete Delete a database. datastore.databases.clone Clone a database. datastore.databases.createTagBinding Create a tag binding for a database. datastore.databases.deleteTagBinding Delete a tag binding for a database. datastore.databases.listTagBindings List all tag bindings for a database. datastore.databases.listEffectiveTagBindings List effective tag bindings for a database.",
+          "Role Permissions Description roles/datastore.owner appengine.applications.get datastore. resourcemanager.projects.get resourcemanager.projects.list Full access to Firestore. roles/datastore.user appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities. datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list Read/write access to data in a Firestore database.",
+          "Required permissions for API methods The following table lists the permissions that the caller must have to perform each action: Method Required permissions projects.databases.MongoDBCompatible ListDatabases datastore.databases.getMetadata ListIndexes datastore.schemas.list Find datastore.entities.get datastore.entities.list Aggregate datastore.entities.get datastore.entities.list GetMore The same permissions that were required by the call that created the cursor."
+        ]
+      },
+      {
+        "title": "Identity and Access Management (IAM) | Datastore | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/access/iam",
+        "source_id": "feature-recovery-http",
+        "final_score": 266,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ditujukan untuk developer aplikasi dan akun layanan. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list datastore.insights.get Akses baca ke semua resource database mode Datastore. roles/datastore.importExportAdmin appengine.applications.get datastore.databases.export datastore.databases.getMetadata datastore.databases.import datastore.operations.cancel datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Akses penuh untuk mengelola impor dan ekspor. roles/datastore.bulkAdmin resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.databases.bulkDelete datastore.operations.cancel datastore.operations.get datastore.operations.list Akses penuh untuk mengelola operasi massal. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas.* datastore.operations.get datastore.operations.list resourcemanager.projects.get resourcemanager.projects.list Akses penuh untuk mengelola definisi indeks. roles/datastore.keyVisualizerViewer datastore.databases.getMetadata datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list resourcemanager.projects.get resourcemanager.projects.list Akses penuh ke pemindaian Key Visualizer. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Akses baca ke jadwal pencadangan di database mode Datastore. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Akses penuh ke jadwal pencadangan di database mode Datastore. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Akses baca ke informasi cadangan di lokasi mode Datastore. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Akses penuh ke cadangan di lokasi mode Datastore. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Kemampuan untuk memulihkan cadangan mode Datastore ke dalam database baru.",
+          "Untuk akses Admin Datastore , berikan peran appengine.appAdmin kepada akun utama. roles/datastore.user appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.* datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list Akses baca/tulis ke data dalam database mode Datastore.",
+          "Peran ini juga memberikan kemampuan untuk membuat database baru, tidak harus dengan melakukan clone. roles/datastore.statisticsViewer resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.insights.get datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list datastore.statistics.list datastore.statistics.get Akses baca ke Insight, Statistik, dan pemindaian Key Visualizer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.appAdmin",
+      "appengine.applications.get",
+      "databasesconsole.locations",
+      "databasesconsole.locations.get",
+      "datastore.admin",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.bulkAdmin",
+      "datastore.cloneAdmin",
+      "datastore.databases.bulkDelete",
+      "datastore.databases.clone",
+      "datastore.databases.create",
+      "datastore.databases.createTagBinding",
+      "datastore.databases.delete",
+      "datastore.databases.deleteTagBinding",
+      "datastore.databases.export",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.import",
+      "datastore.databases.list",
+      "datastore.databases.listEffectiveTagBindings",
+      "datastore.databases.listTagBindings",
+      "datastore.databases.update",
+      "datastore.editor",
+      "datastore.entities",
+      "datastore.entities.allocateIds",
+      "datastore.entities.create",
+      "datastore.entities.delete",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.entities.update",
+      "datastore.importExportAdmin",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.keyVisualizerScans",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.keyVisualizerViewer",
+      "datastore.locations.get",
+      "datastore.locations.list",
+      "datastore.namespaces",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.cancel",
+      "datastore.operations.delete",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.owner",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.create",
+      "datastore.schemas.delete",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.schemas.update",
+      "datastore.statistics",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.statisticsViewer",
+      "datastore.user",
+      "datastore.userCreds",
+      "datastore.userCreds.create",
+      "datastore.userCreds.delete",
+      "datastore.userCreds.get",
+      "datastore.userCreds.list",
+      "datastore.userCreds.update",
+      "datastore.userCredsAdmin",
+      "datastore.userCredsViewer",
+      "datastore.viewer",
+      "firebase.admin",
+      "firebase.developAdmin",
+      "firebase.developViewer",
+      "firebase.editor",
+      "firebase.viewer",
+      "iam.databasesAdmin",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "projects.databases.MongoDBCompatible",
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.bulkAdmin",
+      "roles/datastore.importExportAdmin",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.keyVisualizerViewer",
+      "roles/datastore.owner",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.statisticsViewer",
+      "roles/datastore.user",
+      "roles/datastore.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/firestore",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/datastore/docs/access/iam"
+      ]
+    }
+  ]
+}

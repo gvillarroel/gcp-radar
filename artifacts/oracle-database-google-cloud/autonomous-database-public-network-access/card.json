@@ -1,0 +1,224 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.889Z",
+  "source_step08_card": "data/step-08/current/products/oracle-database-google-cloud/card.json",
+  "product_name": "Oracle Database@Google Cloud",
+  "product_slug": "oracle-database-google-cloud",
+  "feature_name": "Autonomous Database public network access",
+  "feature_slug": "autonomous-database-public-network-access",
+  "summary": "Autonomous Databases can be configured with public network access in Google Cloud.",
+  "extended_definition": "Autonomous Databases can be configured with public network access in Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+      "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.autonomousDatabases \\_|\\_ Oracle Database\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "source_id": "site-api-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource: AutonomousDatabase JSON representation AutonomousDatabaseProperties JSON representation DatabaseEdition LicenseType MaintenanceScheduleType AutonomousDatabaseApex JSON representation State AutonomousDatabaseConnectionStrings JSON representation AllConnectionStrings JSON representation DatabaseConnectionStringProfile JSON representation ConsumerGroup HostFormat Protocol SessionMode SyntaxFormat TLSAuthentication AutonomousDatabaseConnectionUrls JSON representation AutonomousDatabaseStandbySummary JSON representation LocalDisasterRecoveryType DataSafeState DatabaseManagementState OpenMode OperationsInsightsState PermissionLevel RefreshableMode RefreshableState Role ScheduledOperationDetails JSON representation TimeOfDay JSON representation EncryptionKey JSON representation Provider EncryptionKeyHistoryEntry JSON representation SourceConfig JSON representation Methods Resource: AutonomousDatabase Details of the Autonomous Database resource. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/ JSON representation { \"name\" : string , \"database\" : string , \"displayName\" : string , \"entitlementId\" : string , \"adminPassword\" : string , \"properties\" : { object ( AutonomousDatabaseProperties ) } , \"labels\" : { string : string , ... } , \"network\" : string , \"cidr\" : string , \"odbNetwork\" : string , \"odbSubnet\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"peerAutonomousDatabases\" : [ string ] , \"createTime\" : string , \"disasterRecoverySupportedLocations\" : [ string ] } Fields name string Identifier.",
+          "The source Autonomous Database is configured while creating the Peer Autonomous Database and can't be updated after creation. peerAutonomousDatabases[] string Output only.",
+          "JSON representation { \"ocid\" : string , \"computeCount\" : number , \"cpuCoreCount\" : integer , \"dataStorageSizeTb\" : integer , \"dataStorageSizeGb\" : integer , \"dbWorkload\" : enum ( DBWorkload ) , \"dbEdition\" : enum ( DatabaseEdition ) , \"characterSet\" : string , \"nCharacterSet\" : string , \"privateEndpointIp\" : string , \"privateEndpointLabel\" : string , \"dbVersion\" : string , \"isAutoScalingEnabled\" : boolean , \"isStorageAutoScalingEnabled\" : boolean , \"licenseType\" : enum ( LicenseType ) , \"customerContacts\" : [ { object ( CustomerContact ) } ] , \"secretId\" : string , \"vaultId\" : string , \"maintenanceScheduleType\" : enum ( MaintenanceScheduleType ) , \"mtlsConnectionRequired\" : boolean , \"backupRetentionPeriodDays\" : integer , \"actualUsedDataStorageSizeTb\" : number , \"allocatedStorageSizeTb\" : number , \"apexDetails\" : { object ( AutonomousDatabaseApex ) } , \"lifecycleDetails\" : string , \"state\" : enum ( State ) , \"autonomousContainerDatabaseId\" : string , \"availableUpgradeVersions\" : [ string ] , \"connectionStrings\" : { object ( AutonomousDatabaseConnectionStrings ) } , \"connectionUrls\" : { object ( AutonomousDatabaseConnectionUrls ) } , \"failedDataRecoveryDuration\" : string , \"memoryTableGbs\" : integer , \"isLocalDataGuardEnabled\" : boolean , \"localAdgAutoFailoverMaxDataLossLimit\" : integer , \"localStandbyDb\" : { object ( AutonomousDatabaseStandbySummary ) } , \"memoryPerOracleComputeUnitGbs\" : integer , \"localDisasterRecoveryType\" : enum ( LocalDisasterRecoveryType ) , \"dataSafeState\" : enum ( DataSafeState ) , \"databaseManagementState\" : enum ( DatabaseManagementState ) , \"openMode\" : enum ( OpenMode ) , \"operationsInsightsState\" : enum ( OperationsInsightsState ) , \"peerDbIds\" : [ string ] , \"permissionLevel\" : enum ( PermissionLevel ) , \"privateEndpoint\" : string , \"refreshableMode\" : enum ( RefreshableMode ) , \"refreshableState\" : enum ( RefreshableState ) , \"role\" : enum ( Role ) , \"scheduledOperationDetails\" : [ { object ( ScheduledOperationDetails ) } ] , \"sqlWebDeveloperUrl\" : string , \"supportedCloneRegions\" : [ string ] , \"usedDataStorageSizeTbs\" : integer , \"ociUrl\" : string , \"totalAutoBackupStorageSizeGbs\" : number , \"nextLongTermBackupTime\" : string , \"dataGuardRoleChangedTime\" : string , \"disasterRecoveryRoleChangedTime\" : string , \"maintenanceBeginTime\" : string , \"maintenanceEndTime\" : string , \"allowlistedIps\" : [ string ] , \"encryptionKey\" : { object ( EncryptionKey ) } , \"encryptionKeyHistoryEntries\" : [ { object ( EncryptionKeyHistoryEntry ) } ] , \"serviceAgentEmail\" : string , \"arePrimaryAllowlistedIpsUsed\" : boolean } Fields ocid string Output only."
+        ]
+      },
+      {
+        "title": "\"Create databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API To create an Autonomous AI Database, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabases/ DATABASE ID \" -d \\ '{ \"database\": \" DATABASE NAME \", \"displayName\": \" DISPLAY NAME \", \"admin password\": \" PASSWORD \", \"odb subnet\": \"projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \", \"properties\": { \"licenseType\": \" LICENSE TYPE \", \"computeCount\": COMPUTE COUNT , \"dbVersion\": \" DATABASE VERSION \", \"dbWorkload\": \" WORKLOAD TYPE \", \"dataStorageSizeTb\": STORAGE SIZE } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the database.",
+          "In the Networking section, choose an access type to connect to the Autonomous AI Database: Secure access from everywhere : Selecting this access type allows public network access using database credentials and a connection wallet.",
+          "Operation ; public class AsyncCreateAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncCreateAutonomousDatabase (); } public static void asyncCreateAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { CreateAutonomousDatabaseRequest request = CreateAutonomousDatabaseRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setAutonomousDatabaseId ( \"autonomousDatabaseId-1972693114\" ) . setAutonomousDatabase ( AutonomousDatabase . newBuilder (). build ()) . setRequestId ( \"requestId693933066\" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . createAutonomousDatabaseCallable (). futureCall ( request ); // Do something."
+        ]
+      },
+      {
+        "title": "\"Delete databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operation ; public class AsyncDeleteAutonomousDatabase { public static void main ( String [] args ) throws Exception { asyncDeleteAutonomousDatabase (); } public static void asyncDeleteAutonomousDatabase () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { DeleteAutonomousDatabaseRequest request = DeleteAutonomousDatabaseRequest . newBuilder () . setName ( AutonomousDatabaseName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[AUTONOMOUS DATABASE]\" ) . toString ()) . setRequestId ( \"requestId693933066\" ) . build (); ApiFuture<Operation> future = oracleDatabaseClient . deleteAutonomousDatabaseCallable (). futureCall ( request ); // Do something. future . get (); } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.",
+          "The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000). / // const requestId = 'abc123' // Imports the Oracledatabase library const { OracleDatabaseClient } = require ( ' @google-cloud/oracledatabase ' ). v1 ; // Instantiates a client const oracledatabaseClient = new OracleDatabaseClient (); async function callDeleteAutonomousDatabase () { // Construct request const request = { name , }; // Run request const [ operation ] = await oracledatabaseClient . deleteAutonomousDatabase ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callDeleteAutonomousDatabase (); PHP use Google\\ApiCore\\ApiException; use Google\\ApiCore\\OperationResponse; use Google\\Cloud\\OracleDatabase\\V1\\Client\\OracleDatabaseClient; use Google\\Cloud\\OracleDatabase\\V1\\DeleteAutonomousDatabaseRequest; use Google\\Rpc\\Status; / Deletes a single Autonomous Database. @param string $formattedName The name of the resource in the following format: projects/{project}/locations/{location}/autonomousDatabases/{autonomous database}.",
+          "C# using Google.Cloud.OracleDatabase.V1 ; using Google.LongRunning ; using Google.Protobuf.WellKnownTypes ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for DeleteAutonomousDatabaseAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task DeleteAutonomousDatabaseAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient ."
+        ]
+      },
+      {
+        "title": "\"View backups for an Autonomous AI Database \\_|\\_ Oracle Database at Google\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/backup-database",
+        "source_id": "site-docs-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OracleDatabaseClient ; public class AsyncListAutonomousDatabaseBackups { public static void main ( String [] args ) throws Exception { asyncListAutonomousDatabaseBackups (); } public static void asyncListAutonomousDatabaseBackups () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient . create ()) { ListAutonomousDatabaseBackupsRequest request = ListAutonomousDatabaseBackupsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setFilter ( \"filter-1274492040\" ) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<AutonomousDatabaseBackup> future = oracleDatabaseClient . listAutonomousDatabaseBackupsPagedCallable (). futureCall ( request ); // Do something. for ( AutonomousDatabaseBackup element : future . get (). iterateAll ()) { // doThingsWith(element); } } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.",
+          "C# using Google.Api.Gax ; using Google.Cloud.OracleDatabase.V1 ; using System ; using System.Threading.Tasks ; public sealed partial class GeneratedOracleDatabaseClientSnippets { /// <summary>Snippet for ListAutonomousDatabaseBackupsAsync</summary> /// <remarks> /// This snippet has been automatically generated and should be regarded as a code template only. /// It will require modifications to work: /// - It may require correct/in-range values for request initialization. /// - It may require specifying regional endpoints when creating the service client as shown in /// https://cloud.google.com/dotnet/docs/reference/help/client-configuration#endpoint. /// </remarks> public async Task ListAutonomousDatabaseBackupsAsync () { // Create client OracleDatabaseClient oracleDatabaseClient = await OracleDatabaseClient .",
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::OracleDatabase::V1::AutonomousDatabaseBackup. p item end end What's next Restore an Autonomous AI Database from backup Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "oracledatabase.googleapis.com",
+      "projects.locations.autonomousDatabases"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/delete-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/backup-database"
+      ]
+    }
+  ]
+}

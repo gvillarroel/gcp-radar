@@ -1,0 +1,254 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Custom Resource Definition certificate authority bundle recommendations",
+  "feature_slug": "custom-resource-definition-certificate-authority-bundle-recommendations",
+  "summary": "GKE provides insights and recommendations to identify clusters whose Custom Resource Definitions contain an invalid or malformed Certificate Authority bundle.",
+  "extended_definition": "GKE provides insights and recommendations to identify clusters whose Custom Resource Definitions contain an invalid or malformed Certificate Authority bundle.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Troubleshoot CRDs with an invalid CA bundle \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "source_id": "site-iam-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "The result should look something like the following: spec : conversion : webhook : clientConfig : caBundle : < base64-encoded-ca-bundle > Apply the corrected CRD: kubectl apply -f <corrected-crd-file.yaml> Restore your custom resources: kubectl apply -f backup.yaml What's next Optimize your usage of GKE with insights and recommendations Troubleshooting common issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Run the following command to export the existing resources: kubectl get <crd-name> -o yaml > backup.yaml Delete the existing CRD: kubectl delete crd <crd-name> Ensure that the caBundle field of the CRD contains a well-formed, base-64-encoded PEM certificate.",
+          "However, if a CRD contains an invalid or malformed Certificate Authority (CA) bundle within its conversion webhook configuration spec.conversion.webhook.clientConfig.caBundle , it can disrupt cluster operations."
+        ]
+      },
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "To review your Azure configuration to check whether there are any public IP addresses configured on your GKE on Azure cluster, run the following command: az network public-ip list -g CLUSTER RESOURCE GROUP NAME -o tsv Disallow SSH to the cluster nodes Even though GKE on Azure doesn't allow traffic on port 22 on any node by default, customers can update NetworkSecurityGroup rules to node pools, enabling inbound SSH traffic from the public internet.",
+          "As the firewall is a VPC-level allow list, the following types of resources might have been network reachable during the time period: Customer applications running on GKE worker nodes accessible through public IPs."
+        ]
+      },
+      {
+        "title": "\"Access private registries with private CA certificates \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify that your cluster can access the private registry Run the following command: gcloud container clusters describe CLUSTER NAME \\ --location = LOCATION \\ --flatten = \"nodePoolDefaults.nodeConfigDefaults.containerdConfig\" The output is similar to the following: registryHosts containerdConfig: registryHosts: - server: example.io hosts: - host: example.mirror.io capabilities: - \"HOST CAPABILITY PULL\" - \"HOST CAPABILITY RESOLVE\" ca: - gcpSecretManagerSecretUri: projects/123456789012/secrets/example-secret-name/versions/1 privateRegistryAccessConfig containerdConfig: privateRegistryAccessConfig: certificateAuthorityDomainConfig: - fqdns: - 203.0.113.105 gcpSecretManagerCertificateConfig: secretUri: projects/123456789012/secrets/example-secret-name/versions/1 enabled: true Deploy a workload that accesses a private image In this section, you deploy a static Pod that references an image from your private registry.",
+          "Or Internal error pulling certificate \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \" from GSM: .... privateRegistryAccessConfig Query the logs with following filter. resource.type=\"gce instance\" textPayload:\"Installed certificate \\\\\\\"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \\\\\\\"\" If your certificate installation succeeded, the output is similar to the following: \"Installed certificate \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \"\" If your certificate installation failed, the output is similar to the following: \"Failed to install certificate \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \"\" Best practices We recommend that you use the following best practices when you use this feature: Don't use aliases for Secret Manager secret versions.",
+          "Go to the Logs Explorer page in the Google Cloud console: Go to Logs Explorer Search logs with specific queries: registryHosts Query the logs with following filter. resource.type=\"gce instance\" (textPayload:\"Successfully fetched secret\" OR textPayload:\"error pulling certificate\") If your certificate installation succeeded, you could find following log entry: Successfully fetched secret \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \" Successfully wrote secret payload for \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \" If your certificate installation failed, you could find following log entry: User error pulling certificate \"projects/ PROJECT NUMBER /secrets/ SECRET NAME /versions/ SECRET VERSION \" from GSM: ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backup.yaml",
+      "example.io",
+      "example.mirror.io",
+      "file.yaml",
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "resource.type",
+      "restriction.kubernetes.io",
+      "secretmanager.secrets.get",
+      "secretmanager.secrets.list",
+      "secretmanager.versions.access",
+      "secretmanager.versions.get",
+      "secretmanager.versions.list",
+      "spec.conversion.webhook.clientConfig.caBundle"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/crd-with-invalid-caBundle",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/access-private-registries-private-certificates"
+      ]
+    }
+  ]
+}

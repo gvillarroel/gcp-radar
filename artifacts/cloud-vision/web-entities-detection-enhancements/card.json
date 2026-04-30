@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "Web entities detection enhancements",
+  "feature_slug": "web-entities-detection-enhancements",
+  "summary": "Web entities detection accepts geotag hints and returns best-guess labels for image contents; Web entities detection accepts geotag hints and returns best-guess labels for image contents.",
+  "extended_definition": "Web entities detection accepts geotag hints and returns best-guess labels for image contents; Web entities detection accepts geotag hints and returns best-guess labels for image contents.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1",
+      "https://docs.cloud.google.com/vision/docs/detecting-crop-hints",
+      "https://docs.cloud.google.com/vision/docs/python-client-migration",
+      "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrating to Python Client Library v0.25.1 \\_|\\_ Cloud Vision API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vision/docs/python-client-migration",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image ( content = content ) response = client . web detection ( image = image ) annotations = response . web detection if annotations . best guess labels : for label in annotations . best guess labels : print ( f \" \\n Best guess label: { label . label } \" ) if annotations . pages with matching images : print ( \" \\n {} Pages with matching images found:\" . format ( len ( annotations . pages with matching images ) ) ) for page in annotations . pages with matching images : print ( f \" \\n\\t Page url : { page . url } \" ) if page . full matching images : print ( \" \\t {} Full Matches found: \" . format ( len ( page . full matching images )) ) for image in page . full matching images : print ( f \" \\t\\t Image url : { image . url } \" ) if page . partial matching images : print ( \" \\t {} Partial Matches found: \" . format ( len ( page . partial matching images ) ) ) for image in page . partial matching images : print ( f \" \\t\\t Image url : { image . url } \" ) if annotations . web entities : print ( \" \\n {} Web entities found: \" . format ( len ( annotations . web entities ))) for entity in annotations . web entities : print ( f \" \\n\\t Score : { entity . score } \" ) print ( f \" \\t Description: { entity . description } \" ) if annotations . visually similar images : print ( \" \\n {} visually similar images found: \\n \" . format ( len ( annotations . visually similar images ) ) ) for image in annotations . visually similar images : print ( f \" \\t Image url : { image . url } \" ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Making a crop hints request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) hints = image . detect crop hints ( aspect ratios = [ 1.77 ]) for n , hint in enumerate ( hints ): print ( ' \\n Crop Hint: {} ' . format ( n )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in hint . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , \"rb\" ) as image file : content = image file . read () image = vision .",
+          "Image ( content = content ) response = client . image properties ( image = image ) props = response . image properties annotation print ( \"Properties:\" ) for color in props . dominant colors . colors : print ( f \"fraction: { color . pixel fraction } \" ) print ( f \" \\t r: { color . color . red } \" ) print ( f \" \\t g: { color . color . green } \" ) print ( f \" \\t b: { color . color . blue } \" ) print ( f \" \\t a: { color . color . alpha } \" ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Making a web detection request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) notes = image . detect web () if notes . pages with matching images : print ( ' \\n {} Pages with matching images retrieved' ) for page in notes . pages with matching images : print ( 'Score : {} ' . format ( page . score )) print ( 'Url : {} ' . format ( page . url )) if notes . full matching images : print ( ' \\n {} Full Matches found: ' . format ( len ( notes . full matching images ))) for image in notes . full matching images : print ( 'Score: {} ' . format ( image . score )) print ( 'Url : {} ' . format ( image . url )) if notes . partial matching images : print ( ' \\n {} Partial Matches found: ' . format ( len ( notes . partial matching images ))) for image in notes . partial matching images : print ( 'Score: {} ' . format ( image . score )) print ( 'Url : {} ' . format ( image . url )) if notes . web entities : print ( ' \\n {} Web entities found: ' . format ( len ( notes . web entities ))) for entity in notes . web entities : print ( 'Score : {} ' . format ( entity . score )) print ( 'Description: {} ' . format ( entity . description )) Python Client Library v0.25.1: with open ( path , \"rb\" ) as image file : content = image file . read () image = vision .",
+          "The bounding box change affects face detection , logo detection , text detection , document text detection , and crop hints ."
+        ]
+      },
+      {
+        "title": "AnnotateImageResponse \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"landmarkAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"logoAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"labelAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"localizedObjectAnnotations\" : [ { object ( LocalizedObjectAnnotation ) } ] , \"textAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"fullTextAnnotation\" : { object ( TextAnnotation ) } , \"safeSearchAnnotation\" : { object ( SafeSearchAnnotation ) } , \"imagePropertiesAnnotation\" : { object ( ImageProperties ) } , \"cropHintsAnnotation\" : { object ( CropHintsAnnotation ) } , \"webDetection\" : { object ( WebDetection ) } , \"productSearchResults\" : { object ( ProductSearchResults ) } , \"error\" : { object ( Status ) } , \"context\" : { object ( ImageAnnotationContext ) } } Fields faceAnnotations[] object ( FaceAnnotation ) If present, face detection has completed successfully. landmarkAnnotations[] object ( EntityAnnotation ) If present, landmark detection has completed successfully. logoAnnotations[] object ( EntityAnnotation ) If present, logo detection has completed successfully. labelAnnotations[] object ( EntityAnnotation ) If present, label detection has completed successfully. localizedObjectAnnotations[] object ( LocalizedObjectAnnotation ) If present, localized object detection has completed successfully.",
+          "JSON representation FaceAnnotation JSON representation Landmark JSON representation Type Position JSON representation Likelihood EntityAnnotation JSON representation LocationInfo JSON representation Property JSON representation LocalizedObjectAnnotation JSON representation TextAnnotation JSON representation Page JSON representation TextProperty JSON representation DetectedLanguage JSON representation DetectedBreak JSON representation BreakType Block JSON representation Paragraph JSON representation Word JSON representation Symbol JSON representation BlockType SafeSearchAnnotation JSON representation ImageProperties JSON representation DominantColorsAnnotation JSON representation ColorInfo JSON representation Color JSON representation CropHintsAnnotation JSON representation CropHint JSON representation WebDetection JSON representation WebEntity JSON representation WebImage JSON representation WebPage JSON representation WebLabel JSON representation ProductSearchResults JSON representation Result JSON representation GroupedResult JSON representation ObjectAnnotation JSON representation ImageAnnotationContext JSON representation Response to an image annotation request.",
+          "This annotation provides the structural hierarchy for the OCR detected text. safeSearchAnnotation object ( SafeSearchAnnotation ) If present, safe-search annotation has completed successfully. imagePropertiesAnnotation object ( ImageProperties ) If present, image properties were extracted successfully. cropHintsAnnotation object ( CropHintsAnnotation ) If present, crop hints have completed successfully. webDetection object ( WebDetection ) If present, web detection has completed successfully. productSearchResults object ( ProductSearchResults ) If present, product search has completed successfully. error object ( Status ) If set, represents the error message for the operation."
+        ]
+      },
+      {
+        "title": "Detect crop hints \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/detecting-crop-hints",
+        "source_id": "site-iam-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ImageContext ( crop hints params = crop hints params ) response = client . crop hints ( image = image , image context = image context ) hints = response . crop hints annotation . crop hints for n , hint in enumerate ( hints ): print ( f \" \\n Crop Hint: { n } \" ) vertices = [ f \"( { vertex . x } , { vertex . y } )\" for vertex in hint . bounding poly . vertices ] print ( \"bounds: {} \" . format ( \",\" . join ( vertices ))) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) gcloud To perform text detection, use the gcloud ml vision suggest-crop command as shown in the following example: gcloud ml vision suggest-crop gs://cloud-samples-data/vision/crop hints/bubble.jpeg Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Vision reference documentation for .NET.",
+          "To initialize the gcloud CLI, run the following command: gcloud init Detect crop hints on a local image You can use the Vision API to perform feature detection on a local image file.",
+          "Detect crop hints on a remote image You can use the Vision API to perform feature detection on a remote image file that is located in Cloud Storage or on the Web."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.vision.v1 (3.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-vision/latest/com.google.cloud.vision.v1",
+        "source_id": "site-java-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image Annotator Client Service Description: Service that performs Google Cloud Vision API detection tasks over client images, such as face, landmark, logo, label, and text detection.",
+          "Image Annotator Grpc Service that performs Google Cloud Vision API detection tasks over client images, such as face, landmark, logo, label, and text detection.",
+          "Async Service Service that performs Google Cloud Vision API detection tasks over client images, such as face, landmark, logo, label, and text detection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bubble.jpeg",
+      "com.google.cloud.vision.v1",
+      "com.google.cloud.vision.v1.AnnotateImageResponse",
+      "com.google.cloud.vision.v1.AnnotateImageResponse.Builder",
+      "v0.25.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

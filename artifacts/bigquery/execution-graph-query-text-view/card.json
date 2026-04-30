@@ -1,0 +1,140 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Execution graph query text view",
+  "feature_slug": "execution-graph-query-text-view",
+  "summary": "BigQuery execution graphs now show query text sections that relate stage steps back to the original query text.",
+  "extended_definition": "BigQuery execution graphs now show query text sections that relate stage steps back to the original query text.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use administrative jobs explorer \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "source_id": "site-docs-reference-2",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also select individual jobs to open the job details page , which provides query details such as execution graphs, SQL text, and execution history to help you diagnose and troubleshoot queries.",
+          "The Performance tab compiles query information including the execution graph, the SQL text, and execution history.",
+          "Before you begin To get the permissions that you need to work with BigQuery job details and system-level details, ask your administrator to grant you the following IAM roles on your organization or project: View job details: BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) - the project where the queries were run View system-level details: BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) - the administration project For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples illustrate the use of parentheses with set operations: -- Same set operations, no parentheses. query1 UNION ALL query2 UNION ALL query3 ; -- Different set operations, parentheses needed. query1 UNION ALL ( query2 UNION DISTINCT query3 ); -- Invalid query1 UNION ALL query2 UNION DISTINCT query3 ; -- Same set operations, no parentheses. query1 EXCEPT DISTINCT query2 EXCEPT DISTINCT query3 ; -- Equivalent query with optional parentheses, returns same results. ( query1 EXCEPT DISTINCT query2 ) EXCEPT DISTINCT query3 ; -- Different execution order with a subquery, parentheses needed. query1 EXCEPT DISTINCT ( query2 EXCEPT DISTINCT query3 ); Set operator behavior with duplicate rows Consider a given row R that appears exactly m times in the first input query and n times in the second input query, where m >= 0 and n >= 0 : For UNION ALL , row R appears exactly m + n times in the result.",
+          "FROM clause FROM from clause [, ...] from clause : from item [ { pivot operator unpivot operator match recognize clause } ] [ tablesample operator ] from item : { table name [ as alias ] [ FOR SYSTEM TIME AS OF timestamp expression ] { join operation ( join operation ) } ( query expr ) [ as alias ] field path unnest operator cte name [ as alias ] graph table operator [ as alias ] } as alias : [ AS ] alias The FROM clause indicates the table or tables from which to retrieve rows, and specifies how to join those rows together to produce a single stream of rows for processing in the rest of the query. pivot operator See PIVOT operator . unpivot operator See UNPIVOT operator . tablesample operator See TABLESAMPLE operator . match recognize clause See MATCH RECOGNIZE clause . graph table operator See GRAPH TABLE operator . table name The name (optionally qualified) of an existing table.",
+          "A and B reference each other, which creates a cycle: WITH A AS ( SELECT FROM B ), B AS ( SELECT FROM A ) SELECT FROM B -- Error AGGREGATION THRESHOLD clause Syntax for an aggregation threshold analysis rule–enforced query: WITH AGGREGATION THRESHOLD OPTIONS ( threshold = threshold amount , privacy unit column = column name ) Syntax for an aggregation threshold analysis rule–enforced view: WITH AGGREGATION THRESHOLD [ OPTIONS ( [ threshold = threshold amount ], [ privacy unit column = column name ] ) ] Description Use the AGGREGATION THRESHOLD clause to enforce an aggregation threshold."
+        ]
+      },
+      {
+        "title": "Introduction to data masking \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Roles for attaching policy tags to columns You need the datacatalog.taxonomies.get and bigquery.tables.setCategory permissions to attach policy tags to columns. datacatalog.taxonomies.get is included in the Data Catalog Policy Tags Admin and Viewer roles. bigquery.tables.setCategory is included in the BigQuery Admin ( roles/bigquery.admin ) and BigQuery Data Owner ( roles/bigquery.dataOwner ) roles.",
+          "BigQuery redacting constants from execution details helps prevent salt exposure.",
+          "Roles for creating and managing data policies You need one of the following BigQuery roles to create and manage data policies: Role/ID Permissions Description BigQuery Data Policy Admin ( bigquerydatapolicy.admin ) BigQuery Admin ( bigquery.admin ) BigQuery Data Owner ( bigquery.dataOwner ) bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery.dataPolicies.getIamPolicy bigquery.dataPolicies.list bigquery.dataPolicies.setIamPolicy bigquery.dataPolicies.update The bigquery.dataPolicies.create and bigquery.dataPolicies.list permissions apply at the project level."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataOwner",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.getIamPolicy",
+      "bigquery.dataPolicies.list",
+      "bigquery.dataPolicies.setIamPolicy",
+      "bigquery.dataPolicies.update",
+      "bigquery.resourceViewer",
+      "bigquery.tables.setCategory",
+      "bigquerydatapolicy.admin",
+      "datacatalog.taxonomies.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.resourceViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/admin-jobs-explorer",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro"
+      ]
+    }
+  ]
+}

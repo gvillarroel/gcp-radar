@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.470Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api",
+  "feature_name": "Object-tracking annotation model improvements in Video Intelligence API v1",
+  "feature_slug": "object-tracking-annotation-model-improvements-in-video-intelligence-api-v1",
+  "summary": "Video Intelligence API v1 now includes improved annotation models for object tracking.",
+  "extended_definition": "Video Intelligence API v1 now includes improved annotation models for object tracking.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+      "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+      "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Track objects \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://videointelligence.googleapis.com/v1/ OPERATION NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response // Object tracking annotations are returned as a objectAnnotations list. { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\", \"annotationProgress\": [ { \"inputContent\": \"UklGRg41AwBBVkkgTElTVAwBAABoZHJsYXZpaDgAAAA1ggAAxPMBAAAAAAAQCAA...\", \"progressPercent\": 100, \"startTime\": \"2018-06-21T16:56:46.755199Z\", \"updateTime\": \"2018-06-21T16:59:17.911197Z\" } ] }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\", \"annotationResults\": [ { \"inputContent\": \"/cloud-ml-sandbox/video/chicago.mp4\", \"objectAnnotations\": [ { \"entity\": { \"entityId\": \"/m/0k4j\", \"description\": \"car\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.2672763, \"top\": 0.5677657, \"right\": 0.4388713, \"bottom\": 0.7623171 }, \"timeOffset\": \"0s\" }, { \"normalizedBoundingBox\": { \"left\": 0.26920167, \"top\": 0.5659805, \"right\": 0.44331276, \"bottom\": 0.76780635 }, \"timeOffset\": \"0.100495s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.83573246, \"top\": 0.6645812, \"right\": 1, \"bottom\": 0.99865407 }, \"timeOffset\": \"2.311402s\" } ], \"segment\": { \"startTimeOffset\": \"0s\", \"endTimeOffset\": \"2.311402s\" }, \"confidence\": 0.99488896 }, ... { \"entity\": { \"entityId\": \"/m/0cgh4\", \"description\": \"building\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.010383379, \"right\": 0.21914443, \"bottom\": 0.5591795 }, \"timeOffset\": \"0s\" }, { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.009684974, \"right\": 0.22915152, \"bottom\": 0.56070584 }, \"timeOffset\": \"0.100495s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.008624528, \"right\": 0.22723165, \"bottom\": 0.56158626 }, \"timeOffset\": \"0.401983s\" } ], \"segment\": { \"startTimeOffset\": \"0s\", \"endTimeOffset\": \"0.401983s\" }, \"confidence\": 0.33914912 }, ... { \"entity\": { \"entityId\": \"/m/0cgh4\", \"description\": \"building\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.79324204, \"top\": 0.0006896425, \"right\": 0.99659824, \"bottom\": 0.5324423 }, \"timeOffset\": \"37.585421s\" }, { \"normalizedBoundingBox\": { \"left\": 0.78935236, \"top\": 0.0011992548, \"right\": 0.99659824, \"bottom\": 0.5374946 }, \"timeOffset\": \"37.685917s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.79404694, \"right\": 0.99659824, \"bottom\": 0.5280966 }, \"timeOffset\": \"38.590379s\" } ], \"segment\": { \"startTimeOffset\": \"37.585421s\", \"endTimeOffset\": \"38.590379s\" }, \"confidence\": 0.3415429 } ] } ] } } Go import ( \"context\" \"fmt\" \"io\" \"os\" video \"cloud.google.com/go/videointelligence/apiv1\" videopb \"cloud.google.com/go/videointelligence/apiv1/videointelligencepb\" \"github.com/golang/protobuf/ptypes\" ) // objectTracking analyzes a video and extracts entities with their bounding boxes. func objectTracking ( w io .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://videointelligence.googleapis.com/v1/ OPERATION NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response // Object tracking annotations are returned as a objectAnnotations list. { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\", \"annotationProgress\": [ { \"inputUri\": \"/cloud-ml-sandbox/video/chicago.mp4\", \"progressPercent\": 100, \"startTime\": \"2019-12-21T16:56:46.755199Z\", \"updateTime\": \"2019-12-21T16:59:17.911197Z\" } ] }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\", \"annotationResults\": [ { \"inputUri\": \"/cloud-ml-sandbox/video/chicago.mp4\", \"objectAnnotations\": [ { \"entity\": { \"entityId\": \"/m/0k4j\", \"description\": \"car\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.2672763, \"top\": 0.5677657, \"right\": 0.4388713, \"bottom\": 0.7623171 }, \"timeOffset\": \"0s\" }, { \"normalizedBoundingBox\": { \"left\": 0.26920167, \"top\": 0.5659805, \"right\": 0.44331276, \"bottom\": 0.76780635 }, \"timeOffset\": \"0.100495s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.83573246, \"top\": 0.6645812, \"right\": 1, \"bottom\": 0.99865407 }, \"timeOffset\": \"2.311402s\" } ], \"segment\": { \"startTimeOffset\": \"0s\", \"endTimeOffset\": \"2.311402s\" }, \"confidence\": 0.99488896 }, ... { \"entity\": { \"entityId\": \"/m/0cgh4\", \"description\": \"building\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.010383379, \"right\": 0.21914443, \"bottom\": 0.5591795 }, \"timeOffset\": \"0s\" }, { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.009684974, \"right\": 0.22915152, \"bottom\": 0.56070584 }, \"timeOffset\": \"0.100495s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.12340179, \"top\": 0.008624528, \"right\": 0.22723165, \"bottom\": 0.56158626 }, \"timeOffset\": \"0.401983s\" } ], \"segment\": { \"startTimeOffset\": \"0s\", \"endTimeOffset\": \"0.401983s\" }, \"confidence\": 0.33914912 }, ... { \"entity\": { \"entityId\": \"/m/0cgh4\", \"description\": \"building\", \"languageCode\": \"en-US\" }, \"frames\": [ { \"normalizedBoundingBox\": { \"left\": 0.79324204, \"top\": 0.0006896425, \"right\": 0.99659824, \"bottom\": 0.5324423 }, \"timeOffset\": \"37.585421s\" }, { \"normalizedBoundingBox\": { \"left\": 0.78935236, \"top\": 0.0011992548, \"right\": 0.99659824, \"bottom\": 0.5374946 }, \"timeOffset\": \"37.685917s\" }, ... { \"normalizedBoundingBox\": { \"left\": 0.79404694, \"right\": 0.99659824, \"bottom\": 0.5280966 }, \"timeOffset\": \"38.590379s\" } ], \"segment\": { \"startTimeOffset\": \"37.585421s\", \"endTimeOffset\": \"38.590379s\" }, \"confidence\": 0.3415429 } ] } ] } } Download annotation results Copy the annotation from the source to the destination bucket: (see Copy files and objects ) gcloud storage cp gcs uri gs://my-bucket Note: If the output gcs uri is provided by the user, then the annotation is stored in that gcs uri.",
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const path = 'Local file to analyze, e.g. ./my-file.mp4'; // Reads a local video file and converts it to base64 const file = await util . promisify ( fs . readFile )( path ); const inputContent = file . toString ( 'base64' ); const request = { inputContent : inputContent , features : [ 'OBJECT TRACKING' ], //recommended to use us-east1 for the best latency due to different types of processors used in this region and others locationId : 'us-east1' , }; // Detects objects in a video const [ operation ] = await video . annotateVideo ( request ); const results = await operation . promise (); console . log ( 'Waiting for operation to complete...' ); //Gets annotations for video const annotations = results [ 0 ]. annotationResults [ 0 ]; const objects = annotations . objectAnnotations ; objects . forEach ( object = > { console . log ( Entity description: ${ object . entity . description } ); console . log ( Entity id: ${ object . entity . entityId } ); const time = object . segment ; console . log ( Segment: ${ time . startTimeOffset . seconds 0 } + . ${ ( time . startTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s to ${ time . endTimeOffset . seconds 0 } . + ${ ( time . endTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( Confidence: ${ object . confidence } ); const frame = object . frames [ 0 ]; const box = frame . normalizedBoundingBox ; const timeOffset = frame . timeOffset ; console . log ( Time offset for the first frame: ${ timeOffset . seconds 0 } + . ${ ( timeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( 'Bounding box position:' ); console . log ( left : ${ box . left } ); console . log ( top : ${ box . top } ); console . log ( right : ${ box . right } ); console . log ( bottom : ${ box . bottom } ); }); Python \"\"\"Object tracking in a local video.\"\"\" from google.cloud import videointelligence video client = videointelligence ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Annotate a video by using the command line \\_|\\_ Video Intelligence\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "source_id": "site-api-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The results should look similar to the following: { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\" , \"annotationProgress\" : [ { \"inputUri\" : \"videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"progressPercent\" : 100 , \"startTime\" : \"2020-04-01T22:13:17.978847Z\" , \"updateTime\" : \"2020-04-01T22:13:29.576004Z\" } ] }, \"done\" : true , \"response\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\" , \"annotationResults\" : [ { \"inputUri\" : \"/videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"segmentLabelAnnotations\" : [ { \"entity\" : { \"entityId\" : \"/m/07bsy\" , \"description\" : \"transport\" , \"languageCode\" : \"en-US\" }, \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.81231534 } ] }, { \"entity\" : { \"entityId\" : \"/m/01n32\" , \"description\" : \"city\" , \"languageCode\" : \"en-US\" }, \"categoryEntities\" : [ { \"entityId\" : \"/m/043rvww\" , \"description\" : \"geographical feature\" , \"languageCode\" : \"en-US\" } ], \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.3942462 } ] }, ... { \"entity\" : { \"entityId\" : \"/m/06gfj\" , \"description\" : \"road\" , \"languageCode\" : \"en-US\" }, \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.86698604 } ] } ] } ] } } Congratulations!",
+          "If the operation has completed, a done field is included and set to true : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\" , \"annotationProgress\" : [ { \"inputUri\" : \"/videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"progressPercent\" : 100 , \"startTime\" : \"2020-04-01T22:13:17.978847Z\" , \"updateTime\" : \"2020-04-01T22:13:29.576004Z\" } ] }, \"done\" : true , ... } After about a minute, the request returns the annotation results.",
+          "For example, dog.mp4 . curl -X POST \\ -H \"Authorization: Bearer \" $( gcloud auth application-default print-access-token ) \\ -H \"Content-Type: application/json; charset=utf-8\" \\ --data '{\"inputUri\":\"gs://videointelligence-quickstart-bucket/ YOUR OBJECT \",\"features\":[\"LABEL DETECTION\"]}' \\ \"https://videointelligence.googleapis.com/v1/videos:annotate\" The Video Intelligence API creates an operation to process your request."
+        ]
+      },
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"inputUri\" : string , \"segment\" : { object ( VideoSegment ) } , \"segmentLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"segmentPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"shotPresenceLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"frameLabelAnnotations\" : [ { object ( LabelAnnotation ) } ] , \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"faceDetectionAnnotations\" : [ { object ( FaceDetectionAnnotation ) } ] , \"shotAnnotations\" : [ { object ( VideoSegment ) } ] , \"explicitAnnotation\" : { object ( ExplicitContentAnnotation ) } , \"speechTranscriptions\" : [ { object ( SpeechTranscription ) } ] , \"textAnnotations\" : [ { object ( TextAnnotation ) } ] , \"objectAnnotations\" : [ { object ( ObjectTrackingAnnotation ) } ] , \"logoRecognitionAnnotations\" : [ { object ( LogoRecognitionAnnotation ) } ] , \"personDetectionAnnotations\" : [ { object ( PersonDetectionAnnotation ) } ] , \"error\" : { object ( Status ) } } Fields inputUri string Video file location in Cloud Storage . segment object ( VideoSegment ) Video segment on which the annotation is run. segmentLabelAnnotations[] object ( LabelAnnotation ) Topical label annotations on video level or user-specified segment level.",
+          "JSON representation VideoAnnotationResults JSON representation LabelAnnotation JSON representation Entity JSON representation LabelSegment JSON representation LabelFrame JSON representation FaceAnnotation JSON representation FaceSegment JSON representation FaceFrame JSON representation NormalizedBoundingBox JSON representation FaceDetectionAnnotation JSON representation Track JSON representation TimestampedObject JSON representation DetectedAttribute JSON representation DetectedLandmark JSON representation NormalizedVertex JSON representation ExplicitContentAnnotation JSON representation ExplicitContentFrame JSON representation SpeechTranscription JSON representation SpeechRecognitionAlternative JSON representation WordInfo JSON representation TextAnnotation JSON representation TextSegment JSON representation TextFrame JSON representation NormalizedBoundingPoly JSON representation ObjectTrackingAnnotation JSON representation ObjectTrackingFrame JSON representation LogoRecognitionAnnotation JSON representation PersonDetectionAnnotation JSON representation Video annotation response.",
+          "Each will have list of frame information associated with it. objectAnnotations[] object ( ObjectTrackingAnnotation ) Annotations for list of objects detected and tracked in video. logoRecognitionAnnotations[] object ( LogoRecognitionAnnotation ) Annotations for list of logos detected, tracked and recognized in video. personDetectionAnnotations[] object ( PersonDetectionAnnotation ) Person detection annotations. error object ( Status ) If set, indicates an error."
+        ]
+      },
+      {
+        "title": "\"Detect explicit content in videos \\_|\\_ Video Intelligence API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://videointelligence.googleapis.com/v1/ OPERATION NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\", \"annotationProgress\": [ { \"inputUri\": \"/demomaker/gbikes dinosaur.mp4\", \"progressPercent\": 100, \"startTime\": \"2020-03-26T00:16:35.112404Z\", \"updateTime\": \"2020-03-26T00:16:55.937889Z\" } ] }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\", \"annotationResults\": [ { \"inputUri\": \"/demomaker/gbikes dinosaur.mp4\", \"explicitAnnotation\": { \"frames\": [ { \"timeOffset\": \"0.056149s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, { \"timeOffset\": \"1.166841s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, ... { \"timeOffset\": \"41.678209s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" }, { \"timeOffset\": \"42.596413s\", \"pornographyLikelihood\": \"VERY UNLIKELY\" } ] } } ] } } Shot detection annotations are returned as a shotAnnotations list.",
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const gcsUri = 'GCS URI of video to analyze, e.g. gs://my-bucket/my-video.mp4'; const request = { inputUri : gcsUri , features : [ 'EXPLICIT CONTENT DETECTION' ], }; // Human-readable likelihoods const likelihoods = [ 'UNKNOWN' , 'VERY UNLIKELY' , 'UNLIKELY' , 'POSSIBLE' , 'LIKELY' , 'VERY LIKELY' , ]; // Detects unsafe content const [ operation ] = await client . annotateVideo ( request ); console . log ( 'Waiting for operation to complete...' ); const [ operationResult ] = await operation . promise (); // Gets unsafe content const explicitContentResults = operationResult . annotationResults [ 0 ]. explicitAnnotation ; console . log ( 'Explicit annotation results:' ); explicitContentResults . frames . forEach ( result = > { if ( result . timeOffset === undefined ) { result . timeOffset = {}; } if ( result . timeOffset . seconds === undefined ) { result . timeOffset . seconds = 0 ; } if ( result . timeOffset . nanos === undefined ) { result . timeOffset . nanos = 0 ; } console . log ( \\tTime: ${ result . timeOffset . seconds } + . ${ ( result . timeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\t\\tPornography likelihood: ${ likelihoods [ result . pornographyLikelihood ] } ); }); Python For more information on installing and using the Cloud Video Intelligence API Client Library for Python, refer to Cloud Video Intelligence API Client Libraries . \"\"\"Detects explicit content from the GCS path to a video.\"\"\" video client = videointelligence .",
+          "EXPLICIT CONTENT DETECTION ) . build (); OperationFuture<AnnotateVideoResponse , AnnotateVideoProgress > response = client . annotateVideoAsync ( request ); System . out . println ( \"Waiting for operation to complete...\" ); // Print detected annotations and their positions in the analyzed video. for ( VideoAnnotationResults result : response . get (). getAnnotationResultsList ()) { for ( ExplicitContentFrame frame : result . getExplicitAnnotation (). getFramesList ()) { double frameTime = frame . getTimeOffset (). getSeconds () + frame . getTimeOffset (). getNanos () / 1e9 ; System . out . printf ( \"Location: %.3fs\\n\" , frameTime ); System . out . println ( \"Adult: \" + frame . getPornographyLikelihood ()); } } Node.js To authenticate to Video Intelligence, set up Application Default Credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chicago.mp4",
+      "dinosaur.mp4",
+      "dog.mp4",
+      "e.g",
+      "file.mp4",
+      "github.com",
+      "request.json",
+      "type.googleapis.com",
+      "video.mp4",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/object-tracking",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-safesearch"
+      ]
+    }
+  ]
+}

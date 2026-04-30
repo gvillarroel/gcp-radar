@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.990Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php",
+  "feature_name": "PHP 5.5 to PHP 7.2 migration guide for App Engine",
+  "feature_slug": "php-5-5-to-php-7-2-migration-guide-for-app-engine",
+  "summary": "A migration guide was published to help move App Engine PHP applications from PHP 5.5 to PHP 7.2.",
+  "extended_definition": "A migration guide was published to help move App Engine PHP applications from PHP 5.5 to PHP 7.2.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/php/services/access",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate from PHP 5.5 to the latest PHP runtime \\_|\\_ App Engine migration\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "source_id": "site-docs-reference-4",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Migration center Guides Send feedback Migrate from PHP 5.5 to the latest PHP runtime Stay organized with collections Save and categorize content based on your preferences.",
+          "Migrate from the App Engine PHP SDK To reduce runtime migration effort and complexity, the App Engine standard environment lets you access many of legacy bundled services and APIs in the second-generation PHP runtime , such as Memcache.",
+          "Compatibility issues between PHP 5.5 and the second-generation PHP runtimes The official PHP documentation provides information on migrating from different PHP versions: Migrating from PHP 5.5.x to PHP 5.6.x Migrating from PHP 5.6.x to PHP 7.0.x Migrating from PHP 7.0.x to PHP 7.1.x Migrating from PHP 7.1.x to PHP 7.2.x Migrating from PHP 7.2.x to PHP 7.3.x Migrating from PHP 7.3.x to PHP 7.4.x Migrating from PHP 7.4.x to PHP 8.0.x Migrating from PHP 8.0.x to PHP 8.1.x Key differences between PHP 5.5 and the second-generation PHP runtimes The following is a summary of the differences between the PHP 5.5 and the second-generation PHP runtimes in the App Engine standard environment: Memory usage differences Second-generation runtimes see a higher baseline of memory usage compared to first-generation runtimes."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for PHP \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, Google\\AppEngine\\Api\\AppIdentity\\ClassName can be imported with the statement: use Google\\AppEngine\\Api\\AppIdentity\\ClassName; Migration considerations App Identity You do not need to make changes to your app's configuration when upgrading to PHP.",
+          "For example: PHP 7/8 ini set('session.save path', 'Google\\AppEngine\\Api\\Memcache\\Memcache'); session set save handler(new Google\\AppEngine\\Ext\\Session\\MemcacheSessionHandler(), true); Refer to the Session API reference guide for more details.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Access legacy bundled services for PHP Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for PHP \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php/services/access",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 53,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, Google\\AppEngine\\Api\\AppIdentity\\ClassName can be imported with the statement: use Google\\AppEngine\\Api\\AppIdentity\\ClassName; Migration considerations App Identity You do not need to make changes to your app's configuration when upgrading to PHP.",
+          "For example: PHP 7/8 ini set('session.save path', 'Google\\AppEngine\\Api\\Memcache\\Memcache'); session set save handler(new Google\\AppEngine\\Ext\\Session\\MemcacheSessionHandler(), true); Refer to the Session API reference guide for more details.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Access legacy bundled services for PHP Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "composer.json",
+      "memcache.html.twig",
+      "session.save"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/php-differences",
+        "https://docs.cloud.google.com/appengine/docs/standard/php-gen2/services/access",
+        "https://docs.cloud.google.com/appengine/docs/standard/php/services/access"
+      ]
+    }
+  ]
+}

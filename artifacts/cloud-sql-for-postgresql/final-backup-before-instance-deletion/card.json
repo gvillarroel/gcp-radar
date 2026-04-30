@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.861Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Final backup before instance deletion",
+  "feature_slug": "final-backup-before-instance-deletion",
+  "summary": "Cloud SQL can create a final backup before an instance is deleted so the data can be restored later to a new instance.",
+  "extended_definition": "Cloud SQL can create a final backup before an instance is deleted so the data can be restored later to a new instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-iam-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } Update a retained or final backup after instance deletion After you delete an instance, you can update the settings for any retained or final backups associated with that instance that are stored at the project level.",
+          "Before you begin To manage retained backups in a Google Cloud project, you need the following permissions: Console Task Required permissions List backups cloudsql.backupRuns.list Describe a backup cloudsql.backupRuns.get Update a backup cloudsql.backupRuns.update Delete a backup cloudsql.backupRuns.delete gcloud Action Command Required permissions List backups gcloud sql backups list cloudsql.backupRuns.list Describe a backup gcloud sql backups describe cloudsql.backupRuns.get Update a backup gcloud sql backups patch cloudsql.backupRuns.update Delete a backup gcloud sql backups delete cloudsql.backupRuns.delete REST Action Method Required permissions List backups backups.listBackup cloudsql.backupRuns.list Describe a backup backups.getBackup cloudsql.backupRuns.get Update a backup backups.updateBackup cloudsql.backupRuns.update Delete a backup backups.deleteBackup cloudsql.backupRuns.delete List all backups for a deleted instance You can see a list of all retained and final backups for a deleted instance for your Google Cloud console project.",
+          "MySQL PostgreSQL SQL Server You can manage backups after an instance is deleted if you elected to retain backups after instance deletion , or took a final backup prior to deleting your instance."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you create a new instance with the final backup instance setting enabled, then you must update the final backup organization policy to apply the backup configurations to the primary instance only.",
+          "Note: If your instance was created before the enhanced backups launch , then your instance is using the standard backups option.",
+          "Retained backups are different from final backups , which are the last backups taken at time of instance deletion."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "source_id": "site-iam-reference",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preserve your data, you can either take a final backup of your instance at time of deletion, enable retained backups for your instance before you delete it, or export your data to Cloud Storage before you delete it.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To update the final backup retention days setting, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID RETENTION DAYS : the number of days to retain final backups HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"retentionDays: RETENTION DAYS } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To enable final backups, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID RETENTION DAYS : the number of days to retain final backups HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"enabled\": true, \"retentionDays: RETENTION DAYS } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backups.deleteBackup",
+      "backups.getBackup",
+      "backups.listBackup",
+      "backups.updateBackup",
+      "cloudsql.backupRuns.delete",
+      "cloudsql.backupRuns.get",
+      "cloudsql.backupRuns.list",
+      "cloudsql.backupRuns.update",
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    }
+  ]
+}

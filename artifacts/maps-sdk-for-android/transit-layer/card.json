@@ -1,0 +1,183 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.691Z",
+  "source_step08_card": "data/step-08/current/products/maps-sdk-for-android/card.json",
+  "product_name": "Maps SDK for Android",
+  "product_slug": "maps-sdk-for-android",
+  "feature_name": "Transit layer",
+  "feature_slug": "transit-layer",
+  "summary": "The Transit layer lets you display a city's public transit network on your map.",
+  "extended_definition": "The Transit layer lets you display a city's public transit network on your map.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GoogleMap \\_|\\_ Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.",
+          "RoadSnappedLocationProvider further aligns locations to the road network. void setOnMyLocationClickListener ( GoogleMap.OnMyLocationClickListener listener) Sets a callback that's invoked when the My Location dot (which signifies the user's location) is clicked. void setOnPoiClickListener ( GoogleMap.OnPoiClickListener listener) Sets a listener which will be triggered when a POI is clicked or tapped. void setOnPolygonClickListener ( GoogleMap.OnPolygonClickListener listener) Sets a callback that's invoked when a polygon is clicked. void setOnPolylineClickListener ( GoogleMap.OnPolylineClickListener listener) Sets a callback that's invoked when a polyline is clicked. void setPadding (int left, int top, int right, int bottom) Sets padding on the map. void setTrafficEnabled (boolean enabled) Turns the traffic layer on or off. void setTransitEnabled (boolean enabled) Turns the transit layer on or off. void snapshot ( GoogleMap.SnapshotReadyCallback callback, Bitmap bitmap) Takes a snapshot of the map. void snapshot ( GoogleMap.SnapshotReadyCallback callback) Takes a snapshot of the map. void stopAnimation () Stops the camera animation if there is one in progress.",
+          "Parameters enabled public void setTransitEnabled (boolean enabled) Turns the transit layer on or off."
+        ]
+      },
+      {
+        "title": "\"Select Current Place and Show Details on a Map \\_|\\_ Maps SDK for Android\\",
+        "url": "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View the Java version of the activity: Show / Hide Code // Copyright 2020 Google LLC // // Licensed under the Apache License , Version 2.0 ( the \"License\" ); // you may not use this file except in compliance with the License . // You may obtain a copy of the License at // // http : // www . apache . org / licenses / LICENSE - 2.0 // // Unless required by applicable law or agreed to in writing , software // distributed under the License is distributed on an \"AS IS\" BASIS , // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND , either express or implied . // See the License for the specific language governing permissions and // limitations under the License . package com . example . currentplacedetailsonmap ; import android.content.DialogInterface ; import android.content.pm.PackageManager ; import android.location.Location ; import android.os.Bundle ; import android.util.Log ; import android.view.Menu ; import android.view.MenuItem ; import android.view.View ; import android.widget.FrameLayout ; import android.widget.TextView ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AlertDialog ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.location.FusedLocationProviderClient ; import com.google.android.gms.location.LocationServices ; import com.google.android.gms.maps.CameraUpdateFactory ; import com.google.android.gms.maps.GoogleMap ; import com.google.android.gms.maps.OnMapReadyCallback ; import com.google.android.gms.maps.SupportMapFragment ; import com.google.android.gms.maps.model.CameraPosition ; import com.google.android.gms.maps.model.LatLng ; import com.google.android.gms.maps.model.Marker ; import com.google.android.gms.maps.model.MarkerOptions ; import com.google.android.gms.tasks.OnCompleteListener ; import com.google.android.gms.tasks.Task ; import com.google.android.libraries.places.api.Places ; import com.google.android.libraries.places.api.model.Place ; import com.google.android.libraries.places.api.model.PlaceLikelihood ; import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest ; import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse ; import com.google.android.libraries.places.api.net.PlacesClient ; import java.util.Arrays ; import java.util.List ; / An activity that displays a map showing the place at the device 's current location. / public class MapsActivityCurrentPlace extends AppCompatActivity implements OnMapReadyCallback { private static final String TAG = MapsActivityCurrentPlace . class . getSimpleName (); private GoogleMap map ; private CameraPosition cameraPosition ; // The entry point to the Places API . private PlacesClient placesClient ; // The entry point to the Fused Location Provider . private FusedLocationProviderClient fusedLocationProviderClient ; // A default location ( Sydney , Australia ) and default zoom to use when location permission is // not granted . private final LatLng defaultLocation = new LatLng ( - 33.8523341 , 151.2106085 ); private static final int DEFAULT ZOOM = 15 ; private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean locationPermissionGranted ; // The geographical location where the device is currently located .",
+          "See the License for the specific language governing permissions and limitations under the License . -- > < fragment xmlns : android = \"http://schemas.android.com/apk/res/android\" xmlns : tools = \"http://schemas.android.com/tools\" android : id = \"@+id/map\" android : name = \"com.google.android.gms.maps.SupportMapFragment\" android : layout width = \"match parent\" android : layout height = \"match parent\" tools : context = \"com.example.currentplacedetailsonmap.MapsActivityCurrentPlace\" / > In your activity's onCreate() method, set the layout file as the content view: Java @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Retrieve the content view that renders the map. setContentView ( R . layout . activity maps ); } MapsActivityCurrentPlace . java Kotlin override fun onCreate ( savedInstanceState : Bundle?) { super . onCreate ( savedInstanceState ) // Retrieve the content view that renders the map. setContentView ( R . layout . activity maps ) } MapsActivityCurrentPlace . kt Implement the OnMapReadyCallback interface and override the onMapReady() method, to set up the map when the GoogleMap object is available: Java @Override public void onMapReady ( GoogleMap map ) { this . map = map ; // ... // Turn on the My Location layer and the related control on the map. updateLocationUI (); // Get the current location of the device and set the position of the map. getDeviceLocation (); } MapsActivityCurrentPlace . java Kotlin override fun onMapReady ( map : GoogleMap ) { this . map = map // ... // Turn on the My Location layer and the related control on the map. updateLocationUI () // Get the current location of the device and set the position of the map. getDeviceLocation () } MapsActivityCurrentPlace . kt In your activity's onCreate() method, get a handle to the map fragment by calling FragmentManager.findFragmentById() .",
+          "View infoWindow = getLayoutInflater () . inflate ( R . layout . custom info contents , ( FrameLayout ) findViewById ( R . id . map ), false ); TextView title = infoWindow . findViewById ( R . id . title ); title . setText ( marker . getTitle ()); TextView snippet = infoWindow . findViewById ( R . id . snippet ); snippet . setText ( marker . getSnippet ()); return infoWindow ; } }); // Prompt the user for permission . getLocationPermission (); // Turn on the My Location layer and the related control on the map . updateLocationUI (); // Get the current location of the device and set the position of the map . getDeviceLocation (); } / Gets the current location of the device , and positions the map 's camera. / private void getDeviceLocation () { / Get the best and most recent location of the device , which may be null in rare cases when a location is not available . / try { if ( locationPermissionGranted ) { Task<Location> locationResult = fusedLocationProviderClient . getLastLocation (); locationResult . addOnCompleteListener ( this , new OnCompleteListener<Location> () { @Override public void onComplete ( @NonNull Task<Location> task ) { if ( task . isSuccessful ()) { // Set the map 's camera position to the current location of the device. lastKnownLocation = task . getResult (); if ( lastKnownLocation != null ) { map . moveCamera ( CameraUpdateFactory . newLatLngZoom ( new LatLng ( lastKnownLocation . getLatitude (), lastKnownLocation . getLongitude ()), DEFAULT ZOOM )); } } else { Log . d ( TAG , \"Current location is null."
+        ]
+      },
+      {
+        "title": "\"Navigate a single-destination route \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set the last digit of the car's license plate to get // route restrictions for supported countries. // mNavigator.setLicensePlateRestrictionInfo(getLastDigit(), \"BZ\"); // Set the camera to follow the device location with 'TILTED' driving view. mNavFragment.getCamera().followMyLocation(Camera.Perspective.TILTED); // Set the travel mode (DRIVING, WALKING, CYCLING, TWO WHEELER, or TAXI). mRoutingOptions = new RoutingOptions(); mRoutingOptions.travelMode(RoutingOptions.TravelMode.DRIVING); // Navigate to a place, specified by Place ID. navigateToPlace(SYDNEY OPERA HOUSE, mRoutingOptions); } / Handles errors from the Navigation SDK. @param errorCode The error code returned by the navigator. / @Override public void onError(@NavigationApi.ErrorCode int errorCode) { switch (errorCode) { case NavigationApi.ErrorCode.NOT AUTHORIZED: displayMessage(\"Error loading Navigation SDK: Your API key is \" + \"invalid or not authorized to use the Navigation SDK.\"); break; case NavigationApi.ErrorCode.TERMS NOT ACCEPTED: displayMessage(\"Error loading Navigation SDK: User did not accept \" + \"the Navigation Terms of Use.\"); break; case NavigationApi.ErrorCode.NETWORK ERROR: displayMessage(\"Error loading Navigation SDK: Network error.\"); break; case NavigationApi.ErrorCode.LOCATION PERMISSION MISSING: displayMessage(\"Error loading Navigation SDK: Location permission \" + \"is missing.\"); break; default: displayMessage(\"Error loading Navigation SDK: \" + errorCode); } } }); Set a destination The Navigator class provides control over configuring, starting, and stopping a navigation journey.",
+          "DEBUG ) { mNavigator . getSimulator () . simulateLocationsAlongExistingRoute ( new SimulationOptions () . speedMultiplier ( 5 )); } // Start turn - by - turn guidance along the current route . mNavigator . startGuidance (); break ; // Handle error conditions returned by the navigator . case NO ROUTE FOUND : displayMessage ( \"Error starting navigation: No route found.\" ); break ; case NETWORK ERROR : displayMessage ( \"Error starting navigation: Network error.\" ); break ; case ROUTE CANCELED : displayMessage ( \"Error starting navigation: Route canceled.\" ); break ; default : displayMessage ( \"Error starting navigation: \" + String . valueOf ( code )); } } }); } / Handles the result of the request for location permissions . / @Override public void onRequestPermissionsResult ( int requestCode , @NonNull String [] permissions , @NonNull int [] grantResults ) { mLocationPermissionGranted = false ; switch ( requestCode ) { case PERMISSIONS REQUEST ACCESS FINE LOCATION : { // If request is canceled , the result arrays are empty . if ( grantResults . length > 0 && grantResults [ 0 ] == PackageManager .",
+          "See the code Show or hide Java code for a single-destination navigation activity. package com . example . navsdksingledestination ; import android.content.pm.PackageManager ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoutingOptions ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a navigation UI , guiding the user from their current location to a single , given destination . / public class NavigationActivitySingleDestination extends AppCompatActivity { private static final String TAG = NavigationActivitySingleDestination . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private RoutingOptions mRoutingOptions ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.annotation.SuppressLint",
+      "android.content.DialogInterface",
+      "android.content.pm.PackageManager",
+      "android.location.Location",
+      "android.Manifest",
+      "android.Manifest.permission.ACCESS",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.view.Menu",
+      "android.view.MenuItem",
+      "android.view.View",
+      "android.widget.FrameLayout",
+      "android.widget.TextView",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AlertDialog",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "com.example.currentplacedetailsonmap.MapsActivityCurrentPlace",
+      "com.google.android.gms.location.FusedLocationProviderClient",
+      "com.google.android.gms.location.LocationServices",
+      "com.google.android.gms.maps.CameraUpdateFactory",
+      "com.google.android.gms.maps.GoogleMap",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.gms.maps.GoogleMap.InfoWindowAdapter",
+      "com.google.android.gms.maps.model.CameraPosition",
+      "com.google.android.gms.maps.model.LatLng",
+      "com.google.android.gms.maps.model.Marker",
+      "com.google.android.gms.maps.model.MarkerOptions",
+      "com.google.android.gms.maps.OnMapReadyCallback",
+      "com.google.android.gms.maps.SupportMapFragment",
+      "com.google.android.gms.tasks.OnCompleteListener",
+      "com.google.android.gms.tasks.Task",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.RoutingOptions",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.Waypoint",
+      "com.google.android.libraries.places.api.model.Place",
+      "com.google.android.libraries.places.api.model.PlaceLikelihood",
+      "com.google.android.libraries.places.api.net.FindCurrentPlaceRequest",
+      "com.google.android.libraries.places.api.net.FindCurrentPlaceResponse",
+      "com.google.android.libraries.places.api.net.PlacesClient",
+      "com.google.android.libraries.places.api.Places",
+      "developers.google.com",
+      "java.util.Arrays",
+      "java.util.List",
+      "schemas.android.com",
+      "this.getApplicationContext"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/current-place-tutorial",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route"
+      ]
+    }
+  ]
+}

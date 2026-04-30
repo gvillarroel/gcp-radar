@@ -1,0 +1,198 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.553Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Ingress and egress IP range matching",
+  "feature_slug": "ingress-and-egress-ip-range-matching",
+  "summary": "Firewall rules can specify source IP ranges for egress traffic and destination IP ranges for ingress traffic.",
+  "extended_definition": "Firewall rules can specify source IP ranges for egress traffic and destination IP ranges for ingress traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure a hierarchical firewall policy to allow egress traffic from a\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To verify that the egress traffic from testvpc-vm to testvpc-apache-vm is blocked, run the following command: curl < internal IP testvpc apache vm > -m 2 The preceding command returns a Connection timed out message, which is expected because you created a firewall rule to deny egress traffic from all VPC networks in the organization except from myvpc .",
+          "Learn how to create and configure a hierarchical firewall policy to allow egress traffic originating from a specific Virtual Private Cloud (VPC) network in your folder to a specific IP address as the destination.",
+          "To verify that the egress traffic to testvpc-apache-vm from myvpc is allowed, run the following command: curl < external ephemeral IP testvpc apache vm > -m 2 The preceding command returns the content that you have specified for the index.html page of the Apache web server, which means that egress connections from myvpc are allowed."
+        ]
+      },
+      {
+        "title": "\"Configure global network firewall policy to deny egress connections to specific\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To allow IAP access to all VM instances in the vpc-geo-location network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \\ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --layer4-configs=tcp:22 \\ --src-ip-ranges=35.235.240.0/20 \\ --global-firewall-policy \\ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy \\ --network=vpc-geo-location \\ --name=pol-association-fw-rules \\ --global-firewall-policy Create a firewall rule In this section, you create a firewall rule to allow ingress connection on the instance-2-sg VM.",
+          "Click Create . gcloud To update the firewall policy, run the following command: gcloud compute network-firewall-policies rules create 500 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --src-ip-ranges= NAT IP ADDRESS \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging Replace NAT IP ADDRESS with the IP address assigned to your Cloud NAT.",
+          "This IP address is used when you validate the connection between the instance-1-us VM and instance-2-sg VM. gcloud To create a Cloud Router, run the following command: gcloud compute routers create router-fw-rules \\ --network=vpc-geo-location \\ --region=us-central1 To create a Cloud NAT gateway, run the following command: gcloud compute routers nats create nat-gateway \\ --router=router-fw-rules \\ --region=us-central1 \\ --auto-allocate-nat-external-ips \\ --nat-all-subnet-ip-ranges To view the Cloud NAT IP address, run the following command: gcloud compute routers get-nat-ip-info \\ router-fw-rules \\ --region=us-central1 Remember to copy the IP address of your Cloud NAT ( natIp )."
+        ]
+      },
+      {
+        "title": "\"Configure a global network firewall policy to enable ingress traffic \\_\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \\ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 65534 \\ --firewall-policy=fw-policy \\ --direction=EGRESS \\ --action=ALLOW \\ --dest-ip-ranges=0.0.0.0/0 \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy \\ --network=vpc-fw-rules \\ --name=pol-association-fw-rules \\ --global-firewall-policy Add a firewall rule for IAP In the previous section, you created Linux VMs without external IP addresses.",
+          "Click Create . gcloud To create a Cloud Router, run the following command: gcloud compute routers create router-fw-rules \\ --network=vpc-fw-rules \\ --region=us-central1 To create a Cloud NAT gateway, run the following command: gcloud compute routers nats create gateway-fw-rules \\ --router=router-fw-rules \\ --region=us-central1 \\ --auto-allocate-nat-external-ips \\ --nat-all-subnet-ip-ranges Create a global network firewall policy In this section, you create a global network firewall policy with the following: An egress rule with 0.0.0.0./0 as the destination.",
+          "Click Create . gcloud To update the firewall policy, run the following command: gcloud compute network-firewall-policies rules create 501 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --src-ip-ranges=192.168.10.0/24 \\ --dest-ip-ranges=10.0.0.0/24 \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging Test the connection After creating the firewall policy, connect to the server VM from the client VM using the internal IP address of the server VM."
+        ]
+      },
+      {
+        "title": "\"Configure a global network firewall policy to allow egress traffic to an\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This quickstart creates a Virtual Private Cloud (VPC) network with a subnet, creates a virtual machine (VM) instance in the VPC network, sets up a firewall policy that uses egress rules, and then tests the firewall policy from the VM.",
+          "Required roles To get the permissions that you need to create a custom VPC network, VM, Cloud Router, Cloud NAT, global network firewall policy and its rules, and to view the logs, ask your administrator to grant you the following IAM roles on the project: Compute Network Admin role ( roles/compute.networkAdmin ) Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) Compute Security Admin role ( roles/compute.securityAdmin ) Logs Viewer role ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To verify that the egress traffic is blocked to any other destination, specify any FQDN and run the following command: curl -m 2 -I https://mail.yahoo.com The preceding command returns a Connection timed out message, which is expected because you created a firewall rule to deny egress traffic to all destinations except https://ads.google.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ads.google.com",
+      "compute.instanceAdmin.v1",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "index.html",
+      "logging.viewer",
+      "mail.yahoo.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-hfwpolicy-allow-egress-vpc",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/configure-global-fw-policies",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    }
+  ]
+}

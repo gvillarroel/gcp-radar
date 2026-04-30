@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.854Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey",
+  "feature_name": "Maintenance event simulation",
+  "feature_slug": "maintenance-event-simulation",
+  "summary": "You can simulate maintenance events on Memorystore for Valkey instances to test application behavior during maintenance.",
+  "extended_definition": "You can simulate maintenance events on Memorystore for Valkey instances to test application behavior during maintenance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About maintenance \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this case, set your production instance's maintenance window to the following day and time: Day of the week : Sunday Start hour : 1 AM Upcoming maintenance notifications To ensure that you stay informed about maintenance events on your instance, set up email notifications about upcoming maintenance at least one week before maintenance is scheduled.",
+          "As part of rescheduling maintenance , choose one of the following options: Update now : instead of waiting for the scheduled maintenance window, you can apply the updates to your instance immediately.",
+          "When you reschedule maintenance, the following restrictions apply: If there's less than one hour remaining before the current scheduled maintenance time, then you can't reschedule the maintenance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "source_id": "site-api-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Union field simulate maintenance event . simulate maintenance event can be only one of the following: simulateMaintenanceEvent boolean Optional.",
+          "Example: projects/{project}/locations/{location}/backupCollections/{collection} Union field maintenance version . maintenance version can be only one of the following: maintenanceVersion string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Union field simulate maintenance event . simulate maintenance event can be only one of the following: simulateMaintenanceEvent boolean Optional.",
+          "Example: projects/{project}/locations/{location}/backupCollections/{collection} Union field maintenance version . maintenance version can be only one of the following: maintenanceVersion string Optional."
+        ]
+      },
+      {
+        "title": "\"About cross-region replication \\_|\\_ Memorystore for Valkey \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication",
+        "source_id": "site-iam-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Settings that a secondary instance copies from the primary instance When you create a secondary instance, this instance copies the following settings from the primary instance: Shard count IAM authentication mode In-transit encryption mode Instance configurations Valkey version Node type Persistence mode Cluster Mode Enabled and Cluster Mode Disabled modes Override default settings When you create a secondary instance, you can use the following settings to override the default settings: Zone distribution configuration Replica count Maintenance windows Deletion protection Automated backups Update instance settings When you update the settings for your Memorystore for Valkey instance, you can change some settings only on the primary instance.",
+          "Shard count Instance configurations Persistence mode Valkey version Node type Configure local settings You configure the following settings locally: Deletion protection Replica count Maintenance windows Instance endpoints Automated backups Best practices for switching primary and secondary instances When you perform a switchover , we recommend that you follow the instructions in this section.",
+          "Benefits Benefits of cross-region replication on Memorystore for Valkey include the following: Disaster recovery : If the primary instance's region becomes unavailable, then you can detach or switch over to a secondary instance in another region to serve read and write requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cross-region-replication"
+      ]
+    }
+  ]
+}

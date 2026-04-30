@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.619Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "HTTPS default prefix for auto-registered API proxy endpoints",
+  "feature_slug": "https-default-prefix-for-auto-registered-api-proxy-endpoints",
+  "summary": "API proxy endpoints auto-registered from Apigee are now prefixed with https:// by default, and existing imported endpoints are updated accordingly.",
+  "extended_definition": "API proxy endpoints auto-registered from Apigee are now prefixed with https:// by default, and existing imported endpoints are updated accordingly.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating an API proxy from an OpenAPI Specification \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 163,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the left-hand pane, under Proxy Endpoints > default , click the View XML Response conditional flow.",
+          "Navigate to the following URL in your web browser: https://raw.githubusercontent.com/apigee/api-platform-samples/master/default-proxies/helloworld/openapi/mocktarget3.0.yaml Right-click on the displayed code and select Save As .",
+          "Add an XML to JSON policy Next, you'll add the XML to JSON policy to the View XML Response conditional flow that was generated automatically when you created the API proxy from the OpenAPI Specification."
+        ]
+      },
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Considerations Consider the following when attempting to attach Apigee runtime projects: All endpoints imported from Apigee will be given an https:// prefix by default.",
+          "Supported Google Cloud services Auto-registration is currently supported for the following Google Cloud services: Google Cloud service Ingested data Apigee and Apigee hybrid Deployed API proxies and their associated OpenAPI specifications API Gateway Gateway definitions and managed endpoints Project associations and plugins Deprecated: Pull-based ingestion is no longer supported for Apigee and Apigee hybrid plugins as of July 31, 2025 .",
+          "Auto-discovery of OpenAPI specs from Apigee proxies To simplify API documentation and maintain synchronization with your Apigee proxy deployments, API hub automatically discovers and ingests valid OpenAPI specifications (OAS) when they are included in your Apigee API proxy resources."
+        ]
+      },
+      {
+        "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The sample policy shown below uses all default parameters: <SanitizeUserPrompt async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </SanitizeUserPrompt> When you call your API proxy, the input from the prompt is automatically extracted and passed on to Model Armor and processed according to the parameters of your Model Armor template.",
+          "To view the policy attachments in the API proxy processing flows: Click default under the Proxy endpoints folder.",
+          "Policy caught the offending text. filter matched: RAIMatchesFound: true, SDPMatchesFound: false, PIMatchesFound: true, CSAMMatchesFound: false, URIMatchesFound: false\" , \"detail\" : { \"errorcode\" : \"steps.sanitize.user.prompt.FilterMatched\" } } } Malicious URI match example To test for a malicious URI match, send the following request to the API proxy you created in the previous step: curl -X POST \"https:// $RUNTIME HOSTNAME / API PROXY NAME -H \" Content-Type: application/json \" \\ -d '{ \" contents \": [ { \" role \": \" user \", \" parts \": [ { \" text \": \" Can you describe this link? https://testsafebrowsing.appspot.com/s/malware.html \" } ] } ] }' Replace API PROXY NAME with the name of the API proxy you created in the previous step."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "malware.html",
+      "mocktarget3.0.yaml",
+      "raw.githubusercontent.com",
+      "request.content",
+      "steps.sanitize.user.prompt.FilterMatched",
+      "testsafebrowsing.appspot.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/create-api-proxy-openapi-spec",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    }
+  ]
+}

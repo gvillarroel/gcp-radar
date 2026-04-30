@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Assistant manager membership role",
+  "feature_slug": "assistant-manager-membership-role",
+  "summary": "Chat spaces support a new assistant manager membership role to help owners administer spaces.",
+  "extended_definition": "Chat spaces support a new assistant manager membership role to help owners administer spaces.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/admin-overview",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces.members \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-24 UTC.\"],[],[\"Membership resource defines relationships within Google Chat spaces, indicating if a user or app is invited, present, or absent.",
+          "Resource: Membership JSON representation MembershipState MembershipRole Group JSON representation Methods Resource: Membership Represents a membership relation in Google Chat, such as whether a user or Chat app is invited to, part of, or absent from a space.",
+          "Page Summary outlined flag Membership resource represents the relationship between a user, Chat app, or Google Group with a space, detailing their involvement status and role."
+        ]
+      },
+      {
+        "title": "REST Resource: spaces \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns all spaces with spaceType == GROUP CHAT , whose human memberships contain exactly the calling user, and the users specified in FindGroupChatsRequest.users . get Returns details about a space. list Lists spaces the caller is a member of. patch Updates a space. search Returns a list of spaces in a Google Workspace organization based on an administrator's search. setup Creates a space and adds specified users to it.",
+          "Whether basic space members ( ROLE MEMBER ) have this permission. assistantManagersAllowed boolean Optional.",
+          "Whether space owners ( ROLE MANAGER ) have this permission. membersAllowed boolean Optional."
+        ]
+      },
+      {
+        "title": "\"Manage Google Chat spaces as a Google Workspace administrator \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/chat/admin-overview",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Promote users to space manager Using spaces.members.patch , admins can change a member's role by updating their MembershipRole between the following options: ROLE MEMBER : A member of the space.",
+          "Find managers of a space Using spaces.members.list , admins can retrieve a list of members for a space that is filtered to MembershipState=ROLE MANAGER .",
+          "As a Google Workspace administrator, you can perform a number of management tasks with the Chat API, such as the following: Search spaces based on specified criteria List members of a space Add members to and remove members from a space Get details about a member and a space Update or delete a space Update a user's membership How to authenticate and authorize as a Google Workspace administrator When using the Chat API for management tasks, administrators can authenticate and authorize requests by invoking administrator privileges or configuring domain-wide delegation of authority for an application's service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "spaces.delete",
+      "spaces.get",
+      "spaces.members",
+      "spaces.members.create",
+      "spaces.members.delete",
+      "spaces.members.get",
+      "spaces.members.list",
+      "spaces.members.patch",
+      "spaces.patch",
+      "spaces.search"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/admin-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/admin-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/admin-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/admin-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.members",
+        "https://developers.google.com/workspace/chat/admin-overview"
+      ]
+    }
+  ]
+}

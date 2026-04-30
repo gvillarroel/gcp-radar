@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.396Z",
+  "source_step08_card": "data/step-08/current/products/cloud-shell/card.json",
+  "product_name": "Cloud Shell",
+  "product_slug": "cloud-shell",
+  "feature_name": "Gemini Code Assist response context sources",
+  "feature_slug": "gemini-code-assist-response-context-sources",
+  "summary": "Gemini Code Assist shows the context sources used for a generated response in the Gemini chat pane.",
+  "extended_definition": "Gemini Code Assist shows the context sources used for a generated response in the Gemini chat pane.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+      "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+      "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Linux: /.docker/config.json Windows: %USERPROFILE%\\.docker\\config.json There are separate sections in the file for different authentication methods: credHelpers If you use the Docker credential helper for authentication Artifact Registry stores the credential helper settings in the credHelpers section of the file. auths If you use Docker to sign in with a token or service account key as your password, Docker stores a base64-encoded version of your credentials in the auths section of the file. credStore If you configured a credential store to manage your credentials, the settings for the credential store are in the credStore section of the file.",
+          "Use the service account key to configure integration with Docker: Run the following command: Linux / macOS cat KEY-FILE docker login -u KEY-TYPE --password-stdin \\ https:// LOCATION -docker.pkg.dev Windows Get-Content KEY-FILE docker login -u KEY-TYPE --password-stdin https:// LOCATION -docker.pkg.dev Replace the following: KEY-TYPE is one of the following: json key if you are using the service account key in JSON format as it was provided when you created the file. json key base64 if you base64-encoded the all contents of the file.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Create and deploy a containerized web app \\_|\\_ Cloud Shell \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "View app logs To analyze your app while it's running, use the Log Viewer to monitor its logs: Launch the Log Viewer by opening the command palette (accessible with Ctrl / Cmd + Shift + P or View > Command Palette ) and then running Cloud Code: View Logs .",
+          "To delete your project (and associated resources, including any clusters): Go to the Projects page in the Google Cloud console: Go to the Projects page Select the project that you created for this quickstart and then click Delete ."
+        ]
+      },
+      {
+        "title": "\"Class CloudShellServiceClient (1.15.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The result type for the operation will be AuthorizeEnvironment Response Response message for AuthorizeEnvironment . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. environment path environment path ( user : str , environment : str ) - > str Returns a fully-qualified environment string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+          "AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Code \\_|\\_ Cloud Shell \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-09 UTC.\"],[],[]]",
+          "HTTP Mapping: 500 Internal Server Error Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This error code does not imply the request is valid or the requested entity exists or satisfies other pre-conditions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.json",
+      "docker.pkg.dev",
+      "operation.result",
+      "v1.types.AuthorizeEnvironmentRequest",
+      "v1.types.StartEnvironmentRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+        "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+        "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+      ]
+    }
+  ]
+}

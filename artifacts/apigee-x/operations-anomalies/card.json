@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Operations Anomalies",
+  "feature_slug": "operations-anomalies",
+  "summary": "Advanced API Operations Anomaly Detection is now available in the Apigee UI in Cloud Console under the name Operations Anomalies.",
+  "extended_definition": "Advanced API Operations Anomaly Detection is now available in the Apigee UI in Cloud Console under the name Operations Anomalies.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Last Event Detected (UTC) : the timestamp (in UTC) of the most recent detection of the discovered API observation Discovered API observations in API hub IAM roles and permissions To use API observations in API hub, you need the following IAM roles and permissions: IAM roles Permissions API Management Admin ( roles/apim.admin ) apim.operations.delete apim.operations.cancel apim.observationSources.create apim.observationSources.delete apim.observationJobs.create apim.observationJobs.enable apim.observationJobs.disable apim.observationJobs.delete apim.apiObservations.batchEditTags API Management Viewer ( roles/apim.viewer ) resourcemanager.projects.get resourcemanager.projects.list apim.operations.list apim.operations.get apim.locations.list apim.locations.get apim.locations.listApiObservationTags apim.observationSources.list apim.observationSources.get apim.observationJobs.list apim.observationJobs.get apim.apiObservations.list apim.apiObservations.get apim.apiOperations.list apim.apiOperations.get apim.entitlements.get Provisioning Admin Role ( roles/apihub.provisioningAdmin ) apihub.runtimeProjectAttachments.create apihub.hostProjects.attach Viewer Role ( roles/apihub.viewer ) apihub.discoveredObservations.list apihub.discoveredObservations.get apihub.discoveredOperations.list apihub.discoveredOperations.get Pricing and billing The API observations feature in API hub is provided at no direct cost.",
+          "The Advanced API Security add-on is available for Google Cloud projects with or without Apigee provisioning: For subscription customers, the Advanced API Security add-on is available with the Apigee organization.",
+          "However, since API observations in API hub leverages Shadow API discovery, which is part of the Apigee Advanced API Security add-on, you can incur charges related to your Apigee usage."
+        ]
+      },
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable Shadow API Discovery Shadow API Discovery is part of the Advanced API Security add-on and is available for Google Cloud projects with or without Apigee provisioning.",
+          "See Manage Advanced API Security for Pay-as-you-go organizations Shadow API Discovery is not available for Apigee eval environments.",
+          "Task Required Role(s) Enable or disable Advanced API Security Apigee Organization Admin (roles/apigee.admin) Create observation sources and jobs API Management Admin (roles/apim.admin) View observations API Management Viewer (roles/apim.viewer) Access Shadow API Discovery in the Apigee UI This section describes how to access Shadow API Discovery in the Apigee UI."
+        ]
+      },
+      {
+        "title": "Introduction to data residency \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "source_id": "site-docs-root-2",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operations Anomalies for non-hybrid Subscription organizations Monetization API analytics Advanced API Security Apigee API hub .",
+          "The following Apigee offerings are not in scope under Apigee's FedRAMP ATO: API analytics Advanced API Security Integrated portals Apigee evaluation organizations Apigee data collectors For more information about the significance of a FedRAMP ATO, see FedRAMP Compliance .",
+          "Apigee hybrid version 1.14.0 and later with data residency enabled supports Advanced API Security , Apigee API analytics , the Debug tool , and Monetization ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apihub.discoveredObservations.get",
+      "apihub.discoveredObservations.list",
+      "apihub.discoveredOperations.get",
+      "apihub.discoveredOperations.list",
+      "apihub.hostProjects.attach",
+      "apihub.provisioningAdmin",
+      "apihub.runtimeProjectAttachments.create",
+      "apihub.viewer",
+      "apim.admin",
+      "apim.apiObservations.batchEditTags",
+      "apim.apiObservations.get",
+      "apim.apiObservations.list",
+      "apim.apiOperations.get",
+      "apim.apiOperations.list",
+      "apim.entitlements.get",
+      "apim.locations.get",
+      "apim.locations.list",
+      "apim.locations.listApiObservationTags",
+      "apim.observationJobs.create",
+      "apim.observationJobs.delete",
+      "apim.observationJobs.disable",
+      "apim.observationJobs.enable",
+      "apim.observationJobs.get",
+      "apim.observationJobs.list",
+      "apim.observationSources.create",
+      "apim.observationSources.delete",
+      "apim.observationSources.get",
+      "apim.observationSources.list",
+      "apim.operations.cancel",
+      "apim.operations.delete",
+      "apim.operations.get",
+      "apim.operations.list",
+      "apim.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apihub.provisioningAdmin",
+      "roles/apihub.viewer",
+      "roles/apim.admin",
+      "roles/apim.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery"
+      ]
+    }
+  ]
+}

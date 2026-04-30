@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.484Z",
+  "source_step08_card": "data/step-08/current/products/unified-maintenance/card.json",
+  "product_name": "Unified Maintenance",
+  "product_slug": "unified-maintenance",
+  "feature_name": "Unified Maintenance support for Cloud SQL for PostgreSQL",
+  "feature_slug": "unified-maintenance-support-for-cloud-sql-for-postgresql",
+  "summary": "Unified Maintenance now displays maintenance activities for Cloud SQL for PostgreSQL.",
+  "extended_definition": "Unified Maintenance now displays maintenance activities for Cloud SQL for PostgreSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "support_matrix_only_evidence",
+        "message": "The feature is backed only by broad support-matrix style evidence, not a dedicated page for the supported target.",
+        "suggested_steps": [
+          "step-02",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/unified-maintenance/docs/log-schema",
+      "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+      "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance",
+      "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View resource maintenances by using the API \\_|\\_ Unified Maintenance \\_\\",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filters You can filter which maintenance activities are returned by several parameters: State ( SUCCEEDED , or STARTED , for example) Resource name Resource location Resource type Maintenance name Maintenance start time Maintenance end time For more information, see Unified Maintenance API documentation.",
+          "Before you begin Before you view maintenance on your resources using Unified Maintenance, verify that Unified Maintenance supports your resource types .",
+          "View resource maintenances You can use the Unified Maintenance API to return maintenance activity information for a Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"View maintenance activity logs \\_|\\_ Unified Maintenance \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Before you view maintenance activity logs using Unified Maintenance: Verify that Unified Maintenance supports your resource types .",
+          "To view maintenance activities using the Unified Maintenance API, see View resource maintenances by using the API .",
+          "A list of existing logs for maintenance activities within your selected timeframe will appear."
+        ]
+      },
+      {
+        "title": "Supported services \\_|\\_ Unified Maintenance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Monitored Resource Type Description Cloud SQL - MySQL sqladmin.googleapis.com/Instance Yes Yes cloudsql database Cloud SQL - Postgres sqladmin.googleapis.com/Instance Yes Yes cloudsql database Cloud SQL - SQL Server sqladmin.googleapis.com/Instance Yes Yes cloudsql database AlloyDB for PostgreSQL alloydb.googleapis.com/Cluster No No alloydb.googleapis.com/Cluster Looker looker.googleapis.com/Instance No No looker.googleapis.com/Instance Compute Engine compute.googleapis.com/Instance No Yes gce instance Unified Maintenance supports these Compute Engine virtual machine instances or bare metal instances types.",
+          "Home Documentation Security Unified Maintenance Resources Send feedback Supported services Stay organized with collections Save and categorize content based on your preferences.",
+          "The following table is a listing of services that are supported by Unified Maintenance."
+        ]
+      },
+      {
+        "title": "Unified Maintenance log schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/unified-maintenance/docs/log-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use these fields to write query operations for Unified Maintenance resources.",
+          "Example log fields The following example shows a ResourceMaintenance resource. \"insertId\" : \"proj-1-us-west1-db-1-830d851d-2adf-4fb0-8f5b-1e18e16530d9\" , \"timestamp\" : \"2023-09-14T16:00:00Z\" , \"receiveTimestamp\" : \"2023-09-14T16:00:01Z\" , \"logName\" : \"projects/proj-1/logs/maintenance.googleapis.com%2Fmaintenance events\" , \"resource\" : { \"type\" : \"cloudsql database\" , \"labels\" : { \"project id\" : \"proj-1\" , \"database id\" : \"db-1\" , \"region\" : \"us-west1\" , }, }, \"labels\" : { \"maintenance.googleapis.com/new resource maintenance\" : \"False\" , \"maintenance.googleapis.com/updated fields\" : \"['state','maintenanceScheduledStartTime','maintenanceScheduledEndTime']\" }, \"jsonPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.maintenance.logging.v1beta.ResourceMaintenanceLog\" , \"name\" : \"projects/proj-1/locations/us-west1/resourceMaintenances/db-1-a8307daa-5e1f-4974-b6a5-61fceb8331c0\" , \"resource\" : { \"resourceName\" : \"//sqladmin.googleapis.com/projects/proj-1/instances/db-1\" , \"location\" : \"us-west1\" , \"type\" : \"sqladmin.googleapis.com/Instance\" }, \"maintenance\" : { \"maintenanceName\" : \"830d851d-2adf-4fb0-8f5b-1e18e16530d9\" , \"title\" : \"Cloud SQL upgrade to v2\" , \"description\" : \"An upgrade to v2 release.",
+          "Release notes: https://...\" }, \"state\" : \"SCHEDULED\" , \"maintenanceScheduledStartTime\" : \"2023-09-21T16:00:00Z\" , \"maintenanceScheduledEndTime\" : \"2023-09-21T20:00:00Z\" } What's next Unified Maintenance overview Set up Unified Maintenance Configure alerts and notifications Implement common alert policies Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "compute.googleapis.com",
+      "looker.googleapis.com",
+      "maintenance.googleapis.com",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api",
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/log-schema"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api",
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/log-schema"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance-api",
+        "https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance",
+        "https://docs.cloud.google.com/unified-maintenance/docs/supported-services",
+        "https://docs.cloud.google.com/unified-maintenance/docs/log-schema"
+      ]
+    }
+  ]
+}

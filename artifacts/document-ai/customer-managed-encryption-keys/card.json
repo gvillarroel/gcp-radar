@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.964Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Customer-Managed Encryption Keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Document AI now supports customer-managed encryption keys.",
+  "extended_definition": "Document AI now supports customer-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+      "https://docs.cloud.google.com/document-ai/docs/cmek",
+      "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+      "https://docs.cloud.google.com/document-ai/docs/custom-splitter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Document AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 334,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Document AI Guides Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Document AI.",
+          "Instead of Google managing the encryption keys that protect your data, your Document AI processor is protected using a key that you control and manage in Cloud Key Management Service (KMS) ."
+        ]
+      },
+      {
+        "title": "Custom extractor mechanisms \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "You also have the option to use Google-managed or Customer-managed encryption keys (CMEK) .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Use generative AI to auto-label documents The foundation model can accurately extract fields for a variety of document types, but you can also provide additional training data to improve the accuracy of the model for specific document structures."
+        ]
+      },
+      {
+        "title": "Custom splitter \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to use your own storage in order to use Customer-Managed Encryption Keys (CMEK), select I'll specify my own storage location and follow the later procedure.",
+          "Assign annotated document to the training set Now that you have labeled this example document, you can assign it to the training set.",
+          "Repeat the previous steps with the following paths and document labels: Bucket path Document label cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/1040 form 1040 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w2 form w2 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w9 form w9 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/paystub paystub The console should look like this when complete: Select Import ."
+        ]
+      },
+      {
+        "title": "\"Create, use, and manage a custom document classifier \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select I'll specify my own storage location if you want to use your own storage to use Customer-Managed Encryption Keys (CMEK), and follow the procedure in Create a dataset .",
+          "Assign annotated document to the training set Now that you have labeled this example document, you can assign it to the training set.",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.admin",
+      "storage.admin",
+      "v1.4"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/cmek",
+        "https://docs.cloud.google.com/document-ai/docs/ce-mechanisms",
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier"
+      ]
+    }
+  ]
+}

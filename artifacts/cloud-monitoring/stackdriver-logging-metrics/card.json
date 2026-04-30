@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.127Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "Stackdriver Logging Metrics",
+  "feature_slug": "stackdriver-logging-metrics",
+  "summary": "Monitoring adds metric and resource types for Stackdriver Logging.",
+  "extended_definition": "Monitoring adds metric and resource types for Stackdriver Logging.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"User-defined metrics from the agent \\_|\\_ Cloud Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The default processing will write all metrics to Cloud Monitoring , which will drop any unrecognized metrics : ones that aren ' t in the list of curated metrics and don ' t have the user - defined metric metadata . < Rule \"go back\" > Target \"return\" < / Rule > < / Chain > Load the new configuration Restart your agent to pick up the new configuration by executing the following command on your VM instance: sudo service stackdriver-agent restart Your user-defined metric information begins to flow into Monitoring.",
+          "Collectd metrics that have the metadata key stackdriver metric type and a single data source are handled as user-defined metrics and sent to Monitoring using the projects.timeSeries.create method in the Monitoring API.",
+          "Reference and best practices Metric descriptors and time series For an introduction to Cloud Monitoring metrics, see Metrics, time series, and resources ."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListMonitoredResourceDescriptorsRequest ( name=\"name value\", ) Make the request page result = client. list monitored resource descriptors (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.monitoring v3.types.ListMonitoredResourceDescriptorsRequest , dict]] The request object.",
+          "ListMetricDescriptorsRequest ( name=\"name value\", ) Make the request page result = client. list metric descriptors (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.monitoring v3.types.ListMetricDescriptorsRequest , dict]] The request object.",
+          "GetMonitoredResourceDescriptorRequest ( name=\"name value\", ) Make the request response = await client. get monitored resource descriptor (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.monitoring v3.types.GetMonitoredResourceDescriptorRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceClient (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListMonitoredResourceDescriptorsRequest ( name=\"name value\", ) Make the request page result = client. list monitored resource descriptors (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.monitoring v3.types.ListMonitoredResourceDescriptorsRequest , dict] The request object.",
+          "ListMetricDescriptorsRequest ( name=\"name value\", ) Make the request page result = client. list metric descriptors (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.monitoring v3.types.ListMetricDescriptorsRequest , dict] The request object.",
+          "GetMonitoredResourceDescriptorRequest ( name=\"name value\", ) Make the request response = client. get monitored resource descriptor (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.monitoring v3.types.GetMonitoredResourceDescriptorRequest , dict] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "custom.googleapis.com",
+      "metric.labels.instance",
+      "metric.type",
+      "projects.timeSeries.create",
+      "v3.types.CreateMetricDescriptorRequest",
+      "v3.types.GetMonitoredResourceDescriptorRequest",
+      "v3.types.ListMetricDescriptorsRequest",
+      "v3.types.ListMonitoredResourceDescriptorsRequest",
+      "v3.types.TimeInterval"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/custom-metrics-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+      ]
+    }
+  ]
+}

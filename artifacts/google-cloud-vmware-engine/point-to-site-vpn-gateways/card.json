@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Point-to-site VPN gateways",
+  "feature_slug": "point-to-site-vpn-gateways",
+  "summary": "Point-to-site VPN gateways can no longer be managed for projects that already have them; deprecated on 2022-08-10.",
+  "extended_definition": "Point-to-site VPN gateways can no longer be managed for projects that already have them; deprecated on 2022-08-10.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "2022-08-10",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "VPN gateways \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "VMware Engine supports VPN connectivity by using the following types of gateways: Point-to-site VPN gateways: for point-to-site connections, like connecting from your computer to your private cloud Cloud VPN or Cloud Interconnect : for site-to-site connections, like establishing a connection between your on-premises network and your private cloud For more details about Cloud VPN and Cloud Interconnect, see Choosing a Network Connectivity product .",
+          "Point-to-site VPN gateways A point-to-site VPN gateway sends encrypted traffic between a VMware Engine network and a client computer.",
+          "VPN gateways VPN gateways provide secure connectivity between multiple sites, such as on-premises data centers, Google Cloud Virtual Private Cloud (VPC) networks, and Google Cloud VMware Engine private clouds."
+        ]
+      },
+      {
+        "title": "\"Configure advanced policy settings \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "source_id": "site-docs-reference-2",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Send logs to OnVault Pool Set to Yes , logs are replicated to one or more OnVault storage pools enabling for point-in-time recoveries from OnVault on another site.",
+          "Crash consistent might result in a longer RTO due to the need for the file system or application to perform a recovery from the inconsistent snap, and could even result in an unrecoverable snap in extreme cases.",
+          "Map Staging Disk to All ESX Hosts in a Cluster (For VMware VMs only) If your ESX servers are in an appliance, you can use this setting to ensure that the VMs are managed in case of failover during backup."
+        ]
+      },
+      {
+        "title": "\"Connecting using VPN \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: Connecting to multiple private clouds using Viscosity A point-to-site VPN connection resolves the DNS names of the first private cloud that you create.",
+          "Connect to VMware Engine using point-to-site VPN To connect to VMware Engine from your computer, you need a VPN client and a connection profile.",
+          "Connecting using VPN This article describes how to connect to your private cloud after you have a point-to-site VPN gateway set up."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-vpn-gateways",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-vpn-connect"
+      ]
+    }
+  ]
+}

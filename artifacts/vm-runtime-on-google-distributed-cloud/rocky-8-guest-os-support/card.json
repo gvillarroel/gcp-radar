@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.754Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud",
+  "feature_name": "Rocky 8 guest OS support",
+  "feature_slug": "rocky-8-guest-os-support",
+  "summary": "Adds support for Rocky Linux 8 as a guest operating system.",
+  "extended_definition": "Adds support for Rocky Linux 8 as a guest operating system.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Verified guest operating systems for VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verified guest operating systems: RHEL 7 ( Extended Life Cycle Support available through June 2028 ) RHEL 8 ( Extended Update Support available through May 2025 ) Rocky Linux 8 ( reaches End of Life May 2029 ) Ubuntu 18.04 ( Expanded Security Maintenance ends April 2028 ) Ubuntu 20.04 ( Expanded Security Maintenance ends April 2030 ) Ubuntu 22.04 ( Expanded Security Maintenance ends March 2032 ) Windows Server 2016 ( extended support ends January 2027 ) Windows Server 2019 ( extended support ends January 2029 ) Windows Server 2022 ( extended support ends October 2031 ) Windows 10 Professional ( support ends October 2025 ) What's next To get started, Create a VM in Google Distributed Cloud .",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Verified guest operating systems for VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, if a given Red Hat Enterprise Linux (RHEL) 8.x is verified, then RHEL 8 minor releases such as RHEL 8.y or RHEL 8.z ought to work without any issues, even though they aren't explicitly tested and verified."
+        ]
+      },
+      {
+        "title": "\"Connect to VMs that use VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "source_id": "site-docs-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "To disable the guest agent: Use kubectl to stop your VM before you make changes to the configuration: kubectl virt stop VM NAME --kubeconfig KUBECONFIG Edit your VM resource: kubectl edit gvm VM NAME --kubeconfig KUBECONFIG Update the VirtualMachine configuration to add an empty spec.guestEnvironment explicitly: apiVersion : vm.cluster.gke.io/v1alpha1 kind : VirtualMachine metadata : name : vm-example namespace : default spec : compute : ... osType : Linux guestEnvironment : {} Save and close the updated VM manifest in your editor.",
+          "Use the --configure-initial-password parameter with kubectl virt create command: kubectl virt create vm VM NAME \\ --image ubuntu20.04 \\ --os-type Linux \\ --configure-initial-password USERNAME : PASSWORD \\ --kubeconfig KUBECONFIG Replace the following values: VM NAME : name for your VM.",
+          "Check your VirtualMachine custom resource to confirm it's configured to enable the guest agent: kubectl get gvm VM NAME -o yaml --kubeconfig KUBECONFIG The spec.osType field should be set to the operating system of your VM, Linux or Windows ."
+        ]
+      },
+      {
+        "title": "\"Configure VM startup routines \\_|\\_ Google Distributed Cloud (software only)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Windows guest OSes aren't supported for this capability, since they don't support cloud-init.",
+          "Use a verified Linux guest OS and set osType to Linux in the VM manifest.",
+          "Ensure that the guest OS has cloud-init installed."
+        ]
+      },
+      {
+        "title": "\"Role-based access control (RBAC) for VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here are examples of the command output for each of the four predefined ClusterRoles: kubevm.admin apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.admin rbac.authorization.k8s.io/aggregate-to-admin : \"true\" name : kubevm.admin resourceVersion : \"16654950\" uid : 3296c279-6e85-4ea6-b250-548bf0c3e935 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - deletecollection - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch - deletecollection kubevm.edit apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.edit rbac.authorization.k8s.io/aggregate-to-edit : \"true\" name : kubevm.edit resourceVersion : \"16654951\" uid : 237bf9ae-b2c8-4303-94dc-e6425a2df331 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch kubevm.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.view rbac.authorization.k8s.io/aggregate-to-view : \"true\" name : kubevm.view resourceVersion : \"16654953\" uid : b5b54e2d-0097-4698-abbd-aeac212d0a34 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - list - watch kubevm.cluster.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.cluster.view name : kubevm.cluster.view resourceVersion : \"16654956\" uid : b25dde64-67da-488b-81d2-1a08f9a4a7c1 rules : - apiGroups : - vm.cluster.gke.io resources : - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networks verbs : - get - list - watch Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Resource Generated Cluster-wise kubevm.admin kubevm.view kubevm.edit kubevm.cluster.view virtualmachineaccessrequests – – Full Read Read/Write – virtualmachinedisks – – Full Read Read/Write – virtualmachines – – Full Read Read/Write – gpuallocations – – Full Read Read/Write – guestenvironmentdata Yes – Full Read Read/Write – vmruntimes – Yes Full Read Read/Write Read virtualmachinetypes – Yes Full Read Read/Write Read vmhighavailabilitypolicies – Yes Full Read Read/Write Read networkinterfaces Yes – Full Read Read/Write – networks – Yes Full Read Read/Write Read KubeVirt resources VM Runtime on GDC is based on the KubeVirt open source project .",
+          "Use the resource information in the following table if you want to create your own, customized roles: Resource Generated Cluster-wise pods Yes – services – – persistentvolumeclaims – – secrets – – nodes – Yes storageclasses – Yes configmaps – – ClusterRole YAML examples You can retrieve YAML for the ClusterRoles with the following kubectl command: kubectl get ClusterRole CLUSTERROLE NAME -o yaml --kubeconfig KUBECONFIG PATH Replace the following: CLUSTERROLE NAME : the name of the ClusterRole, such as kubevm.cluster.view ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "kubevm.admin",
+      "kubevm.cluster.view",
+      "kubevm.edit",
+      "kubevm.view",
+      "networking.gke.io",
+      "rbac.authorization.k8s.io",
+      "spec.guestEnvironment",
+      "spec.osType",
+      "ubuntu20.04",
+      "vm.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/guest-os",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-startup-config",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    }
+  ]
+}

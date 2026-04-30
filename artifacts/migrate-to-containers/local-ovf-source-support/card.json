@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.922Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Local OVF source support",
+  "feature_slug": "local-ovf-source-support",
+  "summary": "Local OVF files can be imported to create Anthos VM Runtime migrations.",
+  "extended_definition": "Local OVF files can be imported to create Anthos VM Runtime migrations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate a Linux VM using Migrate to Containers CLI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create the migration plan On the quickstart-local-vm command tab, create the migration plan: ./m2c analyze \\ --source quickstart-vm-filesystem --plugin linux-vm-container \\ --output analysis-output After the analysis is complete, a new directory called analysis-output is created which contains the migration plan, config.yaml .",
+          "Install Docker and allow the non-root user to run containers: Download the convenience script curl -fsSL https://get.docker.com -o install-docker.sh Install Docker sudo sh install-docker.sh Allow the non-root user to access Docker sudo usermod -aG docker $USER Activate the group changes newgrp docker Install Skaffold: curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \\ sudo install skaffold /usr/local/bin/ Download the Migrate to Containers CLI: curl -O \"https://m2c-cli-release.storage.googleapis.com/ $( curl -s https://m2c-cli-release.storage.googleapis.com/latest ) /linux/amd64/m2c\" chmod +x ./m2c Migrate the source VM A migration typically involves three steps: copying the source VM file system, analyzing the file system to create a migration plan, and generating the migration artifacts.",
+          "Create a Compute Engine VM to use as a local machine In this section, you create a Linux VM that you can use as your local machine to perform the different Migrate to Containers operations for migrating the source VM."
+        ]
+      },
+      {
+        "title": "\"Copy the source machine's file system \\_|\\_ Migrate to Containers \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Direct SSH ./m2c copy ssh [ USERNAME @] HOSTNAME \\ -i PATH TO PRIVATE KEY \\ -o OUTPUT FILESYSTEM DIR \\ --filters filters.txt gcloud ./m2c copy gcloud \\ -p PROJECT ID \\ -z ZONE \\ -n VM NAME \\ -o OUTPUT FILESYSTEM DIR \\ --filters filters.txt Create a local copy of the Windows source machine file system For Windows source machines, you need to copy the disk images in VHD or VHDX format for the migration process.",
+          "Direct SSH To copy using direct SSH access, run the following command: ./m2c copy ssh [ USERNAME @] HOSTNAME \\ -i PATH TO PRIVATE KEY \\ -o OUTPUT FILESYSTEM DIR Replace the following: USERNAME : your username HOSTNAME : the hostname PATH TO PRIVATE KEY : the path to private key OUTPUT FILESYSTEM DIR : the path for the output directory on your local machine where you want to copy the source machine's file system gcloud If the source machine has a public IP, run the following command: ./m2c copy gcloud \\ -p PROJECT ID \\ -z ZONE \\ -n VM NAME \\ -o OUTPUT FILESYSTEM DIR Replace the following: PROJECT ID : the project ID ZONE : the zone of your VM VM NAME : the name of the source VM OUTPUT FILESYSTEM DIR : the path for the directory output on your local machine where you want to copy the source machine's file system If the source machine doesn't have a public IP, you can do one of the following: If you are running the Migrate to Containers CLI from a machine in the same internal network, Use the --internal-ip flag.",
+          "Create a local copy of the Linux source machine file system The Migrate to Containers CLI supports access to source machines using either direct SSH connection or by using gcloud ."
+        ]
+      },
+      {
+        "title": "Create a migration plan \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a migration plan After creating a copy of the source machine's file system on your local machine, the next step is to analyze the file system to prepare a migration plan.",
+          "To retrieve these values, check the running Tomcat server process: ps aux grep catalina To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p tomcat-container \\ -o ANALYSIS OUTPUT PATH \\ -r catalina-home= PATH TO CATALINA HOME \\ -r catalina-base= PATH TO CATALINA BASE \\ -r java-version= JAVA VERSION Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created PATH TO CATALINA HOME : path to the root of the Tomcat installation PATH TO CATALINA BASE : path to the root of the runtime configuration of the Tomcat instance that you're migrating.",
+          "To retrieve this value, check the running JBoss server process: ps aux grep jboss.home.dir To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p jboss-container \\ -o ANALYSIS OUTPUT PATH \\ -r jboss-home= PATH TO JBOSS HOME Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created PATH TO JBOSS HOME : path to the JBoss installation After the analysis is complete, a new directory is created in the specified output path which contains the migration plan, config.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "docker.sh",
+      "filters.txt",
+      "get.docker.com",
+      "jboss.home.dir",
+      "key.gpg",
+      "packages.cloud.google.com",
+      "release.storage.googleapis.com",
+      "sdk.list",
+      "sources.list.d",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/copy-file-system",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan"
+      ]
+    }
+  ]
+}

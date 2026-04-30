@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Image-based exclusion rules",
+  "feature_slug": "image-based-exclusion-rules",
+  "summary": "Excludes image findings based on their spatial relationships to other findings.",
+  "extended_definition": "Excludes image findings based on their spatial relationships to other findings.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Modifying infoType detectors to refine scan results \\_|\\_ Sensitive Data\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example returns only 222-22-2222 , because 111-11-1111 is in the Fake Social Security Number column. { \"item\" : { \"table\" : { \"headers\" : [ { \"name\" : \"Fake Social Security Number\" }, { \"name\" : \"Real Social Security Number\" } ], \"rows\" : [ { \"values\" : [ { \"stringValue\" : \"111-11-1111\" }, { \"stringValue\" : \"222-22-2222\" } ] } ] } }, \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"includeQuote\" : true , \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"rules\" : [ { \"exclusionRule\" : { \"excludeByHotword\" : { \"hotwordRegex\" : { \"pattern\" : \"(Fake Social Security Number)\" }, \"proximity\" : { \"windowBefore\" : 1 } }, \"matchingType\" : \"MATCHING TYPE FULL MATCH\" } } ] } ], \"minLikelihood\" : \"POSSIBLE\" } } Omit findings in images based on spatial relationships The following JSON snippets illustrate how to configure Sensitive Data Protection to exclude findings in images based on their spatial relationship with other detected objects.",
+          "Exclude a person finding if it is part of a passport This rule excludes person findings ( OBJECT TYPE/PERSON ) when they are contained within a passport finding ( OBJECT TYPE/PERSON/PASSPORT ). { \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"OBJECT TYPE/PERSON\" }, { \"name\" : \"OBJECT TYPE/PERSON/PASSPORT\" } ], \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"OBJECT TYPE/PERSON\" } ], \"rules\" : [ { \"exclusionRule\" : { \"excludeByImageFindings\" : { \"infoTypes\" : [ { \"name\" : \"OBJECT TYPE/PERSON/PASSPORT\" } ], \"imageContainmentType\" : { \"encloses\" : {} } }, \"matchingType\" : \"MATCHING TYPE RULE SPECIFIC\" } } ] } ] } } Exclude a license plate finding if it contains a VIN This rule excludes a finding of a license plate ( OBJECT TYPE/LICENSE PLATE ) if a VEHICLE IDENTIFICATION NUMBER finding is fully inside it. { \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"OBJECT TYPE/LICENSE PLATE\" }, { \"name\" : \"VEHICLE IDENTIFICATION NUMBER\" } ], \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"OBJECT TYPE/LICENSE PLATE\" } ], \"rules\" : [ { \"exclusionRule\" : { \"excludeByImageFindings\" : { \"infoTypes\" : [ { \"name\" : \"VEHICLE IDENTIFICATION NUMBER\" } ], \"imageContainmentType\" : { \"fullyInside\" : {} } }, \"matchingType\" : \"MATCHING TYPE RULE SPECIFIC\" } } ] } ] } } Hotword rules Hotword rules are useful in situations like the following: You want to change likelihood values assigned to scan matches based on the match's proximity to a hotword.",
+          "You want to change the likelihood value of a target infoType finding based on its spatial relationship with other detected findings in the image."
+        ]
+      },
+      {
+        "title": "InspectConfig \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if InspectionRuleSet.info types includes OBJECT TYPE/PERSON and this exclusionRule specifies infoTypes as OBJECT TYPE/PERSON/PASSPORT with imageContainmentType set to encloses , then OBJECT TYPE/PERSON findings will be excluded if they are fully contained within the bounding box of an OBJECT TYPE/PERSON/PASSPORT finding. imageContainmentType object ( ImageContainmentType ) Specifies the required spatial relationship between the bounding boxes of the target finding and the context infoType findings.",
+          "Exclude by image findings: The matching logic is defined within ExcludeByImageFindings based on spatial relationships between bounding boxes.",
+          "ExcludeByImageFindings The rule to exclude image findings based on spatial relationships with other image findings."
+        ]
+      },
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you selected an image-based exclusion rule, select the required spatial relationship between the target and context infoTypes.",
+          "If you selected an image-based exclusion rule, select the required spatial relationship between the target and context infoTypes.",
+          "Depending on the exclusion rule type that you selected, set the matching type or image containment type: If you selected a text-based exclusion rule, select one of the following matching types: Full match : The finding must completely match the text or context infoType that you provided."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-rules",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    }
+  ]
+}

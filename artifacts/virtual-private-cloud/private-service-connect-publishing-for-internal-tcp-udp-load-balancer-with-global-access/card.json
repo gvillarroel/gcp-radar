@@ -1,0 +1,184 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect publishing for Internal TCP/UDP Load Balancer with global access",
+  "feature_slug": "private-service-connect-publishing-for-internal-tcp-udp-load-balancer-with-global-access",
+  "summary": "Private Service Connect supports publishing services behind an Internal TCP/UDP load balancer with global access enabled.",
+  "extended_definition": "Private Service Connect supports publishing services behind an Internal TCP/UDP load balancer with global access enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you configure ingress firewall rules for backend services, the source of traffic depends on the type of load balancer that your service uses: Category Source of traffic to backends Passthrough load balancers: Internal passthrough Network Load Balancer Internal protocol forwarding Port mapping service The IP address ranges of the Private Service Connect (NAT) subnets associated with the service Proxy load balancers: Cross-region internal Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Secure Web Proxy The IP address ranges of the associated proxy-only subnets Services with health checks The probe IP address ranges of your load balancer type Publish a service To publish a service, you create a service attachment.",
+          "To create an IPv4-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\" } To create a dual-stack Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"ipCidrRange\": \" SUBNET RANGE \", \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV4 IPV6\", \"ipv6AccessType\": \"INTERNAL\" } To create an IPv6-only Private Service Connect subnet, do the following: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks { \"name\": \" SUBNET NAME \", \"network\": \"projects/ PROJECT ID /global/networks/ NETWORK NAME \", \"purpose\": \"PRIVATE SERVICE CONNECT\", \"stackType\": \"IPV6 ONLY\", \"ipv6AccessType\": \"INTERNAL\" } Replace the following: PROJECT ID : the project for the subnet.",
+          "Private Service Connect provides two methods to connect to published services: Endpoints (based on a forwarding rule) Backends (based on a load balancer) These endpoint types require slightly different producer configurations."
+        ]
+      },
+      {
+        "title": "\"Create and run Connectivity Tests \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "source_id": "site-iam-reference",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "These parameters are automatically selected based on your source and destination IP addresses. resource \"google network management connectivity test\" \"default\" { name = \"conn-test-addr\" source { ip address = google compute address.source addr.address project id = google compute address.source addr.project network = google compute network.default.id network type = \"GCP NETWORK\" } destination { ip address = google compute address.dest addr.address project id = google compute address.dest addr.project network = google compute network.default.id port = \"80\" } protocol = \"UDP\" } resource \"google compute network\" \"default\" { name = \"connectivity-vpc\" auto create subnetworks = false } resource \"google compute subnetwork\" \"default\" { name = \"connectivity-vpc-subnet\" ip cidr range = \"10.0.0.0/8\" region = \"us-central1\" network = google compute network.default.id } resource \"google compute firewall\" \"default\" { name = \"allow-incoming-all\" network = google compute network.default.name allow { protocol = \"all\" } source ranges = [\"0.0.0.0/0\"] } resource \"google compute address\" \"source addr\" { name = \"src-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.42\" region = \"us-central1\" } resource \"google compute address\" \"dest addr\" { name = \"dest-addr\" subnetwork = google compute subnetwork.default.id address type = \"INTERNAL\" address = \"10.0.0.43\" region = \"us-central1\" } resource \"google compute instance\" \"source\" { name = \"source-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.42\" access config { } } } resource \"google compute instance\" \"destination\" { name = \"dest-vm1\" machine type = \"e2-medium\" zone = \"us-central1-a\" boot disk { initialize params { image = data.google compute image.default.id } } network interface { network = google compute network.default.id subnetwork = google compute subnetwork.default.id network ip = \"10.0.0.43\" access config { } } } data \"google compute image\" \"default\" { family = \"debian-11\" project = \"debian-cloud\" } API This example tests the ability to ping from the source IP address to the destination IP address.",
+          "Terraform You can use a Terraform resource to create a test between two VM instances in a VPC network. resource \"google network management connectivity test\" \"instance test\" { name = \"conn-test-instances\" source { instance = google compute instance.source.id } destination { instance = google compute instance.destination.id port = \"80\" } protocol = \"TCP\" } resource \"google compute instance\" \"source\" { name = \"source-vm\" machine type = \"e2-medium\" boot disk { initialize params { image = data.google compute image.debian 9.id } } network interface { network = \"default\" access config { } } } resource \"google compute instance\" \"destination\" { name = \"dest-vm\" machine type = \"e2-medium\" boot disk { initialize params { image = data.google compute image.debian 9.id } } network interface { network = \"default\" access config { } } } data \"google compute image\" \"debian 9\" { family = \"debian-11\" project = \"debian-cloud\" } API The following sample test determines if the existing network configuration allows VM instance1 to ping VM instance2 .",
+          "You can test connectivity to the following: External Application Load Balancer Internal Application Load Balancer External passthrough Network Load Balancer Internal passthrough Network Load Balancer External proxy Network Load Balancer Test from a VM to a load balancer This section analyzes connectivity from the source VM to a load balancer ."
+        ]
+      },
+      {
+        "title": "\"Create a Private Service Connect backend \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "For instructions that include creating a load balancer with a Private Service Connect backend, see the following: Create an internal Application Load Balancer to access Google APIs Create a global external Application Load Balancer to access a published service Roles The Compute Load Balancer Admin role ( roles/compute.loadBalancerAdmin ) contains the permission required to perform the tasks described in this guide.",
+          "For complete instructions about creating a cross-region internal Application Load Balancer and a Private Service Connect NEG to access global Google APIs, see Access global Google APIs .",
+          "If not, double-check that you have completed all of the steps. gcloud Create a backend service for the target service. gcloud compute backend-services create BACKEND SERVICE NAME \\ --load-balancing-scheme=INTERNAL MANAGED \\ --protocol=TCP \\ --region= REGION Replace the following: BACKEND SERVICE NAME : the name of the backend service."
+        ]
+      },
+      {
+        "title": "Private Service Connect \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backends let you create configurations such as the following: Customer-owned domains and certificates in front of managed services Consumer-controlled failover between managed services in different regions Centralized security configuration and access control for managed services The following diagram shows an internal Application Load Balancer deployed with Private Service Connect backends that reference a published service.",
+          "Backends are deployed by using network endpoint groups (NEGs) that let consumers direct traffic to their load balancer before reaching a Private Service Connect service.",
+          "Using Private Service Connect lets you do the following: Create one or more internal IP addresses to access Google APIs for different use cases."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addr.address",
+      "addr.project",
+      "address.dest",
+      "address.source",
+      "compute.googleapis.com",
+      "compute.loadBalancerAdmin",
+      "data.google",
+      "image.debian",
+      "image.default.id",
+      "instance.destination.id",
+      "instance.source.id",
+      "network.default.id",
+      "network.default.name",
+      "subnetwork.default.id"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.loadBalancerAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/how-to/running-connectivity-tests",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+      ]
+    }
+  ]
+}

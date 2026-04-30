@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore customer-managed encryption keys",
+  "feature_slug": "firestore-customer-managed-encryption-keys",
+  "summary": "Firestore supports customer-managed encryption keys (CMEK).",
+  "extended_definition": "Firestore supports customer-managed encryption keys (CMEK).",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/cmek",
+      "https://docs.cloud.google.com/firestore/native/docs/cmek",
+      "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Firestore, see Use CMEK .",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Firestore.",
+          "Customer-managed encryption keys (CMEK) By default, all the data at rest in Firestore is encrypted using Google's default encryption ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Firestore, see Use CMEK .",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Firestore.",
+          "Customer-managed encryption keys (CMEK) By default, all the data at rest in Firestore is encrypted using Google's default encryption ."
+        ]
+      },
+      {
+        "title": "\"Firestore editions overview \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/editions-overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automatic, basic indexing on all document fields Change data capture Triggers Triggers Observability Cloud Monitoring Query Explain Query Insights Database Center Cloud Monitoring Query Explain Query Insights Database Center Data protection Scheduled backups Point-in-time recovery Scheduled backups Point-in-time recovery Encryption Google-owned and Google-managed encryption key Customer-managed encryption keys Google-owned and Google-managed encryption key Customer-managed encryption keys Storage SSD Hybrid storage (SSD & HDD) Performance Best Good Committed Use Discounts 20% for 1 year; 40% for 3 years 20% for 1 year; 40% for 3 years Data access modes Firestore supports the following data access modes to read and write data: Firestore with MongoDB compatibility mode : this interface supports Firestore with MongoDB compatibility and lets you re-use existing MongoDB drivers, tools, and open-source ecosystem integrations with Firestore.",
+          "Document Size Limits 4 MiB with MongoDB compatibility 1 MiB with Firestore in Native mode 1 MiB Supports Firestore with MongoDB compatibility Yes No Supports Firestore in Native mode: server-side, web, and mobile SDKs with real-time and offline support Yes (Preview) Yes Indexing Fully customizable, with support for advanced indexes like unique, dense, and sparse.",
+          "Firestore in Native mode : this interface supports all of the latest and most innovative capabilities of Firestore, including real-time synchronization and offline caching in the Firestore client libraries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/editions-overview"
+      ]
+    }
+  ]
+}

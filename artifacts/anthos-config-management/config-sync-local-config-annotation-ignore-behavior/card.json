@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.178Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Sync local-config annotation ignore behavior",
+  "feature_slug": "config-sync-local-config-annotation-ignore-behavior",
+  "summary": "Config Sync ignores validation and application of resources annotated with config.kubernetes.io/local-config: \"true\".",
+  "extended_definition": "Config Sync ignores validation and application of resources annotated with config.kubernetes.io/local-config: \"true\".",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage existing cluster objects \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "source_id": "site-docs-root",
+        "final_score": 305,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For objects you want Config Sync to ignore, add the config.kubernetes.io/local-config: \"true\" annotation to the object.",
+          "Resources with the local-config annotation set to any value other than \"false\" are treated as if it's set to \"true\" and are ignored.",
+          "After you add this annotation, Config Sync ignores this object as if it is removed from the source of truth."
+        ]
+      },
+      {
+        "title": "\"Declare dependencies between resource objects \\_|\\_ Config Sync \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For the Wordpress example, the annotation in Wordpress Deployment resembles the following: deployment.yaml apiVersion : apps/v1 kind : Deployment metadata : name : wordpress namespace : default labels : app : wordpress annotations : config.kubernetes.io/depends-on : apps/namespaces/default/StatefulSet/wordpress-mysql When Config Sync applies the objects, it first applies the dependency, the object wordpress-mysql StatefulSet.",
+          "Add the depends-on annotation to an object To specify a dependency, add the config.kubernetes.io/depends-on annotation on the dependent object with a value that references the dependency objects.",
+          "More details can be found in sigs.k8s.io/cli-utils With the depends-on annotation, Config Sync not only applies objects in the order that you want, it also verifies that the dependency object is reconciled before applying the dependent object."
+        ]
+      },
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "It does not modify the behavior of Config Sync in any way.",
+          "If the migration process is terminated, it can be recovered manually by running the following commands: kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/cm-multi.yaml && \\ kubectl wait --for condition=established crd rootsyncs.configsync.gke.io && \\ kubectl apply -f /tmp/nomos-migrate/my managed cluster-1/root-sync.yaml. - Updating the ConfigManagement object .... - Waiting for the RootSync CRD to be established .... - The RootSync CRD has been established. - Creating the RootSync object .... - Waiting for the reconciler-manager Pod to be ready .... - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - Haven't detected running Pods with the label selector \"app=reconciler-manager\". - The reconciler-manager Pod is running. - Waiting for the root-reconciler Pod to be ready .... - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - Haven't detected running Pods with the label selector \"configsync.gke.io/reconciler=root-reconciler\". - The root-reconciler Pod is running. - The migration process is done.",
+          "MANGED CLUSTER 4 -------------------- NOT INSTALLED MANAGED CLUSTER 5 -------------------- <root> git@github.com:foo-corp/acme/admin@main SYNCED f52a11e4 Managed resources: NAMESPACE NAME STATUS namespace/gamestore Current namespace/monitoring Current gamestore reposync.configsync.gke.io/repo-sync Current gamestore rolebinding.rbac.authorization.k8s.io/gamestore-admin Current gamestore rolebinding.rbac.authorization.k8s.io/gamestore-webstore-admin Current monitoring deployment.apps/prometheus-operator Current monitoring prometheus.monitoring.coreos.com/acm Current monitoring service/prometheus-acm Current monitoring service/prometheus-operator Current monitoring serviceaccount/prometheus-acm Current monitoring serviceaccount/prometheus-operator Current monitoring servicemonitor.monitoring.coreos.com/acm-service Current -------------------- bookstore git@github.com:foo-corp/acme/bookstore@v1 SYNCED 34d1a8c8 Managed resources: NAMESPACE NAME STATUS gamestore configmap/store-inventory Current gamestore webstore.marketplace.com/gameplace Current In this output: MANAGED CLUSTER 1 has synced the most recent change to the source of truth and all managed resources have a status of Current ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admin.yaml",
+      "config.kubernetes.io",
+      "configmanagement.gke.io",
+      "configsync.gke.io",
+      "deployment.apps",
+      "deployment.yaml",
+      "github.com",
+      "multi.yaml",
+      "prometheus.monitoring.coreos.com",
+      "rbac.authorization.k8s.io",
+      "reader.yaml",
+      "reposync.configsync.gke.io",
+      "rolebinding.rbac.authorization.k8s.io",
+      "rootsyncs.configsync.gke.io",
+      "servicemonitor.monitoring.coreos.com",
+      "sigs.k8s.io",
+      "sync.yaml",
+      "webstore.marketplace.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/managing-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/declare-resource-dependency"
+      ]
+    }
+  ]
+}

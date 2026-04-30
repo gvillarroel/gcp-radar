@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable automated backups",
+  "feature_slug": "bigtable-automated-backups",
+  "summary": "Automated backup for Bigtable is now generally available.",
+  "extended_definition": "Automated backup for Bigtable is now generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/backups",
+      "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+      "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage backups \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Consider the following factors if you plan to enable automated backup: If a cluster is added to an instance that contains a table with automated backup enabled, daily backups aren't created on the added cluster.",
+          "Under Configure automated backup , in the Retention period field, enter an integer from 3 to 90 to specify the number of days that Bigtable should retain backups after the change is saved.",
+          "It can take up to an hour for Bigtable to start creating backups. gcloud To enable automated backup for a table, run the gcloud bigtable tables update command."
+        ]
+      },
+      {
+        "title": "Bigtable backups overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable replication and automated backup to create daily backups in multiple regions, so that if a table becomes corrupted on one cluster, you have one or more backups that don't share storage on the corrupted cluster.",
+          "Backups of replicated tables that are created as part of automated backup are not exact copies of each other, because backup times can vary from cluster to cluster.",
+          "You can create backups in the following ways: Enable automated backup to let Bigtable create daily backups for you."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: bigtableadmin.googleapis.com \\_|\\_ Bigtable \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Union field automated backup config . automated backup config can be only one of the following: automatedBackupPolicy object ( AutomatedBackupPolicy ) If specified, automated backups are enabled for this table.",
+          "Example: \"3.5s\" . frequency string ( Duration format) How frequently automated backups should occur.",
+          "How long the automated backups should be retained."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com",
+      "com.google.cloud.bigtable.admin.v2.models.Backup.BackupType"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "https://docs.cloud.google.com/bigtable/docs/backups",
+        "https://docs.cloud.google.com/bigtable/docs/reference/admin/mcp/tools_list/create_table"
+      ]
+    }
+  ]
+}

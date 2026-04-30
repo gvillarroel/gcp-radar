@@ -1,0 +1,218 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.325Z",
+  "source_step08_card": "data/step-08/current/products/service-catalog/card.json",
+  "product_name": "Service Catalog",
+  "product_slug": "service-catalog",
+  "feature_name": "Private Catalog internal compliance controls",
+  "feature_slug": "private-catalog-internal-compliance-controls",
+  "summary": "Private Catalog helps cloud admins ensure internal compliance for solution distribution.",
+  "extended_definition": "Private Catalog helps cloud admins ensure internal compliance for solution distribution.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-catalog/docs/access-control",
+      "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+      "https://docs.cloud.google.com/service-catalog/docs/overview",
+      "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Features Service Catalog includes the following features: A Service Catalog experience for users and cloud admins Ability to create multiple catalogs and share them at different folder and project levels Ability to add additional Service Catalog cloud admins to create and curate content Support for reference links and Cloud Deployment Manager (Deployment Manager) templates Single point of entry for cloud admins and users Respect for organizational policies and Deployment Manager constraints to complement Service Catalog and provide controls A cloud admin can create a catalog under a Google Cloud organization.",
+          "Overview of Service Catalog Service Catalog enables developers and cloud admins to make their solutions discoverable to their own organization's internal enterprise users.",
+          "While making solutions discoverable, cloud admins can also control the distribution of solutions and ensure compliance and governance."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Creates and manages Service Catalog resources, such as solutions and catalogs. cloudprivatecatalogproducer.settings. cloudprivatecatalogproducer.catalogs. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.producerCatalogs. cloudprivatecatalogproducer.catalogAssociations. cloudprivatecatalogproducer.products. cloudprivatecatalog.targets. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Admin Role name Description Includes permissions roles/cloudprivatecatalogproducer.admin Creates and manages Service Catalog resources, such as solutions and catalogs. cloudprivatecatalogproducer.catalogs. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.producerCatalogs. cloudprivatecatalogproducer.catalogAssociations. cloudprivatecatalogproducer.products. cloudprivatecatalog.targets. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Manager Role name Description Includes permissions roles/cloudprivatecatalogproducer.manager Views solutions and catalogs, and shares catalogs with Service Catalog users. cloudprivatecatalog.targets.get cloudprivatecatalogproducer.catalogs.get cloudprivatecatalogproducer.catalogs.list cloudprivatecatalogproducer.targets. cloudprivatecatalogproducer.associations. cloudprivatecatalogproducer.producerCatalogs.get cloudprivatecatalogproducer.producerCatalogs.list cloudprivatecatalogproducer.catalogAssociations. resourcemanager.projects.get resourcemanager.projects.list resourcemanager.folders.get resourcemanager.folders.list resourcemanager.organizations.get Catalog Consumer Role name Description Includes permissions roles/cloudprivatecatalog.consumer Browses catalogs.",
+          "Operates under a target Google Cloud resource, such as an organization, project, or folder. cloudprivatecatalog.targets.get resourcemanager.projects.get resourcemanager.projects.list Adding users to Service Catalog IAM roles Users, Google Groups, or domains must have the resourcemanager.organizations.setIamPolicy permission on the organization to add users to the Service Catalog IAM roles.",
+          "For example, if your organization would like users granted the Catalog Admin role to also be able to add and remove users and groups from the other Service Catalog IAM roles, then an Organization Administrator can do the following: Create a Google Group for the users ( MyCompanyCatalogAdmins )."
+        ]
+      },
+      {
+        "title": "Creating a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) role for the Google Cloud organization associated with the Google Cloud project which has Service Catalog enabled.",
+          "The description is only visible to Service Catalog admins.",
+          "Next steps Assign solutions to your catalog Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Sharing a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled, and the folder, project, or organization where you're sharing the catalog.",
+          "Grant the following Identity and Access Management (IAM) roles to users who will use the shared catalog: Catalog Consumer ( roles/cloudprivatecatalog.consumer ) OR the IAM Viewer ( roles/viewer ) role for the relevant organization, project, or folder.",
+          "Home Documentation Access and resource management Service Catalog Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudprivatecatalog.consumer",
+      "cloudprivatecatalog.targets",
+      "cloudprivatecatalog.targets.get",
+      "cloudprivatecatalogproducer.admin",
+      "cloudprivatecatalogproducer.associations",
+      "cloudprivatecatalogproducer.catalogAssociations",
+      "cloudprivatecatalogproducer.catalogs",
+      "cloudprivatecatalogproducer.catalogs.get",
+      "cloudprivatecatalogproducer.catalogs.list",
+      "cloudprivatecatalogproducer.manager",
+      "cloudprivatecatalogproducer.producerCatalogs",
+      "cloudprivatecatalogproducer.producerCatalogs.get",
+      "cloudprivatecatalogproducer.producerCatalogs.list",
+      "cloudprivatecatalogproducer.products",
+      "cloudprivatecatalogproducer.settings",
+      "cloudprivatecatalogproducer.targets",
+      "deploymentmanager.editor",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizations.get",
+      "resourcemanager.organizations.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudprivatecatalog.consumer",
+      "roles/cloudprivatecatalogproducer.admin",
+      "roles/cloudprivatecatalogproducer.manager",
+      "roles/deploymentmanager.editor",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/create-catalog",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    }
+  ]
+}

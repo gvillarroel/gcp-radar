@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.016Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai",
+  "feature_name": "Imagen 4 Generate Preview 05-20",
+  "feature_slug": "imagen-4-generate-preview-05-20",
+  "summary": "Imagen 4 Generate Preview 05-20 became available in the API and Vertex AI Studio.",
+  "extended_definition": "Imagen 4 Generate Preview 05-20 became available in the API and Vertex AI Studio.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "128 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.0279239565, [...128 dimension vector...] 0.00403284049 ], \"textEmbedding\": [ 0.202921599, [...128 dimension vector...] -0.0365431122 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 256 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ 0.248620048, [...256 dimension vector...] -0.0646447465 ], \"textEmbedding\": [ 0.0757875815, [...256 dimension vector...] -0.02749932 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } 512 dimensions: { \"predictions\": [ { \"imageEmbedding\": [ -0.0523675755, [...512 dimension vector...] -0.0444030389 ], \"textEmbedding\": [ -0.0592851527, [...512 dimension vector...] 0.0350437127 ] } ], \"deployedModelId\": \" DEPLOYED MODEL ID \" } Python import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) TODO(developer): Try different dimenions: 128, 256, 512, 1408 embedding dimension = 128 model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) embeddings = model . get embeddings ( image = image , contextual text = \"Colosseum\" , dimension = embedding dimension , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [0.0622573346, -0.0406507477, 0.0260440577, ...] Text Embedding: [0.27469793, -0.146258667, 0.0222803634, ...] Go import ( \"context\" \"encoding/json\" \"fmt\" \"io\" aiplatform \"cloud.google.com/go/aiplatform/apiv1beta1\" aiplatformpb \"cloud.google.com/go/aiplatform/apiv1beta1/aiplatformpb\" \"google.golang.org/api/option\" \"google.golang.org/protobuf/encoding/protojson\" \"google.golang.org/protobuf/types/known/structpb\" ) // generateWithLowerDimension shows how to generate lower-dimensional embeddings for text and image inputs. func generateWithLowerDimension ( w io .",
+          "Fprintf ( w , \"Video embedding (length=%d): %v\\n\" , len ( videoEmbedding ), videoEmbedding ) // Example response: // Image embedding (length=1408): [-0.01558477 0.0258355 0.016342038 ... ] // Text embedding (length=1408): [-0.005894961 0.008349559 0.015355394 ... ] // Video embedding (length=1408): [-0.018867437 0.013997682 0.0012682161 ... ] return nil } Use gemini-embedding-2-preview The gemini-embedding-2-preview model accepts interleaved inputs across image, text, document, audio, and video modalities.",
+          "The following table illustrates the default and available lower dimensions available for each model: Model Default dimensions (highest) Supported dimensions (range) Recommended lower dimensions gemini-embedding-2-preview 3072 128 to 3072 128, 768 or 1536 multimodalembedding@001 1408 128 to 1408 128, 256, or 512 Use the following samples to generate embeddings with lower dimensions: REST Lower dimensions can be accessed by adding the parameters.dimension field."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Maps in Vertex AI \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Routing tool supports the following: Modes of transportation : Routing for driving, walking, bicycling, transit, and two-wheeled motorized vehicles (not all travel modes are available in all countries) Multiple waypoints : Up to 13 intermediate stops between origin and destination Real-time traffic : Accounting for current traffic conditions to provide accurate \"live\" travel times rather than static averages The following are examples of the types of questions that the Routing tool supports: Proximity based on travel time : \"What are some American restaurants within a 10-minute walk from the Hilton Hotel on 1335 6th Ave in NYC?\" Commute estimation : \"How long does it take to take public transit from Pike Place Market to Capitol Hill in Seattle?\" Understand the response When a prompt triggers the Routing tool, the model generates a natural language answer backed by structured metadata.",
+          "Display Google Maps sources with Google Maps links For each source in groundingChunks and in grounding chunks.maps.placeAnswerSources.reviewSnippets , a link preview must be generated following these requirements: Attribute each source to Google Maps following the Google Maps text attribution guidelines .",
+          "Routing capabilities are available as a Restricted Preview ."
+        ]
+      },
+      {
+        "title": "\"Grounding with Google Search \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "There is a slight chance of rain on both days.\\n\" } ] }, \"finishReason\": \"STOP\", \"groundingMetadata\": { \"webSearchQueries\": [ \"weather in Chicago this weekend\" ], \"searchEntryPoint\": { \"renderedContent\": \"...\" }, \"groundingChunks\": [ { \"web\": { \"uri\": \"https://www.google.com/search?q=weather+in+Chicago,+IL\", \"title\": \"Weather information for locality: Chicago, administrative area: IL\", \"domain\": \"google.com\" } }, { \"web\": { \"uri\": \"...\", \"title\": \"weatherbug.com\", \"domain\": \"weatherbug.com\" } } ], \"groundingSupports\": [ { \"segment\": { \"startIndex\": 85, \"endIndex\": 214, \"text\": \"The temperature will be between 49°F (9°C) and 55°F (13°C) on Saturday and between 51°F (11°C) and 56°F (13°C) on Sunday.\" }, \"groundingChunkIndices\": [ 0 ], \"confidenceScores\": [ 0.8662828 ] }, { \"segment\": { \"startIndex\": 215, \"endIndex\": 261, \"text\": \"There is a slight chance of rain on both days.\" }, \"groundingChunkIndices\": [ 1, 0 ], \"confidenceScores\": [ 0.62836814, 0.6488607 ] } ], \"retrievalMetadata\": {} } } ], \"usageMetadata\": { \"promptTokenCount\": 10, \"candidatesTokenCount\": 98, \"totalTokenCount\": 108, \"trafficType\": \"ON DEMAND\", \"promptTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 10 } ], \"candidatesTokensDetails\": [ { \"modality\": \"TEXT\", \"tokenCount\": 98 } ] }, \"modelVersion\": \"gemini-2.0-flash\", \"createTime\": \"2025-05-19T14:42:55.000643Z\", \"responseId\": \"b0MraIMFoqnf-Q-D66G4BQ\" } Grounding with Google Image Search Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "This capability supports all grounding methods including Search, Google Maps, and Vertex AI Search, providing the precise source details required to display accurate, interactive citations within your application. response = client . models . generate content ( model = \"gemini-3.1-pro-preview\" , contents = \"Where will the next FIFA World Cup be held?\" , config = types .",
+          "Grounding with Google Image Search is available in Preview only for the Gemini 3.1 Flash Image model ."
+        ]
+      },
+      {
+        "title": "\"Context Caching for Fine-tuned Gemini Models \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Response { \"candidates\": [ { \"content\": { \"role\": \"model\", \"parts\": [ { \"text\": \" MODEL RESPONSE \" } ] }, \"finishReason\": \"STOP\", \"safetyRatings\": [ { \"category\": \"HARM CATEGORY HATE SPEECH\", \"probability\": \"NEGLIGIBLE\", \"probabilityScore\": 0.21866937, \"severity\": \"HARM SEVERITY NEGLIGIBLE\", \"severityScore\": 0.19946389 }, { \"category\": \"HARM CATEGORY DANGEROUS CONTENT\", \"probability\": \"MEDIUM\", \"probabilityScore\": 0.6880493, \"severity\": \"HARM SEVERITY MEDIUM\", \"severityScore\": 0.43374163 }, { \"category\": \"HARM CATEGORY HARASSMENT\", \"probability\": \"NEGLIGIBLE\", \"probabilityScore\": 0.4442634, \"severity\": \"HARM SEVERITY LOW\", \"severityScore\": 0.37903354 }, { \"category\": \"HARM CATEGORY SEXUALLY EXPLICIT\", \"probability\": \"NEGLIGIBLE\", \"probabilityScore\": 0.10502681, \"severity\": \"HARM SEVERITY LOW\", \"severityScore\": 0.28170192 } ] } ], \"usageMetadata\": { \"promptTokenCount\": 55927, \"candidatesTokenCount\": 105, \"totalTokenCount\": 56032 } } Example curl command LOCATION = \"us-central1\" PROJECT ID = \"test-project\" ENDPOINT ID = 987654321 curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /endpoints/ ${ ENDPOINT ID } :generateContent\" -d \\ '{ \"cachedContent\": \"projects/${PROJECT NUMBER}/locations/${LOCATION}/cachedContents/${CACHE ID}\", \"contents\": [ {\"role\":\"user\",\"parts\":[{\"text\":\"What are the benefits of exercise?\"}]} ], \"generationConfig\": { \"maxOutputTokens\": 8192, \"temperature\": 1, \"topP\": 0.95, }, \"safetySettings\": [ { \"category\": \"HARM CATEGORY HATE SPEECH\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY DANGEROUS CONTENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY SEXUALLY EXPLICIT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY HARASSMENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" } ], }' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/ MODEL ID @ MODEL VERSION \", \"createTime\": \"2024-06-04T01:11:50.808236Z\", \"updateTime\": \"2024-06-04T01:11:50.808236Z\", \"expireTime\": \"2024-06-04T02:11:50.794542Z\" } Example curl command LOCATION = \"us-central1\" MODEL ID = \"model-id\" PROJECT ID = \"test-project\" MODEL VERSION = 1 MIME TYPE = \"video/mp4\" CACHED CONTENT URI = \"gs://path-to-bucket/video-file-name.mp4\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents -d \\ '{ \"model\":\"projects/${PROJECT ID}/locations/${LOCATION}/models/${MODEL ID}@${MODEL VERSION}\", \"contents\": [ { \"role\": \"user\", \"parts\": [ { \"fileData\": { \"mimeType\": \"${MIME TYPE}\", \"fileUri\": \"${CACHED CONTENT URI}\" } } ] } ] }' Use a context cache for a fine-tuned model The procedure for using a context cache for a fine-tuned model largely follows the steps outlined in Use a context cache .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /endpoints/ ENDPOINT ID :generateContent Request JSON body: { \"cachedContent\": \"projects/ PROJECT NUMBER /locations/ LOCATION /cachedContents/ CACHE ID \", \"contents\": [ {\"role\":\"user\",\"parts\":[{\"text\":\" PROMPT TEXT \"}]} ], \"generationConfig\": { \"maxOutputTokens\": 8192, \"temperature\": 1, \"topP\": 0.95, }, \"safetySettings\": [ { \"category\": \"HARM CATEGORY HATE SPEECH\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY DANGEROUS CONTENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY SEXUALLY EXPLICIT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" }, { \"category\": \"HARM CATEGORY HARASSMENT\", \"threshold\": \"BLOCK MEDIUM AND ABOVE\" } ], } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "chunks.maps.placeAnswerSources.reviewSnippets",
+      "landmark1.png",
+      "maps.google.com",
+      "name.mp4",
+      "parameters.dimension",
+      "request.json",
+      "vehicles.mp4",
+      "vertexai.vision",
+      "weatherbug.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-search",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-for-tuned-gemini"
+      ]
+    }
+  ]
+}

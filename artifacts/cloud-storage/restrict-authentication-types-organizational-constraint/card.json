@@ -1,0 +1,240 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.682Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Restrict authentication types organizational constraint",
+  "feature_slug": "restrict-authentication-types-organizational-constraint",
+  "summary": "This organizational constraint restricts which authentication types can be used in requests for Cloud Storage resources.",
+  "extended_definition": "This organizational constraint restricts which authentication types can be used in requests for Cloud Storage resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+      "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+      "https://docs.cloud.google.com/storage/docs/aws-simple-migration",
+      "https://docs.cloud.google.com/storage/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "HMAC keys \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "source_id": "site-iam-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can optionally enable the restrictAuthTypes constraint on a resource, which restricts access for requests signed by HMAC keys.",
+          "If you enable the restrictAuthTypes constraint on a resource, you can no longer create or activate HMAC keys for the specified account type in that resource.",
+          "Setup This page discusses hash-based message authentication code (HMAC) keys, which you can use to authenticate requests to the Cloud Storage XML API ."
+        ]
+      },
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the Domain Restricted Sharing constraint ( constraints/iam.allowedPolicyMemberDomains ) restricts resource sharing based on the organization's domain.",
+          "This portion of the bulk delete action requires the storage.objects.list permission, which might be surprising, given that the goal is object deletion, which normally requires only the storage.objects.delete permission.",
+          "Solution : Check with your security administrator team to see if the bucket to which you're sending requests is being affected by an organization policy that uses a custom constraint."
+        ]
+      },
+      {
+        "title": "\"Manage HMAC keys for service accounts \\_|\\_ Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure the following organization policy constraints are disabled: constraints/storage.restrictAuthTypes (must be disabled for HMAC key authentication) constraints/iam.disableServiceAccountKeyCreation See Creating and managing organization policies for instructions on how to check and disable constraints.",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The service account email for which the new HMAC key will be created // const serviceAccountEmail = 'service-account@iam.gserviceaccount.com'; // The ID of the project to which the service account belongs // const projectId = 'project-id'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); // Create HMAC SA Key async function createHmacKey () { const [ hmacKey , secret ] = await storage . createHmacKey ( serviceAccountEmail , { projectId , }); console . log ( The base64 encoded secret is: ${ secret } ); console . log ( 'Do not miss that secret, there is no API to recover it.' ); console . log ( 'The HMAC key metadata is:' ); for ( const [ key , value ] of Object . entries ( hmacKey . metadata )) { console . log ( ${ key } : ${ value } ); } } PHP For more information, see the Cloud Storage PHP API reference documentation .",
+          "For more information, see Set up authentication for client libraries . / TODO(developer): Uncomment the following lines before running the sample. / // The access ID of the HMAC key // const hmacKeyAccessId = 'GOOG0234230X00'; // The ID of the project to which the service account belongs // const projectId = 'project-id'; // Imports the Google Cloud client library const { Storage } = require ( ' @google-cloud/storage ' ); // Creates a client const storage = new Storage (); // Delete HMAC SA Key async function deleteHmacKey () { const hmacKey = storage . hmacKey ( hmacKeyAccessId , { projectId }); await hmacKey . delete (); console . log ( 'The key is deleted, though it may still appear in getHmacKeys() results.' ); } PHP For more information, see the Cloud Storage PHP API reference documentation ."
+        ]
+      },
+      {
+        "title": "Simple migration from Amazon S3 to Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/aws-simple-migration",
+        "source_id": "site-iam-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Important: Because the simple migration scenario uses HMAC keys, make sure that the project you migrate to isn't subject to the restrictAuthTypes constraint for the account type you intend to use.",
+          "To learn more about HMAC: https://cloud.google.com/storage/docs/authentication/hmackeys#overview \"\"\" client = boto3 . client ( \"s3\" , region name = \"auto\" , endpoint url = \"https://storage.googleapis.com\" , aws access key id = google access key id , aws secret access key = google access key secret , ) Call GCS to list current buckets response = client . list buckets () Return list of bucket names results = [] for bucket in response [ \"Buckets\" ]: results . append ( bucket [ \"Name\" ]) print ( bucket [ \"Name\" ]) # Can remove if not needed after development return results Set a default project To use Cloud Storage in a simple migration scenario, it's recommended that you set a default project , which Cloud Storage uses to perform certain operations , such as GET service or PUT bucket.",
+          "Here is the request to a bucket in Amazon S3: PUT europe/france/paris.jpg HTTP/1.1 Host: my-travel-maps.s3.amazonaws.com Date: Mon, 11 Mar 2019 23:46:19 GMT Content-Length: 888814 Content-Type: image/jpg x-amz-acl: public-read x-amz-date:20190311T192918Z x-amz-meta-reviewer: joe,jane Authorization: AWS4-HMAC-SHA256 Credential= AWS-ACCESS-KEY /20190311/us-east-1/s3/aws4 request, SignedHeaders=content-length;content-type;host;x-amz-acl;x-amz-date;x-amz-meta-reviewer, Signature= SIGNATURE Here is the request for a bucket in Cloud Storage: PUT europe/france/paris.jpg HTTP/1.1 Host: my-travel-maps.storage.googleapis.com Date: Mon, 11 Mar 2019 23:46:19 GMT Content-Length: 888814 Content-Type: image/jpg x-amz-acl: public-read x-amz-date:20190311T192918Z x-amz-meta-reviewer: joe,jane Authorization: AWS4-HMAC-SHA256 Credential= GOOG-ACCESS-ID /20190311/us-east-1/s3/aws4 request, SignedHeaders=content-length;content-type;host;x-amz-acl;x-amz-date;x-amz-meta-reviewer, Signature= SIGNATURE Here is the corresponding canonical request that was created for this request: PUT /europe/france/paris.jpg content-length:888814 content-type:image/jpg host:my-travel-maps.storage.googleapis.com x-amz-acl:public-read x-amz-date:20190311T192918Z x-amz-meta-reviewer:joe,jane content-length,content-type,host,x-amz-acl,x-amz-date,x-amz-meta-reviewer 82e3da8b3f35989512e8d428add7eca73ab0e5f36586e66fbad8e1051343cbd2 Here is the corresponding string-to-sign that was created for this request: AWS4-HMAC-SHA256 20190311T192918Z 20190311/us-east-1/s3/aws4 request 73918a5ff373d7a03e406fbf9ea35675396b06fca2af76c27a5c451fa783ef65 This request did not provide a Content-MD5 header, so an empty string is shown in the second line of the message."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.amazonaws.auth.AWSStaticCredentialsProvider",
+      "com.amazonaws.auth.BasicAWSCredentials",
+      "com.amazonaws.client.builder.AwsClientBuilder",
+      "com.amazonaws.services.s3.AmazonS3",
+      "com.amazonaws.services.s3.AmazonS3ClientBuilder",
+      "com.amazonaws.services.s3.model.Bucket",
+      "developers.google.com",
+      "iam.allowedPolicyMemberDomains",
+      "iam.disableServiceAccountKeyCreation",
+      "iam.gserviceaccount.com",
+      "java.util.List",
+      "maps.s3.amazonaws.com",
+      "maps.storage.googleapis.com",
+      "paris.jpg",
+      "storage.googleapis.com",
+      "storage.objects.delete",
+      "storage.objects.list",
+      "storage.restrictAuthTypes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/authentication/hmackeys",
+        "https://docs.cloud.google.com/storage/docs/troubleshooting",
+        "https://docs.cloud.google.com/storage/docs/authentication/managing-hmackeys",
+        "https://docs.cloud.google.com/storage/docs/aws-simple-migration"
+      ]
+    }
+  ]
+}

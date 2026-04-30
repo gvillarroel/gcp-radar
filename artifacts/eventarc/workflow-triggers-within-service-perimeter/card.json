@@ -1,0 +1,213 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.198Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Workflow triggers within service perimeter",
+  "feature_slug": "workflow-triggers-within-service-perimeter",
+  "summary": "Eventarc supports triggering a workflow within a service perimeter using VPC Service Controls.",
+  "extended_definition": "Eventarc supports triggering a workflow within a service perimeter using VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+      "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+      "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+      "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a service perimeter using VPC Service Controls \\_|\\_ Eventarc Standard\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To access the Pub/Sub API and manage event triggers, the Eventarc API must be protected within the same VPC Service Controls service perimeter as the Pub/Sub API.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Set up a service perimeter using VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.",
+          "Eventarc Standard In projects protected by a service perimeter, Eventarc Standard is bound by the same limitations as Pub/Sub: When routing events to Cloud Run destinations, you can only create new Pub/Sub push subscriptions when the push endpoints are set to Cloud Run services with default run.app URLs."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Trigger Workflows using Cloud Audit Logs (Google Cloud CLI)\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "source_id": "site-iam-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update gcloud components: gcloud components update Sign in using your account: gcloud auth login Enable the Compute Engine, Eventarc, Pub/Sub, and Workflows APIs. gcloud services enable \\ compute.googleapis.com \\ eventarc.googleapis.com \\ pubsub.googleapis.com \\ workflows.googleapis.com \\ workflowexecutions.googleapis.com Set the configuration variables used in this quickstart: export WORKFLOW LOCATION = us-central1 export TRIGGER LOCATION = us-central1 export PROJECT ID = PROJECT ID gcloud config set project ${ PROJECT ID } gcloud config set workflows/location ${ WORKFLOW LOCATION } gcloud config set eventarc/location ${ TRIGGER LOCATION } If you are the project creator, you are granted the basic Owner role ( roles/owner ).",
+          "Create a trigger that filters BigQuery events: gcloud eventarc triggers create events-cal-trigger \\ --destination-workflow = ${ MY WORKFLOW } \\ --destination-workflow-location = ${ WORKFLOW LOCATION } \\ --event-filters = \"type=google.cloud.audit.log.v1.written\" \\ --event-filters = \"serviceName=bigquery.googleapis.com\" \\ --event-filters = \"methodName=google.cloud.bigquery.v2.JobService.InsertJob\" \\ --service-account = \" PROJECT NUMBER -compute@developer.gserviceaccount.com\" This creates a trigger called events-cal-trigger .",
+          "Trigger Workflows using Cloud Audit Logs (gcloud CLI) Standard This quickstart shows you how to execute a workflow using an Eventarc trigger that receives Cloud Audit Logs events from BigQuery."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Trigger Workflows using Pub/Sub messages (Google Cloud CLI)\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "source_id": "site-iam-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you created a trigger for a new Pub/Sub topic, find and set the Pub/Sub topic created, as an environment variable: export TOPIC ID = $( basename $( gcloud eventarc triggers describe events-pubsub-trigger --format = 'value(transport.pubsub.topic)' )) To trigger the workflow, send a message to the Pub/Sub topic: gcloud pubsub topics publish $TOPIC ID --message \"Hello there\" The generated event is passed as a runtime argument to the workflow which returns a \"Hello there\" message.",
+          "Confirm that the trigger was successfully created: gcloud eventarc triggers describe events-pubsub-trigger --location = ${ TRIGGER LOCATION } The output should be similar to the following listing the time of creation and trigger location: createTime: '2021-10-14T15:15:43.872360951Z' [...] name: projects/ PROJECT ID /locations/us-central1/triggers/events-pubsub-trigger Generate and view an event Publish a message to the Pub/Sub topic to generate an event and trigger the workflow.",
+          "Create a trigger to listen for Pub/Sub messages: New Pub/Sub topic gcloud eventarc triggers create events-pubsub-trigger \\ --destination-workflow=${MY WORKFLOW} \\ --destination-workflow-location=${WORKFLOW LOCATION} \\ --event-filters=\"type=google.cloud.pubsub.topic.v1.messagePublished\" \\ --service-account=\" PROJECT NUMBER -compute@developer.gserviceaccount.com\" This creates a new Pub/Sub topic and a trigger for it called events-pubsub-trigger ."
+        ]
+      },
+      {
+        "title": "\"Create a trigger using Terraform \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Standard This document describes how to use Terraform and the google eventarc trigger resource to create Eventarc triggers for the following Google Cloud destinations: Cloud Run Google Kubernetes Engine Workflows For more information about using Terraform, see the Terraform on Google Cloud documentation.",
+          "Cloud Run Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-cloudrun-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google cloud run v2 service.default.location force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" depends on = [ data.google storage project service account.gcs account ] } GKE Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-gke-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = \"us-central1\" force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish pub/sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Workflows Cloud Storage bucket names must be globally unique resource \"random id\" \"bucket name suffix\" { byte length = 4 } Create a Cloud Storage bucket resource \"google storage bucket\" \"default\" { name = \"trigger-workflows-${data.google project.project.name}-${random id.bucket name suffix.hex}\" location = google workflows workflow.default.region force destroy = true uniform bucket level access = true } Grant the Cloud Storage service account permission to publish Pub/Sub topics data \"google storage project service account\" \"gcs account\" {} resource \"google project iam member\" \"pubsubpublisher\" { project = data.google project.project.id role = \"roles/pubsub.publisher\" member = \"serviceAccount:${data.google storage project service account.gcs account.email address}\" } Create an event receiver to be the event target Create an event receiver using one of the following Terraform resources: google cloud run v2 service google container cluster google workflows workflow Cloud Run Create a Cloud Run service as an event destination for the Eventarc trigger: Deploy Cloud Run service resource \"google cloud run v2 service\" \"default\" { name = \"hello-events\" location = \"us-central1\" deletion protection = false # set to \"true\" in production template { containers { This container will log received events image = \"us-docker.pkg.dev/cloudrun/container/hello\" } service account = google service account.default.email } depends on = [ google project service.run ] } GKE To simplify this guide, create a Google Kubernetes Engine service as an event destination outside of Terraform, in between applying Terraform configurations.",
+          "Verify the creation of resources Cloud Run Confirm that the service has been created: gcloud run services list --region us-central1 Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-cloudrun-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Cloud Run service: hello-events ACTIVE: Yes LOCATION: us-central1 GKE Confirm that the service has been created: kubectl get service hello-gke Confirm that the trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-gke-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: GKE: hello-gke ACTIVE: Yes LOCATION: us-central1 Workflows Confirm that the workflow has been created: gcloud workflows list --location us-central1 Confirm that the Eventarc trigger has been created: gcloud eventarc triggers list --location us-central1 The output should be similar to the following: NAME: trigger-storage-workflows-tf TYPE: google.cloud.storage.object.v1.finalized DESTINATION: Workflows: storage-workflow-tf ACTIVE: Yes LOCATION: us-central1 Generate and view an event You can generate an event and confirm that the Eventarc trigger is working as expected."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "account.email",
+      "account.eventarc",
+      "account.eventarc.email",
+      "account.gcs",
+      "bigquery.googleapis.com",
+      "compute.googleapis.com",
+      "compute.viewer",
+      "container.developer",
+      "data.google",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "eventarc.eventReceiver",
+      "eventarc.googleapis.com",
+      "eventarc.iam.gserviceaccount.com",
+      "iam.serviceAccountAdmin",
+      "id.bucket",
+      "local.eventarc",
+      "logging.logWriter",
+      "project.project.id",
+      "project.project.name",
+      "project.project.number",
+      "pubsub.googleapis.com",
+      "pubsub.publisher",
+      "pubsub.subscriber",
+      "run.app",
+      "sa.email",
+      "service.default.location",
+      "service.run",
+      "suffix.hex",
+      "transport.pubsub.topic",
+      "workflow.default.region",
+      "workflowexecutions.googleapis.com",
+      "workflows.googleapis.com",
+      "workflows.invoker"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.viewer",
+      "roles/container.developer",
+      "roles/eventarc.eventReceiver",
+      "roles/iam.serviceAccountAdmin",
+      "roles/logging.logWriter",
+      "roles/owner",
+      "roles/pubsub.publisher",
+      "roles/pubsub.subscriber",
+      "roles/workflows.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/using-vpc-service-controls",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-cal",
+        "https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-pubsub",
+        "https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform"
+      ]
+    }
+  ]
+}

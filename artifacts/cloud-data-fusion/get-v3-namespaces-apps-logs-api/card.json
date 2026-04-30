@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.934Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion",
+  "feature_name": "GET /v3/namespaces/.../apps/.../logs API",
+  "feature_slug": "get-v3-namespaces-apps-logs-api",
+  "summary": "The namespace/application logs download API was deprecated for system service and pipeline run log retrieval; deprecated on 2025-03-17.",
+  "extended_definition": "The namespace/application logs download API was deprecated for system service and pipeline run log retrieval; deprecated on 2025-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "2025-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+      "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+      "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "CDAP reference \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "source_id": "site-api-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /spark/DataStreamsSparkStreaming/runs/ run-id /logs?start= start-ts &stop= stop-ts \" Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name. run-id Relevant only if you want to view logs of a specific pipeline run.",
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs/ run-id /logs?start= start-ts &stop= stop-ts \" Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name. run-id Relevant only if you want to view logs of a specific pipeline run.",
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /spark/DataStreamsSparkStreaming/logs?start= start-ts &stop= stop-ts \" To view logs of a specific run of a real-time pipeline, submit the following HTTP GET request."
+        ]
+      },
+      {
+        "title": "Replication API reference \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "source_id": "site-api-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/start\" Parameter Description namespace-id The namespace of the replication job to start.",
+          "POST -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/stop\" Parameter Description namespace-id The namespace of the replication job to stop.",
+          "PUT -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name \" Parameter Description namespace-id The namespace in which to create the replication job."
+        ]
+      },
+      {
+        "title": "\"Create a pipeline monitoring dashboard using Cloud Monitoring \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard",
+        "source_id": "site-iam-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Label name Label type Field name Project STRING resource.labels.project id Message STRING jsonPayload.message LoggerName STRING labels.loggerName ClusterName STRING resource.labels.cluster name SparkPhase STRING labels.\".workflowSparkId\" Region STRING resource.labels.region Pipeline STRING labels.\".applicationId\" RunId STRING labels.\".runId\" Namespace STRING labels.\".namespaceId\" LogLevel STRING labels.levelName Click Create metric .",
+          "In the Build filter field, enter the following: resource.type=\"cloud dataproc cluster\" log name= \"projects/. /logs/datafusion-pipeline-logs\" In the Labels section, click Add label and create the following labels.",
+          "To preserve the URLs that use the project ID, such as an appspot.com URL, delete selected resources inside the project instead of deleting the whole project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com",
+      "labels.levelName",
+      "labels.loggerName",
+      "resource.labels.cluster",
+      "resource.labels.project",
+      "resource.labels.region",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/pipeline-monitoring-dashboard"
+      ]
+    }
+  ]
+}

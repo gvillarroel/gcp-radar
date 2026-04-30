@@ -1,0 +1,187 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.939Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace",
+  "feature_name": "Google Threat Intelligence Add Tag To DTM Alert action",
+  "feature_slug": "google-threat-intelligence-add-tag-to-dtm-alert-action",
+  "summary": "Adds an action that adds a tag to a DTM alert in Google Threat Intelligence.",
+  "extended_definition": "Adds an action that adds a tag to a DTM alert in Google Threat Intelligence.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one tag is removed from one entity (is success=true): \"Successfully removed the following tags from the \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If one tag is not found for one entity (is success=true): \"The following tags were already not a part of \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If all tags are not found for one entity (is success=true): \"None of the provided tags were part of \"{entity.identifier}\" entity in Anomali ThreatStream.\" If one entity is not found (is success=true): \"The following entities were not found in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If all entities are not found (is success=false): \"None of the provided entities were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Remove Tags From Entities\".",
+          "Run On This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one hash across entities is found (is success=true): \"Successfully added tags to the following entities in Anomali ThreatStream:\\n{0}\".format(entity.identifier list) If not found specific entities (is success=true): \"The following entities were not found in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If not found all entities (is success=false): \"None of the provided entities were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Add Tags To Entities\"."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"Format\" : \"TXT\" , \"Location\" : \"https: //example.s3.amazonaws.com/test.txt\" , \"Name\" : \"API Test\" , \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"149\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon,19 Oct 2020 06: 23: 22 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-requestid\" : \" REQUEST ID \" , \"x-amzn-trace-id\" : \" TRACE ID \" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \" REQUEST ID \" , \"RetryAttempts\" : 0 }, \"Status\" : \"ERROR\" , \"Tags\" : {} } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully retrieved details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to retrieve details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If no IDs are used: \"No details were retrieved about the provided Threat Intelligence Sets.\".format(list of ids) The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Threat Intelligence Sets\".",
+          "Tags CSV N/A No Specify additional tags that should be added to the Threat Intelligence Set.",
+          "Brute force attacks are used to gain unauthorized access to your instance by guessing the RDP password.\" , \"Id\" : \" ID \" , \"Partition\" : \"aws\" , \"Region\" : \"us-east-1\" , \"Resource\" : { \"InstanceDetails\" : { \"AvailabilityZone\" : \"us-east-1e\" , \"ImageId\" : \"ami- IMAGE ID \" , \"InstanceId\" : \"i- INSTANCE ID \" , \"InstanceState\" : \"running\" , \"InstanceType\" : \"t2.micro\" , \"LaunchTime\" : \"2020-05-27T08:54:03Z\" , \"NetworkInterfaces\" : [{ \"Ipv6Addresses\" : [], \"NetworkInterfaceId\" : \"eni-012d9b8a1a3b4e40a\" , \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" , \"PrivateIpAddresses\" : [{ \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" }], \"PublicDnsName\" : \"ec2-54-234-69-236.compute-1.amazonaws.com\" , \"PublicIp\" : \"198.51.100.236\" , \"SecurityGroups\" : [{ \"GroupId\" : \"sg-0fa42e04e9cd15407\" , \"GroupName\" : \"Windows Server 2016\" }], \"SubnetId\" : \"subnet-2edddf10\" , \"VpcId\" : \"vpc-48a7ac32\" }], \"Platform\" : \"windows\" , \"ProductCodes\" : [], \"Tags\" : [{ \"Key\" : \"Name\" , \"Value\" : \"CiscoAMP-win2012\" }]}, \"ResourceType\" : \"Instance\" }, \"SchemaVersion\" : \"2.0\" , \"Service\" : { \"Action\" : { \"ActionType\" : \"NETWORK CONNECTION\" , \"NetworkConnectionAction\" : { \"Blocked\" : false , \"ConnectionDirection\" : \"INBOUND\" , \"LocalPortDetails\" : { \"Port\" : 3389 , \"PortName\" : \"RDP\" }, \"Protocol\" : \"TCP\" , \"LocalIpDetails\" : { \"IpAddressV4\" : \"192.0.2.1\" }, \"RemoteIpDetails\" : { \"IpAddressV4\" : \"203.0.113.9\" , \"Organization\" : { \"Asn\" : \"24875\" , \"AsnOrg\" : \"Example Inc.\" , \"Isp\" : \"Example Inc.\" , \"Org\" : \"Example Inc.\" }}, \"RemotePortDetails\" : { \"Port\" : 1549 , \"PortName\" : \"Unknown\" }}}, \"Archived\" : false , \"Count\" : 5 , \"DetectorId\" : \" DETECTOR ID \" , \"EventFirstSeen\" : \"2020-10-06T05:10:58Z\" , \"EventLastSeen\" : \"2020-10-06T05:46:59Z\" , \"ResourceRole\" : \"TARGET\" , \"ServiceName\" : \"guardduty\" }, \"Severity\" : 2 , \"Title\" : \"203.0.113.9 is performing RDP brute force attacks against i- INSTANCE ID .\" , \"Type\" : \"UnauthorizedAccess:EC2/RDPBruteForce\" , \"UpdatedAt\" : \"2020-10-06T06:01:46.380Z\" }] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If \"ErrorCode\" is reported (is success=false): \"Action wasn't able to get Findings details."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These fields, combined with prioritization features from Mandiant Threat Intelligence, help determine priority levels, such as Active breach, High, or Medium: network.direction security result.[]action event count (active breach IP address only) For IP address indicators, the network.direction is required.",
+          "If the network.direction field is not populated in the UDM event, then Applied Threat Intelligence checks the principal.ip and target.ip fields against RFC 1918 internal IP address ranges to determine the network direction.",
+          "These rules use Mandiant Threat Intelligence to proactively identify and alert on high-priority threats."
+        ]
+      },
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Workspace-related rule sets The following rule sets detect patterns in Google Workspace data: Potential Insider Data Exfiltration from Chrome Potential Insider Data Exfiltration from Drive Potential Insider Data Exfiltration from Gmail Potential Workspace Account Compromise Suspicious Workspace Administrative Actions These rule sets require the following log types, listed by product name and Google SecOps ingestion label: Workspace Activities ( WORKSPACE ACTIVITY ) Workspace Alerts ( WORKSPACE ALERTS ) Workspace ChromeOS Devices ( WORKSPACE CHROMEOS ) Workspace Mobile Devices ( WORKSPACE MOBILE ) Workspace Users ( WORKSPACE USERS ) Google Chrome Browser Cloud Management ( CHROME MANAGEMENT ) Gmail logs ( GMAIL LOGS ) To ingest the required data, do the following: Collect the data listed in the All rule sets section of this document.",
+          "The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id(\"run.googleapis.com/stdout\") OR log id(\"run.googleapis.com/stderr\") OR log id(\"run.googleapis.com/requests\") OR log id(\"run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.",
+          "The following rule sets create a detection when findings from Security Command Center Event Threat Detection , Google Cloud Armor , Security Command Center Sensitive Actions Service , and Custom modules for Event Threat Detection are identified: CDIR SCC Cloud IDS CDIR SCC Cloud Armor CDIR SCC Impact CDIR SCC Enhanced Persistence CDIR SCC Enhanced Defense Evasion CDIR SCC Custom Module Kubernetes Suspicious Tools rule set To use the Kubernetes Suspicious Tools rule set, we recommend that you collect the data listed in the All rule sets section."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "ec2.internal",
+      "entity.identifier",
+      "example.s3.amazonaws.com",
+      "network.direction",
+      "principal.ip",
+      "run.googleapis.com",
+      "t2.micro",
+      "target.ip",
+      "test.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category"
+      ]
+    }
+  ]
+}

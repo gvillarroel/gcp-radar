@@ -1,0 +1,167 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.856Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server",
+  "feature_name": "Earth Engine export task priority",
+  "feature_slug": "earth-engine-export-task-priority",
+  "summary": "Export batch tasks can now be assigned a priority value when using a paid Earth Engine project.",
+  "extended_definition": "Export batch tasks can now be assigned a priority value when using a paid Earth Engine project.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/exporting_images",
+      "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+      "https://developers.google.com/earth-engine/guides/exporting_to_bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Exporting to BigQuery \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "source_id": "site-docs-root-2",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you use Earth Engine commercially or operationally, exporting data to BigQuery charges you for the EECU-time that the tasks use.",
+          "Export . table . toBigQuery ( collection = features , table = 'myproject.mydataset.mytable' , description = 'put my data in bigquery' , append = True , overwrite = False , ) task . start () Automatic or manual schema specification If there's no table present in BigQuery, Earth Engine attempts to determine a schema using the properties of the first ee.Feature in the collection.",
+          "Export . table . toBigQuery ( collection = annotated states , table = 'myproject.mydataset.mytable' ) task . start () Geometry conversion BigQuery has limited support for different projections , so all Earth Engine geometries are transformed to geodesic EPSG:4326 using an error margin of 1 meter."
+        ]
+      },
+      {
+        "title": "Exporting Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_images",
+        "source_id": "site-docs-root-2",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export . image . toAsset ({ image : band4 , description : 'imageToAssetExample' , assetId : 'exampleExport' , crs : projection . crs , crsTransform : projection . transform , region : geometry , pyramidingPolicy : { 'b4 mean' : 'mean' , 'b4 sample' : 'sample' , 'b4 max' : 'max' } }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Get band 4 from the Landsat image, copy it. band 4 = ( landsat . select ( 'B4' ) . rename ( 'b4 mean' ) . addBands ( landsat . select ( 'B4' ) . rename ( 'b4 sample' )) . addBands ( landsat . select ( 'B4' ) . rename ( 'b4 max' )) ) Export the image to an Earth Engine asset. task = ee . batch .",
+          "For example: Code Editor (JavaScript) // Set a nodata value and replace masked pixels around the image edge with it. var noDataVal = - 9999 ; landsat = landsat . unmask ( noDataVal ); Export . image . toDrive ({ image : landsat , description : 'imageNoDataExample' , crs : projection . crs , scale : 2000 , // large scale for minimal demo region : landsat . geometry (), // full image bounds fileFormat : 'GeoTIFF' , formatOptions : { noData : noDataVal , } }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Set a nodata value and replace masked pixels around the image edge with it. no data val = - 9999 landsat = landsat . unmask ( no data val ) task = ee . batch .",
+          "Export . image . toCloudStorage ({ image : landsat , description : 'imageToCloudExample' , bucket : 'your-bucket-name' , fileNamePrefix : 'exampleExport' , crs : projection . crs , crsTransform : projection . transform , region : geometry }); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Export the image to Cloud Storage. task = ee . batch ."
+        ]
+      },
+      {
+        "title": "Exporting Map Tiles \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/exporting_map_tiles",
+        "source_id": "site-docs-root-2",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Export . map . toCloudStorage ( image = landsat image , description = 'mapTilesForEE' , bucket = 'yourBucketName' , # replace with your GCS bucket name fileFormat = 'auto' , maxZoom = 13 , region = export region , writePublicTiles = True , bucketCorsUris = [ 'https://code.earthengine.google.com' , 'https:// .earthengine.app' , ], ) task . start () Viewing a Google Maps Preview To preview your map tiles on Google Maps, go to the output folder on Google Cloud Storage, and open the \"index.html\" file in your browser.",
+          "Using map tiles in Earth Engine (Code Editor or EE Apps) If you want to export map tiles only for re-use in Google Earth Engine or EE Apps, then set \"Access Level\" to 'Publicly Accessible', and set \"JS Access Level\" (in the task dialog) to 'Add Earth Engine Access' or 'Add Public Access'.",
+          "The output in the code editor Tasks tab (shown below) provides the URL for your tiles with the appropriate variables for use in Google Earth, for example: https://storage.googleapis.com/my bucket/my test tiles/$[level]/$[x]/$[y] Output URLs from a tile export task."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.jobs.create",
+      "bigquery.jobUser",
+      "bigquery.tables.create",
+      "bigquery.tables.delete",
+      "bigquery.tables.get",
+      "bigquery.tables.updateData",
+      "bigquery.user",
+      "code.earthengine.google.com",
+      "developers.google.com",
+      "earth.google.com",
+      "earthengine.app",
+      "ee.Feature",
+      "geemap.core",
+      "index.html",
+      "myproject.mydataset.mytable",
+      "mysite.mydomain.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/exporting_to_bigquery",
+        "https://developers.google.com/earth-engine/guides/exporting_images",
+        "https://developers.google.com/earth-engine/guides/exporting_map_tiles"
+      ]
+    }
+  ]
+}

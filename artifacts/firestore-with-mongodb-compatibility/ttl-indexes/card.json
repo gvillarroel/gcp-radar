@@ -1,0 +1,237 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.447Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility",
+  "feature_name": "TTL indexes",
+  "feature_slug": "ttl-indexes",
+  "summary": "Supports managing TTL indexes in the MongoDB API.",
+  "extended_definition": "Supports managing TTL indexes in the MongoDB API.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Indexes overview \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Learn how to create and manage indexes or TTL indexes Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, the following indexes are two distinct indexes and not interchangeable: Collection Fields cities country (ascending), population (descending) cities population (descending), country (ascending), When creating an index to support a query, include the fields in the same order as your query.",
+          "The following situations lead to errors when working with array values and multikey indexes: An operation attempts to add an array value to a field indexed by a regular index."
+        ]
+      },
+      {
+        "title": "\"Manage indexes \\_|\\_ Firestore with MongoDB compatibility \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "source_id": "site-iam-reference",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have defined custom roles, assign all of the following permissions to create indexes: datastore.indexes.create datastore.indexes.delete datastore.indexes.get datastore.indexes.list datastore.indexes.update Create an index To create an index, complete the following steps: MongoDB API Use the createIndex() method to create an index.",
+          "Set api-scope to mongodb-compatible-api . gcloud firestore indexes composite create \\ --database=' DATABASE ID ' \\ --collection-group= COLLECTION \\ --field-config= FIELD CONFIGURATION \\ --query-scope=collection-group \\ --density=dense \\ --api-scope=mongodb-compatible-api Replace the following: DATABASE ID : a database ID.",
+          "Terraform Use the google firestore index resource and set api scope to MONGODB COMPATIBLE API and query scope to COLLECTION GROUP . resource \"google firestore index\" \"index\" { database = \" DATABASE ID \" collection = \" COLLECTION \" api scope = \"MONGODB COMPATIBLE API\" query scope = \"COLLECTION GROUP\" // You can include multiple field blocks fields { field path = \" FIELD PATH \" order = \" ORDER \" } // Optional multikey = true density = \" DENSITY \" } Replace the following: DATABASE ID : The database ID for your chosen database COLLECTION : The name of the collection to index FIELD PATH : The name of the field to index ORDER : One of ASCENDING or DESCENDING DENSITY : One of SPARSE ANY or DENSE Delete an index To delete an index, complete the following steps: MongoDB API Use the dropIndex() method to delete an index."
+        ]
+      },
+      {
+        "title": "\"Audit logging information \\_|\\_ Firestore with MongoDB compatibility \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.location.Locations.GetLocation google.cloud.location.Locations.ListLocations google.firestore.admin.v1.FirestoreAdmin.GetBackup google.firestore.admin.v1.FirestoreAdmin.GetBackupSchedule google.firestore.admin.v1.FirestoreAdmin.GetDatabase google.firestore.admin.v1.FirestoreAdmin.GetField google.firestore.admin.v1.FirestoreAdmin.GetIndex google.firestore.admin.v1.FirestoreAdmin.ListBackupSchedules google.firestore.admin.v1.FirestoreAdmin.ListBackups google.firestore.admin.v1.FirestoreAdmin.ListDatabases google.firestore.admin.v1.FirestoreAdmin.ListFields google.firestore.admin.v1.FirestoreAdmin.ListIndexes google.firestore.admin.v1beta1.FirestoreAdmin.GetIndex google.firestore.admin.v1.MongoDBCompatible.ListIndexes google.firestore.admin.v1.MongoDBCompatible.ListDatabases ADMIN WRITE google.firestore.admin.v1.FirestoreAdmin.CreateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.CreateDatabase google.firestore.admin.v1.FirestoreAdmin.CreateIndex google.firestore.admin.v1.FirestoreAdmin.DeleteBackup google.firestore.admin.v1.FirestoreAdmin.DeleteBackupSchedule google.firestore.admin.v1.FirestoreAdmin.DeleteDatabase google.firestore.admin.v1.FirestoreAdmin.DeleteIndex google.firestore.admin.v1.FirestoreAdmin.RestoreDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateBackupSchedule google.firestore.admin.v1.FirestoreAdmin.UpdateDatabase google.firestore.admin.v1.FirestoreAdmin.UpdateField google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.firestore.v1.MongoDBCompatible.Find google.firestore.v1.MongoDBCompatible.Aggregate google.firestore.v1.MongoDBCompatible.GetMore google.firestore.v1.MongoDBCompatible.ListCollections google.firestore.v1.MongoDBCompatible.Count google.firestore.v1.MongoDBCompatible.Distinct google.firestore.v1.MongoDBCompatible.CommitTransaction google.firestore.v1.MongoDBCompatible.AbortTransaction google.firestore.v1.MongoDBCompatible.EndSessions google.firestore.v1.MongoDBCompatible.KillCursors DATA WRITE google.firestore.v1.MongoDBCompatible.Insert google.firestore.v1.MongoDBCompatible.Update google.firestore.v1.MongoDBCompatible.Delete google.firestore.v1.MongoDBCompatible.FindAndModify google.firestore.v1.MongoDBCompatible.CreateCollection Identify request callers Audit Log entries include information about the identity that performed the logged operation.",
+          "Once configured, logs for the Firestore with MongoDB compatibility API include the service name firestore.googleapis.com`.",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Notes When configuring audit logging, use the service name datastore.googleapis.com to configure both datastore.googleapis.com and firestore.googleapis.com."
+        ]
+      },
+      {
+        "title": "\"Manage Firestore with MongoDB compatibility resources using custom constraints\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test the custom organization policy Before you begin, you must know the following: Your organization ID Create the deleteProtectionRequired.yaml file as follows: name : organizations/ ORGANIZATION ID /customConstraints/custom.deleteProtectionRequired resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : \"resource.deleteProtectionState == \\\"DELETE PROTECTION ENABLED\\\"\" actionType : ALLOW displayName : Firestore with MongoDB compatibility Delete Protection Required description : To ensure the data security, Delete Protection is required to be enabled for Firestore databases.",
+          "Don't allow creation of databases unless delete protection is enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.deleteProtectionRequired resourceTypes : - firestore.googleapis.com/Database methodTypes : - CREATE - UPDATE condition : \"resource.deleteProtectionState == \" DELETE PROTECTION ENABLED\"\" actionType : ALLOW displayName : Firestore with MongoDB compatibility Delete Protection Required description : To ensure the data security, Delete Protection is required to be enabled for Firestore databases.",
+          "Manage Firestore with MongoDB compatibility resources using custom constraints This page shows you how to use Organization Policy Service custom constraints to restrict specific operations on the following Google Cloud resources: firestore.googleapis.com/Database To learn more about Organization Policy, see Custom organization policies ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.deleteProtectionRequired",
+      "custom.locationUsCentral1",
+      "custom.nameSuffixMobile",
+      "custom.pitrEnforce",
+      "datastore.googleapis.com",
+      "datastore.indexes.create",
+      "datastore.indexes.delete",
+      "datastore.indexes.get",
+      "datastore.indexes.list",
+      "datastore.indexes.update",
+      "firestore.googleapis.com",
+      "resource.deleteProtectionState",
+      "resource.locationId",
+      "resource.name.endsWith",
+      "resource.pointInTimeRecoveryEnablement"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/index-overview",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/indexing",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/audit-logging",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/custom-constraints"
+      ]
+    }
+  ]
+}

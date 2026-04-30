@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.806Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Vertex AI Agent Builder Agent Designer",
+  "feature_slug": "vertex-ai-agent-builder-agent-designer",
+  "summary": "Adds Agent Designer, a low-code visual environment in Google Cloud console for designing and testing agents.",
+  "extended_definition": "Adds Agent Designer, a low-code visual environment in Google Cloud console for designing and testing agents.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-designer",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent Designer overview \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-designer",
+        "source_id": "site-docs-root",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Agent Designer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Agent Designer in Vertex AI Agent Builder helps Customers design \"AI Agents\" as defined in the Service Specific Terms and thus the \"Agentic AI Services\" Service Specific Terms apply.",
+          "Additional Terms for Agent Designer in Vertex AI Agent Builder Relationship to Other Terms."
+        ]
+      },
+      {
+        "title": "\"Vertex AI Agent Engine Code Execution \\_|\\_ Vertex AI Agent Builder \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "source_id": "site-docs-root",
+        "final_score": 297,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Agent Builder Guides Send feedback Vertex AI Agent Engine Code Execution Stay organized with collections Save and categorize content based on your preferences.",
+          "To see an example of using , run the \"Get started with on \" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Note: Code Execution is supported in only the us-central1 region.",
+          "However, you don't need to deploy your agent to Vertex AI Agent Engine to use Code Execution."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 287,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Agent Engine instance is created with a read-only, system attested agent identity (a principal identifier ): Agent identity Format principal:// TRUST DOMAIN / NAMESPACE / AGENT NAME Example agent identity principal://agents.global.org- ORGANIZATION ID .system.id.goog/resources/aiplatform/projects/ PROJECT NUMBER /locations/ LOCATION /reasoningEngines/ AGENT ENGINE ID The following parts are auto-provisioned to you as part of agent identity: TRUST DOMAIN : A trust domain is provisioned for you when you enable the Vertex AI API: If you have an organization, the trust domain is created at the organization level with the format agents.global.org- ORGANIZATION ID .system.id.goog .",
+          "We recommend the following roles: roles/aiplatform.expressUser : Grant access to running inference, sessions, and memory. roles/serviceusage.serviceUsageConsumer : Grant the agent permission to use the project's quota and the Vertex AI SDK. roles/browser : Grant access to basic Google Cloud functionalities.",
+          "Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag."
+        ]
+      },
+      {
+        "title": "\"Develop a LangChain agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain",
+        "source_id": "site-docs-reference",
+        "final_score": 283,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Next, define a model builder that returns ChatAnthropic : def model builder ( , model name : str , model kwargs = None , kwargs ): from langchain anthropic import ChatAnthropic return ChatAnthropic ( model name = model name , model kwargs ) Finally, use it in LangchainAgent with the following code: from vertexai import agent engines agent = agent engines .",
+          "LangchainAgent ( model = model , runnable builder = lcel builder , ) LangGraph To construct the following graph using LangGraph , Input / \\ Pros Cons \\ / Summary you need to override the runnable builder for LangchainAgent : from vertexai import agent engines def langgraph builder ( , model , kwargs ): from langchain core.prompts import ChatPromptTemplate from langchain core.output parsers import StrOutputParser from langgraph.graph import END , MessageGraph output parser = StrOutputParser () planner = ChatPromptTemplate . from template ( \"Generate an argument about: {input} \" ) model output parser pros = ChatPromptTemplate . from template ( \"List the positive aspects of {input} \" ) model output parser cons = ChatPromptTemplate . from template ( \"List the negative aspects of {input} \" ) model output parser summary = ChatPromptTemplate . from template ( \"Input: {input} \\n Generate a final response given the critique\" , ) model output parser builder = MessageGraph () builder . add node ( \"planner\" , planner ) builder . add node ( \"pros\" , pros ) builder . add node ( \"cons\" , cons ) builder . add node ( \"summary\" , summary ) builder . add edge ( \"planner\" , \"pros\" ) builder . add edge ( \"planner\" , \"cons\" ) builder . add edge ( \"pros\" , \"summary\" ) builder . add edge ( \"cons\" , \"summary\" ) builder . add edge ( \"summary\" , END ) builder . set entry point ( \"planner\" ) return builder . compile () agent = agent engines .",
+          "LangchainAgent ( model = model , tools = [ generate and execute code ], ) agent . query ( input = \"\"\"Using the data below, construct a bar chart that includes only the height values with different colors for the bars: tree heights prices = { \\\" Pine \\\" : { \\\" height \\\" : 100, \\\" price \\\" : 100}, \\\" Oak \\\" : { \\\" height \\\" : 65, \\\" price \\\" : 135}, \\\" Birch \\\" : { \\\" height \\\" : 45, \\\" price \\\" : 80}, \\\" Redwood \\\" : { \\\" height \\\" : 200, \\\" price \\\" : 200}, \\\" Fir \\\" : { \\\" height \\\" : 180, \\\" price \\\" : 162}, } \"\"\" ) It should return a response such as { \"input\" : \"\"\"Using the data below, construct a bar chart that includes only the height values with different colors for the bars: tree heights prices = { \\\" Pine \\\" : { \\\" height \\\" : 100, \\\" price \\\" : 100}, \\\" Oak \\\" : { \\\" height \\\" : 65, \\\" price \\\" : 135}, \\\" Birch \\\" : { \\\" height \\\" : 45, \\\" price \\\" : 80}, \\\" Redwood \\\" : { \\\" height \\\" : 200, \\\" price \\\" : 200}, \\\" Fir \\\" : { \\\" height \\\" : 180, \\\" price \\\" : 162}, } \"\"\" , \"output\" : \"\"\"Here's the generated bar chart: \"\"\" } For your deployed agent to access the Code Interpreter extension, you must add the Vertex AI User role ( roles/aiplatform.user ) to the AI Platform Reasoning Engine Service Agent service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.expressUser",
+      "aiplatform.user",
+      "core.output",
+      "core.prompts",
+      "core.runnables",
+      "langgraph.graph",
+      "serviceusage.serviceUsageConsumer",
+      "system.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.expressUser",
+      "roles/aiplatform.user",
+      "roles/browser",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-designer",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-designer",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-designer",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-designer",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/code-execution/overview",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/develop/langchain"
+      ]
+    }
+  ]
+}

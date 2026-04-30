@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Network Service Tiers",
+  "feature_slug": "network-service-tiers",
+  "summary": "Network Service Tiers let you choose Standard Tier or Premium Tier for external traffic to GKE Services.",
+  "extended_definition": "Network Service Tiers let you choose Standard Tier or Premium Tier for external traffic to GKE Services.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must use one of the following accelerator-optimized machine types: Machine series Machine type Accelerator model Networking technology A3 Ultra a3-ultragpu-8g NVIDIA H200 GPU RDMA A4 a4-highgpu-8g NVIDIA B200 GPU RDMA A4X a4x-highgpu-4g NVIDIA GB200 GPU RDMA A4X Max a4x-maxgpu-4g-metal NVIDIA B300 GPU RDMA TPU v7 tpu7x-standard-4t TPU v7 NetDevice TPU v6e ct6e-standard-8t Trillium TPU NetDevice TPU v6e ct6e-standard-4t Trillium TPU NetDevice TPU v6e ct6e-standard-1t Trillium TPU NetDevice Limitations GKE DRANET has the following limitations: You can't use GKE DRANET to allocate the default network interface card (NIC) or virtual NICs (such as veth).",
+          "Autopilot Standard Google Kubernetes Engine (GKE) DRANET is a managed GKE feature that builds upon the open-source DRANET project, which implements the Kubernetes DRA API for networking resources.",
+          "When to use GKE managed DRANET GKE DRANET provides a standardized way to manage network resources that are aware of topology and dependencies."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard Networking in Google Kubernetes Engine (GKE) covers a broad set of concepts, including Pods, services, DNS, load balancing, security, and IP address management.",
+          "An end-to-end architecture for a secure, multi-tier retail application on GKE, highlighting the key networking components used in each phase of deployment and scaling.",
+          "Configure Tier 1 networking on critical nodes for maximum throughput."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard Networking in Google Kubernetes Engine (GKE) covers a broad set of concepts, including Pods, services, DNS, load balancing, security, and IP address management.",
+          "An end-to-end architecture for a secure, multi-tier retail application on GKE, highlighting the key networking components used in each phase of deployment and scaling.",
+          "Configure Tier 1 networking on critical nodes for maximum throughput."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    }
+  ]
+}

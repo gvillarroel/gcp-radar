@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.420Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "InnoDB buffer pool management flags",
+  "feature_slug": "innodb-buffer-pool-management-flags",
+  "summary": "Cloud SQL for MySQL supports the innodb_buffer_pool_dump_now, innodb_buffer_pool_load_abort, and innodb_buffer_pool_load_now flags for MySQL 8.0.",
+  "extended_definition": "Cloud SQL for MySQL supports the innodb_buffer_pool_dump_now, innodb_buffer_pool_load_abort, and innodb_buffer_pool_load_now flags for MySQL 8.0.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+      "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+      "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Client libraries and sample code for Cloud SQL \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Libraries and sample code Language Documentation C++ Google API Client Library Dart Google API Client Library Go Google API Client Library Sample code: Cloud SQL Auth Proxy Java Google API Client Library Google Client Developer's Guide Sample code: Cloud SQL Java Connector JavaScript Google API Client Library .NET Google API Client Library Google Client Developer's Guide Node.js Google API Client Library Objective-C Google API Client Library PHP Google API Client Library Python Google API Client Library Google Client Developer's Guide Cloud SQL Python Connector Sample code: MySQL, PostgreSQL, SQL Server Ruby Google API Client Library Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Cloud SQL MySQL Reference Send feedback Client libraries and sample code for Cloud SQL Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server The Cloud SQL Admin API is built on HTTP and JSON, so any standard HTTP client can send requests to it and parse the responses."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL built-in database authentication \\_|\\_ Cloud SQL for MySQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication",
+        "source_id": "site-docs-reference-3",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL built-in database authentication Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.",
+          "Note: User password policy options are supported on Cloud SQL for MySQL 8.0 and later."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud SQL allows caching of data in the InnoDB buffer pool.",
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "The following command lets you check the redo log size: SHOW VARIABLES LIKE 'innodb log file%'; You can check the size of general log , if it is enabled, with the help of this command: SELECT ROUND(SUM(LENGTH(argument)/POW(1024,2)),2) AS GB from mysql.general log; If needed, you can truncate your log tables by using the API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mysql.general"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/libraries",
+        "https://docs.cloud.google.com/sql/docs/mysql/built-in-authentication"
+      ]
+    }
+  ]
+}

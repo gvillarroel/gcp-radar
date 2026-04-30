@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.075Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Content Guardrails admin panel",
+  "feature_slug": "content-guardrails-admin-panel",
+  "summary": "The Content Guardrails admin panel lets Looker admins limit merged results queries and dashboard auto-refreshes.",
+  "extended_definition": "The Content Guardrails admin panel lets Looker admins limit merged results queries and dashboard auto-refreshes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-performance-center-content-guardrails"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Content Guardrails \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-performance-center-content-guardrails",
+        "source_id": "site-docs-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Content guardrails are settings that let Looker admins impose limits on how some dashboard settings can be configured by Looker users.",
+          "The Content guardrails page has the following options: Limit merged results query tiles Reduce loading time for custom visualizations Limit dashboard refreshing Limit dashboard tabs Limit query tiles on tabs and on dashboards Limit rows in a custom visualization For more information and recommendations about building performant dashboards, see Considerations when building performant Looker dashboards .",
+          "Enable Limit Automatically refresh dashboard option so that only Looker admins can configure dashboards to auto-refresh ."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "source_id": "site-docs-reference",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This feature allows admins to set limits on tiles per dashboard and per tab to optimize performance, which is configured on the Content Guardrails page in the Performance Center section of the Admin panel.",
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "This feature allows admins to set limits on tiles per dashboard and per tab to optimize performance, which is configured on the Content Guardrails page in the Performance Center section of the Admin panel.",
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-performance-center-content-guardrails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-performance-center-content-guardrails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-performance-center-content-guardrails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+      ]
+    }
+  ]
+}

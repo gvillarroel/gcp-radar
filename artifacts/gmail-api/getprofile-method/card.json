@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.333Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api",
+  "feature_name": "getProfile method",
+  "feature_slug": "getprofile-method",
+  "summary": "The getProfile method returns mailbox-wide metadata such as history ID and total message and thread counts.",
+  "extended_definition": "The getProfile method returns mailbox-wide metadata such as history ID and total message and thread counts.",
+  "lifecycle": {
+    "latest_feature_date": "2014-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides/uploads",
+      "https://developers.google.com/workspace/gmail/api/reference/rest",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.history.list \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "We recommend using the specific change-type fields instead of this. messagesAdded[] object ( MessageAdded ) Messages added to the mailbox in this history record. messagesDeleted[] object ( MessageDeleted ) Messages deleted (not Trashed) from the mailbox in this history record. labelsAdded[] object ( LabelAdded ) Labels added to messages in this history record. labelsRemoved[] object ( LabelRemoved ) Labels removed from messages in this history record.",
+          "JSON representation { \"id\" : string , \"messages\" : [ { object ( Message ) } ] , \"messagesAdded\" : [ { object ( MessageAdded ) } ] , \"messagesDeleted\" : [ { object ( MessageDeleted ) } ] , \"labelsAdded\" : [ { object ( LabelAdded ) } ] , \"labelsRemoved\" : [ { object ( LabelRemoved ) } ] } Fields id string The mailbox sequence ID. messages[] object ( Message ) List of messages changed in this history record.",
+          "Any messages contained in the response will typically only have id and threadId fields populated. nextPageToken string Page token to retrieve the next page of results in the list. historyId string The ID of the mailbox's current history record."
+        ]
+      },
+      {
+        "title": "Upload attachments \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "POST /upload/gmail/v1/users/ userId /messages/send?uploadType=multipart HTTP/1.1 Host: www.googleapis.com Authorization: Bearer your auth token Content-Type: multipart/related; boundary=foo bar baz Content-Length: number of bytes in entire request body --foo bar baz Content-Type: application/json; charset=UTF-8 { \"id\" : string , \"threadId\" : string , \"labelIds\" : [ string ], \"snippet\" : string , \"historyId\" : unsigned long , \"payload\" : { \"partId\" : string , \"mimeType\" : string , \"filename\" : string , \"headers\" : [ { \"name\" : string , \"value\" : string } ], \"body\" : users . messages . attachments Resource , \"parts\" : [ ( MessagePart ) ] }, \"sizeEstimate\" : integer , \"raw\" : bytes } --foo bar baz Content-Type: message/rfc822 Email Message data --foo bar baz-- If the request succeeds, the server returns the HTTP 200 OK status code along with any metadata: HTTP/1.1 200 Content-Type: application/json { \"id\" : string , \"threadId\" : string , \"labelIds\" : [ string ], \"snippet\" : string , \"historyId\" : unsigned long , \"payload\" : { \"partId\" : string , \"mimeType\" : string , \"filename\" : string , \"headers\" : [ { \"name\" : string , \"value\" : string } ], \"body\" : users . messages . attachments Resource , \"parts\" : [ ( MessagePart ) ] }, \"sizeEstimate\" : integer , \"raw\" : bytes } Resumable upload To upload data files more reliably, you can use the resumable upload protocol.",
+          "POST /upload/gmail/v1/users/ userId /messages/send?uploadType=media HTTP/1.1 Host: www.googleapis.com Content-Type: message/rfc822 Content-Length: number of bytes in file Authorization: Bearer your auth token Email Message data If the request succeeds, the server returns the HTTP 200 OK status code along with any metadata: HTTP/1.1 200 Content-Type: application/json { \"id\" : string , \"threadId\" : string , \"labelIds\" : [ string ], \"snippet\" : string , \"historyId\" : unsigned long , \"payload\" : { \"partId\" : string , \"mimeType\" : string , \"filename\" : string , \"headers\" : [ { \"name\" : string , \"value\" : string } ], \"body\" : users . messages . attachments Resource , \"parts\" : [ ( MessagePart ) ] }, \"sizeEstimate\" : integer , \"raw\" : bytes } Multipart upload If you have metadata that you want to send along with the data to upload, you can make a single multipart/related request.",
+          "POST /upload/gmail/v1/users/ userId /messages/send?uploadType=resumable HTTP/1.1 Host: www.googleapis.com Authorization: Bearer your auth token Content-Length: 38 Content-Type: application/json; charset=UTF-8 X-Upload-Content-Type: message/rfc822 X-Upload-Content-Length: 2000000 { \"id\" : string , \"threadId\" : string , \"labelIds\" : [ string ], \"snippet\" : string , \"historyId\" : unsigned long , \"payload\" : { \"partId\" : string , \"mimeType\" : string , \"filename\" : string , \"headers\" : [ { \"name\" : string , \"value\" : string } ], \"body\" : users . messages . attachments Resource , \"parts\" : [ ( MessagePart ) ] }, \"sizeEstimate\" : integer , \"raw\" : bytes } Note: For an initial resumable update request without metadata, leave the body of the request empty, and set the Content-Length header to 0 ."
+        ]
+      },
+      {
+        "title": "Gmail API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://gmail.googleapis.com REST Resource: v1.users Methods getProfile GET /gmail/v1/users/{userId}/profile Gets the current user's Gmail profile. stop POST /gmail/v1/users/{userId}/stop Stop receiving push notifications for the given user mailbox. watch POST /gmail/v1/users/{userId}/watch Set up or update a push notification watch on the given user mailbox.",
+          "REST Resource: v1.users.history Methods list GET /gmail/v1/users/{userId}/history Lists the history of all changes to the given mailbox.",
+          "REST Resource: v1.users.messages Methods batchDelete POST /gmail/v1/users/{userId}/messages/batchDelete Deletes many messages by message ID. batchModify POST /gmail/v1/users/{userId}/messages/batchModify Modifies the labels on the specified messages. delete DELETE /gmail/v1/users/{userId}/messages/{id} Immediately and permanently deletes the specified message. get GET /gmail/v1/users/{userId}/messages/{id} Gets the specified message. import POST /gmail/v1/users/{userId}/messages/import POST /upload/gmail/v1/users/{userId}/messages/import Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. insert POST /gmail/v1/users/{userId}/messages POST /upload/gmail/v1/users/{userId}/messages Directly inserts a message into only this user's mailbox similar to IMAP APPEND , bypassing most scanning and classification. list GET /gmail/v1/users/{userId}/messages Lists the messages in the user's mailbox. modify POST /gmail/v1/users/{userId}/messages/{id}/modify Modifies the labels on the specified message. send POST /gmail/v1/users/{userId}/messages/send POST /upload/gmail/v1/users/{userId}/messages/send Sends the specified message to the recipients in the To , Cc , and Bcc headers. trash POST /gmail/v1/users/{userId}/messages/{id}/trash Moves the specified message to the trash. untrash POST /gmail/v1/users/{userId}/messages/{id}/untrash Removes the specified message from the trash."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "gmail.googleapis.com",
+      "users.history",
+      "users.history.list",
+      "users.messages",
+      "users.messages.import",
+      "v1.users",
+      "v1.users.history",
+      "v1.users.messages",
+      "v1.users.settings.cse.keypairs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.history/list",
+        "https://developers.google.com/workspace/gmail/api/guides/uploads",
+        "https://developers.google.com/workspace/gmail/api/reference/rest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+# Chat API
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/chat-api/card.json`
+
+## Summary
+
+- Promoted features: 64
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-04-01
+- Official source links: 45
+
+## Features
+
+- [Custom sections API](./custom-sections-api/README.md)
+- [App authentication with administrator approval for Chat API read methods](./app-authentication-with-administrator-approval-for-chat-api-read-methods/README.md)
+- [App authentication with administrator approval for Chat event subscriptions](./app-authentication-with-administrator-approval-for-chat-event-subscriptions/README.md)
+- [Block quote formatting](./block-quote-formatting/README.md)
+- [User-authenticated card messages on behalf of users](./user-authenticated-card-messages-on-behalf-of-users/README.md)
+- [User mentions with app authentication](./user-mentions-with-app-authentication/README.md)
+- [Pub/Sub delivery for Chat apps built as Google Workspace add-ons](./pub-sub-delivery-for-chat-apps-built-as-google-workspace-add-ons/README.md)
+- [Convert Chat apps to Google Workspace add-ons](./convert-chat-apps-to-google-workspace-add-ons/README.md)
+- [Dynamic autocomplete drop-down menus](./dynamic-autocomplete-drop-down-menus/README.md)
+- [Find group chats by members](./find-group-chats-by-members/README.md)
+- [Assistant manager membership role](./assistant-manager-membership-role/README.md)
+- [Increased per-space write quotas](./increased-per-space-write-quotas/README.md)
+- [Carousel card layout](./carousel-card-layout/README.md)
+- [Quoted messages](./quoted-messages/README.md)
+- [chat.app authentication scopes for space and membership management](./chat-app-authentication-scopes-for-space-and-membership-management/README.md)
+- [Space permission settings management with app authentication](./space-permission-settings-management-with-app-authentication/README.md)
+- [Huddle](./huddle/README.md)
+- [Rich link metadata for Meet](./rich-link-metadata-for-meet/README.md)
+- [Google Workspace add-ons for Chat apps](./google-workspace-add-ons-for-chat-apps/README.md)
+- [Markdown formatting](./markdown-formatting/README.md)
+- [Space notification settings API](./space-notification-settings-api/README.md)
+- [Quick commands](./quick-commands/README.md)
+- [User mentions with user authentication](./user-mentions-with-user-authentication/README.md)
+- [Group chats in import mode](./group-chats-in-import-mode/README.md)
+- [Read-only custom emoji scope](./read-only-custom-emoji-scope/README.md)
+- [Advanced card UI widgets](./advanced-card-ui-widgets/README.md)
+- [Custom emoji management API](./custom-emoji-management-api/README.md)
+- [Announcement spaces and permission settings API](./announcement-spaces-and-permission-settings-api/README.md)
+- [Administrator management and search of Chat spaces](./administrator-management-and-search-of-chat-spaces/README.md)
+- [Chat space smart chips](./chat-space-smart-chips/README.md)
+- [ID token request authentication for Chat apps](./id-token-request-authentication-for-chat-apps/README.md)
+- [Import spaces with external users allowed](./import-spaces-with-external-users-allowed/README.md)
+- [Space discoverability controls](./space-discoverability-controls/README.md)
+- [Dialogflow CX dialogs](./dialogflow-cx-dialogs/README.md)
+- [Google Groups in spaces](./google-groups-in-spaces/README.md)
+- [User-wide Chat space event subscriptions](./user-wide-chat-space-event-subscriptions/README.md)
+- [Administrator access for Chat space and membership management](./administrator-access-for-chat-space-and-membership-management/README.md)
+- [User read states API](./user-read-states-api/README.md)
+- [Dialogflow CX integration for Chat apps](./dialogflow-cx-integration-for-chat-apps/README.md)
+- [App home card messages](./app-home-card-messages/README.md)
+- [Apps Script Card Service for Chat apps](./apps-script-card-service-for-chat-apps/README.md)
+- [Chat space membership role updates](./chat-space-membership-role-updates/README.md)
+- [Imported spaces with external users](./imported-spaces-with-external-users/README.md)
+- [Accessory widgets in messages](./accessory-widgets-in-messages/README.md)
+- [Google Chat space events access](./google-chat-space-events-access/README.md)
+- [Bulleted list formatting in Message.formattedText](./bulleted-list-formatting-in-message-formattedtext/README.md)
+- [Discoverable Chat spaces for target audiences](./discoverable-chat-spaces-for-target-audiences/README.md)
+- [User events subscriptions](./user-events-subscriptions/README.md)
+- [Historical memberships import](./historical-memberships-import/README.md)
+- [Messaging platform data import](./messaging-platform-data-import/README.md)
+- [Private messages in multi-user spaces](./private-messages-in-multi-user-spaces/README.md)
+- [Card Builder Tool](./card-builder-tool/README.md)
+- [User read states](./user-read-states/README.md)
+- [Google Groups memberships in Chat spaces](./google-groups-memberships-in-chat-spaces/README.md)
+- [Apps Script Advanced Chat Service](./apps-script-advanced-chat-service/README.md)
+- [Message reaction events subscriptions](./message-reaction-events-subscriptions/README.md)
+- [Multiselect menus](./multiselect-menus/README.md)
+- [Message.formattedText](./message-formattedtext/README.md)
+- [Email address user references](./email-address-user-references/README.md)
+- [Card sections without dividers](./card-sections-without-dividers/README.md)
+- [SelectionInput widget](./selectioninput-widget/README.md)
+- [Card and dialog form inputs](./card-and-dialog-form-inputs/README.md)
+- [Cards v1](./cards-v1/README.md)
+- [Material Design cards](./material-design-cards/README.md)

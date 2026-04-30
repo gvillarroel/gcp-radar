@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.178Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "ConfigManagement spec.git fields",
+  "feature_slug": "configmanagement-spec-git-fields",
+  "summary": "The ConfigManagement object's spec.git fields provide Git-based sync configuration that is being replaced by the RootSync API; deprecated on 2024-05-15.",
+  "extended_definition": "The ConfigManagement object's spec.git fields provide Git-based sync configuration that is being replaced by the RootSync API; deprecated on 2024-05-15.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-05",
+    "deprecation_date": "2024-05-15",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate your ConfigManagement object \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+        "source_id": "site-docs-root",
+        "final_score": 358,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Your ConfigManagement object should resemble the following: config-management.yaml apiVersion : configmanagement.gke.io/v1 kind : ConfigManagement metadata : name : config-management spec : enableMultiRepo : true Apply the changes: kubectl apply -f config-management.yaml Legacy fields are now disabled without affecting the RootSync object generated from the spec.git fields of your ConfigManagement object.",
+          "ConfigManagement field RootSync field spec.git.gcpServiceAccountEmail spec.git.gcpServiceAccountEmail spec.git.syncRepo spec.git.repo spec.git.syncBranch spec.git.branch spec.git.policyDir spec.git.dir spec.git.syncWait spec.git.period spec.git.syncRev spec.git.revision spec.git.secretType spec.git.auth git-creds (this is a fixed value in ConfigManagement objects) spec.git.secretRef.name spec.sourceFormat spec.sourceFormat spec.git.proxy.httpProxy or spec.git.proxy.httpsProxy spec.git.proxy What's next Configure syncing from multiple repositories Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Migrate to RootSync If your ConfigManagement object is using spec.git but spec.enableMultiRepo is set to false, follow this guide to enable the RootSync and RepoSync APIs."
+        ]
+      },
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Secret's name must match the spec.git.secretRef name you defined in repo-sync.yaml .",
+          "The Secret's name must match the spec.git.secretRef name you defined in repo-sync.yaml .",
+          "The Secret's name must match the spec.git.secretRef name you defined in root-sync.yaml ."
+        ]
+      },
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For non-production clusters, create the RootSync or RepoSync object with the spec.git.branch field set to staging .",
+          "For production clusters, create the RootSync or RepoSync object with the spec.git.branch parameter set to main .",
+          "You implement this method by specifying the commit, tag, or hash in the spec.git.revision field of the RootSync or RepoSync custom resource ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagement.gke.io",
+      "management.yaml",
+      "spec.enableMultiRepo",
+      "spec.git",
+      "spec.git.auth",
+      "spec.git.branch",
+      "spec.git.dir",
+      "spec.git.gcpServiceAccountEmail",
+      "spec.git.period",
+      "spec.git.policyDir",
+      "spec.git.proxy",
+      "spec.git.proxy.httpProxy",
+      "spec.git.proxy.httpsProxy",
+      "spec.git.repo",
+      "spec.git.revision",
+      "spec.git.secretRef",
+      "spec.git.secretRef.name",
+      "spec.git.secretType",
+      "spec.git.syncBranch",
+      "spec.git.syncRepo",
+      "spec.git.syncRev",
+      "spec.git.syncWait",
+      "spec.sourceFormat",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    }
+  ]
+}

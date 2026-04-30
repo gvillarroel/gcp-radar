@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.706Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Request host and path IAM Conditions",
+  "feature_slug": "request-host-and-path-iam-conditions",
+  "summary": "Cloud Run supports using request host and request path attributes in IAM Conditions for service invocation access control.",
+  "extended_definition": "Cloud Run supports using request host and request path attributes in IAM Conditions for service invocation access control.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+      "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+      "https://docs.cloud.google.com/run/docs/securing/managing-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Run supports the ( request.host ) and ( request.path ) condition attributes to grant conditional access when invoking Cloud Run services.",
+          "To grant conditional access with the request.host and request.path attributes when invoking Cloud Run services, add the condition field when running the following command: gcloud run services add-iam-policy-binding SERVICE NAME \\ --member= PRINCIPAL \\ --role= ROLE \\ --region= REGION \\ --condition=[ KEY = VALUE ,...] Replace: SERVICE NAME with the service name (for example, my-service ).",
+          "The URL follows the format of LOCATION -docker.pkg.dev/ PROJECT ID / REPO NAME / PATH : TAG Verify that the check is re-enabled after deployment by navigating to the service's HTTPS endpoint."
+        ]
+      },
+      {
+        "title": "\"Quickstart: build and create a Java job in Cloud Run \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "source_id": "site-docs-reference-2",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Removing or replacing it should not affect the execution of the samples in anyway . -- > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < properties > < project . build . sourceEncoding>UTF - 8 < / project . build . sourceEncoding > < project . reporting . outputEncoding>UTF - 8 < / project . reporting . outputEncoding > < maven . compiler . target>17 < / maven . compiler . target > < maven . compiler . source>17 < / maven . compiler . source > < / properties > < dependencyManagement > < dependencies > < dependency > < artifactId>libraries - bom < / artifactId > < groupId>com . google . cloud < / groupId > < scope>import < / scope > < type>pom < / type > < version>26 .32.0 < / version > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>junit < / groupId > < artifactId>junit < / artifactId > < version>4 .13.2 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - logging < / artifactId > < scope>test < / scope > < / dependency > < / dependencies > < build > < plugins > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - jar - plugin < / artifactId > < version>3 .3.0 < / version > < configuration > < archive > < manifest > < addClasspath>true < / addClasspath > < mainClass>com . example .",
+          "You may obtain a copy of the License at http : //www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing , software distributed under the License is distributed on an \"AS IS\" BASIS , WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND , either express or implied .",
+          "Home Documentation Application hosting Cloud Run Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "GetIamPolicyRequest \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest",
+        "source_id": "site-api-reference",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Reference Send feedback GetIamPolicyRequest Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"resource\" : string , \"options\" : { object ( GetPolicyOptions ) } } Fields resource string REQUIRED: The resource for which the policy is being requested.",
+          "JSON representation { \"requestedPolicyVersion\" : integer } Fields requestedPolicyVersion integer Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "request.host",
+      "request.path"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/securing/managing-access",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-java",
+        "https://docs.cloud.google.com/run/docs/reference/rest/Shared.Types/GetIamPolicyRequest"
+      ]
+    }
+  ]
+}

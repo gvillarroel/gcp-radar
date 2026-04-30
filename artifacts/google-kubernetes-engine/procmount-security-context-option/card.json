@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "procMount security context option",
+  "feature_slug": "procmount-security-context-option",
+  "summary": "This feature adds a beta, default-on procMount option in the security context; This feature adds a beta, default-on procMount option in the security context.",
+  "extended_definition": "This feature adds a beta, default-on procMount option in the security context; This feature adds a beta, default-on procMount option in the security context.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW Note: GKE Sandbox pods already disable CAP NET RAW by default and do not require the changes above.",
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW Note: GKE Sandbox pods already disable CAP NET RAW by default and do not require the changes above.",
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW What vulnerability is addressed by this patch?"
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 188,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "SELinux is also not mandatory in the Pod Security Standards. /proc mount type In GKE version 1.33 and later, if the Pod securityContext sets procMount to Unmasked , Autopilot rejects the Pod.",
+          "For a list of enabled and optional security features, refer to security features in Autopilot .",
+          "Linux capabilities You can use the following Linux capabilities : \"SETPCAP\", \"MKNOD\", \"AUDIT WRITE\", \"CHOWN\", \"DAC OVERRIDE\", \"FOWNER\", \"FSETID\", \"KILL\", \"SETGID\", \"SETUID\", \"NET BIND SERVICE\", \"SYS CHROOT\", \"SETFCAP\", \"SYS PTRACE\" You can also manually enable the following capabilities: NET RAW for ping: Add to Pod SecurityContext ."
+        ]
+      },
+      {
+        "title": "\"About Kubernetes security posture scanning \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Using a non-default type increases these risks. spec.containers[ ].securityContext.procMount spec.initContainers[ ].securityContext.procMount spec.ephemeralContainers[ ].securityContext.procMount Undefined or nil Default Medium Unsafe sysctls mask A Pod can be configured to allow modification of unsafe kernel parameters using the /proc/sys virtual file system.",
+          "They share namespaces with the host, and lack control group, seccomp, AppArmor, and capability restrictions. spec.containers[ ].securityContext.privileged spec.initContainers[ ].securityContext.privileged spec.ephemeralContainers[ ].securityContext.privileged Undefined or nil false High Host port access Exposing a host port to a container potentially allows the container to intercept network traffic to a host service using that port or to bypass network access control rules, such as the rules in a NetworkPolicy. spec.containers[ ].ports[ ].hostPort spec.initContainers[ ].ports[ ].hostPort spec.ephemeralContainers[ ].ports[ ].hostPort Undefined or nil 0 High Non-default capabilities A container has assigned capabilities that could allow a container escape. spec.containers[ ].securityContext.capabilities.add spec.initContainers[ ].securityContext.capabilities.add spec.ephemeralContainers[ ].securityContext.capabilities.add Undefined or nil AUDIT WRITE CHOWN DAC OVERRIDE FOWNER FSETID KILL MKNOD NET BIND SERVICE SETFCAP SETGID SETPCAP SETUID SYS CHROOT Medium Mounting host path volumes hostPath volumes mount files or directories from the host.",
+          "The disabled preventive security control increases the risk of container escape. metadata.annotations[\"container.apparmor.security.beta.kubernetes.io/ \"] false Low Additionally, GKE checks for any RBAC RoleBindings or ClusterRoleBindings that reference one of the following users or groups: system:anonymous system:authenticated system:unauthenticated If any RBAC bindings that reference these users or groups exist, a finding named Effectively Anonymous Users Granted GKE Cluster Access with a severity of Medium appears in the security posture dashboard."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beta.5",
+      "capabilities.add",
+      "constraints.gatekeeper.sh",
+      "container.apparmor.security.beta.kubernetes.io",
+      "kernel.shm",
+      "metadata.annotations",
+      "net.ipv4.ip",
+      "net.ipv4.ping",
+      "net.ipv4.tcp",
+      "spec.containers",
+      "spec.ephemeralContainers",
+      "spec.initContainers",
+      "spec.securityContext.sysctls",
+      "v3.1.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-configuration-scanning"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.832Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Explorer similar entries controls",
+  "feature_slug": "logs-explorer-similar-entries-controls",
+  "summary": "Logs Explorer can show or hide entries similar to a selected log entry.",
+  "extended_definition": "Logs Explorer can show or hide entries similar to a selected log entry.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/central-log-storage",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+      "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A separate dialog opens with the following information: The pattern that was found The percentage of log entries that contain the pattern Example log entries that contain the pattern In this dialog, you can hide or show log entries: Hide similar log entries You can hide similar log entries, which lets you remove logs from your query results.",
+          "If resources in multiple projects or regions are searched for log entries, then the Observability Analytics might show different log entries than the Logs Explorer page.",
+          "The Logs Explorer doesn't show log entries that have timestamps in the future until the current time has \"caught up\" with them."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Write and query log entries using a Python script \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also view the log entries you wrote by using the Logs Explorer.",
+          "The contents are similar to: { \"insertId\" : \"yf1cshfoivz48\" , \"logName\" : \"projects/loggingproject-222616/logs/my-log\" , \"receiveTimestamp\" : \"2018-11-15T23:06:14.738729911Z\" , \"resource\" :{ \"labels\" :{ \"project id\" : \"loggingproject-222616\" }, \"type\" : \"global\" }, \"severity\" : \"ERROR\" , \"textPayload\" : \"Goodbye, world!\" , \"timestamp\" : \"2018-11-15T23:06:14.738729911Z\" } Because the severity level of ERROR is greater than the severity level of INFO , the log entry containing the string '\"Goodbye, world!\"' is exported to the sink destination.",
+          "After your bucket has received data, the detailed view shows a result similar to: The data in each folder is organized in a series of folders labeled with the top-level folder consisting of a log name, and then successively, the year, month, and day."
+        ]
+      },
+      {
+        "title": "\"Aggregate and store your organization's logs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Logs Explorer refreshes to show log entries from your log bucket.",
+          "View log entries in the Logs Explorer page To view the log entries in your log bucket, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Lastly, you query and view your log entries from the Logs Explorer page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/write-query-log-entries-python",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.813Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise",
+  "feature_name": "Autocomplete PII leak risk reduction",
+  "feature_slug": "autocomplete-pii-leak-risk-reduction",
+  "summary": "Autocomplete can be configured to reduce the risk of returning search suggestions that contain personally identifiable information.",
+  "extended_definition": "Autocomplete can be configured to reduce the risk of returning search suggestions that contain personally identifiable information.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use the search history or user events model and there is a likelihood of your users typing PII into the search bar, then you can reduce PII leaks by adjusting the following parameters: queryFrequencyThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered this many times. numUniqueUsersThreshold : Before a query can be returned as an autocomplete suggestion, it must have been entered by this many unique users.",
+          "As a result, Gemini Enterprise can't guarantee that PII won't be returned in autocomplete suggestions.",
+          "Protect against PII leaks The definition of PII is broad, and PII can be difficult to detect."
+        ]
+      },
+      {
+        "title": "\"Configure advanced autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your data stores contain any personally identifiable information (PII) or if you use the search history or user events query suggestions model, review Protect against PII leaks and set up data loss prevention (DLP) safeguards that might be needed to prevent leaks of PII.",
+          "Key features of advanced autocomplete The key features of advanced autocomplete that distinguish it from the basic autocomplete are as follows: Blended search: Advanced autocomplete can be used with apps that are connected to more than one data store.",
+          "Language boost: Advanced autocomplete can be set to boost suggestions in one or more languages."
+        ]
+      },
+      {
+        "title": "Before you begin \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Before you begin Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes the basic start-up tasks that you must complete before using Gemini Enterprise.",
+          "Access control You can configure access control for Gemini Enterprise at the project level."
+        ]
+      },
+      {
+        "title": "Configure field settings \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dynamic facets can be automatically added to a search based on previous user behavior such as facet clicks and views.",
+          "To configure a field as dynamic facetable, it must first be configured as indexable.",
+          "For example, numerical fields cannot be set to Searchable ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/before-you-begin",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-field-settings"
+      ]
+    }
+  ]
+}

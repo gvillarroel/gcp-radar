@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.209Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Automatic patch updates",
+  "feature_slug": "automatic-patch-updates",
+  "summary": "Added support for automatic patch updates.",
+  "extended_definition": "Added support for automatic patch updates.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+      "https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Update backup/recovery appliances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/update-appliance",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more instructions on setting a default window, see Set a Default Window for Auto-patch Updates If the auto patch update fails to install automatically, it becomes visible on the Available updates page, where you can update the appliance manually.",
+          "Update type : This field displays the type of update, such as Manual for manual patch updates and Auto for hotfixes and automatic patch updates.",
+          "The Available Updates page displays the following fields: Update name : This field displays update name as PATCH NUMBER , AUTO PATCH NUMBER for a patch, or HF NUMBER for a hotfix."
+        ]
+      },
+      {
+        "title": "Extend commitment terms \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/committed-use-discounts/extend-commitment-term",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "This commitment was purchased on January 1, 2024, and expires on June 30, To extend its term further until the end of June 30, 2026, make the following request: PATCH https://compute.googleapis.com/compute/v1/projects/my-project/regions/us-central1/commitments/example-commitment { \"name\": \"example-commitment\", \"customEndTimestamp\": \"2026-07-01T07:00:00Z\", } What's next Learn how to renew resource-based commitments automatically .",
+          "This commitment was purchased on January 1, 2024, and expires on June 30, To extend its term further until the end of June 30, 2026, run the following command: gcloud compute commitments update example-commitment \\ --region=us-central1 \\ --project=my-project \\ --custom-end-time=2026-07-01 REST To extend the term of an existing active commitment, make a PATCH request to the regionCommitments.update method .",
+          "PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /commitments/ COMMITMENT NAME { \"name\": \" COMMITMENT NAME \", \"customEndTimestamp\": \" CUSTOM END DATE T END TIME Z\", } Replace the following: COMMITMENT NAME : the name of the commitment REGION : the region of the commitment and where you want to commit to purchasing Compute Engine resources."
+        ]
+      },
+      {
+        "title": "Backup and DR Service for Microsoft SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "source_id": "site-api-reference",
+        "final_score": 54,
+        "relevance": "",
+        "evidence_snippets": [
+          "Updates the LiveClone or mountable Microsoft SQL Server data on a scheduled or on-demand basis Optionally automatically applies scripts to the LiveClone's Microsoft SQL Server data after each update.",
+          "When you protect the entire instance, as databases are added to the instance, they are automatically included in the next Backup and DR capture job.",
+          "Resize database log's staging disk The physical space required to accommodate backups of a database's logs is automatically managed by Backup and DR."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

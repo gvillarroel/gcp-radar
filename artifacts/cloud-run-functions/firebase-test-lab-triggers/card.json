@@ -1,0 +1,448 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Firebase Test Lab triggers",
+  "feature_slug": "firebase-test-lab-triggers",
+  "summary": "Cloud Run functions 2nd gen supports Firebase Test Lab triggers.",
+  "extended_definition": "Cloud Run functions 2nd gen supports Firebase Test Lab triggers.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.functions \\_|\\_ Cloud Run functions \\_\\",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods call Synchronously invokes a deployed Cloud Function. create Creates a new function. delete Deletes a function with the given name from the specified project. generateDownloadUrl Returns a signed URL for downloading deployed function source code. generateUploadUrl Returns a signed URL for uploading a function source code. get Returns a function with the given name from the requested project. getIamPolicy Gets the IAM access control policy for a function. list Returns a list of functions that belong to the requested project. patch Updates existing function. setIamPolicy Sets the IAM access control policy on the specified function. testIamPermissions Tests the specified permissions against the IAM access control policy for a function.",
+          "Google Cloud Functions only allows EventTriggers to be deployed that observe resources in the same project as the CloudFunction .",
+          "JSON representation { \"name\" : string , \"description\" : string , \"status\" : enum ( CloudFunctionStatus ) , \"entryPoint\" : string , \"runtime\" : string , \"timeout\" : string , \"availableMemoryMb\" : integer , \"serviceAccountEmail\" : string , \"updateTime\" : string , \"versionId\" : string , \"labels\" : { string : string , ... } , \"environmentVariables\" : { string : string , ... } , \"buildEnvironmentVariables\" : { string : string , ... } , \"network\" : string , \"maxInstances\" : integer , \"minInstances\" : integer , \"vpcConnector\" : string , \"vpcConnectorEgressSettings\" : enum ( VpcConnectorEgressSettings ) , \"ingressSettings\" : enum ( IngressSettings ) , \"kmsKeyName\" : string , \"buildWorkerPool\" : string , \"buildId\" : string , \"buildName\" : string , \"secretEnvironmentVariables\" : [ { object ( SecretEnvVar ) } ] , \"secretVolumes\" : [ { object ( SecretVolume ) } ] , \"sourceToken\" : string , \"dockerRepository\" : string , \"dockerRegistry\" : enum ( DockerRegistry ) , \"buildServiceAccount\" : string , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean , // Union field source code can be only one of the following: \"sourceArchiveUrl\" : string , \"sourceRepository\" : { object ( SourceRepository ) } , \"sourceUploadUrl\" : string // End of list of possible types for union field source code . // Union field trigger can be only one of the following: \"httpsTrigger\" : { object ( HttpsTrigger ) } , \"eventTrigger\" : { object ( EventTrigger ) } // End of list of possible types for union field trigger . // Union field runtime update policy can be only one of the following: \"automaticUpdatePolicy\" : { object ( AutomaticUpdatePolicy ) } , \"onDeployUpdatePolicy\" : { object ( OnDeployUpdatePolicy ) } // End of list of possible types for union field runtime update policy . } Fields name string A user-defined name of the function."
+        ]
+      },
+      {
+        "title": "Cloud Functions IAM Roles \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Warning: Do not grant service agent roles to any principals except service agents . artifactregistry. aptartifacts. create artifactregistry.attachments. artifactregistry. attachments. create artifactregistry. attachments. delete artifactregistry. attachments. get artifactregistry. attachments. list artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry.files. artifactregistry.files.delete artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry.files.update artifactregistry.files.upload artifactregistry. kfpartifacts. create artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages. artifactregistry. packages. delete artifactregistry.packages.get artifactregistry.packages.list artifactregistry. packages. update artifactregistry. projectsettings. artifactregistry. projectsettings. get artifactregistry. projectsettings. update artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. create artifactregistry. repositories. createTagBinding artifactregistry. repositories. delete artifactregistry. repositories. deleteArtifacts artifactregistry. repositories. deleteTagBinding artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. exportArtifacts artifactregistry. repositories. get artifactregistry. repositories. getIamPolicy artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry. repositories. setIamPolicy artifactregistry. repositories. update artifactregistry. repositories. uploadArtifacts artifactregistry.rules. artifactregistry.rules.create artifactregistry.rules.delete artifactregistry.rules.get artifactregistry.rules.list artifactregistry.rules.update artifactregistry.tags. artifactregistry.tags.create artifactregistry.tags.delete artifactregistry.tags.get artifactregistry.tags.list artifactregistry.tags.update artifactregistry.versions. artifactregistry. versions. delete artifactregistry.versions.get artifactregistry.versions.list artifactregistry. versions. update artifactregistry. yumartifacts. create clientauthconfig.clients.list cloudbuild.builds.create cloudbuild.builds.get cloudbuild.builds.list cloudbuild.builds.update cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudbuild.workerpools.use cloudfunctions.functions.get cloudfunctions. functions. invoke cloudfunctions.functions.list cloudfunctions.operations. cloudfunctions.operations.get cloudfunctions.operations.list compute.globalOperations.get compute.networks.access eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update firebasedatabase.instances.get firebasedatabase. instances. update iam.serviceAccounts.actAs iam. serviceAccounts. getAccessToken iam. serviceAccounts. getOpenIdToken iam.serviceAccounts.signBlob pubsub.subscriptions.consume pubsub.subscriptions.create pubsub.subscriptions.delete pubsub.subscriptions.get pubsub. subscriptions. getIamPolicy pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub. subscriptions. setIamPolicy pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.get pubsub.topics.list recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update serviceusage.consumerpolicy. serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. consumerpolicy. update serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.disable serviceusage.services.enable serviceusage.services.get serviceusage.services.use serviceusage.values.test source.repos.get source.repos.list storage.buckets.create storage.buckets.delete storage.buckets.get storage.buckets.update storage.objects.create storage.objects.delete storage.objects.get storage.objects.list vpcaccess.connectors.get vpcaccess.connectors.use Custom roles For developers that want to define their own roles containing bundles of permissions that they specify, IAM offers custom roles .",
+          "Cloud Functions roles Role Permissions Cloud Functions Admin ( roles/ cloudfunctions.admin ) Full access to functions, operations and locations. artifactregistry. attachments. get artifactregistry. attachments. list artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages.get artifactregistry.packages.list artifactregistry. projectsettings. get artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. exportArtifacts artifactregistry. repositories. get artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry.rules.get artifactregistry.rules.list artifactregistry.tags.get artifactregistry.tags.list artifactregistry.versions.get artifactregistry.versions.list cloudasset. assets. searchAllResources cloudbuild.builds.get cloudbuild.builds.list cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudfunctions. cloudfunctions.functions.call cloudfunctions. functions. create cloudfunctions. functions. delete cloudfunctions. functions. generationUpgrade cloudfunctions.functions.get cloudfunctions. functions. getIamPolicy cloudfunctions. functions. invoke cloudfunctions.functions.list cloudfunctions. functions. setIamPolicy cloudfunctions. functions. sourceCodeGet cloudfunctions. functions. sourceCodeSet cloudfunctions. functions. update cloudfunctions.locations.list cloudfunctions.operations.get cloudfunctions.operations.list eventarc. eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc. channelConnections. setIamPolicy eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.setIamPolicy eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc. enrollments. setIamPolicy eventarc.enrollments.update eventarc. events. receiveAuditLogWritten eventarc.events.receiveEvent eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. setIamPolicy eventarc. googleApiSources. update eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc. kafkaSources. setIamPolicy eventarc.locations.get eventarc.locations.list eventarc.messageBuses.create eventarc.messageBuses.delete eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.publish eventarc. messageBuses. setIamPolicy eventarc.messageBuses.update eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc. pipelines. setIamPolicy eventarc.pipelines.update eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.setIamPolicy eventarc.triggers.undelete eventarc.triggers.update recommender. cloudFunctionsPerformanceInsights. recommender. cloudFunctionsPerformanceInsights. get recommender. cloudFunctionsPerformanceInsights. list recommender. cloudFunctionsPerformanceInsights. update recommender. cloudFunctionsPerformanceRecommendations. recommender. cloudFunctionsPerformanceRecommendations. get recommender. cloudFunctionsPerformanceRecommendations. list recommender. cloudFunctionsPerformanceRecommendations. update recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list run. run.configurations.get run.configurations.list run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.createTagBinding run.jobs.delete run.jobs.deleteTagBinding run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.setIamPolicy run.jobs.update run.locations.list run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions.delete run.revisions.get run.revisions.list run.routes.get run.routes.invoke run.routes.list run.services.create run.services.createTagBinding run.services.delete run.services.deleteTagBinding run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.setIamPolicy run.services.update run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.setIamPolicy run.workerpools.update serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Cloudfunctions Editor ( roles/ cloudfunctions.editor ) Editor role for cloudfunctions artifactregistry. attachments. get artifactregistry. attachments. list artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages.get artifactregistry.packages.list artifactregistry. projectsettings. get artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. exportArtifacts artifactregistry. repositories. get artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry.rules.get artifactregistry.rules.list artifactregistry.tags.get artifactregistry.tags.list artifactregistry.versions.get artifactregistry.versions.list cloudasset. assets. searchAllResources cloudbuild.builds.get cloudbuild.builds.list cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudfunctions.functions.call cloudfunctions. functions. create cloudfunctions. functions. delete cloudfunctions. functions. generationUpgrade cloudfunctions.functions.get cloudfunctions. functions. getIamPolicy cloudfunctions. functions. invoke cloudfunctions.functions.list cloudfunctions. functions. sourceCodeGet cloudfunctions. functions. sourceCodeSet cloudfunctions. functions. update cloudfunctions.locations.list cloudfunctions.operations. cloudfunctions.operations.get cloudfunctions.operations.list eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update recommender. cloudFunctionsPerformanceInsights. recommender. cloudFunctionsPerformanceInsights. get recommender. cloudFunctionsPerformanceInsights. list recommender. cloudFunctionsPerformanceInsights. update recommender. cloudFunctionsPerformanceRecommendations. recommender. cloudFunctionsPerformanceRecommendations. get recommender. cloudFunctionsPerformanceRecommendations. list recommender. cloudFunctionsPerformanceRecommendations. update recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Cloud Functions Viewer ( roles/ cloudfunctions.viewer ) Read-only access to functions and locations. cloudasset. assets. searchAllResources cloudbuild.builds.get cloudbuild.builds.list cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudfunctions.functions.get cloudfunctions. functions. getIamPolicy cloudfunctions.functions.list cloudfunctions.locations.list cloudfunctions.operations. cloudfunctions.operations.get cloudfunctions.operations.list eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleChannelConfigs. get eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.messageBuses.get eventarc. messageBuses. getIamPolicy eventarc.messageBuses.list eventarc.messageBuses.use eventarc. multiProjectSources. collectGoogleApiEvents eventarc.operations.get eventarc.operations.list eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list recommender. cloudFunctionsPerformanceInsights. get recommender. cloudFunctionsPerformanceInsights. list recommender. cloudFunctionsPerformanceRecommendations. get recommender. cloudFunctionsPerformanceRecommendations. list recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions.get run.executions.list run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.locations.list run.operations.get run.operations.list run.prompts.get run.revisions.get run.revisions.list run.routes.get run.routes.list run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.tasks. run.tasks.get run.tasks.list run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Cloud Functions Developer ( roles/ cloudfunctions.developer ) Read and write access to all functions-related resources. artifactregistry. attachments. get artifactregistry. attachments. list artifactregistry. dockerimages. artifactregistry. dockerimages. get artifactregistry. dockerimages. list artifactregistry. files. download artifactregistry.files.get artifactregistry.files.list artifactregistry.locations. artifactregistry.locations.get artifactregistry. locations. list artifactregistry. mavenartifacts. artifactregistry. mavenartifacts. get artifactregistry. mavenartifacts. list artifactregistry.npmpackages. artifactregistry. npmpackages. get artifactregistry. npmpackages. list artifactregistry.packages.get artifactregistry.packages.list artifactregistry. projectsettings. get artifactregistry. pythonpackages. artifactregistry. pythonpackages. get artifactregistry. pythonpackages. list artifactregistry. repositories. downloadArtifacts artifactregistry. repositories. exportArtifacts artifactregistry. repositories. get artifactregistry. repositories. list artifactregistry. repositories. listEffectiveTags artifactregistry. repositories. listTagBindings artifactregistry. repositories. readViaVirtualRepository artifactregistry.rules.get artifactregistry.rules.list artifactregistry.tags.get artifactregistry.tags.list artifactregistry.versions.get artifactregistry.versions.list cloudasset. assets. searchAllResources cloudbuild.builds.get cloudbuild.builds.list cloudbuild.locations. cloudbuild.locations.get cloudbuild.locations.list cloudbuild.operations. cloudbuild.operations.get cloudbuild.operations.list cloudfunctions.functions.call cloudfunctions. functions. create cloudfunctions. functions. delete cloudfunctions. functions. generationUpgrade cloudfunctions.functions.get cloudfunctions. functions. invoke cloudfunctions.functions.list cloudfunctions. functions. sourceCodeGet cloudfunctions. functions. sourceCodeSet cloudfunctions. functions. update cloudfunctions.locations.list cloudfunctions.operations. cloudfunctions.operations.get cloudfunctions.operations.list eventarc. channelConnections. create eventarc. channelConnections. delete eventarc. channelConnections. get eventarc. channelConnections. getIamPolicy eventarc. channelConnections. list eventarc. channelConnections. publish eventarc.channels.attach eventarc.channels.create eventarc.channels.delete eventarc.channels.get eventarc.channels.getIamPolicy eventarc.channels.list eventarc.channels.publish eventarc.channels.undelete eventarc.channels.update eventarc.enrollments.create eventarc.enrollments.delete eventarc.enrollments.get eventarc. enrollments. getIamPolicy eventarc.enrollments.list eventarc.enrollments.update eventarc. googleApiSources. create eventarc. googleApiSources. delete eventarc.googleApiSources.get eventarc. googleApiSources. getIamPolicy eventarc.googleApiSources.list eventarc. googleApiSources. update eventarc. googleChannelConfigs. eventarc. googleChannelConfigs. get eventarc. googleChannelConfigs. update eventarc.kafkaSources.create eventarc.kafkaSources.delete eventarc.kafkaSources.get eventarc. kafkaSources. getIamPolicy eventarc.kafkaSources.list eventarc.locations. eventarc.locations.get eventarc.locations.list eventarc.operations. eventarc.operations.cancel eventarc.operations.delete eventarc.operations.get eventarc.operations.list eventarc.pipelines.create eventarc.pipelines.delete eventarc.pipelines.get eventarc. pipelines. getIamPolicy eventarc.pipelines.list eventarc.pipelines.update eventarc.providers. eventarc.providers.get eventarc.providers.list eventarc.triggers.create eventarc.triggers.delete eventarc.triggers.get eventarc.triggers.getIamPolicy eventarc.triggers.list eventarc.triggers.undelete eventarc.triggers.update recommender. cloudFunctionsPerformanceInsights. recommender. cloudFunctionsPerformanceInsights. get recommender. cloudFunctionsPerformanceInsights. list recommender. cloudFunctionsPerformanceInsights. update recommender. cloudFunctionsPerformanceRecommendations. recommender. cloudFunctionsPerformanceRecommendations. get recommender. cloudFunctionsPerformanceRecommendations. list recommender. cloudFunctionsPerformanceRecommendations. update recommender.locations. recommender.locations.get recommender.locations.list recommender. runServiceCostInsights. recommender. runServiceCostInsights. get recommender. runServiceCostInsights. list recommender. runServiceCostInsights. update recommender. runServiceCostRecommendations. recommender. runServiceCostRecommendations. get recommender. runServiceCostRecommendations. list recommender. runServiceCostRecommendations. update recommender. runServiceIdentityInsights. recommender. runServiceIdentityInsights. get recommender. runServiceIdentityInsights. list recommender. runServiceIdentityInsights. update recommender. runServiceIdentityRecommendations. recommender. runServiceIdentityRecommendations. get recommender. runServiceIdentityRecommendations. list recommender. runServiceIdentityRecommendations. update recommender. runServicePerformanceInsights. recommender. runServicePerformanceInsights. get recommender. runServicePerformanceInsights. list recommender. runServicePerformanceInsights. update recommender. runServicePerformanceRecommendations. recommender. runServicePerformanceRecommendations. get recommender. runServicePerformanceRecommendations. list recommender. runServicePerformanceRecommendations. update recommender. runServiceSecurityInsights. recommender. runServiceSecurityInsights. get recommender. runServiceSecurityInsights. list recommender. runServiceSecurityInsights. update recommender. runServiceSecurityRecommendations. recommender. runServiceSecurityRecommendations. get recommender. runServiceSecurityRecommendations. list recommender. runServiceSecurityRecommendations. update remotebuildexecution.blobs.get resourcemanager.projects.get resourcemanager.projects.list run.configurations. run.configurations.get run.configurations.list run.executions. run.executions.cancel run.executions.delete run.executions.get run.executions.list run.jobs.create run.jobs.delete run.jobs.get run.jobs.getIamPolicy run.jobs.list run.jobs.listEffectiveTags run.jobs.listTagBindings run.jobs.run run.jobs.runWithOverrides run.jobs.update run.locations.list run.operations. run.operations.delete run.operations.get run.operations.list run.prompts.get run.revisions. run.revisions.delete run.revisions.get run.revisions.list run.routes. run.routes.get run.routes.invoke run.routes.list run.services.create run.services.delete run.services.get run.services.getIamPolicy run.services.list run.services.listEffectiveTags run.services.listTagBindings run.services.update run.tasks. run.tasks.get run.tasks.list run.workerpools.create run.workerpools.delete run.workerpools.get run.workerpools.getIamPolicy run.workerpools.list run.workerpools.update serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Cloud Functions Invoker ( roles/ cloudfunctions.invoker ) Ability to invoke 1st gen HTTP functions with restricted access.",
+          "Click Save . gcloud Cloud Run functions (1st gen): gcloud iam service-accounts add-iam-policy-binding \\ PROJECT ID @appspot.gserviceaccount.com \\ --member MEMBER \\ --role roles/iam.serviceAccountUser Cloud Run functions: gcloud iam service-accounts add-iam-policy-binding \\ PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --member MEMBER \\ --role roles/iam.serviceAccountUser Ask your administrator to also grant the Cloud Build service account the Cloud Build Service Account ( roles/cloudbuild.builds.builder ) role on the project."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "The error message Console Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\" gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/test-project-356312/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution You can reset your service account to the default cloudfunctions.serviceAgent role.",
+          "The error message Console ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/ PROJECT ID /locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Validation failed for trigger projects/<project-id>/locations/ LOCATION /triggers/ FUNCTION NAME - EVENTARC ID : Permission \"iam.serviceAccounts.ActAs\" denied on \"EndUserCredentials to PROJECT NUMBER -compute@developer.gserviceaccount.com\"] The solution To resolve this issue, reset this service account to the default role.",
+          "To obtain this permission, you can grant a role that includes it like the Service Account User role, on the project. gcloud Default service account: ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Caller is missing permission 'iam.serviceaccounts.actAs' on service account projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com.Grant the role 'roles/iam.serviceAccountUser' to the caller on the service account projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com.You can do that by running 'gcloud iam service-accounts add-iam-policy-binding projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com --member MEMBER --role roles/iam.serviceAccountUser'where MEMBER has a prefix like 'user:' or 'serviceAccount:' Non-default service account: ERROR: (gcloud.functions.deploy) ResponseError: status=[403], code=[Ok], message=[Caller is missing permission 'iam.serviceaccounts.actAs' on service account projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com.Grant the role 'roles/iam.serviceAccountUser' to the caller on the service account projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com.You can do that by running 'gcloud iam service-accounts add-iam-policy-binding projects/-/serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com --member MEMBER --role roles/iam.serviceAccountUser'where MEMBER has a prefix like 'user:' or 'serviceAccount:' Note: PROJECT NUMBER -compute@developer.gserviceaccount.com is the default service account for Cloud Functions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "artifactregistry.attachments",
+      "artifactregistry.files",
+      "artifactregistry.files.delete",
+      "artifactregistry.files.get",
+      "artifactregistry.files.list",
+      "artifactregistry.files.update",
+      "artifactregistry.files.upload",
+      "artifactregistry.locations",
+      "artifactregistry.locations.get",
+      "artifactregistry.npmpackages",
+      "artifactregistry.packages",
+      "artifactregistry.packages.get",
+      "artifactregistry.packages.list",
+      "artifactregistry.repositories.downloadArtifacts",
+      "artifactregistry.rules",
+      "artifactregistry.rules.create",
+      "artifactregistry.rules.delete",
+      "artifactregistry.rules.get",
+      "artifactregistry.rules.list",
+      "artifactregistry.rules.update",
+      "artifactregistry.tags",
+      "artifactregistry.tags.create",
+      "artifactregistry.tags.delete",
+      "artifactregistry.tags.get",
+      "artifactregistry.tags.list",
+      "artifactregistry.tags.update",
+      "artifactregistry.versions",
+      "artifactregistry.versions.get",
+      "artifactregistry.versions.list",
+      "clientauthconfig.clients.list",
+      "cloudbuild.builds.builder",
+      "cloudbuild.builds.create",
+      "cloudbuild.builds.get",
+      "cloudbuild.builds.list",
+      "cloudbuild.builds.update",
+      "cloudbuild.locations",
+      "cloudbuild.locations.get",
+      "cloudbuild.locations.list",
+      "cloudbuild.operations",
+      "cloudbuild.operations.get",
+      "cloudbuild.operations.list",
+      "cloudbuild.workerpools.use",
+      "cloudfunctions.admin",
+      "cloudfunctions.developer",
+      "cloudfunctions.editor",
+      "cloudfunctions.functions.call",
+      "cloudfunctions.functions.get",
+      "cloudfunctions.functions.list",
+      "cloudfunctions.invoker",
+      "cloudfunctions.locations.list",
+      "cloudfunctions.operations",
+      "cloudfunctions.operations.get",
+      "cloudfunctions.operations.list",
+      "cloudfunctions.serviceAgent",
+      "cloudfunctions.viewer",
+      "compute.globalOperations.get",
+      "compute.networks.access",
+      "developer.gserviceaccount.com",
+      "developer.gserviceaccount.com.Grant",
+      "developer.gserviceaccount.com.You",
+      "docker.pkg.dev",
+      "eventarc.channels.attach",
+      "eventarc.channels.create",
+      "eventarc.channels.delete",
+      "eventarc.channels.get",
+      "eventarc.channels.getIamPolicy",
+      "eventarc.channels.list",
+      "eventarc.channels.publish",
+      "eventarc.channels.setIamPolicy",
+      "eventarc.channels.undelete",
+      "eventarc.channels.update",
+      "eventarc.enrollments.create",
+      "eventarc.enrollments.delete",
+      "eventarc.enrollments.get",
+      "eventarc.enrollments.list",
+      "eventarc.enrollments.update",
+      "eventarc.events.receiveEvent",
+      "eventarc.googleApiSources.get",
+      "eventarc.googleApiSources.list",
+      "eventarc.kafkaSources.create",
+      "eventarc.kafkaSources.delete",
+      "eventarc.kafkaSources.get",
+      "eventarc.kafkaSources.list",
+      "eventarc.locations",
+      "eventarc.locations.get",
+      "eventarc.locations.list",
+      "eventarc.messageBuses.create",
+      "eventarc.messageBuses.delete",
+      "eventarc.messageBuses.get",
+      "eventarc.messageBuses.list",
+      "eventarc.messageBuses.publish",
+      "eventarc.messageBuses.update",
+      "eventarc.messageBuses.use",
+      "eventarc.operations",
+      "eventarc.operations.cancel",
+      "eventarc.operations.delete",
+      "eventarc.operations.get",
+      "eventarc.operations.list",
+      "eventarc.pipelines.create",
+      "eventarc.pipelines.delete",
+      "eventarc.pipelines.get",
+      "eventarc.pipelines.list",
+      "eventarc.pipelines.update",
+      "eventarc.providers",
+      "eventarc.providers.get",
+      "eventarc.providers.list",
+      "eventarc.triggers.create",
+      "eventarc.triggers.delete",
+      "eventarc.triggers.get",
+      "eventarc.triggers.getIamPolicy",
+      "eventarc.triggers.list",
+      "eventarc.triggers.setIamPolicy",
+      "eventarc.triggers.undelete",
+      "eventarc.triggers.update",
+      "firebasedatabase.instances.get",
+      "gcloud.functions.deploy",
+      "iam.gserviceaccount.com",
+      "iam.gserviceaccount.com.Grant",
+      "iam.gserviceaccount.com.You",
+      "iam.serviceaccounts.actAs",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccounts.ActAs",
+      "iam.serviceAccounts.signBlob",
+      "iam.serviceAccountUser",
+      "projects.locations.functions",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.list",
+      "recommender.locations",
+      "recommender.locations.get",
+      "recommender.locations.list",
+      "remotebuildexecution.blobs.get",
+      "run.configurations",
+      "run.configurations.get",
+      "run.configurations.list",
+      "run.executions",
+      "run.executions.cancel",
+      "run.executions.delete",
+      "run.executions.get",
+      "run.executions.list",
+      "run.jobs.create",
+      "run.jobs.createTagBinding",
+      "run.jobs.delete",
+      "run.jobs.deleteTagBinding",
+      "run.jobs.get",
+      "run.jobs.getIamPolicy",
+      "run.jobs.list",
+      "run.jobs.listEffectiveTags",
+      "run.jobs.listTagBindings",
+      "run.jobs.run",
+      "run.jobs.runWithOverrides",
+      "run.jobs.setIamPolicy",
+      "run.jobs.update",
+      "run.locations.list",
+      "run.operations",
+      "run.operations.delete",
+      "run.operations.get",
+      "run.operations.list",
+      "run.prompts.get",
+      "run.revisions",
+      "run.revisions.delete",
+      "run.revisions.get",
+      "run.revisions.list",
+      "run.routes",
+      "run.routes.get",
+      "run.routes.invoke",
+      "run.routes.list",
+      "run.services.create",
+      "run.services.createTagBinding",
+      "run.services.delete",
+      "run.services.deleteTagBinding",
+      "run.services.get",
+      "run.services.getIamPolicy",
+      "run.services.list",
+      "run.services.listEffectiveTags",
+      "run.services.listTagBindings",
+      "run.services.setIamPolicy",
+      "run.services.update",
+      "run.tasks",
+      "run.tasks.get",
+      "run.tasks.list",
+      "run.workerpools.create",
+      "run.workerpools.delete",
+      "run.workerpools.get",
+      "run.workerpools.getIamPolicy",
+      "run.workerpools.list",
+      "run.workerpools.setIamPolicy",
+      "run.workerpools.update",
+      "serviceusage.consumerpolicy",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.disable",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.use",
+      "serviceusage.values.test",
+      "source.repos.get",
+      "source.repos.list",
+      "storage.buckets.create",
+      "storage.buckets.delete",
+      "storage.buckets.get",
+      "storage.buckets.update",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list",
+      "vpcaccess.connectors.get",
+      "vpcaccess.connectors.use"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.builder",
+      "roles/cloudfunctions.admin",
+      "roles/cloudfunctions.developer",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/reference/rest/v1/projects.locations.functions",
+        "https://docs.cloud.google.com/functions/docs/reference/iam/roles",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting"
+      ]
+    }
+  ]
+}

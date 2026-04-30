@@ -1,0 +1,120 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery DataFrames",
+  "feature_slug": "bigquery-dataframes",
+  "summary": "BigQuery DataFrames is an open source Python library set that implements pandas and scikit-learn APIs with server-side processing; BigQuery DataFrames is a Python API for data analysis and machine learning in BigQuery.",
+  "extended_definition": "BigQuery DataFrames is an open source Python library set that implements pandas and scikit-learn APIs with server-side processing; BigQuery DataFrames is a Python API for data analysis and machine learning in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+      "https://docs.cloud.google.com/bigquery/docs/reference/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use open source Python libraries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Introduction to BigQuery DataFrames . pandas-gbq Python based data processing using client side data copy Open source library maintained by PyData and volunteer contributors Lets you move data to and from Python DataFrames on the client side.",
+          "For more information, see the documentation and source code . google-cloud-bigquery BigQuery deployment, administration, and SQL-based querying Open source library maintained by Google Python package that wraps all the BigQuery APIs.",
+          "Use open source Python libraries You can choose from among three Python libraries in BigQuery, based on your use case."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CREATE OR REPLACE FUNCTION cymbal pets . chunk pdf ( src json STRING , chunk size INT64 , overlap size INT64 ) RETURNS ARRAY<STRING > LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'chunk pdf' , runtime version = 'python-3.11' , packages =[ 'pypdf' ] ) AS \" \"\" import io import json from pypdf import PdfReader # type: ignore from urllib.request import urlopen, Request def chunk pdf(src ref: str, chunk size: int, overlap size: int) -> str: src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] req = urlopen(srcUrl) pdf file = io.BytesIO(bytearray(req.read())) reader = PdfReader(pdf file, strict=False) extract and chunk text simultaneously all text chunks = [] curr chunk = \"\" for page in reader.pages: page text = page.extract text() if page text: curr chunk += page text split the accumulated text into chunks of a specific size with overlaop this loop implements a sliding window approach to create chunks while len(curr chunk) >= chunk size: split idx = curr chunk.rfind(\" \", 0, chunk size) if split idx == -1: split idx = chunk size actual chunk = curr chunk[:split idx] all text chunks.append(actual chunk) overlap = curr chunk[split idx + 1 : split idx + 1 + overlap size] curr chunk = overlap + curr chunk[split idx + 1 + overlap size :] if curr chunk: all text chunks.append(curr chunk) return all text chunks \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "Run the following to create the to grayscale UDF: SQL CREATE OR REPLACE FUNCTION cymbal pets . to grayscale ( src json STRING , dst json STRING ) RETURNS STRING LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'to grayscale' , runtime version = 'python-3.11' , packages =[ 'numpy' , 'opencv-python' ] ) AS \" \"\" import cv2 as cv import numpy as np from urllib.request import urlopen, Request import json Transform the image to grayscale. def to grayscale(src ref, dst ref): src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] dst json = json.loads(dst ref) dstUrl = dst json[\" access urls \"][\" write url \"] req = urlopen(srcUrl) arr = np.asarray(bytearray(req.read()), dtype=np.uint8) img = cv.imdecode(arr, -1) # 'Load it as it is' Convert the image to grayscale gray image = cv.cvtColor(img, cv.COLOR BGR2GRAY) Send POST request to the URL , img encoded = cv.imencode('.png', gray image) req = Request(url=dstUrl, data=img encoded.tobytes(), method='PUT', headers = { \" Content - Type \": \" image / png \", }) with urlopen(req) as f: pass return dst ref \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . @bpd . udf ( dataset = \"cymbal pets\" , name = \"to grayscale\" , packages = [ \"numpy\" , \"opencv-python\" ], bigquery connection = \"us.cymbal conn\" , max batching rows = 1 , ) def to grayscale ( src ref : str , dst ref : str ) - > str : import json from urllib.request import Request , urlopen import cv2 as cv import numpy as np src json = json . loads ( src ref ) srcUrl = src json [ \"access urls\" ][ \"read url\" ] dst json = json . loads ( dst ref ) dstUrl = dst json [ \"access urls\" ][ \"write url\" ] req = urlopen ( srcUrl ) arr = np . asarray ( bytearray ( req . read ()), dtype = np . uint8 ) img = cv . imdecode ( arr , - 1 ) # 'Load it as it is' Convert the image to grayscale gray image = cv . cvtColor ( img , cv ."
+        ]
+      },
+      {
+        "title": "BigQuery API Client Libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Client () query = \"\"\" SELECT name, SUM(number) as total people FROM bigquery-public-data.usa names.usa 1910 2013 WHERE state = 'TX' GROUP BY name, state ORDER BY total people DESC LIMIT 20 \"\"\" rows = client . query and wait ( query ) # Make an API request. print ( \"The query data:\" ) for row in rows : Row values can be accessed by field name or index. print ( \"name= {} , count= {} \" . format ( row [ 0 ], row [ \"total people\" ])) Ruby require \"google/cloud/bigquery\" def query bigquery = Google :: Cloud :: Bigquery . new sql = \"SELECT name FROM bigquery-public-data.usa names.usa 1910 2013 \" \\ \"WHERE state = 'TX' \" \\ \"LIMIT 100\" Location must match that of the dataset(s) referenced in the query. results = bigquery . query sql do config config . location = \"US\" end results . each do row puts row . inspect end end Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code Go The following list contains links to more resources related to the client library for Go: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker google-bigquery on Stack Overflow Source code BigQuery DataFrames (BigFrames) BigQuery DataFrames is a pythonic DataFrame and machine learning (ML) API powered by the BigQuery engine.",
+          "See https : //github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM -- > < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .62.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - bigquery < / artifactId > < / dependency > < / dependencies > If you are using Gradle , add the following to your dependencies: implementation platform ( ' com . google . cloud : libraries - bom : 26.45.0 ' ) implementation ' com . google . cloud : google - cloud - bigquery ' If you are using sbt , add the following to your dependencies: libraryDependencies += \"com.google.cloud\" % \"google-cloud-bigquery\" % \"2.42.2\" If you're using Visual Studio Code or IntelliJ, you can add client libraries to your project using the following IDE plugins: Cloud Code for VS Code Cloud Code for IntelliJ The plugins provide additional functionality, such as key management for service accounts.",
+          "To get started with BigQuery DataFrames, install the library: pip install --upgrade bigframes The following example shows how to initialize BigQuery DataFrames and perform a simple query. import bigframes . pandas as bpd Set BigQuery DataFrames options Note: The project option is not required in all environments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "chunk.rfind",
+      "chunks.append",
+      "com.google.cloud",
+      "cv.COLOR",
+      "cv.cvtColor",
+      "cv.imdecode",
+      "cv.imencode",
+      "data.usa",
+      "encoded.tobytes",
+      "github.com",
+      "io.BytesIO",
+      "json.loads",
+      "names.usa",
+      "np.asarray",
+      "np.uint8",
+      "page.extract",
+      "reader.pages",
+      "req.read",
+      "urllib.request",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/pandas-gbq-migration",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/libraries"
+      ]
+    }
+  ]
+}

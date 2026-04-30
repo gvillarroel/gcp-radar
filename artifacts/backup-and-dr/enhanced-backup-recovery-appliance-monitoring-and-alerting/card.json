@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.209Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr",
+  "feature_name": "Enhanced backup/recovery appliance monitoring and alerting",
+  "feature_slug": "enhanced-backup-recovery-appliance-monitoring-and-alerting",
+  "summary": "Backup and DR now adds enhanced logging and alerting for backup/recovery appliances, including proactive monitoring with Cloud Logging email notifications for status changes or potential issues.",
+  "extended_definition": "Backup and DR now adds enhanced logging and alerting for backup/recovery appliances, including proactive monitoring with Cloud Logging email notifications for status changes or potential issues.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure log-based alerts for a backup/recovery appliance \\_|\\_ Backup\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: \"entries\" : [ { \"jsonPayload\" : { \"eventId\" : 10046 , \"errorMessage\" : \"this is a manually generated error message created for testing\" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , }, \"severity\" : \"ERROR\" , \"logName\" : \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" , } ] Copy the log entry you configured previously.",
+          "Policyname = 'Backup/DR event has occurred' Notification rate limit = 6 hr logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND NOT jsonPayload . eventId = ( 10085 OR 10229 OR 42356 OR 43901 ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Policyname = 'Snapshot job has failed' Notification rate limit = 30 min logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND jsonPayload . eventId = 43901 Events that are less urgent and hence require less frequent notifications."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.",
+          "Purpose Source Target Port (TCP) Support traffic (support to appliance) SSH CLIENT IP Backup/recovery appliance 26 iSCSI backup (host to appliance) AGENT HOST IP Backup/recovery appliance 3260 StreamSnap traffic (appliance to appliance) SOURCE APPLIANCE IP Backup/recovery appliance 5107 Backup/recovery appliance connectivity to management console APPLIANCE IP .backupdr.googleusercontent.com 443 Replace the following: SSH CLIENT IP: the IP address of the host running the SSH client.",
+          "Set up Backup and DR Service in the Google Cloud console Go to the Google Cloud console to activate the Backup and DR Service API and set up permissions for your account: Activate Google Cloud Backup and DR Backup/recovery appliance types Backup and DR Service provides appliance types that are optimized for different workloads—Compute Engine VMs, VMware VMs, databases, and file systems."
+        ]
+      },
+      {
+        "title": "\"Set up and plan a backup/recovery appliance deployment \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Components of the backup/recovery appliance architecture The Backup and DR Service architecture is delivered through the following components: Google Cloud console : The Google Cloud console includes the Backup and DR product for central management of your Persistent Disk vaulted backups, backup plans for Compute Engine instances, and enhanced backup for Cloud SQL in those products.",
+          "Purpose Source Target Port (TCP) Support traffic (support to appliance) SSH CLIENT IP Backup/recovery appliance 26 iSCSI backup (host to appliance) AGENT HOST IP Backup/recovery appliance 3260 StreamSnap traffic (appliance to appliance) SOURCE APPLIANCE IP Backup/recovery appliance 5107 Backup/recovery appliance connectivity to management console APPLIANCE IP .backupdr.googleusercontent.com 443 Replace the following: SSH CLIENT IP: the IP address of the host running the SSH client.",
+          "Set up Backup and DR Service in the Google Cloud console Go to the Google Cloud console to activate the Backup and DR Service API and set up permissions for your account: Activate Google Cloud Backup and DR Backup/recovery appliance types Backup and DR Service provides appliance types that are optimized for different workloads—Compute Engine VMs, VMware VMs, databases, and file systems."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleapis.com",
+      "backupdr.googleusercontent.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/deployment/deployment-plan",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/deployment-plan"
+      ]
+    }
+  ]
+}

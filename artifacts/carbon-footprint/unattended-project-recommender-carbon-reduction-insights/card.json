@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.446Z",
+  "source_step08_card": "data/step-08/current/products/carbon-footprint/card.json",
+  "product_name": "Carbon Footprint",
+  "product_slug": "carbon-footprint",
+  "feature_name": "Unattended project recommender carbon reduction insights",
+  "feature_slug": "unattended-project-recommender-carbon-reduction-insights",
+  "summary": "The unattended project recommender reports gross carbon footprint reduction for workloads and surfaces recommendations in the Carbon Footprint dashboard.",
+  "extended_definition": "The unattended project recommender reports gross carbon footprint reduction for workloads and surfaces recommendations in the Carbon Footprint dashboard.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/carbon-footprint/docs/export",
+      "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+      "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View Carbon Footprint data \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Recommendations Carbon Footprint has integrated with Google Cloud Active Assist Unattended Project Recommender, which analyzes usage activity across all projects, provides you with the recommendations to reclaim or shut down unattended projects, and helps you reduce both cost and carbon emissions.",
+          "Carbon emissions by project (only in the location-based emissions tab) : Displays the estimated greenhouse gas emissions associated with the usage of covered Google Cloud services for the selected billing account for the past complete month broken down by Google Cloud project.",
+          "If your billing account has associated projects that are deemed \"unattended\", you will see the \"Recommendations to reduce emissions\" card next to your annual and monthly summary cards."
+        ]
+      },
+      {
+        "title": "Export your carbon footprint \\_|\\_ Carbon Footprint \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "source_id": "site-docs-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following query lets you save the entire contents of the exported table: SELECT usage month , billing account id , project . number AS project number , project . id AS project id , service . id AS service id , service . description AS service description , location . location AS location , location . region AS region , carbon model version , carbon footprint kgCO2e . scope1 AS carbon footprint scope1 , carbon footprint kgCO2e . scope2 . location based AS carbon footprint scope2 location based , carbon footprint kgCO2e . scope3 AS carbon footprint scope3 , carbon footprint total kgCO2e . location based AS carbon footprint total location based FROM PROJECT .",
+          "More precisely, you must have the following IAM permissions on the Google Cloud project: resourcemanager.projects.update serviceusage.services.enable bigquery.transfers.update And the following IAM permission on the billing account: billing.accounts.getCarbonInformation If using VPC Service Controls If your organization is using VPC Service Controls, an ingress rule needs to be defined for the BigQuery API and BigQuery Data Transfer Service API.",
+          "Before you begin To create a Carbon Footprint export, we recommend having the following IAM roles: Project Owner or Project Editor on the Google Cloud project to export to."
+        ]
+      },
+      {
+        "title": "Carbon Footprint reporting methodology \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/carbon-footprint/docs/methodology",
+        "source_id": "site-docs-reference",
+        "final_score": 55,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To allocate company-wide emissions from non-electricity sources to the customer-specific breakdowns in Carbon Footprint reports, we establish an allocation factor – a ratio of the customer's Google Cloud electricity use to the total Google Cloud electricity use – and multiply that factor by the worldwide Google Cloud emissions from each source, determined as described here.",
+          "Behind the methodology Carbon Footprint reports are prepared according to the widely recognized Greenhouse Gas Protocol carbon reporting and accounting standards (GHGP), which provide detailed guidance for emission reports.",
+          "The resulting report includes a customer specific location-based electricity carbon footprint that is totalized overall per month, with breakdowns per Google Cloud product, per customer-defined project, and per region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.transfers.update",
+      "billing.accounts.getCarbonInformation",
+      "resourcemanager.projects.update",
+      "serviceusage.services.enable"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/carbon-footprint/docs/view-carbon-data",
+        "https://docs.cloud.google.com/carbon-footprint/docs/export",
+        "https://docs.cloud.google.com/carbon-footprint/docs/methodology"
+      ]
+    }
+  ]
+}

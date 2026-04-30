@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.407Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "Business Rule Extraction",
+  "feature_slug": "business-rule-extraction",
+  "summary": "Autonomously identifies and extracts business rules from mainframe source code for review and export.",
+  "extended_definition": "Autonomously identifies and extracts business rules from mainframe source code for review and export.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Extract business rules \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "source_id": "site-docs-reference",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits of business rules extraction Business rules extraction helps you achieve the following goals: Create a single source of truth: Mainframe Assessment Tool extracts your mainframe application logic into human-readable business rules in Gherkin, a plain-text domain-specific language (DSL) used in behavior-driven development (BDD).",
+          "This page provides instructions on how to use the business rules extraction in Mainframe Assessment Tool to help you validate existing business logic and identify obsolete rules in your mainframe codebase.",
+          "During business rule extraction, Mainframe Assessment Tool analyzes your mainframe application codebase to identify the business rules, and presents them in a standardized, human-readable format."
+        ]
+      },
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to extract business rules .",
+          "Job name: uniquely identifies a specific JCL job, a set of instructions for the mainframe that executes a batch process.",
+          "Data set name: identifies the name of a file, or dataset, as it exists on the mainframe's storage volumes."
+        ]
+      },
+      {
+        "title": "\"Configure your Google Cloud project for Mainframe Assessment Tool \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable Vertex AI API Configure firewall rules To enable secure access to the Mainframe Assessment Tool instance through IAP, create the following firewall rules: Create a firewall rule to allow ingress traffic on TCP port 4000 by using IAP for TCP forwarding : gcloud compute firewall-rules create allow-ingress-from-iap \\ --direction=INGRESS \\ --action=allow \\ --rules=tcp:4000\\ --source-ranges=35.235.240.0/20 Create a firewall rule to deny all other ingress traffic to your Mainframe Assessment Tool instance: gcloud compute firewall-rules create deny-all-other-ingress \\ --direction=ingress \\ --action=deny \\ --rules=all \\ --source-ranges=0.0.0.0/0 \\ --network=your-network-name \\ --priority=65535 Assign IAM roles and permissions To ensure that the dedicated service account that you created has the necessary permissions to give the Mainframe Assessment Tool components the required access to the Vertex AI API and other services, ask your administrator to grant the following IAM roles to the dedicated service account that you created: Important: You must grant these roles to the dedicated service account that you created, not to your user account.",
+          "Home Documentation Migration Mainframe Assessment Tool Guides Send feedback Configure your Google Cloud project for Mainframe Assessment Tool Stay organized with collections Save and categorize content based on your preferences.",
+          "Vertex AI User ( roles/aiplatform.user ) Cloud Logging: Cloud Logging Writer ( roles/logging.logWriter ) What's next Learn how to Set up and access Mainframe Assessment Tool ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.user",
+      "logging.logWriter"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/logging.logWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/configure-your-project"
+      ]
+    }
+  ]
+}

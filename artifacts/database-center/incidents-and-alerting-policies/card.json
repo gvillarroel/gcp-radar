@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.152Z",
+  "source_step08_card": "data/step-08/current/products/database-center/card.json",
+  "product_name": "Database Center",
+  "product_slug": "database-center",
+  "feature_name": "Incidents and alerting policies",
+  "feature_slug": "incidents-and-alerting-policies",
+  "summary": "Database Center lets you view incidents and alerting policies for monitoring database fleet resources.",
+  "extended_definition": "Database Center lets you view incidents and alerting policies for monitoring database fleet resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-center/docs/alerts",
+      "https://docs.cloud.google.com/database-center/docs/metrics",
+      "https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor your database fleet with alerting policies \\_|\\_ Database Center\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/alerts",
+        "source_id": "site-docs-root",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the alerting policies configured for your Google Cloud project and the incidents they create, do the following: In the Google Cloud console, go to the Database Center page.",
+          "View incidents and policies Alerting policies in your Google Cloud project generate incidents that help you monitor your database fleet in Database Center.",
+          "This document describes how to use the Database Center to use alerting policies and incidents created by them to monitor your database fleet."
+        ]
+      },
+      {
+        "title": "\"Metrics and alerting policy filters \\_|\\_ Database Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/metrics",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To help you identify and troubleshoot performance issues for database products such as Cloud SQL, AlloyDB for PostgreSQL, and Spanner, create custom dashboards that display useful metrics and information about your alerting policies.",
+          "Home Documentation Databases Database Center Guides Send feedback Metrics and alerting policy filters Stay organized with collections Save and categorize content based on your preferences.",
+          "The remainder of this document lists metric labels and resource labels that you can use to filter the metric data that Database Center generates."
+        ]
+      },
+      {
+        "title": "\"View and filter database health issues \\_|\\_ Database Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter database health issues To specify which database health issues you care about and the thresholds you consider relevant, follow these steps: Go to the Database Center page in the Google Cloud console.",
+          "Home Documentation Databases Database Center Guides Send feedback View and filter database health issues Stay organized with collections Save and categorize content based on your preferences.",
+          "In Database Center, you can filter database issues and view an aggregation of recent health issues."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterAsyncClient (0.7.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class DatabaseCenterAsyncClient (0.7.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "QueryDatabaseResourceGroupsRequest ( parent=\"parent value\", ) Make the request page result = client. query database resource groups (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.databasecenter v1beta.types.QueryDatabaseResourceGroupsRequest , dict]] The request object.",
+          "These credentials identify the application to the service; if none are specified, the client will attempt to ascertain the credentials from the environment. transport Optional[Union[str,DatabaseCenterTransport,Callable[..., DatabaseCenterTransport]]] The transport to use, or a Callable that constructs and returns a new transport to use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1beta.types.AggregateFleetRequest",
+      "v1beta.types.QueryDatabaseResourceGroupsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-center/docs/alerts",
+        "https://docs.cloud.google.com/database-center/docs/metrics",
+        "https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-center/docs/alerts",
+        "https://docs.cloud.google.com/database-center/docs/metrics",
+        "https://docs.cloud.google.com/database-center/docs/view-filter-database-health-issues",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient"
+      ]
+    }
+  ]
+}

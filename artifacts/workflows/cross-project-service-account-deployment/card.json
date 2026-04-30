@@ -1,0 +1,139 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:07.127Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Cross-project service account deployment",
+  "feature_slug": "cross-project-service-account-deployment",
+  "summary": "The Google Cloud console and Google Cloud CLI can deploy a workflow using a cross-project service account.",
+  "extended_definition": "The Google Cloud console and Google Cloud CLI can deploy a workflow using a cross-project service account.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/authentication",
+      "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Grant a workflow permission to access Google Cloud resources | Workflows | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/authentication",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 264,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the service account and the workflow resources are in different projects, from the project where the service account is located, complete the following: In the Google Cloud console, go to the Organization policies page: Go to Organization policies Check the organization policy for the project and ensure that the iam.disableCrossProjectServiceAccountUsage boolean constraint is not enforced for the project.",
+          "Deploy a workflow with a cross-project service account By default, you cannot create a service account in one project and attach it to a resource in another project.",
+          "You can then use the service account across different projects to deploy a workflow."
+        ]
+      },
+      {
+        "title": "\"Grant a workflow permission to access Google Cloud resources \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 260,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the service account and the workflow resources are in different projects, from the project where the service account is located, complete the following: In the Google Cloud console, go to the Organization policies page: Go to Organization policies Check the organization policy for the project and ensure that the iam.disableCrossProjectServiceAccountUsage boolean constraint is not enforced for the project.",
+          "Deploy a workflow with a cross-project service account By default, you cannot create a service account in one project and attach it to a resource in another project.",
+          "You can then use the service account across different projects to deploy a workflow."
+        ]
+      },
+      {
+        "title": "Troubleshoot issues \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/troubleshooting",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 191,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cross-project service account permission errors If you receive a PERMISSION DENIED error when attempting to use a cross-project service account to deploy a workflow, ensure that the iam.disableCrossProjectServiceAccountUsage boolean constraint is not enforced for your project and that you have correctly set up the service account.",
+          "For more information, see Deploy a workflow with a cross-project service account .",
+          "Console When a deployment error occurs, Workflows displays the error message in a banner on the Edit workflow page: The error message flags the problem in the source code, specifying the origin of the error when possible: Could not deploy workflow: failed to build: error in step step2: error evaluating return value: symbol 'varC' is neither a variable nor a sub-workflow name (Code: 3) gcloud When you run the gcloud workflows deploy command, Workflows returns an error message to the command line if the deployment fails."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.disableCrossProjectServiceAccountUsage"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/authentication",
+        "https://docs.cloud.google.com/workflows/docs/troubleshooting"
+      ]
+    }
+  ]
+}

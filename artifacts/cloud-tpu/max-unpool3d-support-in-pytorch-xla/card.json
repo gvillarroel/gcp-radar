@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.112Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "max_unpool3d support in PyTorch/XLA",
+  "feature_slug": "max-unpool3d-support-in-pytorch-xla",
+  "summary": "PyTorch/XLA 1.6 adds support for the max_unpool3d operation.",
+  "extended_definition": "PyTorch/XLA 1.6 adds support for the max_unpool3d operation.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/ListOperationsResponse",
+      "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/OperationMetadata",
+      "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/WaitOperationRequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ListOperationsResponse \\_|\\_ Cloud TPU \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"operations\" : [ { object ( Operation ) } ] , \"nextPageToken\" : string } Fields operations[] object ( Operation ) A list of operations that matches the specified filter in the request. next Page Token string The standard List next-page token.",
+          "Some services might not provide the result. result can be only one of the following: error object ( Status ) The error result of the operation in case of failure or cancellation. response object The normal, successful response of the operation.",
+          "If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique id} . metadata object Service-specific metadata associated with the operation."
+        ]
+      },
+      {
+        "title": "OperationMetadata \\_|\\_ Cloud TPU \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/OperationMetadata",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operations that have been cancelled successfully have google.longrunning.Operation.error value with a google.rpc.Status.code of 1 , corresponding to Code.CANCELLED . api Version string Output only.",
+          "Home Documentation AI and ML Cloud TPU Reference Send feedback OperationMetadata Stay organized with collections Save and categorize content based on your preferences.",
+          "Server-defined resource path for the target of the operation. verb string Output only."
+        ]
+      },
+      {
+        "title": "WaitOperationRequest \\_|\\_ Cloud TPU \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/WaitOperationRequest",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"timeout\" : string } Fields name string The name of the operation resource to wait on. timeout string ( Duration format) The maximum duration to wait before timing out.",
+          "Home Documentation AI and ML Cloud TPU Reference Send feedback WaitOperationRequest Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation The request message for Operations.WaitOperation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/WaitOperationRequest",
+        "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/tpu/docs/reference/rest/Shared.Types/OperationMetadata"
+      ]
+    }
+  ]
+}

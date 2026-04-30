@@ -1,0 +1,207 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.809Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster",
+  "feature_name": "multi-VPC networking",
+  "feature_slug": "multi-vpc-networking",
+  "summary": "You can create Private Service Connect endpoints in multiple VPCs to connect to the same Memorystore for Redis Cluster instance.",
+  "extended_definition": "You can create Private Service Connect endpoints in multiple VPCs to connect to the same Memorystore for Redis Cluster instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/networking"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About multiple VPC networking \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "source_id": "site-iam-reference",
+        "final_score": 289,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations You can have between 1 and 20 VPC networks connected to a single Memorystore instance, and no more than 40 Private Service Connect connections in total To delete a Memorystore instance connected with user-registered Private Service Connect connections, you must delete and deregister the connections first.",
+          "Application connection requirements To connect your application using a multiple VPC networking setup, Memorystore has networking requirements that you must meet.",
+          "Setting up networking for multiple VPC networks requires Memorystore users to configure and register up Private Service Connect connections."
+        ]
+      },
+      {
+        "title": "Networking \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you don't need multiple VPC networks, then you can also establish connectivity by using a user-registered connection.",
+          "User-registered Private Service Connect connections enable you to connect multiple VPC networks, if needed.",
+          "For more information about deploying Private Service Connect endpoints in Google Cloud projects other than the project that hosts the cluster, see Set up multiple VPC networks using user-registered Private Service Connect connections and Set up multiple VPC networks for instances provisioned with automatically registered Private Service Connect connections ."
+        ]
+      },
+      {
+        "title": "\"Create instances \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tip: If you plan on using private networking, then you can deploy both the private networking setup of your choice and the Memorystore for Redis Cluster instance along with clients such as Compute Engine VMs by using Terraform.",
+          "If a service connection policy hasn't been created for the network with which you will create the Redis cluster, follow the Networking guidance to create it.",
+          "Enable the Memorystore for Redis API Memorystore for Redis Enable the Network Connectivity API Network Connectivity API Enable the Service Consumer Management API Service Consumer Management API Other prerequisites You must have one of these IAM roles in the Google Cloud project you're using: roles/redis.admin (the Memorystore Admin predefined IAM role) roles/owner (the Owner basic IAM role) roles/editor (the Editor basic IAM role) Set up networking Read the Networking page to determine if you need to set up a service connection policy."
+        ]
+      },
+      {
+        "title": "\"Client library connection code samples \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Typical scale is tens of thousands of Redis connections and the IAM token is required for every connection being established. / private static final class RedisClusterCredentialsProvider implements RedisCredentialsProvider , Runnable , Closeable { private static final Logger logger = Logger . getLogger ( RedisClusterCredentialsProvider . class . getName ()); private final IamCredentialsClient iamClient ; private final ScheduledExecutorService service ; private final String accountName ; private final Duration refreshDuration ; private final Duration lifetime ; private volatile RedisCredentials credentials ; private volatile Instant lastRefreshInstant ; private volatile Exception lastException ; // AccountName: // \"projects/-/serviceAccounts/example-service-account@example-project.iam.gserviceaccount.com\"; // RefreshDuration: Duration.ofSeconds(300); // Lifetime: Duration.ofSeconds(3600); public RedisClusterCredentialsProvider ( String accountName , Duration refreshDuration , Duration lifetime ) throws Exception { this . iamClient = IamCredentialsClient . create (); this . service = Executors . newSingleThreadScheduledExecutor (); this . accountName = accountName ; this . refreshDuration = refreshDuration ; this . lifetime = lifetime ; // execute on initialization to fast-fail if there are any setup issues refreshTokenNow (); // refresh much more frequently than the expiry time to allow for multiple retries in case of // failures service . scheduleWithFixedDelay ( this , 10 , 10 , TimeUnit .",
+          "Typical scale is tens of thousands of Redis connections and the IAM token is required for every connection being established. / private static final class RedisClusterCredentialsProvider implements RedisCredentialsProvider , Runnable , Closeable { private static final Logger logger = Logger . getLogger ( RedisClusterCredentialsProvider . class . getName ()); private final ScheduledExecutorService service = Executors . newSingleThreadScheduledExecutor (); private final IamCredentialsClient iamClient ; private final String accountName ; private final Duration refreshDuration ; private final Duration lifetime ; private volatile RedisCredentials credentials ; private volatile Instant lastRefreshInstant ; private volatile Exception lastException ; / AccountName: \"projects/-/serviceAccounts/example-service-account@example-project.iam.gserviceaccount.com\"; RefreshDuration: Duration.ofSeconds(300) Lifetime: Duration.ofSeconds(3600); / public RedisClusterCredentialsProvider ( String accountName , Duration refreshDuration , Duration lifetime ) throws Exception { this . iamClient = IamCredentialsClient . create (); this . accountName = accountName ; this . refreshDuration = refreshDuration ; this . lifetime = lifetime ; // execute on initialization to fast-fail if there are any setup issues refreshTokenNow (); // refresh much more frequently than the expiry time to allow for multiple retries in case of // failures service . scheduleWithFixedDelay ( this , 10 , 10 , TimeUnit .",
+          "NOADDR ))) . validateClusterNodeMembership ( false ) . build ()); // Create a connection pool GenericObjectPool<StatefulRedisClusterConnection<String , String > pool = ConnectionPoolSupport . createGenericObjectPool (() -> clusterClient . connect (), new GenericObjectPoolConfig ()); pool . setMaxTotal ( MAX CONNECTIONS IN CONNECTION POOL ); // Get a connection from the connection pool StatefulRedisClusterConnection<String , String > connection = pool . borrowObject (); // Get a cluster sync command and call 'set' RedisAdvancedClusterCommands<String , String > syncCommands = connection . sync (); syncCommands . set ( key , value ); In-transit encryption client library code sample This section gives an example of client code for authenticating with in-transit encryption for your Memorystore cluster with the go-redis client library. go-redis We recommend using go-redis, versions 9.11.0 and later. import ( \"context\" \"crypto/tls\" \"crypto/x509\" \"io/ioutil\" \"log\" \"time\" \"github.com/go-redis/redis/v9\" ) func example () { // Load CA cert caFilePath := caCert , err := ioutil ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "project.iam.gserviceaccount.com",
+      "redis.admin",
+      "redis.backoff",
+      "redis.exceptions",
+      "redis.googleapis.com",
+      "redis.retry",
+      "redis.utils"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/owner",
+      "roles/redis.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-multiple-vpc-networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/networking",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection"
+      ]
+    }
+  ]
+}

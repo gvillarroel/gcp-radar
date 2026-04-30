@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore multiple databases per project",
+  "feature_slug": "firestore-multiple-databases-per-project",
+  "summary": "Firestore supports multiple databases per project.",
+  "extended_definition": "Firestore supports multiple databases per project.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/backups",
+      "https://docs.cloud.google.com/firestore/native/docs/backups",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Back up and restore data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/backups",
+        "source_id": "site-docs-reference",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output will include metadata , name , and response components: metadata: '@type': type.googleapis.com/google.firestore.admin.v1.RestoreDatabaseMetadata backup: projects/ PROJECT ID /locations/ LOCATION /backups/ BACKUP ID database: projects/ PROJECT ID /databases/ DATABASE ID operationState: PROCESSING progressPercentage: completedWork: '20' estimatedWork: '100' startTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID /operations/operation uuid response: '@type': type.googleapis.com/google.firestore.admin.v1.Database createTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID ...",
+          "The restore operation will take some time and must complete before the database is accessible. gcloud Use the gcloud firestore databases restore command: gcloud firestore databases restore \\ --source-backup=projects/ PROJECT ID /locations/ LOCATION /backups/ BACKUP ID \\ --destination-database=' DATABASE ID \\ --tags=[ KEY = VALUE ]' Replace the following: PROJECT ID : Your project ID.",
+          "Set to one of the following: SUN for Sunday MON for Monday TUE for Tuesday WED for Wednesday THU for Thursday FRI for Friday SAT for Saturday Terraform To create a weekly backup schedule, create a google firestore backup schedule resource. resource \"google firestore backup schedule\" \"weekly-backup\" { project = PROJECT ID database = DATABASE ID retention = RETENTION PERIOD SECONDS weekly recurrence { day = DAY } } Replace the following: PROJECT ID : The ID of the project."
+        ]
+      },
+      {
+        "title": "\"Back up and restore data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output will include metadata , name , and response components: metadata: '@type': type.googleapis.com/google.firestore.admin.v1.RestoreDatabaseMetadata backup: projects/ PROJECT ID /locations/ LOCATION /backups/ BACKUP ID database: projects/ PROJECT ID /databases/ DATABASE ID operationState: PROCESSING progressPercentage: completedWork: '20' estimatedWork: '100' startTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID /operations/operation uuid response: '@type': type.googleapis.com/google.firestore.admin.v1.Database createTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID ...",
+          "The restore operation will take some time and must complete before the database is accessible. gcloud Use the gcloud firestore databases restore command: gcloud firestore databases restore \\ --source-backup=projects/ PROJECT ID /locations/ LOCATION /backups/ BACKUP ID \\ --destination-database=' DATABASE ID \\ --tags=[ KEY = VALUE ]' Replace the following: PROJECT ID : Your project ID.",
+          "Set to one of the following: SUN for Sunday MON for Monday TUE for Tuesday WED for Wednesday THU for Thursday FRI for Friday SAT for Saturday Terraform To create a weekly backup schedule, create a google firestore backup schedule resource. resource \"google firestore backup schedule\" \"weekly-backup\" { project = PROJECT ID database = DATABASE ID retention = RETENTION PERIOD SECONDS weekly recurrence { day = DAY } } Replace the following: PROJECT ID : The ID of the project."
+        ]
+      },
+      {
+        "title": "\"Delete documents and fields \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fprintf ( w , \"Deleted collection \\\"%s\\\"\" , collectionName ) return nil } save data delete collection . go PHP function data delete collection(string $projectId, string $collectionName, int $batchSize) { // Create the Cloud Firestore client $db = new FirestoreClient([ 'projectId' => $projectId, ]); $collectionReference = $db->collection($collectionName); $documents = $collectionReference->limit($batchSize)->documents(); while (!$documents->isEmpty()) { foreach ($documents as $document) { printf('Deleting document %s' .",
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "For large deletion jobs (millions of documents), use one of the following: Managed bulk delete Firestore supports bulk deleting one or more collection groups."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/backups",
+        "https://docs.cloud.google.com/firestore/native/docs/backups",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/backups",
+        "https://docs.cloud.google.com/firestore/native/docs/backups",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/delete-data"
+      ]
+    }
+  ]
+}

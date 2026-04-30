@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "text-unicorn model for PaLM 2 for Text",
+  "feature_slug": "text-unicorn-model-for-palm-2-for-text",
+  "summary": "The text-unicorn PaLM 2 for Text model size is released as generally available, offering improved response quality and reasoning over text-bison.",
+  "extended_definition": "The text-unicorn PaLM 2 for Text model size is released as generally available, offering improved response quality and reasoning over text-bison.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "source_id": "site-docs-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The size of this field should not exceed 200KB. description string Description of the Context LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string PipelineTaskDetail JSON representation { \"taskId\" : string , \"parentTaskId\" : string , \"taskName\" : string , \"createTime\" : string , \"startTime\" : string , \"endTime\" : string , \"executorDetail\" : { object ( PipelineTaskExecutorDetail ) } , \"state\" : enum ( State ) , \"execution\" : { object ( Execution ) } , \"error\" : { object ( Status ) } , \"pipelineTaskStatus\" : [ { object ( PipelineTaskStatus ) } ] , \"inputs\" : { string : { object ( ArtifactList ) } , ... } , \"outputs\" : { string : { object ( ArtifactList ) } , ... } , \"taskUniqueName\" : string } Fields taskId string ( int64 format) Output only.",
+          "The size of this field should not exceed 200KB. description string Description of the Context LabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string PipelineTaskDetail JSON representation { \"taskId\" : string , \"parentTaskId\" : string , \"taskName\" : string , \"createTime\" : string , \"startTime\" : string , \"endTime\" : string , \"executorDetail\" : { object ( PipelineTaskExecutorDetail ) } , \"state\" : enum ( State ) , \"execution\" : { object ( Execution ) } , \"error\" : { object ( Status ) } , \"pipelineTaskStatus\" : [ { object ( PipelineTaskStatus ) } ] , \"inputs\" : { string : { object ( ArtifactList ) } , ... } , \"outputs\" : { string : { object ( ArtifactList ) } , ... } , \"taskUniqueName\" : string } Fields taskId string ( int64 format) Output only.",
+          "Refer to Nvidia GPU Partitioning for the available partition sizes."
+        ]
+      },
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to provide text input to Large Language Models available on Vertex AI to test, tune, and deploy generative AI language models.",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "RolloutOptions JSON representation { \"previousDeployedModel\" : string , \"revisionNumber\" : integer , // Union field max unavailable can be only one of the following: \"maxUnavailableReplicas\" : integer , \"maxUnavailablePercentage\" : integer // End of list of possible types for union field max unavailable . // Union field max surge can be only one of the following: \"maxSurgeReplicas\" : integer , \"maxSurgePercentage\" : integer // End of list of possible types for union field max surge . } Fields previousDeployedModel string ID of the DeployedModel that this deployment should replace. revisionNumber integer Output only.",
+          "Refer to Nvidia GPU Partitioning for the available partition sizes.",
+          "The number of available replicas of the deployed model."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_notebook_execution_schedule",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint"
+      ]
+    }
+  ]
+}

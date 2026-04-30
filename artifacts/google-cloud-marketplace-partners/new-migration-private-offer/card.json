@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.872Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace-partners/card.json",
+  "product_name": "Google Cloud Marketplace Partners",
+  "product_slug": "google-cloud-marketplace-partners",
+  "feature_name": "New Migration private offer",
+  "feature_slug": "new-migration-private-offer",
+  "summary": "New Migration is a Private Offer deal type that can be selected when creating an offer.",
+  "extended_definition": "New Migration is a Private Offer deal type that can be selected when creating an offer.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+      "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+      "https://docs.cloud.google.com/marketplace/docs/partners/data",
+      "https://docs.cloud.google.com/marketplace/docs/partners/professional-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a private offer for a customer \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following articles explain how to create and publish a new private offer.",
+          "If you want to add a custom end user license agreement (EULA) to your private offer, you must also have the Commerce Price Management Private Offers Admin ( roles/commercepricemanagement.privateOffersAdmin ) role, or equivalent permissions.",
+          "The direct link to the page is: https://console.cloud.google.com/producer-portal/private-offers In the Private Offers page, click Create offer ."
+        ]
+      },
+      {
+        "title": "\"Offer professional services \\_|\\_ Google Cloud Marketplace Partners \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you offer professional services, you must meet the following requirements: Cloud Marketplace must be able to use the agency transaction model for your private offers that include professional services products.",
+          "While your product's listing is publicly accessible in Cloud Marketplace, for customers to be able to purchase your professional services, you (or a reseller) must create private offers for your customers.",
+          "Requirements for professional services All products that you offer through Cloud Marketplace must comply with the Cloud Marketplace listing requirements ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: providers.entitlements \\_|\\_ Google Cloud Marketplace Partners\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the entitlement is in the state ENTITLEMENT PENDING PLAN CHANGE APPROVAL or ENTITLEMENT PENDING PLAN CHANGE: If the entitlement's pricing model is usage based and the associated offer is a private offer whose term has ended, then this field reflects the ACTUAL end time of the entitlement's associated offer (in the past), even though the entitlement associated with this private offer does not terminate at the end of that private offer's term.",
+          "If the entitlement is in the state ENTITLEMENT CANCELLED, then this field is populated with the latest offer that the order was associated with. newPendingOffer string Output only.",
+          "It could be either the product service that the offer is referencing, or a generic private offer parent service."
+        ]
+      },
+      {
+        "title": "\"Offer data products \\_|\\_ Google Cloud Marketplace Partners \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/data",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After you create your Sharing listing, you create a data product in Cloud Marketplace that points to your Sharing listing, so that you can offer it through Cloud Marketplace.",
+          "Each subsequent time that you publish a new approved config for that data product, it replaces the product's previous published config in production.",
+          "Requirements for data products All products that you offer through Cloud Marketplace must comply with the Cloud Marketplace listing requirements ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "commercepricemanagement.privateOffersAdmin",
+      "console.cloud.google.com",
+      "providers.entitlements",
+      "providers.entitlements.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/commercepricemanagement.privateOffersAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/partners/create-offers",
+        "https://docs.cloud.google.com/marketplace/docs/partners/professional-services",
+        "https://docs.cloud.google.com/marketplace/docs/partners/commerce-procurement-api/reference/rest/v1/providers.entitlements",
+        "https://docs.cloud.google.com/marketplace/docs/partners/data"
+      ]
+    }
+  ]
+}

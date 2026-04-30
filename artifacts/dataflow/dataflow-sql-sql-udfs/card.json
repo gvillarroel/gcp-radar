@@ -1,0 +1,94 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.239Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow SQL SQL UDFs",
+  "feature_slug": "dataflow-sql-sql-udfs",
+  "summary": "Dataflow SQL SQL UDFs let you write user-defined functions for Dataflow SQL in SQL.",
+  "extended_definition": "Dataflow SQL SQL UDFs let you write user-defined functions for Dataflow SQL in SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"BigQuery to Elasticsearch template \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "RowToStringElementFn ())); } else { udfOut = readJsonDocuments . apply ( TransformTextViaJavascript . newBuilder () . setFileSystemPath ( options . getJavascriptTextTransformGcsPath ()) . setFunctionName ( options . getJavascriptTextTransformFunctionName ()) . build ()); } / Step #4: Write converted records to Elasticsearch / udfOut . apply ( \"WriteToElasticsearch\" , WriteToElasticsearch . newBuilder () . setUserAgent ( \"dataflow-bigquery-to-elasticsearch-template/v2\" ) . setOptions ( options . as ( BigQueryToElasticsearchOptions . class )) . build ()); return pipeline . run (); } } What's next Learn about Dataflow templates .",
+          "Defaults to: PLAINTEXT. socketTimeout : If set, overwrites the default max retry timeout and default socket timeout (30000ms) in the Elastic RestClient. javascriptTextTransformGcsPath : The Cloud Storage URI of the .js file that defines the JavaScript user-defined function (UDF) to use.",
+          "For example, gs://my-bucket/my-udfs/my file.js . javascriptTextTransformFunctionName : The name of the JavaScript user-defined function (UDF) to use."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Text to BigQuery template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "For sample JavaScript UDFs, see UDF Examples (https://github.com/GoogleCloudPlatform/DataflowTemplates#udf-examples)\" , example = \"transform udf1\" ) String getJavascriptTextTransformFunctionName (); void setJavascriptTextTransformFunctionName ( String javascriptTextTransformFunctionName ); @Validation.Required @TemplateParameter.GcsWriteFolder ( order = 6 , optional = false , description = \"Temporary directory for BigQuery loading process\" , helpText = \"Temporary directory for BigQuery loading process.\" , example = \"gs://your-bucket/your-files/temp-dir\" ) String getBigQueryLoadingTemporaryDirectory (); void setBigQueryLoadingTemporaryDirectory ( String directory ); } private static final String BIGQUERY SCHEMA = \"BigQuery Schema\" ; private static final String NAME = \"name\" ; private static final String TYPE = \"type\" ; private static final String MODE = \"mode\" ; private static final String RECORD TYPE = \"RECORD\" ; private static final String FIELDS ENTRY = \"fields\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); Options options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( Options . class ); run ( options , () - > writeToBQTransform ( options )); } / Create the pipeline with the supplied options. @param options The execution parameters to the pipeline. @param writeToBQ the transform that outputs {@link TableRow}s to BigQuery. @return The result of the pipeline execution. / @VisibleForTesting static PipelineResult run ( Options options , Supplier<Write<TableRow> > writeToBQ ) { BigQueryIOUtils . validateBQStorageApiOptionsBatch ( options ); Pipeline pipeline = Pipeline . create ( options ); boolean useJavascriptUdf = !",
+          "PATH TO BIGQUERY SCHEMA JSON : the Cloud Storage path to the JSON file containing the schema definition PATH TO JAVASCRIPT UDF FILE : the Cloud Storage URI of the .js file that defines the JavaScript user-defined function (UDF) you want to use—for example, gs://my-bucket/my-udfs/my file.js PATH TO TEXT DATA : your Cloud Storage path to your text dataset BIGQUERY TABLE : your BigQuery table name PATH TO TEMP DIR ON GCS : your Cloud Storage path to the temp directory Template source code Java / Copyright (C) 2022 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "PATH TO BIGQUERY SCHEMA JSON : the Cloud Storage path to the JSON file containing the schema definition PATH TO JAVASCRIPT UDF FILE : the Cloud Storage URI of the .js file that defines the JavaScript user-defined function (UDF) you want to use—for example, gs://my-bucket/my-udfs/my file.js PATH TO TEXT DATA : your Cloud Storage path to your text dataset BIGQUERY TABLE : your BigQuery table name PATH TO TEMP DIR ON GCS : your Cloud Storage path to the temp directory API To run the template using the REST API, send an HTTP POST request."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Text to BigQuery template with Python UDF \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "For sample JavaScript UDFs, see UDF Examples (https://github.com/GoogleCloudPlatform/DataflowTemplates#udf-examples)\" , example = \"transform udf1\" ) String getJavascriptTextTransformFunctionName (); void setJavascriptTextTransformFunctionName ( String javascriptTextTransformFunctionName ); @Validation.Required @TemplateParameter.GcsWriteFolder ( order = 6 , optional = false , description = \"Temporary directory for BigQuery loading process\" , helpText = \"Temporary directory for BigQuery loading process.\" , example = \"gs://your-bucket/your-files/temp-dir\" ) String getBigQueryLoadingTemporaryDirectory (); void setBigQueryLoadingTemporaryDirectory ( String directory ); } private static final String BIGQUERY SCHEMA = \"BigQuery Schema\" ; private static final String NAME = \"name\" ; private static final String TYPE = \"type\" ; private static final String MODE = \"mode\" ; private static final String RECORD TYPE = \"RECORD\" ; private static final String FIELDS ENTRY = \"fields\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); Options options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( Options . class ); run ( options , () - > writeToBQTransform ( options )); } / Create the pipeline with the supplied options. @param options The execution parameters to the pipeline. @param writeToBQ the transform that outputs {@link TableRow}s to BigQuery. @return The result of the pipeline execution. / @VisibleForTesting static PipelineResult run ( Options options , Supplier<Write<TableRow> > writeToBQ ) { BigQueryIOUtils . validateBQStorageApiOptionsBatch ( options ); Pipeline pipeline = Pipeline . create ( options ); boolean useJavascriptUdf = !",
+          "For example, gs://my-bucket/my-udfs/my file.py . pythonExternalTextTransformFunctionName The name of the Python user-defined function (UDF) that you want to use. inputFilePattern The gs:// path to the text in Cloud Storage you'd like to process.",
+          "REGION NAME : the region where you want to deploy your Dataflow job—for example, us-central1 PYTHON FUNCTION : The name of the Python user-defined function (UDF) that you want to use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file.js",
+      "file.py",
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-elasticsearch",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-storage-to-bigquery-python-udf"
+      ]
+    }
+  ]
+}

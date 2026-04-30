@@ -1,0 +1,145 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "ROUND function rounding mode argument",
+  "feature_slug": "round-function-rounding-mode-argument",
+  "summary": "The ROUND function accepts a rounding mode as an optional argument in BigQuery.",
+  "extended_definition": "The ROUND function accepts a rounding mode as an optional argument in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the table name exists in the dataset, the following error is returned: Already Exists: project id:dataset.table The table schema contains 3 columns: x: A parameterized string with a maximum length of 10 y: A STRUCT containing a (an array of parameterized bytes with a maximum length of 5), b (a parameterized NUMERIC with a maximum precision of 15, maximum scale of 2, and rounding mode set to 'ROUND HALF EVEN'), and c (a float) z: A parameterized BIGNUMERIC with a maximum precision of 35 and maximum scale of 0 Creating a partitioned table The following example creates a partitioned table named newtable in mydataset using a DATE column: CREATE TABLE mydataset . newtable ( transaction id INT64 , transaction date DATE ) PARTITION BY transaction date OPTIONS ( partition expiration days = 3 , description = \"a table partitioned by transaction date\" ) If you haven't configured a default project, prepend a project ID to the dataset name in the example SQL, and enclose the name in backticks if project id contains special characters: project id.dataset.table .",
+          "See more details about Protecting data with Cloud KMS keys . friendly name STRING Example: friendly name=\"my table\" This property is equivalent to the friendlyName table resource property. description STRING Example: description=\"a table that expires in 2025\" This property is equivalent to the description table resource property. labels ARRAY<STRUCT<STRING, STRING>> Example: labels=[(\"org unit\", \"development\")] This property is equivalent to the labels table resource property. default rounding mode STRING Example: default rounding mode = \"ROUND HALF EVEN\" This specifies the default rounding mode that's used for values written to any new NUMERIC or BIGNUMERIC type columns or STRUCT fields in the table.",
+          "See more details about Protecting data with Cloud KMS keys . friendly name STRING Example: friendly name=\"my table\" This property is equivalent to the friendlyName table resource property. description STRING Example: description=\"a table that expires in 2025\" This property is equivalent to the description table resource property. labels ARRAY<STRUCT<STRING, STRING>> Example: labels=[(\"org unit\", \"development\")] This property is equivalent to the labels table resource property. default rounding mode STRING Example: default rounding mode = \"ROUND HALF EVEN\" This specifies the default rounding mode that's used for values written to any new NUMERIC or BIGNUMERIC type columns or STRUCT fields in the table."
+        ]
+      },
+      {
+        "title": "JSON functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "This argument accepts one of the two case-sensitive values: exact : The function fails if the result can't be represented as a FLOAT64 without loss of precision. round (default): The numeric value stored in JSON will be rounded to FLOAT64 .",
+          "If false , returns 'false' . string Returns the JSON string as a STRING value. number Returns the JSON number as a STRING value. other type or null NULL Return type STRING Examples Examples with inputs that are JSON strings: SELECT LAX STRING ( JSON '\"purple\"' ) AS result ; / --------+ result +--------+ purple +-------- / SELECT LAX STRING ( JSON '\"10\"' ) AS result ; / --------+ result +--------+ 10 +-------- / Examples with inputs that are JSON booleans: SELECT LAX STRING ( JSON 'true' ) AS result ; / --------+ result +--------+ true +-------- / SELECT LAX STRING ( JSON 'false' ) AS result ; / --------+ result +--------+ false +-------- / Examples with inputs that are JSON numbers: SELECT LAX STRING ( JSON '10.0' ) AS result ; / --------+ result +--------+ 10 +-------- / SELECT LAX STRING ( JSON '10' ) AS result ; / --------+ result +--------+ 10 +-------- / SELECT LAX STRING ( JSON '1e100' ) AS result ; / --------+ result +--------+ 1e+100 +-------- / PARSE JSON PARSE JSON ( json string expr [ , wide number mode = > { 'exact' 'round' } ] ) Description Converts a JSON-formatted STRING value to a JSON value .",
+          "Return type FLOAT64 Examples SELECT FLOAT64 ( JSON '9.8' ) AS velocity ; / ----------+ velocity +----------+ 9.8 +---------- / SELECT FLOAT64 ( JSON QUERY ( JSON '{\"vo2 max\": 39.1, \"age\": 18}' , \"$.vo2 max\" )) AS vo2 max ; / ---------+ vo2 max +---------+ 39.1 +--------- / SELECT FLOAT64 ( JSON '18446744073709551615' , wide number mode = > 'round' ) as result ; / ------------------------+ result +------------------------+ 1.8446744073709552e+19 +------------------------ / SELECT FLOAT64 ( JSON '18446744073709551615' ) as result ; / ------------------------+ result +------------------------+ 1.8446744073709552e+19 +------------------------ / The following examples show how invalid requests are handled: -- An error is thrown if JSON isn't of type FLOAT64."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you create a Spanner connection and want to use Data Boost , include the \"useParallelism\":true and \"useDataBoost\":true pairs. --connection credential= CONNECTION CREDENTIAL The credentials of the connection in JSON format. username and password must be specified. --project id= PROJECT ID Specifies the ID of the project that the connection belongs to. --location= LOCATION Specifies the location that the connection will be stored. --display name= DISPLAY NAME Specifies an optional friendly name for the connection. --description= DESCRIPTION Specifies an optional description of the connection. --iam role id= ROLE ID For BigQuery Omni on AWS, specifies an IAM role that allows access to the resource.",
+          "Synopsis bq load [ FLAGS ] DESTINATION TABLE SOURCE DATA [ SCHEMA ] Example bq load myDataset.newTable gs://mybucket/info.csv ./info schema.json Flags and arguments The bq load command uses the following flags and arguments: --allow jagged rows={true false} To allow missing trailing optional columns in CSV data, set to true . --preserve ascii control characters={true false} To allow embedded ASCII control characters in CSV data, set to true . --allow quoted newlines={true false} To allow quoted newlines in CSV data, set to true . --autodetect={true false} To enable schema auto-detection for CSV and JSON data, set to true .",
+          "For example, this command specifies false for the boolean flag --use legacy sql by placing no at the front of the flag: bq query --nouse legacy sql \\ 'SELECT COUNT( ) FROM bigquery-public-data.samples.shakespeare' Alternatively, to specify false as the flag's argument, you can enter the following: bq query --use legacy sql = false \\ 'SELECT COUNT( ) FROM bigquery-public-data.samples.shakespeare' Run commands in a script You can run the bq command-line tool in a script, as you would run a Google Cloud CLI command ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.samples.shakespeare",
+      "dataset.table",
+      "id.dataset.table",
+      "info.csv",
+      "schema.fields",
+      "schema.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ]
+}

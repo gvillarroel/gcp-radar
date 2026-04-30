@@ -1,0 +1,131 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.744Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis",
+  "feature_name": "Maintenance Windows",
+  "feature_slug": "maintenance-windows",
+  "summary": "Maintenance Windows let you schedule Memorystore for Redis maintenance during a preferred window; Maintenance Windows let you schedule Memorystore for Redis maintenance during a preferred window.",
+  "extended_definition": "Maintenance Windows let you schedule Memorystore for Redis maintenance during a preferred window; Maintenance Windows let you schedule Memorystore for Redis maintenance during a preferred window.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Find and set maintenance windows \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "source_id": "site-docs-root-2",
+        "final_score": 348,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reschedule planned maintenance Caution: if you programmatically reschedule maintenance in bulk requests (not natively supported by Memorystore for Redis), limit batch reschedule sizes to 100 instances per batch.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Find and set maintenance windows Stay organized with collections Save and categorize content based on your preferences.",
+          "Find scheduled maintenance If maintenance has been scheduled for your instance, you can view it using the following instructions: Console Go to the Memorystore for Redis page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "About maintenance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "source_id": "site-docs-root-2",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About maintenance Stay organized with collections Save and categorize content based on your preferences.",
+          "In addition, the client application can't connect to the read replicas until Memorystore for Redis completes maintenance on the primary instance.",
+          "When subscribing you opt-in to maintenance notifications for all Memorystore instances that have maintenance windows in a given project."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+        "source_id": "site-api-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tool: reschedule maintenance Reschedule maintenance for a Memorystore for Redis instance.",
+          "Curl Request curl --location 'https://redis.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"reschedule maintenance\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for RescheduleMaintenance .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Google Cloud Memorystore for Redis API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.instances Methods create POST /v1beta1/{parent=projects/ /locations/ }/instances Creates a Redis instance based on the specified tier and memory size. delete DELETE /v1beta1/{name=projects/ /locations/ /instances/ } Deletes a specific Redis instance. export POST /v1beta1/{name=projects/ /locations/ /instances/ }:export Export Redis instance data into a Redis RDB format file in Cloud Storage. failover POST /v1beta1/{name=projects/ /locations/ /instances/ }:failover Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance. get GET /v1beta1/{name=projects/ /locations/ /instances/ } Gets the details of a specific Redis instance. getAuthString GET /v1beta1/{name=projects/ /locations/ /instances/ }/authString Gets the AUTH string for a Redis instance. import POST /v1beta1/{name=projects/ /locations/ /instances/ }:import Import a Redis RDB snapshot file from Cloud Storage into a Redis instance. list GET /v1beta1/{parent=projects/ /locations/ }/instances Lists all Redis instances owned by a project in either the specified location (region) or all locations. patch PATCH /v1beta1/{instance.name=projects/ /locations/ /instances/ } Updates the metadata and configuration of a specific Redis instance. rescheduleMaintenance POST /v1beta1/{name=projects/ /locations/ /instances/ }:rescheduleMaintenance Reschedule maintenance for a given instance in a given project and location. upgrade POST /v1beta1/{name=projects/ /locations/ /instances/ }:upgrade Upgrades Redis instance to the newer Redis version specified in the request.",
+          "REST Resource: v1.projects.locations.instances Methods create POST /v1/{parent=projects/ /locations/ }/instances Creates a Redis instance based on the specified tier and memory size. delete DELETE /v1/{name=projects/ /locations/ /instances/ } Deletes a specific Redis instance. export POST /v1/{name=projects/ /locations/ /instances/ }:export Export Redis instance data into a Redis RDB format file in Cloud Storage. failover POST /v1/{name=projects/ /locations/ /instances/ }:failover Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance. get GET /v1/{name=projects/ /locations/ /instances/ } Gets the details of a specific Redis instance. getAuthString GET /v1/{name=projects/ /locations/ /instances/ }/authString Gets the AUTH string for a Redis instance. import POST /v1/{name=projects/ /locations/ /instances/ }:import Import a Redis RDB snapshot file from Cloud Storage into a Redis instance. list GET /v1/{parent=projects/ /locations/ }/instances Lists all Redis instances owned by a project in either the specified location (region) or all locations. patch PATCH /v1/{instance.name=projects/ /locations/ /instances/ } Updates the metadata and configuration of a specific Redis instance. rescheduleMaintenance POST /v1/{name=projects/ /locations/ /instances/ }:rescheduleMaintenance Reschedule maintenance for a given instance in a given project and location. upgrade POST /v1/{name=projects/ /locations/ /instances/ }:upgrade Upgrades Redis instance to the newer Redis version specified in the request.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback Google Cloud Memorystore for Redis API Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instance.name",
+      "redis.googleapis.com",
+      "v1.projects.locations",
+      "v1.projects.locations.instances",
+      "v1.projects.locations.operations",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.instances",
+      "v1beta1.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/reschedule_maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/rest"
+      ]
+    }
+  ]
+}

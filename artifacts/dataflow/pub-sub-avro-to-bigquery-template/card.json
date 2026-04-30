@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.239Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Pub/Sub Avro to BigQuery template",
+  "feature_slug": "pub-sub-avro-to-bigquery-template",
+  "summary": "This Google-provided template loads Avro-encoded Pub/Sub data into BigQuery.",
+  "extended_definition": "This Google-provided template loads Avro-encoded Pub/Sub data into BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Bigtable change streams to Pub/Sub template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "source_id": "site-api-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ReadOptions . class }, skipOptions = { \"bigtableReadAppProfile\" , \"bigtableAdditionalRetryCodes\" , \"bigtableRpcAttemptTimeoutMs\" , \"bigtableRpcTimeoutMs\" }, documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub\" , flexContainerName = \"googlecloud-to-googlecloud\" , contactInformation = \"https://cloud.google.com/support\" , streaming = true , supportsAtLeastOnce = true ) public final class BigtableChangeStreamsToPubSub { / String/String Coder for {@link FailsafeElement}. / public static final FailsafeElementCoder<String , String > FAILSAFE ELEMENT CODER = FailsafeElementCoder . of ( StringUtf8Coder . of (), StringUtf8Coder . of ()); private static final Logger LOG = LoggerFactory . getLogger ( BigtableChangeStreamsToPubSub . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; private static final TupleTag<FailsafeElement<String , String >> INVALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( \"invalidMods\" ) {}; private static final TupleTag<FailsafeElement<String , String >> VALID MODS TAG = new TupleTag<FailsafeElement<String , String >> ( \"validMods\" ) {}; / Main entry point for executing the pipeline. @param args The command-line arguments to the pipeline. / public static void main ( String [] args ) { LOG . info ( \"Starting to replicate change records from Cloud Bigtable change streams to PubSub\" ); BigtableChangeStreamsToPubSubOptions options = PipelineOptionsFactory . fromArgs ( args ) . withValidation () . as ( BigtableChangeStreamsToPubSubOptions . class ); run ( options ); } private static void validateOptions ( BigtableChangeStreamsToPubSubOptions options ) { if ( options . getDlqRetryMinutes () < = 0 ) { throw new IllegalArgumentException ( \"dlqRetryMinutes must be positive.\" ); } if ( options . getDlqMaxRetries () < 0 ) { throw new IllegalArgumentException ( \"dlqMaxRetries cannot be negative.\" ); } if ( options . getBigtableReadChangeStreamTimeoutMs () != null && options . getBigtableReadChangeStreamTimeoutMs () < = 0 ) { throw new IllegalArgumentException ( \"bigtableReadChangeStreamTimeoutMs must be greater than 0.\" ); } } private static void setOptions ( BigtableChangeStreamsToPubSubOptions options ) { options . setStreaming ( true ); options . setEnableStreamingEngine ( true ); // Add use runner v2 to the experiments option, since change streams connector is only supported // on Dataflow runner v2.",
+          "See the list of Google-provided templates .",
+          "Depending on the schema type, use one of the following schema definitions for the destination topic: Protocol buffers sy nta x = \"proto2\" ; package com.google.cloud. tele por t .big ta ble; op t io n java ou ter class na me = \"ChangeLogEntryProto\" ; message Cha n gelogE ntr yPro t o { required by tes rowKey = 1 ; e nu m ModType { SET CELL = 0 ; DELETE FAMILY = 1 ; DELETE CELLS = 2 ; UNKNOWN = 3 ; } required ModType modType = 2 ; required bool isGC = 3 ; required i nt 32 t ieBreaker = 4 ; required i nt 64 commi t Times ta mp = 5 ; required s tr i n g colum n Family = 6 ; op t io nal by tes colum n = 7 ; op t io nal i nt 64 t imes ta mp = 8 ; op t io nal i nt 64 t imes ta mpFrom = 9 ; op t io nal i nt 64 t imes ta mpTo = 10 ; op t io nal by tes value = 11 ; required s tr i n g sourceI nstan ce = 12 ; required s tr i n g sourceClus ter = 13 ; required s tr i n g sourceTable = 14 ; } Avro { \"name\" : \"ChangelogEntryMessage\" , \"type\" : \"record\" , \"namespace\" : \"com.google.cloud.teleport.bigtable\" , \"fields\" : [ { \"name\" : \"rowKey\" , \"type\" : \"bytes\" }, { \"name\" : \"modType\" , \"type\" : { \"name\" : \"ModType\" , \"type\" : \"enum\" , \"symbols\" : [ \"SET CELL\" , \"DELETE FAMILY\" , \"DELETE CELLS\" , \"UNKNOWN\" ]} }, { \"name\" : \"isGC\" , \"type\" : \"boolean\" }, { \"name\" : \"tieBreaker\" , \"type\" : \"int\" }, { \"name\" : \"columnFamily\" , \"type\" : \"string\" }, { \"name\" : \"commitTimestamp\" , \"type\" : \"long\" }, { \"name\" : \"sourceInstance\" , \"type\" : \"string\" }, { \"name\" : \"sourceCluster\" , \"type\" : \"string\" }, { \"name\" : \"sourceTable\" , \"type\" : \"string\" }, { \"name\" : \"column\" , \"type\" : [ \"null\" , \"bytes\" ]}, { \"name\" : \"timestamp\" , \"type\" : [ \"null\" , \"long\" ]}, { \"name\" : \"timestampFrom\" , \"type\" : [ \"null\" , \"long\" ]}, { \"name\" : \"timestampTo\" , \"type\" : [ \"null\" , \"long\" ]}, { \"name\" : \"value\" , \"type\" : [ \"null\" , \"bytes\" ]} ] } JSON Use the following Protobuf schema with JSON message encoding: sy nta x = \"proto2\" ; package com.google.cloud. tele por t .big ta ble; op t io n java ou ter class na me = \"ChangelogEntryMessageText\" ; message Cha n gelogE ntr yTex t { required s tr i n g rowKey = 1 ; e nu m ModType { SET CELL = 0 ; DELETE FAMILY = 1 ; DELETE CELLS = 2 ; UNKNOWN = 3 ; } required ModType modType = 2 ; required bool isGC = 3 ; required i nt 32 t ieBreaker = 4 ; required i nt 64 commi t Times ta mp = 5 ; required s tr i n g colum n Family = 6 ; op t io nal s tr i n g colum n = 7 ; op t io nal i nt 64 t imes ta mp = 8 ; op t io nal i nt 64 t imes ta mpFrom = 9 ; op t io nal i nt 64 t imes ta mpTo = 10 ; op t io nal s tr i n g value = 11 ; required s tr i n g sourceI nstan ce = 12 ; required s tr i n g sourceClus ter = 13 ; required s tr i n g sourceTable = 14 ; } Each new Pub/Sub message includes one entry from a data change record returned by the change stream from its corresponding row in your Bigtable table."
+        ]
+      },
+      {
+        "title": "\"Spanner to Cloud Storage Avro template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The folder contains:\\n\" + \"- A spanner-export.json file.\\n\" + \"- A TableName-manifest.json file for each table in the database you exported.\\n\" + \"- One or more TableName.avro-#####-of-##### files.\\n\" , \"For example, exporting a database with two tables, Singers and Albums, creates the following file set:\\n\" + \"- Albums-manifest.json\\n\" + \"- Albums.avro-00000-of-00002\\n\" + \"- Albums.avro-00001-of-00002\\n\" + \"- Singers-manifest.json\\n\" + \"- Singers.avro-00000-of-00003\\n\" + \"- Singers.avro-00001-of-00003\\n\" + \"- Singers.avro-00002-of-00003\\n\" + \"- spanner-export.json\" }, optionsClass = ExportPipelineOptions . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner database must exist.\" , \"The output Cloud Storage bucket must exist.\" , \"In addition to the Identity and Access Management (IAM) roles necessary to run Dataflow jobs, you must also have the <a href=\\\"https://cloud.google.com/spanner/docs/export#iam\\\">appropriate IAM roles</a> for reading your Cloud Spanner data and writing to your Cloud Storage bucket.\" }) public class ExportPipeline { / Options for Export pipeline. / public interface ExportPipelineOptions extends PipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9\\\\-] [a-z0-9]\" }, description = \"Cloud Spanner instance ID\" , helpText = \"The instance ID of the Spanner database that you want to export.\" ) ValueProvider<String> getInstanceId (); void setInstanceId ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 2 , groupName = \"Source\" , regexes = { \"[a-z][a-z0-9 \\\\-] [a-z0-9]\" }, description = \"Cloud Spanner database ID\" , helpText = \"The database ID of the Spanner database that you want to export.\" ) ValueProvider<String> getDatabaseId (); void setDatabaseId ( ValueProvider<String> value ); @TemplateParameter.GcsWriteFolder ( order = 3 , groupName = \"Target\" , description = \"Cloud Storage output directory\" , helpText = \"The Cloud Storage path to export Avro files to.",
+          "SpannerOptions ; import com.google.cloud.teleport.metadata.Template ; import com.google.cloud.teleport.metadata.TemplateCategory ; import com.google.cloud.teleport.metadata.TemplateCreationParameter ; import com.google.cloud.teleport.metadata.TemplateParameter ; import com.google.cloud.teleport.metadata.TemplateParameter.TemplateEnumOption ; import com.google.cloud.teleport.spanner.ExportPipeline.ExportPipelineOptions ; import com.google.cloud.teleport.spanner.spannerio.SpannerConfig ; import org.apache.beam.runners.dataflow. options .DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk. options .Default ; import org.apache.beam.sdk. options .Description ; import org.apache.beam.sdk. options .PipelineOptions ; import org.apache.beam.sdk. options .PipelineOptionsFactory ; import org.apache.beam.sdk. options .ValueProvider ; import org.apache.beam.sdk. options .ValueProvider.NestedValueProvider ; import org.apache.beam.sdk.transforms.SerializableFunction ; / Dataflow template that exports a Cloud Spanner database to Avro files in GCS. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v1/README Cloud Spanner to GCS Avro.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"Cloud Spanner to GCS Avro\" , category = TemplateCategory .",
+          "Required as of Beam 2.38, // which no longer accepts null label values on metrics, and SpannerIO#setup() has // a bug resulting in the label value being set to the original parameter value, // with no fallback to the default project. // TODO: remove NestedValueProvider when this is fixed in Beam. . withProjectId ( NestedValueProvider . of ( options . getSpannerProjectId (), ( SerializableFunction<String , String > ) input - > input != null ? input : SpannerOptions . getDefaultProjectId ())) . withHost ( options . getSpannerHost ()) . withInstanceId ( options . getInstanceId ()) . withDatabaseId ( options . getDatabaseId ()) . withRpcPriority ( options . getSpannerPriority ()) . withDataBoostEnabled ( options . getDataBoostEnabled ()); p . begin () . apply ( \"Run Export\" , new ExportTransform ( spannerConfig , options . getOutputDir (), options . getTestJobId (), options . getSnapshotTime (), options . getTableNames (), options . getShouldExportRelatedTables (), options . getShouldExportTimestampAsLogicalType (), options . getAvroTempDirectory ())); PipelineResult result = p . run (); if ( options . getWaitUntilFinish () && / Only if template location is null, there is a dataflow job to wait for."
+        ]
+      },
+      {
+        "title": "\"Cloud Storage Avro to Spanner template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner",
+        "source_id": "site-api-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BATCH , displayName = \"Avro Files on Cloud Storage to Cloud Spanner\" , description = \"The Cloud Storage Avro files to Cloud Spanner template is a batch pipeline that reads Avro files exported from \" + \"Cloud Spanner stored in Cloud Storage and imports them to a Cloud Spanner database.\" , optionsClass = Options . class , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The target Cloud Spanner database must exist and must be empty.\" , \"You must have read permissions for the Cloud Storage bucket and write permissions for the target Cloud Spanner database.\" , \"The input Cloud Storage path must exist, and it must include a <a href=\\\"https://cloud.google.com/spanner/docs/import-non-spanner#create-export-json\\\">spanner-export.json</a> file that contains a JSON description of files to import.\" }) public class ImportPipeline { / Options for {@link ImportPipeline}. / public interface Options extends PipelineOptions { @TemplateParameter.Text ( order = 1 , groupName = \"Target\" , regexes = { \"^[a-z0-9\\\\-]+$\" }, description = \"Cloud Spanner instance ID\" , helpText = \"The instance ID of the Spanner database.\" ) ValueProvider<String> getInstanceId (); void setInstanceId ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 2 , groupName = \"Target\" , regexes = { \"^[a-z 0-9\\\\-]+$\" }, description = \"Cloud Spanner database ID\" , helpText = \"The database ID of the Spanner database.\" ) ValueProvider<String> getDatabaseId (); void setDatabaseId ( ValueProvider<String> value ); @TemplateParameter.GcsReadFolder ( order = 3 , groupName = \"Source\" , description = \"Cloud storage input directory\" , helpText = \"The Cloud Storage path where the Avro files are imported from.\" ) ValueProvider<String> getInputDir (); void setInputDir ( ValueProvider<String> value ); @TemplateParameter.Text ( order = 4 , groupName = \"Target\" , optional = true , description = \"Cloud Spanner Endpoint to call\" , helpText = \"The Cloud Spanner endpoint to call in the template.",
+          "POST h tt ps : //dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ LOCATION /templates:launch?gcsPath=gs://dataflow-templates- LOCATION / VERSION /GCS Avro to Cloud Spanner { \"jobName\" : \" JOB NAME \" , \"parameters\" : { \"instanceId\" : \" INSTANCE ID \" , \"databaseId\" : \" DATABASE ID \" , \"inputDir\" : \"gs:// GCS DIRECTORY \" }, \"environment\" : { \"machineType\" : \"n1-standard-2\" } } Replace the following: PROJECT ID : the Google Cloud project ID where you want to run the Dataflow job JOB NAME : a unique job name of your choice VERSION : the version of the template that you want to use You can use the following values: latest to use the latest version of the template, which is available in the non-dated parent folder in the bucket— gs://dataflow-templates- REGION NAME /latest/ the version name, like 2023-09-12-00 RC00 , to use a specific version of the template, which can be found nested in the respective dated parent folder in the bucket— gs://dataflow-templates- REGION NAME / Caution: The latest version of templates might update with breaking changes.",
+          "Options ; import com.google.cloud.teleport.spanner.spannerio.SpannerConfig ; import org.apache.beam.runners.dataflow. options .DataflowPipelineOptions ; import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.PipelineResult ; import org.apache.beam.sdk. options .Default ; import org.apache.beam.sdk. options .Description ; import org.apache.beam.sdk. options .PipelineOptions ; import org.apache.beam.sdk. options .PipelineOptionsFactory ; import org.apache.beam.sdk. options .ValueProvider ; import org.apache.beam.sdk. options .ValueProvider.NestedValueProvider ; import org.apache.beam.sdk.transforms.SerializableFunction ; / Avro to Cloud Spanner Import pipeline. <p>Check out <a href=\"https://github.com/GoogleCloudPlatform/DataflowTemplates/blob/main/v1/README GCS Avro to Cloud Spanner.md\">README</a> for instructions on how to use or modify this template. / @Template ( name = \"GCS Avro to Cloud Spanner\" , category = TemplateCategory ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud",
+      "com.google.cloud.teleport.bigtable",
+      "com.google.cloud.teleport.metadata.Template",
+      "com.google.cloud.teleport.metadata.TemplateCategory",
+      "com.google.cloud.teleport.metadata.TemplateCreationParameter",
+      "com.google.cloud.teleport.metadata.TemplateParameter",
+      "com.google.cloud.teleport.metadata.TemplateParameter.TemplateEnumOption",
+      "com.google.cloud.teleport.spanner.ExportPipeline.ExportPipelineOptions",
+      "com.google.cloud.teleport.spanner.spannerio.SpannerConfig",
+      "dataflow.googleapis.com",
+      "export.json",
+      "github.com",
+      "manifest.json",
+      "org.apache.beam.runners.dataflow",
+      "org.apache.beam.sdk",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.PipelineResult",
+      "org.apache.beam.sdk.transforms.SerializableFunction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-bigtable-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-to-avro",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/avro-to-cloud-spanner"
+      ]
+    }
+  ]
+}

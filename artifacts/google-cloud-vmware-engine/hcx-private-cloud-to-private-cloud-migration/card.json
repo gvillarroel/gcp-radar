@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "HCX private cloud-to-private cloud migration",
+  "feature_slug": "hcx-private-cloud-to-private-cloud-migration",
+  "summary": "HCX can migrate virtual machines between two private clouds.",
+  "extended_definition": "HCX can migrate virtual machines between two private clouds.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+      "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Workload VM migration \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Workload VM migration Using Google Cloud VMware Engine, you can migrate virtual machines (VMs) from an on-premises data center to your private cloud.",
+          "Migration requirements Migration of VMs and data from your on-premises environment requires network connectivity between it and your private cloud to establish a secure connection before you can migrate workloads.",
+          "Migration options You can migrate workload VMs to your private cloud in multiple ways."
+        ]
+      },
+      {
+        "title": "\"Manage private cloud resources and activity \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Viewing vSphere management network To view the list of VMware management resources and virtual machines that are configured on your private cloud, select the vSphere Management Network tab.",
+          "You can migrate VMware management VMs from the cluster where they are being hosted to a different cluster within the same private cloud.",
+          "To migrate management VMs, you must have at least two clusters in your private cloud."
+        ]
+      },
+      {
+        "title": "\"Migration best practices \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migration best practices This page presents some best practices for migrating VMware virtual machine (VM) instances to your private cloud by using Google Cloud VMware Engine.",
+          "Plan the migration project Before migrating VMware VMs to your private cloud, plan the migration as follows: Identify the personnel, including the following: Customer stakeholders Program sponsor and owner The technical team responsible for the migration The stakeholders for in-scope systems and applications The relevant Google Technical Account Manager (TAM), Partner Engineering Manager (PEM), or Customer Engineer (CE) Assess the source environment .",
+          "Create a plan that defines the following: the migration strategy the architecture of the new environment the goals and success criteria, including the UAT and QA scripts the roles and responsibilities the communication model, including daily standups, status reporting, escalation paths, chat rooms the data that cannot be migrated and related strategies milestones and timings Ensure alignment with all stakeholders."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-migration-options",
+        "https://docs.cloud.google.com/vmware-engine/docs/private-clouds/howto-manage-private-cloud",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-migration"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.479Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services",
+  "feature_name": "ListSkuGroups API",
+  "feature_slug": "listskugroups-api",
+  "summary": "Introduces the ListSkuGroups public API to list rebilling-supported SKU groups that can be configured in customer or channel partner repricing.",
+  "extended_definition": "Introduces the ListSkuGroups public API to list rebilling-supported SKU groups that can be configured in customer or channel partner repricing.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+      "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+      "https://docs.cloud.google.com/channel/docs/reference/rpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage repricing configurations \\_|\\_ Channel Services \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The resulting data in Rebilling BQ Export looks like the following: sku list price cost customer cost credit.type credit.amount credit.customer amount Partner Cost (cost + SUM(credit.amount)) End Customer Cost (customer cost + SUM(credit.customer amount)) Compute 120 100 99.6 (120 .83) RESELLER MARGIN COMMITTED USAGE DISCOUNT -10 -10 0 (margin hidden) 0 (hidden due to list price) 80 99.6 BigQuery 120 100 120 (100 1.2) RESELLER MARGIN COMMITTED USAGE DISCOUNT -10 -10 0 (margin hidden) -12 (DCC+20%) 80 108 Note: If an entitlement does not have any repricing configuration specified, then it defaults to Direct Customer Cost + 0% , which implies no modifications to the cost (except removal of RESELLER MARGIN).",
+          "You can use custom repricing configurations to markup or discount direct customer costs, list prices, and specific SKU groups by a set percentage.",
+          "You can also export SKU groups using the API, with the List SKU groups and List billable SKUs in a SKU group endpoints."
+        ]
+      },
+      {
+        "title": "Rebilling overview \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rebilling consists of two main features: Repricing configurations BigQuery exports BigQuery exports You can export a comprehensive report of your customers' billing usage and cost data to a BigQuery dataset that you own.",
+          "Home Technology areas Channel Services Guides Send feedback Rebilling overview Stay organized with collections Save and categorize content based on your preferences.",
+          "While viewing the list of repricing configurations for a customer, you can click Manage repricing to view and modify the configurations for a specific entitlement."
+        ]
+      },
+      {
+        "title": "Cloud Channel API \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/reference/rpc",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ListSkuGroups Lists the Rebilling supported SKU groups the account is authorized to sell.",
+          "ListSkuGroups Lists the Rebilling supported SKU groups the account is authorized to sell.",
+          "ListProvisionableCloudIdentityTypes Returns the Google Workspace customer types you can create for the given domain, and shows if this requires a transfer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credit.amount",
+      "credit.customer",
+      "credit.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/reference/rpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "https://docs.cloud.google.com/channel/docs/rebilling/rebilling-overview",
+        "https://docs.cloud.google.com/channel/docs/reference/rpc"
+      ]
+    }
+  ]
+}

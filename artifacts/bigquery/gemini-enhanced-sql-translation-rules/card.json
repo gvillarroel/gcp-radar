@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Gemini-enhanced SQL translation rules",
+  "feature_slug": "gemini-enhanced-sql-translation-rules",
+  "summary": "Interactive SQL translation can use Gemini-enhanced translation rules to customize SQL inputs.",
+  "extended_definition": "Interactive SQL translation can use Gemini-enhanced translation rules to customize SQL inputs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/gemini-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remove the upper function in the default translation output query translation rules : - instruction : \"Remove upper() function\" examples : - input : \"upper(X)\" output : \"X\" Create multiple translation rules to customize the translation output translation rules : - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Insert a comment at the head that explains each statement in detail. suggestion type: QUERY CUSTOMIZATION rewrite target: TARGET SQL Remove SQL comments from the translation input query translation rules : - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Generate translation explanations using default LLM prompt This example uses the default LLM prompts provided by the translation service to generate text explanations: translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" Generates translation explanations using your own natural language prompts translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" Multiple suggestion types in a single configuration YAML file translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Applying multiple YAML configurations When specifying a configuration YAML file in a batch or interactive SQL translation, you can select multiple configuration YAML files in a single translation job to reflect multiple transformations.",
+          "The Gemini-enhanced SQL translation assesses the request and makes the specified change. examples (optional): Provide SQL examples of how you want the SQL pattern to be modified.",
+          "The following configuration YAML changes the output names of all objects (database, schema, relation, and attributes) in the script according to the configured rules. type : experimental object rewriter global : outputName : regex : - match : '\\s' replaceWith : ' ' - match : '>=' replaceWith : 'gte' - match : '^[^a-zA-Z ]. ' replaceWith : ' $0' A SQL translation with this configuration YAML file might look like the following: teradata-input.sql create table \"test special chars >= 12\" ( \"42eid\" int , \"custom column\" varchar ( 10 )); bq-output.sql CREATE TABLE test special chars employees gte 12 ( 42eid INT64 , custom column STRING ) ; Optimize and improve the performance of translated SQL Optional transformations can be applied to translated SQL in order to introduce changes that can improve performance or cost."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have specified Gemini customization rules for the source SQL in the Gemini configuration , then the translator transforms the original input first and then translates the Gemini-enhanced input.",
+          "If you have specified Gemini customization rules for the target SQL in the Gemini configuration , then the transformation is applied to the translated result as a Gemini-enhanced output.",
+          "Gemini-enhanced input : The input SQL that was translated by the translation engine."
+        ]
+      },
+      {
+        "title": "Gemini in BigQuery overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Customize your SQL translations with translation rules . ( Preview ) Create Gemini-enhanced translation rules to customize your SQL translations when using the interactive SQL translator .",
+          "Enhanced features in Gemini in BigQuery are the following: SQL generation tool Prompt to generate SQL queries Convert comments to SQL Complete a SQL query Explain a SQL query Generate python code Python code completion Data canvas Data preparation Data insights Locations For information about where Gemini in BigQuery processes your data, see Where Gemini in BigQuery processes your data .",
+          "How Gemini in BigQuery uses your data In order to provide accurate results, Gemini in BigQuery requires access to both your Customer Data and metadata in BigQuery for enhanced features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "input.sql",
+      "output.sql"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/gemini-overview"
+      ]
+    }
+  ]
+}

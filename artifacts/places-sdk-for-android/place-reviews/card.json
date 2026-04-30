@@ -1,0 +1,146 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.020Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android",
+  "feature_name": "Place reviews",
+  "feature_slug": "place-reviews",
+  "summary": "Adds the Review class and Place.getReviews() to return up to five reviews for a place.",
+  "extended_definition": "Adds the Review class and Place.getReviews() to return up to five reviews for a place.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+      "https://developers.google.com/maps/documentation/places/android-sdk/ktx",
+      "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Place class contains the new getReviews() method to support this field.",
+          "New response data added to Placed Details (New) and Place Photos (New) Place Details (New) now includes the new Review class in the response Place object.",
+          "Place Photo (New) adds the AuthorAttributions to the PhotoMetadata class."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "source_id": "site-docs-root-2",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Place class contains the new getReviews() method to support this field.",
+          "New response data added to Placed Details (New) and Place Photos (New) Place Details (New) now includes the new Review class in the response Place object.",
+          "Place Photo (New) adds the AuthorAttributions to the PhotoMetadata class."
+        ]
+      },
+      {
+        "title": "Policies and attributions for Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "source_id": "site-docs-root-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REVIEWS ); // Construct a request object, passing the place ID and fields array. final FetchPlaceRequest request = FetchPlaceRequest . newInstance ( \"INSERT PLACE ID HERE\" , placeFields ); placesClient . fetchPlace ( request ). addOnSuccessListener (( response ) - > { Place place = response . getPlace (); List<Review> reviews = place . getReviews (); // For loop for iterating over the List for ( int i = 0 ; i < reviews . size (); i ++ ) { // For each review, get the Review object.",
+          "Applications must display attributions for place details, photos, and reviews, retrieved through specific API calls, preserving HTML formatting and proximity to the content.",
+          "Note: Reviews and photos provided through the Places SDK for Android are subject to Google's content and product policies wherever you are in the world."
+        ]
+      },
+      {
+        "title": "\"Places Android KTX Overview and Setup \\_|\\_ Places SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/ktx",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"Places KTX provides Kotlin extensions for the Places SDK for Android, enabling concise Kotlin development.",
+          "Install KTX for the Places SDK To install KTX for the Places SDK for Android, add the following dependencies to your app-level build.gradle.kts file. dependencies { // KTX for the Places SDK for Android library implementation ( \"com.google.maps.android:places-ktx:3.5.0\" ) } Try the sample application The GitHub repository for this library also contains a demo application that shows how you can use the Places KTX library in your own app.",
+          "A demo app is available on GitHub; to run it, clone the repository, obtain a Places API key, and store it in a secrets.properties file in the root directory."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "build.gradle.kts",
+      "com.google.android.libraries.places.api.auth",
+      "com.google.maps.android",
+      "developers.google.com",
+      "secrets.properties"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/attributions",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.158Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "BigQuery subscriptions parse JSON messages with table schema",
+  "feature_slug": "bigquery-subscriptions-parse-json-messages-with-table-schema",
+  "summary": "BigQuery subscriptions can parse JSON messages by using the schema of a BigQuery table.",
+  "extended_definition": "BigQuery subscriptions can parse JSON messages by using the schema of a BigQuery table.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/access-control",
+      "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+      "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Associate a schema with a topic \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you associate a schema with a topic, you must also specify the encoding of the messages to be published as BINARY or JSON .",
+          "For more information, see the Pub/Sub Python API reference documentation . from google . api core . exceptions import InvalidArgument , NotFound from google . cloud . pubsub import PublisherClient TODO ( developer ): Replace these variables before running the sample . project id = \"your-project-id\" topic id = \"your-topic-id\" first revision id = \"your-revision-id\" last revision id = \"your-revision-id\" publisher client = PublisherClient () topic path = publisher client . topic path ( project id , topic id ) try : response = publisher client . update topic ( request = { \"topic\" : { \"name\" : topic path , \"schema settings\" : { \"first revision id\" : first revision id , \"last revision id\" : last revision id , }, }, \"update mask\" : \"schemaSettings.firstRevisionId,schemaSettings.lastRevisionId\" , } ) print ( f \"Updated a topic schema:\\n{response}\" ) except NotFound : print ( f \"{topic id} not found.\" ) except InvalidArgument : print ( \"Schema settings are not valid.\" ) What's next Commit a schema revision Publish messages to a topic with a schema Validate a schema definition Validate a message for a schema Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information, see the Pub/Sub PHP API reference documentation . use Google\\Cloud\\PubSub\\PubSubClient; use Google\\Cloud\\PubSub\\Schema; / Create a topic with a schema. @param string $projectId @param string $topicId @param string $schemaId @param string $encoding / function create topic with schema($projectId, $topicId, $schemaId, $encoding) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $schema = $pubsub->schema($schemaId); $topic = $pubsub->createTopic($topicId, [ 'schemaSettings' => [ // The schema may be provided as an instance of the schema type, // or by using the schema ID directly. 'schema' => $schema, // Encoding may be either BINARY or JSON`. // Provide a string or a constant from Google\\Cloud\\PubSub\\V1\\Encoding. 'encoding' => $encoding, ] ]); printf('Topic %s created', $topic->name()); } Python Before trying this sample, follow the Python setup instructions in Quickstart: Using Client Libraries ."
+        ]
+      },
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Any messages that validated against a deleted schema revision at the time of publish cannot be written to BigQuery using a BigQuery subscription with Use topic schema enabled.",
+          "You might not see changes to the Pub/Sub topics schema or BigQuery table schema take effect immediately with messages written to the BigQuery table.",
+          "You might not see changes to the BigQuery table schema take effect immediately with messages written to the BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Access control with Identity and Access Management \\_|\\_ Pub/Sub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig pubsub. pubsub. messageTransforms. validate pubsub.schemas.attach pubsub.schemas.commit pubsub.schemas.create pubsub.schemas.delete pubsub.schemas.get pubsub.schemas.getIamPolicy pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.rollback pubsub.schemas.setIamPolicy pubsub.schemas.validate pubsub.snapshots.create pubsub. snapshots. createTagBinding pubsub.snapshots.delete pubsub. snapshots. deleteTagBinding pubsub.snapshots.get pubsub.snapshots.getIamPolicy pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.snapshots.seek pubsub.snapshots.setIamPolicy pubsub.snapshots.update pubsub.subscriptions.consume pubsub.subscriptions.create pubsub. subscriptions. createTagBinding pubsub.subscriptions.delete pubsub. subscriptions. deleteTagBinding pubsub.subscriptions.get pubsub. subscriptions. getIamPolicy pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub. subscriptions. setIamPolicy pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.createTagBinding pubsub.topics.delete pubsub.topics.deleteTagBinding pubsub. topics. detachSubscription pubsub.topics.get pubsub.topics.getIamPolicy pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings pubsub.topics.publish pubsub.topics.setIamPolicy pubsub.topics.update pubsub.topics.updateTag resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Editor ( roles/ pubsub.editor ) Provides access to modify topics and subscriptions, and access to publish and consume messages.",
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig pubsub. messageTransforms. validate pubsub.schemas.attach pubsub.schemas.commit pubsub.schemas.create pubsub.schemas.delete pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.rollback pubsub.schemas.validate pubsub.snapshots.create pubsub. snapshots. createTagBinding pubsub.snapshots.delete pubsub. snapshots. deleteTagBinding pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.snapshots.seek pubsub.snapshots.update pubsub.subscriptions.consume pubsub.subscriptions.create pubsub. subscriptions. createTagBinding pubsub.subscriptions.delete pubsub. subscriptions. deleteTagBinding pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.createTagBinding pubsub.topics.delete pubsub.topics.deleteTagBinding pubsub. topics. detachSubscription pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings pubsub.topics.publish pubsub.topics.update pubsub.topics.updateTag resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Subscriber ( roles/ pubsub.subscriber ) Provides access to consume messages from a subscription and to attach subscriptions to a topic.",
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic pubsub. messageTransforms. validate pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.validate pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Publisher ( roles/ pubsub.publisher ) Provides access to publish messages to a topic."
+        ]
+      },
+      {
+        "title": "\"Troubleshooting BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting",
+        "source_id": "site-docs-root-2",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hourly partitioned table showing UNPARTITIONED in partition ID column When a BigQuery destination table is partitioned by hour, rows initially land in a special partition labeled UNPARTITIONED within the INFORMATION SCHEMA.PARTITIONS view .",
+          "Check if the service account has the correct permissions . table schema mismatch : The table schema is no longer compatible with the BigQuery subscription settings.",
+          "Subscription state shows a red exclamation If you edit the table after creating a subscription, it can affect how Pub/Sub writes messages to the table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "iam.serviceAccounts.actAs",
+      "projects.subscriptions.delete",
+      "projects.subscriptions.detach",
+      "projects.subscriptions.get",
+      "projects.subscriptions.getIamPolicy",
+      "projects.subscriptions.list",
+      "projects.subscriptions.modifyAckDeadline",
+      "projects.subscriptions.modifyPushConfig",
+      "projects.subscriptions.patch",
+      "projects.subscriptions.pull",
+      "projects.subscriptions.seek",
+      "projects.subscriptions.setIamPolicy",
+      "projects.subscriptions.testIamPermissions",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "pubsub.publisher",
+      "pubsub.schemas.attach",
+      "pubsub.schemas.commit",
+      "pubsub.schemas.create",
+      "pubsub.schemas.delete",
+      "pubsub.schemas.get",
+      "pubsub.schemas.getIamPolicy",
+      "pubsub.schemas.list",
+      "pubsub.schemas.listRevisions",
+      "pubsub.schemas.rollback",
+      "pubsub.schemas.setIamPolicy",
+      "pubsub.schemas.validate",
+      "pubsub.snapshots.create",
+      "pubsub.snapshots.delete",
+      "pubsub.snapshots.get",
+      "pubsub.snapshots.getIamPolicy",
+      "pubsub.snapshots.list",
+      "pubsub.snapshots.seek",
+      "pubsub.snapshots.setIamPolicy",
+      "pubsub.snapshots.update",
+      "pubsub.subscriber",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.getIamPolicy",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.setIamPolicy",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.create",
+      "pubsub.topics.createTagBinding",
+      "pubsub.topics.delete",
+      "pubsub.topics.deleteTagBinding",
+      "pubsub.topics.detachSubscription",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.list",
+      "pubsub.topics.listTagBindings",
+      "pubsub.topics.publish",
+      "pubsub.topics.setIamPolicy",
+      "pubsub.topics.update",
+      "pubsub.topics.updateTag",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.values.test"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/bigquery-troubleshooting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.558Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Incremental table schema updates without full refresh",
+  "feature_slug": "incremental-table-schema-updates-without-full-refresh",
+  "summary": "This feature lets Dataform update an incremental table schema without performing a full table refresh.",
+  "extended_definition": "This feature lets Dataform update an incremental table schema without performing a full table refresh.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+      "https://docs.cloud.google.com/dataform/docs/create-tables",
+      "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+      "https://docs.cloud.google.com/dataform/docs/trigger-execution"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create tables \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "source_id": "site-docs-root-2",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Change an incremental table schema without a full refresh Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "You can modify an incremental table schema in the SELECT query without a full refresh of the table by using the onSchemaChange configuration property.",
+          "For other options, see Change an incremental table schema without a full refresh ."
+        ]
+      },
+      {
+        "title": "Manually trigger runs \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Without this option, Dataform updates incremental tables without rebuilding them from scratch.",
+          "Without this option, Dataform updates incremental tables without rebuilding them from scratch.",
+          "Optional: To rebuild all tables from scratch, select the Run with full refresh option."
+        ]
+      },
+      {
+        "title": "Dataform core reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ITableContext Context methods are available when evaluating contextable SQL code, such as within SQLX files, or when using a Contextable argument with Dataform core. incremental () => boolean Returns true when the current context indicates that the table will be built incrementally. name () => string Returns the fully qualified name of this table. ref (ref: Resolvable string[], rest: string[]) => string References another action, adding it as a dependency to this action, returning valid SQL to be used in a from expression.",
+          "This is useful for tables which are built from transient data, to verify that historical data is never lost. schema string The schema (BigQuery dataset) in which to create the output of this action. tags string[] A list of user-defined tags applied to this action. type TableType The type of the table. uniqueKey string[] Unique keys for merge criteria for incremental tables.",
+          "The setting applies to all partitions in a table, but is calculated independently for each partition based on the partition time. requirePartitionFilter boolean Declares whether the partitioned table requires a WHERE clause predicate filter that filters the partitioning column. updatePartitionFilter string SQL-based filter for when incremental updates are applied. iceberg IIcebergOptions Apache Iceberg-specific options for BigLake Iceberg tables in BigQuery."
+        ]
+      },
+      {
+        "title": "Configure compilations \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/configure-compilation",
+        "source_id": "site-docs-root-2",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Without this option, Dataform updates incremental tables without rebuilding them from scratch.",
+          "Optional: To rebuild all tables from scratch, select the Run with full refresh option.",
+          "The following default settings are set in workflow settings.yaml : defaultProject : analytics defaultDataset : dataform The following workspace compilation overrides create a dynamic table prefix and schema suffix for each workspace in the repository: Google Cloud Project ID : analytics dev Table prefix : ${workspaceName} Schema suffix : ${workspaceName} When Sasha manually triggers execution in the Sasha workspace, Dataform runs its content with the following settings: Google Cloud project: analytics dev Schema: dataform sasha Table names: sasha name , for example, sasha orders When Kai manually triggers execution in the Kai workspace, Dataform runs its content with the following settings: Google Cloud project: analytics dev Schema: dataform kai Tables names: kai name , for example, kai orders Create workspace compilation overrides To create Dataform workspace compilation overrides, follow these steps: In your repository, go to Settings ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "settings.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/create-tables",
+        "https://docs.cloud.google.com/dataform/docs/trigger-execution",
+        "https://docs.cloud.google.com/dataform/docs/reference/dataform-core-reference",
+        "https://docs.cloud.google.com/dataform/docs/configure-compilation"
+      ]
+    }
+  ]
+}

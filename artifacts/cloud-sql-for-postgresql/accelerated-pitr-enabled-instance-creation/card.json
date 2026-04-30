@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.861Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "Accelerated PITR-enabled instance creation",
+  "feature_slug": "accelerated-pitr-enabled-instance-creation",
+  "summary": "Accelerated PITR-enabled instance creation uses an initial instant snapshot to reduce creation time for instances with point-in-time recovery enabled.",
+  "extended_definition": "Accelerated PITR-enabled instance creation uses an initial instant snapshot to reduce creation time for instances with point-in-time recovery enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr",
+      "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: To speed up instance creation when PITR is enabled, Cloud SQL uses an initial instant snapshot for PITR instead of a standard backup .",
+          "Note: To speed up instance creation when PITR is enabled, Cloud SQL uses an initial instant snapshot for PITR instead of a standard backup .",
+          "PITR is enabled by default during instance creation in the following conditions: In Cloud SQL Enterprise Plus edition : PITR is enabled by default, regardless of how you create the instance."
+        ]
+      },
+      {
+        "title": "Clone instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/clone-instance",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fast clone Fast clone uses an Instant Snapshot to create a new instance, which is a significant evolution from standard clone.",
+          "Terraform To clone the instance, use a Terraform resource resource \"google sql database instance\" \"clone\" { name = \"postgres-instance-clone-name\" region = \"us-central1\" database version = \"POSTGRES 12\" clone { source instance name = google sql database instance.source.id } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "You are returned to the instance listing page while the clone initializes. gcloud To clone an instance, use the gcloud sql instances clone command: gcloud sql instances clone SOURCE INSTANCE NAME DESTINATION INSTANCE NAME \\ --project PROJECT ID \\ --preferred-zone ZONE NAME \\ --preferred-secondary-zone SECONDARY ZONE NAME Make the following replacements: SOURCE INSTANCE NAME : the name of the Cloud SQL instance to clone."
+        ]
+      },
+      {
+        "title": "\"Configure point-in-time recovery (PITR) \\_|\\_ Cloud SQL for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/configure-pitr",
+        "source_id": "site-iam-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Note: To speed up instance creation when PITR is enabled, Cloud SQL uses an initial instant snapshot for PITR instead of a standard backup .",
+          "Terraform To enable PITR, use a Terraform resource . resource \"google sql database instance\" \"postgres instance pitr\" { name = \"\" region = \"us-central1\" database version = \"POSTGRES 14\" settings { tier = \"db-custom-2-7680\" backup configuration { enabled = true point in time recovery enabled = true start time = \"20:55\" transaction log retention days = \"3\" } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Enable PITR: gcloud sql instances patch INSTANCE NAME \\ --enable-point-in-time-recovery If you're enabling PITR on a primary instance, you can also configure the number of days for which you want to retain transaction logs by adding the following parameter: --retained-transaction-log-days = RETAINED TRANSACTION LOG DAYS Confirm your change: gcloud sql instances describe INSTANCE NAME In the backupConfiguration section, you see pointInTimeRecoveryEnabled: true if the change was successful."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "instance.source.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

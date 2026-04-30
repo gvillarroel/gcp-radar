@@ -1,0 +1,130 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Dynamic Resource Allocation (DRA) APIs",
+  "feature_slug": "dynamic-resource-allocation-dra-apis",
+  "summary": "Dynamic Resource Allocation APIs are now generally available for Kubernetes workloads that need structured resource allocation.",
+  "extended_definition": "Dynamic Resource Allocation APIs are now generally available for Kubernetes workloads that need structured resource allocation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About dynamic resource allocation in GKE \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 194,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Comparison of ResourceClaims and ResourceClaimTemplates Manually-created ResourceClaims Automatically-created ResourceClaims Managed by you Managed by Kubernetes Provides access to the same devices from multiple Pods Provides access to devices from a single Pod Exists in the cluster independently of Pods Bound to the lifecycle of the corresponding Pod Ideal for multiple workloads that need to share a specific device Ideal for multiple workloads that need independent device access Comparison of DRA with manual device allocation DRA makes allocating attached devices a similar experience to dynamically provisioning PersistentVolumes.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Guides Send feedback About dynamic resource allocation in GKE Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use dynamic resource allocation (DRA) to allocate GPUs to your Google Kubernetes Engine (GKE) workloads."
+        ]
+      },
+      {
+        "title": "\"Allocate network resources by using GKE managed DRANET \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "source_id": "site-docs-reference-2",
+        "final_score": 185,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It functions as a node-level agent to make network interfaces discoverable and allocatable to Pods through the Kubernetes Dynamic Resource Allocation (DRA) APIs .",
+          "The following example requests two RDMA network devices: apiVersion : resource.k8s.io/v1 kind : ResourceClaimTemplate metadata : name : two-mrdma spec : spec : devices : requests : - name : req-mrdma exactly : deviceClassName : mrdma.google.com allocationMode : ExactCount count : 2 What's next Learn more about Dynamic Resource Allocation .",
+          "Before reading this document, ensure that you are familiar with the following: Dynamic Resource Allocation About dynamic resource allocation in GKE Kubernetes concepts GKE networking GKE Networking fundamentals How GKE managed DRANET works GKE managed DRANET is implemented through a networking-dra-driver DaemonSet."
+        ]
+      },
+      {
+        "title": "\"Optimize GKE resource utilization for mixed AI/ML training and inference\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The fine-tuning Job takes around 10 minutes before it starts saving the first checkpoint. kubectl logs --namespace = llm --follow --selector = app = finetune-job The output for the first saved checkpoint looks similar to the following: {\"name\": \"finetune\", \"thread\": 133763559483200, \"threadName\": \"MainThread\", \"processName\": \"MainProcess\", \"process\": 33, \"message\": \"Fine tuning started\", \"timestamp\": 1731002351.0016131, \"level\": \"INFO\", \"runtime\": 451579.89835739136} … {\"name\": \"accelerate.utils.fsdp utils\", \"thread\": 136658669348672, \"threadName\": \"MainThread\", \"processName\": \"MainProcess\", \"process\": 32, \"message\": \"Saving model to /model-data/model-gemma2/experiment/checkpoint-10/pytorch model fsdp 0\", \"timestamp\": 1731002386.1763802, \"level\": \"INFO\", \"runtime\": 486753.8924217224} Test Kueue preemption and dynamic allocation on your mixed workload In this section, you simulate a scenario where the inference server's load increases, requiring it to scale up.",
+          "Kueue achieves this by defining resource requirements (\"flavors\"), prioritizing workloads through queues (with serving tasks prioritized over training), and dynamically allocating resources based on demand and priority.",
+          "Manage resource allocation between training and serving tasks using Kueue."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accelerate.utils.fsdp",
+      "c1f6bfd2.kueue.x",
+      "config.kueue.x",
+      "config.yaml",
+      "container.googleapis.com",
+      "example.com",
+      "flavors.yaml",
+      "jobset.x",
+      "k8s.io",
+      "kubeflow.org",
+      "kubernetes.io",
+      "kueue.x",
+      "leaderworkerset.x",
+      "metadata.name",
+      "mrdma.google.com",
+      "netdev.google.com",
+      "nvidia.com",
+      "queue.yaml",
+      "ray.io",
+      "resource.k8s.io",
+      "template.yaml",
+      "v1.example.com",
+      "workload.codeflare.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/allocate-network-resources-dra",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/mixed-workloads"
+      ]
+    }
+  ]
+}

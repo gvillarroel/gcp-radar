@@ -1,0 +1,150 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.172Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "R runtime version on Debian 11 Python 3.10 Vertex AI Workbench instances",
+  "feature_slug": "r-runtime-version-on-debian-11-python-3-10-vertex-ai-workbench-instances",
+  "summary": "R was upgraded to version 4.3 on Debian 11 Python 3.10-based Vertex AI Workbench instances.",
+  "extended_definition": "R was upgraded to version 4.3 on Debian 11 Python 3.10-based Vertex AI Workbench instances.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "source_id": "site-api-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookRuntime JSON representation { \"name\" : string , \"runtimeUser\" : string , \"notebookRuntimeTemplateRef\" : { object ( NotebookRuntimeTemplateRef ) } , \"proxyUri\" : string , \"createTime\" : string , \"updateTime\" : string , \"healthState\" : enum ( HealthState ) , \"displayName\" : string , \"description\" : string , \"serviceAccount\" : string , \"runtimeState\" : enum ( RuntimeState ) , \"isUpgradable\" : boolean , \"labels\" : { string : string , ... } , \"expirationTime\" : string , \"version\" : string , \"notebookRuntimeType\" : enum ( NotebookRuntimeType ) , \"machineSpec\" : { object ( MachineSpec ) } , \"dataPersistentDiskSpec\" : { object ( PersistentDiskSpec ) } , \"networkSpec\" : { object ( NetworkSpec ) } , \"idleShutdownConfig\" : { object ( NotebookIdleShutdownConfig ) } , \"eucConfig\" : { object ( NotebookEucConfig ) } , \"shieldedVmConfig\" : { object ( ShieldedVmConfig ) } , \"networkTags\" : [ string ] , \"softwareConfig\" : { object ( NotebookSoftwareConfig ) } , \"encryptionSpec\" : { object ( EncryptionSpec ) } , \"satisfiesPzs\" : boolean , \"satisfiesPzi\" : boolean } Fields name string Output only.",
+          "Following system labels exist for NotebookRuntime: \"aiplatform.googleapis.com/notebook runtime gce instance id\": output only, its value is the Compute Engine instance id. \"aiplatform.googleapis.com/colab enterprise entry service\": its value is either \"bigquery\" or \"vertex\"; if absent, it should be \"vertex\".",
+          "Deprecated: This field is no longer used and the \"Vertex AI Notebook Service Account\" ( service-PROJECT NUMBER@gcp-sa-aiplatform-vm.iam.gserviceaccount.com ) is used for the runtime workload identity."
+        ]
+      },
+      {
+        "title": "\"Build a pipeline for continuous model training \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the in operator to verify subject is present. print ( f \"Subject: { cloudevent [ 'subject' ] } \" ) Print out details from the protoPayload This field encapsulates a Cloud Audit Logging entry See https://cloud.google.com/logging/docs/audit#audit log entry structure payload = cloudevent . data . get ( \"protoPayload\" ) if payload : print ( f \"API method: { payload . get ( 'methodName' ) } \" ) print ( f \"Resource name: { payload . get ( 'resourceName' ) } \" ) print ( f \"Principal: { payload . get ( 'authenticationInfo' , dict ()) . get ( 'principalEmail' ) } \" ) row count = payload . get ( 'metadata' , dict ()) . get ( 'tableDataChange' , dict ()) . get ( 'insertedRowsCount' ) print ( f \"No. of rows: { row count } !!\" ) if row count : if int ( row count ) > 0 : print ( \"Pipeline trigger Condition met !!\" ) submit pipeline job () else : print ( \"No pipeline triggered !!!\" ) def submit pipeline job (): PROJECT ID = ' PROJECT ID ' REGION = ' REGION ' BUCKET NAME = \" BUCKET NAME \" DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" base output dir = BUCKET NAME BUCKET URI = \"gs:// {} \" . format ( BUCKET NAME ) PIPELINE ROOT = \" {} /pipeline root/chicago-taxi-pipe\" . format ( BUCKET URI ) PIPELINE NAME = \"vertex-mlops-pipeline-tutorial\" EXPERIMENT NAME = PIPELINE NAME + \"-experiment\" REPO NAME = \"mlops\" TEMPLATE NAME = \"custom-model-training-evaluation-pipeline\" TRAINING JOB DISPLAY NAME = \"taxifare-prediction-training-job\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } TEMPLATE URI = f \"https:// { REGION } -kfp.pkg.dev/ { PROJECT ID } / { REPO NAME } / { TEMPLATE NAME } /latest\" print ( \"TEMPLATE URI: \" , TEMPLATE URI ) request body = { \"name\" : PIPELINE NAME , \"displayName\" : PIPELINE NAME , \"runtimeConfig\" :{ \"gcsOutputDirectory\" : PIPELINE ROOT , \"parameterValues\" : parameters , }, \"templateUri\" : TEMPLATE URI } pipeline url = \"https://us-central1-aiplatform.googleapis.com/v1/projects/ {} /locations/ {} /pipelineJobs\" . format ( PROJECT ID , REGION ) creds , project = google . auth . default () auth req = google . auth . transport . requests .",
+          "DATASET NAME = \"mlops\" TABLE NAME = \"chicago\" worker pool specs = [{ \"machine spec\" : { \"machine type\" : \"e2-highmem-2\" }, \"replica count\" : 1 , \"python package spec\" :{ \"executor image uri\" : \"us-docker.pkg.dev/vertex-ai/training/sklearn-cpu.1-0:latest\" , \"package uris\" : [ f \" { BUCKET URI } /trainer-0.1.tar.gz\" ], \"python module\" : \"trainer.task\" , \"args\" :[ \"--project-id\" , PROJECT ID , \"--training-dir\" , f \"/gcs/ { BUCKET NAME } \" , \"--bq-source\" , f \" { PROJECT ID } . { DATASET NAME } . { TABLE NAME } \" ] }, }] parameters = { \"project\" : PROJECT ID , \"location\" : REGION , \"training job display name\" : \"taxifare-prediction-training-job\" , \"worker pool specs\" : worker pool specs , \"base output dir\" : BUCKET URI , \"prediction container uri\" : \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest\" , \"model display name\" : \"taxifare-prediction-model\" , \"batch prediction job display name\" : \"taxifare-prediction-batch-job\" , \"target field name\" : \"fare\" , \"test data gcs uri\" : [ f \" { BUCKET URI } /test no target.csv\" ], \"ground truth gcs source\" : [ f \" { BUCKET URI } /test.csv\" ], \"batch predictions gcs prefix\" : f \" { BUCKET URI } /batch predict output\" , \"existing model\" : False } Note: To optionally upload your model as a new model version instead of a new model in Vertex AI Model Registry, set existing model to True .",
+          "Else (): Upload the model model upload op = ModelUploadOp ( project = project , location = location , display name = model display name , unmanaged container model = import unmanaged model task . outputs [ \"artifact\" ], ) Get the model (or model version) model resource = OneOf ( model version upload op . outputs [ \"model\" ], model upload op . outputs [ \"model\" ]) Batch prediction batch predict task = ModelBatchPredictOp ( project = project , job display name = batch prediction job display name , model = model resource , location = location , instances format = batch predictions input format , predictions format = batch predictions output format , gcs source uris = test data gcs uri , gcs destination output uri prefix = batch predictions gcs prefix , machine type = 'n1-standard-2' ) Evaluation task evaluation task = ModelEvaluationRegressionOp ( project = project , target field name = target field name , location = location , model= model resource, predictions format = batch predictions output format , predictions gcs source = batch predict task . outputs [ \"gcs output directory\" ], ground truth format = ground truth format , ground truth gcs source = ground truth gcs source ) return Your pipeline consists of a graph of tasks that make use the following Google Cloud Pipeline Components : CustomTrainingJobOp : Runs custom training jobs in Vertex AI."
+        ]
+      },
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the \"Custom training and online prediction\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.",
+          "Use Vertex AI Python client library and SDK together If you use the Vertex AI SDK for Python and discover you need greater flexibility or control, or if you need a method not included in the Vertex AI SDK, you can use the Vertex AI Python client library in the same workflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "cpu.1",
+      "docker.pkg.dev",
+      "kfp.pkg.dev",
+      "setup.py",
+      "tar.gz",
+      "target.csv",
+      "test.csv",
+      "trainer.task",
+      "vertexai.preview",
+      "vm.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/continuous-training-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    }
+  ]
+}

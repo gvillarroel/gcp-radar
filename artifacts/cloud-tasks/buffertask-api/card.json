@@ -1,0 +1,193 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.050Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tasks/card.json",
+  "product_name": "Cloud Tasks",
+  "product_slug": "cloud-tasks",
+  "feature_name": "BufferTask API",
+  "feature_slug": "buffertask-api",
+  "summary": "Cloud Tasks provides the BufferTask method to create tasks by sending an HTTP request to a queue.",
+  "extended_definition": "Cloud Tasks provides the BufferTask method to create tasks by sending an HTTP request to a queue.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+      "https://docs.cloud.google.com/tasks/docs/authentication",
+      "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+      "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create HTTP target tasks \\_|\\_ Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreateTaskRequest ( parent = client . queue path ( project , location , queue ), task = task , ) ) Note the requirements.txt file: google - cloud - tasks == 2.18.0 BufferTask method The following examples use application default credentials to authenticate when using the BufferTask method for creating a task. curl curl -X HTTP METHOD \\ \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID /tasks:buffer\" \\ -H \"Authorization: Bearer ACCESS TOKEN \" Replace the following: HTTP METHOD : the HTTP method for your request; for example GET or POST .",
+          "Call the BufferTask method The following examples show how to create a task by sending an HTTP POST request to the Cloud Tasks API buffer endpoint . curl The following code snippet shows an example of task creation using with the BufferTask method using curl : curl -X HTTP METHOD \\ \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID /tasks:buffer\" \\ Replace the following: HTTP METHOD : the HTTP method for your request; for example GET or POST .",
+          "CreateTaskRequest ( The queue to add the task to parent = client . queue path ( project , location , queue ), The task itself task = task , ) ) Note the requirements.txt file: google - cloud - tasks == 2.18.0 Ruby require \"google/cloud/tasks\" Create a Task with an HTTP Target @param [String] project id Your Google Cloud Project ID. @param [String] location id Your Google Cloud Project Location ID. @param [String] queue id Your Google Cloud Tasks Queue ID. @param [String] url The full path to sent the task request to. @param [String] payload The request body of your task. @param [Integer] seconds The delay, in seconds, to process your task. def create http task project id , location id , queue id , url , payload : nil , seconds : nil Instantiates a client. client = Google :: Cloud :: Tasks . cloud tasks Construct the fully qualified queue name. parent = client . queue path project : project id , location : location id , queue : queue id Construct task. task = { http request : { http method : \"POST\" , url : url } } Add payload to task body. task [ :http request ][ :body ] = payload if payload Add scheduled time to task. if seconds timestamp = Google :: Protobuf :: Timestamp . new timestamp . seconds = Time . now . to i + seconds . to i task [ :schedule time ] = timestamp end Send create task request. puts \"Sending task #{ task } \" response = client . create task parent : parent , task : task puts \"Created task #{ response . name } \" if response . name end Create a task using the BufferTask method This section discusses creating a task by sending an HTTP request."
+        ]
+      },
+      {
+        "title": "Authenticate to Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set the --service-account flag to the email address for the service account that you created. gcloud compute instances create INSTANCE NAME --zone = ZONE --service-account = SERVICE ACCOUNT EMAIL For more information about authenticating to Google APIs, see Authentication methods .",
+          "To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" PowerShell (Windows) Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" Select-Object -Expand Content For more information about authenticating using REST and gRPC, see Authenticate for using REST .",
+          "You can access the API in the following ways: Client libraries Google Cloud CLI REST Client libraries The Cloud Tasks client libraries provide high-level language support for authenticating to Cloud Tasks programmatically."
+        ]
+      },
+      {
+        "title": "Create App Engine tasks \\_|\\_ Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM --> <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>libraries-bom</artifactId> <version>26.32.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-tasks</artifactId> </dependency> <!-- Test dependencies --> <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> <version>4.13.2</version> <scope>test</scope> </dependency> <dependency> <groupId>com.google.truth</groupId> <artifactId>truth</artifactId> <version>1.4.0</version> <scope>test</scope> </dependency> </dependencies> <build> <finalName>tasks</finalName> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-war-plugin</artifactId> <version>3.4.0</version> <configuration> <failOnMissingWebXml>false</failOnMissingWebXml> </configuration> </plugin> <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>exec-maven-plugin</artifactId> <version>3.1.1</version> <configuration> <mainClass>com.example.task.CreateTask</mainClass> <cleanupDaemonThreads>false</cleanupDaemonThreads> </configuration> </plugin> </plugins> </build> </project> Node.js // Imports the Google Cloud Tasks library. const { CloudTasksClient } = require ( ' @google-cloud/tasks ' ); // Instantiates a client. const client = new CloudTasksClient (); async function createTask () { // TODO(developer): Uncomment these lines and replace with your values. // const project = 'my-project-id'; // const queue = 'my-appengine-queue'; // const location = 'us-central1'; // const payload = 'Hello, World!'; // Construct the fully qualified queue name. const parent = client . queuePath ( project , location , queue ); const task = { appEngineHttpRequest : { headers : { 'Content-Type' : 'text/plain' , // Set content type to ensure compatibility your application's request parsing }, httpMethod : 'POST' , relativeUri : '/log payload' , }, }; if ( payload ) { task . appEngineHttpRequest . body = Buffer . from ( payload ). toString ( 'base64' ); } if ( inSeconds ) { // The time when the task is scheduled to be attempted. task . scheduleTime = { seconds : inSeconds + Date . now () / 1000 , }; } console . log ( 'Sending task:' ); console . log ( task ); // Send create task request. const request = { parent : parent , task : task }; const [ response ] = await client . createTask ( request ); const name = response . name ; console . log ( Created task ${ name } ); } createTask (); Note the package.json file: { \"name\" : \"appengine-cloudtasks\" , \"description\" : \"Google App Engine Cloud Tasks example.\" , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"private\" : true , \"engines\" : { \"node\" : \">=16.0.0\" }, \"files\" : [ \" .js\" ], \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 --timeout 30000\" , \"start\" : \"node server.js\" }, \"dependencies\" : { \"@google-cloud/tasks\" : \"^5.0.0\" , \"express\" : \"^4.16.3\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"chai\" : \"^4.5.0\" , \"mocha\" : \"^10.0.0\" , \"uuid\" : \"^10.0.0\" } } PHP use Google\\Cloud\\Tasks\\V2\\AppEngineHttpRequest; use Google\\Cloud\\Tasks\\V2\\CloudTasksClient; use Google\\Cloud\\Tasks\\V2\\HttpMethod; use Google\\Cloud\\Tasks\\V2\\Task; / Uncomment and populate these variables in your code / // $projectId = 'The Google project ID'; // $locationId = 'The Location ID'; // $queueId = 'The Cloud Tasks App Engine Queue ID'; // $payload = 'The payload your task should carry to the task handler.",
+          "FromDatetime ( d ) Add the timestamp to the tasks. task [ \"schedule time\" ] = timestamp Use the client to build and send the task. response = client . create task ( parent = parent , task = task ) print ( f \"Created task { response . name } \" ) return response Note the requirements.txt file: Flask == 3.0.3 gunicorn == 23.0.0 google - cloud - tasks == 2.18.0 Ruby require \"google/cloud/tasks\" Create an App Engine Task @param [String] project id Your Google Cloud Project ID. @param [String] location id Your Google Cloud Project Location ID. @param [String] queue id Your Google Cloud App Engine Queue ID. @param [String] payload The request body of your task. @param [Integer] seconds The delay, in seconds, to process your task. def create task project id , location id , queue id , payload : nil , seconds : nil Instantiates a client. client = Google :: Cloud :: Tasks . cloud tasks Construct the fully qualified queue name. parent = client . queue path project : project id , location : location id , queue : queue id Construct task. task = { app engine http request : { http method : \"POST\" , relative uri : \"/log payload\" } } Add payload to task body. if payload task [ :app engine http request ][ :body ] = payload end Add scheduled time to task. if seconds timestamp = Google :: Protobuf :: Timestamp . new timestamp . seconds = Time . now . to i + seconds . to i task [ :schedule time ] = timestamp end Send create task request. puts \"Sending task #{ task } \" response = client . create task parent : parent , task : task puts \"Created task #{ response . name } \" if response . name end What's next Learn about creating App Engine task handlers .",
+          "Optional'; // Instantiate the client and queue name. $client = new CloudTasksClient(); $queueName = $client->queueName($projectId, $locationId, $queueId); // Create an App Engine Http Request Object. $httpRequest = new AppEngineHttpRequest(); // The path of the HTTP request to the App Engine service. $httpRequest->setRelativeUri('/task handler'); // POST is the default HTTP method, but any HTTP method can be used. $httpRequest->setHttpMethod(HttpMethod::POST); // Setting a body value is only compatible with HTTP POST and PUT requests. if (isset($payload)) { $httpRequest->setBody($payload); } // Create a Cloud Task object. $task = new Task(); $task->setAppEngineHttpRequest($httpRequest); // Send request and print the task name. $response = $client->createTask($queueName, $task); printf('Created task %s' ."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksAsyncClient (2.22.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = tasks v2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtasks.googleapis.com",
+      "com.example.task.CreateTask",
+      "com.google.cloud",
+      "com.google.cloud.tasks.v2.CloudTasksClient",
+      "com.google.cloud.tasks.v2.CloudTasksClient.ListTasksPage",
+      "com.google.truth",
+      "example.com",
+      "github.com",
+      "googleapis.dev",
+      "iam.googleapis.com",
+      "options.html",
+      "org.apache.maven.plugins",
+      "org.codehaus.mojo",
+      "package.json",
+      "requirements.txt",
+      "server.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/authentication",
+        "https://docs.cloud.google.com/tasks/docs/creating-appengine-tasks",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient"
+      ]
+    }
+  ]
+}

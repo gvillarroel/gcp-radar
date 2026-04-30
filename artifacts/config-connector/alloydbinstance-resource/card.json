@@ -1,0 +1,233 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:52.387Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector",
+  "feature_name": "AlloyDBInstance resource",
+  "feature_slug": "alloydbinstance-resource",
+  "summary": "Config Connector added support for managing the AlloyDBInstance resource in v1beta1.",
+  "extended_definition": "Config Connector added support for managing the AlloyDBInstance resource in v1beta1.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDBInstance \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-zonal spec : clusterRef : name : alloydbinstance-dep-zonal availabilityType : ZONAL instanceTypeRef : name : alloydbinstance-dep-zonal machineConfig : cpuCount : 2 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-zonal spec : location : asia-northeast3 networkConfig : networkRef : name : alloydbinstance-dep-zonal projectRef : external : ${PROJECT ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-zonal spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-zonal prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-zonal --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-zonal spec : networkRef : name : alloydbinstance-dep-zonal reservedPeeringRanges : - external : alloydbinstance-dep-zonal service : servicenetworking.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-secondary spec : clusterRef : name : alloydbinstance-dep1-secondary instanceTypeRef : name : alloydbinstance-dep1-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-secondary spec : clusterRef : name : alloydbinstance-dep2-secondary instanceTypeRef : name : alloydbinstance-dep2-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep1-secondary spec : location : asia-northeast1 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT ID?} initialUser : user : \"postgres\" password : value : \"postgres\" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep2-secondary spec : location : asia-northeast2 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT ID?} clusterType : \"SECONDARY\" secondaryConfig : primaryClusterNameRef : name : alloydbinstance-dep1-secondary deletionPolicy : \"FORCE\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-secondary prefixLength : 16 purpose : VPC PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-secondary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-secondary spec : networkRef : name : alloydbinstance-dep-secondary reservedPeeringRanges : - name : alloydbinstance-dep-secondary service : servicenetworking.googleapis.com Zonal Instance Copyright 2023 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data."
+        ]
+      },
+      {
+        "title": "AlloyDBInstance | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "source_id": "feature-recovery-http",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample YAML(s) Primary Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-primary spec : clusterRef : name : alloydbinstance-dep-primary instanceTypeRef : name : alloydbinstance-dep-primary databaseFlags : enable_google_adaptive_autovacuum : \"off\" password.enforce_complexity : \"on\" machineConfig : cpuCount : 2 networkConfig : enablePublicIp : true enableOutboundPublicIp : true authorizedExternalNetworks : - cidrRange : 8.8.8.8/30 - cidrRange : 8.8.4.4/30 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-primary spec : location : asia-east1 networkConfig : networkRef : name : alloydbinstance-dep-primary projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-primary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-primary prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-primary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-primary spec : networkRef : name : alloydbinstance-dep-primary reservedPeeringRanges : - external : alloydbinstance-dep-primary service : servicenetworking.googleapis.com Read Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : name : alloydbinstance-dep-read --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-read spec : clusterRef : name : alloydbinstance-dep-read instanceTypeRef : external : READ_POOL databaseFlags : google_columnar_engine.enabled : \"on\" machineConfig : cpuCount : 2 readPoolConfig : nodeCount : 3 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-read spec : location : asia-east2 networkConfig : networkRef : name : alloydbinstance-dep-read projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-read spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-read prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-read --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-read spec : networkRef : name : alloydbinstance-dep-read reservedPeeringRanges : - name : alloydbinstance-dep-read service : servicenetworking.googleapis.com Secondary Instance # Copyright 2024 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-dep-secondary spec : clusterRef : name : alloydbinstance-dep1-secondary instanceTypeRef : name : alloydbinstance-dep1-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-secondary spec : clusterRef : name : alloydbinstance-dep2-secondary instanceTypeRef : name : alloydbinstance-dep2-secondary --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep1-secondary spec : location : asia-northeast1 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT_ID?} initialUser : user : \"postgres\" password : value : \"postgres\" --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep2-secondary spec : location : asia-northeast2 networkConfig : networkRef : name : alloydbinstance-dep-secondary projectRef : external : ${PROJECT_ID?} clusterType : \"SECONDARY\" secondaryConfig : primaryClusterNameRef : name : alloydbinstance-dep1-secondary deletionPolicy : \"FORCE\" --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-secondary spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-secondary prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-secondary --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-secondary spec : networkRef : name : alloydbinstance-dep-secondary reservedPeeringRanges : - name : alloydbinstance-dep-secondary service : servicenetworking.googleapis.com Zonal Instance # Copyright 2023 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBInstance metadata : name : alloydbinstance-sample-zonal spec : clusterRef : name : alloydbinstance-dep-zonal availabilityType : ZONAL instanceTypeRef : name : alloydbinstance-dep-zonal machineConfig : cpuCount : 2 --- apiVersion : alloydb.cnrm.cloud.google.com/v1beta1 kind : AlloyDBCluster metadata : name : alloydbinstance-dep-zonal spec : location : asia-northeast3 networkConfig : networkRef : name : alloydbinstance-dep-zonal projectRef : external : ${PROJECT_ID?} --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : alloydbinstance-dep-zonal spec : location : global addressType : INTERNAL networkRef : name : alloydbinstance-dep-zonal prefixLength : 16 purpose : VPC_PEERING --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : alloydbinstance-dep-zonal --- apiVersion : servicenetworking.cnrm.cloud.google.com/v1beta1 kind : ServiceNetworkingConnection metadata : name : alloydbinstance-dep-zonal spec : networkRef : name : alloydbinstance-dep-zonal reservedPeeringRanges : - external : alloydbinstance-dep-zonal service : servicenetworking.googleapis.com Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "AlloyDBInstance | Config Connector | Google Cloud Documentation Skip to main content Area teknologi close AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Alat cross product close Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat / Console English Deutsch Español – América Latina Français Indonesia Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Mulai gratis Ringkasan Panduan API dan referensi Referensi Area teknologi More Ringkasan Panduan API dan referensi Referensi Alat cross product More Console Config Connector Ringkasan resource API AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser Gateway API APIGatewayAPI Hub Aplikasi AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Cadangan dan DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig Reservasi BigQuery BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Inventaris Aset Cloud AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Kuota Cloud APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Pengontrol Konfigurasi ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Kebijakan Organisasi OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Penampung Terpasang ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Kontak Penting EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Kafka Terkelola ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Konektivitas Jaringan NetworkConnectivityHub NetworkConnectivitySpoke Keamanan Jaringan NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Layanan Jaringan NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebook NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Direktori Layanan ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Layanan ServiceIdentity Storage Transfer Service StorageTransferJob Tag TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress Akses VPC VPCAccessConnector Workstation WorkstationCluster WorkstationConfig Workstation Anotasi AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat Home Documentation Access and resource management Config Connector API dan referensi Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Property Value Google Cloud Service Name AlloyDB for PostgreSQL Google Cloud Service Documentation /alloydb/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters.instances Google Cloud REST Resource Documentation /alloydb/docs/reference/rest/v1/projects.locations.clusters.instances Config Connector Resource Short Names gcpalloydbinstance gcpalloydbinstances alloydbinstance Config Connector Service Name alloydb.googleapis.com Config Connector Resource Fully Qualified Name alloydbinstances.alloydb.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema annotations : string : string availabilityType : string clusterRef : external : string name : string namespace : string connectionPoolConfig : enabled : boolean flags : string : string databaseFlags : string : string displayName : string gceZone : string instanceType : string instanceTypeRef : external : string name : string namespace : string machineConfig : cpuCount : integer machineType : string networkConfig : authorizedExternalNetworks : - cidrRange : string enableOutboundPublicIp : boolean enablePublicIp : boolean observabilityConfig : assistiveExperiencesEnabled : boolean enabled : boolean maxQueryStringLength : integer preserveComments : boolean queryPlansPerMinute : integer recordApplicationTags : boolean trackActiveQueries : boolean trackClientAddress : boolean trackWaitEvents : boolean queryInsightsConfig : queryPlansPerMinute : integer queryStringLength : integer recordApplicationTags : boolean recordClientAddress : boolean readPoolConfig : nodeCount : integer resourceID : string Fields annotations Optional map (key: string, value: string) Annotations to allow client tools to store small amount of arbitrary data."
+        ]
+      },
+      {
+        "title": "\"Managing resources with the resourceID field \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Acquiring a folder To acquire a folder using Config Connector with the resourceID field, complete the following steps: Copy the following contents into a file named folder.yaml . apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Folder metadata : annotations : cnrm.cloud.google.com/organization-id : ORG ID Remove the deletion-policy annotation if it is safe to delete the folder when the resource is deleted from your cluster. cnrm.cloud.google.com/deletion-policy : \"abandon\" name : folder-sample-for-acquisition spec : resourceID : ACQUIRED FOLDER ID displayName : ACQUIRED FOLDER DISPLAY NAME Replace the following: ORG ID with the numeric ID for your organization.",
+          "Copy the following contents into a file named bigquery-dataset.yaml . apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerydataset-sample-for-creation spec : resourceID : bigquerydataset sample with resourceid defaultTableExpirationMs : 3600000 description : \"BigQuery Dataset Sample with the ResourceID Field\" friendlyName : bigquerydataset-sample-with-resourceid location : US Apply the YAML file to your cluster. kubectl apply --namespace CC NAMESPACE -f bigquery-dataset.yaml Replace CC NAMESPACE with the namespace Config Connector manages resources from.",
+          "The name of the Config Connector resource is pubsub-topic-sample and the name of the Pub/Sub topic is pubsub-topic-id . apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsub-topic-sample spec : resourceID : pubsub-topic-id Creating a resource with the resourceID field Note: When you manage a Google Cloud resource with the resourceID field, if the resource has a service-generated resource ID, Config Connector assumes the resource already exists and tries to acquire the resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.cnrm.cloud.google.com",
+      "alloydb.googleapis.com",
+      "alloydbinstances.alloydb.cnrm.cloud.google.com",
+      "bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "dataset.yaml",
+      "engine.enabled",
+      "folder.yaml",
+      "metadata.name",
+      "metadata.namespace",
+      "password.enforce_complexity",
+      "projects.locations.clusters.instances",
+      "pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "servicenetworking.cnrm.cloud.google.com",
+      "servicenetworking.googleapis.com",
+      "v1.projects.locations.clusters.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbinstance",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/managing-resources-with-resource-ids"
+      ]
+    }
+  ]
+}

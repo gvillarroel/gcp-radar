@@ -1,0 +1,177 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "VPC Service Controls",
+  "feature_slug": "vpc-service-controls",
+  "summary": "Cloud SQL supports VPC Service Controls to protect the Admin API and host project with a service perimeter.",
+  "extended_definition": "Cloud SQL supports VPC Service Controls to protect the Admin API and host project with a service perimeter.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure VPC Service Controls \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "source_id": "site-docs-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you're using Shared VPC , we recommend that you include the host project in a service perimeter along with any projects that belong to the Shared VPC.",
+          "Enable the API Add the Identity and Access Management (IAM) roles to the user or service account you are using to set up and administer VPC Service Controls.",
+          "Create a service perimeter During this procedure, you select the Cloud SQL projects that you want the VPC service perimeter to protect."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL Admin API \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "At the command line, provide the path to the file, preceded by the @ character, as the --data parameter: --data @<path-to-file>/<filename> For example, to create a database user, you could create a file named data.json with the following content: {\"host\": \"%\", \"name\": \"user1\", \"password\": \"abc123\"} Then you would use the following cURL command at the command line: curl --header \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ --header 'Content-Type: application/json' \\ --data @./data.json \\ -X POST \\ https://www.googleapis.com/sql/v1beta4/projects/myProject/instances/myInstance/users Work with long-running API calls Some API calls, such as object creation, can take some time to complete.",
+          "Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Cloud SQL Admin API: gcloud services enable sqladmin.googleapis.com Authorize requests Your application needs to identify itself every time it sends a request to the Cloud SQL Admin API, by including an API key with each request.",
+          "Use VPC Service Controls with the Cloud SQL Admin API VPC Service Controls let you create a service perimeter around the Cloud SQL Admin API to help mitigate data exfiltration."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL Admin API \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "At the command line, provide the path to the file, preceded by the @ character, as the --data parameter: --data @<path-to-file>/<filename> For example, to create a database user, you could create a file named data.json with the following content: {\"host\": \"%\", \"name\": \"user1\", \"password\": \"abc123\"} Then you would use the following cURL command at the command line: curl --header \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ --header 'Content-Type: application/json' \\ --data @./data.json \\ -X POST \\ https://www.googleapis.com/sql/v1beta4/projects/myProject/instances/myInstance/users Work with long-running API calls Some API calls, such as object creation, can take some time to complete.",
+          "Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Cloud SQL Admin API: gcloud services enable sqladmin.googleapis.com Authorize requests Your application needs to identify itself every time it sends a request to the Cloud SQL Admin API, by including an API key with each request.",
+          "Use VPC Service Controls with the Cloud SQL Admin API VPC Service Controls let you create a service perimeter around the Cloud SQL Admin API to help mitigate data exfiltration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.json",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api"
+      ]
+    }
+  ]
+}

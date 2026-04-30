@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.080Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry regional availability",
+  "feature_slug": "artifact-registry-regional-availability",
+  "summary": "Artifact Registry is now available in the asia-southeast3 (Bangkok) region; Artifact Registry is now available in the europe-north2 (Stockholm) region.",
+  "extended_definition": "Artifact Registry is now available in the asia-southeast3 (Bangkok) region; Artifact Registry is now available in the europe-north2 (Stockholm) region.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to add the regions us-west1 and asia-northeast1 , run the command: docker-credential-gcr configure-docker --registries=us-west1-docker.pkg.dev,asia-northeast1-docker.pkg.dev The specified hostnames are added to the credential helper configuration.",
+          "For example, to add the regions us-west1 and asia-northeast1 , run the command: gcloud auth configure-docker us-west1-docker.pkg.dev,asia-northeast1-docker.pkg.dev The specified hostnames are added to the credential helper configuration.",
+          "Choosing an authentication method The following authentication methods are available: gcloud CLI credential helper Configure your Artifact Registry credentials for use with Docker directly in gcloud CLI."
+        ]
+      },
+      {
+        "title": "Artifact Registry API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-west1 northamerica-northeast1 northamerica-northeast2 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 me-central2 us-east7 us eu https://artifactregistry.googleapis.com REST Resource: v1.projects Methods getProjectSettings GET /v1/{name=projects/ /projectSettings} Retrieves the Settings for the Project. updateProjectSettings PATCH /v1/{projectSettings.name=projects/ /projectSettings} Updates the Settings for the Project.",
+          "A service that is available in multiple regions might have multiple regional endpoints.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://artifactregistry.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region."
+        ]
+      },
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Artifact Registry enables you to store different artifact types, create multiple repositories in a single project, and associate a specific regional or multi-regional location with each repository.",
+          "For the asia multi-region, egress to regions in Asia such as asia-northeast1 are not charged, but egress to regions in Australia are charged.",
+          "Remote repositories reduce latency and improve availability for builds and deployments on Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.googleapis.com",
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient",
+      "docker.pkg.dev",
+      "v1.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories"
+      ]
+    }
+  ]
+}

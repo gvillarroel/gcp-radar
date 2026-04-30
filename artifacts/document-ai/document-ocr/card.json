@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.964Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai",
+  "feature_name": "Document OCR",
+  "feature_slug": "document-ocr",
+  "summary": "Document OCR extracts text from scanned documents.",
+  "extended_definition": "Document OCR extracts text from scanned documents.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/fields",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 328,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.",
+          "Input Enable by setting ProcessOptions.ocrConfig.advancedOcrOptions to [\"legacy layout\"] in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"advancedOcrOptions\" : [ \"legacy layout\" ] } } } Specify a page range By default, OCR extracts text and layout information from all pages in the documents.",
+          "You can also use Enterprise Document OCR to handle tasks like the following: Digitizing text: Extract text and layout data from documents for search, rules-based, document-processing pipelines, or custom-model creation."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "source_id": "site-docs-root-2",
+        "final_score": 318,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported layout detection and extraction attributes: Printed text Handwriting Paragraph Block Line Word Symbol-level Page number Default Default Default Default Default Default Configurable Default Configurable Enterprise Document OCR features include the following: Extract embedded or native text from digital PDFs: This feature extracts text and symbols exactly as they appear in the source documents, even for rotated texts, extreme font sizes or styles, and partially hidden text.",
+          "Input Enable by setting ProcessOptions.ocrConfig.advancedOcrOptions to [\"legacy layout\"] in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"advancedOcrOptions\" : [ \"legacy layout\" ] } } } Specify a page range By default, OCR extracts text and layout information from all pages in the documents.",
+          "You can also use Enterprise Document OCR to handle tasks like the following: Digitizing text: Extract text and layout data from documents for search, rules-based, document-processing pipelines, or custom-model creation."
+        ]
+      },
+      {
+        "title": "\"Process documents with Gemini layout parser \\_|\\_ Document AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "source_id": "site-docs-root-2",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Primary use cases Document OCR: It can parse text and layout elements like heading, header, footer, table structure and figures from PDF documents.",
+          "Process documents with Gemini layout parser The Document AI layout parser is an advanced text parsing and document understanding service that converts unstructured content from complex files into highly structured, precise and machine-readable information.",
+          "It's designed to solve a critical problem for Search and Retrieval Augmented Generation (RAG): standard OCR flattens documents, destroying the very context and structure that adds valuable meaning, like headings, tables, and lists."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/fields",
+        "source_id": "site-docs-reference",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "More information Custom Extractor Form Parser Description Extract general key-value pairs (entity and checkbox), tables, and generic entities from documents in addition to OCR text.",
+          "Category Pretrained Functions OCR, Entity Extraction Release stage General availability Access status Public lock open Type in API PAYSTUB PROCESSOR Notes If the multi-page input document contains more than one valid pay slips, the processor extracts entities from only the first valid pay slip.",
+          "More information Enterprise Document OCR Extract entities from documents Refer to Sample datasets for sample labeled and unlabeled datasets to use for training."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/fields"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/fields"
+      ]
+    }
+  ]
+}

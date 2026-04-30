@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Traffic duration setting for Application Load Balancers",
+  "feature_slug": "traffic-duration-setting-for-application-load-balancers",
+  "summary": "Application Load Balancers let you classify backend traffic duration as SHORT or LONG when configuring backend services.",
+  "extended_definition": "Application Load Balancers let you classify backend traffic duration as SHORT or LONG when configuring backend services.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/l7-internal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Internal Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table specifies the scope of health checks supported by internal Application Load Balancers: Load balancer mode Health check type Cross-region internal Application Load Balancer healthChecks Regional internal Application Load Balancer regionHealthChecks For more information about health checks, see the following: Health checks overview Create health checks Firewall rules An internal Application Load Balancer requires the following firewall rules: An ingress allow rule that permits traffic from Google's central health check ranges.",
+          "For cross-region internal Application Load Balancers You can set up a cross-region internal Application Load Balancer in multiple regions to get the following benefits: If the cross-region internal Application Load Balancer in a region fails, the DNS routing policies route traffic to a cross-region internal Application Load Balancer in another region.",
+          "Returns HTTP 503 High availability and cross-region failover For regional internal Application Load Balancers To achieve high availability, deploy multiple individual regional internal Application Load Balancers in regions that best support your application's traffic."
+        ]
+      },
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Application Load Balancers (except classic Application Load Balancers) and Cloud Service Mesh backends with a long traffic duration setting can use the IN FLIGHT balancing mode with one of the following required target capacity parameters: Table : Target capacity parameters for the IN FLIGHT balancing mode Target capacity parameter Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance.",
+          "Table : Balancing modes for Application Load Balancer and Cloud Service Mesh backends using the long traffic duration setting Supported backend Balancing mode CONNECTION RATE IN FLIGHT UTILIZATION CUSTOM METRICS Instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs Balancing modes for Proxy Network Load Balancers Available balancing modes for proxy Network Load Balancer backends depend on the type of supported backend.",
+          "Balancing modes for Application Load Balancers and Cloud Service Mesh Available balancing modes for Application Load Balancer and Cloud Service Mesh backends depend on the type of supported backend and a traffic duration setting ( Preview )."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode Health check type Global external Application Load Balancer Global Classic Application Load Balancer Global Regional external Application Load Balancer Regional For more information about health checks, see the following: Health checks overview Creating health checks Firewall rules The load balancer requires the following firewall rules: For the global external Application Load Balancers, an ingress allow rule to permit traffic from Google Front Ends (GFEs) to reach your backends.",
+          "For more information, see the following: Traffic management overview for global external Application Load Balancer Traffic management overview for regional external Application Load Balancer The following table specifies the type of URL map required by external Application Load Balancers in each mode.",
+          "When using regional external Application Load Balancers with Cloud Run in a Shared VPC environment, standalone VPC networks in service projects can send traffic to any other Cloud Run services deployed in any other service projects within the same Shared VPC environment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/l7-internal",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    }
+  ]
+}

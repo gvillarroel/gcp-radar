@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.470Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api",
+  "feature_name": "Shot change detection",
+  "feature_slug": "shot-change-detection",
+  "summary": "Shot change detection analyzes a video and identifies scene transitions via the annotate method using SHOT_CHANGE_DETECTION requests.",
+  "extended_definition": "Shot change detection analyzes a video and identifies scene transitions via the annotate method using SHOT_CHANGE_DETECTION requests.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/analyze-shots",
+      "https://docs.cloud.google.com/video-intelligence/docs/feature-label-detection",
+      "https://docs.cloud.google.com/video-intelligence/docs/features",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detect shot changes \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/analyze-shots",
+        "source_id": "site-iam-reference",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VideoIntelligenceServiceClient (); / TODO(developer): Uncomment the following line before running the sample. / // const gcsUri = 'GCS URI of file to analyze, e.g. gs://my-bucket/my-video.mp4'; const request = { inputUri : gcsUri , features : [ 'SHOT CHANGE DETECTION' ], }; // Detects camera shot changes const [ operation ] = await client . annotateVideo ( request ); console . log ( 'Waiting for operation to complete...' ); const [ operationResult ] = await operation . promise (); // Gets shot changes const shotChanges = operationResult . annotationResults [ 0 ]. shotAnnotations ; console . log ( 'Shot changes:' ); if ( shotChanges . length === 1 ) { console . log ( 'The entire video is one shot.' ); } else { shotChanges . forEach (( shot , shotIdx ) = > { console . log ( Scene ${ shotIdx } occurs from: ); if ( shot . startTimeOffset === undefined ) { shot . startTimeOffset = {}; } if ( shot . endTimeOffset === undefined ) { shot . endTimeOffset = {}; } if ( shot . startTimeOffset . seconds === undefined ) { shot . startTimeOffset . seconds = 0 ; } if ( shot . startTimeOffset . nanos === undefined ) { shot . startTimeOffset . nanos = 0 ; } if ( shot . endTimeOffset . seconds === undefined ) { shot . endTimeOffset . seconds = 0 ; } if ( shot . endTimeOffset . nanos === undefined ) { shot . endTimeOffset . nanos = 0 ; } console . log ( \\tStart: ${ shot . startTimeOffset . seconds } + . ${ ( shot . startTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\tEnd: ${ shot . endTimeOffset . seconds } . + ${ ( shot . endTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); }); } Python For more information on installing and using the Video Intelligence API Client Library for Python, refer to Video Intelligence API Client Libraries . \"\"\"Detects camera shot changes.\"\"\" video client = videointelligence .",
+          "SHOT CHANGE DETECTION ] operation = video client . annotate video ( request = { \"features\" : features , \"input uri\" : path } ) print ( \" \\n Processing video for shot change annotations:\" ) result = operation . result ( timeout = 90 ) print ( \" \\n Finished processing.\" ) first result is retrieved because a single video was processed for i , shot in enumerate ( result . annotation results [ 0 ] . shot annotations ): start time = ( shot . start time offset . seconds + shot . start time offset . microseconds / 1e6 ) end time = ( shot . end time offset . seconds + shot . end time offset . microseconds / 1e6 ) print ( \" \\t Shot {} : {} to {} \" . format ( i , start time , end time )) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Video Intelligence reference documentation for .NET.",
+          "PROJECT NUMBER : The numeric identifier for your Google Cloud project HTTP method and URL: POST https://videointelligence.googleapis.com/v1/videos:annotate Request JSON body: { \"inputUri\": \" INPUT URI \", \"features\": [\"SHOT CHANGE DETECTION\"] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Analyze videos for labels \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/feature-label-detection",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "For details, see Shot change detection Frame level: Entities are identified and labeled within each frame (with one frame per second sampling).",
+          "The Video Intelligence API can identify entities shown in video footage using the LABEL DETECTION feature and annotate these entities with labels (tags).",
+          "To detect labels in a video, call the annotate method and specify LABEL DETECTION in the features field."
+        ]
+      },
+      {
+        "title": "Features \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/features",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shot change detection Learn about shot change detection and annotation.",
+          "Home Documentation AI and ML Video Intelligence API Guides Send feedback Features Stay organized with collections Save and categorize content based on your preferences.",
+          "Explicit content detection Learn about detecting adult content within a video."
+        ]
+      },
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compared to the existing topical segmentLabelAnnotations , this field presents more fine-grained, segment-level labels detected in video content and is made available only when the client sets LabelDetectionConfig.model to \"builtin/latest\" in the request. shotLabelAnnotations[] object ( LabelAnnotation ) Topical label annotations on shot level.",
+          "Compared to the existing topical shotLabelAnnotations , this field presents more fine-grained, shot-level labels detected in video content and is made available only when the client sets LabelDetectionConfig.model to \"builtin/latest\" in the request. frameLabelAnnotations[] object ( LabelAnnotation ) Label annotations on frame level.",
+          "Each shot is represented as a video segment. explicitAnnotation object ( ExplicitContentAnnotation ) Explicit content annotation. speechTranscriptions[] object ( SpeechTranscription ) Speech transcription. textAnnotations[] object ( TextAnnotation ) OCR text detection and tracking."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "video.mp4",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-shots",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-label-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/features",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/analyze-shots",
+        "https://docs.cloud.google.com/video-intelligence/docs/feature-label-detection",
+        "https://docs.cloud.google.com/video-intelligence/docs/features",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse"
+      ]
+    }
+  ]
+}

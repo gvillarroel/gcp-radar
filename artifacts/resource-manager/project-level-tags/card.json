@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.394Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager",
+  "feature_name": "Project-level tags",
+  "feature_slug": "project-level-tags",
+  "summary": "Tags can be created as children of projects as well as organization resources.",
+  "extended_definition": "Tags can be created as children of projects as well as organization resources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage projects within folders \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DISPLAY NAME : the display name of the folder being moved, for example \"My Awesome Folder.\" The Move Folder response: { \"name\": \"operations/fm.1234567890\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\", \"displayName\": \" DISPLAY NAME \", \"operationType\": \"MOVE\" } } The Get Operation curl request: curl -H \"Authorization: Bearer ${bearer token}\" \\ https://cloudresourcemanager.googleapis.com/v3/operations/fm.1234567890 The Get Operation response: { \"name\": \"operations/fm.1234567890\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.FolderOperation\", \"displayName\": \" DISPLAY NAME \", \"operationType\": \"MOVE\" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloud.resourcemanager.v3.Folder\", \"name\": \"folders/12345\", \"parent\": \"folders/98765\", \"displayName\": \" DISPLAY NAME \", \"lifecycleState\": \"ACTIVE\", \"createTime\": \"2017-07-19T23:29:26.018Z\", \"updateTime\": \"2017-07-20T00:54:44.295Z\" } } View or list projects within a folder To view or list projects that are direct children of a folder, you must have the Folder Viewer role ( roles/resourcemanager.folderViewer ) or the Browser role ( roles/browser ) on the folder.",
+          "REST The request JSON: request json= '{ name: DISPLAY NAME , projectId: PROJECT ID , parent: {id: PARENT ID , type: PARENT TYPE } }' The curl request: curl -X POST -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer ${bearer token}\" \\ -d \"$request json\" \\ https://cloudresourcemanager.googleapis.com/v3/projects Replace the following: PROJECT ID : the unique identifier of the project being created.",
+          "Optional: Use the Filter bar at the top of the list to search for a specific project by name or ID. gcloud To list all projects that are direct children of a specific folder, use the gcloud projects list command with a filter: gcloud projects list --filter = \"parent.id: FOLDER ID AND parent.type:folder\" Replace FOLDER ID with the unique ID of the folder."
+        ]
+      },
+      {
+        "title": "Create projects \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "source_id": "site-docs-reference-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key characteristics of projects include the following: The primary service container: A project is the base level where all Google Cloud services (APIs) are enabled and where resources like Compute Engine instances or BigQuery datasets are created.",
+          "Create Project Request: POST https://cloudresourcemanager.googleapis.com/v3/projects/ Authorization: Content-Type: application/json { \"projectId\": \"our-project-123\", \"name\": \"my project\", \"labels\": { \"mylabel\": \"prod\" } } Create Project Response: { \"name\": \"operations/pc.123456789\", } Get Operation Request: GET https://cloudresourcemanager.googleapis.com/v3/operations/pc.123456789 Authorization: Content-Type: application/json Get Operation Response: { \"name\": \"operations/pc.123456789\", \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.cloudresourcemanager.v3.Project\", \"projectNumber\": \"464036093014\", \"projectId\": \"our-project-123\", \"lifecycleState\": \"ACTIVE\", \"name\": \"my project\", \"labels\": { \"mylabel\": \"prod\" }, \"createTime\": \"2016-01-07T21:59:43.314Z\" } } Add tags during project creation Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "POST https://cloudresourcemanager.googleapis.com/v3/projects/ Authorization: Content-Type: application/json { \"projectId\": \"our-project-456\", \"name\": \"my project\", \"parent\": \"organizations/123\", \"tags\": { \"key\": \"123/environment\" \"value\": \"production\" }, \"tags\": { \"key\": \"123/costCenter\" \"value\": \"marketing\" } } Designate project environments with tags You can use tags to visually distinguish projects based on their environment, such as production, staging, or development."
+        ]
+      },
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage tags, ask your administrator to grant you the following IAM roles: Tag Viewer ( roles/resourcemanager.tagViewer ) on the resources the tags are attached to View and manage tags at the organization level: Organization Viewer ( roles/resourcemanager.organizationViewer ) on the organization Attach and remove tags from resources: Tag User ( roles/resourcemanager.tagUser ) on the tag value and the resources that you are attaching or removing the tag value to Create, update, and delete tag definitions: Tag Administrator ( roles/resourcemanager.tagAdmin ) on the resource you're creating, updating, or deleting tags for For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "You should get a response similar to the following: For predefined tags: tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2FPROJECT NUMBER%2Flocations%2FLOCATION%2Fresources%2FRESOURCE ID/tagValues/TAG VALUE ID parent: //cloudresourcemanager.googleapis.com/projects/123456789012/locations/us-central1/example-resource/res-01 tagValue: tagValues/987654321098 tagValueNamespacedName: 961309089256/environment/production For tags with dynamic values: tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2FPROJECT NUMBER%2Flocations%2FLOCATION%2Fresources%2FRESOURCE ID/tagKeys/TAG KEY ID parent: //cloudresourcemanager.googleapis.com/projects/123456789012/locations/us-central1/example-resource/res-01 tagValueNamespacedName: your-org-id/environment/staging For tags with dynamic values, the tagValue field is not present in the response; only the tagValueNamespacedName is populated.",
+          "The following example creates tag values named prod and sales : data \"google project\" \"default\" {} resource \"google tags tag key\" \"env tag key\" { parent = \"projects/${data.google project.default.project id}\" short name = \"env1\" } resource \"google tags tag key\" \"department tag key\" { parent = \"projects/${data.google project.default.project id}\" short name = \"department1\" } resource \"google tags tag value\" \"env tag value\" { parent = \"tagKeys/${google tags tag key.env tag key.name}\" short name = \"prod\" } resource \"google tags tag value\" \"department tag value\" { parent = \"tagKeys/${google tags tag key.department tag key.name}\" short name = \"sales\" } To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "data.google",
+      "fm.1234567890",
+      "googleapis.com",
+      "key.department",
+      "key.env",
+      "key.name",
+      "parent.id",
+      "parent.type",
+      "pc.123456789",
+      "project.default.project",
+      "resourcemanager.folderViewer",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.tagAdmin",
+      "resourcemanager.tagUser",
+      "resourcemanager.tagViewer",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/browser",
+      "roles/resourcemanager.folderViewer",
+      "roles/resourcemanager.organizationViewer",
+      "roles/resourcemanager.tagAdmin",
+      "roles/resourcemanager.tagUser",
+      "roles/resourcemanager.tagViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-projects-within-folder",
+        "https://docs.cloud.google.com/resource-manager/docs/creating-managing-projects",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    }
+  ]
+}

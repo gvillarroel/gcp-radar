@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Dialogflow CX dialogs",
+  "feature_slug": "dialogflow-cx-dialogs",
+  "summary": "Dialogflow CX Chat apps can open dialogs and receive user input from card messages and dialogs.",
+  "extended_definition": "Dialogflow CX Chat apps can open dialogs and receive user input from card messages and dialogs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+      "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+      "https://developers.google.com/workspace/chat/quickstart/apps-script-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Available for Google Workspace add-ons and unavailable for Google Chat apps. on close OnClose Whether the client forgets about a link after opening it, or observes it until the window closes.",
+          "Available for Google Workspace add-ons and unavailable for Google Chat apps. overflow menu OverflowMenu If specified, this onClick opens an overflow menu.",
+          "Open the Card Builder To learn how to build cards, see the following documentation: For Google Chat apps, see Design the components of a card or dialog ."
+        ]
+      },
+      {
+        "title": "\"Build a Dialogflow CX Google Chat app that understands and responds with\\",
+        "url": "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Considerations for responding to slash commands and receiving data from cards or dialogs : When Dialogflow Chat apps receive a message with a slash command, the query input contains only the value of the text field.",
+          "For a detailed walkthrough instructing you how to build and configure agents, see Create a Dialogflow CX agent . code Codelab: For an example of how to build a Dialogflow CX data store agent, see the knowledge Chat app from the codelab Build apps for Google Chat with Gemini . code Codelab: For an example of how to build a Dialogflow CX conversational agent, see the feedback Chat app from the codelab Build apps for Google Chat with Gemini .",
+          "Send card messages from Dialogflow code Codelab: For an applied example of sending card messages from Dialogflow, see Display sources in knowledge Chat app answers in the codelab Build apps for Google Chat with Gemini."
+        ]
+      },
+      {
+        "title": "Build a Google Chat app with Google Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Chat app logic that's implemented in Apps Script, which resides in Google Cloud, receives and processes the message.",
+          "Key actions include: setting up a Google Cloud environment and enabling the Chat API; configuring the OAuth consent screen; creating an Apps Script project from a template and linking it to the Cloud project; publishing the app with a deployment ID; and testing the app by sending a direct message.",
+          "The following diagram shows the architecture and messaging pattern: In the preceding diagram, a user interacting with an Apps Script Chat app has the following flow of information: A user sends a message to a Chat app, either in a direct message or in a Chat space."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/build-dialogflow-chat-app-natural-language",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app"
+      ]
+    }
+  ]
+}

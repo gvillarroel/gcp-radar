@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Network policy logging",
+  "feature_slug": "network-policy-logging",
+  "summary": "Network Policy Logging is generally available and requires Dataplane V2; Network policy logging records network policy enforcement events for GKE clusters that use Dataplane V2.",
+  "extended_definition": "Network Policy Logging is generally available and requires Dataplane V2; Network policy logging records network policy enforcement events for GKE clusters that use Dataplane V2.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKE Dataplane V2 \\_|\\_ GKE networking \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Operations When you create a cluster with GKE Dataplane V2, network policy logging is built-in.",
+          "Network policy enforcement without GKE Dataplane V2 See Using network policy enforcement for instructions to enable network policy enforcement in clusters that don't use GKE Dataplane V2.",
+          "This lets GKE Dataplane V2 process network packets in the kernel more efficiently and report annotated actions back to user space for logging."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Challenge: Use a modern, secure dataplane, and provision clusters with the new dataplane Scenarios: The enterprise requires high performance and built-in policy enforcement to support demanding workloads and a zero-trust security posture.",
+          "Solution: use GKE Dataplane V2, which is eBPF-based and provides high performance and built-in network policy enforcement.",
+          "Solution: enable network policy logging to record allowed and denied connections."
+        ]
+      },
+      {
+        "title": "Explore GKE networking documentation and use cases \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Challenge: Use a modern, secure dataplane, and provision clusters with the new dataplane Scenarios: The enterprise requires high performance and built-in policy enforcement to support demanding workloads and a zero-trust security posture.",
+          "Solution: use GKE Dataplane V2, which is eBPF-based and provides high performance and built-in network policy enforcement.",
+          "Solution: enable network policy logging to record allowed and denied connections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/explore-gke-networking-docs-use-cases",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/network-overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.922Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "Fit assessment report source platform metadata",
+  "feature_slug": "fit-assessment-report-source-platform-metadata",
+  "summary": "Adds source platform and platform-specific VM path information to fit assessment reports.",
+  "extended_definition": "Adds source platform and platform-specific VM path information to fit assessment reports.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/mcdc-aws-collection-tutorial",
+      "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-batch-collection-tutorial",
+      "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect guest data from EC2 VMs for offline assessment \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/mcdc-aws-collection-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generate an offline assessment report After all the data is collected, you can produce a detailed HTML report: ./mcdc report --format html --full > REPORT NAME .html (Advanced) Modify the scripts to suit your needs It is possible that neither of the scripts exactly suit your needs.",
+          "Generate an offline assessment report. (Advanced) Modify the scripts to suit your needs. (Advanced) Write an orchestration script from scratch.",
+          "Download the script: curl -O https://raw.githubusercontent.com/GoogleCloudPlatform/migrate-to-containers/main/scripts/mcdc/mcdc collect aws guest ssh.sh chmod +x mcdc collect aws guest ssh.sh Run the script and save the output to a file: ./mcdc collect aws guest ssh.sh --region REGION Replace REGION with the region of your EC2 VMs."
+        ]
+      },
+      {
+        "title": "\"Batching guest discovery and data collection \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-batch-collection-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generate a CSV file with all the discovered VMs To generate a CSV file, use the export script from the Migrate to Containers repository on GitHub. vms = $( mcdc report --format csv tail -n +2 awk -F ',' '{; print $2\";\"$3\";\"$4\";;;\"}' ) printf \"%s\\n\" \"Name;Platform VM ID;OS Family;IP;USERNAME;PASSWORD\" printf \"%s\\n\" \" $vms \" The script uses the report command to generate a CSV file containing all the VMs that were discovered in the previous step.",
+          "Generate an offline assessment report After all the data is collected, you can produce a detailed HTML report: ./mcdc report --format html --full > REPORT NAME .html What's next Learn how to collect guest data from EC2 instances .",
+          "Generate an offline assessment report."
+        ]
+      },
+      {
+        "title": "\"Offline assessment overview \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The offline assessment creates reports that provide you with a high-level fit assessment result for migration and potential blockers for different migration journeys.",
+          "A detailed report on the applicable assessment rules, including any technical blockers to modernization.",
+          "It provides an overall fit assessment using one of the following scores: Excellent fit Good fit, with some findings that might require attention Needs minimal work before migrating Needs moderate work before migrating Needs major work before migrating No fit Insufficient data The offline assessment also gives you: The ability to get the assessment information about physical servers and virtual machine (VM) instances in your infrastructure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "raw.githubusercontent.com",
+      "ssh.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/mcdc-aws-collection-tutorial",
+        "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-batch-collection-tutorial",
+        "https://docs.cloud.google.com/migrate/containers/docs/offline-assessment-overview"
+      ]
+    }
+  ]
+}

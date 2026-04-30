@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.854Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey",
+  "feature_name": "customer-managed CA",
+  "feature_slug": "customer-managed-ca",
+  "summary": "A CA mode that uses a customer-hosted CA pool in Certificate Authority Service so client applications can connect without additional CA certificate downloads.",
+  "extended_definition": "A CA mode that uses a customer-hosted CA pool in Certificate Authority Service so client applications can connect without additional CA certificate downloads.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Only applicable if the Server CA mode is CUSTOMER MANAGED CAS CA.",
+          "The customer-managed CA pool for the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Only applicable if the Server CA mode is CUSTOMER MANAGED CAS CA.",
+          "The customer-managed CA pool for the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Only applicable if the Server CA mode is CUSTOMER MANAGED CAS CA.",
+          "The customer-managed CA pool for the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Instance JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"stateInfo\" : { object ( StateInfo ) } , \"uid\" : string , \"authorizationMode\" : enum ( AuthorizationMode ) , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"shardCount\" : integer , \"discoveryEndpoints\" : [ { object ( DiscoveryEndpoint ) } ] , \"nodeType\" : enum ( NodeType ) , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"engineVersion\" : string , \"engineConfigs\" : { string : string , ... } , \"nodeConfig\" : { object ( NodeConfig ) } , \"zoneDistributionConfig\" : { object ( ZoneDistributionConfig ) } , \"pscAutoConnections\" : [ { object ( PscAutoConnection ) } ] , \"pscAttachmentDetails\" : [ { object ( PscAttachmentDetail ) } ] , \"endpoints\" : [ { object ( InstanceEndpoint ) } ] , \"mode\" : enum ( Mode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"crossInstanceReplicationConfig\" : { object ( CrossInstanceReplicationConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"automatedBackupConfig\" : { object ( AutomatedBackupConfig ) } , \"availableMaintenanceVersions\" : [ string ] , \"allowFewerZonesDeployment\" : boolean , \"migrationConfig\" : { object ( MigrationConfig ) } , // Union field import sources can be only one of the following: \"gcsSource\" : { object ( GcsBackupSource ) } , \"managedBackupSource\" : { object ( ManagedBackupSource ) } // End of list of possible types for union field import sources . // Union field replica count can be only one of the following: \"replicaCount\" : integer // End of list of possible types for union field replica count . // Union field deletion protection enabled can be only one of the following: \"deletionProtectionEnabled\" : boolean // End of list of possible types for union field deletion protection enabled . // Union field simulate maintenance event can be only one of the following: \"simulateMaintenanceEvent\" : boolean // End of list of possible types for union field simulate maintenance event . // Union field ondemand maintenance can be only one of the following: \"ondemandMaintenance\" : boolean // End of list of possible types for union field ondemand maintenance . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field async instance endpoints deletion enabled can be only one of // the following: \"asyncInstanceEndpointsDeletionEnabled\" : boolean // End of list of possible types for union field // async instance endpoints deletion enabled . // Union field kms key can be only one of the following: \"kmsKey\" : string // End of list of possible types for union field kms key . // Union field backup collection can be only one of the following: \"backupCollection\" : string // End of list of possible types for union field backup collection . // Union field maintenance version can be only one of the following: \"maintenanceVersion\" : string // End of list of possible types for union field maintenance version . // Union field effective maintenance version can be only one of the following: \"effectiveMaintenanceVersion\" : string // End of list of possible types for union field // effective maintenance version . // Union field server ca mode can be only one of the following: \"serverCaMode\" : enum ( ServerCaMode ) // End of list of possible types for union field server ca mode . // Union field server ca pool can be only one of the following: \"serverCaPool\" : string // End of list of possible types for union field server ca pool . // Union field rotate server certificate can be only one of the following: \"rotateServerCertificate\" : boolean // End of list of possible types for union field rotate server certificate . // Union field acl policy can be only one of the following: \"aclPolicy\" : string // End of list of possible types for union field acl policy . // Union field acl policy in sync can be only one of the following: \"aclPolicyInSync\" : boolean // End of list of possible types for union field acl policy in sync . } Fields name string Identifier.",
+          "Only applicable if the Server CA mode is CUSTOMER MANAGED CAS CA.",
+          "The customer-managed CA pool for the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "memorystore.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/create_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/update_instance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Private Service Connect endpoint-level connection controls",
+  "feature_slug": "private-service-connect-endpoint-level-connection-controls",
+  "summary": "Service producers can now accept or reject connections from individual Private Service Connect endpoints.",
+  "extended_definition": "Service producers can now accept or reject connections from individual Private Service Connect endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+      "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+      "https://docs.cloud.google.com/vpc/docs/private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About service connection policies \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can optionally configure a connection limit to specify the maximum number of Private Service Connect connections that a given service producer can create in the policy's VPC network and region.",
+          "The subnets that are included in the service connection policy configuration provide IP addresses that are assigned to Private Service Connect endpoints.",
+          "Endpoints that are created through service connection policies can be made available in other VPC networks through connection propagation ."
+        ]
+      },
+      {
+        "title": "\"About Private Service Connect interfaces \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "Private Service Connect endpoints let service consumers initiate connections to service producers, while Private Service Connect interfaces let service producers initiate connections to service consumers (click to enlarge).",
+          "Private Service Connect endpoints can only initiate connections to the producer VPC network.",
+          "A connection between a Private Service Connect interface and a network attachment is similar to the connection between a Private Service Connect endpoint and a service attachment , but it has two key differences: A Private Service Connect interface lets a producer VPC network initiate connections to a consumer VPC network (managed service egress)."
+        ]
+      },
+      {
+        "title": "Private Service Connect \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "Private Service Connect provides an authorization model that gives consumers and producers granular control, ensuring that only the intended service endpoints and no other resources can connect to a service.",
+          "Service producers can initiate connections to service consumers by using Private Service Connect interfaces .",
+          "Private Service Connect endpoints can only initiate connections to the producer VPC network."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connection propagation With propagated connections, services that are accessible in one consumer VPC spoke through Private Service Connect endpoints can be privately accessed by other consumer VPC spokes that are connected to the same Network Connectivity Center hub.",
+          "Static routes that use --next-hop-ilb to specify the name of an internal passthrough Network Load Balancer forwarding rule can be used to send and receive traffic to a Private Service Connect endpoint when the route and the endpoint are in the same VPC network and region.",
+          "Organization policy constraints An Organization Policy Administrator can use the constraints/compute.disablePrivateServiceConnectCreationForConsumers constraint to define the set of endpoint types for which users cannot create forwarding rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.disablePrivateServiceConnectCreationForConsumers"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connection-policies",
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-interfaces",
+        "https://docs.cloud.google.com/vpc/docs/private-service-connect",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    }
+  ]
+}

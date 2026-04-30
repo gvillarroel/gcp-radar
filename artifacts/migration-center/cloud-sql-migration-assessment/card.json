@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.167Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center",
+  "feature_name": "Cloud SQL migration assessment",
+  "feature_slug": "cloud-sql-migration-assessment",
+  "summary": "Migration Center can assess database migration journeys to Cloud SQL and provide a technical fit assessment for the target.",
+  "extended_definition": "Migration Center can assess database migration journeys to Cloud SQL and provide a technical fit assessment for the target.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+      "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+      "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+      "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About infrastructure discovery and assessment \\_|\\_ Migration Center \\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How infrastructure assessment works After you've completed the discovery step and collected your infrastructure data into Migration Center, you group the servers and databases that you want to migrate based on your application or business objective.",
+          "Run automated scripts to collect data from other cloud providers or from databases, then import the data into Migration Center for further assessment.",
+          "Home Documentation Migration Migration Center Guides Send feedback About infrastructure discovery and assessment Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Generate an offline assessment \\_|\\_ Migration Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migration Center Guides Send feedback Generate an offline assessment Stay organized with collections Save and categorize content based on your preferences.",
+          "The offline assessment creates reports that provide you with a high-level fit assessment result for migration and potential blockers for different migration journeys.",
+          "The spreadsheet contains a number of worksheets displaying the following: Information about all discovered VMs Information about all discovered application components Fit score for all journeys for each VM and app component A worksheet per journey containing the results for all rules for that journey The mcdc CLI stores assessment data and log information in the /.mcdc directory on the host machine."
+        ]
+      },
+      {
+        "title": "Migration Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "source_id": "site-api-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discover your assets Migration Center helps you create an inventory of your assets, including servers, Microsoft SQL Server, MySQL, and PostgreSQL databases, by automatically scanning your on-premises environment.",
+          "Explore Migration Center The tools within Migration Center let you estimate your cloud costs, scan and assess your infrastructure, and plan your migration without making changes to your applications or workloads.",
+          "Assess your infrastructure With Migration Center, you can dive deep in the analysis and get a holistic view into your environment."
+        ]
+      },
+      {
+        "title": "Execute your migration \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/migration-execution",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must continue to perform discovery and assessment throughout your cloud migration project to recalibrate and enrich data relating to the following aspects: Application and database mapping to infrastructure mapping (to identify all of the infrastructure and platform components for a business workload) Mapping between infrastructure to applications, databases, and services (to identify all of the business workloads attached to an infrastructure or platform component) Dependencies across business workloads Resource consumption by workloads Identification of any workloads that were not discovered in the initial wave of assessment Identification of new or changed landing zone requirements that have not been identified in the initial wave of assessment Identification of blocking issues that potentially prevent the migration An ongoing assessment is critical to continuously calibrate and refine move group, identify and mitigate risks, and refine and optimize migration wave plans.",
+          "Item Description 0 Migration tools architecture Architecture of tools constituting a migration factory (tools for ongoing assessment, wave plan refinement, workload-specific migration, build, testing, deployment, and monitoring) 1 Migration checklist Checklist for use before and during the migration sprint 2 Inventory List of workloads that will be migrated to Google Cloud 3 Sprint runbook Execution guidelines for migrating each workload 4 Migration plan Step-by-step migration plan (process) to be followed during the migration sprint 5 Network and security rules List of all of the firewall rules for ingress and egress on Google Cloud DNS changes during migration to Google Cloud 6 Risks and mitigation Possible risks during the migration sprint and mitigation steps 7 Testing and validation Test plan to validate functional and non-functional requirements 8 Rollback plan Rollback steps by workload 9 Team composition Team composition and roster with contact details 10 Governance RACI matrix of migration execution team, cadence and reporting, escalation resolution mechanisms Migration execution After you have completed the migration planning and preparation phase, this section describes how to perform repeatable migrations and validations to Google Cloud.",
+          "Assess The first iteration of assessment happens during the migration planning phase, and produces data on dependencies between workloads and infrastructure components."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/discovery-and-assessment-overview",
+        "https://docs.cloud.google.com/migration-center/docs/run-offline-assessment",
+        "https://docs.cloud.google.com/migration-center/docs/migration-center-overview",
+        "https://docs.cloud.google.com/migration-center/docs/migration-execution"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.363Z",
+  "source_step08_card": "data/step-08/current/products/blockchain-node-engine/card.json",
+  "product_name": "Blockchain Node Engine",
+  "product_slug": "blockchain-node-engine",
+  "feature_name": "Erigon mainnet archive nodes",
+  "feature_slug": "erigon-mainnet-archive-nodes",
+  "summary": "Archive node support is available on Ethereum Mainnet for Erigon nodes.",
+  "extended_definition": "Archive node support is available on Ethereum Mainnet for Erigon nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+      "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.blockchainNodes \\_|\\_ Blockchain Node\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rest/v1/projects.locations.blockchainNodes",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ERIGON An implementation of Ethereum (execution client), on the efficiency frontier, written in Go.",
+          "Note this option is not currently available when creating new blockchain nodes.",
+          "EthereumEndpoints Contains endpoint information specific to Ethereum nodes."
+        ]
+      },
+      {
+        "title": "\"Package google.cloud.blockchainnodeengine.v1 \\_|\\_ Blockchain Node Engine\\",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/reference/rpc/google.cloud.blockchainnodeengine.v1",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Index BlockchainNodeEngine (interface) BlockchainNode (message) BlockchainNode.BlockchainType (enum) BlockchainNode.ConnectionInfo (message) BlockchainNode.ConnectionInfo.EndpointInfo (message) BlockchainNode.EthereumDetails (message) BlockchainNode.EthereumDetails.ConsensusClient (enum) BlockchainNode.EthereumDetails.EthereumEndpoints (message) BlockchainNode.EthereumDetails.ExecutionClient (enum) BlockchainNode.EthereumDetails.GethDetails (message) BlockchainNode.EthereumDetails.GethDetails.GarbageCollectionMode (enum) BlockchainNode.EthereumDetails.Network (enum) BlockchainNode.EthereumDetails.NodeType (enum) BlockchainNode.EthereumDetails.ValidatorConfig (message) BlockchainNode.State (enum) CreateBlockchainNodeRequest (message) DeleteBlockchainNodeRequest (message) GetBlockchainNodeRequest (message) ListBlockchainNodesRequest (message) ListBlockchainNodesResponse (message) OperationMetadata (message) UpdateBlockchainNodeRequest (message) BlockchainNodeEngine This service is the control plane API for Blockchain Node Engine, and can be used to create, read, and delete blockchain nodes.",
+          "ERIGON An implementation of Ethereum (execution client), on the efficiency frontier, written in Go.",
+          "Note this option is not currently available when creating new blockchain nodes."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Blockchain Node Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/blockchain-node-engine/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Allocation quotas The following quotas don't reset over time and instead are released when you release the resource: Quotas Value Blockchain nodes per project per location 24 Ethereum archive nodes per project per location 12 Ethereum full nodes per project per location 16 Polygon sentry archive nodes per project per location 12 Polygon sentry full nodes per project per location 16 Rate quotas The following quotas apply to Blockchain Node Engine requests: Quota Value Blockchain node API per minute per project 38,400 Control plane API per minute per project 240 Request a quota increase To adjust most quotas, use the Google Cloud console.",
+          "Your use of a resource in one project doesn't affect your available quota in another project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.blockchainNodes",
+      "projects.locations.blockchainNodes.delete",
+      "projects.locations.blockchainNodes.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

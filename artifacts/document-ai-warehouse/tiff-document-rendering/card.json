@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.426Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse",
+  "feature_name": "TIFF document rendering",
+  "feature_slug": "tiff-document-rendering",
+  "summary": "Returns a converted PNG image in the GetDocument response for TIFF files.",
+  "extended_definition": "Returns a converted PNG image in the GetDocument response for TIFF files.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/file-types",
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "The extraction can be done by Document AI Specialized parsers (for Procurement forms, Lending forms, others) OCR, AutoML, Forms parser (for images such as TIFF/PNG/etc.) Other custom models Text extracting tools for specialized document formats such as PDFs, Office documents and others.",
+          "Integrated with DocAI : Document AI Warehouse is integrated with Document AI processors at several levels: Document AI processing in UI : Document AI Warehouse UI enables users to upload either scanned PDFs/TIFFs or special document types, both of which are automatically extracted by Document AI OCR or specialized processors respectively before the document is indexed into Document AI Warehouse.",
+          "For example, the Search results for Driver License returns the histogram \"CA 500, NV 150, …\" Universal Access vs Doc-level Access Control Two access modes are supported in Document AI Warehouse for each project Universal access - any user can access any document in the project."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "The extraction can be done by Document AI Specialized parsers (for Procurement forms, Lending forms, others) OCR, AutoML, Forms parser (for images such as TIFF/PNG/etc.) Other custom models Text extracting tools for specialized document formats such as PDFs, Office documents and others.",
+          "Integrated with DocAI : Document AI Warehouse is integrated with Document AI processors at several levels: Document AI processing in UI : Document AI Warehouse UI enables users to upload either scanned PDFs/TIFFs or special document types, both of which are automatically extracted by Document AI OCR or specialized processors respectively before the document is indexed into Document AI Warehouse.",
+          "For example, the Search results for Driver License returns the histogram \"CA 500, NV 150, …\" Universal Access vs Doc-level Access Control Two access modes are supported in Document AI Warehouse for each project Universal access - any user can access any document in the project."
+        ]
+      },
+      {
+        "title": "Supported Files \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Name File Extension(s) MIME Type Portable Document Format (PDF) .pdf application/pdf Graphics Interchange Format (GIF) .gif image/gif Tag Image File Format (TIFF) .tiff , .tif image/tiff Joint Photographic Experts Group (JPEG) .jpg , .jpeg image/jpeg Portable Network Graphics (PNG) .png image/png Bitmap (BMP) .bmp image/bmp WebP .webp image/webp HyperText Markup Language (HTML) .html text/html Microsoft Word Office Open XML (OOXML) .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document Microsoft PowerPoint OOXML .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation Microsoft Excel OOXML .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet Note that some of these image formats are \"lossy\" (for example, JPEG).",
+          "Reducing file sizes for lossy formats may result in a degradation of image quality and accuracy of results from Document AI.",
+          "File Types Document AI supports the following image types."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-warehouse/docs/overview"
+      ]
+    }
+  ]
+}

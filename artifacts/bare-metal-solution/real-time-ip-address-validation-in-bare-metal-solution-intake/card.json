@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.328Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Real-time IP address validation in Bare Metal Solution intake",
+  "feature_slug": "real-time-ip-address-validation-in-bare-metal-solution-intake",
+  "summary": "Adds real-time validation to prevent conflicting IP addresses in Bare Metal Solution networks.",
+  "extended_definition": "Adds real-time validation to prevent conflicting IP addresses in Bare Metal Solution networks.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Best practices for Oracle on Bare Metal Solution \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Follow these steps: Install dnsmasq . yum makecache yum install dnsmasq Open the /etc/dnsmasq.conf file in edit mode. vi /etc/dnsmasq.conf In the /etc/dnsmasq.conf file, add the following lines: port=53 domain-needed bogus-priv strict-order expand-hosts domain=localdomain address=/.localdomain/127.0.0.1 address=//127.0.0.1 listen-address=127.0.0.1 resolv-file=/etc/dnsmasq-resolv.conf Edit the /etc/dnsmasq-resolv.conf file and the /etc/resolv.conf file to contain only the following line: nameserver 127.0.0.1 Start the dnsmasq service: systemctl restart dnsmasq systemctl status dnsmasq On both nodes, run the nslookup command. nslookup at-2811641-svr001 Server: 127.0.0.1 Address: 127.0.0.1#53 Name: at-2811641-svr001 Address: 192.168.1.10 nslookup at-2811641-svr002 Server: 127.0.0.1 Address: 127.0.0.1#53 Name: at-2811641-svr002 Address: 192.168.1.11 Install NTP When you install NTP, ensure that all the RAC nodes sync with the time of your jump host or your internal NTP server.",
+          "3600 a0980383143524f2b50476d59554e dm - 7 NETAPP , LUN C - Mode size = xxxG features = ' 4 queue if no path pg init retries 50 retain attached hw handle ' hwhandler = ' 1 alua ' wp = rw -+- policy = ' service - time 0 ' prio = 50 status = active - 14 : 0 : 3 : 2 sdf 8 : 80 active read y run ning - 16 : 0 : 5 : 2 sdv 65 : 80 active read y run ning -+- policy = ' service - time 0 ' prio = 10 status = enabled - 14 : 0 : 2 : 2 sdc 8 : 32 active read y run ning ` - 16 : 0 : 3 : 2 sdq 65 : 0 active read y run ning Use jumbo frames To prevent fragmentation of packets as they travel from one server to another in a RAC environment, Oracle recommends configuring your server interfaces with jumbo frames.",
+          "8980 bytes from svr001 ( 172 .16.1.10 ) : icmp seq = 1 ttl = 64 time = 0 .153 ms 8980 bytes from svr001 ( 172 .16.1.10 ) : icmp seq = 2 ttl = 64 time = 0 .151 ms --- svr001 ping statistics --- 2 packets transmitted, 2 received, 0 % packet loss, time 1001ms rtt min/avg/max/mdev = 0 .151/0.152/0.153/0.001 ms Oracle RMAN backups and latency impact If the Oracle RMAN backup process is not limited by the RATE parameter, it can push storage throughput or IOPS to the performance limit for a storage volume."
+        ]
+      },
+      {
+        "title": "SAP HANA planning guide \\_|\\_ SAP on Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "For details about how to deploy SAP HANA on Google Cloud, see: For single-host scale-up and multi-host scale-out deployments, see: Terraform: SAP HANA scale-up deployment guide For scale-out system with host auto-failover deployments, see: Terraform: SAP HANA scale-out system with host auto-failover deployment guide For scale-up high-availability cluster configurations, see: Terraform: SAP HANA scale-up high-availability cluster configuration guide Manual HA scale-up cluster configuration on RHEL Manual HA scale-up cluster configuration on SLES For scale-out high-availability cluster configurations, see: Terraform: SAP HANA scale-out high-availability cluster configuration guide Manual HA scale-out cluster configuration on SLES About SAP HANA on Google Cloud SAP HANA is an in-memory, column-oriented, relational database that provides high-performance analytics and real-time data processing.",
+          "To apply all of the recommended SAP HANA settings, including both of the preceding kernel parameters, specify the following saptune command: saptune solution apply HANA For more information about configuring SLES for SAP HANA, see: SAP note 2205917 - SAP HANA DB: Recommended OS settings for SLES 12 / SLES for SAP Applications 12 SAP note 2684254 - SAP HANA DB: Recommended OS settings for SLES 15 / SLES for SAP Applications 15 Memory-error recovery with Fast Restart on Compute Engine instances Enabling SAP HANA Fast Restart on compute instances in the M2, M3, and M4 families of Compute Engine memory-optimized machine types reduces the time it takes SAP HANA to recover from uncorrectable memory errors.",
+          "Evaluate your SAP workload using Workload Manager - a rule-based validation service that lets you scan your workloads and detect deviations from standards, rules, and best practices prescribed by SAP, Google Cloud, and OS vendors."
+        ]
+      },
+      {
+        "title": "\"SAP HANA high-availability planning guide \\_|\\_ SAP on Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Typical non-cloud deployments use a gratuitous Address Resolution Protocol (ARP) request to announce the movement and reallocation of a VIP to a new MAC address.",
+          "As a starting point, the following list shows some HA cluster resources and the associated permissions that they require: Fencing compute.instances.list compute.instances.get compute.instances.reset compute.instances.stop compute.instances.start logging.logEntries.create compute.zones.list VIP implemented by using an alias IP compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.instances.updateNetworkInterface compute.zoneOperations.get logging.logEntries.create VIP implemented by using static routes compute.instances.list compute.instances.get compute.zones.list logging.logEntries.create compute.routes.get compute.routes.create compute.routes.delete compute.routes.update compute.routes.list compute.networks.updatePolicy compute.networks.get compute.globalOperations.get logging.logEntries.create VIP implemented by using an internal load balancer No specific permissions required - the load balancer operates on health check statuses that does not require the cluster to interact with or change resources in Google Cloud Virtual IP implementation on Google Cloud A high-availability cluster uses a floating or virtual IP address (VIP) to move its workload from one cluster node to another in the event of an unexpected failure or for scheduled maintenance.",
+          "For example: primitive rsc SAPHanaTopology HA1 HDB00 ocf:suse:SAPHanaTopology \\ operations \\$id=\"rsc sap2 HA1 HDB00-operations\" \\ op monitor interval=\"10\" timeout=\"600\" \\ op start interval=\"0\" timeout=\"600\" \\ op stop interval=\"0\" timeout=\"300\" \\ params SID=\"HA1\" InstanceNumber=\"00\" clone cln SAPHanaTopology HA1 HDB00 rsc SAPHanaTopology HA1 HDB00 \\ meta is-managed=\"true\" clone-node-max=\"1\" target-role=\"Started\" interleave=\"true\" The timeout values affect each of the resource operations differently, as explained in the following table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.globalOperations.get",
+      "compute.instances.get",
+      "compute.instances.list",
+      "compute.instances.reset",
+      "compute.instances.start",
+      "compute.instances.stop",
+      "compute.instances.updateNetworkInterface",
+      "compute.networks.get",
+      "compute.networks.updatePolicy",
+      "compute.routes.create",
+      "compute.routes.delete",
+      "compute.routes.get",
+      "compute.routes.list",
+      "compute.routes.update",
+      "compute.zoneOperations.get",
+      "compute.zones.list",
+      "dnsmasq.conf",
+      "global.ini",
+      "logging.logEntries.create",
+      "resolv.conf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-planning-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/solutions/oracle/bms-oracle-best-practices",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-planning-guide"
+      ]
+    }
+  ]
+}

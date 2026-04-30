@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "HTTPModifier policy",
+  "feature_slug": "httpmodifier-policy",
+  "summary": "The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality; The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality.",
+  "extended_definition": "The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality; The HTTPModifier policy can change an existing request or response message with a subset of AssignMessage functionality.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 201,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The AssignMessage policy changes an existing request or response message, or creates a custom request or response message, during the API proxy flow.",
+          "Examples The following examples show some of the ways in which you can use the AssignMessage policy: 1: Add header The following example adds a header to the request with the <Add> element: <AssignMessage name=\"AM-add-headers-1\"> <Add> <Headers> <Header name=\"partner-id\">{verifyapikey.VAK-1.developer.app.partner-id}</Header> </Headers> </Add> <AssignTo>request</AssignTo> </AssignMessage> 2: Remove payload The following example deletes the payload from the response with the <Remove> element: < AssignMessage name = \"AM-remove-1\" > < DisplayName>remove - 1 < / DisplayName > < Remove > < Payload>true < / Payload > < / Remove > < AssignTo>response < / AssignTo > < / AssignMessage > 3: Modify response The following example modifies an existing response object by adding a header to it: <AssignMessage name=\"AM-modify-response\"> <Set> <Headers> <Header name=\"Cache-Hit\">{lookupcache.LookupCache-1.cachehit}</Header> </Headers> </Set> <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables> <AssignTo>response</AssignTo> </AssignMessage> This example does not create a new message.",
+          "Example 2 The following example creates a new request object, over-writing the existing object: < AssignMessage name = \"assignto-2\" > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" / > ... < / AssignMessage > When you create a new request or response object, the other elements of the AssignMessage policy (such as <Add> , <Set> , and <Copy> ) act on that new request or response object."
+        ]
+      },
+      {
+        "title": "Request and response variables \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 175,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following code in a JavaScript policy assembles the request URL from its parts: var req verb = context . getVariable ( 'request.verb' ); var req scheme = context . getVariable ( 'client.scheme' ); var req host = context . getVariable ( 'request.header.host' ); var req request uri = context . getVariable ( 'request.uri' ); var req url = req scheme + \"://\" + req host + req request uri ; The result of the concatenation might look like the following: https://www.example.com/sample Access response messages Using the variables that apply to the response message, policies may access message components including the header, the query parameters, and form parameters, the source IP address, the HTTP message body, and so on.",
+          "These policies include: AssignMessage policy : Creates or modifies HTTP request or response messages during an API proxy flow.",
+          "JavaCallout policy , JavaScript policy , PythonScript policy , RegularExpressionProtection policy : These policies let you write a script to access flow variables containing request and response data."
+        ]
+      },
+      {
+        "title": "Message templates \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The example uses the AssignMessage policy to generate the five levels of cascaded HMAC used to calculate a signature for AWS Signature v4: < AssignMessage name = ' AM - HMAC - AWS - 1 ' > < !-- 1 -- > < AssignVariable > < Name>DateValue < / Name > < Template > { timeFormatUTCMs (' yyyyMMdd ', system . timestamp )} < / Template > < / AssignVariable > < !-- 2 -- > < AssignVariable > < Name>FirstKey < / Name > < Template>AWS4 { private . secret aws access key } < / Template > < / AssignVariable > < !-- 3 -- > < AssignVariable > < Name>DateKey < / Name > < Template > { hmacSha256 ( FirstKey , DateValue ,' utf - 8 ',' base16 ')} < / Template > < / AssignVariable > < !-- 4 -- > < AssignVariable > < Name>DateRegionKey < / Name > < Template > { hmacSha256 ( DateKey , aws region ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 5 -- > < AssignVariable > < Name>DateRegionServiceKey < / Name > < Template > { hmacSha256 ( DateRegionKey , aws service ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 6 -- > < AssignVariable > < Name>SigningKey < / Name > < Template > { hmacSha256 ( DateRegionServiceKey ,' aws4 request ',' base16 ',' base16 ')} < / Template > < / AssignVariable > < !-- 7 -- > < AssignVariable > < Name>aws4 hmac value < / Name > < Template > { hmacSha256 ( SigningKey , stringToSign ,' base16 ',' base16 ')} < / Template > < / AssignVariable > < / AssignMessage > Other functions Create UUID function Generates and returns a UUID.",
+          "HTTPModifier policy <Set> child elements: <ContentType> <Verb> <Version> <Path> <StatusCode> <Headers> <QueryParams> <FormParams> <Add> child elements: <Headers> <QueryParams> <FormParams> MessageLogging policy <CloudLogging><Message> <Syslog><Message> <File><Message> OASValidation policy <OASResource> element RaiseFault policy <Set> elements: <ContentType> <FormParams> <Headers> <QueryParams> <StatusCode> <Path> <Payload> <Verb> <Version> <Add> elements: <FormParams> <Headers> <QueryParams> SAMLAssertion policy <Template> Only when the policy signature is <GenerateSAMLAssertion> ServiceCallout policy <Set> elements: <ContentType> <FormParams> <Headers> <QueryParams> <StatusCode> <Path> <Payload> <Verb> <Version> <Add> elements: <FormParams> <Headers> <QueryParams> <HTTPTargetConnection>/<URL> : See URL templating . <TargetEndpoint> elements that accept message templates <HTTPTargetConnection> elements Child elements that support message templates <SSLInfo> <Enabled> , <KeyAlias> , <KeyStore> , <TrustStore> , <ClientAuthEnabled> , <CLRStore> <LocalTargetConnection> <ApiProxy> , <ProxyEndpoint> , <Path> <Path> N/A <URL> No child elements.",
+          "Here's the ExtractVariables policy that extracts the user message information into a variable called standard.systemMessage : < ExtractVariables name = \"EV-BackendErrorResponse\" > < DisplayName > EV - BackendErrorResponse < / DisplayName > < JSONPayload > < Variable name = \"standard.systemMessage\" > < JSONPath >$. user message < / JSONPath > < / Variable > < / JSONPayload > < / ExtractVariables > Now, here's a perfectly valid AssignMessage policy that adds the extracted variable to the response payload (the proxy response): < AssignMessage name = \"AM-SetStandardFaultResponse\" > < DisplayName > AM - SetStandardFaultResponse < / DisplayName > < Set > < Payload contentType = \"application/json\" > { \"systemMessage\" : \"{standard.systemMessage}\" } < / Payload > < / Set > < IgnoreUnresolvedVariables > true < / IgnoreUnresolvedVariables > < AssignTo > response < / AssignTo > < / AssignMessage > Unfortunately, there's a problem."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "client.scheme",
+      "developer.app.partner",
+      "lookupcache.LookupCache",
+      "request.header.host",
+      "request.queryparam.apikey",
+      "request.uri",
+      "request.verb",
+      "standard.systemMessage",
+      "verifyapikey.VAK"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/message-template-intro",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/understanding-handling-request-response-data"
+      ]
+    }
+  ]
+}

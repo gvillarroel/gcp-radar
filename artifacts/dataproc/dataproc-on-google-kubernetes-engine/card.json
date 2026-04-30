@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Dataproc on Google Kubernetes Engine",
+  "feature_slug": "dataproc-on-google-kubernetes-engine",
+  "summary": "Dataproc on Google Kubernetes Engine lets users create Dataproc clusters to run Spark jobs on Kubernetes through the Dataproc jobs API.",
+  "extended_definition": "Dataproc on Google Kubernetes Engine lets users create Dataproc clusters to run Spark jobs on Kubernetes through the Dataproc jobs API.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the command: gcloud dataproc clusters gke create ${DP CLUSTER} \\ --region=${REGION} \\ --gke-cluster=${GKE CLUSTER} \\ --spark-engine-version=latest \\ --staging-bucket=${BUCKET} \\ --pools=\"name=${DP POOLNAME},roles=default\" \\ --setup-workload-identity \\ --history-server-cluster=${PHS CLUSTER} Notes: --spark-engine-version : The Spark image version used on the Managed Service for Apache Spark cluster.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\":\" PROJECT \", \"clusterName\":\" DP CLUSTER \", \"status\":{ \"state\":\"RUNNING\", \"stateStartTime\":\"2022-04-01T19:16:39.865716Z\" }, \"clusterUuid\":\"98060b77-...\", \"statusHistory\":[ { \"state\":\"CREATING\", \"stateStartTime\":\"2022-04-01T19:14:27.340544Z\" } ], \"labels\":{ \"goog-dataproc-cluster-name\":\" DP CLUSTER \", \"goog-dataproc-cluster-uuid\":\"98060b77-...\", \"goog-dataproc-location\":\" REGION \", \"goog-dataproc-environment\":\"prod\" }, \"virtualClusterConfig\":{ \"stagingBucket\":\" BUCKET \", \"kubernetesClusterConfig\":{ \"kubernetesNamespace\":\"dp-cluster\", \"gkeClusterConfig\":{ \"gkeClusterTarget\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER \", \"nodePoolTarget\":[ { \"nodePool\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL \", \"roles\":[ \"DEFAULT\" ] } ] }, \"kubernetesSoftwareConfig\":{ \"componentVersion\":{ \"SPARK\":\"3.1-...\" }, \"properties\":{ \"dpgke:dpgke.unstable.outputOnly.endpoints.sparkHistoryServer\":\"https://...\", \"spark:spark.eventLog.dir\":\"gs:// BUCKET /.../spark-job-history\", \"spark:spark.eventLog.enabled\":\"true\" } } }, \"auxiliaryServicesConfig\":{ \"sparkHistoryServerConfig\":{ \"dataprocCluster\":\"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER \" } } } Submit a Spark job After your Managed Service for Apache Spark on GKE virtual cluster is running, submit a Spark job using the Google Cloud console, gcloud CLI , or the Managed Service for Apache Spark jobs.submit API (by using direct HTTP requests or the Cloud Client Libraries ).",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters Request JSON body: { \"clusterName\":\" DP CLUSTER \", \"projectId\":\" PROJECT \", \"virtualClusterConfig\":{ \"auxiliaryServicesConfig\":{ \"sparkHistoryServerConfig\":{ \"dataprocCluster\":\"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER \" } }, \"kubernetesClusterConfig\":{ \"gkeClusterConfig\":{ \"gkeClusterTarget\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER \", \"nodePoolTarget\":[ { \"nodePool\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL \", \"roles\":[ \"DEFAULT\" ] } ] }, \"kubernetesSoftwareConfig\":{ \"componentVersion\":{ \"SPARK\":\"latest\" } } }, \"stagingBucket\":\" BUCKET \" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Recreate and update a Google Kubernetes Engine virtual cluster \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete the existing Managed Service for Apache Spark on GKE virtual cluster if you will create a cluster that has the same name as the cluster it is updating (if you are replacing the original cluster). curl -X DELETE -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \"https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters/${CLUSTER}\" Wait for the previous delete operation to finish, and then import the updated cluster configuration to create a new Managed Service for Apache Spark on GKE virtual cluster with the updated settings. curl -i -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json; charset=utf-8\" -d \"@${CLUSTER}-config.json\" \"https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters?alt=json\" Console The Google Cloud console does not support recreating a Managed Service for Apache Spark on GKE virtual cluster by importing an existing cluster's configuration.",
+          "Wait for the previous delete operation to finish, and then import the updated cluster configuration to create a new Managed Service for Apache Spark on GKE virtual cluster with the updated config settings. gcloud dataproc clusters import $CLUSTER \\ --region=$REGION \\ --source=\"${CLUSTER}-config.yaml\" API Set environment variables: CLUSTER= existing Managed Service for Apache Spark on GKE cluster name \\ REGION= region Export the existing Managed Service for Apache Spark on GKE cluster configuration to a YAML file. curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \"https://dataproc.googleapis.com/v1/projects/${PROJECT}/regions/${REGION}/clusters/${CLUSTER}?alt=json\" > \"${CLUSTER}-config.json\" Update the configuration.",
+          "Recreate and update a Managed Service for Apache Spark on GKE cluster gcloud Set environment variables: CLUSTER= existing Managed Service for Apache Spark on GKE cluster name \\ REGION= region Export the existing Managed Service for Apache Spark on GKE cluster configuration to a YAML file. gcloud dataproc clusters export $CLUSTER \\ --region=$REGION > \"${CLUSTER}-config.yaml\" Update the configuration."
+        ]
+      },
+      {
+        "title": "\"Create a Google Kubernetes Engine custom container image \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The spark: file prefix is needed when creating a cluster, but omitted when submitting a job (see Cluster properties ). gcloud CLI cluster creation example: gcloud dataproc clusters gke create \"${DP CLUSTER}\" \\ --properties=spark:spark.kubernetes.container.image= custom-image \\ ... other args ... gcloud CLI job submit example: gcloud dataproc jobs submit spark \\ --properties=spark.kubernetes.container.image= custom-image \\ ... other args ...",
+          "Home Documentation Data analytics Managed Service for Apache Spark Guides Send feedback Create a Google Kubernetes Engine custom container image Stay organized with collections Save and categorize content based on your preferences.",
+          "Base Spark images Managed Service for Apache Spark supports the following base Spark container images: Spark 3.5 : ${REGION}-docker.pkg.dev/cloud-dataproc/spark/dataproc 2.2 Sample custom container image build Sample Dockerfile FROM us - central1 - docker . pkg . dev / cloud - dataproc / spark / dataproc 2 .0 : latest Change to root temporarily so that it has permissions to create dirs and copy files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1",
+      "config.json",
+      "config.yaml",
+      "dataproc.editor",
+      "dataproc.googleapis.com",
+      "dataproc.worker",
+      "docker.pkg.dev",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "iam.serviceAccountUser",
+      "jobs.submit",
+      "request.json",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled",
+      "spark.kubernetes.container.image"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-recreate-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-custom-images"
+      ]
+    }
+  ]
+}

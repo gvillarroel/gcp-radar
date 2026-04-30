@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.682Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "United States regional endpoint selection",
+  "feature_slug": "united-states-regional-endpoint-selection",
+  "summary": "Regional endpoints support specifying United States regions for Cloud Storage access.",
+  "extended_definition": "Regional endpoints support specifying United States regions for Cloud Storage access.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+      "https://docs.cloud.google.com/storage/docs/ai-zones",
+      "https://docs.cloud.google.com/storage/docs/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bucket locations \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Multi-regions Multi-Region Name Multi-Region Description ASIA Data centers in Asia, excluding Hong Kong and Indonesia EU Data centers within member states of the European Union US Data centers in the United States Object data added to a bucket in the EU multi-region is not stored in the EUROPE-WEST2 (London) or EUROPE-WEST6 (Zürich) regions.",
+          "A multi-region is a large geographic area that contains two or more geographic regions, such as the United States ( US ).",
+          "Zone Region Dual-region Multi-region Availability Data redundancy within one availability zone Zonal outages might affect availability Data redundancy across availability zones (synchronous) RTO(recovery time objective)=0: automated failover and failback on zonal failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) Turbo replication option for replication within 15 minutes RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Pricing Offers the highest performance in Cloud Storage for demanding workloads at the highest storage price, out of all location types Zonal bucket-specific data transfer charges apply."
+        ]
+      },
+      {
+        "title": "Class Client (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "See: https://cloud.google.com/storage/docs/request-endpoints#cname scheme str (Optional) If bucket bound hostname is passed as a bare hostname, use this value as a scheme. https will work only when using a CDN.",
+          "A non-default universe domain or api endpoint should be set through client options. use auth w custom endpoint bool (Optional) Whether authentication is required under custom endpoints.",
+          "Dual-regions require exactly 2 regional locations."
+        ]
+      },
+      {
+        "title": "AI zones \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "source_id": "site-iam-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Geographic area Parent region AI zone United States us-central1 us-central1-ai1a United States us-south1 us-south1-ai1b Considerations You can access Google Cloud products in a Google Cloud region from the region's AI zone.",
+          "Storage architecture recommendations We recommend that you use a tiered storage architecture to balance cost, durability, and performance: Cold storage layer : use regional Cloud Storage buckets in standard zones for persistent, highly durable storage (the \"source of truth\") of your training datasets and model checkpoints.",
+          "Create a Rapid Cache instance in an AI zone for the regional source bucket that contains the training datasets or models that you want to serve."
+        ]
+      },
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "See: https://cloud.google.com/storage/docs/request-endpoints#cname scheme str (Optional) If bucket bound hostname is passed as a bare hostname, use this value as the scheme. https will work only when using a CDN.",
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets and https://cloud.google.com/storage/docs/locations Returns None if the property has not been set before creation, if the bucket's resource has not been loaded from the server, or if the bucket is not a dual-regions bucket. default event based hold Scalar property getter. default kms key name Retrieve / set default KMS encryption key for objects in the bucket.",
+          "Returns Type Description Bucket The bucket object created. generate signed url generate signed url ( expiration = None , api access endpoint = None , method = \"GET\" , headers = None , query parameters = None , client = None , credentials = None , version = None , virtual hosted style = False , bucket bound hostname = None , scheme = \"http\" , ) Generates a signed URL for this bucket."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bucket.cors",
+      "bucket.update",
+      "com.google.cloud.storage",
+      "policies.append"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/ai-zones",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket"
+      ]
+    }
+  ]
+}

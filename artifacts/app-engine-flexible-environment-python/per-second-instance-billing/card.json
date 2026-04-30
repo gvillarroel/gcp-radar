@@ -1,0 +1,116 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.313Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-python/card.json",
+  "product_name": "App Engine flexible environment Python",
+  "product_slug": "app-engine-flexible-environment-python",
+  "feature_name": "Per-second instance billing",
+  "feature_slug": "per-second-instance-billing",
+  "summary": "App Engine flexible environment bills instance usage in per-second increments with a one-minute minimum.",
+  "extended_definition": "App Engine flexible environment bills instance usage in per-second increments with a one-minute minimum.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How requests are handled Stay organized with collections Save and categorize content based on your preferences.",
+          "Unsupported HTTP requests The following features are not supported by App Engine flexible environment: HTTP/2 traffic to the backend service.",
+          "However, this is bound by the following restrictions: App Engine reserves automatic scaling capacity for applications with low latency, where the application responds to requests in less than one second."
+        ]
+      },
+      {
+        "title": "\"Debugging an instance \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Debugging an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "In order to debug an instance, your role must contain the appengine.instances.enableDebug permission.",
+          "Note: This guide is applicable to all runtimes in the flexible environment except for .NET."
+        ]
+      },
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences.",
+          "NTP with App Engine flexible environment The App Engine flexible environment has network time protocol (NTP) services which use Google NTP servers.",
+          "Health checking App Engine sends periodic health check requests to confirm that an instance is running, and to check that an instance is fully started and ready to accept incoming requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.instances.enableDebug"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/flexible/debugging-an-instance",
+        "https://docs.cloud.google.com/appengine/docs/flexible/how-instances-are-managed"
+      ]
+    }
+  ]
+}

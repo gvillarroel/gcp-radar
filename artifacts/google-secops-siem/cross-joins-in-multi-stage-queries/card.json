@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.070Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Cross joins in multi-stage queries",
+  "feature_slug": "cross-joins-in-multi-stage-queries",
+  "summary": "Cross joins in YARA-L 2.0 multi-stage queries compare individual UDM events against aggregated statistics from earlier stages.",
+  "extended_definition": "Cross joins in YARA-L 2.0 multi-stage queries compare individual UDM events against aggregated statistics from earlier stages.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Functions Supported in: Google secops SIEM This section describes the YARA-L 2.0 functions that you can use in Rules, Search, and Dashboard queries.",
+          "You can use YARA-L to search for UDM events across all of the IP addresses within a subnetwork using the net.ip in range cidr() statement.",
+          "In UDM search, grouped fields are used to search across multiple fields of a similar type."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Search limits and quotas Google SecOps enforces limits on search queries to ensure platform stability and consistent performance across programmatic and web interface.",
+          "You can use them to query multiple UDM fields at the same time without typing each field individually."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "These rules detect complex, multistage threats that individual rules can miss.",
+          "Example: YARA-L rule matching IPs from a data table column rule ioc ip4 matches { meta : description = \"IOC IPv4 matching using data tables\" events : $ ioc . metadata . event type = \"NETWORK CONNECTION\" $ ioc . target . ip = $ dip // checks if the IP address is in the ip address column of data table \"string demo list\" $ dip in % string demo list . ip address condition : $ ioc } For multi-dimensional matching (for example, IP address + port), you can use row-based comparison against a data table with multiple columns.",
+          "However, it doesn't support complex OR logic across multiple distinct groups (for example, (IP1 AND Port1) OR (IP2 AND Port2) )."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datalake.events",
+      "e.metadata.event",
+      "e.principal.file.size",
+      "e.principal.ip",
+      "e.principal.user.userid",
+      "net.ip",
+      "susupicious.ip",
+      "window.median",
+      "window.mode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ]
+}

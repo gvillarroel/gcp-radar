@@ -1,0 +1,202 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.406Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service",
+  "feature_name": "CryptoKey labels",
+  "feature_slug": "cryptokey-labels",
+  "summary": "Cloud KMS CryptoKeys support user-defined labels through the labels field.",
+  "extended_definition": "Cloud KMS CryptoKeys support user-defined labels through the labels field.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "The properties of new CryptoKeyVersion instances created by either [CreateCryptoKeyVersion][KeyManagementService.CreateCryptoKeyVersion] or auto-rotation are controlled by this template. labels map (key: string, value: string) Labels with user-defined metadata.",
+          "JSON representation { \"name\" : string , \"primary\" : { object ( CryptoKeyVersion ) } , \"purpose\" : enum ( CryptoKeyPurpose ) , \"createTime\" : string , \"nextRotationTime\" : string , \"versionTemplate\" : { object ( CryptoKeyVersionTemplate ) } , \"labels\" : { string : string , ... } , \"importOnly\" : boolean , \"destroyScheduledDuration\" : string , \"cryptoKeyBackend\" : string , // Union field rotation schedule can be only one of the following: \"rotationPeriod\" : string // End of list of possible types for union field rotation schedule . } Fields name string Output only.",
+          "The resource name for this CryptoKeyVersion in the format projects/ /locations/ /keyRings/ /cryptoKeys/ /cryptoKeyVersions/ . state enum ( CryptoKeyVersionState ) The current state of the CryptoKeyVersion . protectionLevel enum ( ProtectionLevel ) Output only."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.keyRings.cryptoKeys \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The properties of new CryptoKeyVersion instances created by either [CreateCryptoKeyVersion][KeyManagementService.CreateCryptoKeyVersion] or auto-rotation are controlled by this template. labels map (key: string, value: string) Labels with user-defined metadata.",
+          "JSON representation { \"name\" : string , \"primary\" : { object ( CryptoKeyVersion ) } , \"purpose\" : enum ( CryptoKeyPurpose ) , \"createTime\" : string , \"nextRotationTime\" : string , \"versionTemplate\" : { object ( CryptoKeyVersionTemplate ) } , \"labels\" : { string : string , ... } , \"importOnly\" : boolean , \"destroyScheduledDuration\" : string , \"cryptoKeyBackend\" : string , // Union field rotation schedule can be only one of the following: \"rotationPeriod\" : string // End of list of possible types for union field rotation schedule . } Fields name string Output only.",
+          "Home Documentation Security Cloud KMS Reference Send feedback REST Resource: projects.locations.keyRings.cryptoKeys Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Encrypting and decrypting data with a symmetric key \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To decrypt encrypted data, make a POST request and provide the appropriate project and key information and specify the encrypted text (also known as ciphertext ) to be decrypted in the ciphertext field of the request body. curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME :decrypt\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data \"{\\\"ciphertext\\\": \\\" ENCRYPTED DATA \\\"}\" Replace the following: PROJECT ID : the ID of the project that contains the key ring and key that you want to use for decryption.",
+          "To encrypt data, make a POST request and provide the appropriate project and key information and specify the base64 encoded text to be encrypted in the plaintext field of the request body. curl \"https://cloudkms.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME :encrypt\" \\ --request \"POST\" \\ --header \"authorization: Bearer TOKEN \" \\ --header \"content-type: application/json\" \\ --data \"{\\\"plaintext\\\": \\\" PLAINTEXT TO ENCRYPT \\\"}\" Replace the following: PROJECT ID : the ID of the project that contains the key ring and key that you want to use for encryption.",
+          "One way to permit a user to encrypt or decrypt is to add the user to the roles/cloudkms.cryptoKeyEncrypter , roles/cloudkms.cryptoKeyDecrypter , or roles/cloudkms.cryptoKeyEncrypterDecrypter IAM roles for that key."
+        ]
+      },
+      {
+        "title": "\"Method: projects.cryptoKeys.list \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list",
+        "source_id": "site-api-reference",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Google Cloud project for which to retrieve key metadata, in the format projects/ Authorization requires the following IAM permission on the specified resource parent : cloudkms.cryptoKeys.list Query parameters Parameters pageSize integer Optional.",
+          "HTTP request GET https://kmsinventory.googleapis.com/v1/{parent=projects/ }/cryptoKeys The URL uses gRPC Transcoding syntax.",
+          "JSON representation { \"cryptoKeys\" : [ { object ( CryptoKey ) } ] , \"nextPageToken\" : string } Fields cryptoKeys[] object ( CryptoKey ) The list of CryptoKeys . nextPageToken string The page token returned from the previous response if the next page is desired."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyDecrypter",
+      "cloudkms.cryptoKeyEncrypter",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cloudkms.cryptoKeys.list",
+      "cloudkms.cryptoKeyVersions.useToDecrypt",
+      "cloudkms.cryptoKeyVersions.useToEncrypt",
+      "cloudkms.googleapis.com",
+      "kmsinventory.googleapis.com",
+      "projects.cryptoKeys",
+      "projects.cryptoKeys.list",
+      "projects.locations.keyRings.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyDecrypter",
+      "roles/cloudkms.cryptoKeyEncrypter",
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/encrypt-decrypt",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys/list"
+      ]
+    }
+  ]
+}

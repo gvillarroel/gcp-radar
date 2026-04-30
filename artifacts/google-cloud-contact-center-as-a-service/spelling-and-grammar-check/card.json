@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.480Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service",
+  "feature_name": "Spelling and grammar check",
+  "feature_slug": "spelling-and-grammar-check",
+  "summary": "The agent adapter now provides spelling and grammar suggestions while agents enter text.",
+  "extended_definition": "The agent adapter now provides spelling and grammar suggestions while agents enter text.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-location",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent Assist \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Spelling and grammar correction : provides spelling and grammar suggestions for messages that agents type into the message field of the chat adapter.",
+          "If you select the Spelling and Grammar Check checkbox, then the following two checkboxes appear: Allow agents to turn on/off automatic checks : Select this checkbox to let agents turn on and off spelling and grammar check in the chat adapter.",
+          "Allow agents to select languages : Select this checkbox to let agents select the language that the chat adapter uses when checking spelling and grammar."
+        ]
+      },
+      {
+        "title": "\"Standard Reports Agent and Teams Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Waiting : Voicemails received in the last week that have not be listened to via the Agent Adapter.",
+          "Check the checkbox next to Agent Status Summary Report and/or Agent Activity - Timeline Report .",
+          "Voicemail Read : Voicemails an Agent has listened to via the Agent Adapter."
+        ]
+      },
+      {
+        "title": "\"Localized languages in the agent adapter \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-location",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User interface components Localized user interface components: The agent will see all call and chat adapter controls in the language set or selected, including call flows, confirmation and error messages, agent statistics and more.",
+          "Home Documentation AI and ML Google Cloud CCaaS User Guides Send feedback Localized languages in the agent adapter Stay organized with collections Save and categorize content based on your preferences.",
+          "Agents can choose from a list of supported languages using the CCAI Platform portal and localized Adapters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-location"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.964Z",
+  "source_step08_card": "data/step-08/current/products/cloud-database-migration-service/card.json",
+  "product_name": "Cloud Database Migration Service",
+  "product_slug": "cloud-database-migration-service",
+  "feature_name": "MySQL 8.0.42 minor version support for homogeneous MySQL migrations",
+  "feature_slug": "mysql-8-0-42-minor-version-support-for-homogeneous-mysql-migrations",
+  "summary": "Database Migration Service now supports MySQL minor version 8.0.42 for homogeneous MySQL migrations.",
+  "extended_definition": "Database Migration Service now supports MySQL minor version 8.0.42 for homogeneous MySQL migrations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-migration/docs/homogeneous-migrations",
+      "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest",
+      "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job",
+      "https://docs.cloud.google.com/database-migration/docs/supported-databases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported source and destination databases \\_|\\_ Database Migration Service\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/supported-databases",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "",
+        "evidence_snippets": [
+          "Homogeneous migrations supported source and destination databases Select your homogeneous migration scenario to view which source and destination databases the migration supports: MySQL to Cloud SQL for MySQL Supported source databases Amazon RDS 5.6, 5.7, 8.0, 8.4 Self-managed MySQL (on premises or on any cloud VM that you fully control) 5.5, 5.6, 5.7, 8.0, 8.4 Cloud SQL for MySQL 5.6, 5.7, 8.0, 8.4 Amazon Aurora 5.6, 5.7, 8.0, 8.4 Microsoft Azure Database for MySQL 5.7, 8.0, 8.4 For MySQL 8.0 sources, Database Migration Service also supports the following minor versions: 8.0.18, 8.0.26, 8.0.27, 8.0.28, 8.0.30, 8.0.31, 8.0.32, 8.0.33, 8.0.34, 8.0.35, 8.0.36, 8.0.37, 8.0.39, 8.0.40, 8.0.41, 8.0.42, 8.0.43.",
+          "Supported destination databases Cloud SQL for MySQL 5.6 and 5.7 Cloud SQL for MySQL 8.0 including the following minor versions: 8.0.18, 8.0.26, 8.0.27, 8.0.28, 8.0.30, 8.0.31, 8.0.32, 8.0.33, 8.0.34, 8.0.35, 8.0.36, 8.0.37, 8.0.39, 8.0.40, 8.0.41, 8.0.42, 8.0.43.",
+          "Database Migration Service supports both homogeneous migrations, such as MySQL to Cloud SQL for MySQL, and heterogeneous migrations, such as Oracle to Cloud SQL for PostgreSQL."
+        ]
+      },
+      {
+        "title": "\"Supported source and destination databases \\_|\\_ Database Migration Service\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest",
+        "source_id": "site-api-reference",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported source databases Amazon RDS 5.6, 5.7, 8.0, 8.4 Self-managed MySQL (on premises or on any cloud VM that you fully control) 5.5, 5.6, 5.7, 8.0, 8.4 Cloud SQL for MySQL 5.6, 5.7, 8.0, 8.4 Amazon Aurora 5.6, 5.7, 8.0, 8.4 Microsoft Azure Database for MySQL 5.7, 8.0, 8.4 For MySQL 8.0 sources, Database Migration Service also supports the following minor versions: 8.0.18, 8.0.26, 8.0.27, 8.0.28, 8.0.30, 8.0.31, 8.0.32, 8.0.33, 8.0.34, 8.0.35, 8.0.36, 8.0.37, 8.0.39, 8.0.40, 8.0.41, 8.0.42, 8.0.43.",
+          "Supported destination databases Cloud SQL for MySQL 5.6 and 5.7 Cloud SQL for MySQL 8.0 including the following minor versions: 8.0.18, 8.0.26, 8.0.27, 8.0.28, 8.0.30, 8.0.31, 8.0.32, 8.0.33, 8.0.34, 8.0.35, 8.0.36, 8.0.37, 8.0.39, 8.0.40, 8.0.41, 8.0.42, 8.0.43.",
+          "MySQL PostgreSQL PostgreSQL to AlloyDB Overview Database Migration Service supports one-time and continuous migrations from source databases to Cloud SQL destination databases."
+        ]
+      },
+      {
+        "title": "\"Homogeneous migrations \\_|\\_ Database Migration Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/homogeneous-migrations",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported scenarios Database Migration Service supports the following homogeneous migrations: Migrate to Cloud SQL for MySQL Migrate to Cloud SQL for PostgreSQL Migrate to AlloyDB for PostgreSQL Migrate to Cloud SQL for SQL Server Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Database Migration Service Guides Send feedback Homogeneous migrations Stay organized with collections Save and categorize content based on your preferences.",
+          "Homogeneous migrations take place when you migrate data from a source database to a destination database that use the same database technology (have the same database engine)."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: datamigration \\_|\\_ Database Migration Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job",
+        "source_id": "site-api-reference",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "MigrationJob JSON representation { \"name\" : string , \"createTime\" : string , \"updateTime\" : string , \"labels\" : { string : string , ... } , \"displayName\" : string , \"state\" : enum ( State ) , \"phase\" : enum ( Phase ) , \"type\" : enum ( Type ) , \"dumpPath\" : string , \"dumpFlags\" : { object ( DumpFlags ) } , \"source\" : string , \"destination\" : string , \"duration\" : string , \"error\" : { object ( Status ) } , \"sourceDatabase\" : { object ( DatabaseType ) } , \"destinationDatabase\" : { object ( DatabaseType ) } , \"endTime\" : string , \"conversionWorkspace\" : { object ( ConversionWorkspaceInfo ) } , \"filter\" : string , \"cmekKeyName\" : string , \"performanceConfig\" : { object ( PerformanceConfig ) } , \"postgresHomogeneousConfig\" : { object ( PostgresHomogeneousConfig ) } , \"sqlserverHomogeneousMigrationJobConfig\" : { object ( SqlServerHomogeneousMigrationJobConfig ) } , \"dumpType\" : enum ( DumpType ) , \"objectsConfig\" : { object ( MigrationJobObjectsConfig ) } , \"purpose\" : enum ( Purpose ) , \"originalMigrationName\" : string , // Union field connectivity can be only one of the following: \"reverseSshConnectivity\" : { object ( ReverseSshConnectivity ) } , \"vpcPeeringConnectivity\" : { object ( VpcPeeringConnectivity ) } , \"staticIpConnectivity\" : { object ( StaticIpConnectivity ) } // End of list of possible types for union field connectivity . // Union field config can be only one of the following: \"oracleToPostgresConfig\" : { object ( OracleToPostgresConfig ) } , \"sqlserverToPostgresConfig\" : { object ( SqlServerToPostgresConfig ) } , \"postgresToSqlserverConfig\" : { object ( PostgresToSqlServerConfig ) } // End of list of possible types for union field config . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. createTime string ( Timestamp format) Output only.",
+          "Supported for MySQL to CloudSQL for MySQL migrations only. objectsConfig object ( MigrationJobObjectsConfig ) Optional.",
+          "The pattern must define one of the following capture group sets: Capture group set #1 yy/yyyy - year, 2 or 4 digits mm - month number, 1-12 dd - day of month, 1-31 hh - hour of day, 00-23 mi - minutes, 00-59 ss - seconds, 00-59 Example: For backup file TestDB 20230802 155400.trn, use pattern: (? . ) backup (? \\d{4})(? \\d{2})(? \\d{2}) (? \\d{2})(? \\d{2})(? \\d{2}).trn Capture group set #2 timestamp - unix timestamp Example: For backup file TestDB.1691448254.trn, use pattern: (? . ).(? \\d ).trn or (? . ).(? \\d ).trn databaseBackups[] object ( SqlServerDatabaseBackup ) Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-migration/docs/supported-databases",
+        "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest",
+        "https://docs.cloud.google.com/database-migration/docs/homogeneous-migrations",
+        "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-migration/docs/supported-databases",
+        "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest",
+        "https://docs.cloud.google.com/database-migration/docs/homogeneous-migrations",
+        "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-migration/docs/supported-databases",
+        "https://docs.cloud.google.com/database-migration/docs/mysql/migration-src-and-dest",
+        "https://docs.cloud.google.com/database-migration/docs/homogeneous-migrations",
+        "https://docs.cloud.google.com/database-migration/docs/reference/mcp/tools_list/get_migration_job"
+      ]
+    }
+  ]
+}

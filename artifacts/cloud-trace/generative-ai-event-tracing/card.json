@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.166Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "Generative AI event tracing",
+  "feature_slug": "generative-ai-event-tracing",
+  "summary": "Cloud Trace can capture and display generative AI events from applications instrumented with OpenTelemetry and LangGraph.",
+  "extended_definition": "Cloud Trace can capture and display generative AI events from applications instrumented with OpenTelemetry and LangGraph.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/overview",
+      "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following screenshot illustrates how the Trace Explorer page renders text-based generative AI events that are attached to the spans: To learn about the sample application that generated the previous screenshot, see Instrument a LangGraph ReAct Agent with OpenTelemetry .",
+          "You can only search by plain text, and you can't search logs, events, or metadata.",
+          "There are two supported configurations: Text-based prompts and responses that are attached to the spans as attributes , which are key-value pairs that describe some characteristic or an event."
+        ]
+      },
+      {
+        "title": "Cloud Trace overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tracing client If an OpenTelemetry library is available for your programming language , you can simplify the process of creating and sending trace data by using OpenTelemetry .",
+          "To view and analyze your span data, you can use the Trace Explorer and Observability Analytics pages in the Google Cloud console: Trace Explorer : Displays aggregate information about your trace data and lets you examine individual traces in detail.",
+          "Configurations with automatic tracing Some configurations result in automatic capture of trace data: App Engine standard environment Java 8, Python 2, and PHP 5 applications don't need to use the Trace client libraries."
+        ]
+      },
+      {
+        "title": "\"Collect and view multimodal prompts and responses \\_|\\_ Cloud Trace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "source_id": "site-docs-root-2",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you add the following filter, then only log entries that contain the specified label appear: labels. \"event.name\" = \"gen ai.client.inference.operation.details\" To view the prompts and responses that are referenced by a log entry, in the log entry, click View trace details .",
+          "Find spans that contain multimodal prompts and responses To find the spans that contain multimodal prompts and responses, do the following: In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar.",
+          "This document describes how you can configure a LangGraph ReAct agent or a generative AI agent built with the Agent Development Kit (ADK) framework to send multimodal prompts and responses to your Google Cloud project."
+        ]
+      },
+      {
+        "title": "C++ and OpenTelemetry \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/cpp-ot",
+        "source_id": "site-docs-root-2",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this // example, we just tweak some OpenTelemetry settings that google-cloud-cpp // does not expose. opentelemetry :: sdk :: trace :: BatchSpanProcessorOptions options ; options . schedule delay millis = std :: chrono :: milliseconds ( 1000 ); auto processor = opentelemetry :: sdk :: trace :: BatchSpanProcessorFactory :: Create ( std :: move ( exporter ), options ); // Create a tracer provider and set it as the global trace provider opentelemetry :: trace :: Provider :: SetTracerProvider ( std :: shared ptr<opentelemetry :: trace :: TracerProvider > ( opentelemetry :: sdk :: trace :: TracerProviderFactory :: Create ( std :: move ( processor )))); MyApplicationCode (); // Clear the global trace provider opentelemetry :: trace :: Provider :: SetTracerProvider ( opentelemetry :: nostd :: shared ptr < opentelemetry :: trace :: TracerProvider > ()); } Instrument your own application For information about how to configure your application to capture trace spans, see OpenTelemetry Tracing .",
+          "This page describes how to do all of the following: Create a span Create nested spans Set span attributes Create spans with events Create spans with links // For more details on the OpenTelemetry code in this sample, see: // https://opentelemetry.io/docs/instrumentation/cpp/manual/ namespace gc = :: google :: cloud ; using :: opentelemetry :: trace :: Scope ; []( std :: string project id ) { auto project = gc :: Project ( std :: move ( project id )); auto configuration = gc :: otel :: ConfigureBasicTracing ( project ); // Initialize the Tracer.",
+          "The following lists the default paths for Windows and Linux: Windows: %APPDATA%/gcloud/application default credentials.json Linux: $HOME/.config/gcloud/application default credentials.json Set the GOOGLE APPLICATION CREDENTIALS environment variable to the path to your service account: Linux/macOS export GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key Windows set GOOGLE APPLICATION CREDENTIALS = path-to-your-service-accounts-private-key PowerShell: $env :GOOGLE APPLICATION CREDENTIALS = \"path-to-your-service-accounts-private-key\" View traces In the Google Cloud console, go to the Trace explorer page: Go to Trace explorer You can also find this page by using the search bar."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.client.inference.operation.details",
+      "ai.input.messages",
+      "ai.output.messages",
+      "ai.system",
+      "com.google.cloud.trace.v2.TraceServiceClient",
+      "credentials.json",
+      "event.name",
+      "input.jsonl",
+      "instructions.jsonl",
+      "opentelemetry.io",
+      "output.jsonl"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/overview",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/overview",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/overview",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/overview",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/overview",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/trace/docs/setup/cpp-ot"
+      ]
+    }
+  ]
+}

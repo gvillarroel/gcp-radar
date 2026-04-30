@@ -1,0 +1,106 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:40.710Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Horizontal autoscaling for read pool instances",
+  "feature_slug": "horizontal-autoscaling-for-read-pool-instances",
+  "summary": "Horizontal autoscaling for read pool instances automatically scales AlloyDB read pools to match workload demand.",
+  "extended_definition": "Horizontal autoscaling for read pool instances automatically scales AlloyDB read pools to match workload demand.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+      "https://docs.cloud.google.com/alloydb/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Scale an instance \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a read pool instance with a schedule-based policy To create a read pool instance with a schedule-based automatic scaling policy that defines a minimum number of nodes for a specific time window, run the following command: Note: If you have an existing autoscaling policy that has --autoscaler-max-node-count set , then this becomes an optional field. gcloud beta alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --enable-autoscaler \\ --autoscaler-max-node-count = MAX NODE COUNT \\ --autoscaler-set-schedule = SCHEDULE NAME \\ --autoscaler-schedule-cron-exp = CRON EXPRESSION \\ --autoscaler-schedule-duration-seconds = DURATION SECONDS \\ --autoscaler-schedule-time-zone = TIME ZONE \\ --autoscaler-schedule-min-node-count = MIN NODE COUNT \\ --autoscaler-schedule-description = \" DESCRIPTION \" { --cpu-count = CPU COUNT --machine-type = MACHINE TYPE } Replace the following: MAX NODE COUNT : the maximum number of nodes that the autoscaler can create in the read pool instance.",
+          "This resets the read pool to its original node count before autoscaling was enabled. gcloud beta alloydb instances update INSTANCE ID \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --project = PROJECT ID \\ --no-enable-autoscaler Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Scaling type Method Automation Primary instances Read pool instances Vertical Changing machine type Manual Supported Supported Horizontal Changing node count Manual and automatic Not supported Supported Before you begin The Google Cloud project you are using must have been enabled to access AlloyDB ."
+        ]
+      },
+      {
+        "title": "\"Create a read pool instance in a cluster \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable managed connection pooling in your read pool instance, add the --enable-connection-pooling flag to the gcloud alloydb instances create command: gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --enable-connection-pooling To create a read pool instance for a public IP-enabled cluster, add the --assign-inbound-public-ip= ASSIGN IPV4 parameter. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --assign-inbound-public-ip = ASSIGN IPV4 Optionally, you can pass the comma separated list of CIDR blocks, such as 64.233.160.0/16 to the --authorized-external-networks parameter to set authorized external networks on your instance.",
+          "Use the gcloud alloydb instances create command to create a read pool instance. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID Replace the following: INSTANCE ID : The ID of the instance you are creating.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Create a read pool instance in a cluster Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following diagram illustrates the AlloyDB resource hierarchy, featuring a cluster scaled with a primary instance and multiple load-balanced read pool instances: Cluster: a top-level resource that acts as a logical container for your databases, logs, and other metadata within a region.",
+          "AlloyDB pricing varies based on your configuration settings and depends on the following factors: Instance resources: the machine type (number of vCPUs and amount of RAM) selected for your primary and read pool instances.",
+          "Whenever needed, you can promote a secondary cluster into a fully featured AlloyDB cluster with primary and read pool instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-scale",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview"
+      ]
+    }
+  ]
+}

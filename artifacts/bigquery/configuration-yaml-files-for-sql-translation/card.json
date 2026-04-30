@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Configuration YAML files for SQL translation",
+  "feature_slug": "configuration-yaml-files-for-sql-translation",
+  "summary": "BigQuery SQL translation supports configuration YAML files to transform SQL code during translation.",
+  "extended_definition": "BigQuery SQL translation supports configuration YAML files to transform SQL code during translation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The interactive SQL translator, BigQuery Migration API, the batch SQL translator, and the batch translation Python client supports the use of multiple configuration YAML files in a single translation job.",
+          "Transform SQL translations using configuration YAML files This document shows you how to use configuration YAML files to transform SQL code while migrating it to BigQuery.",
+          "Remove the upper function in the default translation output query translation rules : - instruction : \"Remove upper() function\" examples : - input : \"upper(X)\" output : \"X\" Create multiple translation rules to customize the translation output translation rules : - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Insert a comment at the head that explains each statement in detail. suggestion type: QUERY CUSTOMIZATION rewrite target: TARGET SQL Remove SQL comments from the translation input query translation rules : - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Generate translation explanations using default LLM prompt This example uses the default LLM prompts provided by the translation service to generate text explanations: translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" Generates translation explanations using your own natural language prompts translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" Multiple suggestion types in a single configuration YAML file translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Applying multiple YAML configurations When specifying a configuration YAML file in a batch or interactive SQL translation, you can select multiple configuration YAML files in a single translation job to reflect multiple transformations."
+        ]
+      },
+      {
+        "title": "\"Translate SQL queries with the translation API \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/api-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example translates the Teradata SQL scripts located in the gs://my data bucket/teradata/input/ Cloud Storage directory and stores results in the Cloud Storage directory gs://my data bucket/teradata/output/ with additional AI suggestion: { \"tasks\" : { \"task name\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translation details\" : { \"target base uri\" : \"gs://my data bucket/teradata/output/\" , \"source target mapping\" : { \"source spec\" : { \"base uri\" : \"gs://my data bucket/teradata/input/\" } }, \"target types\" : \"suggestion\" , } } } } Note: To generate AI suggestions, the Cloud Storage source directory must contain at least one configuration YAML file with a suffix of .ai config.yaml .",
+          "Note: The translation API can call Gemini using BigQuery Vertex AI integration to generate suggestions to your translated SQL query based on your AI configuration YAML file.",
+          "Upload input files to Cloud Storage If you want to use the Google Cloud console or the BigQuery Migration API to perform a translation job, you must upload the source files containing the queries and scripts you want to translate to Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to use the Google Cloud console or the BigQuery Migration API for a batch translation job, you can upload the configuration YAML file to the Cloud Storage bucket containing the source files .",
+          "The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { \"tasks\" : { \"translation task\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translationDetails\" : { \"sourceTargetMapping\" : [ { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 1\" , \"relativePath\" : \"my input 1\" } , \"encoding\" : \"UTF-8\" } } , { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 2\" , \"relativePath\" : \"my input 2\" } , \"encoding\" : \"UTF-8\" } } ] , \"targetReturnLiterals\" : [ \"sql/my input 1\" , \"sql/my input 2\" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.",
+          "Note: You can view log summaries and messages for the overall translation job from the Results page Configuration tab You can add, rename, view, or edit your configuration YAML files in the Configuration tab.The Schema Explorer shows the documentation for supported configuration types to help you write your configuration YAML files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "tab.The"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.922Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers",
+  "feature_name": "WordPress server refactoring to containers",
+  "feature_slug": "wordpress-server-refactoring-to-containers",
+  "summary": "WordPress servers running on Apache 2 Linux can be refactored into containers deployed on GKE, GKE Autopilot, Anthos, and Cloud Run.",
+  "extended_definition": "WordPress servers running on Apache 2 Linux can be refactored into containers deployed on GKE, GKE Autopilot, Anthos, and Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Apache servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Customize migration plan for Apache servers You should review the migration plan file that resulted from creating a migration.",
+          "Migration plan structure The migration plan for Apache2 workloads has the following structure which you can customize, as described in the following sections. apacheServer : Apache configuration for directories on the system Content is the configuration as understood by apache directories : - Content : - Options FollowSymLinks AllowOverride None Require all denied Path : / - Content : - AllowOverride None Require all granted Path : / usr / share - Content : - Options Indexes FollowSymLinks AllowOverride None Require all granted Path : / var / www / - Content : \"# \\t Options Indexes FollowSymLinks \\n # \\t AllowOverride None \\n # \\t Require all granted \" Path : / srv / - Content : - AllowOverride None Require all denied Path : / Environment variables used by apache envVars : - Value : www - data Var : APACHE RUN USER - Value : www - data Var : APACHE RUN GROUP - Value : / var / run / apache2 $ SUFFIX / apache2 . pid Var : APACHE PID FILE - Value : / var / run / apache2 $ SUFFIX Var : APACHE RUN DIR - Value : / var / lock / apache2 $ SUFFIX Var : APACHE LOCK DIR - Value : / var / log / apache2 $ SUFFIX Var : APACHE LOG DIR - Value : C Var : LANG The port the service will listen on listen : - \"80\" - \"443\" Apache modules to be loaded and installed loadModules : - Module : access compat module - Module : alias module - Module : auth basic module - Module : authn core module - Module : authn file module - Module : authz core module - Module : authz host module - Module : authz user module - Module : autoindex module - Module : deflate module - Module : dir module - Module : env module - Module : filter module - Module : mime module - Module : mpm prefork module - Module : negotiation module - Module : php7 module - Module : proxy module - Module : proxy fcgi module - Module : reqtimeout module - Module : rewrite module - Module : setenvif module - Module : socache shmcb module - Module : ssl module - Module : status module The sites to be extracted virtualHosts : - address : ' :80' documentRoot : / var / www / html should the site be enabled in extracted VM includeInContainerImage : true originalConfig : - The ServerName directive sets the request scheme, hostname and port that the server uses to identify itself.",
+          "For example the following line enables the CGI configuration for this host only after it has been globally disabled with \"a2disconf\". #Include conf-available/serve-cgi-bin.conf serverName : server - 0 - address : ' :443' The location of the site content (will be copied to the same location the extracted container) documentRoot : / var / www / html includeInContainerImage : false originalConfig : - ServerAdmin admin @ example . com DocumentRoot / var / www / html SSLEngine on SSLCertificateFile / etc / ssl / certs / c2d - temporary - self - signed - cert . pem SSLCertificateKeyFile / etc / ssl / private / c2d - temporary - self - signed - cert . key < Directory / var / www / html > Options - Indexes AllowOverride FileInfo < / Directory > serverName : server - 1 php : list of php modules to be installed in the extracted container (add/remove entries to change what will be installed) modules : - calendar - ctype - curl - exif - ffi - fileinfo - filter - gd - gettext - iconv - json - mysqli - pcntl - pdo - pdo mysql - posix - shmop - sockets - sysvmsg - sysvsem - sysvshm - tokenizer - xsl Configure security policies on directories In the directories section, you can apply specific configurations to enforce security policies on certain directories."
+        ]
+      },
+      {
+        "title": "\"Review compatible OS, workloads, and Kubernetes versions \\_|\\_ Migrate to\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported workloads Migrate to Containers CLI supports modernization of workloads listed in the following table: Workload Type (if applicable) Supported versions Linux VM container VMs running 64-bit Linux-based operating systems Linux-based workloads Tomcat Apache Tomcat version 8.5 - 10.0 Apache Apache HTTP Server version 2.4 JBoss WildFly (formerly known as JBoss Application Server) version 8.1.0 - 26.1.1 JBoss Enterprise Application Platform version 7.0 - 7.4 WebSphere WebSphere Application Server traditional version 8.55 and 9.05 All versions of WebSphere Application Server Liberty WordPress sites WordPress version 4.0 or later running on Apache HTTP Server version 2.4 Windows IIS application Microsoft Internet Information Services version 7 or later Note: For workloads that use a Java-based plugin, Migrate to Containers CLI only supports Java SE version 8 or later.",
+          "Source VM operating systems Linux VM container Migrate to Containers CLI supports migrations of VMs to containers on Google Kubernetes Engine on the 64-bit Linux operating systems listed in the following table: OS Compute Engine VMware CentOS 6.0 7.0 7.0 UEFI 8.0 6.7 6.9 7.6 Debian 7.0 8.0 9.0 10.0 9.4 9.6 RHEL 6.0 7.0 7.0 UEFI 7.4 SAP 7.6 SAP 8.0 6.5 7.5 7.6 8.3 SUSE 12 12 SP3 SAP 12 SP4 SAP 15 15 SAP 15 SP1 SAP 12 SP2 12 SP3 12 SP4 15 Ubuntu 12 LTS 14 LTS 16 LTS 16 LTS minimal 18 LTS 18 LTS minimal 18 LTS UEFI 19.04 19.04 minimal 12.04.5 LTS 14.04 LTS 16.04 LTS 18.04.10 LTS Linux-based workloads For Linux-based workloads, Migrate to Containers CLI supports all Linux-based operating systems.",
+          "Windows IIS application Migrate to Containers CLI supports the Windows operating systems listed in the following table: OS Compute Engine Windows Microsoft Windows Server 2008R2 or later ASP.NET and .NET Framework version 3.5 or later Warning: Dynamic disks have been deprecated by Microsoft, and have severe limitations with snapshots."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Tomcat servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example shows an updated catalinaOpts field: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . resources : . . . catalinaOpts : \"-Xss10M\" Migrate to Containers parses your catalinaOpts data to your Dockerfile.",
+          "Verify Java proxy configuration When migrating to containers, you must verify the availability of your proxy servers in your new environment.",
+          "To turn off the probes, remove the probes section from the YAML file. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : tcpSocket : port : 8080 readinessProbe : tcpSocket : port : 8080 You can change this migration plan to use an existing Tomcat HTTP endpoint. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : httpGet : path : /healthz port : 8080 httpHeaders : - name : Custom-Header value : Awesome initialDelaySeconds : 3 periodSeconds : 3 readinessProbe : httpGet : tcpSocket : port : 8080 There are four predefined ways to check a container using a probe."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bin.conf",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/apache/apache-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/compatible-components",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:53.733Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "Default Cloud Logging Service Logs",
+  "feature_slug": "default-cloud-logging-service-logs",
+  "summary": "Collects a broader set of service logs in the default Cloud Logging configuration; Collects a broader set of service logs in the default Cloud Logging configuration.",
+  "extended_definition": "Collects a broader set of service logs in the default Cloud Logging configuration; Collects a broader set of service logs in the default Cloud Logging configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The logging agent is configured by default to send logs from certain system critical services and user application containers to the Cloud Logging backend.",
+          "A workaround is to not use gcplogs as a Docker logging driver, and to instead use the default driver as configured by Container-Optimized OS.",
+          "See Container-Optimized OS specific configuration source ( x86 images and Arm images ) for complete default logging configuration."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example 1 The following example configuration starts periodic CIS Level 1 scanning with the default period of once a day. #cloud-config runcmd : Check the compliance status of the instance once a day. - systemctl start cis-compliance-scanner.timer Example 2 The following example configures periodic CIS Level 1 scanning once every hour. #cloud-config Override cis-compliance-scanner.timer with 1 hour frequency. write files : - path : /etc/systemd/system/cis-compliance-scanner.timer.d/override.conf permissions : 0600 owner : root content : [Unit] Description=Run CIS Scanner once an hour [Timer] OnUnitActiveSec=1h runcmd : Reload systemd units. - systemctl daemon-reload Check the compliance status of the instance once an hour. - systemctl start cis-compliance-scanner.timer Example 3 The following example configures periodic CIS Level 2 scanning with the default period of once a day. #cloud-config runcmd : Configure the instance for CIS level 2. - systemctl start cis-level2.service Change the scan level to CIS Level 2. - sed -i 's/^LEVEL=. $/LEVEL=\"2\"/' /etc/cis-scanner/env vars Check the compliance status of the instance once a day. - systemctl start cis-compliance-scanner.timer Example 4 The following example configures the scanner to run once a day and opts out of a specific CIS recommendation. #cloud-config runcmd : Opt-out of the etc-passwd-permissions check. - sed -i 's/^EXTRA. $/EXTRA OPTIONS=\"--benchmark-opt-out-ids=etc-passwd-permissions\"/' /etc/cis-scanner/env vars Check the compliance of the instance once a day. - systemctl start cis-compliance-scanner.timer Using OS Policy You can use an OS Policy to configure CIS Benchmark scanning.",
+          "Otherwise, return an exit code of 101 to run enforce step. script : - is active=$(systemctl is-active cis-compliance-scanner.timer) result=$(systemctl show -p Result --value cis-compliance-scanner.service) if [ \"$is active\" == \"active\" ] && [ \"$result\" == \"success\" ]; then exit 100; else exit 101; fi enforce : interpreter : SHELL COS 97 images are by-default CIS Level 1 compliant and there is no additional configuration needed.",
+          "The systemd service supports all of the CIS Level 2 recommendations except for the following: 4.1.1.2 Ensure Logging is running (ID: logging-service-running) This recommendation is opted-out by default but can be re-enabled by deleting the ID from the opted-out list which can be found in the /etc/cis-scanner/env vars file."
+        ]
+      },
+      {
+        "title": "\"Running containers on instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the daemon to use the registry-mirror option in one of the following ways: In the /etc/default/docker file, add the registry-mirror option for the registry (for example, https://mirror.gcr.io ): echo 'DOCKER OPTS=\"--registry-mirror=https://mirror.gcr.io\"' tee /etc/default/docker In the /etc/default/docker file, append \"--registry-mirror=https://mirror.gcr.io\" to the existing DOCKER OPTS : sed -i -e 's \"$ --registry-mirror=https://mirror.gcr.io\" ' /etc/default/docker After adding the registry mirror, restart the Docker daemon for the changes to take effect: sudo systemctl daemon-reload sudo systemctl restart docker Adding a configuration to /etc/default/docker is non-persistent across reboot.",
+          "Troubleshooting Resolving option conflicts between Docker daemon.json and flags When configuring the Docker daemon, if the same option is set with a daemon.json file and with flags, Docker will fail to start with an error similar to: unable to configure the Docker daemon with file /etc/docker/daemon.json: the following directives are specified both as a flag and in the configuration file: The recommended solution to resolve this conflict is to modify the default daemon.json , which is located at /etc/docker/daemon.json .",
+          "This can be done using cloud-init , for example using a cloud-config similar to: #cloud-config write files: - path: /tmp/modify docker daemon opts.py permissions: 0744 owner: root content: import json, sys, os, logging DAEMON OPTS FILE = '/etc/docker/daemon.json' opts = {} if os.path.exists(DAEMON OPTS FILE): with open(DAEMON OPTS FILE) as f: try: opts = json.load(f) except: logging.info(\"json parsing failed, starting with empty config.\") pass Add your daemon option modifications here For example, opts['log-opts']['max-size'] = '100m' with open(DAEMON OPTS FILE, 'w') as f: json.dump(opts, f) runcmd: - python /tmp/modify docker daemon opts.py - rm -f /tmp/modify docker daemon opts.py - systemctl restart docker.service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asia.gcr.io",
+      "daemon.json",
+      "docker.service",
+      "eu.gcr.io",
+      "gcr.io",
+      "json.dump",
+      "json.load",
+      "level1.service",
+      "level2.service",
+      "logging.info",
+      "metadata.google.internal",
+      "mirror.gcr.io",
+      "opts.py",
+      "os.path.exists",
+      "override.conf",
+      "scanner.service",
+      "scanner.timer",
+      "scanner.timer.d",
+      "us.gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-container-instance"
+      ]
+    }
+  ]
+}

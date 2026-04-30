@@ -1,0 +1,220 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "VMware Aria Operations for Logs integration",
+  "feature_slug": "vmware-aria-operations-for-logs-integration",
+  "summary": "VMware Aria Operations for Logs integration lets you collect and manage logs from VMware Engine and on-premises environments in a centralized solution.",
+  "extended_definition": "VMware Aria Operations for Logs integration lets you collect and manage logs from VMware Engine and on-premises environments in a centralized solution.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+      "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+      "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of VMware Engine monitoring \\_|\\_ Google Cloud VMware Engine \\_\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists the classes of available logs for VMware Engine and the severity of the reported events: The following table lists the available logs for VMware Engine and the severity of the reported events: VMware component Issue notification Resolution notification Action owner VMware Engine node ALERT NOTICE VMware Engine Service Operations VMware vCenter CRITICAL NOTICE VMware Engine Service Operations VMware NSX Manager CRITICAL NOTICE VMware Engine Service Operations VMware HCX CRITICAL NOTICE VMware Engine Service Operations vSAN utilization ALERT Not applicable Customer Cluster auto-scale Issue dependent Issue dependent Issue dependent Private cloud operations (create, delete, add and remove nodes) Issue dependent Issue dependent Issue dependent Stretched private cloud issues ALERT NOTICE VMware Engine Service Operations You can access logs for VMware Engine in the following ways: In Logs Explorer , by using the following log name: projects/ PROJECT ID /logs/vmwareengine.googleapis.com%2Falerts In the Google Cloud console, by going to the Dashboard page .",
+          "VMware Aria Operations uses advanced analytics to help you identify issues, forecast usage, and recommend corrective actions to ensure optimal performance, availability, and efficiency in your virtual infrastructure.",
+          "Use of Cloud Logging by other VMware Engine features Other VMware Engine features also generate service-related logs, such as Update Center , which supports day-2 operations."
+        ]
+      },
+      {
+        "title": "\"Configure Google Security Operations with VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure Google Security Operations with VMware Engine To configure Google Security Operations with VMware Engine, complete the following steps: Forward Workload System Logs Create custom rules Forward Google Cloud cloud logs Forward workload system Logs To forward workload system logs for VMs running within VMware Engine to Google SecOps, you can use an OpenTelemetry collection agent running within the workloads.",
+          "It uses the OpenTelemetry Collector configuration format: receivers: windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ application: attributes: log type: windows event.application channel: application max reads: 100 poll interval: 1s raw: true start at: end windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ security: attributes: log type: windows event.security channel: security max reads: 100 poll interval: 1s raw: true start at: end windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ system: attributes: log type: windows event.system channel: system max reads: 100 poll interval: 1s raw: true start at: end processors: resourcedetection/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ: detectors: - system system: hostname sources: - os transform/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ processor0 logs: error mode: ignore log statements: - context: log statements: - set(attributes[\"chronicle log type\"], \"WINEVTLOG\") where true exporters: chronicle/NA-SDL: compression: none creds: '{ \"type\": \"service account\", \"project id\": \"malachite-previewamericassdl\", \"private key id\": \"a9c8d8f0b081c09bcf92621804ba19fc6529ecce\", \"private key\": \"----BEGIN PRIVATE KEY-----abcdefg-----END PRIVATE KEY-----\\n\", \"client email\": \"previewamericassdl-1710772997@malachite-previewamericassdl.iam.gserviceaccount.com\", \"client id\": \"114604545528934473681\", \"auth uri\": \"https://accounts.google.com/o/oauth2/auth\", \"token uri\": \"https://oauth2.googleapis.com/token\", \"auth provider x509 cert url\": \"https://www.googleapis.com/oauth2/v1/certs\", \"client x509 cert url\": \"https://www.googleapis.com/robot/v1/metadata/x509/previewamericassdl-1710772997%40malachite-previewamericassdl.iam.gserviceaccount.com\", \"universe domain\": \"googleapis.com\" }' customer id: a556547c-1cff-43ef-a2e4-cf5b12a865df endpoint: malachiteingestion-pa.googleapis.com ingestion labels: env: takeshi log type: CATCH ALL namespace: null raw log field: body retry on failure: enabled: true initial interval: 5s max elapsed time: 300s max interval: 30s sending queue: enabled: true num consumers: 10 queue size: 5000 storage: file storage/NA-SDL extensions: file storage/NA-SDL: compaction: directory: $OIQ OTEL COLLECTOR HOME/storage on rebound: true directory: $OIQ OTEL COLLECTOR HOME/storage service: extensions: - file storage/NA-SDL pipelines: logs/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ NA-SDL-0: receivers: - windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ application - windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ security - windowseventlog/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ system processors: - resourcedetection/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ - transform/source0 01HZ7NFAB5HZY6TPMGEYRN4XGZ processor0 logs exporters: - chronicle/NA-SDL Restart the collector once the configuration is complete, and verify that logs are populated in the Google SecOps dashboard .",
+          "Configure Google Security Operations with VMware Engine This document describes how to configure Google Security Operations (Google SecOps) to improve the detection, investigation, and response to cybersecurity threats for virtual machines (VM) running on VMware Engine."
+        ]
+      },
+      {
+        "title": "\"Best practices for VMware Engine security \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ingest VMware Engine logs and metrics Many organizations want to collect and analyze logs in a centralized \"Single Pane of Glass.\" In Google Cloud, the Cloud Logging and Cloud Monitoring products provide services which can be used for centralized management of logs and metrics.",
+          "As a best practice, align the approach for collecting and analyzing logs for workload VMs on VMware Engine with the approach for Compute Engine instances and your on-premises estate (if applicable).",
+          "To collect platform logs, VMware Engine private clouds can forward Syslog logs to a centralized log aggregator."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "event.application",
+      "event.security",
+      "event.system",
+      "googleapis.com",
+      "oauth2.googleapis.com",
+      "pa.googleapis.com",
+      "previewamericassdl.iam.gserviceaccount.com",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/concepts-monitoring",
+        "https://docs.cloud.google.com/vmware-engine/docs/howto-configure-secops",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    }
+  ]
+}

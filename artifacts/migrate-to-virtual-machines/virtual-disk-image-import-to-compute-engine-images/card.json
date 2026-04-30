@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:02.023Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines",
+  "feature_name": "Virtual disk image import to Compute Engine images",
+  "feature_slug": "virtual-disk-image-import-to-compute-engine-images",
+  "summary": "Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks; Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks.",
+  "extended_definition": "Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks; Imports a virtual disk image into a Compute Engine image for use in creating VM instances or persistent disks.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root",
+        "final_score": 364,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have virtual disk images in your environment with software and configurations that you need, you can save time by importing these virtual disk images to Compute Engine, and using the resulting image to create virtual machine instances or persistent disks.",
+          "Ghislain, Belgium europe-west1 London, England europe-west2 Frankfurt, Germany europe-west3 Eemshaven, Netherlands europe-west4 Paris, France europe-west9 Damman, Saudi Arabia me-central2 Tel Aviv, Israel me-west1 Montréal, Québec northamerica-northeast1 Queretaro, Mexico northamerica-south1 São Paulo, Brazil southamerica-east1 Iowa, North America us-central1 South Carolina, North America us-east1 Virginia, North America us-east4 Columbus, North America us-east5 Dallas, North America us-south1 Oregon, North America us-west1 California, North America us-west2 Utah, North America us-west3 Nevada, North America us-west4 Image import process To import a virtual disk image to a Compute Engine image using Migrate to Virtual Machines, use the following steps: Prepare a virtual disk image file for import Choose a target project Import a virtual disk image to Compute Engine Prepare a virtual disk file for import To import a virtual disk image to a Compute Engine image, you must first prepare the virtual disk image file for import.",
+          "Select Import . gcloud To import a virtual disk image to Compute Engine using the Google Cloud CLI, use the following request. gcloud compute migration image-imports create IMAGE NAME \\ --source-file= SOURCE FILE \\ --location= REGION ID \\ --target-project=projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT Replace the following: IMAGE NAME : the name of the image that you want to create."
+        ]
+      },
+      {
+        "title": "\"Import virtual disk images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "source_id": "site-docs-root-2",
+        "final_score": 364,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have virtual disk images in your environment with software and configurations that you need, you can save time by importing these virtual disk images to Compute Engine, and using the resulting image to create virtual machine instances or persistent disks.",
+          "Ghislain, Belgium europe-west1 London, England europe-west2 Frankfurt, Germany europe-west3 Eemshaven, Netherlands europe-west4 Paris, France europe-west9 Damman, Saudi Arabia me-central2 Tel Aviv, Israel me-west1 Montréal, Québec northamerica-northeast1 Queretaro, Mexico northamerica-south1 São Paulo, Brazil southamerica-east1 Iowa, North America us-central1 South Carolina, North America us-east1 Virginia, North America us-east4 Columbus, North America us-east5 Dallas, North America us-south1 Oregon, North America us-west1 California, North America us-west2 Utah, North America us-west3 Nevada, North America us-west4 Image import process To import a virtual disk image to a Compute Engine image using Migrate to Virtual Machines, use the following steps: Prepare a virtual disk image file for import Choose a target project Import a virtual disk image to Compute Engine Prepare a virtual disk file for import To import a virtual disk image to a Compute Engine image, you must first prepare the virtual disk image file for import.",
+          "Select Import . gcloud To import a virtual disk image to Compute Engine using the Google Cloud CLI, use the following request. gcloud compute migration image-imports create IMAGE NAME \\ --source-file= SOURCE FILE \\ --location= REGION ID \\ --target-project=projects/ HOST PROJECT ID /locations/global/targetProjects/ TARGET PROJECT Replace the following: IMAGE NAME : the name of the image that you want to create."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import.",
+          "You should see a job completion response similar to the following sample response. { \"createTime\":\"2023-10-31T09:12:27.053788394Z\", \"createdResources\":[ \"https://www.googleapis.com/compute/v1/projects/USER PROJECT/global/images/IMAGE NAME\" ], \"diskImageTargetDetails\": { \"imageName\":\"IMAGE NAME\", \"targetProject\":\"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"endTime\":\"2023-10-31T09:16:50.224865783Z\", \"name\":\"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME/imageImportJobs/image-import-job\", \"state\":\"SUCCEEDED\" } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Migrate to Virtual Machines supports importing OVA machine image files in the following disk file formats: Virtual machine disk (VMDK) QEMU copy-on-write (QCOW) QEMU copy-on-write 2 (QCOW2) QEMU enhanced disk format (QED) VPC Virtual disk image (VDI) Virtual hard disk v2 (VHDX) Limitations When you import machine images, the following limitations apply: You can only import machine images to regions that support N2 instance families ."
+        ]
+      },
+      {
+        "title": "\"Import machine images \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can't create machine images from source VMs with any of the following: Attached disks greater than 200 TB A4, A3, C3D, H3, or Z3 machine types Machine image import process To import a machine image to Compute Engine machine image using Migrate to Virtual Machines, use the following steps: Prepare a machine image file for import Choose a target project Import a machine image to Compute Engine Prepare a machine file for import To import a machine image to a Compute Engine image, you must first prepare the machine image file for import.",
+          "You should see a job completion response similar to the following sample response. { \"createTime\":\"2023-10-31T09:12:27.053788394Z\", \"createdResources\":[ \"https://www.googleapis.com/compute/v1/projects/USER PROJECT/global/images/IMAGE NAME\" ], \"diskImageTargetDetails\": { \"imageName\":\"IMAGE NAME\", \"targetProject\":\"projects/HOST PROJECT ID/locations/global/targetProjects/TARGET PROJECT\" }, \"endTime\":\"2023-10-31T09:16:50.224865783Z\", \"name\":\"projects/HOST PROJECT ID/locations/us-central1/imageImports/IMPORT NAME/imageImportJobs/image-import-job\", \"state\":\"SUCCEEDED\" } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Migrate to Virtual Machines supports importing OVA machine image files in the following disk file formats: Virtual machine disk (VMDK) QEMU copy-on-write (QCOW) QEMU copy-on-write 2 (QCOW2) QEMU enhanced disk format (QED) VPC Virtual disk image (VDI) Virtual hard disk v2 (VHDX) Limitations When you import machine images, the following limitations apply: You can only import machine images to regions that support N2 instance families ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/image_import",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import",
+        "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/machine-image-import"
+      ]
+    }
+  ]
+}

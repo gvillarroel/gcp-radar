@@ -1,0 +1,83 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.127Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring",
+  "feature_name": "GKE interactive playbook dashboards",
+  "feature_slug": "gke-interactive-playbook-dashboards",
+  "summary": "These dashboards provide guided troubleshooting for GKE CPU and memory utilization issues; Interactive playbook dashboards in Cloud Monitoring help troubleshoot common GKE issues such as unschedulable pods and crashlooping containers.",
+  "extended_definition": "These dashboards provide guided troubleshooting for GKE CPU and memory utilization issues; Interactive playbook dashboards in Cloud Monitoring help troubleshoot common GKE issues such as unschedulable pods and crashlooping containers.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "These dashboards display telemetry data and incident information, and they can help you understand the health of a specific service or workload.",
+          "These charts also display event annotations , which can help you correlate data from different sources when you are troubleshooting an issue.",
+          "You can explore the data on these dashboards similarly to exploring the data shown on an application's Dashboard tab."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "These dashboards show curated information that helps you understand the health of your resources and applications.",
+          "These dashboards show information like an application's log or metric data, and the number of open alerts.",
+          "The dashboards created by Google Cloud might provide you enough information to complete an investigation."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics used or not used in a custom dashboard in the current Google Cloud project.These filters don't include metrics that are used in predefined dashboards provided by Cloud Monitoring.",
+          "For each metric, the table displays that metric's contribution to billable volume and provides links to to the alerting policies and custom dashboards associated with the metric, as shown in the following screenshot.",
+          "These logs can provide insight into the causes of the metric-write errors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "project.These"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

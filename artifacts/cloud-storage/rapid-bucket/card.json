@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.682Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage",
+  "feature_name": "Rapid Bucket",
+  "feature_slug": "rapid-bucket",
+  "summary": "Rapid Bucket provides zonal buckets using the Rapid storage class to optimize data access and I/O performance near compute resources.",
+  "extended_definition": "Rapid Bucket provides zonal buckets using the Rapid storage class to optimize data access and I/O performance near compute resources.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+      "https://docs.cloud.google.com/storage/docs/introduction",
+      "https://docs.cloud.google.com/storage/docs/locations",
+      "https://docs.cloud.google.com/storage/docs/storage-classes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bucket locations \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest storage price No replication charges No outbound data transfer charges when reading data inside the same region Highest storage price Replication charges apply on write No outbound data transfer charges when reading data within either region Higher storage price than regions, but lower than dual-regions Replication charges apply on write Outbound data transfer charges always apply when reading data Location recommendations Requirements Recommended bucket location Workload examples Ultra-low latency Ultra-high bandwidth and I/O High performance Zone 1 Artificial Intelligence (AI) and Machine Learning (ML) High-performance computing Data-intensive analytics Optimized latency and bandwidth Lowest data storage cost Cross-zone redundancy Region 2 Analytics Backup and archive Optimized latency and bandwidth Cross-region redundancy, with precise control of the locations where copies of data are stored Dual-region 3 Analytics Backup and archive Disaster recovery Cross-geography data access Cross-region redundancy Multi-region Content serving Zonal locations for buckets are only available through Rapid Bucket .",
+          "If the regions you want to pair are not available as a dual-region, consider creating a separate bucket in each region and using Storage Transfer Service Event-driven transfers to keep the buckets in sync.",
+          "Zone Region Dual-region Multi-region Availability Data redundancy within one availability zone Zonal outages might affect availability Data redundancy across availability zones (synchronous) RTO(recovery time objective)=0: automated failover and failback on zonal failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) Turbo replication option for replication within 15 minutes RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Higher availability than regions for a given storage class Data redundancy across regions (asynchronous) RTO(recovery time objective)=0: automated failover and failback on regional failure (no need to change storage paths) Pricing Offers the highest performance in Cloud Storage for demanding workloads at the highest storage price, out of all location types Zonal bucket-specific data transfer charges apply."
+        ]
+      },
+      {
+        "title": "\"Overview of bandwidth and storage usage in Cloud Storage \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Browser In the Filter search bar, select the Metric property, then search for the metric for which you are requesting an increase: Use storage.googleapis.com/rapid zonal bytes to increase storage for your buckets located in zones.",
+          "Introduction to bandwidth monitoring Cloud Storage provides bandwidth monitoring for you to track bandwidth usage from your project's buckets to other Google Cloud services.",
+          "Use storage.googleapis.com/rapid zonal egress bandwidth to increase Google egress for your buckets located in zones."
+        ]
+      },
+      {
+        "title": "Cloud Storage overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rapid Bucket provides substantially improved latency, throughput, and I/Os compared to buckets in other storage classes, making the capability ideal for data-intensive AI/ML and analytics workloads.",
+          "Rapid Bucket : Rapid Bucket is a high performance capability that lets you store objects in the Rapid storage class by using a zone as a bucket's location.",
+          "While buckets are suitable for most data storage use cases, you can set up optional configurations and features on a bucket to make it more suitable for high-performance workloads specifically: Hierarchical namespace : Buckets can have hierarchical namespace enabled, which lets you store your data in a logical file system structure by using folders."
+        ]
+      },
+      {
+        "title": "Storage classes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/storage-classes",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rapid storage is an exception; to see storage size limit for zonal buckets, see Quotas for buckets .",
+          "Rapid storage is only compatible with zonal buckets through Rapid Bucket .",
+          "When you use Rapid storage as a bucket's storage class, you can store your data in zonal locations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/storage-classes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/storage-classes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/locations",
+        "https://docs.cloud.google.com/storage/docs/bandwidth-usage",
+        "https://docs.cloud.google.com/storage/docs/introduction",
+        "https://docs.cloud.google.com/storage/docs/storage-classes"
+      ]
+    }
+  ]
+}

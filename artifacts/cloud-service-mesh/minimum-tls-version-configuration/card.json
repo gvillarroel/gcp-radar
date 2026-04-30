@@ -1,0 +1,218 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.183Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Minimum TLS version configuration",
+  "feature_slug": "minimum-tls-version-configuration",
+  "summary": "Cloud Service Mesh lets you configure the minimum TLS version for Istio workloads; Cloud Service Mesh lets you configure the minimum TLS version for Istio workloads.",
+  "extended_definition": "Cloud Service Mesh lets you configure the minimum TLS version for Istio workloads; Cloud Service Mesh lets you configure the minimum TLS version for Istio workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+      "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+      "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable optional features on managed control plane \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the minimum TLS version for your workloads If you directly onboarded to Cloud Service Mesh with a managed TRAFFIC DIRECTOR control plane implementation , then you cannot change this setting.",
+          "The following configuration configures the outboundTrafficPolicy to REGISTRY ONLY : apiVersion : v1 kind : ConfigMap metadata : name : istio- release-channel namespace : istio-system data : mesh : - outboundTrafficPolicy: mode: REGISTRY ONLY where release-channel is your release channel ( asm-managed , asm-managed-stable , or asm-managed-rapid ).",
+          "For more information on setting the minimum TLS version and checking the TLS configuration of your workloads, see Istio Workload Minimum TLS Version Configuration ."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Sidecar resource for the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : Sidecar metadata : name : default namespace : team-y spec : outboundTrafficPolicy : mode : REGISTRY ONLY egress : - hosts : - 'istio-egress/ ' - 'team-y/ ' EOF Deploy the test application to the team-y namespace: kubectl -n team-y create -f ./test.yaml Register a second external host and export it to the team-x and the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : httpbin-org-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : httpbin.org spec : hosts : - httpbin.org ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Create a virtual service to route traffic to httpbin.org through the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Run istioctl analyze to check for configuration errors: ${ ISTIOCTL } analyze -n istio-egress --revision REVISION You see: ✔ No validation issues found when analyzing namespace: istio-egress.",
+          "Create a service entry for the GKE metadata server: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : metadata-google-internal namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : metadata.google.internal spec : hosts : - metadata.google.internal ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' EOF Also create a service entry for private.googleapis.com and storage.googleapis.com: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : private-googleapis-com namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : googleapis.com spec : hosts : - private.googleapis.com - storage.googleapis.com ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' EOF Verify that the Kubernetes service account is correctly configured to act as the Google service account: kubectl -n team-x exec -it $( kubectl -n team-x get pod -l app = test \\ -o jsonpath ={ .items..metadata.name } ) -c test -- gcloud auth list You see the Google service account listed as the active and only identity.",
+          "Apply a default PeerAuthentication policy for the mesh in the istio-system namespace: cat <<EOF kubectl apply -f - apiVersion : \"security.istio.io/v1beta1\" kind : \"PeerAuthentication\" metadata : name : \"default\" namespace : \"istio-system\" spec : mtls : mode : STRICT EOF You can override this configuration by creating PeerAuthentication resources in specific namespaces."
+        ]
+      },
+      {
+        "title": "Cloud Service Mesh by example: mTLS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "source_id": "site-docs-reference",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Apply the authentication policy to configure all Online Boutique services to only accept mTLS: for ns in ad cart checkout currency email frontend loadgenerator \\ payment product - catalog recommendation shipping ; do kubectl apply - n $ ns - f mtls - namespace . yaml done Expected output: peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created peerauthentication.security.istio.io/namespace-policy created Go to the tab in your browser that accesses the Online Boutique using the external IP address of the frontend-external service: http : // FRONTEND EXTERNAL IP / Refresh the page.",
+          "Apply the revision label to the namespace: kubectl label namespace asm-ingress \\ istio-injection- istio.io/rev = REVISION LABEL --overwrite Deploy the example gateway in the anthos-service-mesh-samples repository: kubectl apply -n asm-ingress \\ -f docs/shared/asm-ingress-gateway Expected output: serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Deploy the Online Boutique sample application If you haven't, set the current context for kubectl to the cluster: gcloud container clusters get-credentials CLUSTER NAME \\ --project= PROJECT ID \\ --zone= CLUSTER LOCATION Create the namespace for the sample application: kubectl create namespace onlineboutique Label the onlineboutique namespace to automatically inject Envoy proxies.",
+          "Notice how the following policy uses labels and selectors to target the specific frontend deployment. cat <<EOF kubectl apply -n frontend -f - apiVersion: \"security.istio.io/v1beta1\" kind: \"PeerAuthentication\" metadata: name: \"frontend\" namespace: \"frontend\" spec: selector: matchLabels: app: frontend mtls: mode: STRICT EOF Expected output: peerauthentication.security.istio.io/frontend created Configure a matching destination rule. cat <<EOF kubectl apply -n frontend -f - apiVersion: \"networking.istio.io/v1alpha3\" kind: \"DestinationRule\" metadata: name: \"frontend\" spec: host: \"frontend.demo.svc.cluster.local\" trafficPolicy: tls: mode: ISTIO MUTUAL EOF Expected output: destinationrule.networking.istio.io/frontend created Access the Online Boutique using the external IP address of the frontend-external service, and refresh the page."
+        ]
+      },
+      {
+        "title": "Security bulletins \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "To opt-out, you can configure your installation as follows: apiVersion: install.istio.io/v1alpha1 kind: IstioOperator metadata: name: opt-out-fragment-cve-fix namespace: istio-system spec: meshConfig: defaultConfig: proxyMetadata: HTTP STRIP FRAGMENT FROM PATH UNSAFE IF DISABLED: \"false\" Note: Opting out of this behavior makes your cluster vulnerable to this CVE.",
+          "Mitigation Upgrade your cluster to the following patch version: 1.10.4-asm.6 High CVE-2021-32780 GCP-2021-012 Published: 2021-06-24 Description Severity Notes The Istio secure Gateway or workloads using the DestinationRule can load TLS private keys and certificates from Kubernetes secrets via the credentialName configuration.",
+          "Check if your clusters are impacted Your cluster is impacted if it uses an in-cluster Cloud Service Mesh patch version earlier than: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 Your cluster is impacted if it uses a managed Cloud Service Mesh version earlier than: 1.21.6-asm.7 1.20.8-asm.59 1.19.10-asm.54 Mitigation For in-cluster Cloud Service Mesh, upgrade your cluster to one of the following patched versions: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 If you're using Cloud Service Mesh v1.24 or earlier, your release has reached end of life and is no longer supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.1",
+      "asm.2",
+      "asm.3",
+      "asm.4",
+      "asm.54",
+      "asm.59",
+      "asm.6",
+      "asm.7",
+      "deployment.apps",
+      "destinationrule.networking.istio.io",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "frontend.demo.svc.cluster.local",
+      "gateway.networking.istio.io",
+      "gcr.io",
+      "googleapis.com",
+      "httpbin.org",
+      "install.istio.io",
+      "istio.io",
+      "items..metadata.name",
+      "metadata.google.internal",
+      "networking.istio.io",
+      "peerauthentication.security.istio.io",
+      "private.googleapis.com",
+      "security.istio.io",
+      "service.istio.io",
+      "storage.googleapis.com",
+      "test.yaml",
+      "v1.12.9",
+      "v1.13.8",
+      "v1.14.4",
+      "v1.24"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/mtls",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    }
+  ]
+}

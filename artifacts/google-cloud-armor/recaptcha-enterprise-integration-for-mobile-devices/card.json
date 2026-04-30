@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.415Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "reCAPTCHA Enterprise integration for mobile devices",
+  "feature_slug": "recaptcha-enterprise-integration-for-mobile-devices",
+  "summary": "Cloud Armor integrates with reCAPTCHA Enterprise for mobile devices in general availability.",
+  "extended_definition": "Cloud Armor integrates with reCAPTCHA Enterprise for mobile devices in general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+      "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+      "https://docs.cloud.google.com/armor/docs/best-practices",
+      "https://docs.cloud.google.com/armor/docs/bot-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Armor Enterprise overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Armor Standard includes the following: A pay-as-you go pricing model Always-on protection from volumetric and protocol-based DDoS attacks, with automated inline mitigations in real time and with no latency impact across the following infrastructure types: Global external Application Load Balancer (HTTP/HTTPS) Classic Application Load Balancer (HTTP/HTTPS) Regional external Application Load Balancer (HTTP/HTTPS) External passthrough Network Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Cloud CDN Media CDN Integration with Cloud CDN and Media CDN Access to Cloud Armor web application firewall (WAF) rule capabilities, including preconfigured WAF rules for OWASP Top 10 protection Cloud Armor Enterprise includes the following: All the features of Cloud Armor Standard Choice of pricing models: Cloud Armor Enterprise Annual or Paygo Bundled Cloud Armor WAF usage, including rules, policy, and requests Third-party named IP address lists Google Threat Intelligence for Cloud Armor Adaptive Protection for Layer 7 endpoints Advanced network DDoS protection for pass-through endpoints—external passthrough Network Load Balancers, protocol forwarding, and public IP addresses for virtual machine (VM) instances Access to DDoS attack visibility Hierarchical security policies (Cloud Armor Enterprise Annual only): Access to DDoS bill protection and DDoS response team services (additional conditions apply, see Eligibility for DDoS response team ) All Google Cloud projects that include an external Application Load Balancer or an external proxy Network Load Balancer are automatically enrolled in Cloud Armor Standard.",
+          "Cloud Armor Standard Cloud Armor Enterprise Paygo Annual Billing method Pay-as-you-go Pay-as-you-go Subscription with 12-month commitment Pricing Per policy, per rule, per request (see Pricing ) $200/month per project $200/month per protected resource after first 2 resources $3000/month per billing account $30/month per protected resource after first 100 resources DDoS attack protection External Application Load Balancer External proxy Network Load Balancer External Application Load Balancer External proxy Network Load Balancer External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) External Application Load Balancer External proxy Network Load Balancer External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) Cloud Armor WAF Per policy, per rule, per request (see Pricing ) Included with Paygo Included with Annual Resource limits Up to quota limit Up to quota limit Up to quota limit Time commitment One year Adaptive Protection Alerting only Advanced network DDoS protection Network edge security policies Address Group Google Threat Intelligence Hierarchical security policies DDoS attack visibility DDoS response support Eligibility requirements DDoS bill protection Note: Customers who subscribed to Cloud Armor Enterprise after September 3, 2024 aren't eligible for DDoS Response Support until they have successfully completed a DDoS posture review.",
+          "The following table demonstrates what resources are covered by DDos bill protection: Endpoint Type Covered Usage Increase External Application Load Balancer External proxy Network Load Balancer Cloud Armor Cloud Armor Enterprise data processing fee Network Outbound data transfer Inter-region Inter-zone Carrier Peering Load balancer Inbound data processing fee Outbound data processing fee Cloud CDN Cloud CDN egress fee Cache data transfer out Cache fill HTTP/HTTPS cache lookup requests Media CDN Media CDN egress fee Cache data transfer out External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) Cloud Armor Cloud Armor Enterprise data processing fee Network Outbound data transfer Inter-region Inter-zone Carrier Peering Load balancer Inbound data processing fee Outbound data processing fee To engage DDoS bill protection, see Engaging DDoS bill protection ."
+        ]
+      },
+      {
+        "title": "Use Google Cloud Armor Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Cloud Armor Service Tier In the Standard pane, click Enroll . gcloud Unenroll a project from Cloud Armor Enterprise Annual gcloud compute project-info update --cloud-armor-tier CA STANDARD Unenroll a project from Cloud Armor Enterprise Paygo gcloud compute project-info update --cloud-armor-tier CA STANDARD View your enrollment information Use the following sections to view your current Cloud Armor Enterprise enrollment tier, or to view the number of resources covered by your enrollment.",
+          "Go to Cloud Armor Service Tier In the Cloud Armor Enterprise Paygo pane, click Enroll . gcloud Enroll a project to Cloud Armor Enterprise Annual Note: Before you can enroll a project to Cloud Armor Enterprise Annual, you must subscribe the billing account .",
+          "Engage DDoS bill protection To file a claim for DDoS Bill Protection, your project must be enrolled in Cloud Armor Enterprise Annual, and you must prepare the following information: The billing account associated with the targeted project."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor bot management overview \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/bot-management",
+        "source_id": "site-iam-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about implementing tokens in reCAPTCHA, see the following pages: Web applications Implement reCAPTCHA action-tokens Implement reCAPTCHA session-tokens Mobile applications Implement reCAPTCHA action-tokens Finally, use the Cloud Armor rules language to configure security policy rules to evaluate reCAPTCHA tokens that are attached with the request.",
+          "For more information, see the Cloud Armor and reCAPTCHA integration overview .",
+          "When you associate reCAPTCHA keys with a security policy rule, Cloud Armor performs additional validation on the token by comparing the reCAPTCHA key in the token against reCAPTCHA keys that are associated with the rule."
+        ]
+      },
+      {
+        "title": "Cloud Armor best practices \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "For this example, we recommend the following structure of rule priority, from greatest-priority to least-priority: Explicit deny rules (ASN, region, IP ranges) Trusted explicit allow rules (scanners, trusted systems - use with extreme caution) Security rules (OWASP, custom rules) Explicit allow rules (ASN, presence of header value, IP range) Default deny rules Use reCAPTCHA for bot management Cloud Armor integrates with Google's reCAPTCHA for bot detection at the WAF layer.",
+          "In this integration, reCAPTCHA generates reCAPTCHA tokens, and Cloud Armor performs the token assessment process instead of reCAPTCHA.",
+          "Cloud Armor has full Terraform integration for GA features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-using",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/best-practices"
+      ]
+    }
+  ]
+}

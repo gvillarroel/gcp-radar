@@ -1,0 +1,118 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "CSV chunked import",
+  "feature_slug": "csv-chunked-import",
+  "summary": "CSV chunked import lets BigQuery process CSV imports in parallel when quoted newlines are disabled.",
+  "extended_definition": "CSV chunked import lets BigQuery process CSV imports in parallel when quoted newlines are disabled.",
+  "lifecycle": {
+    "latest_feature_date": "2012-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references BigQuery Export Integration BigQuery Import Integration BigQuery Version 2 Export Partner Advantage page Direct link Union.ai Solution Union AI orchestrator Category BI, ML, & Advanced Analytics Description The Union platform empowers AI development teams to rapidly ship high-quality code to production by offering optimized performance, unparalleled resource efficiency, and a delightful workflow authoring experience.",
+          "Partner references Behavioral data for BigQuery BigQuery Loader Measure the latency of your data in BigQuery Debugging bad data in Google Cloud with BigQuery Partner Advantage page Direct link Starburst Data Solution Starburst Galaxy Category BI, ML, & Advanced Analytics Description Starburst Galaxy is the cloud-born and fully-managed service of the Starburst massively parallel processing (MPP) and highly-performant query engine.",
+          "Partner references Import BigQuery Data into Amplitude Export data to BigQuery AskYourDatabase Solution AskYourDatabase Category BI, ML, & Advanced Analytics Description AskYourDatabase is an AI-powered tool that lets users ask questions in plain English and get instant answers from their database."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE OR REPLACE FUNCTION cymbal pets . chunk pdf ( src json STRING , chunk size INT64 , overlap size INT64 ) RETURNS ARRAY<STRING > LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'chunk pdf' , runtime version = 'python-3.11' , packages =[ 'pypdf' ] ) AS \" \"\" import io import json from pypdf import PdfReader # type: ignore from urllib.request import urlopen, Request def chunk pdf(src ref: str, chunk size: int, overlap size: int) -> str: src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] req = urlopen(srcUrl) pdf file = io.BytesIO(bytearray(req.read())) reader = PdfReader(pdf file, strict=False) extract and chunk text simultaneously all text chunks = [] curr chunk = \"\" for page in reader.pages: page text = page.extract text() if page text: curr chunk += page text split the accumulated text into chunks of a specific size with overlaop this loop implements a sliding window approach to create chunks while len(curr chunk) >= chunk size: split idx = curr chunk.rfind(\" \", 0, chunk size) if split idx == -1: split idx = chunk size actual chunk = curr chunk[:split idx] all text chunks.append(actual chunk) overlap = curr chunk[split idx + 1 : split idx + 1 + overlap size] curr chunk = overlap + curr chunk[split idx + 1 + overlap size :] if curr chunk: all text chunks.append(curr chunk) return all text chunks \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "Run the following to create the to grayscale UDF: SQL CREATE OR REPLACE FUNCTION cymbal pets . to grayscale ( src json STRING , dst json STRING ) RETURNS STRING LANGUAGE python WITH CONNECTION us.cymbal conn OPTIONS ( entry point = 'to grayscale' , runtime version = 'python-3.11' , packages =[ 'numpy' , 'opencv-python' ] ) AS \" \"\" import cv2 as cv import numpy as np from urllib.request import urlopen, Request import json Transform the image to grayscale. def to grayscale(src ref, dst ref): src json = json.loads(src ref) srcUrl = src json[\" access urls \"][\" read url \"] dst json = json.loads(dst ref) dstUrl = dst json[\" access urls \"][\" write url \"] req = urlopen(srcUrl) arr = np.asarray(bytearray(req.read()), dtype=np.uint8) img = cv.imdecode(arr, -1) # 'Load it as it is' Convert the image to grayscale gray image = cv.cvtColor(img, cv.COLOR BGR2GRAY) Send POST request to the URL , img encoded = cv.imencode('.png', gray image) req = Request(url=dstUrl, data=img encoded.tobytes(), method='PUT', headers = { \" Content - Type \": \" image / png \", }) with urlopen(req) as f: pass return dst ref \"\" \" ; BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . import bigframes.bigquery as bbq import bigframes.pandas as bpd bbq . load data ( \"cymbal pets.products\" , write disposition = \"OVERWRITE\" , from files options = { \"format\" : \"avro\" , \"uris\" : [ \"gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/tables/products/products .avro\" ], }, ) Create the product images table Create an object table that contains the Cymbal pets product images: Run the following to create the product images table: SQL CREATE OR REPLACE EXTERNAL TABLE cymbal pets . product images WITH CONNECTION us.cymbal conn OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/images/ .png' ] , max staleness = INTERVAL 30 MINUTE , metadata cache mode = AUTOMATIC ); BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames ."
+        ]
+      },
+      {
+        "title": "Continuous data integration in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use BigQuery sharing BigQuery sharing (formerly Analytics Hub) lets you share datasets both outside and inside the organization in a way that's designed to be secure.",
+          "For an example of a script that can help automate the processes, see the CI for Data in BigQuery CLI utility GitHub repository.",
+          "Having this snapshot lets you perform a rollback in case an issue is detected later in the process."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.bigquery",
+      "bigframes.pandas",
+      "chunk.rfind",
+      "chunks.append",
+      "cv.COLOR",
+      "cv.cvtColor",
+      "cv.imdecode",
+      "cv.imencode",
+      "encoded.tobytes",
+      "io.BytesIO",
+      "json.loads",
+      "np.asarray",
+      "np.uint8",
+      "page.extract",
+      "pets.products",
+      "reader.pages",
+      "req.read",
+      "urllib.request",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-integration-of-data-in-bigquery"
+      ]
+    }
+  ]
+}

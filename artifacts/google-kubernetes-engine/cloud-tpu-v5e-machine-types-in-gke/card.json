@@ -1,0 +1,95 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Cloud TPU v5e machine types in GKE",
+  "feature_slug": "cloud-tpu-v5e-machine-types-in-gke",
+  "summary": "GKE adds new inference-focused single-host TPU v5e machine types in selected zones; Cloud TPU v5e is generally available in GKE clusters running supported versions.",
+  "extended_definition": "GKE adds new inference-focused single-host TPU v5e machine types in selected zones; Cloud TPU v5e is generally available in GKE clusters running supported versions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page is for Machine learning (ML) engineers, Platform admins and operators, and for Data and AI specialists who want to understand how to efficiently manage and optimize GKE for AI/ML inference.",
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests.",
+          "Prepare to use the command line interface If you use the gcloud CLI to run Inference Quickstart, you also need to run these additional commands: Enable the gkerecommender.googleapis.com API: gcloud services enable gkerecommender.googleapis.com Set the billing quota project that you use for API calls: gcloud config set billing/quota project PROJECT ID Check that your gcloud CLI version is at least 536.0.1."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following compute class sets a prioritized list of zones that includes AI zones: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : accelerator-ai-preferred spec : nodePoolAutoCreation : enabled : true priorities : --- Priority 1: TPU in a specific AI zone (On-Demand) --- - tpu : type : tpu-v5p-slice count : 4 topology : 4x4x4 location : zones : - \"us-central1-ai1a\" # Specify your target AI zone machineFamily: a3 # Optional --- Priority 2: TPU in any AI zone (On-Demand) --- - tpu : type : tpu-v5p-slice count : 4 topology : 4x4x4 location : zoneTypes : - \"AI\" # All AI zones in the cluster's region --- Priority 3: GPU in a specific Standard zone (On-Demand) --- - gpu : type : nvidia-tesla-a100 count : 1 location : zones : - \"us-central1-a\" # Fallback to a standard zone - \"us-central1-b\" whenUnsatisfiable : DoNotScaleUp This ComputeClass configures GKE to provision nodes with v5p TPUs or A100 GPUs for the workload.",
+          "If the prioritized instance types aren't available, GKE then falls back to any matching reservations in the specification: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : accelerator-reservations spec : nodePoolAutoCreation : enabled : true priorities : - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : specific : - name : a3-shared-reservation project : reservation-project affinity : Specific - machineType : a3-highgpu-1g storage : localSSDCount : 2 gpu : type : nvidia-h100-80gb count : 1 reservations : affinity : AnyBestEffort whenUnsatisfiable : DoNotScaleUp If you deploy a Pod that uses the accelerator-reservations ComputeClass, GKE first attempts to use the a3-shared-reservation reservation when creating new a3-highgpu-1g instances to run the Pod.",
+          "The following example shows a shared specific reservation, which falls back to Spot VMs, and then finally to on-demand VMs: apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : shared-specific-reservations spec : nodePoolAutoCreation : enabled : true priorities : - machineFamily : n4 reservations : specific : - name : n4-shared-reservation project : reservation-project affinity : Specific - machineFamily : n4 spot : true - machineFamily : n4 whenUnsatisfiable : DoNotScaleUp You can consume the following types of reservations: Specific single-project reservations : configure the following fields: reservations.specific.name : the reservation name. reservations.affinity : must be Specific ."
+        ]
+      },
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more about ComputeClass parameters, see ComputeClass CRD documentation : apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : prefer-l4-spot spec : Defines a prioritized list of machine types and configurations for node provisioning. priorities : - machineType : g2-standard-24 Specifically requests Spot VMs for this configuration.",
+          "For example, the following node affinity rule declares a preference for scheduling Pods on nodes that are backed by Spot VMs (GKE automatically adds the cloud.google.com/gke-spot=true label to these types of nodes): affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : set to \"true\".",
+          "GKE will try to provision these VMs first. spot : true gpu : type : nvidia-l4 count : 2 If GKE can't satisfy the preceding rule, request on-demand nodes with the same configuration - machineType : g2-standard-24 spot : false gpu : type : nvidia-l4 count : 2 nodePoolAutoCreation : enabled : true Configures active migration behavior for workloads using this ComputeClass. activeMigration : optimizeRulePriority : true Enables Cluster Autoscaler to attempt to migrate workloads to Spot VMs if Spot capacity becomes available and the workload is currently running on an on-demand VM (based on the priority rules in this example)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkerecommender.googleapis.com",
+      "registry.k8s.io",
+      "reservations.affinity",
+      "reservations.specific.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    }
+  ]
+}

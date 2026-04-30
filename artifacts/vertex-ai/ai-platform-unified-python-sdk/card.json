@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "AI Platform (Unified) Python SDK",
+  "feature_slug": "ai-platform-unified-python-sdk",
+  "summary": "The AI Platform (Unified) Python SDK was introduced, offering a renamed client library with high-level aiplatform wrappers and a lower-level aiplatform.gapic interface for additional flexibility.",
+  "extended_definition": "The AI Platform (Unified) Python SDK was introduced, offering a renamed client library with high-level aiplatform wrappers and a lower-level aiplatform.gapic interface for additional flexibility.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk",
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import the Vertex AI Python client library namespace The Vertex AI Python client library namespace is google.cloud.aiplatform.gapic .",
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "Python reference for Vertex AI : contains reference documentation for all of the namespaces, classes, methods, and properties in the google-cloud-aiplatform package, which includes the Vertex AI SDK, the Vertex AI SDK preview, and the Vertex AI Client libraries."
+        ]
+      },
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import the Vertex AI Python client library namespace The Vertex AI Python client library namespace is google.cloud.aiplatform.gapic .",
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "Python reference for Vertex AI : contains reference documentation for all of the namespaces, classes, methods, and properties in the google-cloud-aiplatform package, which includes the Vertex AI SDK, the Vertex AI SDK preview, and the Vertex AI Client libraries."
+        ]
+      },
+      {
+        "title": "Install the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/install-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install or update the Vertex AI SDK package To install or update the Vertex AI SDK, run the following command in your virtual environment: pip install --upgrade google-cloud-aiplatform Initialize the Vertex AI SDK After you install the Vertex AI SDK for Python, you must initialize the SDK with your Vertex AI and Google Cloud details.",
+          "Installation of the Vertex AI SDK for Python includes the following steps: Create an isolated Python environment Install the Vertex AI SDK package Initialize the Vertex AI SDK Create an isolated Python environment A Python best practice is to install the Vertex AI SDK in an isolated Python environment for each project.",
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Install the Vertex AI SDK for Python Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.gapic",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref"
+      ]
+    }
+  ]
+}

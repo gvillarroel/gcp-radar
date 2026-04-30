@@ -1,0 +1,169 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.898Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Developer Connect repository integration",
+  "feature_slug": "developer-connect-repository-integration",
+  "summary": "Connect repositories to Infrastructure Manager through Developer Connect proxies.",
+  "extended_definition": "Connect repositories to Infrastructure Manager through Developer Connect proxies.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate the deployment of Google Cloud resources \\_|\\_ Infrastructure Manager\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "source_id": "site-iam-reference",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Copy the im cloudbuild workspace module into the main.tf file within your Git repository: module \"im-workspace\" { source = \"terraform-google-modules/bootstrap/google//modules/im cloudbuild workspace\" version = \" > 7.0\" project id = \" PROJECT ID \" deployment id = \" DEPLOYMENT ID \" im deployment repo uri = \" GIT REPO \" im deployment ref = \" REF \" github app installation id = \" GIT APP ID \" github personal access token = \" TOKEN \" } Replace: PROJECT ID : the project ID where Infrastructure Manager runs.",
+          "Once Infra Manager connects to your Git repository, pull requests invoke a preview of a deployment, and commits invoke creating a deployment preview or updating the deployment .",
+          "This page describes the process to set up Cloud Build triggers to automate deployments of Google Cloud resources using your existing repositories and Infrastructure Manager."
+        ]
+      },
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use Infra Manager in Google Cloud CLI to deploy Terraform configurations from: Cloud Storage buckets Git repositories Local directories See Terraform modules and blueprints for Google Cloud for examples and template Terraform configurations you can use with Infra Manager.",
+          "Connect your private Git repository and host to Cloud Build If you are deploying a Terraform configuration from a private Git repository , you need to connect your Git host and repository to Cloud Build.",
+          "This page describes how to use Infrastructure Manager to provision a set of Google Cloud resources that are defined in a Terraform configuration."
+        ]
+      },
+      {
+        "title": "Preview a deployment \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "source_id": "site-iam-reference",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To update a deployment stored in a Git repository: If you are using a private Git repository, ensure that you have connected to your GitHub host and GitHub repository using Cloud Build to provide Infra Manager access to your repository.",
+          "To preview the deployment: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- git - source - repo = \" GIT REPO \" \\ -- git - source - directory = \" DIRECTORY \" \\ -- git - source - ref = \" REF \" \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "To preview the update: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- gcs - source gs : // BUCKET NAME / OBJECT NAME \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs."
+        ]
+      },
+      {
+        "title": "\"Authenticate to Infra Manager \\_|\\_ Infrastructure Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/authentication",
+        "source_id": "site-api-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Infrastructure as code Infrastructure Manager Reference Send feedback Authenticate to Infra Manager Stay organized with collections Save and categorize content based on your preferences.",
+          "How you authenticate to Infrastructure Manager depends on the interface you use to access the API and the environment where your code is running.",
+          "This document describes how to authenticate to Infrastructure Manager programmatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "main.tf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/automate-git",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/authentication"
+      ]
+    }
+  ]
+}

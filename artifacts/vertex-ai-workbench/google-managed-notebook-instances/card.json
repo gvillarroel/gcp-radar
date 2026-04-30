@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.172Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench",
+  "feature_name": "Google-managed notebook instances",
+  "feature_slug": "google-managed-notebook-instances",
+  "summary": "Vertex AI Workbench supports Google-managed notebook instances.",
+  "extended_definition": "Vertex AI Workbench supports Google-managed notebook instances.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Notebooks API usage overview \\_|\\_ Vertex AI Workbench \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API versions The following API versions are available: v2 ( generally available ) is for managing Vertex AI Workbench instances. v1 ( generally available ) is for managing user-managed notebooks and managed notebooks instances. v1beta1 is scheduled for removal.",
+          "Home Documentation AI and ML Vertex AI Vertex AI Workbench Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Notebooks API usage overview This guide provides an overview of using the Notebooks API and its reference documentation."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "source_id": "site-docs-reference-2",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances .",
+          "This guide describes how you can grant access to a specific Vertex AI Workbench managed notebooks instance.",
+          "Manage access to a managed notebooks instance Vertex AI Workbench managed notebooks is deprecated ."
+        ]
+      },
+      {
+        "title": "\"Manage access to a Vertex AI Workbench managed notebooks instance's JupyterLab\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab",
+        "source_id": "site-docs-reference-2",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "To continue using Vertex AI Workbench, we recommend that you migrate your managed notebooks instances to Vertex AI Workbench instances .",
+          "Manage access to a managed notebooks instance's JupyterLab interface Vertex AI Workbench managed notebooks is deprecated .",
+          "This page describes how to grant access to the JupyterLab interface of a Vertex AI Workbench managed notebooks instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access",
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/managed/manage-access-jupyterlab"
+      ]
+    }
+  ]
+}

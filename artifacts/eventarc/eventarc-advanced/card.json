@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.198Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc",
+  "feature_name": "Eventarc Advanced",
+  "feature_slug": "eventarc-advanced",
+  "summary": "Eventarc Advanced receives, filters, transforms, routes, and delivers messages between services, apps, and systems.",
+  "extended_definition": "Eventarc Advanced receives, filters, transforms, routes, and delivers messages between services, apps, and systems.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+      "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Disable Eventarc Advanced resources \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "source_id": "site-iam-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Learn more about organization policies Understand Eventarc Advanced Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Disable Eventarc Advanced resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a custom constraint You can create a custom constraint and use this custom constraint in an organization policy to prevent the creating and updating of new Eventarc Advanced resources."
+        ]
+      },
+      {
+        "title": "Choose Eventarc Advanced or Eventarc Standard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "source_id": "site-iam-reference",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Eventarc Advanced Eventarc Standard Access control Per message access control and central governance with IAM See Access control with IAM See Access control with IAM Capacity Automatically provisioned Automatically provisioned Client library languages Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Java, Python, Go, Node.js, C++, C#, PHP, Ruby See Eventarc client libraries Compliance standards See Compliance standards See Compliance standards Cross-project event delivery Supported See Publish events from Google sources Not supported Customer managed encryption keys Yes See Use customer-managed encryption keys Yes See Use customer-managed encryption keys Dead letter queues supported No Yes, through Pub/Sub dead letter topic See Retry events Event format Events are delivered to the destination in a CloudEvents format See Event format Optionally, you can override this behavior by defining an HTTP binding Events are delivered to the destination in a CloudEvents format See Event format Event size 1 MB maximum See Quotas and limits 512 KB maximum See Quotas and limits Locations See Eventarc Advanced locations See Eventarc Standard locations Message filtering Filtering on any and all event attributes Filtering on event type and specific attributes Message routing Many providers to many destinations Provider to destination Message schema conversion Yes See Convert the format of received events No Message transformation Yes, through CEL expressions See Transform received events No Observability Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Through Google Cloud Observability such as Cloud Logging and Cloud Monitoring See Eventarc audit logging Ordered delivery There is no in-order, first-in-first-out delivery guarantee There is no in-order, first-in-first-out delivery guarantee Pricing See Eventarc pricing See Eventarc pricing Regionality Regional See Understand regionality Regional, Global See Understand Eventarc locations REST endpoints https://eventarc.googleapis.com See Eventarc API https://eventarcpublishing.googleapis.com See Eventarc Publishing API https://eventarc.googleapis.com See Eventarc API Retry and retention At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events At-least-once event delivery to targets; default message retention duration is 24 hours with an exponential backoff delay See Retry events Service limits One bus and 100 pipelines per Google Cloud project per supported region See Quotas and limits 500 triggers per Google Cloud project per supported region See Quotas and limits Service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Yes See Set up a service perimeter using VPC Service Controls Supported sources Google providers Direct publishers using the Eventarc Publishing API See Event providers and destinations Google providers Google providers through audit logs Third-party providers See Event providers and destinations Supported targets Cloud Run functions (including 1st gen) Cloud Run jobs and services Eventarc Advanced buses Internal HTTP endpoints in VPC networks Pub/Sub topics Workflows See Event providers and destinations Cloud Run functions Cloud Run services Internal HTTP endpoints in VPC networks Public endpoints of private and public GKE services Workflows See Event providers and destinations Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Eventarc Advanced is feature rich and is ideal for organizations with complex eventing and messaging needs, particularly those grappling with managing numerous Pub/Sub topics, Kafka queues, or other third-party messaging systems.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Choose Eventarc Advanced or Eventarc Standard Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Route AlloyDB for PostgreSQL events to GKE \\_|\\_ Eventarc Standard \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "source_id": "site-iam-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \\ --location = LOCATION \\ --destination-gke-cluster = DESTINATION GKE CLUSTER \\ --destination-gke-location = DESTINATION GKE LOCATION \\ --destination-gke-namespace = DESTINATION GKE NAMESPACE \\ --destination-gke-service = DESTINATION GKE SERVICE \\ --destination-gke-path = DESTINATION GKE PATH \\ --event-filters = \"type= EVENT FILTER TYPE \" \\ --event-filters = \" COLLECTION ID = RESOURCE ID \" \\ --event-filters-path-pattern = \" COLLECTION ID = PATH PATTERN \" \\ --event-data-content-type = \" EVENT DATA CONTENT TYPE \" \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \" Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.",
+          "Example: gcloud eventarc triggers create helloworld-trigger \\ --location=us-central1 \\ --destination-gke-cluster=gke-events-cluster \\ --destination-gke-location=us-central1-a \\ --destination-gke-namespace=default \\ --destination-gke-service=helloworld-events \\ --destination-gke-path=/ \\ --event-filters=\"type=google.cloud.alloydb.cluster.v1.updated\" \\ --event-filters-path-pattern=\"cluster=my-cluster- \" \\ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.alloydb.cluster.v1.updated and matches events for cluster IDs starting with my-cluster- .",
+          "It transforms events to the correct CloudEvents format and encodes and delivers them as an HTTP POST request to the target GKE service."
+        ]
+      },
+      {
+        "title": "\"Route API Gateway events to GKE \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway",
+        "source_id": "site-iam-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \\ --location = LOCATION \\ --destination-gke-cluster = DESTINATION GKE CLUSTER \\ --destination-gke-location = DESTINATION GKE LOCATION \\ --destination-gke-namespace = DESTINATION GKE NAMESPACE \\ --destination-gke-service = DESTINATION GKE SERVICE \\ --destination-gke-path = DESTINATION GKE PATH \\ --event-filters = \"type= EVENT FILTER TYPE \" \\ --event-filters = \" COLLECTION ID = RESOURCE ID \" \\ --event-filters-path-pattern = \" COLLECTION ID = PATH PATTERN \" \\ --event-data-content-type = \" EVENT DATA CONTENT TYPE \" \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \" Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.",
+          "Example: gcloud eventarc triggers create helloworld-trigger \\ --location=us-central1 \\ --destination-gke-cluster=gke-events-cluster \\ --destination-gke-location=us-central1-a \\ --destination-gke-namespace=default \\ --destination-gke-service=helloworld-events \\ --destination-gke-path=/ \\ --event-filters=\"type=google.cloud.apigateway.gateway.v1.updated\" \\ --event-filters-path-pattern=\"gateway=my-gateway- \" \\ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.apigateway.gateway.v1.updated and matches events for gateway IDs starting with my-gateway- .",
+          "It transforms events to the correct CloudEvents format and encodes and delivers them as an HTTP POST request to the target GKE service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.disableEventarcAdvancedResources",
+      "eventarc.googleapis.com",
+      "eventarcpublishing.googleapis.com",
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/eventarc/standard/docs/choose-product-edition",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-api-gateway"
+      ]
+    }
+  ]
+}

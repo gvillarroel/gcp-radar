@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "Multiple API rate quota categories",
+  "feature_slug": "multiple-api-rate-quota-categories",
+  "summary": "Cloud SQL supports multiple categories of API rate quotas enforced per minute, project, region, and user.",
+  "extended_definition": "Cloud SQL supports multiple categories of API rate quotas enforced per minute, project, region, and user.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/quotas",
+      "https://docs.cloud.google.com/sql/docs/error-messages",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rate quotas Cloud SQL supports rate quotas, which are also known as rate limits or API quotas.",
+          "When you use the gcloud CLI or the Google Cloud console, you're making requests to the Cloud SQL Admin API and these requests count toward your rate quotas.",
+          "Rate quotas reset after a time interval that's specific to Cloud SQL (for example, the number of API requests per minute)."
+        ]
+      },
+      {
+        "title": "\"Quotas and system limits \\_|\\_ Google Cloud MCP servers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mcp/quotas",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud Quotas system does the following: Monitors your consumption of Google Cloud products and services Restricts your consumption of those resources Provides a way to request changes to the quota value and automate quota adjustments In most cases, when you attempt to consume more of a resource than its quota allows, the system blocks access to the resource, and the task that you're trying to perform fails.",
+          "To skip lines that don't list metric names, pass the output to a command such as grep with metric: as the search term, or use the gcloud CLI --format flag: gcloud beta quotas info list --project= PROJECT ID OR NUMBER \\ --service= SERVICE NAME --format=\"value(metric)\" Replace the following: PROJECT ID OR NUMBER : the project ID or project number.",
+          "Console In the Google Cloud console, go to the IAM & Admin > Quotas & System Limits page: Go to Quotas & System Limits The table on this page displays quotas and system limits that have usage or have adjusted values, and a reference entry for other quotas."
+        ]
+      },
+      {
+        "title": "Cloud SQL error messages \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can request an increase to your quotas from the Google Cloud console or edit the instance to upgrade it to a larger disk size.",
+          "Request an increase to your quotas from the Google Cloud console .",
+          "Review the quotas and limits for Cloud SQL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/quotas",
+        "https://docs.cloud.google.com/mcp/quotas",
+        "https://docs.cloud.google.com/sql/docs/error-messages"
+      ]
+    }
+  ]
+}

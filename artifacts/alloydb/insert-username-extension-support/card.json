@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:40.710Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "insert_username extension support",
+  "feature_slug": "insert-username-extension-support",
+  "summary": "AlloyDB Omni includes support for the insert_username extension.",
+  "extended_definition": "AlloyDB Omni includes support for the insert_username extension.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/reference/extensions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported database extensions \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "source_id": "site-api-reference",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "However, you can manually install PostGIS to an existing AlloyDB Omni installation. postgres fdw Provides a foreign-data wrapper that you can use to access data stored in external PostgreSQL servers. postgresql-hll Introduces a new data type, hll , which is a HyperLogLog data structure. prefix Provides prefix-matching, plus index support. rdkit Provides functions for comparing, manipulating, and identifying molecular structures. refint Includes functions to check foreign key restraints, the referencing table, and the referenced table. rum Implements support to create RUM indexes for high-performance full-text search.",
+          "PostGIS extensions AlloyDB's PostGIS support includes the following extensions: postgis postgis raster postgis sfcgal postgis tiger geocoder postgis topology address standardizer address standardizer data us Enable an extension Enable an extension by connecting to a database in an AlloyDB cluster's primary instance, then running a CREATE EXTENSION command.",
+          "Extension Included with AlloyDB Included with AlloyDB Omni Description amcheck Provides functions for verifying the logical consistency of the structure of relations, enabling the pg amcheck application to check for corruption. anon Helps you hide or replace personally identifiable information (PII) or commercially sensitive data."
+        ]
+      },
+      {
+        "title": "\"Create and manage RUM index \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a table to store queries: CREATE TABLE queries ( query text tsquery ); INSERT INTO queries ( query text ) VALUES ( plainto tsquery ( 'AlloyDB is fast!' )); Create a RUM index on the query text column: CREATE INDEX idx queries rum ON queries USING rum ( query text rum tsquery ops ); Run a query to find stored queries that match a document: SELECT FROM queries WHERE to tsvector ( 'english' , 'AlloyDB is fast' ) @@ query text ; Index for array search sorted by timestamp Use the rum anyarray addon ops operator class to index array columns along with an additional column for sorting.",
+          "This document shows you how to create the RUM extension and create indexes to optimize full-text search in AlloyDB for PostgreSQL.",
+          "Before you begin To create the RUM extension, you must have the alloydb superuser role."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to connect as a database user instead, set the following optional environment variables: #Optional: Set for database user authentication export ALLOYDB POSTGRES USER=\" USERNAME \" export ALLOYDB POSTGRES PASSWORD=\" PASSWORD \" To connect using a private IP address, you must also set the following environment variable: export ALLOYDB POSTGRES IP TYPE=\"private\" Start the Gemini CLI in interactive mode: gemini The CLI automatically loads the AlloyDB extension for Gemini CLI extension and its tools, which you can use to interact with your database.",
+          "AlloyDB extension The alloydb extension includes tools for querying the database, managing AlloyDB resources, and monitoring database health.",
+          "Add the following configuration, replace the environment variables with your values, and save. { \"mcpServers\": { \"alloydb\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"alloydb-postgres\",\"--stdio\"], \"env\": { \"ALLOYDB POSTGRES PROJECT\": \" PROJECT ID \", \"ALLOYDB POSTGRES REGION\": \" REGION \", \"ALLOYDB POSTGRES CLUSTER\": \" CLUSTER NAME \", \"ALLOYDB POSTGRES INSTANCE\": \" INSTANCE NAME \", \"ALLOYDB POSTGRES DATABASE\": \" DATABASE NAME \", \"ALLOYDB POSTGRES USER\": \" USERNAME \", \"ALLOYDB POSTGRES PASSWORD\": \" PASSWORD \" } } } } Note: To connect using a private IP address, add the following line to the env object: \"ALLOYDB POSTGRES IP TYPE\": \"private\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.viewer",
+      "monitoring.viewer",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/extensions",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/ai/create-rum-index"
+      ]
+    }
+  ]
+}

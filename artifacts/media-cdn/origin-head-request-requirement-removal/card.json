@@ -1,0 +1,181 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.702Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn",
+  "feature_name": "Origin HEAD request requirement removal",
+  "feature_slug": "origin-head-request-requirement-removal",
+  "summary": "Media CDN can fetch objects from the origin without issuing a preliminary HEAD request.",
+  "extended_definition": "Media CDN can fetch objects from the origin without issuing a preliminary HEAD request.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/caching",
+      "https://docs.cloud.google.com/media-cdn/docs/logging",
+      "https://docs.cloud.google.com/media-cdn/docs/origins",
+      "https://docs.cloud.google.com/media-cdn/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Origins overview \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "source_id": "site-docs-root",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Origin requirements To allow Media CDN to cache origin responses larger than 1 MiB, an origin must include the following in the response headers for GET requests, unless specified otherwise: A Last-Modified or ETag HTTP response header (a validator ).",
+          "The following table describes the timeout fields: Field Default Description connectTimeout 5 seconds The maximum amount of time Media CDN can take from starting the request to the origin until Media CDN determines whether the response is usable.",
+          "Origin connectivity The following sections describe how Media CDN connects to origins, how HTTP requests are made, and how you can authenticate requests."
+        ]
+      },
+      {
+        "title": "Configure caching behavior \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Origin requirements To allow Media CDN to cache origin responses larger than 1 MiB, an origin must include the following in the response headers for GET requests, unless specified otherwise: A Last-Modified or ETag HTTP response header (a validator ).",
+          "If a Vary header is present in the response, Media CDN doesn't cache it, unless the header specifies either one of the headers that are configured as a cache key setting or one of the following values: Accept: used to indicate which media types the client accepts Accept-Encoding: used to indicate which compression types the client accepts Available-Dictionary: used to provide the hash of an available dictionary for compression Origin/X-Origin: typically used for cross-origin resource sharing X-Goog-Allowed-Resources: supports Google Cloud organization restriction Sec-Fetch-Dest/Sec-Fetch-Mode/Sec-Fetch-Site: used to fetch metadata request headers Media CDN caches responses with a Vary header in the response by using the value of the header as part of the cache key.",
+          "To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges ."
+        ]
+      },
+      {
+        "title": "Request logging overview \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "source_id": "site-docs-root",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The value can be one of the following: DEFAULT GLOBAL : indicates that flexible shielding isn't configured SHIELDED : indicates that the region configured using flexShieldingRegion was used to serve the request SPILLED : indicates that the region configured using flexShieldingRegion couldn't be used for the request; the default origin was used This field appears only in logs for cache fill from an EdgeCacheOrigin resource. httpTtfb 0.157228207s The Duration from when the proxy begins receiving request bytes until the first byte of the response is sent (not received). latency 0.157415635s The Duration from when the proxy begins receiving request bytes until it has finished writing the response to the client. location The Location header in the response. metroIataCode MAA The IATA (airport) code of the city nearest the proxy. origin The EdgeCacheOrigin resource from which the response was proxied. originalRequestId 19d92668-3948-49d8-9244-25f8252043e4 The unique identifier assigned to the request that originally generated this response.",
+          "If your total number of requests is similar to the total number of unique fingerprints, it might indicate that your cache keys are too specific. cacheMode USE ORIGIN HEADERS The cdnPolicy.cacheMode configured on the route that matched this request. cacheStatus Cache hit: hit Full cache miss: fetch, miss, miss The cache status at each cache node between the user and the origin shield, where the rightmost value represents the cache closest to the user.",
+          "Media CDN supports data transmitted through HTTP request headers or query parameters and does not log values for the following keys: dl (deadline), nor (next object request), nrr (next range request), ot (object type), rtp (requested maximum throughput), sf (streaming format), su (startup), tb (top bitrate), or v (CMCD version). compressionAlgorithmApplied br The algorithm used to compress the response referred to in this log entry."
+        ]
+      },
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure what items Media CDN considers as part of a cache key, which can reduce requests from Media CDN to the upstream origin.",
+          "Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "edgecache.googleapis.com",
+      "example.com",
+      "image.jpg",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/origins",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/logging",
+        "https://docs.cloud.google.com/media-cdn/docs/overview"
+      ]
+    }
+  ]
+}

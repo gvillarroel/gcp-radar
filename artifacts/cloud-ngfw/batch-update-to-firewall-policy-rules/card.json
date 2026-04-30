@@ -1,0 +1,204 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.553Z",
+  "source_step08_card": "data/step-08/current/products/cloud-ngfw/card.json",
+  "product_name": "Cloud NGFW",
+  "product_slug": "cloud-ngfw",
+  "feature_name": "Batch update to firewall policy rules",
+  "feature_slug": "batch-update-to-firewall-policy-rules",
+  "summary": "Batch update to firewall policy rules lets you update all rules for hierarchical and network firewall policies in a single request.",
+  "extended_definition": "Batch update to firewall policy rules lets you update all rules for hierarchical and network firewall policies in a single request.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+      "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+      "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+      "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure batch updates to firewall policy rules \\_|\\_ Cloud Next Generation\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "source_id": "site-docs-root",
+        "final_score": 384,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are using gcloud CLI to batch update the firewall policy rules, use the following gcloud CLI commands: export-rules : lets you export the firewall policy rules configuration to a YAML file.",
+          "Following is an example of a basic YAML file. rules: -action: allow description: test-rule1 direction: INGRESS disabled: false enableLogging: false kind: compute#firewallPolicyRule match: layer4Configs: -ipProtocol: all srcIpRanges: -192.0.2.0/24 priority: 1 ruleTupleCount: 2 -action: goto next description: default egress rule direction: EGRESS enableLogging: false kind: compute#firewallPolicyRule match: destIpRanges: -::/0 layer4Configs: -ipProtocol: all priority: 2147483644 ruleTupleCount: 2 -action: goto next description: default ingress rule direction: INGRESS enableLogging: false kind: compute#firewallPolicyRule match: layer4Configs: -ipProtocol: all srcIpRanges: -::/0 priority: 2147483645 ruleTupleCount: 2 -action: goto next description: default egress rule direction: EGRESS enableLogging: false kind: compute#firewallPolicyRule match: destIpRanges: -198.51.100.0/24 layer4Configs: -ipProtocol: all priority: 2147483646 ruleTupleCount: 2 -action: goto next description: default ingress rule direction: INGRESS enableLogging: false kind: compute#firewallPolicyRule match: layer4Configs: -ipProtocol: all srcIpRanges: -192.0.2.0/24 priority: 2147483647 ruleTupleCount: 2 Import firewall policy rules Import the rules into your firewall policy after changing the file with your required batch updates.",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Configure batch updates to firewall policy rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Overview \\_|\\_ Cloud Next Generation Firewall \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "source_id": "site-docs-root",
+        "final_score": 282,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use a single request from the Google Cloud CLI or the Compute Engine API to batch update all the firewall policy rules for hierarchical and network firewall policies.",
+          "To configure the batch update to firewall policy rules, do the following: Export your firewall policy rules.",
+          "Permissions Make sure that you have the following permissions to batch update the firewall policy rules."
+        ]
+      },
+      {
+        "title": "\"Configure global network firewall policy to deny egress connections to specific\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To update the firewall policy, run the following command: gcloud compute network-firewall-policies rules create 500 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --src-ip-ranges= NAT IP ADDRESS \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging Replace NAT IP ADDRESS with the IP address assigned to your Cloud NAT.",
+          "Click Create . gcloud To allow IAP access to all VM instances in the vpc-geo-location network, run the following command: To create a firewall policy, run the following command: gcloud compute network-firewall-policies create fw-policy \\ --global To create a firewall rule that allows traffic to all destinations and enables logs, run the following command: gcloud compute network-firewall-policies rules create 100 \\ --firewall-policy=fw-policy \\ --direction=INGRESS \\ --action=ALLOW \\ --layer4-configs=tcp:22 \\ --src-ip-ranges=35.235.240.0/20 \\ --global-firewall-policy \\ --enable-logging To associate the firewall policy with the VPC network, run the following command: gcloud compute network-firewall-policies associations create \\ --firewall-policy=fw-policy \\ --network=vpc-geo-location \\ --name=pol-association-fw-rules \\ --global-firewall-policy Create a firewall rule In this section, you create a firewall rule to allow ingress connection on the instance-2-sg VM.",
+          "Click Create . gcloud To add a new rule in the fw-policy that you created in the Create a global network firewall policy section, run the following command: gcloud compute network-firewall-policies rules create 200 \\ --firewall-policy=fw-policy \\ --direction=EGRESS \\ --action=DENY \\ --dest-region-codes=SG,PL,IT \\ --layer4-configs=all \\ --global-firewall-policy \\ --enable-logging Test the geolocation firewall rule Console After you have added the rule to block egress traffic to Singapore (SG), Poland (PL), and Italy (IT), follow these steps to test the rule: In the Google Cloud console, go to the VM instances page."
+        ]
+      },
+      {
+        "title": "\"Configure a global network firewall policy to allow egress traffic to an\\",
+        "url": "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress",
+        "source_id": "site-docs-root",
+        "final_score": 251,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create a custom VPC network, VM, Cloud Router, Cloud NAT, global network firewall policy and its rules, and to view the logs, ask your administrator to grant you the following IAM roles on the project: Compute Network Admin role ( roles/compute.networkAdmin ) Compute Instance Admin (v1) role ( roles/compute.instanceAdmin.v1 ) Compute Security Admin role ( roles/compute.securityAdmin ) Logs Viewer role ( roles/logging.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation Networking Cloud NGFW Guides Send feedback Configure a global network firewall policy to allow egress traffic to an FQDN Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a global network firewall policy to allow IAP TCP tunneling To allow Identity-Aware Proxy tunneling for the VMs in your network, create a global network firewall policy and add a firewall rule to the policy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.instanceAdmin.v1",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.instanceAdmin.v1",
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firewall/docs/configure-batch-updates",
+        "https://docs.cloud.google.com/firewall/docs/batch-update-overview",
+        "https://docs.cloud.google.com/firewall/docs/tutorials/configure-fwpolicy-deny-egress-geolocation",
+        "https://docs.cloud.google.com/firewall/docs/quickstarts/configure-nwfwpolicy-fqdn-egress"
+      ]
+    }
+  ]
+}

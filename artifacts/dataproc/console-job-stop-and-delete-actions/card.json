@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Console job stop and delete actions",
+  "feature_slug": "console-job-stop-and-delete-actions",
+  "summary": "The Dataproc console Jobs page shows Stop and Delete buttons for every job in the list.",
+  "extended_definition": "The Dataproc console Jobs page shows Stop and Delete buttons for every job in the list.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+      "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Stop and start clusters \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud console Click the cluster name from the Managed Service for Apache Spark Clusters page in the Google Cloud console, then click STOP to stop and START to start the cluster. gcloud CLI Stop a cluster gcloud dataproc clusters stop CLUSTER NAME \\ --region= REGION Start a cluster gcloud dataproc clusters start CLUSTER NAME \\ --region= REGION REST API Stop a cluster Submit a clusters.stop request.",
+          "Limitations You cannot stop: clusters with secondary workers clusters with local ssds When a cluster is stopped, you cannot: update the cluster submit jobs to the cluster access notebooks running on the cluster using the Managed Service for Apache Spark component gateway Starting a cluster When you restart a stopped cluster, any initialization actions won't be re-run.",
+          "Stop Response: When the stop request returns a stop operation, the cluster will be in a STOPPING state, and no further jobs will be allowed to be submitted ( SubmitJob requests will fail)."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a cluster by using the Google Cloud console \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cluster by using the Google Cloud console This page shows you how to use the Google Cloud console to create a Managed Service for Apache Spark cluster, run a basic Apache Spark job in the cluster, and then modify the number of workers in the cluster.",
+          "On the Jobs page, click add box Submit job , and then do the following: In the Job ID field, use the default setting, or provide an ID that is unique to your Google Cloud project.",
+          "Enable the API In the Google Cloud console, on the project selector page, select or create a Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a cluster by using the Google Cloud console \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cluster by using the Google Cloud console This page shows you how to use the Google Cloud console to create a Managed Service for Apache Spark cluster, run a basic Apache Spark job in the cluster, and then modify the number of workers in the cluster.",
+          "On the Jobs page, click add box Submit job , and then do the following: In the Job ID field, use the default setting, or provide an ID that is unique to your Google Cloud project.",
+          "Enable the API In the Google Cloud console, on the project selector page, select or create a Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusters.stop",
+      "com.google.cloud.dataproc.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/create-cluster-console",
+        "https://docs.cloud.google.com/dataproc/docs/quickstarts/update-cluster-console"
+      ]
+    }
+  ]
+}

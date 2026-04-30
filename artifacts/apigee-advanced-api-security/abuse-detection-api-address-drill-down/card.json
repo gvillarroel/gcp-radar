@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.533Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Abuse Detection API address drill-down",
+  "feature_slug": "abuse-detection-api-address-drill-down",
+  "summary": "The detected traffic view in Abuse Detection now includes preview support for drilling down into API address details for investigated abuse events.",
+  "extended_definition": "The detected traffic view in Abuse Detection now includes preview support for drilling down into API address details for investigated abuse events.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 249,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Exclude traffic using the abuse detection incident details page To exclude one or multiple IP addresses : View the details for an incident.",
+          "Exclude traffic using the detected traffic page To exclude one or multiple IP addresses : Select an environment for abuse detection.",
+          "The Detected Traffic view also displays a table listing the details of each IP address corresponding to the detected abuse."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 204,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Brute Guessor High proportion of response errors (4xx and 5xx) during previous 24 hours Flooder High proportion of traffic from an IP address in a 5-minute window OAuth Abuser Large number of OAuth sessions with small number of user agents during the previous 24 hours Robot Abuser Large number of 403 rejection errors in the past 24 hours Static Content Scraper High proportion of response payload size from an IP address in a 5-minute window TorListRule Tor exit nodes IP list.",
+          "If there are significant shifts in traffic patterns (for example, a surge in traffic, error rates, or latency), the model flags the IP address that contributed to the anomaly in Detected Traffic.",
+          "Note that one incident might be triggered by multiple detection rules, in which case all of the rules that triggered the incident are listed in the Abuse detection Environment details view."
+        ]
+      },
+      {
+        "title": "Security actions overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 198,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "One way to identify which requests to take action on is to use the Abuse detection Detected traffic or Incident views, which show IP addresses and API keys that are sources of abuse.",
+          "For example, you can create a security action to deny requests from an IP address that has been identified by Abuse Detection as abuse and block them from accessing your APIs.",
+          "The information displayed in the Attributes page is similar the Attributes view for the Abuse detection Incident details attributes ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    }
+  ]
+}

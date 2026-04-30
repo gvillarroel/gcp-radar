@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Advanced card UI widgets",
+  "feature_slug": "advanced-card-ui-widgets",
+  "summary": "Chat apps can use Chip, Overflow Menu, Material Button, and collapsible text and section control widgets in card-based interfaces; Chat apps can use Chip, Overflow Menu, Material Button, and collapsible text and section control widgets in card-based interfaces.",
+  "extended_definition": "Chat apps can use Chip, Overflow Menu, Material Button, and collapsible text and section control widgets in card-based interfaces; Chat apps can use Chip, Overflow Menu, Material Button, and collapsible text and section control widgets in card-based interfaces.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+      "https://developers.google.com/workspace/chat/create-update-interactive-cards"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "Google Workspace add-ons and Chat apps Fields horizontal size style HorizontalSizeStyle Specifies how a column fills the width of the card. horizontal alignment HorizontalAlignment Specifies whether widgets align to the left, right, or center of a column. vertical alignment VerticalAlignment Specifies whether widgets align to the top, bottom, or center of a column. widgets[] Widgets An array of widgets included in a column.",
+          "Example: Card message for a Google Chat app To create the sample card message in Google Chat, use the following JSON: { \"cardsV2\": [ { \"cardId\": \"unique-card-id\", \"card\": { \"header\": { \"title\": \"Sasha\", \"subtitle\": \"Software Engineer\", \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"imageType\": \"CIRCLE\", \"imageAltText\": \"Avatar for Sasha\" }, \"sections\": [ { \"header\": \"Contact Info\", \"collapsible\": true, \"uncollapsibleWidgetsCount\": 1, \"widgets\": [ { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"EMAIL\" }, \"text\": \"sasha@example.com\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PERSON\" }, \"text\": \"<font color=\\\"#80e27e\\\">Online</font>\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PHONE\" }, \"text\": \"+1 (555) 555-1234\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Share\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/share\" } } }, { \"text\": \"Edit\", \"onClick\": { \"action\": { \"function\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"EDIT\" } ] } } } ] } } ] } ] } } ] } Fields header CardHeader The header of the card."
+        ]
+      },
+      {
+        "title": "Create and update interactive cards \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to create a message with a card on behalf of a user: Node.js / This sample shows how to create a message with a card on behalf of a user. / const { google } = require ( 'googleapis' ); const { auth } = require ( 'google-auth-library' ); async function main () { // Create a client const authClient = await auth . getClient ({ scopes : [ 'https://www.googleapis.com/auth/chat.messages.create' ] }); google . options ({ auth : authClient }); // Initialize the Chat API with Developer Preview labels const chat = await google . discoverAPI ( 'https://chat.googleapis.com/$discovery/rest?version=v1&labels=DEVELOPER PREVIEW&key=API KEY' ); // The space to create the message in. const parent = 'spaces/SPACE NAME' ; // Create the request const request = { parent : parent , requestBody : { text : 'Here is a card created on my behalf:' , cardsV2 : [{ cardId : 'unique-card-id' , card : { header : { title : 'Card Title' , subtitle : 'Card Subtitle' }, sections : [{ widgets : [{ textParagraph : { text : 'This card is attached to a user message.' } }] }] } }] } }; // Call the API const response = await chat . spaces . messages . create ( request ); // Handle the response console . log ( response . data ); } main (). catch ( console . error ); Python \"\"\" This sample shows how to create a message with a card on behalf of a user. \"\"\" from google.oauth2 import service account from googleapiclient.discovery import build import google.auth def create message with card (): Create a client scopes = [ \"https://www.googleapis.com/auth/chat.messages.create\" ] credentials , = google . auth . default ( scopes = scopes ) Build the service endpoint for Chat API with Developer Preview labels. service = build ( 'chat' , 'v1' , credentials = credentials , discoveryServiceUrl = 'https://chat.googleapis.com/$discovery/rest?version=v1&labels=DEVELOPER PREVIEW&key=API KEY' ) The space to create the message in. parent = \"spaces/SPACE NAME\" Create the request result = service . spaces () . messages () . create ( parent = parent , body = { 'text' : 'Here is a card created on my behalf:' , 'cardsV2' : [{ 'cardId' : 'unique-card-id' , 'card' : { 'header' : { 'title' : 'Card Title' , 'subtitle' : 'Card Subtitle' }, 'sections' : [{ 'widgets' : [{ 'textParagraph' : { 'text' : 'This card is attached to a user message.' } }] }] } }] } ) . execute () print ( result ) if name == \" main \" : create message with card () Java / This sample shows how to create a message with a card on behalf of a user. / import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport ; import com.google.api.client.http.GenericUrl ; import com.google.api.client.http.HttpRequest ; import com.google.api.client.http.HttpRequestFactory ; import com.google.api.client.http.HttpTransport ; import com.google.api.client.http.json.JsonHttpContent ; import com.google.api.client.json.gson.GsonFactory ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.util.Arrays ; import java.util.Collections ; import java.util.HashMap ; import java.util.Map ; public class CreateMessageWithCard { public static void main ( String [] args ) throws Exception { HttpTransport transport = GoogleNetHttpTransport . newTrustedTransport (); GsonFactory jsonFactory = GsonFactory . getDefaultInstance (); GoogleCredentials credentials = GoogleCredentials . getApplicationDefault () . createScoped ( Arrays . asList ( \"https://www.googleapis.com/auth/chat.messages.create\" )); HttpRequestFactory requestFactory = transport . createRequestFactory ( new HttpCredentialsAdapter ( credentials )); String parent = \"spaces/SPACE NAME\" ; GenericUrl url = new GenericUrl ( \"https://chat.googleapis.com/v1/\" + parent + \"/messages\" ); // Construct the message body Map<String , Object > message = new HashMap <> (); message . put ( \"text\" , \"Here is a card created on my behalf:\" ); Map<String , Object > header = new HashMap <> (); header . put ( \"title\" , \"Card Title\" ); header . put ( \"subtitle\" , \"Card Subtitle\" ); Map<String , Object > textParagraph = new HashMap <> (); textParagraph . put ( \"text\" , \"This card is attached to a user message.\" ); Map<String , Object > widget = new HashMap <> (); widget . put ( \"textParagraph\" , textParagraph ); Map<String , Object > section = new HashMap <> (); section . put ( \"widgets\" , Collections . singletonList ( widget )); Map<String , Object > card = new HashMap <> (); card . put ( \"header\" , header ); card . put ( \"sections\" , Collections . singletonList ( section )); Map<String , Object > cardWithId = new HashMap <> (); cardWithId . put ( \"cardId\" , \"unique-card-id\" ); cardWithId . put ( \"card\" , card ); message . put ( \"cardsV2\" , Collections . singletonList ( cardWithId )); HttpRequest request = requestFactory . buildPostRequest ( url , new JsonHttpContent ( jsonFactory , message )); System . out . println ( request . execute (). parseAsString ()); } } Apps Script / This sample shows how to create a message with a card on behalf of a user. / function createMessageWithCard () { const parent = 'spaces/SPACE NAME' ; const url = https://chat.googleapis.com/v1/ ${ parent } /messages ; const message = { text : 'Here is a card created on my behalf:' , cardsV2 : [{ cardId : 'unique-card-id' , card : { header : { title : 'Card Title' , subtitle : 'Card Subtitle' }, sections : [{ widgets : [{ textParagraph : { text : 'This card is attached to a user message.' } }] }] } }] }; const options = { method : 'post' , headers : { Authorization : 'Bearer ' + ScriptApp . getOAuthToken () }, contentType : 'application/json' , payload : JSON . stringify ( message ), muteHttpExceptions : true }; try { const response = UrlFetchApp . fetch ( url , options ); console . log ( response . getContentText ()); } catch ( err ) { console . log ( 'Failed to create message: ' + err . message ); } } Update cards asynchronously After creating a message with cards, you can update the cards asynchronously using app authentication .",
+          "The following example shows how to update the cards of a message: Node.js / This sample shows how to update cards on a message. / const { google } = require ( 'googleapis' ); const { auth } = require ( 'google-auth-library' ); async function main () { // Create a client with app credentials const authClient = await auth . getClient ({ scopes : [ 'https://www.googleapis.com/auth/chat.bot' ] }); google . options ({ auth : authClient }); // Initialize the Chat API with Developer Preview labels const chat = await google . discoverAPI ( 'https://chat.googleapis.com/$discovery/rest?version=v1&labels=DEVELOPER PREVIEW&key=API KEY' ); // The message to update. const messageName = 'spaces/SPACE NAME/messages/MESSAGE ID' ; // Create the request const request = { name : messageName , requestBody : { cardsV2 : [{ cardId : 'unique-card-id' , card : { header : { title : 'Updated Card Title' , subtitle : 'Updated Card Subtitle' }, sections : [{ widgets : [{ textParagraph : { text : 'The card content has been updated asynchronously.' } }] }] } }] } }; // Call the API await chat . spaces . messages . replaceCards ( request ); console . log ( 'Cards updated.' ); } main (). catch ( console . error ); Python \"\"\" This sample shows how to update cards on a message. \"\"\" from google.oauth2 import service account from googleapiclient.discovery import build import google.auth def replace message cards (): Create a client with app credentials scopes = [ \"https://www.googleapis.com/auth/chat.bot\" ] credentials , = google . auth . default ( scopes = scopes ) Build the service endpoint for Chat API with Developer Preview labels. service = build ( 'chat' , 'v1' , credentials = credentials , discoveryServiceUrl = 'https://chat.googleapis.com/$discovery/rest?version=v1&labels=DEVELOPER PREVIEW&key=API KEY' ) The message to update. message name = \"spaces/SPACE NAME/messages/MESSAGE ID\" Create the request result = service . spaces () . messages () . replaceCards ( name = message name , body = { 'cardsV2' : [{ 'cardId' : 'unique-card-id' , 'card' : { 'header' : { 'title' : 'Updated Card Title' , 'subtitle' : 'Updated Card Subtitle' }, 'sections' : [{ 'widgets' : [{ 'textParagraph' : { 'text' : 'The card content has been updated asynchronously.' } }] }] } }] } ) . execute () print ( \"Cards updated.\" ) if name == \" main \" : replace message cards () Java / This sample shows how to update cards on a message. / import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport ; import com.google.api.client.http.GenericUrl ; import com.google.api.client.http.HttpRequest ; import com.google.api.client.http.HttpRequestFactory ; import com.google.api.client.http.HttpTransport ; import com.google.api.client.http.json.JsonHttpContent ; import com.google.api.client.json.gson.GsonFactory ; import com.google.auth.http.HttpCredentialsAdapter ; import com.google.auth.oauth2.GoogleCredentials ; import java.util.Arrays ; import java.util.Collections ; import java.util.HashMap ; import java.util.Map ; public class ReplaceMessageCards { public static void main ( String [] args ) throws Exception { HttpTransport transport = GoogleNetHttpTransport . newTrustedTransport (); GsonFactory jsonFactory = GsonFactory . getDefaultInstance (); GoogleCredentials credentials = GoogleCredentials . getApplicationDefault () . createScoped ( Arrays . asList ( \"https://www.googleapis.com/auth/chat.bot\" )); HttpRequestFactory requestFactory = transport . createRequestFactory ( new HttpCredentialsAdapter ( credentials )); String messageName = \"spaces/SPACE NAME/messages/MESSAGE ID\" ; GenericUrl url = new GenericUrl ( \"https://chat.googleapis.com/v1/\" + messageName + \":replaceCards\" ); // Construct the body Map<String , Object > header = new HashMap <> (); header . put ( \"title\" , \"Updated Card Title\" ); header . put ( \"subtitle\" , \"Updated Card Subtitle\" ); Map<String , Object > textParagraph = new HashMap <> (); textParagraph . put ( \"text\" , \"The card content has been updated asynchronously.\" ); Map<String , Object > widget = new HashMap <> (); widget . put ( \"textParagraph\" , textParagraph ); Map<String , Object > section = new HashMap <> (); section . put ( \"widgets\" , Collections . singletonList ( widget )); Map<String , Object > card = new HashMap <> (); card . put ( \"header\" , header ); card . put ( \"sections\" , Collections . singletonList ( section )); Map<String , Object > cardWithId = new HashMap <> (); cardWithId . put ( \"cardId\" , \"unique-card-id\" ); cardWithId . put ( \"card\" , card ); Map<String , Object > body = new HashMap <> (); body . put ( \"cardsV2\" , Collections . singletonList ( cardWithId )); HttpRequest request = requestFactory . buildPostRequest ( url , new JsonHttpContent ( jsonFactory , body )); request . execute (); System . out . println ( \"Cards updated.\" ); } } Apps Script / This sample shows how to update cards on a message. / function replaceMessageCards () { const messageName = 'spaces/SPACE NAME/messages/MESSAGE ID' ; const url = https://chat.googleapis.com/v1/ ${ messageName } :replaceCards ; const request = { cardsV2 : [{ cardId : 'unique-card-id' , card : { header : { title : 'Updated Card Title' , subtitle : 'Updated Card Subtitle' }, sections : [{ widgets : [{ textParagraph : { text : 'The card content has been updated asynchronously.' } }] }] } }] }; const options = { method : 'post' , headers : { Authorization : 'Bearer ' + ScriptApp . getOAuthToken () }, contentType : 'application/json' , payload : JSON . stringify ( request ), muteHttpExceptions : true }; try { const response = UrlFetchApp . fetch ( url , options ); console . log ( 'Cards updated.' ); } catch ( err ) { console . log ( 'Failed to update cards: ' + err . message ); } } Limitations When creating messages with cards on behalf of a user or updating cards, the Chat app must be a member of the space.",
+          "The Chat app can only replace cards that it attached to a message, not cards that other Chat apps attached."
+        ]
+      },
+      {
+        "title": "Cards v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about formatting text, see Formatting text in Google Chat apps and Formatting text in Google Workspace Add-ons . widgets[] object ( WidgetMarkup ) A section must contain at least one widget.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-24 UTC.\"],[],[\"This document outlines the structure and components of cards, which are UI elements containing widgets like text and images.",
+          "For more information about formatting text, see Formatting text in Google Chat apps and Formatting text in Google Workspace Add-ons . contentMultiline boolean If the content should be multiline. bottomLabel string The text of the bottom label."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "chat.bot",
+      "chat.googleapis.com",
+      "chat.messages.create",
+      "com.google.api.client.googleapis.javanet.GoogleNetHttpTransport",
+      "com.google.api.client.http.GenericUrl",
+      "com.google.api.client.http.HttpRequest",
+      "com.google.api.client.http.HttpRequestFactory",
+      "com.google.api.client.http.HttpTransport",
+      "com.google.api.client.http.json.JsonHttpContent",
+      "com.google.api.client.json.gson.GsonFactory",
+      "com.google.auth.http.HttpCredentialsAdapter",
+      "com.google.auth.oauth2.GoogleCredentials",
+      "developers.google.com",
+      "example.com",
+      "googleapiclient.discovery",
+      "java.util.Arrays",
+      "java.util.Collections",
+      "java.util.HashMap",
+      "java.util.Map"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/create-update-interactive-cards",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    }
+  ]
+}

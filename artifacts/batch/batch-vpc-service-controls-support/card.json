@@ -1,0 +1,147 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.415Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Batch VPC Service Controls support",
+  "feature_slug": "batch-vpc-service-controls-support",
+  "summary": "Batch supports VPC Service Controls, enabling perimeters to protect explicitly specified Google Cloud resources and data used by Batch.",
+  "extended_definition": "Batch supports VPC Service Controls, enabling perimeters to protect explicitly specified Google Cloud resources and data used by Batch.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-job",
+      "https://docs.cloud.google.com/iam/docs/resources",
+      "https://docs.cloud.google.com/iam/docs/roles-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Resources \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/resources",
+        "source_id": "site-iam-reference",
+        "final_score": 40,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Job creation and execution overview \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "source_id": "site-docs-root",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Networking overview provides an overview of when and how you can customize the networking configuration for a job, including specifying the job's network, blocking external connections, and protecting data and resources by using VPC Service Controls.",
+          "Protect sensitive data using Secret Manager explains how to securely define sensitive data, such as custom environment variables and login credentials, by using Secret Manager secrets to specify encrypted information when you create a job."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.batch.v1.AllocationPolicy.Disk.DataSourceCase"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/resources",
+        "https://docs.cloud.google.com/iam/docs/roles-overview"
+      ]
+    }
+  ]
+}

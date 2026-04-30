@@ -1,0 +1,191 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.006Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal",
+  "feature_name": "Prometheus-backed horizontal Pod autoscaling",
+  "feature_slug": "prometheus-backed-horizontal-pod-autoscaling",
+  "summary": "Horizontal Pod autoscaling can use custom metrics from a Prometheus server to scale applications without manually deploying and managing the adapter.",
+  "extended_definition": "Horizontal Pod autoscaling can use custom metrics from a Prometheus server to scale applications without manually deploying and managing the adapter.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this case, when using Prometheus as a custom metrics provider for horizontal Pod autoscaling, use the following fully qualified domain name (FQDN): http://prometheus.k8s.svc.cluster.local:9090 The FQDN follows standard Kubernetes naming conventions for internal DNS names : prometheus : The name of the Kubernetes Service (the Prometheus application service itself). k8s : The name of the Kubernetes Namespace where the service is running. svc : Indicates that this is a Service resource type within the cluster. cluster.local : The default domain suffix for the Kubernetes cluster internal network.",
+          "This enables the use of your own Prometheus instance as a custom metrics provider for horizontal Pod autoscaling.",
+          "Specifies the adapter configuration for horizontal Pod autoscaling based on custom metrics."
+        ]
+      },
+      {
+        "title": "\"Configure logging and monitoring \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Excluded kube metrics The following kube metrics are excluded from the optimized metrics: kube certificatesigningrequest cert length kube certificatesigningrequest condition kube certificatesigningrequest created kube certificatesigningrequest labels kube configmap annotations kube configmap info kube configmap labels kube configmap metadata resource version kube daemonset annotations kube daemonset created kube daemonset labels kube daemonset metadata generation kube daemonset status observed generation kube deployment annotations kube deployment created kube deployment labels kube deployment spec paused kube deployment spec strategy rollingupdate max surge kube deployment spec strategy rollingupdate max unavailable kube deployment status condition kube deployment status replicas ready kube endpoint annotations kube endpoint created kube endpoint info kube endpoint labels kube endpoint ports kube horizontalpodautoscaler annotations kube horizontalpodautoscaler info kube horizontalpodautoscaler labels kube horizontalpodautoscaler metadata generation kube horizontalpodautoscaler status condition kube job annotations kube job complete kube job created kube job info kube job labels kube job owner kube job spec completions kube job spec parallelism kube job status completion time kube job status start time kube job status succeeded kube lease owner kube lease renew time kube limitrange kube limitrange created kube mutatingwebhookconfiguration info kube namespace labels kube networkpolicy annotations kube networkpolicy labels kube networkpolicy spec egress rules kube networkpolicy spec ingress rules kube node annotations kube node role kube persistentvolume annotations kube persistentvolume labels kube persistentvolumeclaim access mode kube persistentvolumeclaim annotations kube persistentvolumeclaim labels kube pod annotations kube pod completion time kube pod container resource limits kube pod container resource requests kube pod container state started kube pod created kube pod init container info kube pod init container resource limits kube pod init container resource requests kube pod init container status last terminated reason kube pod init container status ready kube pod init container status restarts total kube pod init container status running kube pod init container status terminated kube pod init container status terminated reason kube pod init container status waiting kube pod init container status waiting reason kube pod labels kube pod owner kube pod restart policy kube pod spec volumes persistentvolumeclaims readonly kube pod start time kube poddisruptionbudget annotations kube poddisruptionbudget created kube poddisruptionbudget labels kube poddisruptionbudget status expected pods kube poddisruptionbudget status observed generation kube poddisruptionbudget status pod disruptions allowed kube replicaset annotations kube replicaset created kube replicaset labels kube replicaset metadata generation kube replicaset owner kube replicaset status observed generation kube resourcequota created kube secret annotations kube secret info kube secret labels kube secret metadata resource version kube secret type kube service annotations kube service created kube service info kube service labels kube service spec type kube statefulset annotations kube statefulset created kube statefulset labels kube statefulset status current revision kube statefulset status update revision kube storageclass annotations kube storageclass created kube storageclass info kube storageclass labels kube validatingwebhookconfiguration info kube validatingwebhookconfiguration metadata resource version kube volumeattachment created kube volumeattachment info kube volumeattachment labels kube volumeattachment spec source persistentvolume kube volumeattachment status attached kube volumeattachment status attachment metadata The complete set of Google Distributed Cloud metrics is documented in View Anthos metrics .",
+          "Here are some examples of replacements you might use: Disabled metric Replacements kube pod start time container/uptime kube pod container resource requests container/cpu/request cores container/memory/request bytes kube pod container resource limits container/cpu/limit cores container/memory/limit bytes To disable the optimized metrics default setting (not recommended), do the following: Open your Stackdriver custom resource in a command-line editor: kubectl -n kube-system edit stackdriver stackdriver Set the optimizedMetrics field to false : apiVersion: addons.gke.io/v1alpha1 kind: Stackdriver metadata: name: stackdriver namespace: kube-system spec: projectID: my-project clusterName: my-cluster clusterLocation: us-west-1a optimizedMetrics: false Save changes, and quit your command-line editor.",
+          "The following components are supported by resourceAttrOverride : gke-metrics-agent/gke-metrics-agent stackdriver-log-forwarder/stackdriver-log-forwarder stackdriver-metadata-agent-cluster-level/metadata-agent node-exporter/node-exporter kube-state-metrics/kube-state-metrics An example file looks like the following: apiVersion: addons.gke.io/v1alpha1 kind: Stackdriver metadata: name: stackdriver namespace: kube-system spec: projectID: my-project clusterName: my-cluster clusterLocation: us-west-1a resourceAttrOverride: gke-metrics-agent/gke-metrics-agent: requests: cpu: 110m memory: 240Mi limits: cpu: 200m memory: 4.5Gi To save changes to the Stackdriver custom resource, save and quit your command-line editor."
+        ]
+      },
+      {
+        "title": "\"Enable application logging and monitoring \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To deploy the example application, run the following command: kubectl -n gmp-test apply \\ -f https://raw.githubusercontent.com/GoogleCloudPlatform/prometheus-engine/v0.4.1/examples/example-app.yaml Configure a PodMonitoring resource Configure a PodMonitoring custom resource to capture metrics data emitted by the example application and send it to Google Cloud Managed Service for Prometheus.",
+          "You can verify the PodMonitoring resource is installed in the intended namespace by running the following command: kubectl --kubeconfig CLUSTER KUBECONFIG get podmonitoring -A For reference documentation about all the Google Cloud Managed Service for Prometheus custom resources, see the prometheus-engine/doc/api reference .",
+          "This page shows how to configure a cluster for Google Distributed Cloud so that custom logs and metrics from user applications are sent to Cloud Logging, Cloud Monitoring, and Google Cloud Managed Service for Prometheus ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "addons.gke.io",
+      "app.yaml",
+      "baremetal.cluster.gke.io",
+      "cluster.local",
+      "preview.baremetal.cluster.gke.io",
+      "prometheus.k8s.svc.cluster.local",
+      "prometheus.prometheus.svc.cluster.local",
+      "raw.githubusercontent.com",
+      "resource.labels.namespace",
+      "resource.labels.project",
+      "resource.type",
+      "v0.4.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/application-logging-monitoring"
+      ]
+    }
+  ]
+}

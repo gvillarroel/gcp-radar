@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "NULLS FIRST and NULLS LAST in ORDER BY",
+  "feature_slug": "nulls-first-and-nulls-last-in-order-by",
+  "summary": "BigQuery ORDER BY supports NULLS FIRST and NULLS LAST to control null sorting behavior.",
+  "extended_definition": "BigQuery ORDER BY supports NULLS FIRST and NULLS LAST to control null sorting behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Job completedJob = loadJob . waitFor (); // Check for errors if ( completedJob == null ) { throw new Exception ( \"Job not executed since it no longer exists.\" ); } else if ( completedJob . getStatus (). getError () != null ) { // You can also look at queryJob.getStatus().getExecutionErrors() for all // errors, not just the latest one. throw new Exception ( \"BigQuery was unable to load into the table due to an error: \\n\" + loadJob . getStatus (). getError ()); } System . out . println ( \"Data successfully loaded into time partitioned table during load job\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Data not loaded into time partitioned table during load job \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "Job completedJob = loadJob . waitFor (); // Check for errors if ( completedJob == null ) { throw new Exception ( \"Job not executed since it no longer exists.\" ); } else if ( completedJob . getStatus (). getError () != null ) { // You can also look at queryJob.getStatus().getExecutionErrors() for all // errors, not just the latest one. throw new Exception ( \"BigQuery was unable to load into the table due to an error: \\n\" + loadJob . getStatus (). getError ()); } System . out . println ( \"Table is successfully overwritten by CSV file loaded from GCS\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "Permissions to load data into BigQuery To load data into a new BigQuery table or partition or to append or overwrite an existing table or partition, you need the following IAM permissions: bigquery.tables.create bigquery.tables.updateData bigquery.tables.update bigquery.jobs.create Each of the following predefined IAM roles includes the permissions that you need in order to load data into a BigQuery table or partition: roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.admin (includes the bigquery.jobs.create permission) bigquery.user (includes the bigquery.jobs.create permission) bigquery.jobUser (includes the bigquery.jobs.create permission) Additionally, if you have the bigquery.datasets.create permission, you can create and update tables using a load job in the datasets that you create."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following query selects approximately 10% of a table's data: SELECT FROM dataset . my table TABLESAMPLE SYSTEM ( 10 PERCENT ) MATCH RECOGNIZE clause FROM from item MATCH RECOGNIZE ( [ PARTITION BY partition expr [, ... ] ] ORDER BY order expr [{ ASC DESC }] [{ NULLS FIRST NULLS LAST }] [, ...] MEASURES { measures expr [AS] alias } [, ... ] [ AFTER MATCH SKIP { PAST LAST ROW TO NEXT ROW } ] PATTERN ( pattern ) DEFINE symbol AS boolean expr [, ... ] [ OPTIONS ( [ use longest match = { TRUE FALSE } ] ) ] ) Description The MATCH RECOGNIZE clause is an optional sub-clause of the FROM clause, used to filter and aggregate based on matches.",
+          "SELECT LastName , COUNT ( ) FROM PlayerStats GROUP BY LastName HAVING SUM ( PointsScored ) > 15 ; ORDER BY clause ORDER BY expression [{ ASC DESC }] [{ NULLS FIRST NULLS LAST }] [, ...] The ORDER BY clause specifies a column or expression as the sort criterion for the result set.",
+          "If null ordering isn't specified with NULLS FIRST or NULLS LAST : NULLS FIRST is applied by default if the sort order is ascending."
+        ]
+      },
+      {
+        "title": "JSON functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[{\"name\":\"Jane\"}]}} +----------------------------------------------------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": []}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[]}} +----------------------------------------------------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[{\"name\":\"John\"},{\"name\":\"Jamie\"}]}} +----------------------------------------------------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ {\"name\":\"Jane\"} +----------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": []}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ NULL +----------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ {\"name\":\"John\"} +----------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": []}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": null}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ \"Jamie\" +---------------- / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , \"$.class['students']\" ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [{\"name\":\"Jane\"}] +------------------------------------ / SELECT JSON EXTRACT ( '{\"class\": {\"students\": []}}' , \"$.class['students']\" ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [] +------------------------------------ / SELECT JSON EXTRACT ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , \"$.class['students']\" ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [{\"name\":\"John\"},{\"name\":\"Jamie\"}] +------------------------------------ / SELECT JSON EXTRACT ( '{\"a\": null}' , \"$.a\" ); -- Returns a SQL NULL SELECT JSON EXTRACT ( '{\"a\": null}' , \"$.b\" ); -- Returns a SQL NULL SELECT JSON EXTRACT ( JSON '{\"a\": null}' , \"$.a\" ); -- Returns a JSON 'null' SELECT JSON EXTRACT ( JSON '{\"a\": null}' , \"$.b\" ); -- Returns a SQL NULL JSON EXTRACT ARRAY Note: This function is deprecated.",
+          "SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[{\"name\":\"Jane\"}]}} +----------------------------------------------------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": []}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[]}} +----------------------------------------------------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"John\"},{\"name\": \"Jamie\"}]}}' , '$' ) AS json text string ; / -----------------------------------------------------------+ json text string +-----------------------------------------------------------+ {\"class\":{\"students\":[{\"name\":\"John\"},{\"name\":\"Jamie\"}]}} +----------------------------------------------------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ {\"name\":\"Jane\"} +----------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": []}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ NULL +----------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$.class.students[0]' ) AS first student ; / -----------------+ first student +-----------------+ {\"name\":\"John\"} +----------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": []}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": null}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ NULL +---------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$.class.students[1].name' ) AS second student ; / ----------------+ second student +----------------+ \"Jamie\" +---------------- / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"Jane\"}]}}' , '$.class.\"students\"' ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [{\"name\":\"Jane\"}] +------------------------------------ / SELECT JSON QUERY ( '{\"class\": {\"students\": []}}' , '$.class.\"students\"' ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [] +------------------------------------ / SELECT JSON QUERY ( '{\"class\": {\"students\": [{\"name\": \"John\"}, {\"name\": \"Jamie\"}]}}' , '$.class.\"students\"' ) AS student names ; / ------------------------------------+ student names +------------------------------------+ [{\"name\":\"John\"},{\"name\":\"Jamie\"}] +------------------------------------ / In the following examples, the JSON data is extracted in lax mode .",
+          "SELECT JSON SET ( JSON '{\"a\": 1, \"b\": {\"c\":3}, \"d\": [4]}' , '$.a' , 'v1' , '$.b.e' , 'v2' , '$.d[2]' , 'v3' ) AS json data / ---------------------------------------------------+ json data +---------------------------------------------------+ {\"a\":\"v1\",\"b\":{\"c\":3,\"e\":\"v2\"},\"d\":[4,null,\"v3\"]} +--------------------------------------------------- / JSON STRIP NULLS JSON STRIP NULLS ( json expr [ , json path ] [ , include arrays = > { TRUE FALSE } ] [ , remove empty = > { TRUE FALSE } ] ) Recursively removes JSON nulls from JSON objects and JSON arrays."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "b.e",
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.create",
+      "bigquery.jobs.create",
+      "bigquery.jobUser",
+      "bigquery.tables.create",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.user",
+      "class.students",
+      "states.csv"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+      ]
+    }
+  ]
+}

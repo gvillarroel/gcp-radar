@@ -1,0 +1,149 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.415Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch",
+  "feature_name": "Batch HPC CentOS image support",
+  "feature_slug": "batch-hpc-centos-image-support",
+  "summary": "The Batch HPC CentOS (batch-hpc-centos) image family reached end of development and is deprecated; deprecated on 2024-06-30.",
+  "extended_definition": "The Batch HPC CentOS (batch-hpc-centos) image family reached end of development and is deprecated; deprecated on 2024-06-30.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-13",
+    "deprecation_date": "2024-06-30",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and run a basic job \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . #include \"google/cloud/batch/v1/batch client.h\" []( std :: string const & project id , std :: string const & location id , std :: string const & job id ) { // Initialize the request; start with the fields that depend on the sample // input. google :: cloud :: batch :: v1 :: CreateJobRequest request ; request . set parent ( \"projects/\" + project id + \"/locations/\" + location id ); request . set job id ( job id ); // Most of the job description is fixed in this example; use a string to // initialize it. auto constexpr kText = R \" pb( task groups { task count: 4 task spec { compute resource { cpu milli: 500 memory mib: 16 } max retry count: 2 max run duration { seconds: 3600 } runnables { container { image uri: \"gcr.io/google-containers/busybox\" entrypoint: \"/bin/sh\" commands: \"-c\" commands: \"echo Hello world!",
+          "For more information, see Set up authentication for a local development environment . #include \"google/cloud/batch/v1/batch client.h\" []( std :: string const & project id , std :: string const & location id , std :: string const & job id ) { // Initialize the request; start with the fields that depend on the sample // input. google :: cloud :: batch :: v1 :: CreateJobRequest request ; request . set parent ( \"projects/\" + project id + \"/locations/\" + location id ); request . set job id ( job id ); // Most of the job description is fixed in this example; use a string to // initialize it. auto constexpr kText = R \" pb( task groups { task count: 4 task spec { compute resource { cpu milli: 500 memory mib: 16 } max retry count: 2 max run duration { seconds: 3600 } runnables { script { text: \"echo Hello world!",
+          "For example, to create a job that runs tasks using the busybox Docker container image , use the following request: POST h tt ps : //batch.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/jobs?job id=example-container-job { \"taskGroups\" : [ { \"taskSpec\" : { \"runnables\" : [ { \"container\" : { \"imageUri\" : \"gcr.io/google-containers/busybox\" , \"entrypoint\" : \"/bin/sh\" , \"commands\" : [ \"-c\" , \"echo Hello world!"
+        ]
+      },
+      {
+        "title": "\"Class AllocationPolicy.Disk (0.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+        "source_id": "site-java-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names.",
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names.",
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names."
+        ]
+      },
+      {
+        "title": "\"Class AllocationPolicy.Disk.Builder (0.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 60,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names.",
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names.",
+          "For example, the following are all valid URLs: Specify the image by its family name: projects/{project}/global/images/family/{image family} Specify the image version: projects/{project}/global/images/{image version} You can also use Batch customized image in short names."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "batch.googleapis.com",
+      "client.h",
+      "com.google.cloud.batch.v1.AllocationPolicy.Disk",
+      "com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder",
+      "com.google.cloud.batch.v1.AllocationPolicy.DiskOrBuilder",
+      "com.google.protobuf.CodedInputStream",
+      "com.google.protobuf.CodedOutputStream",
+      "com.google.protobuf.ExtensionRegistryLite",
+      "com.google.protobuf.GeneratedMessage",
+      "com.google.protobuf.GeneratedMessage.canUseUnsafe",
+      "com.google.protobuf.GeneratedMessage.emptyBooleanList",
+      "com.google.protobuf.GeneratedMessage.emptyDoubleList",
+      "com.google.protobuf.GeneratedMessage.emptyFloatList",
+      "com.google.protobuf.GeneratedMessage.emptyIntList",
+      "com.google.protobuf.GeneratedMessage.emptyLongList",
+      "com.google.protobuf.GeneratedMessage.internalGetMapFieldReflection",
+      "com.google.protobuf.GeneratedMessage.isStringEmpty",
+      "com.google.protobuf.GeneratedMessage.mergeFromAndMakeImmutableInternal",
+      "com.google.protobuf.GeneratedMessage.newInstance",
+      "com.google.protobuf.GeneratedMessage.parseUnknownFieldProto3",
+      "com.google.protobuf.GeneratedMessage.UnusedPrivateParameter",
+      "com.google.protobuf.MapEntry",
+      "com.google.protobuf.MapField",
+      "com.google.protobuf.Message",
+      "com.google.protobuf.UnknownFieldSet.Builder",
+      "container.json",
+      "gcr.io",
+      "java.lang.Boolean",
+      "java.lang.Class",
+      "java.lang.Integer",
+      "java.lang.Long",
+      "java.lang.Object",
+      "java.lang.String",
+      "projects.locations.jobs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/create-run-basic-job",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-batch/latest/com.google.cloud.batch.v1.AllocationPolicy.Disk.Builder"
+      ]
+    }
+  ]
+}

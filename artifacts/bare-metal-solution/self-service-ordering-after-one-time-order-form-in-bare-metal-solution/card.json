@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.328Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution",
+  "feature_name": "Self-service ordering after one-time order form in Bare Metal Solution",
+  "feature_slug": "self-service-ordering-after-one-time-order-form-in-bare-metal-solution",
+  "summary": "You can now use Bare Metal Solution self-service to order resources after submitting a one-time order form.",
+  "extended_definition": "You can now use Bare Metal Solution self-service to order resources after submitting a one-time order form.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+      "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Provision storage volume resources in your Bare Metal Solution environment After ordering storage resources for your Bare Metal Solution environment, you can provision the resources once they are available.",
+          "Determine the logical volume, physical volume, and the WWID of the underlying LUN for file system /testvol02 . sudo vgdisplay -v Sample output: --- Volume group --- VG Name testvg01 System ID Format lvm2 Metadata Areas 2 Metadata Sequence No 4 VG Access read/write VG Status resizable MAX LV 0 Cur LV 2 Open LV 2 Max PV 0 Cur PV 2 Act PV 2 VG Size 199.99 GiB PE Size 4.00 MiB Total PE 51198 Alloc PE / Size 50688 / 198.00 GiB Free PE / Size 510 / 1.99 GiB VG UUID W42Rle-9sER-jpS1-dwBC-xbtn-1D2b-FNRDMA --- Logical volume --- LV Path /dev/testvg01/lv01 LV Name lv01 VG Name testvg01 LV UUID W8bzQQ-Qtyf-CDJA-AXPt-P1b1-X4xL-2WDq92 LV Write Access read/write LV Creation host, time at-5176205-svr001, 2022-12-06 22:14:56 +0000 LV Status available open 1 LV Size 99.00 GiB Current LE 25344 Segments 1 Allocation inherit Read ahead sectors auto - currently set to 8192 Block device 253:9 --- Logical volume --- LV Path /dev/testvg01/lv02 LV Name lv02 VG Name testvg01 LV UUID B1vtMm-RAKx-3S92-mHfx-98xc-gKwR-XWOavH LV Write Access read/write LV Creation host, time at-5176205-svr001, 2022-12-07 17:02:53 +0000 LV Status available open 1 LV Size 99.00 GiB Current LE 25344 Segments 1 Allocation inherit Read ahead sectors auto - currently set to 8192 Block device 253:10 --- Physical volumes --- PV Name /dev/mapper/3600a0980383146354a2b522d53374235 PV UUID ieY2Cr-HNrg-dj2G-wHgP-lsuh-PTAH-hNemRq PV Status allocatable Total PE / Free PE 25599 / 255 PV Name /dev/mapper/3600a0980383146354a2b522d53374236 PV UUID AMrtZa-TZHO-w0h6-Uf1G-NCwa-UtFY-83rZen PV Status allocatable Total PE / Free PE 25599 / 255 The output shows the following: The file system /testvol02 is using the Logical Volume (LV) lv02 from the volume group testvg01 .",
+          "SQL> alter diskgroup DEMO drop disk DEMO 0001 rebalance power 5; Diskgroup altered. col diskgroup for a15 col diskname for a15 col path for a35 select a.name DiskGroup,b.name DiskName, b.total mb, (b.total mb-b.free mb) Used MB, b.free mb,b.path,b.header status from v$asm disk b, v$asm diskgroup a where a.group number (+) =b.group number order by b.group number,b.name; DISKGROUP DISKNAME TOTAL MB USED MB FREE MB PATH HEADER STATU --------------- --------------- ---------- ---------- ---------- ----------------------------------- ------------ 0 0 0 /dev/asmdisks/DEMO2 FORMER DATA DATA 0000 25600 5676 19924 /dev/asmdisks/DATA1 MEMBER DEMO DEMO 0000 25600 64 25536 /dev/asmdisks/DEMO1 MEMBER RECO RECO 0000 25600 3896 21704 /dev/asmdisks/RECO1 MEMBER SQL> exit (Perform this step on all nodes in the cluster.) Remove all the references to the disk from the /etc/udev/rules.d/99-oracle-asmdevices.rules file."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-1 \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-2 \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \\ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.",
+          "If the VLAN attachments do not come up after Google Cloud completes your Bare Metal Solution order, activate each VLAN attachment: gcloud compute interconnects attachments partner update attachment-name \\ --region region \\ --admin-enabled You can check the status of the Cloud Routers and your advertised routes in the Cloud console.",
+          "After you are connected to your servers, validate the configuration of your Bare Metal Solution order."
+        ]
+      },
+      {
+        "title": "Order Bare Metal Solution resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "After you've executed a simplified, one-time Bare Metal Solution Order Form, you can order your Bare Metal Solution resources online by creating procurements through the Google Cloud console.",
+          "Procurements let you order resources as you scale, without having to execute a new Bare Metal Solution Order Form every time.",
+          "Procurements are enabled for you in the Google Cloud console only after you've signed the Order Form."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.group",
+      "a.name",
+      "asmdevices.rules",
+      "b.free",
+      "b.group",
+      "b.header",
+      "b.name",
+      "b.path",
+      "b.total",
+      "rules.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    }
+  ]
+}

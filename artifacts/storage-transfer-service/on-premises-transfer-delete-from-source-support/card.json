@@ -1,0 +1,208 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.111Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service",
+  "feature_name": "On-premises transfer delete-from-source support",
+  "feature_slug": "on-premises-transfer-delete-from-source-support",
+  "summary": "Storage Transfer Service now supports deleting source objects for on-premises data transfers (Generally Available).",
+  "extended_definition": "Storage Transfer Service now supports deleting source objects for on-premises data transfers (Generally Available).",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/access-control",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST https: //storagetransfer.googleapis.com/v1/transferJobs { ... \"transferSpec\" : { \"source agent pool name\" : \" POOL NAME \" , \"awsS3CompatibleData\" : { \"region\" : \"us-east-1\" , \"s3Metadata\" : { \"protocol\" : \"NETWORK PROTOCOL HTTPS\" , \"requestModel\" : \"REQUEST MODEL VIRTUAL HOSTED STYLE\" , \"authMethod\" : \"AUTH METHOD AWS SIGNATURE V4\" }, \"endpoint\" : \"example.com\" , \"bucketName\" : \" BUCKET NAME \" , \"path\" : \" PATH \" , }, \"gcsDataSink\" : { \"bucketName\" : \" SINK NAME \" , \"path\" : \" SINK PATH \" }, \"transferOptions\" : { \"deleteObjectsFromSourceAfterTransfer\" : false } } } See the AwsS3CompatibleData API reference for field descriptions.",
+          "Storage Transfer Service supports transfers from cloud or on-premises object storage systems that are compatible with the Amazon S3 API.",
+          "Defaults to the default agent // const sourceAgentPoolName = 'projects/my-project/agentPools/transfer service default'; // The S3-compatible bucket name to transfer data from // const sourceBucketName = \"my-bucket-name\"; // The S3-compatible path (object prefix) to transfer data from // const sourcePath = \"path/to/data/\"; // The ID of the GCS bucket to transfer data to // const gcsSinkBucket = \"my-sink-bucket\"; // The GCS path (object prefix) to transfer data to // const gcsPath = \"path/to/data/\"; // The S3 region of the source bucket // const region = 'us-east-1'; // The S3-compatible endpoint // const endpoint = \"us-east-1.example.com\"; // The S3-compatible network protocol // const protocol = NetworkProtocol.NETWORK PROTOCOL HTTPS; // The S3-compatible request model // const requestModel = RequestModel.REQUEST MODEL VIRTUAL HOSTED STYLE; // The S3-compatible auth method // const authMethod = AuthMethod.AUTH METHOD AWS SIGNATURE V4; // Creates a client const client = new storageTransfer ."
+        ]
+      },
+      {
+        "title": "\"Transfer from HDFS to Cloud Storage \\_|\\_ Storage Transfer Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Storage Transfer Service supports transfers from cloud and on-premises Hadoop Distributed File System (HDFS) sources.",
+          "POST h tt ps : //storagetransfer.googleapis.com/v1/transferJobs { ... \"transferSpec\" : { \"source agent pool name\" : \" POOL NAME \" , \"hdfsDataSource\" : { \"path\" : \"/mount\" }, \"gcsDataSink\" : { \"bucketName\" : \" SINK NAME \" }, \"transferOptions\" : { \"deleteObjectsFromSourceAfterTransfer\" : false } } } Refer to the transferJobs.create reference for details about additional supported fields.",
+          "Transfer options : Specify whether to overwrite destination files ( --overwrite-when=different or always ) and whether to delete certain files during or after the transfer ( --delete-from=destination-if-unique or source-after-transfer ); and optionally set a storage class on transferred objects ( --custom-storage-class )."
+        ]
+      },
+      {
+        "title": "\"Permissions and roles \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This role doesn't allow transfer to be deleted, so that auditors or security personnel can view a fully preserved record of past transfers. resourcemanager.projects.get resourcemanager.projects.list storagetransfer.agentpools.create storagetransfer.agentpools.get storagetransfer.agentpools.list storagetransfer.agentpools.report storagetransfer.agentpools.update storagetransfer.jobs.create storagetransfer.jobs.get storagetransfer.jobs.list storagetransfer.jobs.run storagetransfer.jobs.update storagetransfer.operations. storagetransfer.projects.getServiceAccount Storage Transfer Viewer ( roles/storagetransfer.viewer ) Provides permissions to list and get jobs and transfer operations within the project.",
+          "List agent pools Create agent pools Update agent pools Delete agent pools Get agent pools Read or set project bandwidth Role details The following table describes in detail the predefined roles for Storage Transfer Service: Role Description Included Permissions Storage Transfer Admin ( roles/storagetransfer.admin ) Provides all Storage Transfer Service permissions, including deleting jobs.",
+          "Grant this role to the user or service account being used by agents. logging.logEntries.create monitoring.timeSeries.create pubsub.subscriptions.consume pubsub.subscriptions.create pubsub.subscriptions.delete pubsub.subscriptions.get pubsub.topics.attachSubscription pubsub.topics.create pubsub.topics.get pubsub.topics.list pubsub.topics.publish storagetransfer.agentpools.report storagetransfer.operations.assign storagetransfer.operations.get storagetransfer.operations.report Storage Transfer Service Agent ( roles/storagetransfer.serviceAgent ) Gives the Storage Transfer Service service agent the permissions required to create and modify Pub/Sub topics to communicate from Google Cloud to transfer agents."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "logging.logEntries.create",
+      "monitoring.timeSeries.create",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.topics.attachSubscription",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.list",
+      "pubsub.topics.publish",
+      "storagetransfer.admin",
+      "storagetransfer.agentpools.create",
+      "storagetransfer.agentpools.get",
+      "storagetransfer.agentpools.list",
+      "storagetransfer.agentpools.report",
+      "storagetransfer.agentpools.update",
+      "storagetransfer.googleapis.com",
+      "storagetransfer.jobs.create",
+      "storagetransfer.jobs.get",
+      "storagetransfer.jobs.list",
+      "storagetransfer.jobs.run",
+      "storagetransfer.jobs.update",
+      "storagetransfer.operations",
+      "storagetransfer.operations.assign",
+      "storagetransfer.operations.get",
+      "storagetransfer.operations.list",
+      "storagetransfer.operations.report",
+      "storagetransfer.projects.getServiceAccount",
+      "storagetransfer.serviceAgent",
+      "storagetransfer.transferAgent",
+      "storagetransfer.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/storagetransfer.admin",
+      "roles/storagetransfer.serviceAgent",
+      "roles/storagetransfer.transferAgent",
+      "roles/storagetransfer.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/hdfs",
+        "https://docs.cloud.google.com/storage-transfer/docs/access-control"
+      ]
+    }
+  ]
+}

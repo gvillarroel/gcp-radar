@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Utilities RSA SHA-256 signature support",
+  "feature_slug": "utilities-rsa-sha-256-signature-support",
+  "summary": "Utilities can sign strings with RSA SHA-256 using computeRsaSha256Signature variants.",
+  "extended_definition": "Utilities can sign strings with RSA SHA-256 using computeRsaSha256Signature variants.",
+  "lifecycle": {
+    "latest_feature_date": "2015-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions",
+      "https://developers.google.com/apps-script/guides/v8-runtime",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "August 04, 2015 Feature Added the following methods to the Spreadsheet service to let scripts control \"warning-based\" protection for spreadsheet ranges (which means that every user can edit data in the area, except editing prompts the user to confirm the edit): Protection.isWarningOnly() Protection.setWarningOnly(warningOnly) June 30, 2015 Feature Added two variations of the method computeRsaSha256Signature to the Utilities global object to let scripts sign a string using the RSA SHA-256 algorithm.",
+          "Feature The Forms service now has the following method: Form.deleteResponse(responseId) The Utilities service now has the following methods: Utilities.computeDigest(algorithm, value) , where value is a Byte array Utilities.computeHmacSha256Signature(value, key) , where value and key are Byte arrays Utilities.computeHmacSignature(algorithm, value, key) , where value and key are Byte arrays Change The quota limits for UrlFetch GET response size and POST size have been increased to 50MB / call.",
+          "August 20, 2018 Feature The Utilities service has been extended with the following methods and classes: Utilities.computeRsaSha1Signature(value, key) Utilities.computeRsaSha1Signature(value, key, charset) Utilities.computeRsaSignature(algorithm, value, key) Utilities.computeRsaSignature(algorithm, value, key, charset) RsaAlgorithm June 19, 2018 Deprecated The quota on total data received by UrlFetch per day per user has been removed."
+        ]
+      },
+      {
+        "title": "V8 runtime overview \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/v8-runtime",
+        "source_id": "site-docs-root-3",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Crypto : Use Utilities for cryptographic functions like computeDigest , computeHmacSha256Signature , and computeRsaSha256Signature .",
+          "This can simplify the code in the function body as it removes the need to explicitly assign default values to missing parameters. // Rhino runtime function hello ( greeting, name ) { greeting = greeting \"hello\" ; name = name \"world\" ; console . log ( greeting + \" \" + name + \"!\" ); } hello (); // Outputs \"hello world!\" // V8 runtime const hello = function ( greeting = \"hello\" , name = \"world\" ) { console . log ( greeting + \" \" + name + \"!\" ); } hello (); // Outputs \"hello world!\" Multi-line strings Define multi-line strings using the same syntax as template literals .",
+          "Fetch : Use UrlFetchApp.fetch(url, params) to make HTTP(S) requests. atob : Use Utilities.base64Decode to decode Base64-encoded strings. btoa : Use Utilities.base64Encode to encode strings in Base64."
+        ]
+      },
+      {
+        "title": "\"Assign permissions for Google Cloud projects \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions",
+        "source_id": "site-docs-root",
+        "final_score": 57,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Assign delete permission for all Cloud projects in an organization To give someone delete permission for all Cloud projects in an organization as a super administrator, follow these steps: Open the Google Cloud console at console.cloud.google.com .",
+          "Assign view permission for all Cloud projects in an organization To give someone view permission for all Cloud projects in your organization as a super administrator, follow these steps: Open the Cloud console at console.cloud.google.com .",
+          "Assign edit permission for all Cloud projects in an organization To give someone edit permission for all Cloud projects in an organization as a super administrator, follow these steps: Open the Cloud console at console.cloud.google.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/guides/admin/assign-cloud-permissions"
+      ]
+    }
+  ]
+}

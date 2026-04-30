@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "HTTP/3 support",
+  "feature_slug": "http-3-support",
+  "summary": "External HTTP(S) Load Balancing supports HTTP/3 to reduce latency, improve throughput, and mitigate head-of-line blocking.",
+  "extended_definition": "External HTTP(S) Load Balancing supports HTTP/3 to reduce latency, improve throughput, and mitigate head-of-line blocking.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection",
+      "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP/3 on your load balancer can improve web page load times, reduce video rebuffering, and improve throughput on higher latency connections.",
+          "TLS 1.3 early data is supported on the target HTTPS proxy of the following external Application Load Balancers for both HTTPS over TCP (HTTP/1.1, HTTP/2) and HTTP/3 over QUIC: Global external Application Load Balancers Classic Application Load Balancers TLS 1.3 was defined in RFC 8446 and introduces the concept of early data , also known as zero-round-trip time (0-RTT) data , which can improve application performance for resumed connections by 30 to 50%.",
+          "Backend service scope The following table indicates which backend service resource and scope is used by external Application Load Balancers: Load balancer mode Backend service resource Global external Application Load Balancer backendServices (global) Classic Application Load Balancer backendServices (global) Regional external Application Load Balancer regionBackendServices (regional) Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP."
+        ]
+      },
+      {
+        "title": "\"Optimize application latency with load balancing \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Comparing latency This section compares load balancing in the following configurations: No load balancing External passthrough Network Load Balancer External Application Load Balancer or External proxy Network Load Balancer In this scenario, the application consists of a regional managed instance group of HTTP web servers.",
+          "These improvements can reduce the observed latency even more than that observed by switching to the external Application Load Balancer.",
+          "The following table summarizes your options: Option Description Traffic flow Scope External Application Load Balancer Supports HTTP(S) traffic and advanced features, such as URL mapping and SSL offloading Use an external proxy Network Load Balancer for non-HTTP traffic on specific ports."
+        ]
+      },
+      {
+        "title": "\"Faster web performance and improved web protection for load balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Improving web performance with Cloud CDN Using the external Application Load Balancer already improves web performance by setting up HTTP(S) connections on Google's global edge closer to the requesting client and by negotiating connections using modern protocols such as QUIC, HTTP/2, and TLS 1.3 to reduce the number of round trips and enhance throughput.",
+          "You can further improve performance and reduce your serving costs by enabling Cloud CDN as part of your external Application Load Balancer deployment.",
+          "Automatically blocks most volumetric DDoS attacks Cloud Armor works with the external Application Load Balancer to automatically block network protocol and volumetric DDoS attacks such as protocol floods (SYN, TCP, HTTP, and ICMP) and amplification attacks (NTP, UDP, DNS)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/optimize-app-latency",
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/faster-performance-improved-protection"
+      ]
+    }
+  ]
+}

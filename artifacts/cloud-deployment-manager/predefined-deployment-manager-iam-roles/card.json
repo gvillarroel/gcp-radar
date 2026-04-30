@@ -1,0 +1,188 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.087Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deployment-manager/card.json",
+  "product_name": "Cloud Deployment Manager",
+  "product_slug": "cloud-deployment-manager",
+  "feature_name": "Predefined Deployment Manager IAM roles",
+  "feature_slug": "predefined-deployment-manager-iam-roles",
+  "summary": "Deployment Manager provides predefined IAM roles.",
+  "extended_definition": "Deployment Manager provides predefined IAM roles.",
+  "lifecycle": {
+    "latest_feature_date": "2016-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+      "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+      "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Best practices for using Deployment Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "There are a number of predefined IAM roles you can use to determine how much access a user has to call Deployment Manager. ❑ Use IAM roles to restrict what permissions are granted to users to use Deployment Manager. ❑ If you want users to be able to access resources created by Deployment Manager, grant users the roles they require to use resources, but do not grant them permissions to deploy resources directly. ❑ Granting the owner role to a principal will allow them to modify the IAM policy.",
+          "If you are using Deployment Manager to manage critical resources, such as custom IAM roles , you must assign additional IAM roles to the default Google APIs service account.",
+          "For example, if you want to use Deployment Manager to create and manage custom IAM roles, you must add the Role Administrator role to the Google APIs service account."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Cloud Deployment Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. deploymentmanager. compositeTypes. create deploymentmanager. compositeTypes. delete deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. compositeTypes. update deploymentmanager. deployments. cancelPreview deploymentmanager. deployments. create deploymentmanager. deployments. delete deploymentmanager. deployments. get deploymentmanager. deployments. list deploymentmanager. deployments. stop deploymentmanager. deployments. update deploymentmanager.manifests. deploymentmanager. manifests. get deploymentmanager. manifests. list deploymentmanager.operations. deploymentmanager. operations. get deploymentmanager. operations. list deploymentmanager.resources. deploymentmanager. resources. get deploymentmanager. resources. list deploymentmanager. typeProviders. deploymentmanager. typeProviders. create deploymentmanager. typeProviders. delete deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager. typeProviders. update deploymentmanager.types. deploymentmanager.types.create deploymentmanager.types.delete deploymentmanager.types.get deploymentmanager.types.list deploymentmanager.types.update resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Deployment Manager Viewer ( roles/ deploymentmanager.viewer ) Provides read-only access to all Deployment Manager-related resources.",
+          "Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. deploymentmanager. compositeTypes. create deploymentmanager. compositeTypes. delete deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. compositeTypes. update deploymentmanager. operations. get deploymentmanager. typeProviders. deploymentmanager. typeProviders. create deploymentmanager. typeProviders. delete deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager. typeProviders. update deploymentmanager.types. deploymentmanager.types.create deploymentmanager.types.delete deploymentmanager.types.get deploymentmanager.types.list deploymentmanager.types.update resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.values.test Deployment Manager Type Viewer ( roles/ deploymentmanager.typeViewer ) Provides read-only access to all Type Registry resources.",
+          "Lowest-level resources where you can grant this role: Project deploymentmanager. compositeTypes. get deploymentmanager. compositeTypes. list deploymentmanager. deployments. get deploymentmanager. deployments. list deploymentmanager.manifests. deploymentmanager. manifests. get deploymentmanager. manifests. list deploymentmanager.operations. deploymentmanager. operations. get deploymentmanager. operations. list deploymentmanager.resources. deploymentmanager. resources. get deploymentmanager. resources. list deploymentmanager. typeProviders. get deploymentmanager. typeProviders. getType deploymentmanager. typeProviders. list deploymentmanager. typeProviders. listTypes deploymentmanager.types.get deploymentmanager.types.list resourcemanager.projects.get resourcemanager.projects.list serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Deployment Manager Type Editor ( roles/ deploymentmanager.typeEditor ) Provides read and write access to all Type Registry resources."
+        ]
+      },
+      {
+        "title": "\"Setting access control in a configuration \\_|\\_ Cloud Deployment Manager\\",
+        "url": "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you use the accessControl section to grant roles to accounts, including service accounts, we recommend that you use Deployment Manager to manage roles for that account.",
+          "If you change the account's roles outside Deployment Manager and then update the original deployment, the roles from the deployment configuration are applied to the account.",
+          "Using IAM policies in Deployment Manager An IAM policy is a collection of users and their roles."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudservices.gserviceaccount.com",
+      "compute.v1.disk",
+      "compute.v1.instance",
+      "deploymentmanager.editor",
+      "deploymentmanager.manifests",
+      "deploymentmanager.operations",
+      "deploymentmanager.resources",
+      "deploymentmanager.typeEditor",
+      "deploymentmanager.types",
+      "deploymentmanager.types.create",
+      "deploymentmanager.types.delete",
+      "deploymentmanager.types.get",
+      "deploymentmanager.types.list",
+      "deploymentmanager.types.update",
+      "deploymentmanager.typeViewer",
+      "deploymentmanager.viewer",
+      "disk.selfLink",
+      "ref.example",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.values.test"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deployment-manager/docs/best-practices",
+        "https://docs.cloud.google.com/deployment-manager/docs/access-control",
+        "https://docs.cloud.google.com/deployment-manager/docs/configuration/set-access-control-resources"
+      ]
+    }
+  ]
+}

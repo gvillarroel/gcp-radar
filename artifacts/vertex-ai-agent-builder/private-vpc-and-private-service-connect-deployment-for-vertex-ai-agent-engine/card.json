@@ -1,0 +1,233 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.806Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-agent-builder/card.json",
+  "product_name": "Vertex AI Agent Builder",
+  "product_slug": "vertex-ai-agent-builder",
+  "feature_name": "Private VPC and Private Service Connect deployment for Vertex AI Agent Engine",
+  "feature_slug": "private-vpc-and-private-service-connect-deployment-for-vertex-ai-agent-engine",
+  "summary": "Agents can be deployed in a private VPC with a Private Service Connect interface to improve data privacy.",
+  "extended_definition": "Agents can be deployed in a private VPC with a Private Service Connect interface to improve data privacy.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+      "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+      "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy an agent \\_|\\_ Vertex AI Agent Builder \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To specify the environment variables, there are a few different options available: Dictionary env vars = { \"VARIABLE 1\" : \"VALUE 1\" , \"VARIABLE 2\" : \"VALUE 2\" , } These environment variables will become available in Vertex AI Agent Engine through os.environ, e.g. import os os.environ[\"VARIABLE 1\"] # will have the value \"VALUE 1\" and os.environ[\"VARIABLE 2\"] # will have the value \"VALUE 2\" To reference a secret in Secret Manager and have it be available as an environment variable (for example, CLOUD SQL CREDENTIALS SECRET ), first follow the instructions to Create a secret for CLOUD SQL CREDENTIALS SECRET in your project , before specifying the environment variables as: env vars = { ... (other environment variables and their values) \"CLOUD SQL CREDENTIALS SECRET\" : { \"secret\" : SECRET ID , \"version\" : SECRET VERSION ID }, } where SECRET VERSION ID is the ID of the secret version.",
+          "Configure Private Service Connect interface If you have Private Service Connect interface and DNS peering set up, you can specify your network attachment and private DNS peering while deploying your agent: remote agent = client . agent engines . create ( agent = local agent , config = { \"psc interface config\" : { \"network attachment\" : \" NETWORK ATTACHMENT \" , \"dns peering configs\" : [ { \"domain\" : \" DOMAIN SUFFIX \" , \"target project\" : \" TARGET PROJECT \" , \"target network\" : \" TARGET NETWORK \" , }, ], }, }, ) where NETWORK ATTACHMENT is the name or full path of your network attachment.",
+          "If the agent does not depend on any environment variables, you can set it to None : env vars = None If you are using secrets as environment variables with an agent that is configured to use agent identity , grant the secretmanager.versions.access permission (included in the roles/secretmanager.secretAccessor role) to the Vertex AI Service Agent , which has the following format: service- PROJECT NUMBER @gcp-sa-aiplatform.iam.gserviceaccount.com Your configured agent identity is used at runtime, but the Vertex AI Service Agent is used to fetch secrets during deployment."
+        ]
+      },
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.endpoints Methods countTokens POST /v1beta1/{endpoint}:countTokens Perform a token counting. create POST /v1beta1/{parent}/endpoints Creates an Endpoint. delete DELETE /v1beta1/{name} Deletes an Endpoint. deployModel POST /v1beta1/{endpoint}:deployModel Deploys a Model into this Endpoint, creating a DeployedModel within it. directPredict POST /v1beta1/{endpoint}:directPredict Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks. directRawPredict POST /v1beta1/{endpoint}:directRawPredict Perform an unary online prediction request to a gRPC model server for custom containers. explain POST /v1beta1/{endpoint}:explain Perform an online explanation. get GET /v1beta1/{name} Gets an Endpoint. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/endpoints Lists Endpoints in a Location. mutateDeployedModel POST /v1beta1/{endpoint}:mutateDeployedModel Updates an existing deployed model. patch PATCH /v1beta1/{endpoint.name} Updates an Endpoint. predict POST /v1beta1/{endpoint}:predict Perform an online prediction. predictLongRunning POST /v1beta1/{endpoint}:predictLongRunning rawPredict POST /v1beta1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1beta1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. streamRawPredict POST /v1beta1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. undeployModel POST /v1beta1/{endpoint}:undeployModel Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using. update POST /v1beta1/{endpoint.name}:update Updates an Endpoint with a long running operation.",
+          "REST Resource: v1.projects.locations.endpoints Methods create POST /v1/{parent}/endpoints Creates an Endpoint. delete DELETE /v1/{name} Deletes an Endpoint. deployModel POST /v1/{endpoint}:deployModel Deploys a Model into this Endpoint, creating a DeployedModel within it. directPredict POST /v1/{endpoint}:directPredict Perform an unary online prediction request to a gRPC model server for Vertex first-party products and frameworks. directRawPredict POST /v1/{endpoint}:directRawPredict Perform an unary online prediction request to a gRPC model server for custom containers. explain POST /v1/{endpoint}:explain Perform an online explanation. get GET /v1/{name} Gets an Endpoint. list GET /v1/{parent}/endpoints Lists Endpoints in a Location. mutateDeployedModel POST /v1/{endpoint}:mutateDeployedModel Updates an existing deployed model. patch PATCH /v1/{endpoint.name} Updates an Endpoint. predict POST /v1/{endpoint}:predict Perform an online prediction. rawPredict POST /v1/{endpoint}:rawPredict Perform an online prediction with an arbitrary HTTP payload. serverStreamingPredict POST /v1/{endpoint}:serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. streamRawPredict POST /v1/{endpoint}:streamRawPredict Perform a streaming online prediction with an arbitrary HTTP payload. undeployModel POST /v1/{endpoint}:undeployModel Undeploys a Model from an Endpoint, removing a DeployedModel from it, and freeing all resources it's using. update POST /v1/{endpoint.name}:update Updates an Endpoint with a long running operation.",
+          "REST Resource: v1beta1.projects.locations.metadataStores.executions Methods addExecutionEvents POST /v1beta1/{execution}:addExecutionEvents Adds Events to the specified Execution. create POST /v1beta1/{parent}/executions Creates an Execution associated with a MetadataStore. delete DELETE /v1beta1/{name} Deletes an Execution. get GET /v1beta1/{name} Retrieves a specific Execution. list GET /v1beta1/{parent}/executions Lists Executions in the MetadataStore. patch PATCH /v1beta1/{execution.name} Updates a stored Execution. purge POST /v1beta1/{parent}/executions:purge Purges Executions. queryExecutionInputsAndOutputs GET /v1beta1/{execution}:queryExecutionInputsAndOutputs Obtains the set of input and output Artifacts for this Execution, in the form of LineageSubgraph that also contains the Execution and connecting Events."
+        ]
+      },
+      {
+        "title": "Introduction to the Vertex AI SDK for Python \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write code with the Vertex AI SDK for Python To use the Vertex AI SDK for Python: Install the google-cloud-aiplatform package, which includes both the Vertex AI SDK for Python and the Vertex AI Python client library, by running the following command in your virtual environment: pip install -- upgrade google - cloud - aiplatform Use the following code to import the google.cloud.aiplatform namespace: from google.cloud import aiplatform Preview: To use features for the Vertex AI SDK for Python that are still in preview , import vertexai.preview : import vertexai.preview If you're using a local shell, then create local authentication credentials for your user account: gcloud auth application-default login You don't need to do this if you're using Cloud Shell.",
+          "To see an example of using the Vertex AI SDK as part of a more comprehensive workflow, run the \"Custom training and online prediction\" notebook in one of the following environments: Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub Understand the Vertex AI SDK and client library differences When you install the Vertex AI SDK for Python, the Vertex AI Python client library is also installed.",
+          "Use Vertex AI Python client library and SDK together If you use the Vertex AI SDK for Python and discover you need greater flexibility or control, or if you need a method not included in the Vertex AI SDK, you can use the Vertex AI Python client library in the same workflow."
+        ]
+      },
+      {
+        "title": "\"Use agent identity with Vertex AI Agent Engine \\_|\\_ Vertex AI Agent Builder\\",
+        "url": "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend the following roles: roles/aiplatform.expressUser : Grant access to running inference, sessions, and memory. roles/serviceusage.serviceUsageConsumer : Grant the agent permission to use the project's quota and the Vertex AI SDK. roles/browser : Grant access to basic Google Cloud functionalities.",
+          "Create an Agent Engine instance while deploying agent code : If you want to provision the agent identity while deploying your agent code, use the Vertex AI SDK for Python and the identity type=AGENT IDENTITY flag.",
+          "If you deploy an ADK agent to Vertex AI Agent Engine Runtime, you need to build a custom frontend and migrate ADK-web authentication or redirect code into your frontend to perform the same OAuth integration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "aiplatform.expressUser",
+      "aiplatform.iam.gserviceaccount.com",
+      "attribute.platform",
+      "attribute.platformContainer",
+      "cloudapiregistry.viewer",
+      "e.g",
+      "endpoint.name",
+      "execution.name",
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "os.environ",
+      "secretmanager.secretAccessor",
+      "secretmanager.versions.access",
+      "serviceusage.serviceUsageConsumer",
+      "system.id.goog",
+      "v1.projects.locations.endpoints",
+      "v1.projects.locations.metadataStores.executions",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.locations.metadataStores.executions",
+      "vertexai.preview"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.expressUser",
+      "roles/browser",
+      "roles/cloudapiregistry.viewer",
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter",
+      "roles/secretmanager.secretAccessor",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/agent-builder/agent-engine/deploy",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref",
+        "https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity"
+      ]
+    }
+  ]
+}

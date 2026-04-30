@@ -1,0 +1,185 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.914Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine",
+  "feature_name": "Advanced VPC peering",
+  "feature_slug": "advanced-vpc-peering",
+  "summary": "Advanced VPC peering lets you create a complex set of Virtual Private Cloud peerings in the Google Cloud console.",
+  "extended_definition": "Advanced VPC peering lets you create a complex set of Virtual Private Cloud peerings in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+      "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure advanced policy settings \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "source_id": "site-docs-reference-2",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Get an overview of backup plan Create a backup template Create a backup policy Create a resource profile Configure advanced policy settings of an application backed up by the policy Apply a backup plan to an application Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Script Timeout (applicable only for agent based backups) The Backup and DR agent lets you create host-side scripts that run on an application's host before or after a policy is run.",
+          "At the bottom of the Create/Edit Policy section click Advanced Policy Settings ."
+        ]
+      },
+      {
+        "title": "\"Configure DNS bindings \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authoritative gcloud dns managed-zones create zone1 \\ --dns-name=\"zone1.example.com.\" \\ --visibility=\"private\" \\ --description=\" DESCRIPTION \" \\ --networks=\" EXISTING VPC \" gcloud dns managed-zones create peering-zone1 \\ --dns-name=\"zone1.example.com.\" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" Conditional Forwarding gcloud dns managed-zones create zone1 \\ --description=\" DESCRIPTION \" \\ --dns-name=\"zone1.example.com.\" \\ --visibility=\"private\" \\ --networks= EXISTING VPC \\ --forwarding-targets=\" DNS SERVER IP1 \",\" DNS SERVER IP2 \" gcloud dns managed-zones create peering-zone1 \\ --dns-name=\"zone1.example.com.\" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" Forwarding All gcloud dns managed-zones create forward-all \\ --description=\"\" --dns-name=\".\" \\ --visibility=\"private\" \\ --networks=\" EXISTING VPC \" \\ --forwarding-targets=\"DNS SERVER IP1\",\"DNS SERVER IP2\" gcloud dns managed-zones create peering-forward-all \\ --dns-name=\".\" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" Google API Private gcloud dns managed-zones create googleapis \\ --dns-name=\"googleapis.com.\" \\ --visibility=\"private\" \\ --description=\"Direct GCVE traffic to Private IPs for Google API Access\" \\ --networks=\" EXISTING VPC \" gcloud dns managed-zones create peering-googleapis \\ --dns-name=\"googleapis.com.\" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" gcloud dns record-sets create private.googleapis.com. \\ --zone=\"googleapis\" \\ --type=\"A\" \\ --ttl=\"300\" \\ --rrdatas=\"199.36.153.8,199.36.153.9,199.36.153.10,199.36.153.11\" gcloud dns record-sets create .googleapis.com. \\ --zone=\"googleapis\" \\ --type=\"CNAME\" \\ --ttl=\"300\" \\ --rrdatas=\"private.googleapis.com.\" Google API Restricted gcloud dns managed-zones create googleapis \\ --dns-name=\"googleapis.com.\" \\ --visibility=\"private\" \\ --description=\"Direct GCVE traffic to Private IPs for Google API Access\" \\ --networks=\" EXISTING VPC \" gcloud dns managed-zones create peering-googleapis \\ --dns-name=\"googleapis.com.\" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" gcloud dns record-sets create restricted.googleapis.com. \\ --zone=\"googleapis\" \\ --type=\"A\" \\ --ttl=\"300\" \\ --rrdatas=\"199.36.153.4, 199.36.153.5, 199.36.153.6, 199.36.153.7\" gcloud dns record-sets create .googleapis.com. \\ --zone=\"googleapis\" \\ --type=\"CNAME\" \\ --ttl=\"300\" \\ --rrdatas=\"restricted.googleapis.com.\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Locate the VMware Engine Network, click the Action option and select Copy Intranet VPC network URL . gcloud gcloud vmware networks describe VMWARE ENGINE NETWORK \\ --project= PROJECT ID Replace the following: VMWARE ENGINE NETWORK : the network to describe PROJECT ID : the project ID for this request API Make a GET request to the vmwareEngineNetworks resource and provide the name of the network: curl -X GET -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json; charset=utf-8\" https://vmwareengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/vmwarenEngineNetworks/ NETWORK ID Replace the following: PROJECT ID : the project for this request NETWORK ID : the network to describe Binding The intended workflow, once bind permissions are configured, is to add a DNS peering to the VMware Engine network intranet VPC into your standard Cloud DNS zone management process for each zone. gcloud gcloud dns managed-zones create peering- DOMAIN \\ --dns-name=\" DOMAIN \" \\ --visibility=\"private\" \\ --networks=\" INTRANET VPC URL \" \\ --target-project=\" PROJECT ID \" \\ --target-network=\" EXISTING VPC \" \\ --description=\" DESCRIPTION \" Replace the following: DOMAIN : the domain to extended, example zone1.example.com INTRANET VPC URL : the intranet VPC URL for the VMware Engine network EXISTING VPC : the URL of the existing VPC network that the DOMAIN is already bound to PROJECT ID : the project ID for this request API Make a PATCH request to the managedZones resource and provide the name of the zone: curl -X POST -H \"Authorization: Bearer TOKEN \" -H \"Content-Type: application/json; charset=utf-8\" https://dns.googleapis.com/v1/projects/ PROJECT ID /managedZones -d \"{ \"name\": \"peering- DOMAIN \", \"description\": \"\", \"dnsName\": DOMAIN , \"peeringConfig\": { \"targetNetwork\": { \"networkUrl\": EXISTING VPC } }, \"privateVisibilityConfig\": { \"networks\": [ { \"networkUrl\": INTRANET VPC URL } ] } }\" Replace the following: PROJECT ID : the project ID for this request DOMAIN : the domain to extended, example zone1.example.com INTRANET VPC URL : the intranet VPC URL for the VMware Engine network.",
+          "Binding Private Cloud DNS Zone with the VMware Engine network intranet VPC Once you grant a user principal the permissions to configure DNS bindings, the user can create a binding between the private DNS zone in Cloud DNS and the intranet VPC of the VMware Engine Network."
+        ]
+      },
+      {
+        "title": "\"Best practices for VMware Engine security \\_|\\_ Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Third-party Cloud KMS key provider Full control over the encrypted data and encryption key Hardware backed keys can be stored in an HSM appliance Additional complexity and operational overhead Additional cost Possible additional latency, especially in the case of SaaS KMS Possible lower availability Note that we don't recommend that you enable VM-level encryption together with vSAN datastore encryption because deduplication efficiency approaches zero for encrypted VMs.",
+          "Deploy a third-party firewall appliance from the Cloud Marketplace portal for IPS/IDS capabilities If you require advanced Layer 7 security, including IDS/IPS capabilities for inbound traffic into the private cloud from the rest of your network or between your NSX network segments, consider deploying a third-party firewall appliance.",
+          "For a deep-dive in VMware Engine architectures with centralized appliances, which can be used for a variety of advanced security use cases, such as IPS/IDS, DDoS, SSL offloading and more, consult the document network security using centralized appliances in the Cloud Architecture Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dns.googleapis.com",
+      "googleapis.com",
+      "private.googleapis.com",
+      "restricted.googleapis.com",
+      "vmwareengine.googleapis.com",
+      "zone1.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/howto-create-dns-bindings",
+        "https://docs.cloud.google.com/vmware-engine/docs/best-practices-security"
+      ]
+    }
+  ]
+}

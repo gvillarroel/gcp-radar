@@ -1,0 +1,238 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.415Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-armor/card.json",
+  "product_name": "Google Cloud Armor",
+  "product_slug": "google-cloud-armor",
+  "feature_name": "Cloud Armor rate limiting keys",
+  "feature_slug": "cloud-armor-rate-limiting-keys",
+  "summary": "Cloud Armor rate limiting supports additional keys including HTTP-PATH, SNI, and REGION-CODE.",
+  "extended_definition": "Cloud Armor rate limiting supports additional keys including HTTP-PATH, SNI, and REGION-CODE.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+      "https://docs.cloud.google.com/armor/docs/bot-management",
+      "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+      "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure rate limiting \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "source_id": "site-iam-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about exemption cookies and reCAPTCHA assessment, see the Cloud Armor bot management overview . gcloud compute security-policies rules create 115 \\ --security-policy SECURITY POLICY \\ --expression=\"token.recaptcha exemption.valid\" \\ --action=throttle \\ --rate-limit-threshold-count=20 \\ --rate-limit-threshold-interval-sec=300 \\ --conform-action=allow \\ --exceed-action=redirect \\ --exceed-redirect-type=google-recaptcha \\ --enforce-on-key=HTTP-COOKIE \\ --enforce-on-key-name=\"recaptcha-ca-e\" Rate limiting based on JA4 and JA3 fingerprints You can use JA4 and JA3 fingerprints as rate limiting keys.",
+          "IAM permission API methods Roles compute.securityPolicies.create SecurityPolicies insert Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.delete SecurityPolicies delete Compute Security Admin ( roles/compute.securityAdmin ) compute.securityPolicies.get SecurityPolicies get SecurityPolicies getRule Security Admin ( roles/iam.securityAdmin ) compute.securityPolicies.list SecurityPolicies list Security Admin ( roles/iam.securityAdmin ) Both of the following: compute.securityPolicies.use compute.backendServices. setSecurityPolicy BackendServices setSecurityPolicy Compute Network Admin ( roles/compute.networkAdmin ) compute.securityPolicies.update SecurityPolicies patch SecurityPolicies addRule SecurityPolicies patchRule SecurityPolicies removeRule Compute Security Admin ( roles/compute.securityAdmin ) Rules for rate-based throttling Rules for rate-based throttling have the following format in the Google Cloud CLI: gcloud compute security-policies rules create PRIORITY \\ --security-policy= SECURITY POLICY \\ {--expression= EXPRESSION --src-ip-ranges= SRC IP RANGE } \\ --action \"throttle\" \\ --rate-limit-threshold-count= RATE LIMIT THRESHOLD COUNT \\ --rate-limit-threshold-interval-sec= RATE LIMIT THRESHOLD INTERVAL SEC \\ --conform-action=[allow] \\ --exceed-action=[deny-403 deny-404 deny-429 deny-502 redirect] \\ --exceed-redirect-type=[google-recaptcha external-302] \\ --exceed-redirect-target= REDIRECT URL \\ --enforce-on-key=[IP ALL HTTP-HEADER XFF-IP HTTP-COOKIE HTTP-PATH SNI REGION-CODE] \\ --enforce-on-key-name=[ HTTP HEADER NAME HTTP COOKIE NAME ] Rate limiting on single keys For example, the following gcloud CLI command creates a throttle rule at priority 105 with a rate limit of 100 requests each 60 seconds for each IP address in 1.2.3.0/24 .",
+          "Home Documentation Networking Google Cloud Armor Guides Send feedback Configure rate limiting Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor bot management overview \\_|\\_ Google Cloud Armor \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/armor/docs/bot-management",
+        "source_id": "site-iam-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In addition, if you choose a header name that already exists in the request, including standard HTTP headers, then the original value in that header is overwritten by the user-defined value provided to the Cloud Armor rule.",
+          "When you associate reCAPTCHA keys with a security policy rule, Cloud Armor performs additional validation on the token by comparing the reCAPTCHA key in the token against reCAPTCHA keys that are associated with the rule.",
+          "If you don't tune the rate limiting rules, Cloud Armor imposes no limit on the number of uses for each reCAPTCHA exemption cookie, action-token, and session-token."
+        ]
+      },
+      {
+        "title": "\"Cloud Armor Enterprise overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Armor Standard includes the following: A pay-as-you go pricing model Always-on protection from volumetric and protocol-based DDoS attacks, with automated inline mitigations in real time and with no latency impact across the following infrastructure types: Global external Application Load Balancer (HTTP/HTTPS) Classic Application Load Balancer (HTTP/HTTPS) Regional external Application Load Balancer (HTTP/HTTPS) External passthrough Network Load Balancer Global external proxy Network Load Balancer (TCP/SSL) Cloud CDN Media CDN Integration with Cloud CDN and Media CDN Access to Cloud Armor web application firewall (WAF) rule capabilities, including preconfigured WAF rules for OWASP Top 10 protection Cloud Armor Enterprise includes the following: All the features of Cloud Armor Standard Choice of pricing models: Cloud Armor Enterprise Annual or Paygo Bundled Cloud Armor WAF usage, including rules, policy, and requests Third-party named IP address lists Google Threat Intelligence for Cloud Armor Adaptive Protection for Layer 7 endpoints Advanced network DDoS protection for pass-through endpoints—external passthrough Network Load Balancers, protocol forwarding, and public IP addresses for virtual machine (VM) instances Access to DDoS attack visibility Hierarchical security policies (Cloud Armor Enterprise Annual only): Access to DDoS bill protection and DDoS response team services (additional conditions apply, see Eligibility for DDoS response team ) All Google Cloud projects that include an external Application Load Balancer or an external proxy Network Load Balancer are automatically enrolled in Cloud Armor Standard.",
+          "The following table demonstrates what resources are covered by DDos bill protection: Endpoint Type Covered Usage Increase External Application Load Balancer External proxy Network Load Balancer Cloud Armor Cloud Armor Enterprise data processing fee Network Outbound data transfer Inter-region Inter-zone Carrier Peering Load balancer Inbound data processing fee Outbound data processing fee Cloud CDN Cloud CDN egress fee Cache data transfer out Cache fill HTTP/HTTPS cache lookup requests Media CDN Media CDN egress fee Cache data transfer out External passthrough Network Load Balancer Protocol forwarding Public IP addresses (VMs) Cloud Armor Cloud Armor Enterprise data processing fee Network Outbound data transfer Inter-region Inter-zone Carrier Peering Load balancer Inbound data processing fee Outbound data processing fee To engage DDoS bill protection, see Engaging DDoS bill protection .",
+          "Migrating projects between billing accounts Beginning September 3, 2024, if you migrate your project from one billing account to another while subscribed to Cloud Armor Enterprise Annual, but your new billing account isn't subscribed to Cloud Armor Enterprise Annual, your project reverts to Cloud Armor Standard after the migration completes—unless your project has effective hierarchical security policies, in which case your project is downgraded to Cloud Armor Enterprise Paygo."
+        ]
+      },
+      {
+        "title": "Security policy overview \\_|\\_ Google Cloud Armor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/armor/docs/security-policy-overview",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "Globally scoped security policies Backend security policy Edge security policy Internal service security policy Frontend type Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Global external Application Load Balancer Classic Application Load Balancer (global only) Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cloud Service Mesh clients Attachment point (protected resource) Backend service Backend service Backend service Backend bucket Cloud Service Mesh endpoint policy Rule actions Allow Deny Redirect ( GOOGLE RECAPTCHA and EXTERNAL 302 ) Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Fairshare Client IP address Client geography Client ASN Media CDN only Rate limiting TLS fingerprinting (JA3 and JA4) Bot management HTTP filtering Media CDN only WAF Adaptive Protection Address Group Google Threat Intelligence Media CDN only Security Command Center Cloud Monitoring Request logging Regionally scoped security policies Regional backend security policy Network edge security policy Frontend type Regional external Application Load Balancer Regional internal Application Load Balancer External passthrough Network Load Balancer External protocol forwarding VMs with NICs that have external IP addresses Attachment point (protected resource) Backend service (regional) Backend service (regional) Target pool Target instance Backend service (regional) Instance Rule actions Allow Deny Throttle Rate-based ban Allow Deny Throttle Rate-based ban Allow Deny Client IP address Client geography Client ASN Rate limiting TLS fingerprinting (JA3 and JA4) JA3 only JA3 only Bot management HTTP filtering WAF Adaptive Protection Address Group Google Threat Intelligence Byte offset filtering Security Command Center Cloud Monitoring Request logging Backend security policies Backend security policies are used with backend services exposed by the following load balancer types: Global external Application Load Balancer Classic Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer You use backend security policies to filter requests and protect backend services that reference instance groups or any of the supported NEG types behind the previously listed load balancer types.",
+          "When you use rate limiting with global external proxy Network Load Balancers or classic proxy Network Load Balancers, the following restrictions apply: Cloud Armor only enforces rate limiting actions like throttling or banning on new connection requests from clients.",
+          "To learn more about internal service security policies, see Configure rate limiting with Cloud Armor in the Cloud Service Mesh documentation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.backendServices",
+      "compute.networkAdmin",
+      "compute.securityAdmin",
+      "compute.securityPolicies.create",
+      "compute.securityPolicies.delete",
+      "compute.securityPolicies.get",
+      "compute.securityPolicies.list",
+      "compute.securityPolicies.update",
+      "compute.securityPolicies.use",
+      "exemption.valid",
+      "iam.securityAdmin",
+      "token.recaptcha"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.securityAdmin",
+      "roles/iam.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/armor/docs/configure-rate-limiting",
+        "https://docs.cloud.google.com/armor/docs/bot-management",
+        "https://docs.cloud.google.com/armor/docs/armor-enterprise-overview",
+        "https://docs.cloud.google.com/armor/docs/security-policy-overview"
+      ]
+    }
+  ]
+}

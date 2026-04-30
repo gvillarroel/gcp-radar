@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.070Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "YARA-L 2.0 array indexing on repeated fields",
+  "feature_slug": "yara-l-2-0-array-indexing-on-repeated-fields",
+  "summary": "YARA-L 2.0 now supports bracket notation to access elements in repeated fields by index.",
+  "extended_definition": "YARA-L 2.0 now supports bracket notation to access elements in repeated fields by index.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types LIST Return type NUMBER Code samples Example 1 Returns the number of repeated field elements. arrays.length($e.principal.ip) = 2 Example 2 If multiple repeated fields are along the path, returns the total number of repeated field elements. arrays.length($e.intermediary.ip) = 3 arrays.max Supported in: Rules Search arrays.max(array of ints or floats) Description Returns the greatest element in an array or zero if the array is empty.",
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "You can use these functions in the following parts of a YARA-L query: events section BOOL CLAUSE of a conditional in the outcome section arrays.concat Supported in: Rules Search arrays.concat(string array, string array) Description Returns a new string array by copying elements from original string arrays."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample request (specific version of a rule) https://backstory.googleapis.com/v2/detect/rules/ru 1f54ab4b-e523-48f7-ae25- 271b5ea8337d@v 1602631093 146879000/detections?page size=2 Sample request (latest version of a rule) https://backstory.googleapis.com/v2/detect/rules/ru 1f54ab4b-e523-48f7-ae25- 271b5ea8337d/detections?page size=2 Sample request (all versions of a rule) https://backstory.googleapis.com/v2/detect/rules/ru 1f54ab4b-e523-48f7-ae25- 271b5ea8337d@-/detections?page size=100 Sample request (all versions of all rules, ordered by CreateTimestamp) https://backstory.googleapis.com/v2/detect/rules/-/detections? page size=100&list basis=CREATED TIME Response Response fields Field Name Type detections array Array of detections in the same format defined for GetDetection . nextPageToken string Page token.",
+          "Sample request https://backstory.googleapis.com/v2/detect/curatedRules/ur mal CobaltStrike StartW/detections?page size=100 Sample request (detections ordered by CreateTimestamp) https://backstory.googleapis.com/v2/detect/curatedRules/ur mal CobaltStrike StartW/detections? page size=100&list basis=CREATED TIME Response Response fields Field Name Type curatedRuleDetections array Array of detections in the below format . nextPageToken string Page token.",
+          "Sample request https://backstory.googleapis.com/v2/health/errors?pageSize=2&ruleFilter.versionId= ru d27d2fdc-010a-417a-a773-7f886b3d08c7@v 1597880575 633631000&start time=2020-10-31T00:00:00.00Z&end time= 2020-11-01T00:00:00.0000Z Response Response fields Field Name Type errors array Array of errors in the same format defined for GetError . nextPageToken string Page token."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example SQL to query for specific IP-address IOC matches: -- Add your IP IOC Matches here DECLARE IP IOCS ARRAY < STRING > ; SET IP IOCS = [ '40.79.150.120' ]; ------ SELECT MIN ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS first observed , MAX ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS last observed , COUNT ( 4 ) AS hits , ioc value , feed log type , is global , CONCAT ( COALESCE ( asset . namespace , \"untagged\" ), \":\" , COALESCE ( asset . hostname , asset . asset ip address , asset . mac , \"-\" )) AS asset FROM datalake . ioc matches WHERE ioc value IN UNNEST ( IP IOCS ) AND ioc type = \"IOC TYPE IP\" GROUP BY 4 , 5 , 6 , 7 Here are the truncated results: Row first observed last observed hits ioc value feed log type is global asset 1 2025-02-23 2025-03-05 64 40.79.150.120 CATCH ALL false untagged:192.168.12.16 2 2025-02-27 2025-03-05 29 40.79.150.120 CATCH ALL false untagged:192.168.12.129 You can also query the datalake.events table for multi-dimensional IOC matching by constructing a concatenated string, for example: DECLARE IOC MULTIPLE ATTRIBUTES ARRAY < STRING > ; SET IOC MULTIPLE ATTRIBUTES = [ '1.2.3.4,80' , '1.2.3.4,443' ]; SELECT MIN ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS first seen , MAX ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS last seen , target ip , target . port FROM datalake . events , UNNEST ( target . ip ) target ip WHERE DATE ( hour time bucket ) BETWEEN DATE SUB ( CURRENT DATE , INTERVAL 60 DAY ) AND DATE SUB ( CURRENT DATE , INTERVAL 1 DAY ) AND target ip != \"\" AND target . port > 0 AND CONCAT ( target ip , \",\" , CAST ( target . port AS STRING )) IN UNNEST ( IOC MULTIPLE ATTRIBUTES ) GROUP BY 3 , 4 Note: The Google SecOps Data Lake typically retains data for six months.",
+          "The following table details which specific UDM fields are used for automatic IOC matching based on your package: Enterprise package Enterprise Plus package about.file network.dns.answers network.dns.questions network.dns.questions principal.administrative domain principal.asset principal.ip principal.process.file principal.process.file principal.process.parent process.file principal.process.parent process.file security result.about.file security result.about.file src.file src.file src.ip target.asset.ip target.domain.name target.file target.file target.hostname target.hostname target.ip target.ip target.process.file target.process.file target.process.parent process.file Understanding which UDM fields are used helps ensure your data parsers correctly map raw log fields to the appropriate UDM fields for effective IOC matching.",
+          "Example YARA-L rule using GLOBAL CONTEXT : rule google safebrowsing process launch { meta : author = \"noam@\" description = \"Detects Process Launch events against Critical or High severity Google's SafeBrowsing database.\" events : $e . metadata . event type = \"PROCESS LAUNCH\" $e . target . process . file . sha256 = $hash $g . graph . metadata . entity type = \"FILE\" $g . graph . entity . file . sha256 = $hash $g . graph . metadata . source type = \"GLOBAL CONTEXT\" $g . graph . metadata . threat . severity = \"CRITICAL\" or $g . graph . metadata . threat . severity = \"HIGH\" match : $hash over 10 m condition : $e and $g } IOC matching with data tables and YARA-L rules You can use data tables within YARA-L rules to match against lists of IOCs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.file",
+      "arrays.concat",
+      "arrays.join",
+      "arrays.length",
+      "arrays.max",
+      "backstory.googleapis.com",
+      "datalake.events",
+      "e.intermediary.ip",
+      "e.principal.ip",
+      "network.dns.answers",
+      "network.dns.questions",
+      "principal.administrative",
+      "principal.asset",
+      "principal.ip",
+      "principal.process.file",
+      "principal.process.parent",
+      "process.file",
+      "result.about.file",
+      "src.file",
+      "src.ip",
+      "target.asset.ip",
+      "target.domain.name",
+      "target.file",
+      "target.hostname",
+      "target.ip",
+      "target.process.file",
+      "target.process.parent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ]
+}

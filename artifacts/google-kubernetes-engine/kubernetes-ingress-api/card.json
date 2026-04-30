@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Kubernetes Ingress API",
+  "feature_slug": "kubernetes-ingress-api",
+  "summary": "The Kubernetes Ingress API graduated to general availability in Kubernetes 1.19.",
+  "extended_definition": "The Kubernetes Ingress API graduated to general availability in Kubernetes 1.19.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up an external Application Load Balancer with Ingress \\_|\\_ GKE networking\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "Follow the installation instructions to install Config Connector on your cluster. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : web-static-ip spec : location : global To deploy this manifest, download it to your machine as compute-address.yaml, and run: kubectl apply -f compute-address.yaml The basic-ingress-static.yaml manifest adds an annotation on Ingress to use the static IP resource named web-static-ip : apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : basic-ingress annotations : kubernetes.io/ingress.global-static-ip-name : \"web-static-ip\" spec : defaultBackend : service : name : web port : number : 8080 View the manifest: cat basic-ingress-static.yaml Apply the resource to the cluster: kubectl apply -f basic-ingress-static.yaml Check the external IP address: kubectl get ingress basic-ingress Wait until the IP address of your application changes to use the reserved IP address of the web-static-ip resource.",
+          "The following manifest describes an Ingress resource that directs traffic to your web Service: apiVersion : networking.k8s.io/v1 kind : Ingress metadata : name : basic-ingress spec : defaultBackend : service : name : web port : number : 8080 Apply the resource to the cluster: kubectl apply -f basic-ingress.yaml After you deploy this manifest, Kubernetes creates an Ingress resource on your cluster.",
+          "Delete any manually created forwarding rules and target proxies that reference the Ingress: Note: This step is needed only if the load balancer associated with the Ingress is updated manually using the Kubernetes Engine API or the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"HighAvailabilityApplication \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "source_id": "site-api-reference",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Reference Send feedback HighAvailabilityApplication Stay organized with collections Save and categorize content based on your preferences.",
+          "Possible values: [\"StatefulSet\"] policy Optional object Policy defines the high availability characteristics of this application policy.storageSettings Optional object StorageSettings defines the high availability characteristics of this application. policy.storageSettings.requireRegionalStorage Optional string RequireRegionalStorage enforces regional storage when using a HighAvailabilityApplication. policy.failoverSettings Optional object FailoverSettings defines the failover settings when an application pod encounters an error. policy.failoverSettings.forceDeleteStrategy Optional string forceDeleteStrategy determines how force delete is triggered on node failure.",
+          "Custom Resource Definition Properties Spec Schema resourceSelection : resourceKind : string policy : storageSettings : requireRegionalStorage : boolean failoverSettings : forceDeleteStrategy : string afterNodeUnreachable : afterNodeUnreachableSeconds : int Fields resourceSelection Optional object ResourceSelection specifies the resources belonging to this HighAvailabilityApplication."
+        ]
+      },
+      {
+        "title": "\"Authenticate to the Kubernetes API server \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the following format if you're using the DNS-based endpoint for control plane access: apiVersion : v1 kind : Config clusters : - name : CLUSTER NAME cluster : server : https:// endpoint users : - name : ci-cd-pipeline-gsa user : exec : apiVersion : client.authentication.k8s.io/v1beta1 args : - --use application default credentials command : gke-gcloud-auth-plugin installHint : Install gke-gcloud-auth-plugin for kubectl by following https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#install plugin provideClusterInfo : true contexts : - context : cluster : CLUSTER NAME user : ci-cd-pipeline-gsa name : CLUSTER NAME -ci-cd current-context : CLUSTER NAME -ci-cd Replace the following: CLUSTER NAME : the name of your cluster. endpoint : the value you obtained for endpoint from the previous step.",
+          "Before reading this page, ensure that you're familiar with the following concepts: General overview of authentication in Google Cloud General overview of IAM and role-based access control (RBAC) in GKE General overview of Kubernetes methods for authentication Before you begin Before you start, make sure that you have performed the following tasks: Enable the Google Kubernetes Engine API.",
+          "The following example grants view permissions to resources in the prod namespace to a service account named cicd in the cicd-ns namespace: kubectl create rolebinding cicd-secret-viewer \\ --namespace = prod \\ --clusterrole = view \\ --serviceaccount = cicd-ns:cicd At runtime, when your application sends a Kubernetes API request, the API server authenticates the service account credentials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.yaml",
+      "client.authentication.k8s.io",
+      "compute.cnrm.cloud.google.com",
+      "container.developer",
+      "iam.gserviceaccount.com",
+      "ingress.global",
+      "ingress.yaml",
+      "kubernetes.io",
+      "networking.k8s.io",
+      "policy.failoverSettings",
+      "policy.failoverSettings.forceDeleteStrategy",
+      "policy.storageSettings",
+      "policy.storageSettings.requireRegionalStorage",
+      "static.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/container.developer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/http-balancer",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/crds/highavailabilityapplication",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/api-server-authentication"
+      ]
+    }
+  ]
+}

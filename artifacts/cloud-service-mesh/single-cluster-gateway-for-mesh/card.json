@@ -1,0 +1,232 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.183Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Single Cluster Gateway for Mesh",
+  "feature_slug": "single-cluster-gateway-for-mesh",
+  "summary": "Single Cluster Gateway for Mesh provides Gateway API-based ingress for Cloud Service Mesh in a single cluster; Single Cluster Gateway for Mesh provides Gateway API-based ingress for Cloud Service Mesh in a single cluster.",
+  "extended_definition": "Single Cluster Gateway for Mesh provides Gateway API-based ingress for Cloud Service Mesh in a single cluster; Single Cluster Gateway for Mesh provides Gateway API-based ingress for Cloud Service Mesh in a single cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+      "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+      "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use a single shared destination rule for all external hosts. cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : tls : mode : ISTIO MUTUAL EOF Create a ServiceEntry in the egress namespace to explicitly register example.com in the mesh's service registry for the team-x namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : example-com-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : example.com spec : hosts : - example.com ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'team-x' - 'istio-egress' EOF Configuring different egress routing for each namespace The exportTo property controls which namespaces can use the service entry.",
+          "Connections on port 80 still use mTLS: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : portLevelSettings : - port : number : 80 tls : mode : ISTIO MUTUAL - name : target-egress-gateway-TLS-passthrough EOF Update the virtual service for example.com so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - mesh - istio-egress/egress-gateway http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 443 subset : example-com-originate-TLS weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - example.com route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - example.com route : - destination : host : example.com port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' EOF Update the virtual service for httpbin.org so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - httpbin.org route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - httpbin.org route : - destination : host : httpbin.org port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Add an authorization policy that accepts any kind of traffic sent to port 443 of the egress gateway service.",
+          "Create a Sidecar resource for the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : Sidecar metadata : name : default namespace : team-y spec : outboundTrafficPolicy : mode : REGISTRY ONLY egress : - hosts : - 'istio-egress/ ' - 'team-y/ ' EOF Deploy the test application to the team-y namespace: kubectl -n team-y create -f ./test.yaml Register a second external host and export it to the team-x and the team-y namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : httpbin-org-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : httpbin.org spec : hosts : - httpbin.org ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Create a virtual service to route traffic to httpbin.org through the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Run istioctl analyze to check for configuration errors: ${ ISTIOCTL } analyze -n istio-egress --revision REVISION You see: ✔ No validation issues found when analyzing namespace: istio-egress."
+        ]
+      },
+      {
+        "title": "\"Prepare to setup the Gateway API for Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "source_id": "site-docs-root-2",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Install custom resource definitions Generate a kubeconfig entry for your cluster: gcloud container clusters get-credentials CLUSTER NAME --location LOCATION --project PROJECT ID where: CLUSTER NAME is the name of your cluster LOCATION is the location of your cluster PROJECT ID is the project ID of your cluster Install the GRPCRoute custom resource definition (CRD): curl https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/v1.1.0/config/crd/standard/gateway.networking.k8s.io grpcroutes.yaml \\ kubectl apply -f - The output is similar to: customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created What's next Set up an Envoy sidecar service mesh on GKE Set up a proxyless gRPC service mesh on GKE Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Grant the trafficdirector.client role: gcloud projects add-iam-policy-binding PROJECT ID \\ --member \"group: PROJECT ID .svc.id.goog:/allAuthenticatedUsers/\" \\ --role \"roles/trafficdirector.client\" Enable Cloud Service Mesh Enable the mesh feature: gcloud container fleet mesh enable --project PROJECT ID Update the mesh to use the Gateway API: gcloud alpha container fleet mesh update \\ --config-api gateway \\ --memberships CLUSTER NAME \\ --project PROJECT ID Verify the update by describing the status of Cloud Service Mesh resource: gcloud alpha container fleet mesh describe \\ --project PROJECT ID Set your fleet new memberships to use the Gateway API by default (optional) Alternatively, you can create fleet-level default settings for new GKE clusters registered to the fleet during cluster creation to be automatically configured with Gateway API.",
+          "Prepare to setup the Gateway API for Cloud Service Mesh This page describes how to install the required custom resource definitions for the gateway into your cluster."
+        ]
+      },
+      {
+        "title": "\"In-cluster control plane supported features \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "Telemetry Metrics Feature GKE clusters on Google Cloud GKE Enterprise clusters on-premises Other GKE Enterprise clusters Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Istio Telemetry API Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends Prometheus metrics export to customer-installed Prometheus, Grafana, and Kiali dashboards Compatible Compatible Compatible Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard The topology graph in the Google Cloud console no longer uses the Mesh telemetry service as its data source.",
+          "Feature GKE clusters on Google Cloud Other GKE Enterprise clusters Ingress Gateway with class: istio HttpRoute using parentRef Mesh traffic Configuring Istio CRDs using the targetRef field including AuthorizationPolicy, RequestAuthentication, Telemetry and WasmPlugin Warning: Microsoft AKS attached and GKE on Azure clusters require an additional step to use the Kubernetes Gateway API.",
+          "For information on configuring load balancers, see the following: Setting up your load balancer for Google Distributed Cloud (software only) for VMware GKE on AWS: Creating a load balancer Expose an ingress gateway using an external load balancer Kubernetes Gateway API (preview) In Cloud Service Mesh v1.20 the Kubernetes Gateway API is available as a public preview."
+        ]
+      },
+      {
+        "title": "Security bulletins \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check if your clusters are impacted Your cluster is impacted if it uses an in-cluster Cloud Service Mesh patch version earlier than: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 Your cluster is impacted if it uses a managed Cloud Service Mesh version earlier than: 1.21.6-asm.7 1.20.8-asm.59 1.19.10-asm.54 Mitigation For in-cluster Cloud Service Mesh, upgrade your cluster to one of the following patched versions: 1.27.4-asm.1 1.26.7-asm.1 1.25.6-asm.1 If you're using Cloud Service Mesh v1.24 or earlier, your release has reached end of life and is no longer supported.",
+          "Check if your clusters are impacted Your cluster is impacted if patch versions earlier than: 1.23.4-asm.1 1.22.7-asm.1 1.21.5-asm.17 1.20.8-asm.14 1.19.10-asm.24 Mitigation For in-cluster Cloud Service Mesh, Upgrade your cluster to one of the following patched versions: 1.23.4-asm.1 1.22.7-asm.1 1.21.5-asm.17 If you're using Cloud Service Mesh v1.20 or earlier, your release has reached end of life and is no longer supported.",
+          "Check if your clusters are impacted Your cluster is impacted if patch versions earlier than: 1.23.4-asm.1 1.22.7-asm.1 Mitigation For in-cluster Cloud Service Mesh, Upgrade your cluster to one of the following patched versions: 1.23.4-asm.1 1.22.7-asm.1 If you're using Cloud Service Mesh v1.20 or earlier, your release has reached end of life and is no longer supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "asm.1",
+      "asm.14",
+      "asm.17",
+      "asm.24",
+      "asm.54",
+      "asm.59",
+      "asm.7",
+      "customresourcedefinition.apiextensions.k8s.io",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "gateway.networking.k8s.io",
+      "grpcroutes.gateway.networking.k8s.io",
+      "grpcroutes.yaml",
+      "httpbin.org",
+      "install.istio.io",
+      "items..metadata.name",
+      "networking.istio.io",
+      "raw.githubusercontent.com",
+      "service.istio.io",
+      "svc.id.goog",
+      "test.yaml",
+      "trafficdirector.client",
+      "v1.1.0",
+      "v1.20",
+      "v1.24"
+    ],
+    "missing_inventory_roles": [
+      "roles/trafficdirector.client"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/prepare-gateway",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    }
+  ]
+}

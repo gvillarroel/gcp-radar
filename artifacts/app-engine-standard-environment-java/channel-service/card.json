@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:42.661Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java",
+  "feature_name": "Channel service",
+  "feature_slug": "channel-service",
+  "summary": "The Channel service provides server-to-client messaging for App Engine applications; deprecated on 2017-10-31.",
+  "extended_definition": "The Channel service provides server-to-client messaging for App Engine applications; deprecated on 2017-10-31.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-27",
+    "deprecation_date": "2017-10-31",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applications that are heavily CPU-bound may also incur some additional latency in order to efficiently share resources with other applications on the same servers.",
+          "Forcing HTTPS connections For security reasons, all applications should encourage clients to connect over https .",
+          "Depending on a variety of factors, such as which type of response data is cached first, which Vary headers you have specified in the response, and which headers are included in the request, a client could request compressed data but receive uncompressed data, and the other way around."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager",
+        "source_id": "site-docs-reference-4",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "ModulesService modules = ModulesServiceFactory.getModulesService(); // Lookup the versions associated with the current service/module. for (String version : modules.getVersions(modules.getCurrentModule())) { // Process version. } See Also: com.google.appengine.api.modules.ModulesService com.google.appengine.api.oauth Provides a method for clients to access server resources on behalf of a resource owner, as well as a process for end-users to authorize third-party access to their server resources without sharing their credentials.",
+          "Home Documentation Application hosting App Engine Standard environment Reference Send feedback appengine-apis overview (5.0.0) Stay organized with collections Save and categorize content based on your preferences. com.google.appengine.api Provides facilities for server lifecycle management, threading and namespaces/multitenancy.",
+          "See Also: com.google.appengine.api.taskqueue.Queue , The Task Queue Java API in the Google App Engine Developer's Guide . com.google.appengine.api.urlfetch Provides a service to make HTTP/S requests of other servers on the internet."
+        ]
+      },
+      {
+        "title": "\"appengine-apis overview (5.0.0) \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "source_id": "site-docs-reference-4",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "ModulesService modules = ModulesServiceFactory.getModulesService(); // Lookup the versions associated with the current service/module. for (String version : modules.getVersions(modules.getCurrentModule())) { // Process version. } See Also: com.google.appengine.api.modules.ModulesService com.google.appengine.api.oauth Provides a method for clients to access server resources on behalf of a resource owner, as well as a process for end-users to authorize third-party access to their server resources without sharing their credentials.",
+          "Home Documentation Application hosting App Engine Standard environment Reference Send feedback appengine-apis overview (5.0.0) Stay organized with collections Save and categorize content based on your preferences. com.google.appengine.api Provides facilities for server lifecycle management, threading and namespaces/multitenancy.",
+          "See Also: com.google.appengine.api.taskqueue.Queue , The Task Queue Java API in the Google App Engine Developer's Guide . com.google.appengine.api.urlfetch Provides a service to make HTTP/S requests of other servers on the internet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "com.google.appengine.api",
+      "com.google.appengine.api.appidentity.AppIdentityService",
+      "com.google.appengine.api.backends",
+      "com.google.appengine.api.modules.ModulesService",
+      "com.google.appengine.api.oauth",
+      "com.google.appengine.api.taskqueue.Queue",
+      "com.google.appengine.api.urlfetch",
+      "modules.getCurrentModule",
+      "modules.getVersions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/search",
+        "https://docs.cloud.google.com/appengine/docs/standard/java/javadoc/com/google/appengine/api/ThreadManager"
+      ]
+    }
+  ]
+}

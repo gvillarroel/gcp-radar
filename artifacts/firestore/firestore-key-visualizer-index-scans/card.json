@@ -1,0 +1,244 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore Key Visualizer index scans",
+  "feature_slug": "firestore-key-visualizer-index-scans",
+  "summary": "Key Visualizer supports index scans for Firestore.",
+  "extended_definition": "Key Visualizer supports index scans for Firestore.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+      "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Key Visualizer \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following metric is available for index keys in Key Visualizer scans: Metrics Description Index Write Ops/s Average number of index writes per second.",
+          "These can be single-field indexes or composite indexes.For example, the following indexes are some examples of index keys as seen on the Key Visualizer tool: COLLECTION: projects/PROJECT ID/databases/default/documents/Users PROPERTIES: (timestamp: ASC) VALUES: (1686162996397845) DOCUMENT: projects/PROJECT ID/databases/default/documents/Users/QstCrsaGuq9ybj81dNse COLLECTION: projects/PROJECT ID/databases/default/documents/Users PROPERTIES: (Timestamp: ASC, Name: ASC,Country: ARRAY) VALUES: (16500000000000001L, 'Alice', 'USA') DOCUMENT: (projects/PROJECT ID/databases/default/documents/Users/5000000000000001) Scan eligibility Each Key Visualizer scan covers a two hour period.",
+          "For example, the following document names are also document keys: projects/PROJECT ID/databases/(default)/documents/cities/SF projects/PROJECT ID/databases/(default)/documents/companies/my company/employees/007RGlCzsx59bakkuTGz Key Term: Index key In Key Visualizer, the term Index Key refers to a index's unique identifier."
+        ]
+      },
+      {
+        "title": "\"Identity and Access Management (IAM) \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This role also gives the ability to create new databases, not necessarily by cloning. roles/datastore.statisticsViewer resourcemanager.projects.get resourcemanager.projects.list datastore.databases.getMetadata datastore.insights.get datastore.keyVisualizerScans.get datastore.keyVisualizerScans.list datastore.statistics.list datastore.statistics.get Read access to Insights, Stats, and Key Visualizer scans. roles/datastore.userCredsViewer datastore.userCreds.get datastore.userCreds.list Read access to user credentials in a Firestore database. roles/datastore.userCredsAdmin datastore.userCreds.get datastore.userCreds.list datastore.userCreds.create datastore.userCreds.update datastore.userCreds.delete datastore.databases.list datastore.databases.getMetadata Full access to user credentials in a Firestore database.",
+          "Intended for application developers and service accounts. roles/datastore.viewer appengine.applications.get datastore.databases.get datastore.databases.getMetadata datastore.databases.list datastore.entities.get datastore.entities.list datastore.schemas.get datastore.schemas.list datastore.namespaces.get datastore.namespaces.list datastore.statistics.get datastore.statistics.list resourcemanager.projects.get resourcemanager.projects.list Read access to all Firestore resources. roles/datastore.indexAdmin appengine.applications.get datastore.databases.getMetadata datastore.schemas. datastore.operations.list datastore.operations.get resourcemanager.projects.get resourcemanager.projects.list Full access to manage index definitions. roles/datastore.backupSchedulesViewer datastore.backupSchedules.get datastore.backupSchedules.list Read access to backup schedules in a Firestore database. roles/datastore.backupSchedulesAdmin datastore.backupSchedules.get datastore.backupSchedules.list datastore.backupSchedules.create datastore.backupSchedules.update datastore.backupSchedules.delete datastore.databases.list datastore.databases.getMetadata Full access to backup schedules in a Firestore database. roles/datastore.backupsViewer datastore.backups.get datastore.backups.list Read access to backup information in a Firestore location. roles/datastore.backupsAdmin datastore.backups.get datastore.backups.list datastore.backups.delete Full access to backups in a Firestore location. roles/datastore.restoreAdmin datastore.backups.get datastore.backups.list datastore.backups.restoreDatabase datastore.databases.list datastore.databases.create datastore.databases.getMetadata datastore.operations.list datastore.operations.get Ability to restore a Firestore backup into a new database.",
+          "View tags datastore.databases.listTagBindings datastore.databases.listEffectiveTags Manage tags on resources The following permission is required for the database resource you're attaching the tag value. datastore.databases.createTagBinding Permissions The following table lists the permissions that Firestore supports."
+        ]
+      },
+      {
+        "title": "\"Heatmap patterns for index keys \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Understand the index key structure Before you understand the structure of index keys that you see in Key Visualizer tool, learn about indexes in Firestore.",
+          "COLLECTION: projects/ PROJECT ID /databases/(default)/documents/Users PROPERTIES: (Timestamp: DESC) VALUES: (16500000000000001) DOCUMENT: projects/ PROJECT ID /databases/(default)/documents/Users/5000000000000001 Collection scope single-field Indexes for array fields For each array field in a document, Firestore creates and maintains a collection scope array-contains index.",
+          "Some examples of common hotspots on index are as follows: Note: In the following heatmap example, for Firestore, the x-axis of the heatmap represents time, and the y-axis represents index keys."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.applications.get",
+      "datastore.backups.delete",
+      "datastore.backups.get",
+      "datastore.backups.list",
+      "datastore.backups.restoreDatabase",
+      "datastore.backupsAdmin",
+      "datastore.backupSchedules.create",
+      "datastore.backupSchedules.delete",
+      "datastore.backupSchedules.get",
+      "datastore.backupSchedules.list",
+      "datastore.backupSchedules.update",
+      "datastore.backupSchedulesAdmin",
+      "datastore.backupSchedulesViewer",
+      "datastore.backupsViewer",
+      "datastore.databases.create",
+      "datastore.databases.createTagBinding",
+      "datastore.databases.get",
+      "datastore.databases.getMetadata",
+      "datastore.databases.list",
+      "datastore.databases.listEffectiveTags",
+      "datastore.databases.listTagBindings",
+      "datastore.entities.get",
+      "datastore.entities.list",
+      "datastore.indexAdmin",
+      "datastore.insights.get",
+      "datastore.keyVisualizerScans.get",
+      "datastore.keyVisualizerScans.list",
+      "datastore.namespaces.get",
+      "datastore.namespaces.list",
+      "datastore.operations.get",
+      "datastore.operations.list",
+      "datastore.restoreAdmin",
+      "datastore.schemas",
+      "datastore.schemas.get",
+      "datastore.schemas.list",
+      "datastore.statistics.get",
+      "datastore.statistics.list",
+      "datastore.statisticsViewer",
+      "datastore.userCreds.create",
+      "datastore.userCreds.delete",
+      "datastore.userCreds.get",
+      "datastore.userCreds.list",
+      "datastore.userCreds.update",
+      "datastore.userCredsAdmin",
+      "datastore.userCredsViewer",
+      "datastore.viewer",
+      "indexes.For"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.backupsAdmin",
+      "roles/datastore.backupSchedulesAdmin",
+      "roles/datastore.backupSchedulesViewer",
+      "roles/datastore.backupsViewer",
+      "roles/datastore.indexAdmin",
+      "roles/datastore.restoreAdmin",
+      "roles/datastore.statisticsViewer",
+      "roles/datastore.userCredsAdmin",
+      "roles/datastore.userCredsViewer",
+      "roles/datastore.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/key-visualizer",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/security/iam",
+        "https://docs.cloud.google.com/firestore/docs/keyvis-patterns-index"
+      ]
+    }
+  ]
+}

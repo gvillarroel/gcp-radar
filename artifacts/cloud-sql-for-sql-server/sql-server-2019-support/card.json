@@ -1,0 +1,144 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:50.426Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server",
+  "feature_name": "SQL Server 2019 support",
+  "feature_slug": "sql-server-2019-support",
+  "summary": "Cloud SQL for SQL Server supports SQL Server 2019 database instances.",
+  "extended_definition": "Cloud SQL for SQL Server supports SQL Server 2019 database instances.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/introduction",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/introduction",
+        "source_id": "site-docs-root",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are many database administration tools you can choose from, depending on your database engine, including the following: phpMyAdmin for MySQL MySQL Workbench for MySQL Toad Edge for MySQL and PostgreSQL pgAdmin.org for PostgreSQL SQL Server Management Studio for SQL Server Visual Studio Code for SQL Server Cloud SQL pricing Cloud SQL pricing varies with your configuration settings, and depends on: How much storage you provision, in GiB per month How many CPUs you select for your Cloud SQL instance How much memory you select for your Cloud SQL instance Where you choose to host your data How much network traffic leaves your instance How many IP addresses you assign and use For more information, see the pricing page or the pricing calculator .",
+          "For example, when updating a database server, Google Cloud uses live migration, an advanced technology that reliably migrates a VM from the original host to a new one while the VM stays running.",
+          "Each VM operates the database program, such as MySQL Server, PostgreSQL, or SQL Server, and service agents that provide supporting services, such as logging and monitoring."
+        ]
+      },
+      {
+        "title": "\"About transparent data encryption (TDE) \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 29,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Available only in Cloud SQL for SQL Server instances with the following database versions : SQL Server Enterprise SQL Server 2019 or later (Standard edition) If TDE is used for an instance with replicas and VPC Service Controls are enabled, then you must ensure the primary instance and all replicas are within the same service perimeter.",
+          "Cloud SQL for SQL Server supports using TDE to encrypt data stored in your Cloud SQL for SQL Server instances.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback About transparent data encryption (TDE) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Cloud SQL backups overview Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server Cloud SQL lets you back up your instances on-demand, or automatically using a backup schedule.",
+          "Relevant log files include: cloudsql.googleapis.com/sqlagent.out cloudsql.googleapis.com/sqlserver.err If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "sqlagent.out",
+      "sqlserver.err"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/about-tde",
+        "https://docs.cloud.google.com/sql/docs/introduction",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/backup-recovery/backups"
+      ]
+    }
+  ]
+}

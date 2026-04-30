@@ -1,0 +1,121 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.558Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "Workspace file tabs",
+  "feature_slug": "workspace-file-tabs",
+  "summary": "Workspace file tabs display files as tabs within a Dataform workspace.",
+  "extended_definition": "Workspace file tabs display files as tabs within a Dataform workspace.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/create-workspace",
+      "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DataformAsyncClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SearchFilesRequest ( workspace=\"workspace value\", ) Make the request page result = client. search files (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.dataform v1.types.SearchFilesRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 async def sample search files(): Create a client client = dataform v1 .",
+          "Returns Type Description google.cloud.dataform v1.types.ResetWorkspaceChangesResponse ResetWorkspaceChanges response message. search files search files ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class DataformClient (0.10.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "source_id": "site-python-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dataform v1 def sample search files(): Create a client client = dataform v1 .",
+          "SearchFilesRequest ( workspace=\"workspace value\", ) Make the request page result = client. search files (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.dataform v1.types.SearchFilesRequest , dict] The request object.",
+          "Returns Type Description google.cloud.dataform v1.types.ResetWorkspaceChangesResponse ResetWorkspaceChanges response message. search files search files ( request : typing ."
+        ]
+      },
+      {
+        "title": "Create a development workspace \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "source_id": "site-docs-root-2",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An initialized development workspace contains the following directories and files: definitions/ : a directory for asset definitions, in Dataform core or JavaScript. includes/ : an empty directory for scripts and variables that you can reuse across the repository. workflow settings.yaml : the default Dataform configuration file containing the Google Cloud project ID and BigQuery schema to publish assets in.",
+          "Create a Dataform development workspace When you create a development workspace in a new repository for the first time, Dataform prompts you to initialize the development workspace with a set of configuration files that are required for Dataform to work.",
+          "Edits you make to files in your workspace start off as uncommitted local changes that you can commit and then push to your repository so that they become available to all repository users."
+        ]
+      },
+      {
+        "title": "Use JavaScript in Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "source_id": "site-docs-root-2",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can define the following actions with JavaScript in Dataform: Tables Data source declarations Assertions Custom SQL operations Create a JavaScript file Store JavaScript files for definitions and data source declarations in the definitions/ directory.",
+          "You can create multiple workflow actions within one JavaScript file with Dataform global methods and arbitrary JavaScript ES5 code, such as loops and constants.",
+          "To pass table properties as the second argument of publish() , follow these steps: In your development workspace, in the Files pane, expand definitions/ ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "settings.yaml",
+      "v1.services.dataform.pagers.SearchFilesAsyncPager",
+      "v1.types.ResetWorkspaceChangesResponse",
+      "v1.types.SearchFilesRequest",
+      "v1.types.WorkflowConfig"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/google.cloud.dataform_v1.services.dataform.DataformClient",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform"
+      ]
+    }
+  ]
+}

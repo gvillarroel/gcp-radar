@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.886Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn",
+  "feature_name": "Cloud CDN predefined dashboards",
+  "feature_slug": "cloud-cdn-predefined-dashboards",
+  "summary": "Cloud CDN provides built-in predefined dashboards enabled by default for monitoring CDN traffic distribution and cache effectiveness.",
+  "extended_definition": "Cloud CDN provides built-in predefined dashboards enabled by default for monitoring CDN traffic distribution and cache effectiveness.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+      "https://docs.cloud.google.com/cdn/docs/logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Logs and metrics for caching \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cloud Monitoring provides predefined dashboards that are enabled by default for a quick insight into system health and performance.",
+          "Note: To filter your monitoring data for a specific URL map or path rule, add the following filters to each chart's Monitoring Query Language (MQL) query: filter (resource.url map name = 'URL MAP NAME') filter (resource.matched url path rule = 'PATH RULE NAME') Predefined dashboards Cloud Monitoring offers predefined dashboards for Cloud CDN.",
+          "The predefined dashboards appear by default."
+        ]
+      },
+      {
+        "title": "\"Logs and metrics for backend services \\_|\\_ Cloud CDN \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "source_id": "site-docs-root-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "In Monitoring, this value is only available on default dashboards.",
+          "The metrics created are based on the Application Load Balancer Rule (Logs-based Metrics) resource ( l7 lb rule ), which is available under Cloud Monitoring dashboards instead of under the https lb rule resource.",
+          "The dashboard provides data analysis in default intervals of 1H (one hour), 6H (six hours), 1D (one day), 1W (one week), and 6W (six weeks)."
+        ]
+      },
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the custom monitoring dashboard for Cloud CDN To ensure greater reliability and performance, a best practice is to regularly review monitoring metrics related to Cloud CDN.",
+          "Ensure that logging is enabled for Cloud CDN A best practice for managing Cloud CDN is to ensure that logging is enabled for all Cloud CDN enabled backends .",
+          "Ensure your configuration doesn't enable a GCPHTTPFilter for caching on any path already protected by an IAP-enabled GCPBackendPolicy ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "loadbalancing.googleapis.com",
+      "resource.matched",
+      "resource.url"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/logging",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/logging",
+        "https://docs.cloud.google.com/cdn/docs/cdn-logging-monitoring",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.383Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "Bulk registration of services and workloads",
+  "feature_slug": "bulk-registration-of-services-and-workloads",
+  "summary": "App Hub enables registering multiple services and workloads at once, supporting up to 10 resources in a single operation.",
+  "extended_definition": "App Hub enables registering multiple services and workloads at once, supporting up to 10 resources in a single operation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+      "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+      "https://docs.cloud.google.com/app-hub/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage services and workloads \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following examples update the criticality and environment attributes of services and workloads of a regional application: Update service attributes: resource \"google apphub service\" \"example\" { ... other arguments attributes { criticality { type = \"HIGH\" # Updated criticality } environment { type = \"PRODUCTION\" } ... other attributes } } Update workload attributes: resource \"google apphub workload\" \"example\" { ... other arguments attributes { criticality { type = \"HIGH\" # Updated criticality } environment { type = \"PRODUCTION\" } ... other attributes } } Unregister services and workloads Unregistering a service or workload removes it from an application.",
+          "List registered workloads in an application: gcloud apphub applications workloads list \\ --application = APPLICATION NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --filter = FILTER EXPRESSION The registration status of services and workloads in an application might change to detached if you move a project or folder out of your application management boundary or delete the underlying resource.",
+          "View details of services and workloads Follow these steps to view details of services and workloads within your application management boundary, including the following: Location Registration status to an application Properties and attributes For more information about these details, see App Hub concepts and data model ."
+        ]
+      },
+      {
+        "title": "Key concepts \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/key-concepts",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In this legacy model, the host project is equivalent to the management project , and the collection of the host project and service projects serves as an example of a multiple-project application management boundary .",
+          "App Hub supports two registration type ( RegistrationType ) property values for services: Exclusive ( EXCLUSIVE ): services that you can only register to one application .",
+          "Even after being registered to an application, shared services can have a discovered registration status in App Hub for other applications to use them."
+        ]
+      },
+      {
+        "title": "App Hub overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Services and workloads that you can register to an application have one of the following registration status: Discovered : Services and workloads that you can register to an application because they are part of the application management boundary and that aren't registered to any other application or can be registered to multiple applications.",
+          "App Hub helps you implement the following application-centric capabilities: Streamline resource registration : Register at once multiple services and workloads to an application.",
+          "Registration status of services and workloads The organizational structure of your Google Cloud resources affects how App Hub can manage services and workloads and lets you register them in applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/key-concepts"
+      ]
+    }
+  ]
+}

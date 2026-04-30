@@ -1,0 +1,99 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore multiple databases",
+  "feature_slug": "firestore-multiple-databases",
+  "summary": "Firestore supports multiple databases within a project.",
+  "extended_definition": "Firestore supports multiple databases within a project.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/pitr",
+      "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+      "https://docs.cloud.google.com/firestore/native/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Query with range and inequality filters on multiple fields overview \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Query with range and inequality filters on multiple fields overview Firestore supports using range and inequality filters on multiple fields in a single query.",
+          "You can have range and inequality conditions on multiple fields and simplify your application development by delegating implementation of post-filtering logic to Firestore.",
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Point-in-time recovery (PITR) overview \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/pitr",
+        "source_id": "site-docs-reference",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "You can read data for a timestamp based on when PITR was enabled: PITR enablement status Earliest PITR data available Disabled 1 hour before the time of read request enabled within 7 days 1 hour before PITR was enabled enabled more than 7 days ago 7 days before the time of read request Note: You can't start reading from 7 days in the past immediately after you enable PITR.",
+          "For example, if a document had multiple writes ranging from v1, v2, ... vk between 2023-05-30 09:00:00AM (exclusive) and 2023-05-30 09:01:00AM (inclusive) timestamp, a read request at timestamp 2023-05-30 09:01:00AM returns the vk version of the document."
+        ]
+      },
+      {
+        "title": "Firestore overview \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 28,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Key capabilities Flexibility The Firestore in Native Mode data model supports flexible, hierarchical data structures.",
+          "The Firestore in Native Mode data model supports whatever data structure works best for your app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/pitr",
+        "https://docs.cloud.google.com/firestore/docs/query-data/multiple-range-fields",
+        "https://docs.cloud.google.com/firestore/native/docs/overview"
+      ]
+    }
+  ]
+}

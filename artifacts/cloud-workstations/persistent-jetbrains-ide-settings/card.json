@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.383Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations",
+  "feature_name": "Persistent JetBrains IDE settings",
+  "feature_slug": "persistent-jetbrains-ide-settings",
+  "summary": "Cloud Workstations preserves JetBrains IDE .vmoptions and .properties files across workstations when using the latest preconfigured base images.",
+  "extended_definition": "Cloud Workstations preserves JetBrains IDE .vmoptions and .properties files across workstations when using the latest preconfigured base images.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+      "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+      "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+      "https://docs.cloud.google.com/workstations/docs/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Develop code using local JetBrains IDEs \\_|\\_ Cloud Workstations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/develop-code-using-local-jetbrains-ides",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported operating systems The Cloud Workstations plugin supports the following operating systems: Windows macOS (Intel and Apple Silicon) Linux Supported versions The Cloud Workstations plugin supports the latest version, and one previous version, of JetBrains IDEs and JetBrains Gateway .",
+          "The Cloud Workstations plugin lets you initiate remote development sessions for Cloud Workstations using JetBrains IDEs such as IntelliJ IDEA Ultimate, PyCharm Professional, Rider, CLion, PhpStorm, and WebStorm.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Develop code using local JetBrains IDEs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Customize container images \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/customize-container-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to install the latest version of the Clion, run the following command: /installer-scripts/jetbrains-installer.sh clion Customize JetBrains IDE configuration files If a persistent home directory is specified in the workstations configuration, Cloud Workstations base images with JetBrains IDEs automatically persist the $IDE.vmoptions and $IDE.properties configuration files.",
+          "You can then interact with either IDE: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest as code-oss-image FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/jetbrains-intellij:latest Copy Code OSS for Cloud Workstations and startup scripts into our custom image COPY --from = code-oss-image /opt/code-oss /opt/code-oss COPY --from = code-oss-image /etc/workstation-startup.d/110 start-code-oss.sh /etc/workstation-startup.d/110 start-code-oss.sh Use the existing entrypoint script which will execute all scripts in /etc/workstation-startup.d/ ENTRYPOINT [ \"/google/scripts/entrypoint.sh\" ] Container image that pre-installs IDE extensions in Code OSS for Cloud Workstations for Java development To create a container image that pre-installs IDE extensions in Code OSS for Cloud Workstations for Java development at build time, run the following commands: FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest RUN wget https://open-vsx.org/api/vscjava/vscode-java-debug/0.40.1/file/vscjava.vscode-java-debug-0.40.1.vsix && \\ unzip vscjava.vscode-java-debug-0.40.1.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-debug RUN wget https://open-vsx.org/api/vscjava/vscode-java-dependency/0.19.1/file/vscjava.vscode-java-dependency-0.19.1.vsix && \\ unzip vscjava.vscode-java-dependency-0.19.1.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-dependency RUN wget https://open-vsx.org/api/redhat/java/1.6.0/file/redhat.java-1.6.0.vsix && \\ unzip redhat.java-1.6.0.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/redhat-java RUN wget https://open-vsx.org/api/vscjava/vscode-maven/0.35.2/file/vscjava.vscode-maven-0.35.2.vsix && \\ unzip vscjava.vscode-maven-0.35.2.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-maven RUN wget https://open-vsx.org/api/vscjava/vscode-java-test/0.35.0/file/vscjava.vscode-java-test-0.35.0.vsix && \\ unzip vscjava.vscode-java-test-0.35.0.vsix \"extension/ \" && \\ mv extension /opt/code-oss/extensions/java-test RUN chmod a+rwx -R /opt/code-oss/extensions/ If you pre-install extensions, they are considered built-in extensions.",
+          "Install IDE and Plugins RUN bash /installer-scripts/jetbrains-installer.sh intellij pinned && \\ Install Cloud Code - https://plugins.jetbrains.com/plugin/8079-cloud-code bash /installer-scripts/plugin-installer.sh \\ -v 22.9.3-222 \\ -d /opt/ideaIU/plugins/ \\ -c 89628279ed9042c526a81facc09bf53f8fb8b83b4595b0d329d94c1611e0c379 \\ 8079 Register IDE with JetBrains Gateway RUN echo 'runuser user -c \"/opt/ideaIU/bin/remote-dev-server.sh registerBackendLocationForGateway\"' > /etc/workstation-startup.d/110 register-intellij-with-gateway.sh \\ echo 'echo \"IntelliJ-Ultimate ready for incoming gateway connection\"' >> /etc/workstation-startup.d/110 register-intellij-with-gateway.sh ..."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up workstations \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/quickstart-set-up-workstations-console",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use Cloud Workstations with JetBrains IDEs such as IntelliJ IDEA Ultimate and PyCharm Professional.",
+          "To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin This guide covers steps for administrators to set up Cloud Workstations and for developers to use the workstations.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As a result, Gemini Code Assist does not run on Cloud Workstations IDEs that require JetBrains Gateway to connect. 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback Code with Gemini Code Assist Stay organized with collections Save and categorize content based on your preferences.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info Gemini Code Assist and JetBrains Gateway Gemini Code Assist does not run through JetBrains Gateway."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "docker.pkg.dev",
+      "entrypoint.sh",
+      "gateway.sh",
+      "geminicodeassist.recitation.maxCitedLength",
+      "grpc.health.v1.Health",
+      "installer.sh",
+      "oss.sh",
+      "plugins.jetbrains.com",
+      "redhat.java",
+      "server.sh",
+      "settings.json",
+      "startup.d",
+      "theme.sh",
+      "vscjava.vscode",
+      "vsx.org",
+      "workbench.colorTheme"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "DLP API v2beta2",
+  "feature_slug": "dlp-api-v2beta2",
+  "summary": "The v2beta2 API version was deprecated; deprecated on 2018-03-21.",
+  "extended_definition": "The v2beta2 API version was deprecated; deprecated on 2018-03-21.",
+  "lifecycle": {
+    "latest_feature_date": "2018-03-21",
+    "deprecation_date": "2018-03-21",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security Command Center release notes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "March 01, 2023 Deprecated The legacy version of the Findings tab in the Security Command Center dashboard in the Cloud console is now deprecated.",
+          "April 06, 2023 Deprecated The legacy version of the Findings tab is removed from Security Command Center in the Google Cloud console.",
+          "The following detectors are new for v1.3.0: Access transparency disabled Cloud Asset API disabled Dataproc CMEK disabled Essential contacts not configured Flow logs settings not recommended The following detectors have been updated: Audit logging disabled For more information about Security Command Center support for standards and compliance, see the following: Detectors and compliance CIS Google Cloud Computing Platform Benchmarks March 23, 2023 Feature The version 3.0 release of the Google SCC App for QRadar , which lets you send Security Command Center data to QRadar v7.4.1FP2+, is generally available."
+        ]
+      },
+      {
+        "title": "\"Authenticating to the DLP API \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Inspect sensitive text by using the DLP API \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json",
+        "source_id": "site-docs-reference-3",
+        "final_score": 58,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "securitycenter.serviceAgent",
+      "v1.3.0",
+      "v7.4.1FP2"
+    ],
+    "missing_inventory_roles": [
+      "roles/securitycenter.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/auth",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/quickstart-json"
+      ]
+    }
+  ]
+}

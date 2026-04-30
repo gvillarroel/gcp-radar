@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:40.665Z",
+  "source_step08_card": "data/step-08/current/products/ai-hypercomputer/card.json",
+  "product_name": "AI Hypercomputer",
+  "product_slug": "ai-hypercomputer",
+  "feature_name": "Flex-start consumption option",
+  "feature_slug": "flex-start-consumption-option",
+  "summary": "Flex-start lets users obtain secured-pool GPU capacity in advance for up to seven days, improving chances of acquiring high-demand resources.",
+  "extended_definition": "Flex-start lets users obtain secured-pool GPU capacity in advance for up to seven days, improving chances of acquiring high-demand resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Choose a consumption option \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 176,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Comparison of consumption options The following table summarizes the key differences between the consumption options: Consumption option Future reservations in AI Hypercomputer Future reservations for up to 90 days (in calendar mode) Flex-start Spot Supported machines A4X Max, A4X, A4, A3 Ultra, A3 Mega, or A3 High A4, A3 Ultra, A3 Mega, or A3 High with 8 GPUs Any GPU machine except A4X Max and A4X Any GPU machine except A4X Max and A4X Lifespan Unlimited Up to 90 days Up to 7 days Unlimited (but subject to preemption ) Preemptible Capacity assurance Very high .",
+          "Resource allocation Dense Dense For MIG resize requests : Dense For standalone Flex-start VMs : Standard ( Compact policy optional) Standard ( Compact policy optional) Provisioning model Reservation-bound Reservation-bound Flex-start Spot Creation method To create VMs, you must do the following: Reserve capacity by contacting your account team .",
+          "How to use Flex-start To use Flex-start to create VMs or clusters, you must complete the following steps: Optional: Create a compact placement policy ."
+        ]
+      },
+      {
+        "title": "\"Create an AI-optimized MIG with A3 High or A3 Mega machine type \\_|\\_ AI\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the following command to create four data networks, each with subnets and firewall rules. for N in $(seq 1 4); do gcloud compute networks create NETWORK NAME PREFIX -data-net-$N \\ --project= PROJECT ID \\ --subnet-mode=custom \\ --mtu=8244 gcloud compute networks subnets create NETWORK NAME PREFIX -data-sub-$N \\ --project= PROJECT ID \\ --network= NETWORK NAME PREFIX -data-net-$N \\ --region= REGION \\ --range=192.168.$N.0/24 gcloud compute firewall-rules create NETWORK NAME PREFIX -data-internal-$N \\ --project= PROJECT ID \\ --network= NETWORK NAME PREFIX -data-net-$N \\ --action=ALLOW \\ --rules=tcp:0-65535,udp:0-65535,icmp \\ --source-ranges=192.168.0.0/16 done Optional: Create a workload policy For the Flex-start consumption option , skip this section and proceed to create an instance template .",
+          "To learn about the process to obtain capacity for your chosen consumption option, see Capacity overview .",
+          "Obtain capacity : the process to obtain capacity differs for each consumption option."
+        ]
+      },
+      {
+        "title": "\"Create an AI-optimized MIG with A4 or A3 Ultra machine type \\_|\\_ AI Hypercomputer\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 168,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Optional: Create a workload policy For the Flex-start consumption option , skip this section and proceed to create an instance template .",
+          "To learn about the process to obtain capacity for your chosen consumption option, see Capacity overview .",
+          "Obtain capacity : the process to obtain capacity differs for each consumption option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a3-high-mega",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/create/create-mig-with-a4-or-a3ultra",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/consumption-models"
+      ]
+    }
+  ]
+}

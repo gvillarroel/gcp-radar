@@ -1,0 +1,110 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.039Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation",
+  "feature_name": "Containerd runtime version for Anthos clusters on AWS",
+  "feature_slug": "containerd-runtime-version-for-anthos-clusters-on-aws",
+  "summary": "Anthos clusters on AWS now use containerd runtime version 1.6.12.",
+  "extended_definition": "Anthos clusters on AWS now use containerd runtime version 1.6.12.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/enterprise/clusters/docs/dataplane-v2",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.well-known/getOpenid-configuration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dataplane version support \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/enterprise/clusters/docs/dataplane-v2",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Send feedback Dataplane version support Stay organized with collections Save and categorize content based on your preferences.",
+          "Cluster environment Dataplane V2 Dataplane V1 GKE on Google Cloud Available in GKE version 1.20.6 and later.",
+          "Enabled by default for Autopilot clusters from version 1.23."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.awsClusters.well-known.getOpenid-configuration\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.well-known/getOpenid-configuration",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Create a VPC and cluster with Terraform \\_|\\_ GKE on AWS \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+        "source_id": "site-docs-root-2",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make a local copy of the repository and change to the AWS folder: git clone https://github.com/GoogleCloudPlatform/anthos-samples.git cd anthos-samples/anthos-multi-cloud/AWS Deploy GKE on AWS Edit the following lines in the terraform.tfvars file to replace the default values: gcp project id = GOOGLE PROJECT ID admin users = [\" GCP ACCOUNT EMAIL \"] cluster version = GKE VERSION Replace the following: GOOGLE PROJECT ID : your Google project id.",
+          "For a list of AWS regions controlled from a particular Google Cloud region and their associated Kubernetes versions, run the following command: gcloud container aws get-server-config --location GOOGLE CLOUD REGION Replace GOOGLE CLOUD REGION with the name of the Google Cloud region you want GKE on AWS to control your cluster from.",
+          "Authorize Cloud Logging and Cloud Monitoring Note: Starting with GKE on AWS version 1.28, manual policy binding to authorize the gke-system/gke-telemetry-agent service account for log and metric collection is no longer necessary."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "known.getOpenid",
+      "projects.locations.awsClusters",
+      "projects.locations.awsClusters.awsNodePools",
+      "projects.locations.awsClusters.well",
+      "samples.git",
+      "terraform.tfvars"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/clusters/docs/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.well-known/getOpenid-configuration",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/clusters/docs/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.well-known/getOpenid-configuration",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/enterprise/clusters/docs/dataplane-v2",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/reference/rest/v1/projects.locations.awsClusters.well-known/getOpenid-configuration",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+      ]
+    }
+  ]
+}

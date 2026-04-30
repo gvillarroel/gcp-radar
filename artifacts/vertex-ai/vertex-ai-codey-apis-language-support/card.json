@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Vertex AI Codey APIs language support",
+  "feature_slug": "vertex-ai-codey-apis-language-support",
+  "summary": "Vertex AI Codey APIs expanded support to additional programming languages.",
+  "extended_definition": "Vertex AI Codey APIs expanded support to additional programming languages.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "source_id": "site-api-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Reference Send feedback MCP Tools Reference: aiplatform.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Programming language of the code . code string Required.",
+          "Schema JSON representation { \"type\" : enum ( Type ) , \"format\" : string , \"title\" : string , \"description\" : string , \"nullable\" : boolean , \"default\" : value , \"items\" : { object ( Schema ) } , \"minItems\" : string , \"maxItems\" : string , \"enum\" : [ string ] , \"properties\" : { string : { object ( Schema ) } , ... } , \"propertyOrdering\" : [ string ] , \"required\" : [ string ] , \"minProperties\" : string , \"maxProperties\" : string , \"minimum\" : number , \"maximum\" : number , \"minLength\" : string , \"maxLength\" : string , \"pattern\" : string , \"example\" : value , \"anyOf\" : [ { object ( Schema ) } ] , \"additionalProperties\" : value , \"ref\" : string , \"defs\" : { string : { object ( Schema ) } , ... } } Fields type enum ( Type ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Following system labels exist for NotebookRuntime: \"aiplatform.googleapis.com/notebook runtime gce instance id\": output only, its value is the Compute Engine instance id. \"aiplatform.googleapis.com/colab enterprise entry service\": its value is either \"bigquery\" or \"vertex\"; if absent, it should be \"vertex\".",
+          "Home Documentation AI and ML Vertex AI Reference Send feedback MCP Tools Reference: aiplatform.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Curl Request curl --location 'https://aiplatform.googleapis.com/mcp/generate' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"colab enterprise create notebook runtime\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for NotebookService.AssignNotebookRuntime ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Reference Send feedback MCP Tools Reference: aiplatform.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Curl Request curl --location 'https://aiplatform.googleapis.com/mcp/generate' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"colab enterprise create notebook runtime template\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for NotebookService.CreateNotebookRuntimeTemplate .",
+          "All type URL strings must be legal URI references with the additional restriction (for the text format) that the content of the reference must consist only of alphanumeric characters, percent-encoded escapes, and characters in the following set (not including the outer backticks): /-. !$&() +,;= ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/count_tokens",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template"
+      ]
+    }
+  ]
+}

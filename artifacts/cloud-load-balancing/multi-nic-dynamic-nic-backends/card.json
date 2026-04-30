@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Multi-NIC Dynamic NIC backends",
+  "feature_slug": "multi-nic-dynamic-nic-backends",
+  "summary": "Cloud Load Balancing supports load balancing to multi-NIC instances that use Dynamic NICs.",
+  "extended_definition": "Cloud Load Balancing supports load balancing to multi-NIC instances that use Dynamic NICs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable connection draining \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For an existing regional load balancer : PATCH https://www.googleapis.com/compute/v1/projects/ PROJECT ID /region/ REGION /backendServices { \"name\": \" BACKEND SERVICE \", \"connectionDraining\": { \"drainingTimeoutSec\": CONNECTION TIMEOUT SECS } } Replace the following: PROJECT ID : the project ID that contains your load balancer or Cloud Service Mesh deployment BACKEND SERVICE : the backend service used by your load balancer or Cloud Service Mesh deployment CONNECTION TIMEOUT SECS : the number of seconds to wait before instances or endpoints are removed from the instance group or NEG, between 0 to 3600 seconds, inclusive.",
+          "The following examples demonstrate how to change the connection draining timeout: For an existing global or cross-region load balancer : gcloud compute backend-services update BACKEND SERVICE \\ --global \\ --connection-draining-timeout= CONNECTION TIMEOUT SECS For an existing regional load balancer : gcloud compute backend-services update BACKEND SERVICE \\ --region= REGION \\ --connection-draining-timeout= CONNECTION TIMEOUT SECS Replace the placeholders with valid values: BACKEND SERVICE : the backend service that you're updating REGION : if applicable, the region of the backend service that you're updating CONNECTION TIMEOUT SECS : the number of seconds to wait before existing connections to instances or endpoints are terminated, between 0 - 3600 seconds, inclusive.",
+          "For an existing global or cross-region load balancer : PATCH https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices Note: Classic Application Load Balancers and classic proxy Network Load Balancers always use global backend services, even when backends are in only one region because the load balancer is set to use the Standard Network Tier."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compatible with GKE using Gateway (fully orchestrated) or Standalone NEGs (manual orchestration) Supports advanced traffic management Global Anycast external IP addresses over Premium Tier Can access backends across multiple regions Supports Cloud CDN Supports Cloud Armor Classic Application Load Balancer This load balancer is global in Premium Tier.",
+          "Load balancer mode Supported backends on a backend service 1 Supports backend buckets Supports Cloud Armor Supports Cloud CDN 2 Supports IAP 2 Supports Service Extensions Instance groups 3 Zonal NEGs 4 Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs Global external Application Load Balancer Classic Application Load Balancer Premium Tier Regional external Application Load Balancer 1 Backends on a backend service must be the same type: all instance groups or all the same type of NEG.",
+          "Compatible with GKE using Standalone NEGs (manual orchestration) Supports advanced traffic management capabilities Regional VIPs using Standard Network Tier Terminates TLS in a single region that you configure Serves content from the configured region only For the complete list, see Load balancing features ."
+        ]
+      },
+      {
+        "title": "\"External proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "For global load balancing, you deploy your backends in multiple regions, and the load balancer automatically directs traffic to the region closest to the user.",
+          "For global load balancing, you deploy your backends in multiple regions, and the load balancer automatically directs traffic to the region closest to the user.",
+          "Backends and VPC networks For global external proxy Network Load Balancer and classic proxy Network Load Balancer backends , all backend instances from instance group backends and all backend endpoints from NEG backends must be located in the same project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    }
+  ]
+}

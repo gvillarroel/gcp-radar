@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.470Z",
+  "source_step08_card": "data/step-08/current/products/video-intelligence-api/card.json",
+  "product_name": "Video Intelligence API",
+  "product_slug": "video-intelligence-api",
+  "feature_name": "Custom AutoML models for streaming video annotation",
+  "feature_slug": "custom-automl-models-for-streaming-video-annotation",
+  "summary": "Video Intelligence API now supports using customer-owned AutoML models for label detection and object tracking on streaming video.",
+  "extended_definition": "Video Intelligence API now supports using customer-owned AutoML models for label detection and object tracking on streaming video.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries",
+      "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+      "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+      "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How-to stream live videos \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to use the binary from the command line. $ export GOOGLE APPLICATION CREDENTIALS = / path to credential /credential json $ export CONFIG = / path to config /config json $ export PIPE NAME = / path to pipe / name of pipe $ export TIMEOUT = 3600 $ ./streaming client main --alsologtostderr --endpoint \"dns:///alpha-videointelligence.googleapis.com\" \\ --video path = $PIPE NAME --use pipe = true --config = $CONFIG --timeout = $TIMEOUT $GOOGLE APPLICATION CREDENTIALS specifies the file path of the JSON file containing your service account key.",
+          "Step 3: Run GStreamer pipeline GStreamer supports multiple live streaming protocols including but not limited to: HTTP Live Streaming (HLS) Real-time Streaming Protocol (RTSP) Real-time Protocol (RTP) Real-time Messaging Protocol (RTMP) WebRTC Streaming from Webcam The Video Intelligence API uses the GStreamer pipeline to convert from these live streaming protocols to a decodable video stream, and writes the stream into the named pipe created in Step 1.",
+          "The Video Intelligence Streaming API supports standard live streaming protocols like RTSP, RTMP, and HLS."
+        ]
+      },
+      {
+        "title": "AnnotateVideoResponse \\_|\\_ Video Intelligence API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "source_id": "site-api-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each will have list of frame information associated with it. objectAnnotations[] object ( ObjectTrackingAnnotation ) Annotations for list of objects detected and tracked in video. logoRecognitionAnnotations[] object ( LogoRecognitionAnnotation ) Annotations for list of logos detected, tracked and recognized in video. personDetectionAnnotations[] object ( PersonDetectionAnnotation ) Person detection annotations. error object ( Status ) If set, indicates an error.",
+          "JSON representation { \"entity\" : { object ( Entity ) } , \"tracks\" : [ { object ( Track ) } ] , \"segments\" : [ { object ( VideoSegment ) } ] } Fields entity object ( Entity ) Entity category information to specify the logo class that all the logo tracks within this LogoRecognitionAnnotation are recognized as. tracks[] object ( Track ) All logo tracks where the recognized logo appears.",
+          "JSON representation { \"annotationResults\" : [ { object ( VideoAnnotationResults ) } ] } Fields annotationResults[] object ( VideoAnnotationResults ) Annotation results for all videos specified in AnnotateVideoRequest ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Annotate a video by using the command line \\_|\\_ Video Intelligence\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "The results should look similar to the following: { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\" , \"annotationProgress\" : [ { \"inputUri\" : \"videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"progressPercent\" : 100 , \"startTime\" : \"2020-04-01T22:13:17.978847Z\" , \"updateTime\" : \"2020-04-01T22:13:29.576004Z\" } ] }, \"done\" : true , \"response\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoResponse\" , \"annotationResults\" : [ { \"inputUri\" : \"/videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"segmentLabelAnnotations\" : [ { \"entity\" : { \"entityId\" : \"/m/07bsy\" , \"description\" : \"transport\" , \"languageCode\" : \"en-US\" }, \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.81231534 } ] }, { \"entity\" : { \"entityId\" : \"/m/01n32\" , \"description\" : \"city\" , \"languageCode\" : \"en-US\" }, \"categoryEntities\" : [ { \"entityId\" : \"/m/043rvww\" , \"description\" : \"geographical feature\" , \"languageCode\" : \"en-US\" } ], \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.3942462 } ] }, ... { \"entity\" : { \"entityId\" : \"/m/06gfj\" , \"description\" : \"road\" , \"languageCode\" : \"en-US\" }, \"segments\" : [ { \"segment\" : { \"startTimeOffset\" : \"0s\" , \"endTimeOffset\" : \"38.757872s\" }, \"confidence\" : 0.86698604 } ] } ] } ] } } Congratulations!",
+          "If the operation has completed, a done field is included and set to true : { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.cloud.videointelligence.v1.AnnotateVideoProgress\" , \"annotationProgress\" : [ { \"inputUri\" : \"/videointelligence-quickstart-bucket/ YOUR OBJECT \" , \"progressPercent\" : 100 , \"startTime\" : \"2020-04-01T22:13:17.978847Z\" , \"updateTime\" : \"2020-04-01T22:13:29.576004Z\" } ] }, \"done\" : true , ... } After about a minute, the request returns the annotation results.",
+          "The response includes the operation name: { \"name\" : \"projects/ PROJECT NUMBER /locations/ LOCATION ID /operations/ OPERATION ID \" } You can request information on the operation by calling the v1.operations endpoint, replacing OPERATION NAME in the example below with the name returned in the previous step: curl -X GET \\ -H \"Authorization: Bearer \" $( gcloud auth application-default print-access-token ) \\ https://videointelligence.googleapis.com/v1/ OPERATION NAME This command returns information related to your operation."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Annotate a video by using client libraries \\_|\\_ Video Intelligence\\",
+        "url": "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "LABEL DETECTION ) . build (); OperationFuture<AnnotateVideoResponse , AnnotateVideoProgress > response = client . annotateVideoAsync ( request ); System . out . println ( \"Waiting for operation to complete...\" ); List<VideoAnnotationResults> results = response . get (). getAnnotationResultsList (); if ( results . isEmpty ()) { System . out . println ( \"No labels detected in \" + gcsUri ); return ; } for ( VideoAnnotationResults result : results ) { System . out . println ( \"Labels:\" ); // get video segment label annotations for ( LabelAnnotation annotation : result . getSegmentLabelAnnotationsList ()) { System . out . println ( \"Video label description : \" + annotation . getEntity (). getDescription ()); // categories for ( Entity categoryEntity : annotation . getCategoryEntitiesList ()) { System . out . println ( \"Label Category description : \" + categoryEntity . getDescription ()); } // segments for ( LabelSegment segment : annotation . getSegmentsList ()) { double startTime = segment . getSegment (). getStartTimeOffset (). getSeconds () + segment . getSegment (). getStartTimeOffset (). getNanos () / 1e9 ; double endTime = segment . getSegment (). getEndTimeOffset (). getSeconds () + segment . getSegment (). getEndTimeOffset (). getNanos () / 1e9 ; System . out . printf ( \"Segment location : %.3f:%.3f\\n\" , startTime , endTime ); System . out . println ( \"Confidence : \" + segment . getConfidence ()); } } } } } } Node.js Before running the example, make sure you've prepared your environment for Node.js development . // Imports the Google Cloud Video Intelligence library const videoIntelligence = require ( ' @google-cloud/video-intelligence ' ); // Creates a client const client = new videoIntelligence .",
+          "LABEL DETECTION ] operation = video client . annotate video ( request = { \"features\" : features , \"input uri\" : \"gs://cloud-samples-data/video/cat.mp4\" , } ) print ( \" \\n Processing video for label annotations:\" ) result = operation . result ( timeout = 180 ) print ( \" \\n Finished processing.\" ) first result is retrieved because a single video was processed segment labels = result . annotation results [ 0 ] . segment label annotations for i , segment label in enumerate ( segment labels ): print ( \"Video label description: {} \" . format ( segment label . entity . description )) for category entity in segment label . category entities : print ( \" \\t Label category description: {} \" . format ( category entity . description ) ) for i , segment in enumerate ( segment label . segments ): start time = ( segment . segment . start time offset . seconds + segment . segment . start time offset . microseconds / 1e6 ) end time = ( segment . segment . end time offset . seconds + segment . segment . end time offset . microseconds / 1e6 ) positions = \" {} s to {} s\" . format ( start time , end time ) confidence = segment . confidence print ( \" \\t Segment {} : {} \" . format ( i , positions )) print ( \" \\t Confidence: {} \" . format ( confidence )) print ( \" \\n \" ) Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Video Intelligence reference documentation for .NET.",
+          "VideoIntelligenceServiceClient (); // The GCS uri of the video to analyze const gcsUri = 'gs://cloud-samples-data/video/cat.mp4' ; // Construct request const request = { inputUri : gcsUri , features : [ 'LABEL DETECTION' ], }; // Execute request const [ operation ] = await client . annotateVideo ( request ); console . log ( 'Waiting for operation to complete... (this may take a few minutes)' ); const [ operationResult ] = await operation . promise (); // Gets annotations for video const annotations = operationResult . annotationResults [ 0 ]; // Gets labels for video from its annotations const labels = annotations . segmentLabelAnnotations ; labels . forEach ( label = > { console . log ( Label ${ label . entity . description } occurs at: ); label . segments . forEach ( segment = > { segment = segment . segment ; console . log ( \\tStart: ${ segment . startTimeOffset . seconds } + . ${ ( segment . startTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); console . log ( \\tEnd: ${ segment . endTimeOffset . seconds } . + ${ ( segment . endTimeOffset . nanos / 1e6 ). toFixed ( 0 ) } s ); }); }); Python Before running the example, make sure you've prepared your environment for Python development . from google.cloud import videointelligence video client = videointelligence ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cat.mp4",
+      "com.google.cloud",
+      "type.googleapis.com",
+      "v1.operations",
+      "videointelligence.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/video-intelligence/docs/streaming/live-streaming",
+        "https://docs.cloud.google.com/video-intelligence/docs/reference/rest/v1/AnnotateVideoResponse",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-command-line",
+        "https://docs.cloud.google.com/video-intelligence/docs/annotate-video-client-libraries"
+      ]
+    }
+  ]
+}

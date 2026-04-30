@@ -1,0 +1,134 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "BigQuery scheduled queries",
+  "feature_slug": "bigquery-scheduled-queries",
+  "summary": "BigQuery supports scheduling queries to run automatically.",
+  "extended_definition": "BigQuery supports scheduling queries to run automatically.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery automatically determines the number of continuous queries that can run concurrently, based on available reservation assignments that use the CONTINUOUS job type.",
+          "You can't use the following SQL capabilities in a continuous query, unless they are listed as a supported stateful operation : The following query operators: PIVOT UNPIVOT TABLESAMPLE Query set operators The SELECT DISTINCT statement EXISTS or NOT EXISTS subqueries Recursive CTEs User-defined functions Window function calls BigQuery ML functions other than those listed in Supported functionality Data definition language (DDL) statements Data manipulation language (DML) statements except for INSERT .",
+          "Writes from the results of a batch query to a permanent table Writes from the results of a BigQuery continuous query to a permanent table A Pub/Sub BigQuery subscription Writes from Dataflow to BigQuery Writes from Datastream to BigQuery using append-only write mode You can use continuous queries to perform time-sensitive tasks, such as creating and immediately acting on insights, applying real-time machine learning (ML) inference, and replicating data into other platforms."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a classification model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE resnet inference test . vision images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs://cloud-samples-data/vision/ .jpg' ] ); bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \\ --external table definition='gs://cloud-samples-data/vision/ .jpg@us.lake-connection' \\ --object metadata=SIMPLE \\ resnet inference test . vision images Upload the model to Cloud Storage Get the model files and make them available in Cloud Storage: Download the ResNet 50 model to your local machine.",
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.",
+          "To create the connection resource, you need the following permissions: bigquery.connections.create bigquery.connections.get To grant permissions to the connection's service account, you need the following permission: resourcemanager.projects.setIamPolicy To create the object table, you need the following permissions: bigquery.tables.create bigquery.tables.update bigquery.connections.delegate To create the bucket, you need the storage.buckets.create permission."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a feature vector model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the Editor pane, run the following SQL statement: CREATE EXTERNAL TABLE mobilenet inference test . sample images WITH CONNECTION us.lake-connection OPTIONS ( object metadata = 'SIMPLE' , uris = [ 'gs:// BUCKET NAME /flowers/ ' ] ); Replace BUCKET NAME with the name of the bucket you previously created. bq In Cloud Shell, run the bq mk command to create the connection: bq mk --table \\ --external table definition = 'gs:// BUCKET NAME /flowers/ @us.lake-connection' \\ --object metadata = SIMPLE \\ mobilenet inference test.sample images Replace BUCKET NAME with the name of the bucket you previously created.",
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.",
+          "To create the connection resource, you need the following permissions: bigquery.connections.create bigquery.connections.get To grant permissions to the connection's service account, you need the following permission: resourcemanager.projects.setIamPolicy To create the object table, you need the following permissions: bigquery.tables.create bigquery.tables.update bigquery.connections.delegate To create the bucket, you need the storage.buckets.create permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas",
+      "bigquery.connections.create",
+      "bigquery.connections.delegate",
+      "bigquery.connections.get",
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.tables.create",
+      "bigquery.tables.getData",
+      "bigquery.tables.update",
+      "resourcemanager.projects.setIamPolicy",
+      "storage.buckets.create",
+      "tabledata.insertAll",
+      "test.mobilenet",
+      "test.resnet",
+      "test.sample",
+      "us.lake"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+      ]
+    }
+  ]
+}

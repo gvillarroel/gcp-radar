@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.493Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Connector Event triggers",
+  "feature_slug": "connector-event-triggers",
+  "summary": "Connector Event triggers were introduced to let integrations be invoked from external business-application event subscriptions.",
+  "extended_definition": "Connector Event triggers were introduced to let integrations be invoked from external business-application event subscriptions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event",
+      "https://docs.cloud.google.com/application-integration/docs/known-issue"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Integration known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/known-issue",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Event subscription error when an integration containing Connector Event triggers is uploaded Status OPEN Issue Upon uploading an integration JSON file containing Connector Event triggers, the event subscription status is in an Error state with the following error: \"Subscription does not exist, you can recreate the subscription by re-configuring the trigger.\" Workaround To work around this issue, we recommend you to do the following steps: Go to the uploaded integration.",
+          "Integration fails to publish when duplicate Connector Event triggers are configured Status OPEN Issue When two or more Connector Event triggers are configured in the same integration, the integration fails to publish and throws the following error: \" Failed to publish integration.",
+          "Please change trigger Id to make it unique.\" This issue is observed when the Connector Event triggers are configured with the same connection and event subscription type."
+        ]
+      },
+      {
+        "title": "\"Invoke an integration for a Salesforce Change Data Capture (CDC) event \\_\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click + Add new variable and create the following output variables: Output variable name Data type OpportunityIsClosed Boolean OpportunityId String PubSubMessage String Create the following mapping between the SalesforceTriggerCdcPayload variable and the Connector input payload variables as shown in the following table: Input Output SalesforceTriggerCdcPayload.GET PROPERTY(\"IsClosed\").TO BOOLEAN() OpportunityIsClosed SalesforceTriggerCdcPayload.GET PROPERTY(\"Id\").TO STRING() OpportunityId OpportunityId.TO DOUBLE() connectorInputPayload.ID(Insert row to Cloud SQL) SalesforceTriggerCdcPayload.GET PROPERTY(\"Name\").TO STRING() connectorInputPayload.NAME(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY(\"Amount\").TO DOUBLE() connectorInputPayload.AMOUNT(Insert row to Cloud SQL) SalesforceTriggerCdcSnapshot.GET PROPERTY(\"CloseDate\").TO STRING() connectorInputPayload.DT CLOSE(Insert row to Cloud SQL) OpportunityId.CONCAT(\" is still open\") PubSubMessage PubSubMessage connectorInputPayload.message(Publish to cloud pub/sub) Once your mapping is complete, close the pane.",
+          "Add an edge connection from the Data Mapping element to the Insert row to Cloud SQL Connector element with the following edge condition: $OpportunityIsClosed$ = TRUE Add another edge connection from the Data Mapping element to the Cloud Pub/Sub Connector element with the following edge condition: $OpportunityIsClosed$ = FALSE Test the integration To test the new integration: Click Test in the integration designer toolbar, and then select the Salesforce Trigger .",
+          "Test the Cloud SQL task by logging in to the Salesforce instance and changing an opportunity status to \"closed.\" Test the Pub/Sub task by logging in to the Salesforce instance and changing another detail about the opportunity, but leave the status of the opportunity \"open.\" For more information about testing, see Test and publish integrations ."
+        ]
+      },
+      {
+        "title": "Azure AD trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger",
+        "source_id": "site-docs-root-2",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View event subscriptions To view and manage all the event subscriptions associated with a connection in Integration Connectors, do the following: Go to Integration Connectors > Connections page.",
+          "Note that the Azure AD trigger is an Connector Event trigger , therefore you can only use an Azure AD connection with event subscription enabled to configure the trigger.",
+          "The Azure AD trigger is a Connector Event trigger that lets you invoke an integration based on the Azure AD events that you've subscribed to in your Azure AD connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/known-issue",
+        "https://docs.cloud.google.com/application-integration/docs/invoke-integration-salesforce-cdc-event",
+        "https://docs.cloud.google.com/application-integration/docs/configure-azuread-trigger"
+      ]
+    }
+  ]
+}

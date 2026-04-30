@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Form question shuffling",
+  "feature_slug": "form-question-shuffling",
+  "summary": "Forms can get and set whether questions are shuffled on each page.",
+  "extended_definition": "Forms can get and set whether questions are shuffled on each page.",
+  "lifecycle": {
+    "latest_feature_date": "2014-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+      "https://developers.google.com/apps-script/releases",
+      "https://developers.google.com/apps-script/support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "How to get help \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/support",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "We use a mixture of different platforms to provide support to developers, so review the options below to determine the best way to get help.",
+          "Page Summary outlined flag Different platforms are available to support developers depending on the type of help needed.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"Developers can seek support through various channels."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "This allows scripts to specify whether a dialog in Google Docs, Forms, or the new version of Sheets should prevent the user from interacting with anything other than the dialog.",
+          "December 01, 2014 Feature Added five new FormApp methods: Form.getShuffleQuestions() : Determines whether the order of the questions on each page of the form is randomized.",
+          "Form.setShuffleQuestions(shuffle) : Sets whether the order of the questions on each page of the form is randomized."
+        ]
+      },
+      {
+        "title": "Class ConditionalFormatRuleBuilder \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Passing in null removes the strikethrough format setting from the rule. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // strikethrough their text if the cell has text equal to \"hello\". const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenTextEqualTo ( 'hello' ) . setStrikethrough ( true ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Parameters Name Type Description strikethrough Boolean Whether or not the text should be struckthrough if the format condition is met; null removes this setting.",
+          "Passing in null removes the underline format setting from the rule. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // underline their text if the cell has text equal to \"hello\". const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenTextEqualTo ( 'hello' ) . setUnderline ( true ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Parameters Name Type Description underline Boolean Whether or not the text should be underlined if the format condition is met; null removes this setting.",
+          "Passing in null removes the italic format setting from the rule. // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to // turn their text italic if the cell has text equal to \"hello\". const sheet = SpreadsheetApp . getActiveSheet (); const range = sheet . getRange ( 'A1:B3' ); const rule = SpreadsheetApp . newConditionalFormatRule () . whenTextEqualTo ( 'hello' ) . setItalic ( true ) . setRanges ([ range ]) . build (); const rules = sheet . getConditionalFormatRules (); rules . push ( rule ); sheet . setConditionalFormatRules ( rules ); Parameters Name Type Description italic Boolean Whether or not the text should be italicised if the format condition is met; null removes this setting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/support",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/support",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule-builder"
+      ]
+    }
+  ]
+}

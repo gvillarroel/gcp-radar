@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:07.127Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows",
+  "feature_name": "Vertex AI API connector",
+  "feature_slug": "vertex-ai-api-connector",
+  "summary": "This connector lets Workflows access Vertex AI models.",
+  "extended_definition": "This connector lets Workflows access Vertex AI models.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api",
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access Gemini models from a workflow using Vertex AI \\_|\\_ Workflows \\_\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "source_id": "site-docs-root-2",
+        "final_score": 207,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Workflows Guides Send feedback Access Gemini models from a workflow using Vertex AI Stay organized with collections Save and categorize content based on your preferences.",
+          "This tutorial demonstrates workflows that generate responses from Vertex AI models by sending text prompts to the publisher endpoints using either a Workflows connector or an HTTP POST request.",
+          "Generative AI on Vertex AI (also known as genAI or gen AI ) gives you access to Google's generative AI models for multiple modalities (text, code, images, speech)."
+        ]
+      },
+      {
+        "title": "Vertex AI API Connector Overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Returns an empty policy if the resource exists and does not have a policy set. list Lists Models in a Location. listVersions Lists versions of the specified model. mergeVersionAliases Merges a set of aliases for a Model version. patch Updates a Model. setIamPolicy Sets the access control policy on the specified resource.",
+          "Returns an empty policy if the resource exists and does not have a policy set. list Lists Models in a Location. listVersions Lists versions of the specified model. mergeVersionAliases Merges a set of aliases for a Model version. patch Updates a Model. setIamPolicy Sets the access control policy on the specified resource.",
+          "X-Vertex-AI-Deployed-Model-Id : ID of the Endpoint's DeployedModel that served this prediction. serverStreamingPredict Perform a server-side streaming online prediction request for Vertex LLM streaming. setIamPolicy Sets the access control policy on the specified resource."
+        ]
+      },
+      {
+        "title": "\"Access Kubernetes API objects using a connector \\_|\\_ Workflows \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api",
+        "source_id": "site-api-reference-required-3",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable APIs Before you can access Kubernetes API objects using the Kubernetes API connector, you must enable the following APIs: Kubernetes Engine API : to build and manage container-based applications using GKE Workflows APIs : to manage workflow definitions and executions; enabling the Workflows API automatically enables the Workflow Executions API Console Enable the APIs: Enable the APIs gcloud In the Google Cloud console, activate Cloud Shell.",
+          "Home Documentation Application development Workflows Guides Send feedback Access Kubernetes API objects using a connector Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, you can use the connector to create Kubernetes Deployments, run Jobs, manage Pods, or access deployed apps through a proxy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.aiplatform.v1beta1.projects.locations.publishers.models"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/tutorials/use-vertex-ai-models",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis/aiplatform/Overview",
+        "https://docs.cloud.google.com/workflows/docs/access-kubernetes-api"
+      ]
+    }
+  ]
+}

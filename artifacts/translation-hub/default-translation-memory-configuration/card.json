@@ -1,0 +1,113 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.469Z",
+  "source_step08_card": "data/step-08/current/products/translation-hub/card.json",
+  "product_name": "Translation Hub",
+  "product_slug": "translation-hub",
+  "feature_name": "Default translation memory configuration",
+  "feature_slug": "default-translation-memory-configuration",
+  "summary": "Advanced-tier Translation Hub portals can define a default translation memory for users.",
+  "extended_definition": "Advanced-tier Translation Hub portals can define a default translation memory for users.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+      "https://docs.cloud.google.com/translation-hub/docs/user-translate"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable users to request translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For advanced-tier portals, you must associate a translation memory with the portal.",
+          "Translation memory (advanced tier only): A translation memory controls how matching segments are translated at the sentence level.",
+          "Advanced-tier portals offer additional features at a different translation cost per page."
+        ]
+      },
+      {
+        "title": "\"Save and reuse human-reviewed translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "source_id": "site-iam-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Remove default translation memory In the Translation Hub section of the Google Cloud console, go to the Portals page.",
+          "Set a default translation memory You can set a default translation memory that Translation Hub automatically selects when portal users request a translation.",
+          "If you have an existing default, Translation Hub removes it as the default and sets your selected translation memory as the default."
+        ]
+      },
+      {
+        "title": "Translate documents \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/user-translate",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Translation memory (advanced tier only): A translation memory controls how matching segments are translated at the sentence level.",
+          "Advanced-tier portals offer additional features at a different translation cost per page, such as post-editing capabilities.",
+          "Portal tiers Translation Hub offers two portal tiers: basic or advanced ."
+        ]
+      },
+      {
+        "title": "\"Centrally manage saved translations \\_|\\_ Translation Hub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage",
+        "source_id": "site-iam-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You might, for example, set a translation memory to read only for most portals so that users can apply the translation memory and freely make post edits without modifying the translation memory.",
+          "Go to the Portals page Select the portal that contains the translation memory that you want to set as read only.",
+          "Set translation memory to read only The read-write configuration for translation memories is set per portal."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/user-translate",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-translations",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/user-translate",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory-manage"
+      ]
+    }
+  ]
+}

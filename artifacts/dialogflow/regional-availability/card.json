@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:55.476Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow",
+  "feature_name": "Regional availability",
+  "feature_slug": "regional-availability",
+  "summary": "Dialogflow CX is available in additional Google Cloud regions; Dialogflow CX is available in the asia-south1 region.",
+  "extended_definition": "Dialogflow CX is available in additional Google Cloud regions; Dialogflow CX is available in the asia-south1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "It is available in all Dialogflow CX regions .",
+          "It is available in all Dialogflow CX regions .",
+          "Go to the Agent API reference Select a protocol and version for the Agent reference: Protocol V3 V3beta1 REST Agent resource Agent resource RPC Agent interface Agent interface C++ AgentsClient Not available C# AgentsClient Not available Go AgentsClient Not available Java AgentsClient AgentsClient Node.js AgentsClient AgentsClient PHP Not available Not available Python AgentsClient AgentsClient Ruby Not available Not available Close General settings The following general settings are available for agents: Display name A human-readable name for your agent."
+        ]
+      },
+      {
+        "title": "Data store tool settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/settings",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "The found sources are rendered in a specific format: [1] title of first source content of first source [2] title of second source content of second source $end-user-metadata : Information about the user sending the query is rendered in the following format: The following additional information is available about the human: { \"key1\": \"value1\", \"key2\": \"value2\", ... } $conversation : The conversation history is rendered in the following format: Human: user's first query AGENT: answer to user's first query Human: user's second query AGENT: answer to user's second query ${conversation USER:\"<user prefix>\" AGENT:\"<agent prefix>\" TURNS:<turn count>} : A parameterized version of the $conversation placeholder.",
+          "The conversation history is rendered as: Human says: user's first query Agent says: answer to user's first query $end-user-metadata : Information about the user sending the query is rendered in the following format: The following additional information is available about the human: { \"key1\": \"value1\", \"key2\": \"value2\", ... } For example: Your goal is to perform a search query to help the AI assistant respond to the human's last statement.",
+          "It is optimized for both voice and text with optimized latency gemini-2.5-flash GA Gemini 2.5 flash gemini-2.5-flash-lite GA Gemini 2.5 flash lite gemini-2.0-flash-001 GA Gemini 2.0 flash gemini-2.0-flash-lite-001 GA Gemini 2.0 flash lite All listed models are available in all supported languages and supported regions ."
+        ]
+      },
+      {
+        "title": "Data stores \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported regions For supported regions, see the region reference . (Restricted access) Additional data store sources Additional data store types are listed in the following table.",
+          "To see a list of available sources and to request access, see the additional data store sources section on this page.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Data stores Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store"
+      ]
+    }
+  ]
+}

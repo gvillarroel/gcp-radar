@@ -1,0 +1,111 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.832Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Logs Explorer plain-text search and filter builder",
+  "feature_slug": "logs-explorer-plain-text-search-and-filter-builder",
+  "summary": "The improved Logs Explorer can build queries using a plain-text search field and filter menus without requiring query language syntax.",
+  "extended_definition": "The improved Logs Explorer can build queries using a plain-text search field and filter menus without requiring query language syntax.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/view/building-queries",
+      "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Highlight search terms, monitor and download your logs There are various options to analyze your logs data by selecting the Actions menu of the Query results toolbar: ink highlighter Highlight in results : Enter text to be highlighted in your query results. add chart Create metric : Set up a log-based metric . call merge Create sink : Create a log sink that auto-populates the sink's inclusion filter with the current query expression. add alert Create log alert : Set up a log-based alerting policy . edit Manage alerts : View and manage alerting policies. download Download : Download your logs in CSV or JSON format.",
+          "This is expected behavior when the Logs Explorer page is searching a log view that contains a flexible filter .",
+          "Get started To begin using the Logs Explorer, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      },
+      {
+        "title": "Logging query language \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Do limit the search to a single field, even if you must keep the substring search: textPayload:\"Hello Kitty\" Do use an equality test if you can: textPayload = \"Hello Kitty\" Do reference individual fields in a payload, if your log entries have structured payloads: jsonPayload.my favorite cat = \"Hello Kitty\" Do use an indexed field to restrict the search: logName = \"projects/my-project id/logs/somelog\" AND jsonPayload.my favorite cat = \"Hello Kitty\" Do use the SEARCH function and specify the complete text to match.",
+          "Examples querying logs using regular expressions Query type Example Standard query sourceLocation.file = \"foo\" Query with case-insensitive search labels.subnetwork name = \"(?i)foo\" Query containing quotation marks jsonPayload.message = \"field1=\\\"bar. \\\"\" Query using a boolean or labels.pod name = \"(foo bar)\" Query using anchors logName = \"/my%2Flog$\" Query not matching a pattern labels.pod name ! \"foo\" Query using boolean operator labels.env = (\"^prod. server\" OR \"^staging. server\") Query that begins with a value logName = \"^foo\" Query that ends with a value logName = \"foo$\" Note: For a detailed explanation of the RE2 syntax, see the RE2 wiki page .",
+          "You might use comments for the following cases: To annotate your complex filters with information about what a clause does: -- All of our target users are emitted by Compute Engine instances. resource.type = \"gce instance\" -- Looking for logs from \"alex\". jsonPayload.targetUser = \"alex\" To quickly enable or disable a clause by adding or removing the comment prefix: resource.type = \"gce instance\" -- jsonPayload.targetUser = \"alex\" jsonPayload.targetUser = \"kiran\" -- jsonPayload.targetUser = \"sasha\" Note: Comments count towards the maximum filter character limit of 20,000 characters."
+        ]
+      },
+      {
+        "title": "\"Build and save queries by using the Logging query language \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following request body lists all shared Logs Explorer queries with a wildcard location ID: { \"parent\": \"name\": projects/PROJECT ID/locations/- \"visibility\": \"SHARED\" \"filter\": \"explorer\" } Use suggested queries Logging generates suggested queries based on the context of your Google Cloud project, such as the Google Cloud products you're using.",
+          "View saved queries You can view both private queries and queries that are shared with other members in the Google Cloud project by clicking the menu book Query library button: Console In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Build queries To build queries by using the Google Cloud console, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "labels.env",
+      "labels.pod",
+      "labels.subnetwork",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/logging-query-language",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries"
+      ]
+    }
+  ]
+}

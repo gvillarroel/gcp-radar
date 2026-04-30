@@ -1,0 +1,161 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.794Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration",
+  "feature_name": "Delete integration",
+  "feature_slug": "delete-integration",
+  "summary": "Adds the ability to delete an entire integration and all associated versions in one operation.",
+  "extended_definition": "Adds the ability to delete an entire integration and all associated versions in one operation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.products.integrations.versions.delete \\_|\\_ Apigee\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IAM Permissions Requires one of the following IAM permissions on the name resource, depending on the resource type: integrations.apigeeIntegrationVers.delete integrations.integrationVersions.delete For more information, see the IAM documentation .",
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.integrations.versions.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request DELETE https://integrations.googleapis.com/v1/{name=projects/ /locations/ /products/ /integrations/ /versions/ } The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.products.authConfigs.delete \\_|\\_ Apigee \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "source_id": "site-api-reference",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "IAM Permissions Requires one of the following IAM permissions on the name resource, depending on the resource type: integrations.apigeeAuthConfigs.delete integrations.authConfigs.delete integrations.securityAuthConfigs.delete For more information, see the IAM documentation .",
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.authConfigs.delete Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request DELETE https://integrations.googleapis.com/v1/{name=projects/ /locations/ /products/ /authConfigs/ } The URL uses gRPC Transcoding syntax."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.products.certificates.delete \\_|\\_ Apigee \\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP request Path parameters Request body Response body Authorization Scopes IAM Permissions Delete a certificate HTTP request DELETE https://integrations.googleapis.com/v1/{name=projects/ /locations/ /products/ /certificates/ } The URL uses gRPC Transcoding syntax.",
+          "IAM Permissions Requires one of the following IAM permissions on the name resource, depending on the resource type: integrations.apigeeCertificates.delete integrations.certificates.delete For more information, see the IAM documentation .",
+          "Home Documentation Application development Apigee Send feedback Method: projects.locations.products.certificates.delete Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.apigeeAuthConfigs.delete",
+      "integrations.apigeeCertificates.delete",
+      "integrations.apigeeIntegrationVers.delete",
+      "integrations.authConfigs.delete",
+      "integrations.certificates.delete",
+      "integrations.googleapis.com",
+      "integrations.integrationVersions.delete",
+      "integrations.securityAuthConfigs.delete",
+      "projects.locations.products.authConfigs",
+      "projects.locations.products.authConfigs.delete",
+      "projects.locations.products.certificates",
+      "projects.locations.products.certificates.delete",
+      "projects.locations.products.integrations.versions",
+      "projects.locations.products.integrations.versions.delete"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.integrations.versions/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.authConfigs/delete",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/integrations/rest/v1/projects.locations.products.certificates/delete"
+      ]
+    }
+  ]
+}

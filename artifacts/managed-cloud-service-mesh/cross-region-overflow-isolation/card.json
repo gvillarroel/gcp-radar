@@ -1,0 +1,298 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.600Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh",
+  "feature_name": "Cross-region overflow isolation",
+  "feature_slug": "cross-region-overflow-isolation",
+  "summary": "Provides isolation support to prevent cross-region overflow for TRAFFIC_DIRECTOR implementations of Cloud Service Mesh; Provides isolation support to prevent cross-region overflow for TRAFFIC_DIRECTOR implementations of Cloud Service Mesh.",
+  "extended_definition": "Provides isolation support to prevent cross-region overflow for TRAFFIC_DIRECTOR implementations of Cloud Service Mesh; Provides isolation support to prevent cross-region overflow for TRAFFIC_DIRECTOR implementations of Cloud Service Mesh.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate TLS certificate management for Cloud Service Mesh ingress gateway\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep the Google Cloud project you used in this tutorial, delete the individual resources: In Cloud Shell, unregister the GKE cluster from GKE Hub: gcloud container hub memberships unregister CLUSTER NAME \\ -- gke - cluster ZONE / CLUSTER NAME Delete the GKE cluster: gcloud container clusters delete CLUSTER NAME \\ --zone ZONE --async --quiet Delete the IAM policy bindings on the subordinate CA pool: gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CAS ISSUER GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CLIENT VM GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester Disable and schedule deletion of the subordinate CAs and the root CA: gcloud privateca subordinates disable SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --ignore-active-certificates \\ --quiet gcloud privateca subordinates disable SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --ignore-active-certificates \\ --quiet gcloud privateca roots disable ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --quiet gcloud privateca roots delete ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --ignore-active-certificates \\ --quiet Delete the IAM policy binding for the CA Service issuer controller Google service account: gcloud iam service - accounts remove - iam - policy - binding \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com \\ -- member \"serviceAccount: PROJECT ID .svc.id.goog[cert-manager/ksa-google-cas-issuer]\" \\ -- role roles / iam . workloadIdentityUser Delete the Google service accounts: gcloud iam service - accounts delete --quiet \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com gcloud iam service - accounts delete --quiet \\ CLIENT VM GSA @ PROJECT ID . iam.gserviceaccount.com Delete the reserved load balancer IP address: gcloud compute addresses delete asm - ingress - gateway - ilb \\ -- region REGION -- quiet Delete the Compute Engine VM instance: gcloud compute instances delete cas-tutorial-client \\ --zone ZONE --quiet What's next Explore other Certificate Authority Service how-to guides .",
+          "Reserve a static internal IP address to use for the ingress gateway internal passthrough Network Load Balancer: LOAD BALANCER IP = $ ( gcloud compute addresses create \\ asm - ingress - gateway - ilb \\ -- region REGION \\ -- subnet default \\ -- format ' value ( address ) ' ) Replace REGION with the region that contains the zone or zones that your GKE cluster nodes use.",
+          "Install the ca-certificates and coreutils packages, and the curl , openssl , and jq command-line tools: sudo apt-get update --yes sudo apt-get install --yes ca-certificates coreutils curl jq openssl Create a key pair for the client TLS certificate: openssl genrsa -out private-key.pem 2048 openssl rsa -in private-key.pem -pubout -out public-key.pem Query the metadata server to get the email address of the Google service account identity attached to the VM instance: GSA EMAIL=$(curl --silent --header \"Metadata-Flavor: Google\" http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email) Create a JSON file that you use as the request body when requesting a client TLS certificate from the Certificate Authority Service API : cat << EOF > request.json { \"config\": { \"publicKey\": { \"format\": \"PEM\", \"key\": \"$(base64 --wrap 0 public-key.pem)\" }, \"subjectConfig\": { \"subject\": { \"commonName\": \"$(hostname --short)\", \"organization\": \"Example Organization\" }, \"subjectAltName\": { \"dnsNames\": [ \"$(hostname --fqdn)\" ], \"emailAddresses\": [ \"$GSA EMAIL\" ] } }, \"x509Config\": { \"caOptions\": { \"isCa\": false }, \"keyUsage\": { \"baseKeyUsage\": { \"digitalSignature\": true, \"keyEncipherment\": true }, \"extendedKeyUsage\": { \"clientAuth\": true } } } }, \"lifetime\": \"86400s\" } EOF To learn more about the fields in the config section, see the CertificateConfig type in the CA Service API documentation."
+        ]
+      },
+      {
+        "title": "\"Install Cloud Service Mesh for Kubernetes workloads off Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "If it is meant to only service certificates for Cloud Service Mesh workloads, set up the following issuance policy for the CA pool: policy.yaml baselineValues: keyUsage: baseKeyUsage: digitalSignature: true keyEncipherment: true extendedKeyUsage: serverAuth: true clientAuth: true caOptions: isCa: false identityConstraints: allowSubjectPassthrough: false allowSubjectAltNamesPassthrough: true celExpression: expression: subject alt names.all(san, san.type == URI && san.value.startsWith(\"spiffe:// PROJECT ID .svc.id.goog/ns/\") ) Note: As a best practice for multi-cluster meshes, set one subordinate CA pool per unique cluster region.",
+          "Set the current context to your user cluster: kubectl config use-context CLUSTER NAME Run asmcli install : ./asmcli install \\ --kubeconfig KUBECONFIG FILE \\ --fleet id FLEET PROJECT ID \\ --output dir DIR PATH \\ --enable all \\ --ca gcp cas \\ --platform multicloud \\ --ca pool projects/ CA POOL PROJECT ID /locations/ ca region /caPools/ CA POOL --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .",
+          "For example: --ca pool projects/ CA POOL PROJECT ID /locations/ ca region /caPools/ CA POOL :projects/ CA POOL PROJECT ID /locations/ ca region /certificateTemplates/ CERT TEMPLATE ID To view SLOs and infrastructure metrics in the Cloud Service Mesh UI, you must also perform the first three steps in Enable application logging and monitoring ."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Private Google Access provides different options and VIPs for connecting to Google APIs and services.",
+          "Connections on port 80 still use mTLS: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : portLevelSettings : - port : number : 80 tls : mode : ISTIO MUTUAL - name : target-egress-gateway-TLS-passthrough EOF Update the virtual service for example.com so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - mesh - istio-egress/egress-gateway http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 443 subset : example-com-originate-TLS weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - example.com route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - example.com route : - destination : host : example.com port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' EOF Update the virtual service for httpbin.org so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - httpbin.org route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - httpbin.org route : - destination : host : httpbin.org port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Add an authorization policy that accepts any kind of traffic sent to port 443 of the egress gateway service.",
+          "Allow workloads and proxies deployed in the team-x namespace to connect to istiod and the egress gateway: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-control-plane namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : istio-system podSelector : matchLabels : istio : istiod - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : istio-egress podSelector : matchLabels : istio : egressgateway EOF Allow workloads and proxies to query DNS: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-dns namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : kube-system ports : - port : 53 protocol : UDP - port : 53 protocol : TCP EOF Allow workloads and proxies to connect to the IPs that serve Google APIs and services, including Cloud Service Mesh certificate authority: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-google-apis namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - ipBlock : cidr : 199.36.153.4/30 - ipBlock : cidr : 199.36.153.8/30 EOF Allow workloads and proxies to connect to the GKE metadata server: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-metadata-server namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : # For GKE data plane v2 - ipBlock : cidr : 169.254.169.254/32 - to : # For GKE data plane v1 - ipBlock : cidr : 127.0.0.1/32 # Prior to 1.21.0-gke.1000 - ipBlock : cidr : 169.254.169.252/32 # 1.21.0-gke.1000 and later ports : - protocol : TCP port : 987 - protocol : TCP port : 988 EOF Optional: Allow workloads and proxies in the team-x namespace to make connections to each other: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-same-namespace namespace : team-x spec : podSelector : {} ingress : - from : - podSelector : {} egress : - to : - podSelector : {} EOF Optional: Allow workloads and proxies in the team-x namespace to make connections to workloads deployed by a different team: cat <<EOF kubectl apply -f - apiVersion : networking.k8s.io/v1 kind : NetworkPolicy metadata : name : allow-egress-to-team-y namespace : team-x spec : podSelector : {} policyTypes : - Egress egress : - to : - namespaceSelector : matchLabels : \"kubernetes.io/metadata.name\" : team-y EOF Connections between sidecar proxies persist."
+        ]
+      },
+      {
+        "title": "\"Running distributed services on GKE private clusters using Cloud Service\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After the managed Cloud Service Mesh is enabled on the clusters, set a watch for the mesh to be installed: watch -g \"gcloud container fleet mesh describe grep 'code: REVISION READY'\" Install Cloud Service Mesh ingress gateways for both clusters: kubectl --context = ${ CLUSTER 1 } create namespace asm-ingress kubectl --context = ${ CLUSTER 1 } label namespace asm-ingress istio-injection = enabled --overwrite kubectl --context = ${ CLUSTER 2 } create namespace asm-ingress kubectl --context = ${ CLUSTER 2 } label namespace asm-ingress istio-injection = enabled --overwrite cat << 'EOF' > asm-ingress.yaml apiVersion: v1 kind: Service metadata: name: asm-ingressgateway namespace: asm-ingress spec: type: LoadBalancer selector: asm: ingressgateway ports: - port: 80 name: http - port: 443 name: https --- apiVersion: apps/v1 kind: Deployment metadata: name: asm-ingressgateway namespace: asm-ingress spec: selector: matchLabels: asm: ingressgateway template: metadata: annotations: This is required to tell Anthos Service Mesh to inject the gateway with the required configuration. inject.istio.io/templates: gateway labels: asm: ingressgateway spec: containers: - name: istio-proxy image: auto # The image will automatically update each time the pod starts. --- apiVersion: rbac.authorization.k8s.io/v1 kind: Role metadata: name: asm-ingressgateway-sds namespace: asm-ingress rules: - apiGroups: [ \"\" ] resources: [ \"secrets\" ] verbs: [ \"get\" , \"watch\" , \"list\" ] --- apiVersion: rbac.authorization.k8s.io/v1 kind: RoleBinding metadata: name: asm-ingressgateway-sds namespace: asm-ingress roleRef: apiGroup: rbac.authorization.k8s.io kind: Role name: asm-ingressgateway-sds subjects: - kind: ServiceAccount name: default EOF kubectl --context = ${ CLUSTER 1 } apply -f asm-ingress.yaml kubectl --context = ${ CLUSTER 2 } apply -f asm-ingress.yaml Verify that the Cloud Service Mesh ingress gateways are deployed: kubectl --context = ${ CLUSTER 1 } get pod,service -n asm-ingress kubectl --context = ${ CLUSTER 2 } get pod,service -n asm-ingress The output for both clusters looks like the following: NAME READY STATUS RESTARTS AGE pod/asm-ingressgateway-5894744dbd-zxlgc 1/1 Running 0 84s NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/asm-ingressgateway LoadBalancer 10.16.2.131 34.102.100.138 80:30432/TCP,443:30537/TCP 92s After the Cloud Service Mesh control plane and ingress gateways are installed for both clusters, cross-cluster service discovery is enabled with the fleet API.",
+          "In Cloud Shell, create and reserve two external IP addresses for the two NAT gateways: gcloud compute addresses create ${ CLUSTER 1 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 1 REGION } gcloud compute addresses create ${ CLUSTER 2 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 2 REGION } Store the IP address and name of the IP addresses in variables: export NAT REGION 1 IP ADDR = $( gcloud compute addresses describe ${ CLUSTER 1 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 1 REGION } \\ --format = 'value(address)' ) export NAT REGION 1 IP NAME = $( gcloud compute addresses describe ${ CLUSTER 1 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 1 REGION } \\ --format = 'value(name)' ) export NAT REGION 2 IP ADDR = $( gcloud compute addresses describe ${ CLUSTER 2 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 2 REGION } \\ --format = 'value(address)' ) export NAT REGION 2 IP NAME = $( gcloud compute addresses describe ${ CLUSTER 2 REGION } -nat-ip \\ --project = ${ PROJECT ID } \\ --region = ${ CLUSTER 2 REGION } \\ --format = 'value(name)' ) Create Cloud NAT gateways in the two regions of the private GKE clusters: gcloud compute routers create rtr- ${ CLUSTER 1 REGION } \\ --network = default \\ --region ${ CLUSTER 1 REGION } gcloud compute routers nats create nat-gw- ${ CLUSTER 1 REGION } \\ --router = rtr- ${ CLUSTER 1 REGION } \\ --region ${ CLUSTER 1 REGION } \\ --nat-external-ip-pool = ${ NAT REGION 1 IP NAME } \\ --nat-all-subnet-ip-ranges \\ --enable-logging gcloud compute routers create rtr- ${ CLUSTER 2 REGION } \\ --network = default \\ --region ${ CLUSTER 2 REGION } gcloud compute routers nats create nat-gw- ${ CLUSTER 2 REGION } \\ --router = rtr- ${ CLUSTER 2 REGION } \\ --region ${ CLUSTER 2 REGION } \\ --nat-external-ip-pool = ${ NAT REGION 2 IP NAME } \\ --nat-all-subnet-ip-ranges \\ --enable-logging Create a firewall rule that allows Pod-to-Pod communication and Pod-to-API server communication.",
+          "If you lose access to the clusters, update the clusters' authorized networks to include the new Cloud Shell IP address: Get the updated Cloud Shell public IP address: export CLOUDSHELL IP = $( dig +short myip.opendns.com @resolver1.opendns.com ) Update the authorized networks for the two clusters: gcloud container clusters update ${ CLUSTER 1 } \\ --zone = ${ CLUSTER 1 ZONE } \\ --enable-master-authorized-networks \\ --master-authorized-networks $NAT REGION 1 IP ADDR /32, $NAT REGION 2 IP ADDR /32, $CLOUDSHELL IP /32 gcloud container clusters update ${ CLUSTER 2 } \\ --zone = ${ CLUSTER 2 ZONE } \\ --enable-master-authorized-networks \\ --master-authorized-networks $NAT REGION 1 IP ADDR /32, $NAT REGION 2 IP ADDR /32, $CLOUDSHELL IP /32 Verify that all clusters are running: gcloud container clusters list The output looks like the following: NAME LOCATION MASTER VERSION MASTER IP MACHINE TYPE NODE VERSION NUM NODES STATUS gke-central-priv us-central1-a 1.16.15-gke.6000 35.238.99.104 e2-standard-4 1.16.15-gke.6000 3 RUNNING gke-west-priv us-west2-a 1.16.15-gke.6000 34.94.188.180 e2-standard-4 1.16.15-gke.6000 3 RUNNING Connect to both clusters to generate entries in the kubeconfig file: touch /asm-kubeconfig && export KUBECONFIG = /asm-kubeconfig gcloud container clusters get-credentials ${ CLUSTER 1 } --zone ${ CLUSTER 1 ZONE } gcloud container clusters get-credentials ${ CLUSTER 2 } --zone ${ CLUSTER 2 ZONE } You use the kubeconfig file to authenticate to clusters by creating a user and context for each cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "dns.googleapis.com",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "gcr.io",
+      "gke.1000",
+      "gke.6000",
+      "gkehub.googleapis.com",
+      "googleapis.com",
+      "httpbin.org",
+      "iam.gserviceaccount.com",
+      "ingress.yaml",
+      "inject.istio.io",
+      "key.pem",
+      "kubernetes.io",
+      "mesh.googleapis.com",
+      "meshconfig.admin",
+      "metadata.google.internal",
+      "metadata.name",
+      "myip.opendns.com",
+      "names.all",
+      "networking.istio.io",
+      "networking.k8s.io",
+      "ns1.google.com",
+      "o.myaddr.l.google.com",
+      "policy.yaml",
+      "private.googleapis.com",
+      "privateca.certificateRequester",
+      "rbac.authorization.k8s.io",
+      "request.json",
+      "resolver1.opendns.com",
+      "san.type",
+      "san.value.startsWith",
+      "svc.id.goog",
+      "v1.20",
+      "v1.26"
+    ],
+    "missing_inventory_roles": [
+      "roles/meshconfig.admin",
+      "roles/privateca.certificateRequester"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/distributed-services-private-clusters"
+      ]
+    }
+  ]
+}

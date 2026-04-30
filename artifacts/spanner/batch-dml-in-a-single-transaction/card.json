@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Batch DML in a single transaction",
+  "feature_slug": "batch-dml-in-a-single-transaction",
+  "summary": "Spanner supports running multiple DML statements within one transaction by using batch DML.",
+  "extended_definition": "Spanner supports running multiple DML statements within one transaction by using batch DML.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/batch-write",
+      "https://docs.cloud.google.com/spanner/docs/change-streams"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Each Vertex AI request can have multiple input text fields, but there is a limit on the maximum number of tokens which is present in a single request.",
+          "Make sure that the model endpoint supports the value of default batch size .",
+          "Register an embedding model GoogleSQL Register a text embedding model with the Vertex AI model endpoint in your Spanner database: CREATE MODEL MODEL NAME INPUT ( content STRING ( MAX ) ) OUTPUT ( embeddings STRUCT<values ARRAY<FLOAT32> > ) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , default batch size = 5 ) Replace the following: MODEL NAME : the name of the Vertex AI text embedding model PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint PostgreSQL In the PostgreSQL dialect, there is no need to register the model."
+        ]
+      },
+      {
+        "title": "Modify data using batch write \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: @param string $projectId The Google Cloud project ID. @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function batch write(string $projectId, string $instanceId, string $databaseId): void { $spanner = new SpannerClient(['projectId' => $projectId]); $database = $spanner->instance($instanceId)->database($databaseId); // Create Mutation Groups // All mutations within a single group are applied atomically. // Mutations across groups are applied non-atomically. // Group 1: Single mutation $mutationGroup1 = $database->mutationGroup(); $mutationGroup1->insertOrUpdate('Singers', [ 'SingerId' => 16, 'FirstName' => 'Scarlet', 'LastName' => 'Terry' ]); // Group 2: Multiple mutations $mutationGroup2 = $database->mutationGroup(); $mutationGroup2->insertOrUpdateBatch('Singers', [ ['SingerId' => 17, 'FirstName' => 'Marc'], ['SingerId' => 18, 'FirstName' => 'Catalina', 'LastName' => 'Smith'] ]); $mutationGroup2->insertOrUpdateBatch('Albums', [ ['SingerId' => 17, 'AlbumId' => 1, 'AlbumTitle' => 'Total Junk'], ['SingerId' => 18, 'AlbumId' => 2, 'AlbumTitle' => 'Go, Go, Go'] ]); // Call batchWrite on the high-level Database client. // Equivalent to batchWriteAtLeastOnce in other languages. $responses = $database->batchWrite([$mutationGroup1, $mutationGroup2], [ 'requestOptions' => ['transactionTag' => 'batch-write-tag'] ]); // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding V1\\BatchWriteResponse items. // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding response arrays. foreach ($responses as $response) { $status = $response['status']; $indexes = implode(', ', $response['indexes']); if ($status['code'] === 0) { $timestamp = $response['commitTimestamp'] ?? 'Unknown'; printf('Mutation group indexes [%s] have been applied with commit timestamp %s' .",
+          "BatchWriteResponse ; public class BatchWriteAtLeastOnceSample { / Assume DDL for the underlying database: <pre>{@code CREATE TABLE Singers ( SingerId INT64 NOT NULL, FirstName STRING(1024), LastName STRING(1024), ) PRIMARY KEY (SingerId) CREATE TABLE Albums ( SingerId INT64 NOT NULL, AlbumId INT64 NOT NULL, AlbumTitle STRING(1024), ) PRIMARY KEY (SingerId, AlbumId), INTERLEAVE IN PARENT Singers ON DELETE CASCADE }</pre> / private static final MutationGroup MUTATION GROUP1 = MutationGroup . of ( Mutation . newInsertOrUpdateBuilder ( \"Singers\" ) . set ( \"SingerId\" ) . to ( 16 ) . set ( \"FirstName\" ) . to ( \"Scarlet\" ) . set ( \"LastName\" ) . to ( \"Terry\" ) . build ()); private static final MutationGroup MUTATION GROUP2 = MutationGroup . of ( Mutation . newInsertOrUpdateBuilder ( \"Singers\" ) . set ( \"SingerId\" ) . to ( 17 ) . set ( \"FirstName\" ) . to ( \"Marc\" ) . build (), Mutation . newInsertOrUpdateBuilder ( \"Singers\" ) . set ( \"SingerId\" ) . to ( 18 ) . set ( \"FirstName\" ) . to ( \"Catalina\" ) . set ( \"LastName\" ) . to ( \"Smith\" ) . build (), Mutation . newInsertOrUpdateBuilder ( \"Albums\" ) . set ( \"SingerId\" ) . to ( 17 ) . set ( \"AlbumId\" ) . to ( 1 ) . set ( \"AlbumTitle\" ) . to ( \"Total Junk\" ) . build (), Mutation . newInsertOrUpdateBuilder ( \"Albums\" ) . set ( \"SingerId\" ) . to ( 18 ) . set ( \"AlbumId\" ) . to ( 2 ) . set ( \"AlbumTitle\" ) . to ( \"Go, Go, Go\" ) . build ()); static void batchWriteAtLeastOnce () { // TODO(developer): Replace these variables before running the sample. final String projectId = \"my-project\" ; final String instanceId = \"my-instance\" ; final String databaseId = \"my-database\" ; batchWriteAtLeastOnce ( projectId , instanceId , databaseId ); } static void batchWriteAtLeastOnce ( String projectId , String instanceId , String databaseId ) { try ( Spanner spanner = SpannerOptions . newBuilder (). setProjectId ( projectId ). build (). getService ()) { DatabaseId dbId = DatabaseId . of ( projectId , instanceId , databaseId ); final DatabaseClient dbClient = spanner . getDatabaseClient ( dbId ); // Creates and issues a BatchWrite RPC request that will apply the mutation groups // non-atomically and respond back with a stream of BatchWriteResponse.",
+          "Please see {@link https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#google.spanner.v1.BatchWriteRequest.MutationGroup} for more details and examples. / const mutationGroup1 = new MutationGroup (); mutationGroup1 . insert ( 'Singers' , { SingerId : 1 , FirstName : 'Scarlet' , LastName : 'Terry' , }); const mutationGroup2 = new MutationGroup (); mutationGroup2 . insert ( 'Singers' , { SingerId : 2 , FirstName : 'Marc' , }); mutationGroup2 . insert ( 'Singers' , { SingerId : 3 , FirstName : 'Catalina' , LastName : 'Smith' , }); mutationGroup2 . insert ( 'Albums' , { AlbumId : 1 , SingerId : 2 , AlbumTitle : 'Total Junk' , }); mutationGroup2 . insert ( 'Albums' , { AlbumId : 2 , SingerId : 3 , AlbumTitle : 'Go, Go, Go' , }); const options = { transactionTag : 'batch-write-tag' , }; try { database . batchWriteAtLeastOnce ([ mutationGroup1 , mutationGroup2 ], options ) . on ( 'error' , console . error ) . on ( 'data' , response = > { // Check the response code of each response to determine whether the mutation group(s) were applied successfully. if ( response . status . code === 0 ) { console . log ( Mutation group indexes ${ response . indexes } , have been applied with commit timestamp ${ Spanner . timestamp ( response . commitTimestamp , ). toJSON () } , ); } // Mutation groups that fail to commit trigger a response with a non-zero status code. else { console . log ( Mutation group indexes ${ response . indexes } , could not be applied with error code ${ response . status . code } , and error message ${ response . status . message } , ); } }) . on ( 'end' , () = > { console . log ( 'Request completed successfully' ); }); } catch ( err ) { console . log ( err ); } PHP < ?php / Copyright 2026 Google Inc."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "This parameter is part of the TransactionOptions and BatchWriteRequest methods.",
+          "For change streams monitoring columns modified by transactions, when exclude txn from change streams is set to true , two scenarios are possible: If the DDL option allow txn exclusion is set to true , then the updates made within this transaction aren't recorded in the change stream.",
+          "After you configure the connector with details about a particular change stream, it automatically outputs new data change records into a single, unbounded PCollection data set, ready for further processing by subsequent transforms in the Dataflow pipeline."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/spanner/docs/change-streams"
+      ]
+    }
+  ]
+}

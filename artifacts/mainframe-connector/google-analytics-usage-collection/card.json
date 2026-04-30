@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.530Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector",
+  "feature_name": "Google Analytics usage collection",
+  "feature_slug": "google-analytics-usage-collection",
+  "summary": "Mainframe Connector collects usage data with Google Analytics by default, and it can be disabled.",
+  "extended_definition": "Mainframe Connector collects usage data with Google Analytics by default, and it can be disabled.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+      "https://docs.cloud.google.com/mainframe-connector/docs/get-started",
+      "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy Mainframe Connector on Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Mainframe Connector Guides Send feedback Deploy Mainframe Connector on Cloud Run Stay organized with collections Save and categorize content based on your preferences.",
+          "You can do this by deploying the Mainframe Connector multiple times with different variables and service accounts.",
+          "Important Be aware that Mainframe Connector uses Google Analytics to collect usage data."
+        ]
+      },
+      {
+        "title": "Install Mainframe Connector on your mainframe \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, create new JAR file, use a different IBM Java version, or change the JSON key file using environment statements. #BQSH PROC ENV=DEV // // // // Copyright 2022 Google LLC All Rights Reserved // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // http://www.apache.org/licenses/LICENSE-2.0 // Unless required by applicable law or agreed to in writing , software // distributed under the License is distributed on as \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express of impl. // See the license for the specific language governing permissions and // limitations under the License. // // //BQSH EXEC PGM=JVMLDM86,REGION=0M, // PARM='/+I com.google.cloud.bqsh.Bqsh' //SYSPRINT DD SYSOUT = //SYSOUT DD SYSOUT = //STDOUT DD SYSOUT = //STDERR DD SYSOUT = //CEEDUMP DD SYSOUT = //ABNLIGNR DD DUMMY //STDIN DD DUMMY //QUERY DD DUMMY //INFILE DD DUMMY //COPYBOOK DD DUMMY //KEYFILE DD DUMMY //STDENV DD DISP=SHR,DSN=SYSP.PARMLIB(EDW&ENV) // DD ,SYMBOLS=EXECSYS Do not modify the 3 lines below Collect system symbols from JES export JOBNAME=&JOBNAME export JOBDATE=&YYMMDD export JOBTIME=&HHMMSS The following is an example of the DEV PARMLIB member showing how the JSON key file and the Mainframe Connector software JAR file are referenced.",
+          "Home Documentation Migration Mainframe Connector Guides Send feedback Install Mainframe Connector on your mainframe Stay organized with collections Save and categorize content based on your preferences.",
+          "Important Be aware that Mainframe Connector uses Google Analytics to collect usage data."
+        ]
+      },
+      {
+        "title": "Copybook parser reference \\_|\\_ Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Mainframe Connector Reference Send feedback Copybook parser reference Stay organized with collections Save and categorize content based on your preferences.",
+          "If you use these constructs in your copybook, Mainframe Connector shows an error. dataAlignedClause dataBlankWhenZeroClause dataCommonOwnLocalClause dataIntegerStringClause dataJustifiedClause dataOccursClause dataReceivedByClause dataRecordAreaClause dataRenamesClause dataSignClause dataSynchronizedClause dataThreadLocalClause dataTypeClause dataTypeDefClause dataUsingClause Data types COBOL data types like COMP-1 and COMP-2 are supported.",
+          "Support for null indicators Mainframe Connector supports null indicators starting with version 5.13.0."
+        ]
+      },
+      {
+        "title": "Get started with Mainframe Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/get-started",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Mainframe Connector Guides Send feedback Get started with Mainframe Connector Stay organized with collections Save and categorize content based on your preferences.",
+          "ICSF Query Facility (CSFIQF) Random Number Generate (CSFRNG) Random Number Generate Long (CSFRNGL) PKA Key Import (CSFPKI) Digital Signature Generate (CSFDSG) Digital Signature Verify (CSFDSV) Set up network connectivity Mainframe Connector interacts with Cloud Storage, BigQuery, and Cloud Logging APIs.",
+          "Ensure that your network administration team has access to the following: IP subnets assigned to the IBM z/OS logical partitions (LPARs) Google Cloud service accounts used by IBM z/OS batch jobs Google Cloud project IDs containing resources accessed by IBM z/OS batch jobs Configure firewalls, routers, and Domain Name Systems Configure your mainframe IP files to include rules in firewalls, routers, and Domain Name Systems (DNSs) to allow traffic to and from Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bqsh.Bqsh",
+      "f89d99af31e5.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/get-started"
+      ]
+    }
+  ]
+}

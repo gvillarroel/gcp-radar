@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.607Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing",
+  "feature_name": "Cloud Billing reports availability",
+  "feature_slug": "cloud-billing-reports-availability",
+  "summary": "Cloud Billing reports became generally available, enabling users to chart billing account spending; Cloud Billing reports became available in beta, providing quick charting of billing account cloud spending.",
+  "extended_definition": "Cloud Billing reports became generally available, enabling users to chart billing account spending; Cloud Billing reports became available in beta, providing quick charting of billing account cloud spending.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports",
+      "https://docs.cloud.google.com/billing/docs/onboarding-checklist"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "When viewing costs by Invoice month , the following data is available in the Cloud Billing reports: Invoices generally include all costs incurred during a given calendar month, but the cost for some services' usage at the very end of a calendar month might roll over to the next month's invoice.",
+          "Saved reports are saved to the All reports page and are available for viewing by users in your organization with Cloud Billing account-level access, who can view reports for all costs and projects for the Cloud Billing account.",
+          "For more information about Google Cloud project permissions, see: Access control for projects with IAM IAM basic and predefined roles reference Access the reports page To view the cost reports for your Cloud Billing account or project: Using the procedure that fits your level of access to Cloud Billing accounts , go to your Cloud Billing account in the Billing section of the Google Cloud console: Users with Cloud Billing account permissions Users with project-level permissions only If you have Cloud Billing account permissions, you can select from a list of billing accounts that you have permissions to access."
+        ]
+      },
+      {
+        "title": "\"Guide to Cloud Billing Resource Organization and Access Management \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "This way, your usage data will be tracked and available to you from day one, and ready for analysis using a variety of tools. stars Key Concepts: Billing Export, Billing Reports, and Invoices Your usage is reported from your Projects to your Billing Accounts and your usage data is made available to you in a variety of ways, all of which can be used to help you understand the full picture of your spend.",
+          "Configure Access ❑ Grant access to view Billing Reports to people in finance and other departments and roles where users need to track spend or need to review cost anomalies. ❑ Assign multiple Billing Account Administrators to each Billing Account – you might also consider using Organization-level permissions.",
+          "Overview Projects are: Required to use resources (such as Compute Engine virtual machines, Pub/Sub topics, and Cloud Storage buckets) The base-level organizing entity in Google Cloud – all service-level resources are parented by projects Used to form the basis for enabling services, APIs, and IAM permissions Folders are: A grouping mechanism for projects and can contain both projects and other folders Used to group resources that share common IAM policies Mapped under an Organization node (you must have an Organization node to use folders) Labels are: Used to categorize your Google Cloud resources (such as Compute Engine instances) Key-value pairs you attach to resources, letting you filter resources based on their labels Great for cost tracking at a granular-level because they're forwarded to the billing system so you can analyze your charges by label stars Key Decision: Folders and Projects Strategy Projects are required."
+        ]
+      },
+      {
+        "title": "Set up Cloud Billing data export to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup",
+        "source_id": "site-docs-root-2",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource-level tags are available for the following resources: Compute Engine instances Spanner instances Cloud Run services Artifact Registry repositories Related topics Topics related to exported Cloud Billing data Understanding the Cloud Billing data tables in BigQuery Example queries for Cloud Billing data export to BigQuery Visualize spend over time with Looker Studio Cost and pricing reports available in the Google Cloud console View your Cloud Billing reports and cost trends View and download the cost details of your invoice or statement View and download prices for Google's cloud services Understand your savings with cost breakdown reports Analyze the effectiveness of your committed use discounts View your cost and payment history Previous arrow back Overview of billing data export to BigQuery Next Understand the billing data tables in BigQuery arrow forward Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Before you update the project or dataset where your billing data is stored, or disable any of your data exports, review the limitations and data availability guidelines for how these updates might impact your billing data exported to BigQuery.",
+          "If you edit the export settings to change the project or dataset where your exported billing data is stored, or you are re-enabling the export , then billing data is not added retroactively ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.resourceCosts.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/onboarding-checklist",
+        "https://docs.cloud.google.com/billing/docs/how-to/export-data-bigquery-setup"
+      ]
+    }
+  ]
+}

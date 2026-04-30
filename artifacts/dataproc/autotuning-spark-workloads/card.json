@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Autotuning Spark workloads",
+  "feature_slug": "autotuning-spark-workloads",
+  "summary": "Dataproc Serverless for Spark supports autotuning for Spark workloads.",
+  "extended_definition": "Dataproc Serverless for Spark supports autotuning for Spark workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using Spark data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Disable Spark data lineage on a job If Spark data lineage is enabled on a cluster, you can disable Spark data lineage on a job by passing the spark.extraListeners property with an empty value (\"\") when you submit the job. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.extraListeners = '' Submit a Spark job When you submit a supported Spark job on a Managed Service for Apache Spark cluster that was created with Spark data lineage enabled, Managed Service for Apache Spark captures and reports the data lineage information to the Data Lineage API. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.openlineage.namespace = CUSTOM NAMESPACE ,spark.openlineage.appName = CUSTOM APPNAME Notes: Adding the spark.openlineage.namespace and spark.openlineage.appName properties, which are used to uniquely identify the job, is optional.",
+          "To get the permissions that you need to use data lineage with Managed Service for Apache Spark , ask your administrator to grant you the following IAM roles on your cluster's custom service account : Grant one of the following roles: Managed Service for Apache Spark Worker ( roles/dataproc.worker ) Data Lineage Editor ( roles/datalineage.editor ) Data Lineage Producer ( roles/datalineage.producer ) Data Lineage Administrator ( roles/datalineage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "PySparkJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "JSON representation A Dataproc job for running Apache PySpark applications on YARN.",
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback PySparkJob Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "SparkJob \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "JSON representation A Dataproc job for running Apache Spark applications on YARN.",
+          "Home Documentation Data analytics Managed Service for Apache Spark Reference Send feedback SparkJob Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.jar",
+      "com.google.cloud.dataproc.v1",
+      "datalineage.admin",
+      "datalineage.editor",
+      "datalineage.producer",
+      "dataproc.lineage.enabled",
+      "dataproc.worker",
+      "spark.extraListeners",
+      "spark.openlineage.appName",
+      "spark.openlineage.namespace"
+    ],
+    "missing_inventory_roles": [
+      "roles/datalineage.admin",
+      "roles/datalineage.editor",
+      "roles/datalineage.producer",
+      "roles/dataproc.worker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/PySparkJob",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/SparkJob"
+      ]
+    }
+  ]
+}

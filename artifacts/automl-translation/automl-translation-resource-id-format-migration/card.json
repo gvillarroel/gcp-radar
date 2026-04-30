@@ -1,0 +1,143 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.193Z",
+  "source_step08_card": "data/step-08/current/products/automl-translation/card.json",
+  "product_name": "AutoML Translation",
+  "product_slug": "automl-translation",
+  "feature_name": "AutoML Translation resource ID format migration",
+  "feature_slug": "automl-translation-resource-id-format-migration",
+  "summary": "AutoML Translation changed dataset, model, and operation ID formats, requiring hardcoded resource IDs to be refreshed using get/list operations.",
+  "extended_definition": "AutoML Translation changed dataset, model, and operation ID formats, requiring hardcoded resource IDs to be refreshed using get/list operations.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+      "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage datasets \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, see Upgrade AutoML resources .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"datasets\": [ { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/datasets/ DATASET ID \", \"displayName\": \" DATASET NAME \", \"sourceLanguageCode\": \" SOURCE LANG CODE \", \"targetLanguageCode\": \" TARGET LANG CODE \", \"exampleCount\": 8720, \"createTime\": \"2022-10-19T23:24:34.734549Z\", \"updateTime\": \"2022-10-19T23:24:35.357525Z\" }, ... ] } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID :importData\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \" } Additional languages C# : Please follow the C# setup instructions on the client libraries page and then visit the Cloud Translation reference documentation for .NET."
+        ]
+      },
+      {
+        "title": "Upgrade AutoML resources \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about the Cloud Translation API, see the projects.locations.datasets and projects.locations.models resources.",
+          "Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.",
+          "During the upgrade, Cloud Translation copies your AutoML (legacy) resources, such as datasets and models, and creates new Cloud Translation (native) resources through the Cloud Translation API."
+        ]
+      },
+      {
+        "title": "\"Create a custom translation model \\_|\\_ Cloud Translation \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin Before you can start using AutoML Translation, your project must have the Cloud Translation API enabled, and you must have the permissions that are granted by the following roles: Viewer role to view existing resources in your project Cloud Translation API Editor role to create and manage datasets and models Storage Admin role to upload training data to a Cloud Storage bucket Create a translation dataset and import segment pairs Download the archive file that contains the sample data for training the model, and extract the files.",
+          "If you have only legacy AutoML resources, see Upgrade AutoML resources for more information.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.datasets",
+      "projects.locations.models",
+      "request.json",
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-nmt-datasets",
+        "https://docs.cloud.google.com/translate/docs/advanced/custom-translation-quickstart"
+      ]
+    }
+  ]
+}

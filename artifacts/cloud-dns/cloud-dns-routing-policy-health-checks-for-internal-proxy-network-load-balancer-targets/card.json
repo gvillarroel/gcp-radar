@@ -1,0 +1,331 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.149Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns",
+  "feature_name": "Cloud DNS routing policy health checks for internal proxy Network Load Balancer targets",
+  "feature_slug": "cloud-dns-routing-policy-health-checks-for-internal-proxy-network-load-balancer-targets",
+  "summary": "Cloud DNS routing policies can use internal proxy Network Load Balancers as health-checked targets.",
+  "extended_definition": "Cloud DNS routing policies can use internal proxy Network Load Balancers as health-checked targets.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/best-practices",
+      "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+      "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+      "https://docs.cloud.google.com/dns/docs/policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure DNS routing policies and health checks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "source_id": "site-iam-reference",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permissions dns.networks.useHealthSignals to create a policy with health checks for internal passthrough Network Load Balancers dns.changes.create to create a resource record set dns.managedZones.list to list managed zones Roles DNS Administrator ( roles/dns.admin ) DNS Peer ( roles/dns.peer ) Create DNS routing policies for private zones Before you create DNS routing policies for private zones, complete the following steps.",
+          "POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones/ MANAGED ZONE /rrsets { \"name\": \" RRSET NAME \", \"type\": \" RRSET TYPE \", \"ttl\": TTL , \"routingPolicy\": { \"primaryBackup\": { \"trickleTraffic\": TRICKLE TRAFFIC , \"primaryTargets\": { \"internalLoadBalancers\": [ { \"ipAddress\": \" IP ADDRESS \" \"ipProtocol\": \" IP PROTOCOL \" \"loadBalancerType\": \" LOAD BALANCER TYPE \" \"networkUrl\": \" NETWORK URL \" \"port\": \" PORT NUMBER \" \"project\": \" PROJECT ID \" \"region\": \" REGION \" } ] }, \"backupGeoTargets\": { \"enableFencing\": ENABLE FENCING , \"items\": [ { \"location\": \" LOCATION \", \"rrdatas\": [ \" RRDATA \" ] }, { \"location\": \" LOCATION \", \"rrdatas\": [ \" RRDATA \" ] } ] } } } } Replace the following: PROJECT ID : the ID of the project MANAGED ZONE : the managed zone that this ResourceRecordSet is affiliated with, such as service-zone ; the name of this ResourceRecordSet must have the DNS name of the managed zone as its suffix RRSET NAME : the DNS name that matches the incoming queries with this zone's DNS name as its suffix, such as service.example.com RRSET TYPE : the resource record type of this ResourceRecordSet , such as A TTL : the TTL, in seconds, in which the resolver caches this ResourceRecordSet , such as 30 TRICKLE TRAFFIC : the ratio of traffic to send to the backup targets even when the primaries are healthy; the ratio must be between 0 and 1, such as 0.1 IP ADDRESS : the IP address that the forwarding rule serves PORT NUMBER : the port number IP PROTOCOL : defines the protocol used for the health check; valid options are tcp and udp NETWORK URL : the network URL to which this forwarding rule applies PORT NUMBER : the port number of the internal load balancer REGION : the region in which you created the forwarding rule ENABLE FENCING : for GEO routing policies, this determines whether traffic should failover across regions if all endpoints in a region are unhealthy.",
+          "IP ADDRESS : the IP address that the forwarding rule serves PORT NUMBER : the port number IP PROTOCOL : defines the protocol used for the health check; valid options are tcp and udp NETWORK URL : the network URL to which this forwarding rule applies REGION : the region in which you created the forwarding rule Geolocation POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones/ MANAGED ZONE /rrsets { \"name\": \" RRSET NAME \", \"type\": \" RRSET TYPE \", \"ttl\": TTL , \"routingPolicy\": { \"geo\": { \"items\": [ { \"location\": \" LOCATION \", \"healthCheckedTargets\": { \"internalLoadBalancers\": [ { \"loadBalancerType\": \" LOAD BALANCER TYPE \" \"ipAddress\": \" IP ADDRESS \" \"port\": \" PORT NUMBER \" \"ipProtocol\": \" IP PROTOCOL \" \"networkUrl\": \" NETWORK URL \" \"project\": \" PROJECT ID \" \"region\": \" REGION \" } ] } }, { \"location\": \" LOCATION \", \"healthCheckedTargets\": { \"internalLoadBalancers\": [ { \"loadBalancerType\": \" LOAD BALANCER TYPE \" \"ipAddress\": \" IP ADDRESS \" \"port\": \" PORT NUMBER \" \"ipProtocol\": \" IP PROTOCOL \" \"networkUrl\": \" NETWORK URL \" \"project\": \" PROJECT ID \" \"region\": \" REGION \" } ] } } ] } } } Replace the following: PROJECT ID : the ID of the project MANAGED ZONE : the managed zone that this ResourceRecordSet is affiliated with, such as service-zone ; the name of this ResourceRecordSet must have the DNS name of the managed zone as its suffix RRSET NAME : the DNS name that matches the incoming queries with this zone's DNS name as its suffix, such as service.example.com RRSET TYPE : the resource record type of this ResourceRecordSet , such as A TTL : the TTL, in seconds, in which the resolver caches this ResourceRecordSet , such as 30 LOCATION : for GEO policies, the geolocation for which you need to create the policy, such as asia-east1 LOAD BALANCER TYPE : the type of load balancer, such as regionalL4ilb , globalL7ilb , or regionalL7ilb ."
+        ]
+      },
+      {
+        "title": "\"Create custom organization policy constraints \\_|\\_ Cloud DNS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Field dns.googleapis.com/ManagedZone resource.cloudLoggingConfig.enableLogging resource.description resource.dnsName resource.dnssecConfig.defaultKeySpecs.algorithm resource.dnssecConfig.defaultKeySpecs.keyLength resource.dnssecConfig.defaultKeySpecs.keyType resource.dnssecConfig.nonExistence resource.dnssecConfig.state resource.forwardingConfig.targetNameServers.domainName resource.forwardingConfig.targetNameServers.forwardingPath resource.forwardingConfig.targetNameServers.ipv4Address resource.forwardingConfig.targetNameServers.ipv6Address resource.name resource.privateVisibilityConfig.gkeClusters.gkeClusterName resource.privateVisibilityConfig.networks.networkUrl resource.serviceDirectoryConfig.namespace.namespaceUrl resource.visibility dns.googleapis.com/Policy resource.alternativeNameServerConfig.targetNameServers.forwardingPath resource.alternativeNameServerConfig.targetNameServers.ipv4Address resource.alternativeNameServerConfig.targetNameServers.ipv6Address resource.description resource.dns64Config.scope.allQueries resource.enableInboundForwarding resource.enableLogging resource.name resource.networks.networkUrl dns.googleapis.com/ResourceRecordSet resource.name resource.routingPolicy.geo.enableFencing resource.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.geo.item.location resource.routingPolicy.geo.item.rrdata resource.routingPolicy.healthCheck resource.routingPolicy.primaryBackup.backupGeoTargets.enableFencing resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.primaryBackup.backupGeoTargets.item.location resource.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata resource.routingPolicy.primaryBackup.primaryTargets.externalEndpoints resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region resource.routingPolicy.primaryBackup.trickleTraffic resource.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region resource.routingPolicy.wrr.item.rrdata resource.routingPolicy.wrr.item.weight resource.rrdata resource.ttl resource.type dns.googleapis.com/ResponsePolicy resource.description resource.gkeClusters.gkeClusterName resource.networks.networkUrl resource.responsePolicyName dns.googleapis.com/ResponsePolicyRule resource.behavior resource.dnsName resource.localData.localData.name resource.localData.localData.routingPolicy.geo.enableFencing resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.geo.item.location resource.localData.localData.routingPolicy.geo.item.rrdata resource.localData.localData.routingPolicy.healthCheck resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.enableFencing resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.location resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.externalEndpoints resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.primaryBackup.trickleTraffic resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region resource.localData.localData.routingPolicy.wrr.item.rrdata resource.localData.localData.routingPolicy.wrr.item.weight resource.localData.localData.rrdata resource.localData.localData.ttl resource.localData.localData.type resource.ruleName What's next Learn more about Organization Policy Service .",
+          "For example, if a request to create or update a Cloud DNS instance fails to satisfy custom constraint validation as set by your organization policy, the request fails and an error will be returned to the caller.",
+          "Description Constraint syntax Restrict logging for Cloud DNS instances name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictManagedZoneWithDeniedDescription resourceTypes : - dns.googleapis.com/ManagedZone methodTypes : - CREATE - UPDATE condition : resource.description.contains('denied') actionType : DENY displayName : Restrict create / update for Cloud DNS ManagedZone resources description : Prevents users from creating / updating for Cloud DNS ManagedZone resources Cloud DNS supported resources The following table lists the Cloud DNS resources that you can reference in custom constraints."
+        ]
+      },
+      {
+        "title": "Configure DNS server policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/policies",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To create an outbound DNS server policy, run the dns policies create command: gcloud dns policies create NAME \\ --description=\" DESCRIPTION \" \\ --networks=\" VPC NETWORK LIST \" \\ --alternative-name-servers=\" ALTERNATIVE NAMESERVER LIST \" \\ --private-alternative-name-servers=\" PRIVATE ALTERNATIVE NAMESERVER LIST \" Replace the following: NAME : a name for the policy DESCRIPTION : a description for the policy VPC NETWORK LIST : a comma-delimited list of VPC networks that query the alternative name servers ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers PRIVATE ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers, accessed by using private routing Terraform resource \"google dns policy\" \"default\" { name = \"example-outbound-policy\" alternative name server config { target name servers { ipv4 address = \"172.16.1.10\" forwarding path = \"private\" } target name servers { ipv4 address = \"172.16.1.20\" } } networks { network url = google compute network.default.id } } resource \"google compute network\" \"default\" { name = \"network\" auto create subnetworks = false } Create a DNS server policy for both inbound and outbound forwarding Console In the Google Cloud console, open the Cloud DNS server policies page.",
+          "Click Create . gcloud To create a DNS server policy for both inbound and outbound forwarding, run the dns policies create command: gcloud dns policies create NAME \\ --description=\" DESCRIPTION \" \\ --networks=\" VPC NETWORK LIST \" \\ --alternative-name-servers=\" ALTERNATIVE NAMESERVER LIST \" \\ --private-alternative-name-servers=\" PRIVATE ALTERNATIVE NAMESERVER LIST \" \\ --enable-inbound-forwarding Replace the following: NAME : a name for the policy DESCRIPTION : a description for the policy VPC NETWORK LIST : a comma-delimited list of VPC networks where inbound forwarding addresses must be created and that must query the alternative name servers ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers PRIVATE ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers, accessed by using private routing.",
+          "Terraform resource \"google dns policy\" \"example policy\" { name = \"example-policy\" enable inbound forwarding = true enable logging = true alternative name server config { target name servers { ipv4 address = \"172.16.1.10\" forwarding path = \"private\" } target name servers { ipv4 address = \"172.16.1.20\" } } networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } resource \"google compute network\" \"network 1\" { name = \"network-1\" auto create subnetworks = false } resource \"google compute network\" \"network 2\" { name = \"network-2\" auto create subnetworks = false } List inbound forwarder entry points When an inbound DNS server policy applies to a VPC network, Cloud DNS creates a set of regional internal IP addresses that serve as destinations to which your on-premises systems or name resolvers can send DNS queries."
+        ]
+      },
+      {
+        "title": "Best practices for Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "In Cloud Router instances, add a custom advertised route for the IP address range 35.199.192.0/19 in the hub VPC network to the on-premises environment. (Optional) If you also use the automatically generated internal DNS names, peer each spoke project zone (for example, spoke-project-x.internal ) with the hub project, and forward all queries for .internal from on-premises.",
+          "General principles Learn about DNS concepts on Google Cloud When you use DNS on Google Cloud, it's important to understand the different systems and services available in Google Cloud for DNS resolution and domain names: Internal DNS is a service that automatically creates DNS names for virtual machines and internal load balancers on Compute Engine .",
+          "Use DNS server policies to allow queries from on-premises To allow on-premises hosts to query DNS records that are hosted in Cloud DNS private zones (for example, gcp.example.com ), create a DNS server policy using inbound DNS forwarding ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.restrictManagedZoneWithDeniedDescription",
+      "dns.admin",
+      "dns.changes.create",
+      "dns.googleapis.com",
+      "dns.managedZones.list",
+      "dns.networks.useHealthSignals",
+      "dns.peer",
+      "gcp.example.com",
+      "network.default.id",
+      "network.network",
+      "projectname.internal",
+      "resource.alternativeNameServerConfig.targetNameServers.forwardingPath",
+      "resource.alternativeNameServerConfig.targetNameServers.ipv4Address",
+      "resource.alternativeNameServerConfig.targetNameServers.ipv6Address",
+      "resource.behavior",
+      "resource.cloudLoggingConfig.enableLogging",
+      "resource.description",
+      "resource.description.contains",
+      "resource.dns64Config.scope.allQueries",
+      "resource.dnsName",
+      "resource.dnssecConfig.defaultKeySpecs.algorithm",
+      "resource.dnssecConfig.defaultKeySpecs.keyLength",
+      "resource.dnssecConfig.defaultKeySpecs.keyType",
+      "resource.dnssecConfig.nonExistence",
+      "resource.dnssecConfig.state",
+      "resource.enableInboundForwarding",
+      "resource.enableLogging",
+      "resource.forwardingConfig.targetNameServers.domainName",
+      "resource.forwardingConfig.targetNameServers.forwardingPath",
+      "resource.forwardingConfig.targetNameServers.ipv4Address",
+      "resource.forwardingConfig.targetNameServers.ipv6Address",
+      "resource.gkeClusters.gkeClusterName",
+      "resource.localData.localData.name",
+      "resource.localData.localData.routingPolicy.geo.enableFencing",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.localData.localData.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.localData.localData.routingPolicy.geo.item.location",
+      "resource.localData.localData.routingPolicy.geo.item.rrdata",
+      "resource.localData.localData.routingPolicy.healthCheck",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.enableFencing",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.location",
+      "resource.localData.localData.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.externalEndpoints",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project",
+      "resource.localData.localData.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region",
+      "resource.localData.localData.routingPolicy.primaryBackup.trickleTraffic",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.localData.localData.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.localData.localData.routingPolicy.wrr.item.rrdata",
+      "resource.localData.localData.routingPolicy.wrr.item.weight",
+      "resource.localData.localData.rrdata",
+      "resource.localData.localData.ttl",
+      "resource.localData.localData.type",
+      "resource.name",
+      "resource.networks.networkUrl",
+      "resource.privateVisibilityConfig.gkeClusters.gkeClusterName",
+      "resource.privateVisibilityConfig.networks.networkUrl",
+      "resource.responsePolicyName",
+      "resource.routingPolicy.geo.enableFencing",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.externalEndpoints",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.routingPolicy.geo.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.routingPolicy.geo.item.location",
+      "resource.routingPolicy.geo.item.rrdata",
+      "resource.routingPolicy.healthCheck",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.enableFencing",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.externalEndpoints",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.location",
+      "resource.routingPolicy.primaryBackup.backupGeoTargets.item.rrdata",
+      "resource.routingPolicy.primaryBackup.primaryTargets.externalEndpoints",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipAddress",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.ipProtocol",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.loadBalancerType",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.networkUrl",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.port",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.project",
+      "resource.routingPolicy.primaryBackup.primaryTargets.internalLoadBalancer.region",
+      "resource.routingPolicy.primaryBackup.trickleTraffic",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.externalEndpoints",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipAddress",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.ipProtocol",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.loadBalancerType",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.networkUrl",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.port",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.project",
+      "resource.routingPolicy.wrr.item.healthCheckedTargets.internalLoadBalancer.region",
+      "resource.routingPolicy.wrr.item.rrdata",
+      "resource.routingPolicy.wrr.item.weight",
+      "resource.rrdata",
+      "resource.ruleName",
+      "resource.serviceDirectoryConfig.namespace.namespaceUrl",
+      "resource.ttl",
+      "resource.type",
+      "resource.visibility",
+      "service.example.com",
+      "x.internal"
+    ],
+    "missing_inventory_roles": [
+      "roles/dns.admin",
+      "roles/dns.peer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/configure-routing-policies",
+        "https://docs.cloud.google.com/dns/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dns/docs/policies",
+        "https://docs.cloud.google.com/dns/docs/best-practices"
+      ]
+    }
+  ]
+}

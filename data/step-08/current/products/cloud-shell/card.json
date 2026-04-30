@@ -1,0 +1,725 @@
+{
+  "schema_version": "step-08-product-feature-cards-v1",
+  "generated_at": "2026-04-30T16:03:17.087Z",
+  "product_name": "Cloud Shell",
+  "product_slug": "cloud-shell",
+  "inputs": {
+    "step02_product_markdown": "data/step-02/current/cloud-shell.md",
+    "step06_extended_features": "data/step-06/current/products/cloud-shell/extended-features.json",
+    "step07_gate": "data/step-07/current/products/cloud-shell/gate.json",
+    "step05_permissions_index": "data/step-05/current/permissions/index.json",
+    "step05_roles_index": "data/step-05/current/roles/index.json",
+    "step04_selection": "data/step-04/current/products/cloud-shell/selection.json",
+    "step04_state": "data/step-04/current/products/cloud-shell/state.json"
+  },
+  "corpus": {
+    "health_status": "healthy",
+    "page_count": 0,
+    "selected_source_count": 5
+  },
+  "validation": {
+    "product_status": "PASS",
+    "failed_feature_count": 0,
+    "warned_feature_count": 1,
+    "fail_ratio": 0
+  },
+  "feature_count": 4,
+  "iam_summary": {
+    "explicit_feature_count": 0,
+    "derived_feature_count": 0,
+    "unknown_feature_count": 4,
+    "related_permission_groups": []
+  },
+  "service_card": {
+    "card_type": "service",
+    "service_card_id": "cloud-shell:service",
+    "service_name": "Cloud Shell",
+    "service_slug": "cloud-shell",
+    "generated_at": "2026-04-30T16:03:17.087Z",
+    "feature_count": 4,
+    "validation": {
+      "product_status": "PASS",
+      "failed_feature_count": 0,
+      "warned_feature_count": 1,
+      "fail_ratio": 0,
+      "passed_feature_count": 4
+    },
+    "iam_status_counts": {
+      "explicit": 0,
+      "derived_from_permission_prefix": 0,
+      "unknown": 4
+    },
+    "related_permission_groups": [],
+    "official_source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+      "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+      "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+      "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+      "https://docs.cloud.google.com/shell/docs/editor-overview",
+      "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+      "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor",
+      "https://docs.cloud.google.com/shell/docs/limitations",
+      "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+    ],
+    "security_capabilities": [
+      {
+        "capability": "access",
+        "feature_count": 4,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/editor-overview",
+          "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+          "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "auth",
+        "feature_count": 3,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "key",
+        "feature_count": 2,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "credential",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "iam",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "identity",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "policy",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "role",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      },
+      {
+        "capability": "token",
+        "feature_count": 1,
+        "evidence_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ]
+      }
+    ],
+    "security_capability_count": 9,
+    "lifecycle": {
+      "latest_feature_date": "2024-04-08"
+    },
+    "release_notes": {
+      "source_row_count": 3,
+      "unique_feature_count": 4,
+      "latest_feature_date": "2024-04-08",
+      "source_file": "data/step-02/current/cloud-shell.md"
+    },
+    "corpus": {
+      "health_status": "healthy",
+      "page_count": 0,
+      "selected_source_count": 5
+    }
+  },
+  "features": [
+    {
+      "feature_name": "Gemini Code Assist code transformations",
+      "feature_slug": "gemini-code-assist-code-transformations",
+      "summary": "Gemini Code Assist lets users apply inline code transformations in the editor to generate comments, troubleshoot issues, improve readability, and optimize efficiency.",
+      "extended_definition": "Gemini Code Assist lets users apply inline code transformations in the editor to generate comments, troubleshoot issues, improve readability, and optimize efficiency.",
+      "lifecycle": {
+        "latest_feature_date": "2024-04-08",
+        "deprecation_date": "",
+        "status": "feature_observed"
+      },
+      "coverage_status": "MEDIUM",
+      "validation": {
+        "step07_pass": true,
+        "fail_count": 0,
+        "warn_count": 0,
+        "findings": []
+      },
+      "evidence": {
+        "source_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "https://docs.cloud.google.com/shell/docs/limitations",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ],
+        "rejected_non_official_links": [],
+        "supporting_pages": [
+          {
+            "title": "Code \\_|\\_ Cloud Shell \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "source_id": "site-api-reference",
+            "final_score": 98,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "For example, prefer OUT OF RANGE over FAILED PRECONDITION if both codes apply.",
+              "Sometimes multiple error codes may apply.",
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-09 UTC.\"],[],[]]"
+            ]
+          },
+          {
+            "title": "Quotas and limits \\_|\\_ Cloud Shell \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/limitations",
+            "source_id": "site-docs-root",
+            "final_score": 84,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+              "What's next Learn about the Cloud Shell VM Start Cloud Shell Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+              "If your institution has students older than 18 who you want to have access to age-restricted services including Cloud Shell, see Control access to Google services by age for steps to identify users who are 18 years or older."
+            ]
+          },
+          {
+            "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "source_id": "site-iam-reference",
+            "final_score": 78,
+            "relevance": "",
+            "evidence_snippets": [
+              "For example, to remove a policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = user:write@gmail.com \\ --role = roles/artifactregistry.writer To revoke public access to my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = allUsers \\ --role = roles/artifactregistry.reader Granting conditional access with tags Project administrators can create tags for resources across Google Cloud and manage them in Resource Manager .",
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+              "For example, configure the repository my-repo in the location --us-west1 as public, run: gcloud artifacts repositories add-iam-policy-binding my-repo \\ --location = us-west1 --member = allUsers --role = roles/artifactregistry.reader Set a per-user limit on Artifact Registry API requests to prevent misuse by unauthenticated users."
+            ]
+          },
+          {
+            "title": "\"Class CloudShellErrorCode (1.15.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+            "source_id": "site-python-reference",
+            "final_score": 70,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+              "1.15.0 (latest) 1.14.0 1.13.0 1.12.0 1.11.0 1.10.1 1.9.5 1.8.0 1.7.2 1.6.1 1.5.0 1.4.3 1.3.3 1.2.2 1.1.0 1.0.1 0.2.2 0.1.0 CloudShellErrorCode ( value ) Set of possible errors returned from API calls.",
+              "Home Documentation Developer tools Python Client libraries Send feedback Class CloudShellErrorCode (1.15.0) Stay organized with collections Save and categorize content based on your preferences."
+            ]
+          }
+        ],
+        "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+      },
+      "iam": {
+        "iam_mapping_status": "unknown",
+        "explicit_roles": [],
+        "explicit_permissions": [],
+        "derived_roles": [],
+        "derived_permissions": [],
+        "related_permission_groups": [],
+        "missing_inventory_permissions": [
+          "artifactregistry.reader",
+          "artifactregistry.writer",
+          "example.com",
+          "gmail.com"
+        ],
+        "missing_inventory_roles": [
+          "roles/artifactregistry.reader",
+          "roles/artifactregistry.writer"
+        ]
+      },
+      "security_capabilities": [
+        {
+          "capability": "access",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        },
+        {
+          "capability": "auth",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        },
+        {
+          "capability": "iam",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        },
+        {
+          "capability": "identity",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        },
+        {
+          "capability": "policy",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        },
+        {
+          "capability": "role",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "https://docs.cloud.google.com/shell/docs/limitations",
+            "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+          ]
+        }
+      ]
+    },
+    {
+      "feature_name": "Gemini Code Assist response context sources",
+      "feature_slug": "gemini-code-assist-response-context-sources",
+      "summary": "Gemini Code Assist shows the context sources used for a generated response in the Gemini chat pane.",
+      "extended_definition": "Gemini Code Assist shows the context sources used for a generated response in the Gemini chat pane.",
+      "lifecycle": {
+        "latest_feature_date": "2024-04-08",
+        "deprecation_date": "",
+        "status": "feature_observed"
+      },
+      "coverage_status": "MEDIUM",
+      "validation": {
+        "step07_pass": true,
+        "fail_count": 0,
+        "warn_count": 0,
+        "findings": []
+      },
+      "evidence": {
+        "source_links": [
+          "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+          "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+        ],
+        "rejected_non_official_links": [],
+        "supporting_pages": [
+          {
+            "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+            "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "source_id": "site-iam-reference",
+            "final_score": 125,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Linux: /.docker/config.json Windows: %USERPROFILE%\\.docker\\config.json There are separate sections in the file for different authentication methods: credHelpers If you use the Docker credential helper for authentication Artifact Registry stores the credential helper settings in the credHelpers section of the file. auths If you use Docker to sign in with a token or service account key as your password, Docker stores a base64-encoded version of your credentials in the auths section of the file. credStore If you configured a credential store to manage your credentials, the settings for the credential store are in the credStore section of the file.",
+              "Use the service account key to configure integration with Docker: Run the following command: Linux / macOS cat KEY-FILE docker login -u KEY-TYPE --password-stdin \\ https:// LOCATION -docker.pkg.dev Windows Get-Content KEY-FILE docker login -u KEY-TYPE --password-stdin https:// LOCATION -docker.pkg.dev Replace the following: KEY-TYPE is one of the following: json key if you are using the service account key in JSON format as it was provided when you created the file. json key base64 if you base64-encoded the all contents of the file.",
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]"
+            ]
+          },
+          {
+            "title": "\"Create and deploy a containerized web app \\_|\\_ Cloud Shell \\_|\\_ Google\\",
+            "url": "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "source_id": "site-docs-root",
+            "final_score": 120,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+              "View app logs To analyze your app while it's running, use the Log Viewer to monitor its logs: Launch the Log Viewer by opening the command palette (accessible with Ctrl / Cmd + Shift + P or View > Command Palette ) and then running Cloud Code: View Logs .",
+              "To delete your project (and associated resources, including any clusters): Go to the Projects page in the Google Cloud console: Go to the Projects page Select the project that you created for this quickstart and then click Delete ."
+            ]
+          },
+          {
+            "title": "\"Class CloudShellServiceClient (1.15.0) \\_|\\_ Python client libraries \\_\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "source_id": "site-python-reference",
+            "final_score": 110,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "The result type for the operation will be AuthorizeEnvironment Response Response message for AuthorizeEnvironment . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. environment path environment path ( user : str , environment : str ) - > str Returns a fully-qualified environment string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-31 UTC.\"],[],[]]",
+              "AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict] The request object."
+            ]
+          },
+          {
+            "title": "Code \\_|\\_ Cloud Shell \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code",
+            "source_id": "site-api-reference",
+            "final_score": 98,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-10-09 UTC.\"],[],[]]",
+              "HTTP Mapping: 500 Internal Server Error Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+              "This error code does not imply the request is valid or the requested entity exists or satisfies other pre-conditions."
+            ]
+          }
+        ],
+        "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+      },
+      "iam": {
+        "iam_mapping_status": "unknown",
+        "explicit_roles": [],
+        "explicit_permissions": [],
+        "derived_roles": [],
+        "derived_permissions": [],
+        "related_permission_groups": [],
+        "missing_inventory_permissions": [
+          "config.json",
+          "docker.pkg.dev",
+          "operation.result",
+          "v1.types.AuthorizeEnvironmentRequest",
+          "v1.types.StartEnvironmentRequest"
+        ],
+        "missing_inventory_roles": []
+      },
+      "security_capabilities": [
+        {
+          "capability": "access",
+          "evidence_links": [
+            "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+          ]
+        },
+        {
+          "capability": "auth",
+          "evidence_links": [
+            "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+          ]
+        },
+        {
+          "capability": "credential",
+          "evidence_links": [
+            "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+          ]
+        },
+        {
+          "capability": "key",
+          "evidence_links": [
+            "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+          ]
+        },
+        {
+          "capability": "token",
+          "evidence_links": [
+            "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+            "https://docs.cloud.google.com/shell/docs/deploy-gke-app",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "https://docs.cloud.google.com/shell/docs/reference/rest/v1/Code"
+          ]
+        }
+      ]
+    },
+    {
+      "feature_name": "Duet AI for Cloud Shell",
+      "feature_slug": "duet-ai-for-cloud-shell",
+      "summary": "Duet AI for Cloud Shell provides contextualized coding assistance and source-cited responses in the Cloud Shell editor.",
+      "extended_definition": "Duet AI for Cloud Shell provides contextualized coding assistance and source-cited responses in the Cloud Shell editor.",
+      "lifecycle": {
+        "latest_feature_date": "2023-11-01",
+        "deprecation_date": "",
+        "status": "feature_observed"
+      },
+      "coverage_status": "MEDIUM",
+      "validation": {
+        "step07_pass": true,
+        "fail_count": 0,
+        "warn_count": 1,
+        "findings": [
+          {
+            "severity": "warn",
+            "rule": "thin_token_overlap",
+            "message": "Supporting pages only weakly overlap with informative feature tokens.",
+            "suggested_steps": [
+              "step-03",
+              "step-04",
+              "step-06"
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "source_links": [
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+          "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode"
+        ],
+        "rejected_non_official_links": [],
+        "supporting_pages": [
+          {
+            "title": "\"Class CloudShellErrorDetails (1.15.0) \\_|\\_ Python client libraries \\_|\\_\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+            "source_id": "site-python-reference",
+            "final_score": 170,
+            "relevance": "",
+            "evidence_snippets": [
+              "1.15.0 (latest) 1.14.0 1.13.0 1.12.0 1.11.0 1.10.1 1.9.5 1.8.0 1.7.2 1.6.1 1.5.0 1.4.3 1.3.3 1.2.2 1.1.0 1.0.1 0.2.2 0.1.0 CloudShellErrorDetails ( mapping = None , , ignore unknown fields = False , kwargs ) Cloud-shell specific information that will be included as details in failure responses.",
+              "Home Documentation Developer tools Python Client libraries Send feedback Class CloudShellErrorDetails (1.15.0) Stay organized with collections Save and categorize content based on your preferences.",
+              "Attribute Name Description code google.cloud.shell v1.types.CloudShellErrorDetails.CloudShellErrorCode Code indicating the specific error the occurred."
+            ]
+          },
+          {
+            "title": "\"Class CloudShellErrorCode (1.15.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+            "source_id": "site-python-reference",
+            "final_score": 166,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "IMAGE UNAVAILABLE The image used by the Cloud Shell environment either does not exist or the user does not have access to it.",
+              "ENVIRONMENT UNAVAILABLE The Cloud Shell environment is unavailable and cannot be connected to at the moment.",
+              "CLOUD SHELL DISABLED Cloud Shell has been disabled by an administrator for the user making the request."
+            ]
+          },
+          {
+            "title": "\"Class CloudShellServiceAsyncClient (1.15.0) \\_|\\_ Python client libraries\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+            "source_id": "site-python-reference",
+            "final_score": 160,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict]] The request object.",
+              "StartEnvironmentRequest ( ) Make the request operation = client. start environment (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.StartEnvironmentRequest , dict]] The request object.",
+              "RemovePublicKeyRequest ( ) Make the request operation = client. remove public key (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.shell v1.types.RemovePublicKeyRequest , dict]] The request object."
+            ]
+          },
+          {
+            "title": "\"Class CloudShellServiceClient (1.15.0) \\_|\\_ Python client libraries \\_\\",
+            "url": "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient",
+            "source_id": "site-python-reference",
+            "final_score": 160,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "AuthorizeEnvironmentRequest ( ) Make the request operation = client. authorize environment (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.AuthorizeEnvironmentRequest , dict] The request object.",
+              "StartEnvironmentRequest ( ) Make the request operation = client. start environment (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.StartEnvironmentRequest , dict] The request object.",
+              "RemovePublicKeyRequest ( ) Make the request operation = client. remove public key (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.shell v1.types.RemovePublicKeyRequest , dict] The request object."
+            ]
+          }
+        ],
+        "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+      },
+      "iam": {
+        "iam_mapping_status": "unknown",
+        "explicit_roles": [],
+        "explicit_permissions": [],
+        "derived_roles": [],
+        "derived_permissions": [],
+        "related_permission_groups": [],
+        "missing_inventory_permissions": [
+          "operation.result",
+          "v1.types.AddPublicKeyRequest",
+          "v1.types.AuthorizeEnvironmentRequest",
+          "v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+          "v1.types.RemovePublicKeyRequest",
+          "v1.types.StartEnvironmentRequest"
+        ],
+        "missing_inventory_roles": []
+      },
+      "security_capabilities": [
+        {
+          "capability": "access",
+          "evidence_links": [
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient"
+          ]
+        },
+        {
+          "capability": "auth",
+          "evidence_links": [
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient"
+          ]
+        },
+        {
+          "capability": "key",
+          "evidence_links": [
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.types.CloudShellErrorDetails.CloudShellErrorCode",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceAsyncClient",
+            "https://docs.cloud.google.com/python/docs/reference/cloudshell/latest/google.cloud.shell_v1.services.cloud_shell_service.CloudShellServiceClient"
+          ]
+        }
+      ]
+    },
+    {
+      "feature_name": "Cloud Shell in Google Cloud documentation",
+      "feature_slug": "cloud-shell-in-google-cloud-documentation",
+      "summary": "Cloud Shell can be launched directly within Google Cloud documentation pages to run sample code in an embedded terminal.",
+      "extended_definition": "Cloud Shell can be launched directly within Google Cloud documentation pages to run sample code in an embedded terminal.",
+      "lifecycle": {
+        "latest_feature_date": "2021-09-14",
+        "deprecation_date": "",
+        "status": "feature_observed"
+      },
+      "coverage_status": "MEDIUM",
+      "validation": {
+        "step07_pass": true,
+        "fail_count": 0,
+        "warn_count": 0,
+        "findings": []
+      },
+      "evidence": {
+        "source_links": [
+          "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+          "https://docs.cloud.google.com/shell/docs/editor-overview",
+          "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+          "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor"
+        ],
+        "rejected_non_official_links": [],
+        "supporting_pages": [
+          {
+            "title": "How Cloud Shell works \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+            "source_id": "site-docs-root",
+            "final_score": 204,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Available tools The Cloud Shell virtual machine instance has the following pre-installed tools: Type Tool Linux shell interpreters bash sh Linux utilities Standard Debian system utilities gcloud CLI and tools App Engine SDK Google Cloud CLI including the gcloud CLI gsutil for Cloud Storage Text editors Emacs Vim Nano Build and package tools Gradle Helm Make Maven Bazel npm nvm pip uv Composer Source control tools Git Mercurial Additional tools Docker iPython MySQL client gRPC compiler TensorFlow Terraform You can install additional software packages on the virtual machine instance but the installation will not persist after the instance terminates unless you install the software in your $HOME directory or create a custom environment .",
+              "You can't pick your own region and if Cloud Shell doesn't pick the closest region, Cloud Shell tries to migrate your Cloud Shell VM to a closer region when your Cloud Shell VM isn't in use.",
+              "Warning: If you delete your $HOME directory, or if you don't access Cloud Shell for 120 days, Cloud Shell automatically deletes your $HOME directory and can't recover your files."
+            ]
+          },
+          {
+            "title": "Cloud Shell Editor directives \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+            "source_id": "site-api-reference",
+            "final_score": 196,
+            "relevance": "MODERATE",
+            "evidence_snippets": [
+              "Open file with text selected < walkthrough - editor - select - line filePath = \" FILE PATH \" startLine = \" START LINE \" endLine = \" END LINE \" > LINK TEXT < / walkthrough - editor - select - line > Creates a link that opens a file on the Cloud Shell disk in the editor, and selects lines of text within it.",
+              "Cloud Code cloud-code-gke-explorer Cloud Code Kubernetes Explorer > Google Kubernetes Engine section. cloud-code-k8s-explorer Cloud Code Kubernetes Explorer > Kubernetes section. cloud-code-k8s-explorer-minikube Cloud Code Kubernetes Explorer > minikube cluster (if it exists). cloud-code-logs-viewer-cluster Logs viewer > Cluster filter. cloud-code-logs-viewer-container Logs viewer > Container filter. cloud-code-logs-viewer-deployment Logs viewer > Deployment filter. cloud-code-logs-viewer-namespace Logs viewer > Namespace filter. cloud-code-logs-viewer-pod Logs viewer > Pod filter. cloud-code-logs-viewer-refresh Logs viewer > Refresh button. cloud-code-logs-viewer-stream-toggle Logs viewer > Streaming toggle. cloud-code-new-app Cloud Code quick access > New Application . cloud-code-debug-on-k8s Cloud Code quick access > Debug on Kubernetes . cloud-code-run-on-k8s Cloud Code quick access > Run on Kubernetes . cloud-code-open-welcome-page Cloud Code quick access > Open Welcome Page . cloud-code-cloud-run-deploy Cloud Code quick access > Deploy to Cloud Run . cloud-code-run-on-cloud-run-emulator Cloud Code quick access > Run on Cloud Run Emulator .",
+              "The spotlightId parameter only accepts the following values: Spotlight ID Highlighted element Activity bar activity-bar-cloud-apis The Cloud API activity bar icon. activity-bar-cloud-k8s The Cloud Kubernetes activity bar icon. activity-bar-cloud-run The Cloud Run activity bar icon. activity-bar-debug The Debug activity bar icon. activity-bar-scm The Source Control activity bar icon. activity-bar-search The Search activity bar icon."
+            ]
+          },
+          {
+            "title": "Cloud Shell Editor interface overview \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/editor-overview",
+            "source_id": "site-docs-root",
+            "final_score": 196,
+            "relevance": "",
+            "evidence_snippets": [
+              "With Cloud Shell, you can initialize repositories, diff between file states, stage, unstage, and commit changes.",
+              "Open a file in Cloud Shell Editor To open an existing file in Cloud Shell Editor from Cloud Shell, run the cloudshell command: cloudshell edit README-cloudshell.txt Upload and download files You can manage your files with the Cloud Shell Editor Explorer.",
+              "In addition to the Cloud Code menu available in the status bar of Cloud Shell, you can also access Cloud Code commands using the command palette; press Cmd / Ctrl + Shift + P or click View > Command Palette to display available commands."
+            ]
+          },
+          {
+            "title": "Launch the Cloud Shell Editor \\_|\\_ Google Cloud Documentation",
+            "url": "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor",
+            "source_id": "site-docs-root",
+            "final_score": 196,
+            "relevance": "",
+            "evidence_snippets": [
+              "The Cloud Shell Editor can be launched in different ways to best fit your use case.",
+              "Launch a standalone Cloud Shell Editor session The easiest way to start a Cloud Shell session and begin using Cloud Shell Editor is to directly launch a Cloud Shell Editor session with ide.cloud.google.com .",
+              "Launch from the Cloud Shell terminal From the Cloud Shell terminal (accessible by clicking Activate Cloud Shell in your Google Cloud console ), you can run the following command: cloudshell edit ."
+            ]
+          }
+        ],
+        "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+      },
+      "iam": {
+        "iam_mapping_status": "unknown",
+        "explicit_roles": [],
+        "explicit_permissions": [],
+        "derived_roles": [],
+        "derived_permissions": [],
+        "related_permission_groups": [],
+        "missing_inventory_permissions": [
+          "cloudshell.txt",
+          "ide.cloud.google.com"
+        ],
+        "missing_inventory_roles": []
+      },
+      "security_capabilities": [
+        {
+          "capability": "access",
+          "evidence_links": [
+            "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+            "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+            "https://docs.cloud.google.com/shell/docs/editor-overview",
+            "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor"
+          ]
+        }
+      ]
+    }
+  ]
+}

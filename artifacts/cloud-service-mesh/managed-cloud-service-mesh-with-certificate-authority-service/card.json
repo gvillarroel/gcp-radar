@@ -1,0 +1,223 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.183Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh",
+  "feature_name": "Managed Cloud Service Mesh with Certificate Authority Service",
+  "feature_slug": "managed-cloud-service-mesh-with-certificate-authority-service",
+  "summary": "Managed Cloud Service Mesh supports Certificate Authority Service; Managed Cloud Service Mesh supports Certificate Authority Service.",
+  "extended_definition": "Managed Cloud Service Mesh supports Certificate Authority Service; Managed Cloud Service Mesh supports Certificate Authority Service.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: You can still enable optional features without using the IstioOperator API, see Enabling optional features on managed Cloud Service Mesh . - Using Certificate Authority Service (CA Service) requires configuring Cloud Service Mesh per cluster , and is not supported when using the fleet-default configuration in GKE Enterprise.",
+          "Grant service accounts in the fleet project permission to access the cluster project: gcloud projects add-iam-policy-binding \" CLUSTER PROJECT ID \" \\ --member \"serviceAccount:service- FLEET PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com\" \\ --role roles/anthosservicemesh.serviceAgent Enable the Mesh API on the cluster's project: gcloud services enable mesh.googleapis.com \\ --project = CLUSTER PROJECT ID Configure Certificate Authority Service (Optional) If your service mesh deployment requires Certificate Authority Service (CA Service), then follow Configure Certificate Authority Service for managed Cloud Service Mesh to enable it for your fleet.",
+          "Provision a managed Cloud Service Mesh control plane on GKE Note: This guide only supports Cloud Service Mesh with Istio APIs and does not support Google Cloud APIs."
+        ]
+      },
+      {
+        "title": "\"VPC Service Controls for Cloud Service Mesh (Managed) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "source_id": "site-docs-root-2",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VPC Service Controls for Cloud Service Mesh (Managed) Note: This guide only supports Cloud Service Mesh with Istio APIs and does not support Google Cloud APIs.",
+          "Repeat steps c - f, to add: Cloud Service Mesh Certificate Authority API GKE Hub API Cloud IAM API Cloud Monitoring API Cloud Trace API Cloud Monitoring API Google Cloud Resource Manager API Google Compute Engine API Google Container Registry API Artifact Registry API Google Cloud Storage API Cloud Logging API Security Token Service API Click Save . gcloud To update the list of restricted services, use the update command and specify the services to add as a comma-delimited list: gcloud access-context-manager perimeters update PERIMETER NAME \\ --add-restricted-services = meshconfig.googleapis.com,meshca.googleapis.com,gkehub.googleapis.com,iam.googleapis.com,monitoring.googleapis.com,cloudtrace.googleapis.com,monitoring.googleapis.com,cloudresourcemanager.googleapis.com,compute.googleapis.com,containerregistry.googleapis.com,artifactregistry.googleapis.com,storage.googleapis.com,logging.googleapis.com,sts.googleapis.com \\ --policy = POLICY NAME Where: PERIMETER NAME is the name of the service perimeter that you want to update.",
+          "To check whether your control plane supports VPC Service Controls GA, check the mesh feature state of your membership for the VPCSC GA SUPPORTED condition. gcloud container fleet mesh describe --project FLEET PROJECT ID The output is similar to: ( ... ) membershipStates: projects/FLEET PROJECT NUMBER/locations/MEMBERSHIP LOCATION/memberships/MEMBERSHIP ID: servicemesh: conditions: - code: VPCSC GA SUPPORTED details: This control plane supports VPC Service Controls GA. documentationLink: http://cloud.google.com/service-mesh/docs/managed/VPC Service Controls severity: INFO ( ... ) If you have an existing control plane that does not report the VPCSC GA SUPPORTED condition and want to rely on VPC Service Controls, contact support."
+        ]
+      },
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Certificate authority (CA) support Feature Managed (TD) Managed (istiod) Cloud Service Mesh certificate authority Certificate Authority Service Istio CA Integration with custom CAs Security features In addition to supporting Istio security features, Cloud Service Mesh provides even more capabilities to help you secure your applications.",
+          "Base Images Feature Managed (TD) Managed (istiod) Distroless proxy image † † Cloud Service Mesh with a managed (TD) control plane only supports the distroless image type.",
+          "Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry."
+        ]
+      },
+      {
+        "title": "\"In-cluster control plane supported features \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "For managed Cloud Service Mesh with an ISTIOD control plane implementation , Google supports the current Cloud Service Mesh versions available in each release channel .",
+          "For managed Cloud Service Mesh with a TRAFFIC DIRECTOR control plane implementation , Google always supports this control plane.",
+          "Certificate authority (CA) support Feature GKE clusters on Google Cloud GKE Enterprise clusters on-premises Other GKE Enterprise clusters Cloud Service Mesh certificate authority Certificate Authority Service Istio CA (previously known as Citadel) Plug in your own CA certificates Supported by CA service and Istio CA Supported by CA service and Istio CA Supported by Istio CA Cloud Service Mesh security features In addition to supporting Istio security features, Cloud Service Mesh provides even more capabilities to help you secure your applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "artifactregistry.googleapis.com",
+      "cloudresourcemanager.googleapis.com",
+      "cloudtrace.googleapis.com",
+      "compute.googleapis.com",
+      "containerregistry.googleapis.com",
+      "gkehub.googleapis.com",
+      "iam.googleapis.com",
+      "logging.googleapis.com",
+      "mesh.googleapis.com",
+      "meshca.googleapis.com",
+      "meshconfig.googleapis.com",
+      "monitoring.googleapis.com",
+      "servicemesh.iam.gserviceaccount.com",
+      "storage.googleapis.com",
+      "sts.googleapis.com",
+      "tls.credentialName"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-in-cluster"
+      ]
+    }
+  ]
+}

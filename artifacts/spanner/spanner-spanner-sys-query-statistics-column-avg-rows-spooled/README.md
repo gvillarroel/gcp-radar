@@ -1,0 +1,32 @@
+# Spanner SPANNER_SYS query statistics column AVG_ROWS_SPOOLED
+
+Product: Spanner
+Feature slug: `spanner-spanner-sys-query-statistics-column-avg-rows-spooled`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Spanner added support for the AVG_ROWS_SPOOLED column in the SPANNER_SYS query statistics table.
+
+## Lifecycle
+
+- Latest feature date: 2024-05-29
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- key
+- logging
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/spanner/docs/commit-statistics](https://docs.cloud.google.com/spanner/docs/commit-statistics)
+- [https://docs.cloud.google.com/spanner/docs/information-schema](https://docs.cloud.google.com/spanner/docs/information-schema)
+- [https://docs.cloud.google.com/spanner/docs/query-operators-unary](https://docs.cloud.google.com/spanner/docs/query-operators-unary)

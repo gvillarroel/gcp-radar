@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Pipeline operations query interface",
+  "feature_slug": "pipeline-operations-query-interface",
+  "summary": "Pipeline operations is a Firestore query interface that supports complex expressions and functions such as min, max, substring, regex_match, and array_contains_all.",
+  "extended_definition": "Pipeline operations is a Firestore query interface that supports complex expressions and functions such as min, max, substring, regex_match, and array_contains_all.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.firestore (3.38.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "source_id": "site-java-reference",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pipeline The Pipeline class provides a flexible and expressive framework for building complex data transformation and query pipelines for Firestore.",
+          "Explain Stats A wrapper object to access explain stats if explain or analyze was enabled for the Pipeline query execution. com. google. cloud. firestore.",
+          "Pipeline Source A factory for creating Pipeline instances, which provide a framework for building data transformation and query pipelines for Firestore."
+        ]
+      },
+      {
+        "title": "GQL Reference \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Aggregations Firestore in Datastore mode supports the following aggregations: COUNT( ) COUNT UP TO() SUM() AVG() In GQL, you can write aggregations in either a pipelined form or a simplified form.",
+          "To use aggregations over a query with ORDER BY , LIMIT , or OFFSET clauses, you must use the pipelined form.",
+          "Pipelined form Use the AGGREGATE keyword over a regular entity query."
+        ]
+      },
+      {
+        "title": "\"Analyze query execution with Query Explain \\_|\\_ Firestore in Native mode\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analyze query execution with Query Explain Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Consider this query as an example: db.pipeline().collection('/users').sort(field(\"status\").ascending()).limit(100) Summary Statistics The top of the explained output contains a summary of the execution statistics.",
+          "The following is an example of an execution tree: Tree: • Compute $out 1: map set($record 1, \" name \", $ name 1, \" key \", unset) is query result: true Execution: records returned: 2 latency: 5.96 ms (local <1 ms) └── • Compute $ name 1: map get($record 1, \" key \") Execution: records returned: 2 latency: 5.88 ms (local <1 ms) └── • MajorSort fields: [$v 1 ASC] output: [$record 1] limit: 100 Execution: records returned: 2 latency: 5.86 ms (local <1 ms) peak memory usage: 20.25 KiB (20,736 B) └── • Compute $v 1: map get($record 1, \"status\") Execution: records returned: 2 latency: 5.23 ms (local <1 ms) └── • TableScan source: /users order: UNDEFINED properties: row range: (-∞..+∞) output record: $record 1 variables: [$record 1] Execution: records returned: 2 latency: 4.68 ms records scanned: 2 data bytes read: 148 B What's next To learn about the execution tree nodes, see the Query execution reference ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.firestore",
+      "db.pipeline"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-firestore/latest/com.google.cloud.firestore",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.479Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services",
+  "feature_name": "Google Cloud Channel Services API generally available",
+  "feature_slug": "google-cloud-channel-services-api-generally-available",
+  "summary": "Releases the Google Cloud Channel Services API in general availability.",
+  "extended_definition": "Releases the Google Cloud Channel Services API in general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/access-api",
+      "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/customer-management",
+      "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Getting access to the Cloud Channel API \\_|\\_ Channel Services \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/channel/docs/access-api",
+        "source_id": "site-docs-reference",
+        "final_score": 40,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Export Channel Services data to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you enable the Channel Services data export for the first time per data source (Google Cloud or Google Workspace): If you configure your BigQuery dataset to use a multi-region location , BigQuery export data is available for each selected data source from the start of the previous month.",
+          "Warning : For Partners who disable and later re-enable the BigQuery export or change Export dataset to a different BigQuery location, data might not be available for the period when export was explicitly disabled or between the last export and when cross-region dataset change occurred.",
+          "If you configure your BigQuery dataset to use a region location (other than multi-region US or EU), your BigQuery export data is available for each selected data source from the date you enable the export, and after."
+        ]
+      },
+      {
+        "title": "\"Create and manage your customer accounts using the Cloud Channel API \\_\\",
+        "url": "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/customer-management",
+        "source_id": "site-docs-reference",
+        "final_score": 32,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/access-api",
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/concepts/google-cloud/customer-management"
+      ]
+    }
+  ]
+}

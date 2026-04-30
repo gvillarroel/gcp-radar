@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision",
+  "feature_name": "Object localization",
+  "feature_slug": "object-localization",
+  "summary": "Object localization detects and localizes multiple objects within an image; Object localization detects and localizes multiple objects within an image.",
+  "extended_definition": "Object localization detects and localizes multiple objects within an image; Object localization detects and localizes multiple objects within an image.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision/docs/batch",
+      "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+      "https://docs.cloud.google.com/vision/docs/handwriting",
+      "https://docs.cloud.google.com/vision/docs/ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Batch image annotation offline \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vision/docs/batch",
+        "source_id": "site-docs-root",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OBJECT LOCALIZATION Detect and extract multiple objects in an image.",
+          "Note: for additional images you have to create // additional image request objects and store them in a list to be used below. const imageRequest = { image : { source : { imageUri : inputImageUri , }, }, features : features , }; // Set where to store the results for the images that will be annotated. const outputConfig = { gcsDestination : { uri : outputUri , }, batchSize : 2 , // The max number of responses to output in each JSON file }; // Add each image request object to the batch request and add the output config. const request = { requests : [ imageRequest , // add additional request objects here ], outputConfig , }; // Make the asynchronous batch request. const [ operation ] = await client . asyncBatchAnnotateImages ( request ); // Wait for the operation to complete const [ filesResponse ] = await operation . promise (); // The output is written to GCS with the provided output uri as prefix const destinationUri = filesResponse . outputConfig . gcsDestination . uri ; console . log ( Output written to GCS with prefix: ${ destinationUri } ); } asyncBatchAnnotateImages (); Python Before trying this sample, follow the Python setup instructions in the Vision quickstart using client libraries .",
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API. import com.google.cloud.vision.v1."
+        ]
+      },
+      {
+        "title": "Detect handwriting in images \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/handwriting",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API. public static void detectDocumentTextGcs ( String gcsPath ) throws IOException { List<AnnotateImageRequest> requests = new ArrayList <> (); ImageSource imgSource = ImageSource . newBuilder (). setGcsImageUri ( gcsPath ). build (); Image img = Image . newBuilder (). setSource ( imgSource ). build (); Feature feat = Feature . newBuilder (). setType ( Type .",
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API. public static void detectDocumentText ( String filePath ) throws IOException { List<AnnotateImageRequest> requests = new ArrayList <> (); ByteString imgBytes = ByteString . readFrom ( new FileInputStream ( filePath )); Image img = Image . newBuilder (). setContent ( imgBytes ). build (); Feature feat = Feature . newBuilder (). setType ( Type .",
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API."
+        ]
+      },
+      {
+        "title": "\"Detect and extract text from images \\_|\\_ Cloud Vision API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vision/docs/ocr",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API. import com.google.cloud.vision.v1.",
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API. import com.google.cloud.vision.v1.",
+          "Note: For Java Spring framework users, Spring Cloud Google Cloud offers a way to automatically configure authentication settings and client objects to use Vision API."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Detect labels in an image by using the command line \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create the JSON request file with the following text, and save it as a request.json plain text file in your working directory: request.json { \"requests\" : [ { \"image\" : { \"source\" : { \"imageUri\" : \" gs://cloud-samples-data/vision/using curl/shanghai.jpeg \" } }, \"features\" : [ { \"type\" : \"LABEL DETECTION\" , \"maxResults\" : 3 }, { \"type\" : \"OBJECT LOCALIZATION\" , \"maxResults\" : 1 }, { \"type\" : \"TEXT DETECTION\" , \"maxResults\" : 1 , \"model\" : \"builtin/latest\" } ] } ] } Field value details image.source.gcsImageUri - Indicates the image stored in a Cloud Storage bucket.",
+          "Run the following command once for each of the following IAM roles: roles/storage.objectViewer gcloud projects add-iam-policy-binding PROJECT ID --member = \"user: USER IDENTIFIER \" --role = ROLE Replace the following: PROJECT ID : Your project ID.",
+          "Run the following command once for each of the following IAM roles: roles/storage.objectViewer gcloud projects add-iam-policy-binding PROJECT ID --member = \"user: USER IDENTIFIER \" --role = ROLE Replace the following: PROJECT ID : Your project ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.vision.v1",
+      "image.source.gcsImageUri",
+      "image1.png",
+      "image2.jpg",
+      "image3.jpg",
+      "request.json",
+      "shanghai.jpeg",
+      "storage.objectViewer",
+      "vision.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision/docs/batch",
+        "https://docs.cloud.google.com/vision/docs/handwriting",
+        "https://docs.cloud.google.com/vision/docs/ocr",
+        "https://docs.cloud.google.com/vision/docs/detect-labels-image-command-line"
+      ]
+    }
+  ]
+}

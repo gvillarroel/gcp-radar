@@ -1,0 +1,443 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:12.783Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke",
+  "card_type": "service",
+  "service_card_id": "backup-for-gke:service",
+  "service_name": "Backup for GKE",
+  "service_slug": "backup-for-gke",
+  "feature_count": 15,
+  "validation": {
+    "product_status": "PASS",
+    "failed_feature_count": 0,
+    "warned_feature_count": 0,
+    "fail_ratio": 0,
+    "passed_feature_count": 15
+  },
+  "iam_status_counts": {
+    "explicit": 3,
+    "derived_from_permission_prefix": 0,
+    "unknown": 12
+  },
+  "related_permission_groups": [],
+  "official_source_links": [
+    "https://docs.cloud.google.com/iam/docs",
+    "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+    "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+    "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+    "https://docs.cloud.google.com/iam/docs/overview",
+    "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+    "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/errors",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy",
+    "https://docs.cloud.google.com/kubernetes-engine/docs/integrations/ai-infra"
+  ],
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "feature_count": 12,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/errors",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "access",
+      "feature_count": 11,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "feature_count": 11,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "feature_count": 11,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "identity",
+      "feature_count": 11,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "feature_count": 7,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "role",
+      "feature_count": 7,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/overview",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/VolumeDataRestorePolicy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "feature_count": 6,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "feature_count": 4,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "security",
+      "feature_count": 4,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "audit",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "feature_count": 3,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/gkebackup",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/transformation-rules",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/RestoreConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "kms",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "private",
+      "feature_count": 2,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs",
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/resource-types-with-policies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "armor",
+      "feature_count": 1,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "feature_count": 1,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "feature_count": 1,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "credential",
+      "feature_count": 1,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "threat",
+      "feature_count": 1,
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "https://docs.cloud.google.com/iam/docs/deny-permissions-support",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/reference/rest/v1/Policy"
+      ]
+    }
+  ],
+  "security_capability_count": 25,
+  "lifecycle": {
+    "latest_feature_date": "2025-09-16"
+  },
+  "release_notes": {
+    "source_row_count": 15,
+    "unique_feature_count": 15,
+    "latest_feature_date": "2025-09-16",
+    "source_file": "data/step-02/current/backup-for-gke.md"
+  },
+  "corpus": {
+    "health_status": "healthy",
+    "page_count": 0,
+    "selected_source_count": 3
+  }
+}

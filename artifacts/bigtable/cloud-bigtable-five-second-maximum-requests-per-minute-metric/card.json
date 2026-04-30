@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable five-second maximum requests per minute metric",
+  "feature_slug": "cloud-bigtable-five-second-maximum-requests-per-minute-metric",
+  "summary": "Adds the five-second maximum requests per minute observability metric to Cloud Bigtable.",
+  "extended_definition": "Adds the five-second maximum requests per minute observability metric to Cloud Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/garbage-collection",
+      "https://docs.cloud.google.com/iam/docs/retry-strategy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "SSD The SSD node's capacity of 5 TB, which is preferred for most workloads, provides higher storage density in comparison with the recommended configuration for Cassandra machines, which have a practical maximum storage density of less than 2 TB for each node.",
+          "They implement multidimensional key-value stores that can support tens of thousands of queries per second (QPS), low latency reads and writes, storage that scales up to petabytes of data, and tolerance for node failure.",
+          "Google recommends that you test the performance of Bigtable with representative data and queries to establish a metric for the per-node QPS that's achievable for your workload."
+        ]
+      },
+      {
+        "title": "\"Retry failed requests \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/retry-strategy",
+        "source_id": "site-iam-reference",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, in a continuous integration/continuous deployment (CI/CD) pipeline that is not highly time-sensitive, you might set deadline to 300 seconds (5 minutes).",
+          "Continue this pattern, waiting 2 n + random-fraction seconds after each retry, up to a maximum-backoff time.",
+          "Replace maximum-backoff with the maximum amount of time, in seconds, to wait between retries."
+        ]
+      },
+      {
+        "title": "Garbage collection overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/garbage-collection",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "In another case, you might want to keep the last five versions of a user's password hash to make sure they don't reuse the password, so you would set the maximum number of versions for the column family containing the password column to 5 .",
+          "Before you use artificial timestamps, review the use cases for artificial timestamps, including the risks of using them: Simulating cell-level TTL Storing sequential numbers in timestamps Make sure that you set a default timestamp when sending write requests unless you need to support a use case with artificial timestamps.",
+          "Version-based garbage collection and CPU usage In an instance that uses replication, deletes from version-based garbage collection are replicated to all clusters in the instance in the same way that application requests are replicated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/iam/docs/retry-strategy",
+        "https://docs.cloud.google.com/bigtable/docs/garbage-collection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/iam/docs/retry-strategy",
+        "https://docs.cloud.google.com/bigtable/docs/garbage-collection"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/iam/docs/retry-strategy",
+        "https://docs.cloud.google.com/bigtable/docs/garbage-collection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/iam/docs/retry-strategy",
+        "https://docs.cloud.google.com/bigtable/docs/garbage-collection"
+      ]
+    }
+  ]
+}

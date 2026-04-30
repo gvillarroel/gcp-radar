@@ -1,0 +1,108 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.158Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub",
+  "feature_name": "Pub/Sub subscription detachment",
+  "feature_slug": "pub-sub-subscription-detachment",
+  "summary": "Pub/Sub subscription detachment lets you detach a subscription from its topic.",
+  "extended_definition": "Pub/Sub subscription detachment lets you detach a subscription from its topic.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Pub/Sub Node.js API reference documentation . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicNameOrId = 'YOUR TOPIC NAME OR ID' ; // const subscriptionNameOrId = 'YOUR SUBSCRIPTION NAME OR ID' ; // const bigqueryTableId = 'YOUR TABLE ID' ; // Imports the Google Cloud client library import { PubSub , CreateSubscriptionOptions } from '@google-cloud/pubsub' ; // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createBigQuerySubscription ( topicNameOrId : string , subscriptionNameOrId : string , bigqueryTableId : string , ) { const options : CreateSubscriptionOptions = { bigqueryConfig : { table : bigqueryTableId , writeMetadata : true , }, }; await pubSubClient . topic ( topicNameOrId ) . createSubscription ( subscriptionNameOrId , options ); console . log ( Subscription $ { subscriptionNameOrId } created . ); } PHP Before trying this sample, follow the PHP setup instructions in Quickstart: Using Client Libraries .",
+          "For more information, see the Pub/Sub Python API reference documentation . from google.cloud import pubsub v1 TODO(developer) project id = \"your-project-id\" topic id = \"your-topic-id\" subscription id = \"your-subscription-id\" bigquery table id = \"your-project.your-dataset.your-table\" publisher = pubsub v1 .",
+          "You can also monitor subscriptions from within Pub/Sub ."
+        ]
+      },
+      {
+        "title": "Create Cloud Storage subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . / TODO ( developer ): Uncomment these variables before running the sample . / // const topicName = 'YOUR TOPIC NAME' ; // const subscriptionName = 'YOUR SUBSCRIPTION NAME' ; // const bucket = 'YOUR BUCKET ID' ; // const filenamePrefix = 'YOUR FILENAME PREFIX' ; // const filenameSuffix = 'YOUR FILENAME SUFFIX' ; // const maxDuration = 60 ; // Imports the Google Cloud client library import { CreateSubscriptionOptions , PubSub } from '@google-cloud/pubsub' ; // Creates a client ; cache this for further use const pubSubClient = new PubSub (); async function createCloudStorageSubscription ( topicName : string , subscriptionName : string , bucket : string , filenamePrefix : string , filenameSuffix : string , maxDuration : number , ) { const options : CreateSubscriptionOptions = { cloudStorageConfig : { bucket , filenamePrefix , filenameSuffix , maxDuration : { seconds : maxDuration , }, }, }; await pubSubClient . topic ( topicName ) . createSubscription ( subscriptionName , options ); console . log ( Created subscription $ { subscriptionName } with a cloud storage configuration . , ); } PHP Before trying this sample, follow the PHP setup instructions in the Pub/Sub quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . from google.cloud import pubsub v1 from google.protobuf import duration pb2 TODO(developer) project id = \"your-project-id\" topic id = \"your-topic-id\" subscription id = \"your-subscription-id\" bucket = \"my-bucket\" filename prefix = \"log events \" filename suffix = \".avro\" Either CloudStorageConfig.AvroConfig or CloudStorageConfig.TextConfig defaults to TextConfig avro config = pubsub v1 . types .",
+          "You can also monitor subscriptions from within Pub/Sub ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published.",
+          "How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published.",
+          "Detached subscriptions don't receive messages from their topic and don't retain any backlog."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published.",
+          "How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published.",
+          "Detached subscriptions don't receive messages from their topic and don't retain any backlog."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.your",
+      "project.your",
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+      ]
+    }
+  ]
+}

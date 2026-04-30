@@ -1,0 +1,274 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.790Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls",
+  "feature_name": "Scoped policies",
+  "feature_slug": "scoped-policies",
+  "summary": "This feature lets administrators create VPC Service Controls access policies scoped to specific folders or projects.",
+  "extended_definition": "This feature lets administrators create VPC Service Controls access policies scoped to specific folders or projects.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a scoped access policy \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Create a scoped access policy Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to create and delegate scoped access policies.",
+          "On the Create access policy page, click Create access policy . gcloud To create a scoped access policy, use the gcloud access-context-manager policies create command. gcloud access-context-manager policies create \\ --organization ORGANIZATION ID [ --scopes = SCOPE ] --title POLICY TITLE Where: ORGANIZATION ID is the numeric ID of your organization."
+        ]
+      },
+      {
+        "title": "\"Overview of scoped policies \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 260,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use scoped policies to delegate administration of VPC Service Controls perimeters and access levels to folder-level and project-level administrators.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Overview of scoped policies Stay organized with collections Save and categorize content based on your preferences.",
+          "Scoped policies are access policies that are scoped to specific folders or projects alongside an access policy that you can apply to the entire Google Cloud organization."
+        ]
+      },
+      {
+        "title": "Overview of VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Overview of scoped policies . restricted VIP The restricted VIP provides a private network route for products and APIs supported by VPC Service Controls in order to make data and resources used by those products inaccessible from the internet. restricted.googleapis.com resolves to 199.36.153.4/30 .",
+          "VPC Service Controls configurations are managed at the organization level by default, but scoped access policies for folders or projects can be used to delegate administration of service perimeters further down the resource hierarchy.",
+          "Capabilities VPC Service Controls lets you define security policies that prevent access to Google-managed services outside of a trusted perimeter, block access to data from untrusted locations, and mitigate data exfiltration risks."
+        ]
+      },
+      {
+        "title": "Create custom constraints for VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax Disable scoped policies name : organizations/ ORGANIZATION ID /customConstraints/custom.disableScopedPolicies resourceTypes : - accesscontextmanager.googleapis.com/AccessPolicy methodTypes : - CREATE - UPDATE condition : \"size(resource.scopes) == 0\" actionType : DENY displayName : Disable scoped policies description : Disables the creation of scoped policies.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Create custom constraints for VPC Service Controls Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource Field accesscontextmanager.googleapis.com/AccessLevel resource.basic.combiningFunction resource.basic.conditions.devicePolicy.allowedDeviceManagementLevels resource.basic.conditions.devicePolicy.allowedEncryptionStatuses resource.basic.conditions.devicePolicy.osConstraints.minimumVersion resource.basic.conditions.devicePolicy.osConstraints.osType resource.basic.conditions.devicePolicy.osConstraints.requireVerifiedChromeOs resource.basic.conditions.devicePolicy.requireAdminApproval resource.basic.conditions.devicePolicy.requireCorpOwned resource.basic.conditions.devicePolicy.requireScreenlock resource.basic.conditions.ipSubnetworks resource.basic.conditions.members resource.basic.conditions.negate resource.basic.conditions.regions resource.basic.conditions.requiredAccessLevels resource.custom.expr resource.description resource.title accesscontextmanager.googleapis.com/AccessPolicy resource.parent resource.scopes resource.title accesscontextmanager.googleapis.com/AuthorizedOrgsDesc resource.assetType resource.authorizationDirection resource.authorizationType resource.orgs accesscontextmanager.googleapis.com/ServicePerimeter resource.description resource.perimeterType resource.spec.accessLevels resource.spec.egressPolicies.egressFrom.identities resource.spec.egressPolicies.egressFrom.identityType resource.spec.egressPolicies.egressFrom.sourceRestriction resource.spec.egressPolicies.egressTo.externalResources resource.spec.egressPolicies.egressTo.operations.methodSelectors.method resource.spec.egressPolicies.egressTo.operations.methodSelectors.permission resource.spec.egressPolicies.egressTo.operations.serviceName resource.spec.egressPolicies.egressTo.resources resource.spec.ingressPolicies.ingressFrom.identities resource.spec.ingressPolicies.ingressFrom.identityType resource.spec.ingressPolicies.ingressFrom.sources.accessLevel resource.spec.ingressPolicies.ingressFrom.sources.resource resource.spec.ingressPolicies.ingressTo.operations.methodSelectors.method resource.spec.ingressPolicies.ingressTo.operations.methodSelectors.permission resource.spec.ingressPolicies.ingressTo.operations.serviceName resource.spec.ingressPolicies.ingressTo.resources resource.spec.resources resource.spec.restrictedServices resource.spec.vpcAccessibleServices.allowedServices resource.spec.vpcAccessibleServices.enableRestriction resource.status.accessLevels resource.status.egressPolicies.egressFrom.identities resource.status.egressPolicies.egressFrom.identityType resource.status.egressPolicies.egressFrom.sourceRestriction resource.status.egressPolicies.egressTo.externalResources resource.status.egressPolicies.egressTo.operations.methodSelectors.method resource.status.egressPolicies.egressTo.operations.methodSelectors.permission resource.status.egressPolicies.egressTo.operations.serviceName resource.status.egressPolicies.egressTo.resources resource.status.ingressPolicies.ingressFrom.identities resource.status.ingressPolicies.ingressFrom.identityType resource.status.ingressPolicies.ingressFrom.sources.accessLevel resource.status.ingressPolicies.ingressFrom.sources.resource resource.status.ingressPolicies.ingressTo.operations.methodSelectors.method resource.status.ingressPolicies.ingressTo.operations.methodSelectors.permission resource.status.ingressPolicies.ingressTo.operations.serviceName resource.status.ingressPolicies.ingressTo.resources resource.status.resources resource.status.restrictedServices resource.status.vpcAccessibleServices.allowedServices resource.status.vpcAccessibleServices.enableRestriction resource.title resource.useExplicitDryRunSpec What's next Learn more about Organization Policy Service ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.googleapis.com",
+      "custom.disableScopedPolicies",
+      "resource.assetType",
+      "resource.authorizationDirection",
+      "resource.authorizationType",
+      "resource.basic.combiningFunction",
+      "resource.basic.conditions.devicePolicy.allowedDeviceManagementLevels",
+      "resource.basic.conditions.devicePolicy.allowedEncryptionStatuses",
+      "resource.basic.conditions.devicePolicy.osConstraints.minimumVersion",
+      "resource.basic.conditions.devicePolicy.osConstraints.osType",
+      "resource.basic.conditions.devicePolicy.osConstraints.requireVerifiedChromeOs",
+      "resource.basic.conditions.devicePolicy.requireAdminApproval",
+      "resource.basic.conditions.devicePolicy.requireCorpOwned",
+      "resource.basic.conditions.devicePolicy.requireScreenlock",
+      "resource.basic.conditions.ipSubnetworks",
+      "resource.basic.conditions.members",
+      "resource.basic.conditions.negate",
+      "resource.basic.conditions.regions",
+      "resource.basic.conditions.requiredAccessLevels",
+      "resource.custom.expr",
+      "resource.description",
+      "resource.orgs",
+      "resource.parent",
+      "resource.perimeterType",
+      "resource.scopes",
+      "resource.spec.accessLevels",
+      "resource.spec.egressPolicies.egressFrom.identities",
+      "resource.spec.egressPolicies.egressFrom.identityType",
+      "resource.spec.egressPolicies.egressFrom.sourceRestriction",
+      "resource.spec.egressPolicies.egressTo.externalResources",
+      "resource.spec.egressPolicies.egressTo.operations.methodSelectors.method",
+      "resource.spec.egressPolicies.egressTo.operations.methodSelectors.permission",
+      "resource.spec.egressPolicies.egressTo.operations.serviceName",
+      "resource.spec.egressPolicies.egressTo.resources",
+      "resource.spec.ingressPolicies.ingressFrom.identities",
+      "resource.spec.ingressPolicies.ingressFrom.identityType",
+      "resource.spec.ingressPolicies.ingressFrom.sources.accessLevel",
+      "resource.spec.ingressPolicies.ingressFrom.sources.resource",
+      "resource.spec.ingressPolicies.ingressTo.operations.methodSelectors.method",
+      "resource.spec.ingressPolicies.ingressTo.operations.methodSelectors.permission",
+      "resource.spec.ingressPolicies.ingressTo.operations.serviceName",
+      "resource.spec.ingressPolicies.ingressTo.resources",
+      "resource.spec.resources",
+      "resource.spec.restrictedServices",
+      "resource.spec.vpcAccessibleServices.allowedServices",
+      "resource.spec.vpcAccessibleServices.enableRestriction",
+      "resource.status.accessLevels",
+      "resource.status.egressPolicies.egressFrom.identities",
+      "resource.status.egressPolicies.egressFrom.identityType",
+      "resource.status.egressPolicies.egressFrom.sourceRestriction",
+      "resource.status.egressPolicies.egressTo.externalResources",
+      "resource.status.egressPolicies.egressTo.operations.methodSelectors.method",
+      "resource.status.egressPolicies.egressTo.operations.methodSelectors.permission",
+      "resource.status.egressPolicies.egressTo.operations.serviceName",
+      "resource.status.egressPolicies.egressTo.resources",
+      "resource.status.ingressPolicies.ingressFrom.identities",
+      "resource.status.ingressPolicies.ingressFrom.identityType",
+      "resource.status.ingressPolicies.ingressFrom.sources.accessLevel",
+      "resource.status.ingressPolicies.ingressFrom.sources.resource",
+      "resource.status.ingressPolicies.ingressTo.operations.methodSelectors.method",
+      "resource.status.ingressPolicies.ingressTo.operations.methodSelectors.permission",
+      "resource.status.ingressPolicies.ingressTo.operations.serviceName",
+      "resource.status.ingressPolicies.ingressTo.resources",
+      "resource.status.resources",
+      "resource.status.restrictedServices",
+      "resource.status.vpcAccessibleServices.allowedServices",
+      "resource.status.vpcAccessibleServices.enableRestriction",
+      "resource.title",
+      "resource.useExplicitDryRunSpec",
+      "restricted.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-policies",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/scoped-policies-overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/overview",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/custom-constraints"
+      ]
+    }
+  ]
+}

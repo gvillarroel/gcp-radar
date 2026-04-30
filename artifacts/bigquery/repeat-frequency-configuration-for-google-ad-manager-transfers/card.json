@@ -1,0 +1,141 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Repeat frequency configuration for Google Ad Manager transfers",
+  "feature_slug": "repeat-frequency-configuration-for-google-ad-manager-transfers",
+  "summary": "BigQuery Data Transfer Service for Google Ad Manager now lets you configure transfer repeat frequency.",
+  "extended_definition": "BigQuery Data Transfer Service for Google Ad Manager now lets you configure transfer repeat frequency.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Campaign Manager data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data ingestion from Campaign Manager transfers When you transfer data from Campaign Manager into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "Repeat frequency The Campaign Manager connector supports data transfer every 8 hours.",
+          "Value ; import java.io.IOException ; import java.util.HashMap ; import java.util.Map ; // Sample to create campaign manager transfer config public class CreateCampaignmanagerTransfer { public static void main ( String [] args ) throws IOException { // TODO(developer): Replace these variables before running the sample. final String projectId = \"MY PROJECT ID\" ; String datasetId = \"MY DATASET ID\" ; String bucket = \"gs://cloud-sample-data\" ; // the network id only allows digits String networkId = \"7878\" ; String fileNamePrefix = \"test \" ; Map<String , Value > params = new HashMap <> (); params . put ( \"bucket\" , Value . newBuilder (). setStringValue ( bucket ). build ()); params . put ( \"network id\" , Value . newBuilder (). setStringValue ( networkId ). build ()); params . put ( \"file name prefix\" , Value . newBuilder (). setStringValue ( fileNamePrefix ). build ()); TransferConfig transferConfig = TransferConfig . newBuilder () . setDestinationDatasetId ( datasetId ) . setDisplayName ( \"Your Campaignmanager Config Name\" ) . setDataSourceId ( \"dcm dt\" ) . setParams ( Struct . newBuilder (). putAllFields ( params ). build ()) . build (); createCampaignmanagerTransfer ( projectId , transferConfig ); } public static void createCampaignmanagerTransfer ( String projectId , TransferConfig transferConfig ) throws IOException { try ( DataTransferServiceClient client = DataTransferServiceClient . create ()) { ProjectName parent = ProjectName . of ( projectId ); CreateTransferConfigRequest request = CreateTransferConfigRequest . newBuilder () . setParent ( parent . toString ()) . setTransferConfig ( transferConfig ) . build (); TransferConfig config = client . createTransferConfig ( request ); System . out . println ( \"Campaignmanager transfer created successfully :\" + config . getName ()); } catch ( ApiException ex ) { System . out . print ( \"Campaignmanager transfer was not created.\" + ex . toString ()); } } } Warning: If you change the schema of a report, all files on that day must have the same schema, or the data transfer for the entire day will fail."
+        ]
+      },
+      {
+        "title": "Load Google Ad Manager data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Repeat frequency The Google Ad Manager connector supports data transfers every 4 hours.",
+          "Data ingestion from Google Ad Manager transfers When you transfer data from Google Ad Manager into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "To create a BigQuery Data Transfer Service data transfer for Google Ad Manager: Console Go to the Data transfers page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Load Google Ads data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transfer configuration for Customer ID 1234567890 A transfer configuration for the root manager account (Customer ID 1234567890) would generate data transfer runs that include the following Customer IDs: 1111 (via sub-manager account 1234) 2222 (via sub-manager account 1234) 3333 (via sub-manager account 1234) 4444 (via sub-manager account 1234) 5555 (via sub-manager account 567 and sub-manager account 1234) 6666 (via sub-manager account 567 and sub-manager account 1234) 7777 (via sub-manager account 567 and sub-manager account 1234) 8888 (via sub-manager account 89) 9999 (via sub-manager account 89) 0000 (individual Customer ID) Transfer configuration for Customer ID 1234 A transfer configuration for sub-manager account 123 (Customer ID 1234) would generate data transfer runs that include the following Customer IDs: 1111 2222 3333 4444 5555 (via sub-manager account 567) 6666 (via sub-manager account 567) 7777 (via sub-manager account 567) Transfer configuration for Customer ID 567 A transfer configuration for sub-manager account 567 (Customer ID 567) would generate data transfer runs that include the following Customer IDs: 5555 6666 7777 Transfer configuration for Customer ID 89 A transfer configuration for sub-manager account 89 (Customer ID 89) would generate data transfer runs that include the following Customer IDs: 8888 9999 Transfer configuration for Customer ID 0000 A transfer configuration for Customer ID 0000 would generate data transfer runs that include only the individual Customer ID: 0000 Migrate Google Ads data to MCCs To migrate your existing Google Ads data in BigQuery Data Transfer Service to the MCC structure, you can set up a backfill to add your existing data to the tables created by the transfer configuration linked to the manager account.",
+          "Repeat frequency The Google Ads connector supports daily data transfers.",
+          "The following tables exclude ad group related columns when the Include PMax Campaign Tables checkbox is selected: GeoStats GeoConversionStats ShoppingProductConversionStats ShoppingProductStats LocationsUserLocationsStats The following tables are added when the Include PMax Campaign Tables checkbox is selected: Asset AssetGroup AssetGroupAsset AssetGroupListingGroupFilter AssetGroupSignal Audience AssetGroupProductGroupStats CampaignAssetStats Support for Google Ads manager accounts Existing customers who have multiple Customer ID-specific Google Ads Transfers are encouraged to set up a single Google Ads Transfer at the Manager Account (MCC) level, schedule a backfill, and disable individual Customer ID-specific Google Ads Transfers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "java.io.IOException",
+      "java.util.HashMap",
+      "java.util.Map"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-campaign-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/google-ads-transfer"
+      ]
+    }
+  ]
+}

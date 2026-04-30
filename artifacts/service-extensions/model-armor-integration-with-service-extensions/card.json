@@ -1,0 +1,192 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.344Z",
+  "source_step08_card": "data/step-08/current/products/service-extensions/card.json",
+  "product_name": "Service Extensions",
+  "product_slug": "service-extensions",
+  "feature_name": "Model Armor integration with Service Extensions",
+  "feature_slug": "model-armor-integration-with-service-extensions",
+  "summary": "Model Armor can be configured with Service Extensions to protect AI workloads on supported Application Load Balancers.",
+  "extended_definition": "Model Armor can be configured with Service Extensions to protect AI workloads on supported Application Load Balancers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+      "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+      "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure an extension to call a Google service \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the sample values provided. cat >traffic callout service.yaml <<EOF apiVersion : networking.gke.io/v1 kind : GCPTrafficExtension metadata : name : traffic-ext spec : targetRefs : - group : \"gateway.networking.k8s.io\" kind : Gateway name : inference-gateway extensionChains : - name : \"chain1-model-armor\" matchCondition : celExpressions : - celMatcher : 'request.path == \"/v1/chat/completions\"' extensions : - name : extension-chain-1-model-armor googleAPIServiceName : modelarmor.us-central1.rep.googleapis.com failOpen : true supportedEvents : - RequestHeaders - RequestBody - RequestTrailers - ResponseHeaders - ResponseBody - ResponseTrailers timeout : 1s metadata : model armor settings : '[ { \"model\": \" MODEL NAME \", \"model response template id\": \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ RESPONSE TEMPLATE \", \"user prompt template id\": \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ PROMPT TEMPLATE \" } ]' EOF Replace the following: MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct TEMPLATE PROJECT ID : the project ID of the Model Armor templates LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use In the metadata field, specify the Model Armor settings and templates to be used while screening prompts and responses corresponding to specific models.",
+          "For Value , specify the templates as a JSON string, such as the following: [{ \"model\" : \" MODEL NAME \" , \"model response template id\" : \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ RESPONSE TEMPLATE \" , \"user prompt template id\" : \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ PROMPT TEMPLATE \" }] Replace the following: MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct TEMPLATE PROJECT ID : the project ID of the Model Armor templates LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use A default template can additionally be specified for use when a request doesn't exactly match a model.",
+          "To verify that the traffic extension works as expected, run the same curl command: curl -v http:// ${ IP } /v1/chat/completions \\ -H \"Content-Type: application/json\" \\ -H 'Authorization: Bearer $(gcloud auth print-access-token)' \\ -d '{\"model\": \"meta-llama/Llama-3.1-8B-Instruct\", \"messages\": [ { \"role\": \"user\", \"content\": \"Can you remember my ITIN: 123-45-6789\" } ], \"max tokens\": 250, \"temperature\": 0.1}' ``` With the service extension configured, a request with sensitive data generates an HTTP 403 Forbidden status code, logs an error message as configured in the template, and closes the connection."
+        ]
+      },
+      {
+        "title": "\"Integration with Google services \\_|\\_ Service Extensions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integration with Model Armor Model Armor enhances the security of AI applications by enforcing runtime controls on LLM prompts and responses.",
+          "Supported Application Load Balancers for callouts to Google services Service Extensions supports traffic extensions by using callouts to selected Google services for the following Application Load Balancers : Application Load Balancers Model Armor (traffic extensions by using callouts) Global external Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Cross-region internal Application Load Balancer Classic Application Load Balancer What's next Configure an extension to call a Google service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can configure a traffic extension to call the Model Armor Google service to uniformly apply and enforce security policies to screen LLM prompts and responses for your networking applications."
+        ]
+      },
+      {
+        "title": "\"Cloud Load Balancing and Cloud CDN extensions overview \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "After a load balancer calls an edge extension, it does the following: Selects the backend service by evaluating the URL map Applies Google Cloud Armor policies security policies Does a cache lookup and serves from cache if there is a cache hit Applies Cloud Armor policies for the selected backend service Applies CORS policies Applies the stateful session affinity policy Applies Identity-Aware Proxy (IAP) policies for the selected backend service Calls authorization extensions, if any are configured in the processing path of the selected backend service Performs fault injection Calls traffic extensions, if any Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring How authorization extensions work On the request path, authorization extensions are called after route extensions are called and a backend for the request has been selected.",
+          "Before a load balancer calls a traffic extension on the request path for a request, it does the following: Performs fault injection Selects a backend service for the request Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Applies Cloud CDN caching policies for the selected backend service in the case of global external Application Load Balancers After a load balancer calls a traffic extension on the request path for a request, it does the following: Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring After a load balancer calls a traffic extension on the response path for a request, it does the following: Performs response header transformations and resolves custom response header variables Performs logging by using Cloud Logging Performs Cloud CDN caching in the case of global external Application Load Balancers Custom headers In the traffic path, edge and route extensions run at extensibility points before the stage at which the load balancer adds custom headers .",
+          "Limitations for extensions A forwarding rule can have only one LbEdgeExtension resource, one LbTrafficExtension resource, and one LbRouteExtension resource."
+        ]
+      },
+      {
+        "title": "Service Extensions overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can configure an extension to call Model Armor to uniformly enforce security policies on inference traffic on application load balancers, including GKE Inference Gateway .",
+          "Types of extensions The data path in networking products, such as Cloud Load Balancing and Media CDN, can be visualized as a pipeline of data processing stages.",
+          "With callouts, you can get the benefits of fully managed services that are also customizable to meet the unique needs of specific workloads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central1.rep.googleapis.com",
+      "gateway.networking.k8s.io",
+      "modelarmor.us",
+      "networking.gke.io",
+      "request.path",
+      "service.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/integration-with-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/overview"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Cloud Build 8-vCPU and 32-vCPU machine types
+
+Product: Cloud Build
+Feature slug: `cloud-build-8-vcpu-and-32-vcpu-machine-types`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Cloud Build added new machine types with 8 vCPUs and 32 vCPUs.
+
+## Lifecycle
+
+- Latest feature date: 2017-10-25
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access
+- allow
+- auth
+- certificate
+- constraint
+- credential
+- iam
+- key
+- logging
+- policy
+- private
+- secret
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc](https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc)
+- [https://docs.cloud.google.com/build/docs/build-config](https://docs.cloud.google.com/build/docs/build-config)
+- [https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog](https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog)

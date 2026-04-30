@@ -1,0 +1,102 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:53.733Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os",
+  "feature_name": "cos-gpu-installer force-fallback flag",
+  "feature_slug": "cos-gpu-installer-force-fallback-flag",
+  "summary": "Cos-gpu-installer provides a force-fallback flag for GPU driver installation behavior; cos-gpu-installer provides a force-fallback flag for GPU driver installation behavior.",
+  "extended_definition": "Cos-gpu-installer provides a force-fallback flag for GPU driver installation behavior; cos-gpu-installer provides a force-fallback flag for GPU driver installation behavior.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following flags apply: -no-verify : Downloads and prepares the driver files but skips kernel module loading and installation verification. -target-gpu : Specifies the GPU device to ensure the correct driver is preloaded, preventing compatibility issues when the GPU device is later attached.",
+          "To preload the GPU driver, run the following command: sudo cos-extensions install gpu -- -no-verify -target-gpu= GPU DEVICE This command is supported starting from cos-gpu-installer:v2.3.0 .",
+          "For earlier Container-Optimized OS release milestones, use the cos-gpu-installer open source tool to manually install GPU drivers."
+        ]
+      },
+      {
+        "title": "Using Cloud Logging with Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the logging agent in project metadata Starting in milestone 97 , logging can be enabled in project metadata: gcloud compute project-info add-metadata \\ --metadata google-logging-enabled = true Note: Metadata flags defined at instance level takes precedence over metadata flags defined at project level.",
+          "Known Limitations Compatibility with gcplogs driver Starting with milestone 89 , if the logging agent included with Container-Optimized OS is enabled and Docker gcplogs logging driver is enabled for one or more containers, excessive warning logs may be output by the included logging agent.",
+          "A workaround is to not use gcplogs as a Docker logging driver, and to instead use the default driver as configured by Container-Optimized OS."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following entries in /etc/systemd/timesyncd.conf configuration file show commented out default configuration values to help the administrator make any desired changes: cat /etc/systemd/timesyncd.conf comments omitted for brevity [Time] #NTP= #FallbackNTP=metadata.google.internal #RootDistanceMaxSec=5 #PollIntervalMinSec=32 #PollIntervalMaxSec=2048 So the maximum acceptable root distance is 5 seconds and the minimum and maximum poll intervals for NTP messages are 32 and 2048 seconds respectively.",
+          "For example: gcloud compute instances create instance-name \\ --image image-name \\ --image-project cos-cloud \\ --metadata cos-update-strategy=update disabled Starting from milestone 97 , you can also disable or enable automatic updates in project metadata: gcloud compute project-info add-metadata \\ --metadata cos-update-strategy=update disabled Note: Metadata flags defined at instance level takes precedence over metadata flags defined at project level.",
+          "The previous example can be expanded to collect usage statistics and crash dump collection with the following command: gcloud compute instances create instance-name \\ --image image-name \\ --image-project cos-cloud \\ --metadata-from-file user-data= filename \\ --metadata=cos-metrics-enabled=true Other metadata flags Metadata Key Description Default Behavior cos-update-strategy Specifies automatic update behavior."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.google.internal",
+      "timesyncd.conf",
+      "v2.3.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/logging",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    }
+  ]
+}

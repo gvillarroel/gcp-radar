@@ -1,0 +1,133 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Zonal NEG backends for internal TCP/UDP load balancers",
+  "feature_slug": "zonal-neg-backends-for-internal-tcp-udp-load-balancers",
+  "summary": "Internal TCP/UDP load balancers can use zonal network endpoint groups with GCE_VM_IP endpoints as backends.",
+  "extended_definition": "Internal TCP/UDP load balancers can use zonal network endpoint groups with GCE_VM_IP endpoints as backends.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring",
+      "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Internal passthrough Network Load Balancer overview | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "feature-recovery-http",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Zonal NEG backends and network interfaces When you create a new zonal NEG with GCE_VM_IP endpoints, you must explicitly associate the NEG with a subnetwork of a VPC network before you can add any endpoints to the NEG.",
+          "Backends are either instance groups or zonal NEGs with GCE_VM_IP endpoints located in the same region as the backend service and forwarding rule.",
+          "To distribute load-balanced traffic to a non- nic0 network interface, we recommend you use zonal NEGs with GCE_VM_IP endpoints."
+        ]
+      },
+      {
+        "title": "Configurar um balanceador de carga de rede de passagem interna com NEGs zonais | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "source_id": "feature-recovery-http",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "O conteúdo do script é o mesmo para as quatro VMs. [VM-NAME] de vm-a1 e [ZONE] de us-west1-a [VM-NAME] de vm-a2 e [ZONE] de us-west1-a [VM-NAME] de vm-c1 e [ZONE] de us-west1-c [VM-NAME] de vm-c2 e [ZONE] de us-west1-c gcloud compute instances create VM-NAME \\ --zone= ZONE \\ --image-family=debian-12 \\ --image-project=debian-cloud \\ --tags=allow-ssh,allow-health-check \\ --subnet=lb-subnet \\ --metadata=startup-script='#! /bin/bash if [ -f /etc/startup_script_completed ]; then exit 0 fi apt-get update apt-get install apache2 -y a2ensite default-ssl a2enmod ssl file_ports=\"/etc/apache2/ports.conf\" file_http_site=\"/etc/apache2/sites-available/000-default.conf\" file_https_site=\"/etc/apache2/sites-available/default-ssl.conf\" http_listen_prts=\"Listen 80\\nListen 8008\\nListen 8080\\nListen 8088\" http_vh_prts=\"*:80 *:8008 *:8080 *:8088\" https_listen_prts=\"Listen 443\\nListen 8443\" https_vh_prts=\"*:443 *:8443\" vm_hostname=\"$(curl -H \"Metadata-Flavor:Google\" \\ http://metadata.google.internal/computeMetadata/v1/instance/name)\" echo \"Page served from: $vm_hostname\" | \\ tee /var/www/html/index.html prt_conf=\"$(cat \"$file_ports\")\" prt_conf_2=\"$(echo \"$prt_conf\" | sed \"s|Listen 80|${http_listen_prts}|\")\" prt_conf=\"$(echo \"$prt_conf_2\" | sed \"s|Listen 443|${https_listen_prts}|\")\" echo \"$prt_conf\" | tee \"$file_ports\" http_site_conf=\"$(cat \"$file_http_site\")\" http_site_conf_2=\"$(echo \"$http_site_conf\" | sed \"s|*:80|${http_vh_prts}|\")\" echo \"$http_site_conf_2\" | tee \"$file_http_site\" https_site_conf=\"$(cat \"$file_https_site\")\" https_site_conf_2=\"$(echo \"$https_site_conf\" | sed \"s|_default_:443|${https_vh_prts}|\")\" echo \"$https_site_conf_2\" | tee \"$file_https_site\" systemctl restart apache2 touch /etc/startup_script_completed' Criar GCE_VM_IP NEGs zonais Os NEGs ( neg-a e neg-c ) precisam ser criados nas mesmas zonas que as VMs criadas na etapa anterior.",
+          "Clique em Criar . gcloud Crie um NEG zonal GCE_VM_IP chamado neg-a em us-west1-a usando o comando gcloud compute network-endpoint-groups create : gcloud compute network-endpoint-groups create neg-a \\ --network-endpoint-type=gce-vm-ip \\ --zone=us-west1-a \\ --network=lb-network \\ --subnet=lb-subnet Adicione endpoints a neg-a : gcloud compute network-endpoint-groups update neg-a \\ --zone=us-west1-a \\ --add-endpoint='instance=vm-a1' \\ --add-endpoint='instance=vm-a2' Crie um NEG zonal GCE_VM_IP chamado neg-c em us-west1-c usando o comando gcloud compute network-endpoint-groups create : gcloud compute network-endpoint-groups create neg-c \\ --network-endpoint-type=gce-vm-ip \\ --zone=us-west1-c \\ --network=lb-network \\ --subnet=lb-subnet Adicione endpoints a neg-c : gcloud compute network-endpoint-groups update neg-c \\ --zone=us-west1-c \\ --add-endpoint='instance=vm-c1' \\ --add-endpoint='instance=vm-c2' Configurar componentes do balanceador de carga Estas etapas configuram todos os componentes do balanceador de carga de rede de passagem interna : Serviço de back-end : para este exemplo, você precisa transmitir o tráfego HTTP por meio do balanceador de carga.",
+          "Permissões Para seguir este guia, você precisa criar instâncias e modificar uma rede em um projeto. É necessário ser proprietário ou editor de um projeto ou ter todos os seguintes papéis de IAM do Compute Engine : Tarefa Papel necessário Criar componentes do balanceador de carga, sub-redes e redes Administrador de rede Adicionar e remover regras de firewall Administrador de segurança Criar instâncias Administrador da instância da computação Para mais informações, consulte estes guias: Controle de acesso Condições do IAM Visão geral da configuração Neste guia, mostramos como configurar e testar um balanceador de carga de rede de passagem interna com back-ends de NEG zonal GCE_VM_IP ."
+        ]
+      },
+      {
+        "title": "내부 패스 스루 네트워크 부하 분산기 로깅 및 모니터링 | Cloud Load Balancing | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring",
+        "source_id": "feature-recovery-http",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PROJECT_ID 를 프로젝트 ID로, BACKEND_SERVICE_NAME 을 백엔드 서비스 이름으로 바꿉니다. resource.type=\"loadbalancing.googleapis.com/InternalNetworkLoadBalancerRule\" logName=\"projects/ PROJECT_ID /logs/loadbalancing.googleapis.com%2Fflows\" resource.labels.backend_service_name=\" BACKEND_SERVICE_NAME \" 쿼리 실행 을 클릭합니다. 백엔드 인스턴스 그룹 로그 보기 엔드포인트가 GCE_VM_IP 인 특정 백엔드 인스턴스 그룹 또는 네트워크 엔드포인트 그룹(NEG)의 내부 패스 스루 네트워크 부하 분산기 로그를 보려면 다음 단계를 따르세요. 콘솔 쿼리 Google Cloud 콘솔에서 로그 탐색기 페이지로 이동합니다. 로그 탐색기로 이동 쿼리 표시 전환을 클릭합니다. 다음을 쿼리 필드에 붙여넣습니다.",
+          "TCP 트래픽에서만 지원됩니다. 내부 패스 스루 네트워크 부하 분산기 측정항목용 필터링 측정기준 측정항목은 내부 패스 스루 네트워크 부하 분산기별로 집계됩니다. 집계된 측정항목은 다음과 같은 측정기준에 따라 세분화할 수 있습니다. 속성 설명 백엔드 이름 엔드포인트가 GCE_VM_IP 인 인스턴스 그룹 또는 네트워크 엔드포인트 그룹(NEG)의 이름입니다. 백엔드 범위 연결을 수신한 백엔드의 범위( 리전 또는 영역 )입니다. 백엔드 영역 영역 인스턴스 그룹 및 네트워크 엔드포인트 그룹의 경우 연결을 제공한 백엔드의 영역 입니다. 클라이언트 네트워크 내부 패스 스루 네트워크 부하 분산기에 연결된 클라이언트 인스턴스의 네트워크입니다. 클라이언트 서브네트워크 내부 패스 스루 네트워크 부하 분산기에 연결된 클라이언트 인스턴스의 서브네트워크입니다. 클라이언트 영역 전달 규칙에 연결된 인스턴스의 Google Cloud 영역 입니다. 전달 규칙 내부 패스 스루 네트워크 부하 분산기의 전달 규칙 이름입니다. 측정항목 보고 빈도 및 보관 내부 패스 스루 네트워크 부하 분산기의 측정항목은 1분 단위로 일괄적으로 Monitoring으로 내보내집니다. 모니터링 데이터는 6주간 보관됩니다. 측정항목은 샘플링된 트래픽을 기반으로 합니다. 샘플링 레이트는 동적이며 조정할 수 없습니다. 대시보드는 1시간(1H), 6시간(6H), 1일(1D), 1주(1W), 6주(6W)의 기본 주기로 데이터 분석을 제공합니다.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT_ID /regions/ REGION /backendServices 모든 선택적인 필드 제외 { \"name\": \" BACKEND_SERVICE \", \"loadBalancingScheme\": \"INTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE_RATE , \"optionalMode\": \"EXCLUDE_ALL_OPTIONAL\" } } 모든 선택적인 필드 포함 { \"name\": \" BACKEND_SERVICE \", \"loadBalancingScheme\": \"INTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE_RATE , \"optionalMode\": \"INCLUDE_ALL_OPTIONAL\" } } 선택적 필드의 커스텀 목록 포함 { \"name\": \" BACKEND_SERVICE \", \"loadBalancingScheme\": \"INTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE_RATE , \"optionalMode\": \"CUSTOM\", \"optionalFields\": [\"field1\",\"field2\",...] } } 기존 백엔드 서비스에 로깅 사용 설정 콘솔 Google Cloud 콘솔에서 부하 분산 페이지로 이동합니다. 부하 분산으로 이동 부하 분산기의 이름을 클릭합니다. edit 수정 을 클릭한 다음 백엔드 구성 을 클릭합니다. 백엔드 서비스 옆에 있는 edit 수정 을 클릭합니다. 로깅 사용 설정 을 클릭합니다. 샘플링 레이트 비율을 설정합니다. 비율을 0.0 ~ 1.0 (기본값)으로 설정할 수 있습니다. 선택사항: 로그에 모든 선택적 필드를 포함하려면 선택적 필드 섹션에서 모든 선택적 필드 포함 을 클릭하세요. 고급 기능 팁: 커스텀 옵션을 지정하려면 gcloud CLI 및 REST API를 사용하세요. 백엔드 서비스 수정을 완료하려면 업데이트 를 클릭합니다. 부하 분산기 수정을 완료하려면 업데이트 를 클릭합니다. gcloud gcloud compute backend-services update 명령어 를 사용하여 기존 백엔드 서비스에 로깅을 사용 설정하세요. gcloud compute backend-services update BACKEND_SERVICE \\ --region= REGION \\ --enable-logging \\ --logging-sample-rate= SAMPLE_RATE \\ --logging-optional= LOGGING_OPTIONAL \\ --logging-optional-fields= OPTIONAL_FIELDS 다음을 바꿉니다."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "default.conf",
+      "index.html",
+      "loadbalancing.googleapis.com",
+      "metadata.google.internal",
+      "ports.conf",
+      "resource.labels.backend_group_name",
+      "resource.labels.backend_service_name",
+      "resource.type",
+      "ssl.conf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-internal-zonal-neg",
+        "https://docs.cloud.google.com/load-balancing/docs/internal/internal-logging-monitoring"
+      ]
+    }
+  ]
+}

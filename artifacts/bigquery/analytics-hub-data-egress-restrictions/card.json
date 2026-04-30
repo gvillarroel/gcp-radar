@@ -1,0 +1,172 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Analytics Hub data egress restrictions",
+  "feature_slug": "analytics-hub-data-egress-restrictions",
+  "summary": "Analytics Hub listings can restrict data egress.",
+  "extended_definition": "Analytics Hub listings can restrict data egress.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "To apply data egress restrictions on your shared dataset and query results of your shared dataset, select Disable copy and export of query results , which will automatically set Disable copy and export of shared data as well.",
+          "To apply data egress restrictions on your shared dataset and query results of your shared dataset, select Disable copy and export of query results , which will automatically set Disable copy and export of shared data as well.",
+          "To apply data API copy and export egress restrictions on your shared dataset, select Disable copy and export of tables through APIs , which will automatically set Disable copy and export of shared data as well."
+        ]
+      },
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Listing resource must have the restrictedExportPolicy object enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithRestrictedExportPolicy resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && has(resource.bigqueryDataset.restrictedExportPolicy) && resource.bigqueryDataset.restrictedExportPolicy.enabled == true action type : DENY display name : The Listing must have restricted export policy. description : The Listing resource must have restrictedExportPolicy enabled to allow egress controls.",
+          "Resource Field analyticshub.googleapis.com/DataExchange resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact analyticshub.googleapis.com/Listing resource.allowOnlyMetadataSharing resource.bigqueryDataset.dataset resource.bigqueryDataset.replicaLocations resource.bigqueryDataset.restrictedExportPolicy.enabled resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult resource.bigqueryDataset.selectedResources.routine resource.bigqueryDataset.selectedResources.table resource.categories resource.dataProvider.name resource.dataProvider.primaryContact resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact resource.publisher.name resource.publisher.primaryContact resource.pubsubTopic.dataAffinityRegions resource.pubsubTopic.topic resource.requestAccess resource.restrictedExportConfig.enabled resource.restrictedExportConfig.restrictQueryResult What's next Learn more about custom constraints .",
+          "The Listing resource can't be publicly discoverable. name : organizations/ ORGANIZATION ID /customConstraints/custom.noPublicListing resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : resource.discoveryType == 'DISCOVERY TYPE PUBLIC' action type : DENY display name : Reject public Listings. description : All Listing resources must be undiscoverable."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "When data egress is restricted, the following restrictions apply: Copy, clone, export, and snapshot APIs are unavailable.",
+          "If shared datasets in a project are within a VPC Service Controls perimeter, you need appropriate ingress and egress rules for both the exchange project (hosted listings) and all subscriber projects to successfully subscribe to the publisher's listings.",
+          "Don't put your exchange project in a VPC Service Controls perimeter, as it might interrupt publishing workflows, requiring ingress and egress rules for the publisher project and all subscriber projects to successfully subscribe to their listings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.listingAdmin",
+      "custom.listingWithRestrictedExportPolicy",
+      "custom.noPublicListing",
+      "resource.allowOnlyMetadataSharing",
+      "resource.bigqueryDataset",
+      "resource.bigqueryDataset.dataset",
+      "resource.bigqueryDataset.replicaLocations",
+      "resource.bigqueryDataset.restrictedExportPolicy",
+      "resource.bigqueryDataset.restrictedExportPolicy.enabled",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult",
+      "resource.bigqueryDataset.selectedResources.routine",
+      "resource.bigqueryDataset.selectedResources.table",
+      "resource.categories",
+      "resource.dataProvider.name",
+      "resource.dataProvider.primaryContact",
+      "resource.description",
+      "resource.discoveryType",
+      "resource.displayName",
+      "resource.documentation",
+      "resource.icon",
+      "resource.logLinkedDatasetQueryUserEmail",
+      "resource.primaryContact",
+      "resource.publisher.name",
+      "resource.publisher.primaryContact",
+      "resource.pubsubTopic.dataAffinityRegions",
+      "resource.pubsubTopic.topic",
+      "resource.requestAccess",
+      "resource.restrictedExportConfig.enabled",
+      "resource.restrictedExportConfig.restrictQueryResult"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.listingAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    }
+  ]
+}

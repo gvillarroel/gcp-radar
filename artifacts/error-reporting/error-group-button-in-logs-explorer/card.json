@@ -1,0 +1,92 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.165Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Error Group button in Logs Explorer",
+  "feature_slug": "error-group-button-in-logs-explorer",
+  "summary": "Logs Explorer shows an Error Group button for log entries that belong to error groups.",
+  "extended_definition": "Logs Explorer shows an Error Group button for log entries that belong to error groups.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+      "https://docs.cloud.google.com/error-reporting/docs/troubleshooting",
+      "https://docs.cloud.google.com/error-reporting/docs/viewing-errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and filter error groups \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/viewing-errors",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you use the Logs Explorer, the error group button ( ) indicates that the log entry is associated with an error group.",
+          "The Logs Explorer opens and displays the list of log entries that contribute to the error group.",
+          "Note: You can filter by the error groups ID field only when querying logs, for example, when you are using the Logs Explorer and Observability Analytics pages."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/troubleshooting",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command: gcloud logging write --payload-type = json test-errors-log \\ '{\"serviceContext\": {\"service\": \"manual-testing\"}, \"message\": \"Test Error\\n at /test.js:42:42\", \"context\": {\"httpRequest\": {\"url\": \"/test\",\"method\": \"GET\",\"responseStatusCode\": 500}}}' Go to the Logs Explorer page and search your log entries for Test Error .",
+          "Go to Error Reporting Go to the Logs Explorer page and verify that your application is writing log entries that have the expected format .",
+          "Go to Error Reporting Go to the Logs Explorer page and search your log entries for TestError ."
+        ]
+      },
+      {
+        "title": "Error Reporting overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On the Error Groups page, Error Reporting organizes and shows error groups based on the region of the log bucket that contains the log entries.",
+          "How error events are grouped When Error Reporting evaluates log entries to identify error events, it ignores log entries with the following conditions: Log entries written by App Engine standard environment that have a severity level lower than ERROR .",
+          "For example, an error group listed under us-central-1 contains only error logs that are part of a log bucket in us-central-1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "test.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting/docs/viewing-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+      ]
+    }
+  ]
+}

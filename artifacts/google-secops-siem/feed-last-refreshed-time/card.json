@@ -1,0 +1,132 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.070Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Feed last refreshed time",
+  "feature_slug": "feed-last-refreshed-time",
+  "summary": "The Feeds page now shows the last refreshed time for each feed.",
+  "extended_definition": "The Feeds page now shows the last refreshed time for each feed.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: The Last succeeded on column on the Feeds page shows the last time data was fetched successfully by that feed.",
+          "Last refreshed time: View the timestamp to see when the feed list was last updated.",
+          "View configured feeds The Feeds page shows all the feeds you've configured."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence Fusion Feed overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "source_id": "site-api-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It has also leveraged HTML smuggling to distribute ZIP files containing IMG files that contain LNK files and malware payloads.\", \"alias\": [ { \"name\": \"TA570 (Proofpoint)\" } ], \"first reference time\": { \"seconds\": \"1459085092\" }, \"last reference time\": { \"seconds\": \"1687392000\" }, \"industries affected\": [ \"Aerospace & Defense\", \"Agriculture\", \"Automotive\", \"Chemicals & Materials\", \"Civil Society & Non-Profits\", \"Construction & Engineering\", \"Education\", \"Energy & Utilities\", \"Financial Services\", \"Governments\", \"Healthcare\", \"Hospitality\", \"Insurance\", \"Legal & Professional Services\", \"Manufacturing\", \"Media & Entertainment\", \"Oil & Gas\", \"Pharmaceuticals\", \"Retail\", \"Technology\", \"Telecommunications\", \"Transportation\" ] } ], \"campaigns\": [ \"CAMP.23.007\" ], \"last updated time\": { \"seconds\": \"1695165683\", \"nanos\": 48000000 }, \"verdict info\": [ { \"source provider\": \"Mandiant Automated Intel\", \"confidence score\": 75 }, { \"verdict type\": \"ANALYST VERDICT\", \"confidence score\": 75 }, { \"source count\": 91, \"response count\": 1, \"verdict type\": \"PROVIDER ML VERDICT\", \"malicious count\": 1, \"ioc stats\": [ { \"ioc stats type\": \"MANDIANT SOURCES\", \"second level source\": \"Knowledge Graph\", \"quality\": \"HIGH CONFIDENCE\", \"malicious count\": 1, \"response count\": 1, \"source count\": 8 }, { \"ioc stats type\": \"MANDIANT SOURCES\", \"second level source\": \"Malware Analysis\", \"source count\": 4 }, { \"ioc stats type\": \"MANDIANT SOURCES\", \"second level source\": \"Spam Monitoring\", \"source count\": 1 }, { \"ioc stats type\": \"THIRD PARTY SOURCES\", \"second level source\": \"Crowdsourced Threat Analysis\", \"source count\": 71 }, { \"ioc stats type\": \"THIRD PARTY SOURCES\", \"first level source\": \"MISP\", \"second level source\": \"Trusted Software List\", \"source count\": 3 }, { \"ioc stats type\": \"THIRD PARTY SOURCES\", \"first level source\": \"Threat Intelligence Feeds\", \"second level source\": \"Digitalside It Hashes\", \"source count\": 1 }, { \"ioc stats type\": \"THIRD PARTY SOURCES\", \"first level source\": \"Threat Intelligence Feeds\", \"second level source\": \"Tds Harvester\", \"source count\": 1 }, { \"ioc stats type\": \"THIRD PARTY SOURCES\", \"first level source\": \"Threat Intelligence Feeds\", \"second level source\": \"Urlhaus\", \"source count\": 1 } ] }, { \"source provider\": \"Mandiant Analyst Intel\", \"confidence score\": 75, \"pwn\": true, \"pwn first tagged time\": { \"seconds\": \"1683911695\" } } ], \"last discovered time\": { \"seconds\": \"1683909854\" } } ], \"source type\": \"GLOBAL CONTEXT\", \"source labels\": [ { \"key\": \"is scanner\", \"value\": \"false\" }, { \"key\": \"osint\", \"value\": \"false\" }, { \"key\": \"misp akamai\", \"value\": \"false\" }, ... { \"key\": \"has pwn\", \"value\": \"2023-05-12T17:14:55.000+0000\" } ], \"event metadata\": { \"id\": \"\\\\000\\\\000\\\\000\\\\000\\\\034Z\\\\n\\\\2545\\\\237\\\\367\\\\353\\\\271\\\\357\\\\302\\\\215t\\\\330\\\\275\\\\237\\\\000\\\\000\\\\000\\\\000\\\\007\\\\000\\\\000\\\\000\\\\206\\\\000\\\\000\\\\000\", \"base labels\": { \"log types\": [ \"MANDIANT FUSION IOC\" ], \"allow scoped access\": true } } }, \"entity\": { \"file\": { \"sha256\": \"000bc5900dc7a32851e380f418cc178ff0910242ee0561ae37ff424e6d3ec64a\", \"md5\": \"f0095b0a7480c826095d9ffc9d5d2d8f\", \"sha1\": \"8101315b9fbbf6a72bddbfe64837d246f4c8b419\" }, \"labels\": [ { \"key\": \"is scanner\", \"value\": \"false\" }, { \"key\": \"osint\", \"value\": \"false\" }, { \"key\": \"misp akamai\", \"value\": \"false\" }, ... ] } } Complex conditions To use multiple fields in a context entity, you can combine multiple outcome variables to create more complex conditional logic.",
+          "The following example shows a Fusion Feed context entity as an initial reference point: { \"metadata\": { \"product entity id\": \"md5--147d19e6-cdae-57bb-b9a1-a8676265fa4c\", \"collected timestamp\": { \"seconds\": \"1695165683\", \"nanos\": 48000000 }, \"vendor name\": \"MANDIANT FUSION IOC\", \"product name\": \"MANDIANT FUSION IOC\", \"product version\": \"1710194393\", \"entity type\": \"FILE\", \"creation timestamp\": { \"seconds\": \"1710201600\" }, \"interval\": { \"start time\": { \"seconds\": \"1\" }, \"end time\": { \"seconds\": \"253402300799\" } }, \"threat\": [ { \"category details\": [ \"A phishing email message or the relevant headers from a phishing email.\" ], \"severity details\": \"HIGH\", \"confidence details\": \"75\", \"risk score\": 75, \"first discovered time\": { \"seconds\": \"1683294326\" }, \"associations\": [ { \"id\": \"threat-actor--3e5e6bdf-5b4e-5166-84fa-83045e637f23\", \"type\": \"THREAT ACTOR\", \"name\": \"UNC2633\" }, { \"id\": \"threat-actor--3e5e6bdf-5b4e-5166-84fa-83045e637f23\", \"country code\": [ \"unknown\" ], \"type\": \"THREAT ACTOR\", \"name\": \"UNC2633\", \"description\": \"UNC2633 is a distribution threat cluster that delivers emails containing malicious attachments or links that lead to malware payloads, primarily QAKBOT, but also SNOWCONE.GZIPLOADER (which leads to ICEDID) and MATANBUCHUS.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example SQL to query for specific IP-address IOC matches: -- Add your IP IOC Matches here DECLARE IP IOCS ARRAY < STRING > ; SET IP IOCS = [ '40.79.150.120' ]; ------ SELECT MIN ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS first observed , MAX ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS last observed , COUNT ( 4 ) AS hits , ioc value , feed log type , is global , CONCAT ( COALESCE ( asset . namespace , \"untagged\" ), \":\" , COALESCE ( asset . hostname , asset . asset ip address , asset . mac , \"-\" )) AS asset FROM datalake . ioc matches WHERE ioc value IN UNNEST ( IP IOCS ) AND ioc type = \"IOC TYPE IP\" GROUP BY 4 , 5 , 6 , 7 Here are the truncated results: Row first observed last observed hits ioc value feed log type is global asset 1 2025-02-23 2025-03-05 64 40.79.150.120 CATCH ALL false untagged:192.168.12.16 2 2025-02-27 2025-03-05 29 40.79.150.120 CATCH ALL false untagged:192.168.12.129 You can also query the datalake.events table for multi-dimensional IOC matching by constructing a concatenated string, for example: DECLARE IOC MULTIPLE ATTRIBUTES ARRAY < STRING > ; SET IOC MULTIPLE ATTRIBUTES = [ '1.2.3.4,80' , '1.2.3.4,443' ]; SELECT MIN ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS first seen , MAX ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS last seen , target ip , target . port FROM datalake . events , UNNEST ( target . ip ) target ip WHERE DATE ( hour time bucket ) BETWEEN DATE SUB ( CURRENT DATE , INTERVAL 60 DAY ) AND DATE SUB ( CURRENT DATE , INTERVAL 1 DAY ) AND target ip != \"\" AND target . port > 0 AND CONCAT ( target ip , \",\" , CAST ( target . port AS STRING )) IN UNNEST ( IOC MULTIPLE ATTRIBUTES ) GROUP BY 3 , 4 Note: The Google SecOps Data Lake typically retains data for six months.",
+          "The following threat-intelligence sources are available in Google SecOps out-of-box: Google SecOps Enterprise package Google SecOps Enterprise Plus package Enriched open-source intelligence (OSINT) Enriched open-source intelligence (OSINT) Mandiant Fusion VirusTotal Real-time and retroactive matching Google SecOps performs IOC matching in two ways: Real-time matching : when new security telemetry is ingested and normalized, it is immediately checked against all available IOC feeds.",
+          "To specify the date and time range using pre-set options, click the Range tab and select one of the following options: Today Last Hour Last 12 Hours Last Day Last Week Last 2 Weeks Last Month Last 2 Months Custom : select the start and end date on the calendar, and then click the Start time and End time fields to select the time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datalake.events"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ]
+}

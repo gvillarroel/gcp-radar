@@ -1,0 +1,114 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.165Z",
+  "source_step08_card": "data/step-08/current/products/error-reporting/card.json",
+  "product_name": "Error Reporting",
+  "product_slug": "error-reporting",
+  "feature_name": "Non-global log bucket analysis",
+  "feature_slug": "non-global-log-bucket-analysis",
+  "summary": "Error Reporting can analyze log entries routed to a non-global-region log bucket when the log sink is in the same project as the bucket.",
+  "extended_definition": "Error Reporting can analyze log entries routed to a non-global-region log bucket when the log sink is in the same project as the bucket.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/error-reporting",
+      "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+      "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Error Reporting overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When Error Reporting analyzes log entries Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled.",
+          "On the Error Groups page, Error Reporting organizes and shows error groups based on the region of the log bucket that contains the log entries.",
+          "Note: Because Error Reporting is a global service, error groups can be accessed from any region."
+        ]
+      },
+      {
+        "title": "Error Reporting overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting",
+        "source_id": "site-iam-reference",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When Error Reporting analyzes log entries Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled.",
+          "On the Error Groups page, Error Reporting organizes and shows error groups based on the region of the log bucket that contains the log entries.",
+          "Note: Because Error Reporting is a global service, error groups can be accessed from any region."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Error Reporting \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/error-reporting/docs/troubleshooting",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As a result: Error Reporting can analyze the log entries routed by the Default , Required , and logs-from-samples sinks because the log bucket is stored by the same project that routes the log entries.",
+          "Error Reporting can't analyze the log entries stored in the log bucket named test-logs because the sink in my-team-project routes the log entries to a log bucket in a different project.",
+          "Error Reporting is a global service built on Cloud Logging and can analyze log entries when all of the following are true: Assured workloads are disabled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting",
+        "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting",
+        "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting",
+        "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/error-reporting",
+        "https://docs.cloud.google.com/error-reporting/docs/grouping-errors",
+        "https://docs.cloud.google.com/error-reporting/docs/troubleshooting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Cloud Bigtable read/write rate console metrics",
+  "feature_slug": "cloud-bigtable-read-write-rate-console-metrics",
+  "summary": "The Cloud Console now shows graphs for rows read and rows written per second for Bigtable.",
+  "extended_definition": "The Cloud Console now shows graphs for rows read and rows written per second for Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can consult Cassandra server and client application metrics to get an approximate number of sustained reads and writes that have been executed.",
+          "In a blog post (2012) , Ilya Grigorik writes the following: \"An SSTable is a simple abstraction to efficiently store large numbers of key-value pairs while optimizing for high throughput, sequential read or write workloads.\" The following table outlines and describes shared concepts and the corresponding terminology that each product uses: Cassandra Bigtable primary key : a unique single or multi-field value that determines data placement and ordering. partition key : a single or multi-field value that determines data placement by consistent hash. clustering column : a single or multi-field value that determines the lexicographical data sorting within a partition. row key : a unique, single byte string that determines the placement of data by a lexicographical sort.",
+          "The following diagram shows how Bigtable physically separates the processing nodes from the storage layer: Figure 1 : Clients communicate through a routing layer to processing nodes, and then these nodes communicate with the storage layer."
+        ]
+      },
+      {
+        "title": "Set up client-side metrics \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View metrics in Bigtable monitoring Charts for the following client-side metrics are displayed on the Bigtable monitoring page: Client-side read latency Client-side write latency Client-side read attempt latency Client-side write attempt latency To view client-side metrics on the Monitoring page, follow these steps: Open the list of Bigtable instances in the Google Cloud console.",
+          "SdkMeterProviderBuilder meterProviderBuilder = SdkMeterProvider . builder (); // register client side metrics on your meter provider BuiltinMetricsView . registerBuiltinMetrics ( \"my-project-id\" , meterProviderBuilder ); // register other metric reader and views meterProviderBuilder . registerMetricReader (). registerView (); // create the OTEL instance OpenTelemetry openTelemetry = OpenTelemetrySdk . builder () . setMeterProvider ( meterProviderBuilder . build ()) . build (); // Override MetricsProvider in BigtableDataSettings BigtableDataSettings settings = BigtableDataSettings . newBuilder () . setProjectId ( \"my-project-id\" ) . setInstanceId ( \"my-instance-id\" ) . setMetricsProvider ( CustomOpenTelemetryMetricsProvider . create ( openTelemetry )) . build (); try ( BigtableDataClient client = BigtableDataClient . create ( settings )) { // Application logic } Optional: Opt out of client-side metrics If you are using version 2.38.0 and later, you can opt out of using client-side metrics.",
+          "Optional: Opt out of client-side metrics You can opt out of using client-side metrics. const bigtable = new Bigtable ({ metricsEnabled : false }); View metrics in Metrics Explorer In the Google Cloud console, go to the Metrics Explorer page."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use counters instead of continuous materialized views for the following: Aggregations that don't require filters and don't need to be across rows If you need to immediately read your writes from the cluster they are written to Use continuous materialized views when you want to do the following: Generate a different key for queries against your aggregations See changes to the base table reflected in your aggregations Automatically combine data across multiple rows Use a combination of counters and continuous materialized views for use cases like when you want to do the following: Capture fresh metrics in an aggregate cell but keep historical rollups of those metrics Combine metrics in a continuous materialized view Resource provisioning and performance Ongoing processing for continuous materialized views occurs as a low-priority background job.",
+          "Bigtable metrics for requests per second, latency, and throughput are generated when you read a continuous materialized view using the Data API's ReadRows method.",
+          "Read and write latency are unaffected : A continuous materialized view has minimal impact on performance on the source table when the instance's clusters are adequately provisioned or use autoscaling."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/client-side-metrics-setup",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.874Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions",
+  "feature_name": "Go 1.13 runtime",
+  "feature_slug": "go-1-13-runtime",
+  "summary": "The Go 1.13 runtime lets functions run on Go 1.13.",
+  "extended_definition": "The Go 1.13 runtime lets functions run on Go 1.13.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+      "https://docs.cloud.google.com/functions/docs/troubleshooting",
+      "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Direct VPC egress for 2nd gen functions \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "source_id": "site-iam-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "BACKEND URL ; if ( ! backendUrl ) { console . error ( 'BACKEND URL environment variable not set.' ); res . status ( 500 ). send ( 'BACKEND URL not configured.' ); return ; } try { const metadataServerURL = 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience=' ; const tokenUrl = metadataServerURL + backendUrl ; const tokenResponse = await axios . get ( tokenUrl , { headers : { 'Metadata-Flavor' : 'Google' , }, }); const token = tokenResponse . data ; const response = await axios . get ( backendUrl , { headers : { Authorization : bearer ${ token } , }, }); res . status ( 200 ). send ( Response from backend: ${ response . data } ); } catch ( error ) { console . error ( Error calling backend service: ${ error . message } ); res . status ( 500 ). send ( Error calling backend: ${ error . message } ); } }; functions . http ( 'callVPCService' , callVPCService ); Deploy the function with Direct VPC egress configured to route all traffic to your default VPC network: gcloud functions deploy my-2ndgen-function \\ --source . \\ --runtime nodejs20 \\ --trigger-http \\ --entry-point callVPCService \\ --network = default \\ --subnet = default \\ --direct-vpc-egress = all \\ --region = REGION \\ --allow-unauthenticated \\ --set-env-vars BACKEND URL = BACKEND URL Replace the following: REGION : the region where you deployed the backend service.",
+          "Configure Direct VPC egress Configure Direct VPC egress for new or existing 2nd gen functions. gcloud To configure Direct VPC egress when you deploy a function, use the gcloud functions deploy command with flags for your network settings. gcloud functions deploy FUNCTION NAME \\ --source . \\ --runtime RUNTIME \\ --trigger-http \\ --region REGION \\ --network = NETWORK \\ --subnet = SUBNET \\ --network-tags = NETWORK TAG NAMES \\ --direct-vpc-egress = EGRESS SETTING Replace the following: FUNCTION NAME : the name of your function.",
+          "Configure Direct VPC egress for 2nd gen functions Direct VPC egress lets you route traffic from your Cloud Run functions (2nd gen) function directly to your VPC network."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "source_id": "site-iam-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "The error message gcloud ERROR: (gcloud.functions.deploy) ResponseError: status=[404], code=[Ok], message=[Service account projects/-/serviceAccounts/ PROJECT NUMBER -compute@developer.gserviceaccount.com was not found.] The solution To resolve this issue, follow any of these solutions: Specify a user managed runtime service account before deploying your function.",
+          "In environments where multiple functions are accessing different resources, it's a common practice to use per-function identities with named runtime service accounts rather than the default runtime service account ( PROJECT NUMBER -compute@developer.gserviceaccount.com ).",
+          "Default runtime service account doesn't exist When you don't specify a user-managed runtime service account , Cloud Functions uses the default compute service account as the runtime service account."
+        ]
+      },
+      {
+        "title": "\"Terraform Pub/Sub Tutorial \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Here is the main.tf file: terraform { required providers { google = { source = \"hashicorp/google\" version = \">= 4.34.0\" } } } resource \"random id\" \"bucket prefix\" { byte length = 8 } resource \"google service account\" \"default\" { account id = \"test-gcf-sa\" display name = \"Test Service Account\" } resource \"google pubsub topic\" \"default\" { name = \"functions2-topic\" } resource \"google storage bucket\" \"default\" { name = \"${random id.bucket prefix.hex}-gcf-source\" # Every bucket name must be globally unique location = \"US\" uniform bucket level access = true } data \"archive file\" \"default\" { type = \"zip\" output path = \"/tmp/function-source.zip\" source dir = \"function-source/\" } resource \"google storage bucket object\" \"default\" { name = \"function-source.zip\" bucket = google storage bucket.default.name source = data.archive file.default.output path # Path to the zipped function source code } resource \"google cloudfunctions2 function\" \"default\" { name = \"function\" location = \"us-central1\" description = \"a new function\" build config { runtime = \"nodejs22\" entry point = \"helloPubSub\" # Set the entry point environment variables = { BUILD CONFIG TEST = \"build test\" } source { storage source { bucket = google storage bucket.default.name object = google storage bucket object.default.name } } } service config { max instance count = 3 min instance count = 1 available memory = \"256M\" timeout seconds = 60 environment variables = { SERVICE CONFIG TEST = \"config test\" } ingress settings = \"ALLOW INTERNAL ONLY\" all traffic on latest revision = true service account email = google service account.default.email } event trigger { trigger region = \"us-central1\" event type = \"google.cloud.pubsub.topic.v1.messagePublished\" pubsub topic = google pubsub topic.default.id retry policy = \"RETRY POLICY RETRY\" } } Initialize Terraform In the terraform-docs-samples/functions/pubsub directory containing the main.tf file, run this command to add the necessary plugins and build the .terraform directory: terraform init Validate the Terraform configuration Preview the Terraform configuration.",
+          "Terraform is an open source tool that lets you provision Google Cloud resources with declarative configuration files This tutorial uses a Node.js function as an example, but it also works with Python, Go, and Java functions.",
+          "When prompted, enter yes : terraform apply Triggering the function To test the Pub/Sub function: Publish a message to the topic (in this example, the topic name is functions2-topic ): gcloud pubsub topics publish TOPIC NAME --message=\"Friend\" Read the function logs to see the result, where FUNCTION NAME is the name of your function (in this example, the function name is function ): gcloud functions logs read FUNCTION NAME You should see logging output that includes your new \"Friend\" message."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.default.email",
+      "bucket.default.name",
+      "data.archive",
+      "developer.gserviceaccount.com",
+      "file.default.output",
+      "gcloud.functions.deploy",
+      "github.com",
+      "iam.serviceAccounts.actAs",
+      "id.bucket",
+      "index.js",
+      "main.tf",
+      "metadata.google.internal",
+      "object.default.name",
+      "package.json",
+      "prefix.hex",
+      "projects.locations.functions",
+      "samples.git",
+      "source.zip",
+      "topic.default.id"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/troubleshooting",
+        "https://docs.cloud.google.com/functions/docs/tutorials/terraform-pubsub"
+      ]
+    }
+  ]
+}

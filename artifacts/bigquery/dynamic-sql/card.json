@@ -1,0 +1,89 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Dynamic SQL",
+  "feature_slug": "dynamic-sql",
+  "summary": "Dynamic SQL lets BigQuery generate and execute SQL statements at runtime with EXECUTE IMMEDIATE; BigQuery supports dynamic SQL to generate and execute SQL statements at runtime.",
+  "extended_definition": "Dynamic SQL lets BigQuery generate and execute SQL statements at runtime with EXECUTE IMMEDIATE; BigQuery supports dynamic SQL to generate and execute SQL statements at runtime.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Conditional expressions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Conditional expressions Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports conditional expressions."
+        ]
+      },
+      {
+        "title": "Approximate aggregate functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/approximate_aggregate_functions",
+        "source_id": "site-docs-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Approximate aggregate functions Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports approximate aggregate functions."
+        ]
+      },
+      {
+        "title": "Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/operators",
+        "source_id": "site-docs-root",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Operators Stay organized with collections Save and categorize content based on your preferences.",
+          "GoogleSQL for BigQuery supports operators."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.pandas"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

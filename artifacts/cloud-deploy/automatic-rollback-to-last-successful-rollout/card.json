@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.039Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy",
+  "feature_name": "Automatic rollback to last successful rollout",
+  "feature_slug": "automatic-rollback-to-last-successful-rollout",
+  "summary": "Automatic rollback restores deployment state to the most recent successful rollout when a rollout fails.",
+  "extended_definition": "Automatic rollback restores deployment state to the most recent successful rollout when a rollout fails.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/automation",
+      "https://docs.cloud.google.com/deploy/docs/automation-rules",
+      "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Automate your deployment \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/automation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Actions you can automate In Cloud Deploy, you can automate the following release and rollout activities: Promote a release automatically You can configure Cloud Deploy to promote your release automatically, upon a successful rollout to a target.",
+          "If all retries fail (or none are configured), a new rollout is created to rollback to the most recent successful release on the target.",
+          "For example, if you have three targets, dev , staging , and prod , you can configure an automation such that the release is promoted to prod , without further human interaction, upon a successful deployment into staging ."
+        ]
+      },
+      {
+        "title": "Using automation rules \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/automation-rules",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available automation rules The following automation rules are available in Cloud Deploy: Rule Description timedPromoteReleaseRule Automatically promote from one target to the next based on a cron schedule. promoteReleaseRule Automatically promotes a release into the indicated target after successful rollout in the previous target in the progression. advanceRolloutRule Automatically advances a rollout from the indicated phase to the next phase. repairRolloutRule Automatically retry the failed job or jobs in the rollout a specified number of times, and roll back if all retries fail.",
+          "Configure an advanceRolloutRule automation rule The advanceRolloutRule advances your rollout, automatically, after successful completion of one phase, into the next phase.",
+          "If all retry attempts fail, a rollback is started by creating a new rollout to deploy the target's most recent successful release to that target."
+        ]
+      },
+      {
+        "title": "\"Package types (2.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/clouddeploy/latest/google.cloud.deploy_v1.types",
+        "source_id": "site-python-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AdvanceRolloutRule The AdvanceRollout automation rule will automatically advance a successful Rollout to the next phase.",
+          "Setting any member of the oneof automatically clears all other members. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields CanaryDeployment CanaryDeployment represents the canary deployment configuration CancelAutomationRunRequest The request object used by CancelAutomationRun .",
+          "Setting any member of the oneof automatically clears all other members. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields RepairRolloutOperation Contains the information for an automated repair rollout operation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "fields.html",
+      "python.readthedocs.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

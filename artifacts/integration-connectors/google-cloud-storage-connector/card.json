@@ -1,0 +1,178 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.917Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors",
+  "feature_name": "Google Cloud Storage connector",
+  "feature_slug": "google-cloud-storage-connector",
+  "summary": "Provides a connector for Google Cloud Storage.",
+  "extended_definition": "Provides a connector for Google Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/storage.admin A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Before you begin Before using the Cloud Storage connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.",
+          "Cloud Storage The Google Cloud Storage connector lets you connect to a Google Cloud Storage and perform file transfer operations."
+        ]
+      },
+      {
+        "title": "\"Azure Data Lake Storage \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shared Access Signature connection type Fieldname Details Location us-central1 Connector azuredatalakestorage Connector version 1 Connection Name adls-gen2-conn-public Enable Cloud Logging Yes Service Account account@my-project.iam.gserviceaccount.com Account google-cloud-dslgen3 Directory directory File System container Include Sub Directories No Minimum number of nodes 2 Maximum number of nodes 50 Shared Access Signature SHARED ACCESS SIGNATURE Secret Version 1 Account access key connection type Fieldname Details Location us-central1 Connector azuredatalakestorage Connector version 1 Connection Name azure-data-lake-conn Enable Cloud Logging Yes Service Account account@my-project.iam.gserviceaccount.com Account google-cloud-dslgen3 Directory north-america File System container Include Sub Directories No Minimum number of nodes 2 Maximum number of nodes 50 Account Access key ACCOUNT ACCESS KEY Secret Version 1 JWT authentication connection type Fieldname Details Location us-central1 Connector azuredatalakestorage Connector version 1 Connection Name adls-gen2-jwt-conn Enable Cloud Logging Yes Service Account account@my-project.iam.gserviceaccount.com Account your-adls-account-name Directory north-america File System data-lake-container Include Sub Directories Yes Minimum number of nodes 2 Maximum number of nodes 50 Authentication type JWT Authentication Client ID CLIENT ID Private Key PRIVATE KEY SECRET Private Key Password PRIVATE KEY PASSWORD SECRET Secret Version (for Private Key) 1 Secret Version (for Private Key Password) 1 Entities, operations, and actions All the Integration Connectors provide a layer of abstraction for the objects of the connected application.",
+          "Before you begin Before using the Azure Data Lake Storage connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"Path\" : \"testblob\" , \"RenameTo\" : \"testblob6\" } If the action is successful, the RenameObject task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"Success\" : true }] Entity operation examples This section shows how to perform some of the entity operations in this connector."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for SQL Server \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This section provides actions available in this connector.",
+          "In the Task Input section of the Connectors task, click connectorInputPayload and then enter a value similar to the following in the Default Value field: { \"ID\": 3 } If the action is successful, the connector task's connectorOutputPayload response parameter will have a value similar to the following: [{ \"ID\": 3, \"Name\": \"Charlie\", \"City\": \"Paris\", \"SALARY\": 6500.0, \"Department\": \"IT\" }] Entity operation examples This section provides examples of entity operations available in this connector.",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL for PostgreSQL \\_|\\_ Integration Connectors \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported data types The following are the supported data types for this connector: BIGINT BINARY BIT BOOLEAN CHAR DATE DECIMAL DOUBLE FLOAT INTEGER LONGN VARCHAR LONG VARCHAR NCHAR NUMERIC NVARCHAR REAL SMALL INT TIME TIMESTAMP TINY INT VARBINARY VARCHAR Actions This connector supports execution of the following actions: User-defined stored procedures and functions.",
+          "Grant the following IAM roles to the service account that you want to use for the connector: roles/secretmanager.viewer roles/secretmanager.secretAccessor roles/cloudsql.editor A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs.",
+          "Supported versions PostgreSQL versions 7.4 and later TimescaleDB Before you begin Before using the Cloud SQL for PostgreSQL connector, do the following tasks: In your Google Cloud project: Ensure that network connectivity is set up."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.editor",
+      "project.iam.gserviceaccount.com",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudsql.editor",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudstorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuredatalakestorage/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforsqlserver/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/cloudsqlforpostgresql/configure"
+      ]
+    }
+  ]
+}

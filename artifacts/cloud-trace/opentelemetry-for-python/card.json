@@ -1,0 +1,136 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.166Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace",
+  "feature_name": "OpenTelemetry for Python",
+  "feature_slug": "opentelemetry-for-python",
+  "summary": "Cloud Trace supports the generally available OpenTelemetry library for Python applications.",
+  "extended_definition": "Cloud Trace supports the generally available OpenTelemetry library for Python applications.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+      "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+      "https://docs.cloud.google.com/trace/docs/setup/python",
+      "https://docs.cloud.google.com/trace/docs/setup/python-ot"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Python instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/python-ot",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To generate metrics and traces for the HTTP client and server, the example app installs the opentelemetry-instrumentation-flask and opentelemetry-instrumentation-requests instrumentation libraries: logger = logging . getLogger ( name ) Initialize OpenTelemetry Python SDK and structured logging setup opentelemetry () setup structured logging () app = Flask ( name ) Add instrumentation FlaskInstrumentor () . instrument app ( app ) RequestsInstrumentor () . instrument () The app has two endpoints: The /multi endpoint is handled by the multi function.",
+          "Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure structured logging Configure OpenTelemetry This example app is configured to use the OpenTelemetry Python SDK to export traces and metrics by using the OTLP protocol .",
+          "The following code sample illustrates how to configure the standard logging library to output JSON structured logs using the python-json-logger library, and how to use the opentelemetry-instrumentation-logging package to include trace information. class JsonFormatter ( jsonlogger ."
+        ]
+      },
+      {
+        "title": "Python instrumentation sample \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/setup/python",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To generate metrics and traces for the HTTP client and server, the example app installs the opentelemetry-instrumentation-flask and opentelemetry-instrumentation-requests instrumentation libraries: logger = logging . getLogger ( name ) Initialize OpenTelemetry Python SDK and structured logging setup opentelemetry () setup structured logging () app = Flask ( name ) Add instrumentation FlaskInstrumentor () . instrument app ( app ) RequestsInstrumentor () . instrument () The app has two endpoints: The /multi endpoint is handled by the multi function.",
+          "Instrument your app to collect traces, metrics, and logs To instrument your app to collect trace and metric data and to write structured JSON to standard out, perform the following steps as described in subsequent sections of this document: Configure OpenTelemetry Configure structured logging Configure OpenTelemetry This example app is configured to use the OpenTelemetry Python SDK to export traces and metrics by using the OTLP protocol .",
+          "The following code sample illustrates how to configure the standard logging library to output JSON structured logs using the python-json-logger library, and how to use the opentelemetry-instrumentation-logging package to include trace information. class JsonFormatter ( jsonlogger ."
+        ]
+      },
+      {
+        "title": "\"Migrate from the Trace exporter to the OTLP endpoint \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a Python application that uses gRPC for export, add the following imports: from opentelemetry import trace from opentelemetry.exporter.otlp.proto.grpc.trace exporter import ( OTLPSpanExporter , ) Also, update the initialization code to configure the TraceProvider with the gRPC exporter: Initialize OpenTelemetry with OTLP exporters channel creds: configure Application Default Credentials trace provider = TracerProvider ( resource = resource ) processor = BatchSpanProcessor ( OTLPSpanExporter ( credentials = channel creds , endpoint = \"https://telemetry.googleapis.com:443/v1/traces\" , ) ) trace provider . add span processor ( processor ) trace . set tracer provider ( trace provider ) tracer = trace . get tracer ( \"my.tracer.name\" ) Node.js This section illustrates changes that you need to make when using gRPC for export.",
+          "For a Go application that uses gRPC for export, update the go.mod file to include the following dependency: require ( // ... go . opentelemetry . io / otel / exporters / otlp / otlptrace / otlptracegrpc v1 .38.0 ) Python This section illustrates changes that you need to make tp your dependencies when using gRPC for export.",
+          "Why you should migrate The OpenTelemetry SDKs generate log, metric, and trace data in in a format that is generally consistent with the proto files defined by the OpenTelemetry OTLP Protocol ."
+        ]
+      },
+      {
+        "title": "Storage schema for trace data \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/trace-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 216,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "That API doesn't validate that the data conforms to the declared schema. apphub record without repeated fields Application-specific labels are available when trace spans are generated by App Hub applications, when those applications run on supported infrastructure or have been instrumented .",
+          "The format of the data is generally consistent with the proto files defined by the OpenTelemetry OTLP Protocol .",
+          "The Cloud Trace API doesn't use the OpenTelemetry OTLP Protocol and defines a proprietary data format."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "go.mod",
+      "my.tracer.name",
+      "opentelemetry.exporter.otlp.proto.grpc.trace",
+      "telemetry.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/python-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/python",
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/python-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/python",
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/python-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/python",
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/setup/python-ot",
+        "https://docs.cloud.google.com/trace/docs/setup/python",
+        "https://docs.cloud.google.com/trace/docs/migrate-to-otlp-endpoints",
+        "https://docs.cloud.google.com/trace/docs/reference/trace-schema"
+      ]
+    }
+  ]
+}

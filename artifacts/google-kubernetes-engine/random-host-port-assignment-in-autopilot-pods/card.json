@@ -1,0 +1,205 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:59.132Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine",
+  "feature_name": "Random host port assignment in Autopilot Pods",
+  "feature_slug": "random-host-port-assignment-in-autopilot-pods",
+  "summary": "GKE Autopilot now supports exposing randomly assigned host ports in Pods.",
+  "extended_definition": "GKE Autopilot now supports exposing randomly assigned host ports in Pods.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 166,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can manually set up random host port assignment from a known range to support direct-connection networking applications such as game servers.",
+          "Pod-level security policy enforcement Autopilot supports enforcement mechanisms for Pod-level security policies such as the PodSecurity admission controller , Gatekeeper , or Policy Controller .",
+          "Volume types Autopilot allows only the volume types in the Restricted policy with the following additions: HostPath volumes with read-only access to /var/log for debugging, gcePersistentDisk for Compute Engine persistent disks, and nfs for network file system volumes."
+        ]
+      },
+      {
+        "title": "\"Disable the kubelet read-only port in GKE clusters \\_|\\_ GKE security \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port",
+        "source_id": "site-iam-reference",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To update this Pod to use the secure port 10250 , do the following steps: Create a ClusterRole with access to get node metrics: apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : curl-authenticated-role rules : Grant access to read node metrics in the cluster. - apiGroups : - \"\" resources : - nodes/metrics verbs : - get Bind the ClusterRole to your application's identity: apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRoleBinding metadata : name : curl-authenticated-role-binding roleRef : apiGroup : rbac.authorization.k8s.io kind : ClusterRole name : curl-authenticated-role Bind the ClusterRole to the default ServiceAccount in the default namespace. subjects : - kind : ServiceAccount name : default namespace : default Update the curl command to use the secure port endpoint with the corresponding authorization headers: apiVersion : v1 kind : Pod metadata : name : kubelet-authenticated-example spec : restartPolicy : Never containers : - name : kubelet-readonly-example image : us-docker.pkg.dev/cloud-builders/ga/v1/curl:latest env : - name : NODE ADDRESS valueFrom : fieldRef : fieldPath : status.hostIP Update the command to send a request with the ServiceAccount credentials in the header. command : - sh - -c - 'curl -s --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -H \"Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)\" https://${NODE ADDRESS}:10250/metrics' Modify VPC firewall rules If you update workloads to use port 10250 , create firewall rules so that Pods in the cluster can reach the port in your node IP address ranges.",
+          "If your workload uses the /pods endpoint on the insecure kubelet read-only port, you need to grant the nodes/proxy RBAC permission to access the endpoint on the secure kubelet port. nodes/proxy is a powerful permission that you can't grant in GKE Autopilot clusters and that you shouldn't grant in GKE Standard clusters.",
+          "Save the following manifest as read-only-port-metrics.yaml : Create a namespace for the DaemonSet that checks for port usage. apiVersion : v1 kind : Namespace metadata : name : node-metrics-printer-namespace --- Grant access to read node metrics in the cluster. apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : name : node-metrics-printer-role rules : - apiGroups : - \"\" resources : - nodes/metrics verbs : - get --- apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRoleBinding metadata : name : node-metrics-printer-binding roleRef : apiGroup : rbac.authorization.k8s.io kind : ClusterRole name : node-metrics-printer-role Bind the ClusterRole to the ServiceAccount that the DaemonSet will use. subjects : - kind : ServiceAccount name : node-metrics-printer-sa namespace : node-metrics-printer-namespace --- Create a ServiceAccount for the DaemonSet. apiVersion : v1 kind : ServiceAccount metadata : name : node-metrics-printer-sa namespace : node-metrics-printer-namespace --- apiVersion : apps/v1 kind : DaemonSet metadata : name : node-metrics-printer namespace : node-metrics-printer-namespace spec : selector : matchLabels : app : node-metrics-printer template : metadata : labels : app : node-metrics-printer spec : Assign the ServiceAccount to the DaemonSet. serviceAccountName : node-metrics-printer-sa containers : - name : metrics-printer image : us-docker.pkg.dev/cloud-builders/ga/v1/curl:latest command : [ \"sh\" , \"-c\" ] Call the /metrics endpoint using the insecure kubelet read-only port. args : - 'while true; do curl -s --cacert \"${CA CERT}\" -H \"Authorization: Bearer $(cat ${TOKEN FILE})\" \"https://${NODE ADDRESS}:10250/metrics\" grep kubelet http requests total; sleep 20; done' env : Provide credentials and the IP address for the command. - name : CA CERT value : /var/run/secrets/kubernetes.io/serviceaccount/ca.crt - name : TOKEN FILE value : /var/run/secrets/kubernetes.io/serviceaccount/token - name : NODE ADDRESS valueFrom : fieldRef : fieldPath : status.hostIP This manifest does the following: Creates a namespace and sets up RBAC roles to allow reading node metrics."
+        ]
+      },
+      {
+        "title": "Deploy GPU workloads in Autopilot \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "GPU use cases in Autopilot You can allocate GPUs to containers in Autopilot Pods to facilitate workloads such as the following: Machine learning (ML) inference ML training Rendering Supported GPU quantities When you request GPUs in your Pod specification, you must use the following quantities based on the GPU type: GPU quantities NVIDIA B200 (180GB) nvidia-b200 8 NVIDIA H200 (141GB) nvidia-h200-141gb 8 NVIDIA H100 Mega (80GB) nvidia-h100-mega-80gb 8 NVIDIA H100 (80GB) nvidia-h100-80gb 1, 2, 4, 8 NVIDIA A100 (80GB) nvidia-a100-80gb 1, 2, 4, 8 NVIDIA A100 (40GB) nvidia-tesla-a100 1, 2, 4, 8, 16 NVIDIA RTX PRO 6000 nvidia-rtx-pro-6000 1, 2, 4, 8 NVIDIA L4 nvidia-l4 1, 2, 4, 8 NVIDIA T4 nvidia-tesla-t4 1, 2, 4 Note: Autopilot supports the smaller machine shapes of 1, 2, and 4 GPUs for NVIDIA H100 (80GB) GPUs on version 1.31.4-gke.1072000 or later.",
+          "Ensure that you have a GKE Autopilot cluster running one of the following versions to use the following GPUs or features: NVIDIA B200 (180 GB) GPUs: 1.32.2-gke.1422000 or later NVIDIA H200 (141GB) GPUs: 1.31.4-gke.1183000 or later NVIDIA H100 Mega (80GB) GPUs: 1.28.9-gke.1250000 or later, and 1.29.4-gke.1542000 or later NVIDIA H100 (80GB) GPUs: 1.28.6-gke.1369000 or later, and 1.29.1-gke.1575000 or later NVIDIA RTX PRO 6000 GPUs: 1.34.1-gke.1829001 or later (except for G4 machine types that have less than one GPU, see the limitations ) Multiple GPU Pods per VM: 1.29.2-gke.1355000 or later Other GPUs: all supported versions Note: For GKE Sandbox GPU clusters, see GPU model support for gVisor compatibility.",
+          "Accelerator compatibility with GKE capabilities The following table shows the compatible GKE capabilities for each method of selecting accelerators in GKE Autopilot: Accelerator compute class selected Compatibility with GKE capabilities Spot Pods Compute flexible committed use discounts (CUDs) for the Autopilot premium Compute Engine CUDs for the node hardware Compute Engine capacity reservations GKE Sandbox Spot Pods Autopilot committed use discounts (CUDs) for regular Pods Caution: Autopilot committed use discounts (CUDs) are no longer available for purchase."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.crt",
+      "container.googleapis.com",
+      "docker.pkg.dev",
+      "gke.1072000",
+      "gke.1183000",
+      "gke.1250000",
+      "gke.1355000",
+      "gke.1369000",
+      "gke.1422000",
+      "gke.1542000",
+      "gke.1575000",
+      "gke.1829001",
+      "kubernetes.io",
+      "metadata.name",
+      "metadata.namespace",
+      "metrics.yaml",
+      "rbac.authorization.k8s.io",
+      "status.hostIP"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/disable-kubelet-readonly-port"
+      ]
+    }
+  ]
+}

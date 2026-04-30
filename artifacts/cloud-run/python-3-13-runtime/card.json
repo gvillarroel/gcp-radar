@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.706Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "Python 3.13 runtime",
+  "feature_slug": "python-3-13-runtime",
+  "summary": "Cloud Run supports the Python 3.13 runtime for deployed workloads; Cloud Run supports the Python 3.13 runtime for deployed workloads.",
+  "extended_definition": "Cloud Run supports the Python 3.13 runtime for deployed workloads; Cloud Run supports the Python 3.13 runtime for deployed workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+      "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+      "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Cloud Run Admin API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Quickstart: build and create a Python job in Cloud Run \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+        "source_id": "site-docs-reference-2",
+        "final_score": 32,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Success: You created and executed a job using the Python runtime in Cloud Run.",
+          "Build and create a Python job in Cloud Run Learn how to create a simple Cloud Run job, then deploy from source, which automatically packages your code into a container image, uploads the container image to Artifact Registry, and then deploys to Cloud Run.",
+          "Execute a job in Cloud Run To execute the job you just created: gcloud run jobs execute job-quickstart --region REGION Replace REGION with the region you used when you created and deployed the job, for example europe-west1 ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Build and deploy a Python (LangChain) web app to Cloud Run \\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+        "source_id": "site-docs-reference-2",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write the sample application To write an application in Python: Create a new directory named langchain-gemini-fastapi-app and change directory into it: mkdir langchain-gemini-fastapi-app cd langchain-gemini-fastapi-app Create a file named main.py and paste the following code into it: import os import uvicorn from fastapi import FastAPI , HTTPException from pydantic import BaseModel from langchain google genai import ChatGoogleGenerativeAI from langchain core.prompts import ChatPromptTemplate from langchain core.output parsers import StrOutputParser Initialize FastAPI app = FastAPI ( title = \"LangChain Gemini Cloud Run App\" ) 1.",
+          "Define Endpoint @app . post ( \"/chat\" ) async def chat ( request : QueryRequest ): try : response = await chain . ainvoke ({ \"topic\" : request . topic }) return { \"response\" : response } except Exception as e : raise HTTPException ( status code = 500 , detail = str ( e )) @app . get ( \"/\" ) def health check (): return { \"status\" : \"ok\" , \"service\" : \"Gemini-FastAPI\" } Create a file named requirements.txt and paste the following code into it: fastapi uvicorn langchain langchain-google-genai python-dotenv Deploy to Cloud Run from source Deploy from source automatically builds a container image from source code and deploys it.",
+          "If you are under a domain restriction organization policy restricting unauthenticated invocations for your project, you will need to access your deployed service as described under Testing private services ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.output",
+      "core.prompts",
+      "main.py",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/build-create-python",
+        "https://docs.cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-langchain-service",
+        "https://docs.cloud.google.com/run/docs/reference/authenticate-to-cloud-run-api"
+      ]
+    }
+  ]
+}

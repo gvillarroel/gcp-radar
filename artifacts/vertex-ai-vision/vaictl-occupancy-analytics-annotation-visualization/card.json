@@ -1,0 +1,176 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.114Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-vision/card.json",
+  "product_name": "Vertex AI Vision",
+  "product_slug": "vertex-ai-vision",
+  "feature_name": "vaictl Occupancy Analytics annotation visualization",
+  "feature_slug": "vaictl-occupancy-analytics-annotation-visualization",
+  "summary": "Visualization in vaictl now supports rendering Occupancy Analytics model annotations.",
+  "extended_definition": "Visualization in vaictl now supports rendering Occupancy Analytics model annotations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vision-ai/docs/audit-logging",
+      "https://docs.cloud.google.com/vision-ai/docs/build-app",
+      "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+      "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an occupancy analytics app with BigQuery forecasting \\_|\\_ Vertex\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enter the following Google Standard SQL query in the Query editor text area: CREATE VIEW PROJECT ID . occupancy dataset . forecast training data AS ( WITH raw counts AS ( SELECT FROM ( SELECT TIMESTAMP TRUNC ( PARSE TIMESTAMP ( '\"%Y-%m-%dT%H:%M:%E SZ\"' , JSON QUERY ( annotation , \"$.currentTime\" )), MINUTE ) AS currentTime , CAST ( JSON QUERY ( annotation , '$.stats.fullFrameCount[0].count' ) AS INT64 ) AS count , JSON QUERY ( annotation , '$.stats.fullFrameCount[0].entity.labelString' ) AS type FROM PROJECT ID . occupancy dataset . occupancy dataset table ) WHERE count IS NOT NULL ) SELECT currentTime , SUM ( count ) AS total count , type FROM raw counts GROUP BY currentTime , type ) Click Run .",
+          "Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.",
+          "Enter the following Google Standard SQL query in the Query editor text area: SELECT FROM ( SELECT TIMESTAMP TRUNC ( PARSE TIMESTAMP ( '\"%Y-%m-%dT%H:%M:%E SZ\"' , JSON QUERY ( annotation , \"$.currentTime\" )), MINUTE ) currentTime , CAST ( JSON QUERY ( annotation , '$.stats.fullFrameCount[0].count' ) AS INT64 ) AS count , JSON QUERY ( annotation , '$.stats.fullFrameCount[0].entity.labelString' ) AS type FROM PROJECT ID . occupancy dataset . occupancy dataset table ) WHERE count IS NOT NULL Optional: To change the data processing location, click More , then Query settings ."
+        ]
+      },
+      {
+        "title": "\"Create an occupancy count app with remote streaming input \\_|\\_ Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download the vaictl command-line tool In the SSH-in-browser window, download the Vertex AI Vision ( vaictl ) command-line tool using the following command: wget https://github.com/google/visionai/releases/download/v0.0.5/visionai 0.0-5 amd64.deb Install the command-line tool by running the following command: sudo apt install ./visionai 0.0-5 amd64.deb You can test the installation by running the following command: vaictl --help Ingest a video file into your app After you set up your VM environment, you can copy a sample video file and then use vaictl to stream the video data to your occupancy count app.",
+          "If you use the --loop flag, the video is looped into the stream until you stop the command: vaictl -p PROJECT ID \\ -l LOCATION ID \\ -c application-cluster-0 \\ --service-endpoint visionai.googleapis.com \\ send video-file to streams ' occupancy-count-stream ' --file-path LOCAL FILE.EXT --loop It might take 100 seconds between starting the vaictl ingest operation and the video appearing in the dashboard.",
+          "Costs In this document, you use the following billable components of Google Cloud: Vertex AI Vision (Streams - Data ingested, Streams - Data consumed, Models - Occupancy analytics suite, Warehouse - Video storage) Compute Engine To generate a cost estimate based on your projected usage, use the pricing calculator ."
+        ]
+      },
+      {
+        "title": "Build an application \\_|\\_ Vertex AI Vision \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported models The following models offer Cloud Run functions event generation and Pub/Sub event notification integrations: Occupancy analytics model Vertex AI custom-trained models Configure Cloud Run functions to process model output To trigger event-based notifications, you must first set up Cloud Run functions to process model output and generate events.",
+          "Console The following sample adds available annotations ( STREAM ANNOTATION TYPE ACTIVE ZONE and STREAM ANNOTATION TYPE CROSSING LINE ) to an occupancy count model .",
+          "HTTP method and URL: POST https://visionai.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION ID /applications/ APPLICATION ID :addStreamInput Request JSON body: { \"applicationStreamInputs\": [ { \"streamWithAnnotation\": { \"stream\": \"projects/ PROJECT /locations/ LOCATION ID /clusters/application-cluster-0/streams/ STREAM ID \", \"nodeAnnotations\": [ { \"node\": \" NODE NAME \", \"annotations\": [ { \"id\": \" ANNOTATION ID \", \"displayName\": \" ANNOTATION DISPLAYNAME \", \"sourceStream\": \"projects/ PROJECT /locations/ LOCATION ID /clusters/application-cluster-0/streams/ STREAM ID \", \"type\": ANNOTATION TYPE , \"activeZone\": { \"normalizedVertices\": { \"x\": 0.07434944 , \"y\": 0.18061674 }, \"normalizedVertices\": { \"x\": 0.64684016 , \"y\": 0.16079295 }, \"normalizedVertices\": { \"x\": 0.6047088 , \"y\": 0.92070484 }, \"normalizedVertices\": { \"x\": 0.1251549 , \"y\": 0.76651984 } } } ] } ] } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Vertex AI Vision audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision-ai/docs/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.visionai.v1.AppPlatform.GetApplication google.cloud.visionai.v1.AppPlatform.GetDraft google.cloud.visionai.v1.AppPlatform.ListApplications google.cloud.visionai.v1.AppPlatform.ListDrafts google.cloud.visionai.v1.AppPlatform.ListInstances google.cloud.visionai.v1.AppPlatform.ListPrebuiltProcessors google.cloud.visionai.v1.AppPlatform.ListProcessors google.cloud.visionai.v1.LiveVideoAnalytics.ResolveOperatorInfo google.cloud.visionai.v1.StreamingService.ReceiveEvents google.cloud.visionai.v1.StreamsService.GenerateStreamHlsToken google.cloud.visionai.v1.StreamsService.GetCluster google.cloud.visionai.v1.StreamsService.GetEvent google.cloud.visionai.v1.StreamsService.GetSeries google.cloud.visionai.v1.StreamsService.GetStream google.cloud.visionai.v1.StreamsService.GetStreamThumbnail google.cloud.visionai.v1.StreamsService.ListClusters google.cloud.visionai.v1.StreamsService.ListSeries google.cloud.visionai.v1.StreamsService.ListStreams google.cloud.visionai.v1.Warehouse.GetAsset google.cloud.visionai.v1.Warehouse.GetCollection google.cloud.visionai.v1.Warehouse.GetCorpus google.cloud.visionai.v1.Warehouse.GetDataSchema google.cloud.visionai.v1.Warehouse.GetIndex google.cloud.visionai.v1.Warehouse.GetIndexEndpoint google.cloud.visionai.v1.Warehouse.GetSearchConfig google.cloud.visionai.v1.Warehouse.GetSearchHypernym google.cloud.visionai.v1.Warehouse.ListAssets google.cloud.visionai.v1.Warehouse.ListCollections google.cloud.visionai.v1.Warehouse.ListCorpora google.cloud.visionai.v1.Warehouse.ListDataSchemas google.cloud.visionai.v1.Warehouse.ListIndexEndpoints google.cloud.visionai.v1.Warehouse.ListIndexes google.cloud.visionai.v1.Warehouse.ListSearchHypernyms google.cloud.visionai.v1.Warehouse.ViewCollectionItems google.cloud.visionai.v1.Warehouse.ViewIndexedAssets google.cloud.visionai.v1alpha1.AppPlatform.GetApplication google.cloud.visionai.v1alpha1.AppPlatform.GetDraft google.cloud.visionai.v1alpha1.AppPlatform.GetInstance google.cloud.visionai.v1alpha1.AppPlatform.ListApplications google.cloud.visionai.v1alpha1.AppPlatform.ListDrafts google.cloud.visionai.v1alpha1.AppPlatform.ListInstances google.cloud.visionai.v1alpha1.AppPlatform.ListPrebuiltProcessors google.cloud.visionai.v1alpha1.AppPlatform.ListProcessors google.cloud.visionai.v1alpha1.LiveVideoAnalytics.ListAnalyses google.cloud.visionai.v1alpha1.StreamsService.ListEvents google.cloud.visionai.v1alpha1.StreamsService.ListSeries google.cloud.visionai.v1alpha1.StreamsService.ListStreams google.cloud.visionai.v1alpha1.Warehouse.GetAsset google.cloud.visionai.v1alpha1.Warehouse.GetCorpus google.cloud.visionai.v1alpha1.Warehouse.GetDataSchema google.cloud.visionai.v1alpha1.Warehouse.GetSearchConfig google.cloud.visionai.v1alpha1.Warehouse.ListAssets google.cloud.visionai.v1alpha1.Warehouse.ListCorpora google.cloud.visionai.v1alpha1.Warehouse.ListDataSchemas google.cloud.visionai.v1alpha1.Warehouse.ListSearchConfigs ADMIN WRITE google.cloud.visionai.v1.AppPlatform.AddApplicationStreamInput google.cloud.visionai.v1.AppPlatform.CreateApplication google.cloud.visionai.v1.AppPlatform.CreateApplicationInstances google.cloud.visionai.v1.AppPlatform.CreateDraft google.cloud.visionai.v1.AppPlatform.CreateProcessor google.cloud.visionai.v1.AppPlatform.DeleteApplication google.cloud.visionai.v1.AppPlatform.DeleteApplicationInstances google.cloud.visionai.v1.AppPlatform.DeleteDraft google.cloud.visionai.v1.AppPlatform.DeleteProcessor google.cloud.visionai.v1.AppPlatform.DeployApplication google.cloud.visionai.v1.AppPlatform.RemoveApplicationStreamInput google.cloud.visionai.v1.AppPlatform.UndeployApplication google.cloud.visionai.v1.AppPlatform.UpdateApplication google.cloud.visionai.v1.AppPlatform.UpdateApplicationInstances google.cloud.visionai.v1.AppPlatform.UpdateDraft google.cloud.visionai.v1.AppPlatform.UpdateProcessor google.cloud.visionai.v1.LiveVideoAnalytics.CreateAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.CreateOperator google.cloud.visionai.v1.LiveVideoAnalytics.CreateProcess google.cloud.visionai.v1.LiveVideoAnalytics.DeleteAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.DeleteOperator google.cloud.visionai.v1.LiveVideoAnalytics.DeleteProcess google.cloud.visionai.v1.LiveVideoAnalytics.UpdateAnalysis google.cloud.visionai.v1.LiveVideoAnalytics.UpdateOperator google.cloud.visionai.v1.LiveVideoAnalytics.UpdateProcess google.cloud.visionai.v1.StreamsService.CreateCluster google.cloud.visionai.v1.StreamsService.CreateEvent google.cloud.visionai.v1.StreamsService.CreateSeries google.cloud.visionai.v1.StreamsService.CreateStream google.cloud.visionai.v1.StreamsService.DeleteCluster google.cloud.visionai.v1.StreamsService.DeleteEvent google.cloud.visionai.v1.StreamsService.DeleteSeries google.cloud.visionai.v1.StreamsService.DeleteStream google.cloud.visionai.v1.StreamsService.UpdateCluster google.cloud.visionai.v1.StreamsService.UpdateEvent google.cloud.visionai.v1.StreamsService.UpdateSeries google.cloud.visionai.v1.StreamsService.UpdateStream google.cloud.visionai.v1.Warehouse.AddCollectionItem google.cloud.visionai.v1.Warehouse.AnalyzeAsset google.cloud.visionai.v1.Warehouse.AnalyzeCorpus google.cloud.visionai.v1.Warehouse.CreateAsset google.cloud.visionai.v1.Warehouse.CreateCollection google.cloud.visionai.v1.Warehouse.CreateCorpus google.cloud.visionai.v1.Warehouse.CreateDataSchema google.cloud.visionai.v1.Warehouse.CreateIndex google.cloud.visionai.v1.Warehouse.CreateIndexEndpoint google.cloud.visionai.v1.Warehouse.CreateSearchConfig google.cloud.visionai.v1.Warehouse.CreateSearchHypernym google.cloud.visionai.v1.Warehouse.DeleteAsset google.cloud.visionai.v1.Warehouse.DeleteCollection google.cloud.visionai.v1.Warehouse.DeleteCorpus google.cloud.visionai.v1.Warehouse.DeleteDataSchema google.cloud.visionai.v1.Warehouse.DeleteIndex google.cloud.visionai.v1.Warehouse.DeleteIndexEndpoint google.cloud.visionai.v1.Warehouse.DeleteSearchConfig google.cloud.visionai.v1.Warehouse.DeleteSearchHypernym google.cloud.visionai.v1.Warehouse.DeployIndex google.cloud.visionai.v1.Warehouse.ImportAssets google.cloud.visionai.v1.Warehouse.IndexAsset google.cloud.visionai.v1.Warehouse.RemoveCollectionItem google.cloud.visionai.v1.Warehouse.RemoveIndexAsset google.cloud.visionai.v1.Warehouse.UndeployIndex google.cloud.visionai.v1.Warehouse.UpdateAsset google.cloud.visionai.v1.Warehouse.UpdateCollection google.cloud.visionai.v1.Warehouse.UpdateCorpus google.cloud.visionai.v1.Warehouse.UpdateDataSchema google.cloud.visionai.v1.Warehouse.UpdateIndex google.cloud.visionai.v1.Warehouse.UpdateIndexEndpoint google.cloud.visionai.v1.Warehouse.UpdateSearchConfig google.cloud.visionai.v1.Warehouse.UpdateSearchHypernym google.cloud.visionai.v1alpha1.AppPlatform.AddApplicationStreamInput google.cloud.visionai.v1alpha1.AppPlatform.CreateApplication google.cloud.visionai.v1alpha1.AppPlatform.CreateApplicationInstances google.cloud.visionai.v1alpha1.AppPlatform.CreateDraft google.cloud.visionai.v1alpha1.AppPlatform.CreateProcessor google.cloud.visionai.v1alpha1.AppPlatform.DeleteApplication google.cloud.visionai.v1alpha1.AppPlatform.DeleteApplicationInstances google.cloud.visionai.v1alpha1.AppPlatform.DeleteDraft google.cloud.visionai.v1alpha1.AppPlatform.DeployApplication google.cloud.visionai.v1alpha1.AppPlatform.RemoveApplicationStreamInput google.cloud.visionai.v1alpha1.AppPlatform.UndeployApplication google.cloud.visionai.v1alpha1.AppPlatform.UpdateApplication google.cloud.visionai.v1alpha1.AppPlatform.UpdateDraft google.cloud.visionai.v1alpha1.LiveVideoAnalytics.CreateAnalysis google.cloud.visionai.v1alpha1.LiveVideoAnalytics.DeleteAnalysis google.cloud.visionai.v1alpha1.StreamsService.CreateEvent google.cloud.visionai.v1alpha1.StreamsService.CreateSeries google.cloud.visionai.v1alpha1.StreamsService.CreateStream google.cloud.visionai.v1alpha1.StreamsService.DeleteCluster google.cloud.visionai.v1alpha1.StreamsService.DeleteEvent google.cloud.visionai.v1alpha1.StreamsService.DeleteSeries google.cloud.visionai.v1alpha1.StreamsService.DeleteStream google.cloud.visionai.v1alpha1.Warehouse.CreateAsset google.cloud.visionai.v1alpha1.Warehouse.CreateCorpus google.cloud.visionai.v1alpha1.Warehouse.CreateDataSchema google.cloud.visionai.v1alpha1.Warehouse.CreateSearchConfig google.cloud.visionai.v1alpha1.Warehouse.DeleteAsset google.cloud.visionai.v1alpha1.Warehouse.DeleteCorpus google.cloud.visionai.v1alpha1.Warehouse.DeleteDataSchema google.cloud.visionai.v1alpha1.Warehouse.DeleteSearchConfig google.cloud.visionai.v1alpha1.Warehouse.UpdateAsset google.cloud.visionai.v1alpha1.Warehouse.UpdateCorpus google.cloud.visionai.v1alpha1.Warehouse.UpdateDataSchema google.cloud.visionai.v1alpha1.Warehouse.UpdateSearchConfig DATA READ google.cloud.visionai.v1.StreamingService.ReceivePackets google.cloud.visionai.v1.Warehouse.ClipAsset google.cloud.visionai.v1.Warehouse.GenerateHlsUri google.cloud.visionai.v1.Warehouse.GenerateRetrievalUrl google.cloud.visionai.v1.Warehouse.GetAnnotation google.cloud.visionai.v1.Warehouse.ListAnnotations google.cloud.visionai.v1.Warehouse.SearchAssets google.cloud.visionai.v1.Warehouse.SearchIndexEndpoint google.cloud.visionai.v1alpha1.Warehouse.GetAnnotation google.cloud.visionai.v1alpha1.Warehouse.ListAnnotations google.cloud.visionai.v1alpha1.Warehouse.SearchAssets DATA WRITE google.cloud.visionai.v1.StreamingService.SendPackets google.cloud.visionai.v1.Warehouse.CreateAnnotation google.cloud.visionai.v1.Warehouse.DeleteAnnotation google.cloud.visionai.v1.Warehouse.IngestAsset google.cloud.visionai.v1.Warehouse.UpdateAnnotation google.cloud.visionai.v1.Warehouse.UploadAsset google.cloud.visionai.v1alpha1.Warehouse.CreateAnnotation google.cloud.visionai.v1alpha1.Warehouse.DeleteAnnotation google.cloud.visionai.v1alpha1.Warehouse.UpdateAnnotation API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Vertex AI Vision. google.cloud.visionai.v1.AppPlatform The following audit logs are associated with methods belonging to google.cloud.visionai.v1.AppPlatform .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.ListProcessors\" RemoveApplicationStreamInput Method : google.cloud.visionai.v1.AppPlatform.RemoveApplicationStreamInput Audit log type : Admin activity Permissions : visionai.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.RemoveApplicationStreamInput\" UndeployApplication Method : google.cloud.visionai.v1.AppPlatform.UndeployApplication Audit log type : Admin activity Permissions : visionai.applications.undeploy - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.UndeployApplication\" UpdateApplication Method : google.cloud.visionai.v1.AppPlatform.UpdateApplication Audit log type : Admin activity Permissions : visionai.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.UpdateApplication\" UpdateApplicationInstances Method : google.cloud.visionai.v1.AppPlatform.UpdateApplicationInstances Audit log type : Admin activity Permissions : visionai.applications.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.UpdateApplicationInstances\" UpdateDraft Method : google.cloud.visionai.v1.AppPlatform.UpdateDraft Audit log type : Admin activity Permissions : visionai.drafts.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.UpdateDraft\" UpdateProcessor Method : google.cloud.visionai.v1.AppPlatform.UpdateProcessor Audit log type : Admin activity Permissions : visionai.processors.update - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.AppPlatform.UpdateProcessor\" google.cloud.visionai.v1.LiveVideoAnalytics The following audit logs are associated with methods belonging to google.cloud.visionai.v1.LiveVideoAnalytics .",
+          "CreateAnalysis Method : google.cloud.visionai.v1.LiveVideoAnalytics.CreateAnalysis Audit log type : Admin activity Permissions : visionai.analyses.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.CreateAnalysis\" CreateOperator Method : google.cloud.visionai.v1.LiveVideoAnalytics.CreateOperator Audit log type : Admin activity Permissions : visionai.operators.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.CreateOperator\" CreateProcess Method : google.cloud.visionai.v1.LiveVideoAnalytics.CreateProcess Audit log type : Admin activity Permissions : visionai.processes.create - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.CreateProcess\" DeleteAnalysis Method : google.cloud.visionai.v1.LiveVideoAnalytics.DeleteAnalysis Audit log type : Admin activity Permissions : visionai.analyses.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.DeleteAnalysis\" DeleteOperator Method : google.cloud.visionai.v1.LiveVideoAnalytics.DeleteOperator Audit log type : Admin activity Permissions : visionai.operators.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.DeleteOperator\" DeleteProcess Method : google.cloud.visionai.v1.LiveVideoAnalytics.DeleteProcess Audit log type : Admin activity Permissions : visionai.processes.delete - ADMIN WRITE Method is a long-running or streaming operation : Long-running operation Filter for this method : protoPayload.methodName=\"google.cloud.visionai.v1.LiveVideoAnalytics.DeleteProcess\" ResolveOperatorInfo Method : google.cloud.visionai.v1.LiveVideoAnalytics.ResolveOperatorInfo Audit log type : Data access Permissions : visionai.operators.get - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amd64.deb",
+      "entity.labelString",
+      "github.com",
+      "stats.fullFrameCount",
+      "v0.0.5",
+      "visionai.analyses.create",
+      "visionai.analyses.delete",
+      "visionai.applications.undeploy",
+      "visionai.applications.update",
+      "visionai.drafts.update",
+      "visionai.googleapis.com",
+      "visionai.operators.create",
+      "visionai.operators.delete",
+      "visionai.operators.get",
+      "visionai.processes.create",
+      "visionai.processes.delete",
+      "visionai.processors.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-bq-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/occupancy-count-tutorial",
+        "https://docs.cloud.google.com/vision-ai/docs/build-app",
+        "https://docs.cloud.google.com/vision-ai/docs/audit-logging"
+      ]
+    }
+  ]
+}

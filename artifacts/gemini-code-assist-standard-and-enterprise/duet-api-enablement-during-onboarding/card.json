@@ -1,0 +1,222 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.716Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise",
+  "feature_name": "Duet API enablement during onboarding",
+  "feature_slug": "duet-api-enablement-during-onboarding",
+  "summary": "Allows users to enable the Duet API during the onboarding flow.",
+  "extended_definition": "Allows users to enable the Duet API during the onboarding flow.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example shows how to specify a personal access token for the GitHub local and remote MCP servers: { \"mcpServers\" : { \"github-remote\" : { \"httpUrl\" : \"https://api.githubcopilot.com/mcp/\" , \"headers\" : { \"Authorization\" : \"Bearer ACCESS TOKEN \" } }, \"github-local\" : { \"command\" : \"/Users/username/code/github-mcp-server/cmd/github-mcp-server/github-mcp-server\" , \"args\" : [ \"stdio\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \" ACCESS TOKEN \" } } } } Where ACCESS TOKEN is the user's access token.",
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window ."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "List the number of unique users The following instructions describe how to use the gcloud CLI to list the number of unique users of Gemini Code Assist in the most recent 28-day period: In a shell environment, ensure that you have updated all installed components of the gcloud CLI to the latest version: gcloud components update Read the log entries for Gemini Code Assist users and usage: gcloud logging read 'resource.type=cloudaicompanion.googleapis.com/Instance labels.product= \"code assist\"' \\ --freshness 28d \\ --project PROJECT ID \\ --format \"csv(timestamp.date('%Y-%m-%d'),labels.user id)\" Replace PROJECT ID with your Google Cloud project ID.",
+          "List aggregate users by day SELECT COUNT ( DISTINCT labels . user id ) as total users , DATE ( timestamp ) as use date FROM GENERATED BIGQUERY TABLE GROUP BY use date ORDER BY use date List individual requests per day by user SELECT COUNT ( ), DATE ( timestamp ) as use date , labels . user id as user FROM GENERATED BIGQUERY TABLE GROUP BY use date , user ORDER BY use date List aggregate requests per day by date SELECT COUNT ( ), DATE ( timestamp ) as use date FROM GENERATED BIGQUERY TABLE GROUP BY use date ORDER BY use date What's next Learn more about Gemini for Google Cloud logging .",
+          "The output is similar to the following: 2024-10-30,user1@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user1@company.com 2024-10-28,user1@company.com Create a chart that displays daily usage The following steps show how to use Monitoring to create daily use graphs that show the aggregate total of daily active Gemini Code Assist users and the number of their requests per day."
+        ]
+      },
+      {
+        "title": "\"Monitor Gemini Code Assist usage \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metric Name Timeframe code assist/daily active users Daily active users Past 24 hours code assist/twenty eight day active users Twenty-eight-day active users Past 28 days Chat metric This tracks the number of Gemini Code Assist chat responses exposed or shown to users over the given timeframe.",
+          "You can use the data visualization and analysis tools in Cloud Monitoring to help you answer important questions, such as how many daily active users in your organization are using Gemini Code Assist.",
+          "Additionally, users must have the Gemini Cloud Assist User ( roles/geminicloudassist.user ) role on your project to collect their usage metrics and send the data to the dashboard."
+        ]
+      },
+      {
+        "title": "\"Manage Gemini Code Assist Standard and Enterprise licenses \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use cURL to call the method: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ \"https://cloudcommerceconsumerprocurement.googleapis.com/v1/billingAccounts/ BILLING ACCOUNT ID /orders/ ORDER ID /licensePool:enumerateLicensedUsers/\" Replace the following: PROJECT ID : the ID for a project.",
+          "API To view Gemini Code Assist Standard or Enterprise license assignments, use the billingAccounts.orders.licensePool.enumerateLicensedUsers method .",
+          "If the command succeeds, it returns licensedUsers output in the following format: { \"licensedUsers\": [ { \"username\": \"dana@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"lee@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"taylor@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"bola@example.com\", \"assignTime\": \"2024-09-26T16:24:14.610828Z\" } ] } If there are no Gemini Code Assist Standard or Enterprise license assignments or the ORDER ID is invalid, it returns licensedUsers output in the following format: {} Automatically assign Gemini Code Assist Standard and Enterprise licenses You can enable automatic license assignment for a subscription."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.githubcopilot.com",
+      "billing.accounts.get",
+      "bindings.mcp.cloudflare.com",
+      "cloudaicompanion.googleapis.com",
+      "cloudcommerceconsumerprocurement.googleapis.com",
+      "company.com",
+      "consumerprocurement.licensePools.enumerateLicensedUsers",
+      "consumerprocurement.licensePools.get",
+      "consumerprocurement.orders.get",
+      "example.com",
+      "geminicloudassist.user",
+      "instance.com",
+      "labels.product",
+      "labels.user",
+      "mcp.json",
+      "observability.mcp.cloudflare.com",
+      "orders.licensePool.enumerateLicensedUsers",
+      "resource.type",
+      "timestamp.date",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/geminicloudassist.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/monitor-gemini-code-assist",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses"
+      ]
+    }
+  ]
+}

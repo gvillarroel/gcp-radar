@@ -1,0 +1,98 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.407Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool",
+  "feature_name": "Execution mode field",
+  "feature_slug": "execution-mode-field",
+  "summary": "Adds an Execution mode field to the Assets list to show whether an asset is batch or online.",
+  "extended_definition": "Adds an Execution mode field to the Assets list to show whether an asset is batch or online.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For scheduler configuration assets, such as BMC Control-M, Mainframe Assessment Tool provides AI-generated insights that help you visualize the scheduler workflow, including a listing of scheduled jobs, timelines for daily, weekly, or monthly schedules, and dependency graphs showing job relationships.",
+          "Assets list: lists assets in the migratable unit with columns for migratable unit name, asset name, asset type, and the lines of code (source lines).",
+          "Dataset Fields: lists all fields within each dataset, along with their data types, start positions, sizes, key indicators, and other properties."
+        ]
+      },
+      {
+        "title": "\"Extract business rules \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The job overview displays the configuration details, such as the description, the focus prompt, and the list of assets included in the analysis.",
+          "Assets: lists the source code assets associated with the business rule that let you trace the rule back to the mainframe code.",
+          "Before you begin Before you begin, make sure that you have completed the following tasks: Create an assessment: make sure that you have an existing assessment with uploaded mainframe assets such as programs and copybooks."
+        ]
+      },
+      {
+        "title": "Mainframe Assessment Tool MCP server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server",
+        "source_id": "site-docs-reference",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "User prompt: \"List the 10 most complex COBOL programs in the assessment called AssessmentName .\" Scenario: Find and filter assets that belong to a business domain.",
+          "FetchAssetsCyclomaticComplexity Fetches the cyclomatic complexity scores for a list of assets for a given Mainframe Assessment Tool assessment ID.",
+          "ListAssets Lists the assets for a given Mainframe Assessment Tool assessment ID."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/business-rules-extraction",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/mcp-server"
+      ]
+    }
+  ]
+}

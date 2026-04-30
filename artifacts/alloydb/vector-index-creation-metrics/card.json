@@ -1,0 +1,81 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:40.710Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb",
+  "feature_name": "Vector index creation metrics",
+  "feature_slug": "vector-index-creation-metrics",
+  "summary": "Vector index creation metrics add visibility into vector index builds through the pg_stat_ann_index_creation view.",
+  "extended_definition": "Vector index creation metrics add visibility into vector index builds through the pg_stat_ann_index_creation view.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index",
+      "https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AlloyDB database indexing strategies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/indexing-strategies",
+        "source_id": "site-api-reference",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "568 rows = 5 loops = 1 ) Output : id , creationdate , score , title , viewcount , ( \"substring\" ( body , 0 , 50 )), (( body embeddings < = > '[0.0017194863,-0.04174791,-0.017442022,...,0.035435043,-0.004936148,-0.008868503]' :: vector )) Workers Planned : 2 Workers Launched : 2 Buffers : shared hit = 26995 - > Parallel Index Scan using posts ivfflat on public . posts p ( cost = 11132 .",
+          "695 rows = 5 loops = 1 ) Output : id , creationdate , score , title , viewcount , ( \"substring\" ( body , 0 , 50 )), (( body embeddings < = > '[0.0017194863,-0.04174791,-0.017442022,...,0.035435043,-0.004936148,-0.008868503]' :: vector )) Buffers : shared hit = 2565 - > Index Scan using posts scann on public . posts p ( cost = 17 .",
+          "091 rows = 5 loops = 1 ) Output : id , creationdate , score , title , viewcount , ( \"substring\" ( body , 0 , 50 )), (( body embeddings < = > '[0.0017194863,-0.04174791,-0.017442022,...,0.035435043,-0.004936148,-0.008868503]' :: vector )) Buffers : shared hit = 889 - > Index Scan using posts hnsw on public . posts p ( cost = 371 ."
+        ]
+      },
+      {
+        "title": "\"Maintain vector indexes \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/maintain-vector-indexes",
+        "source_id": "site-docs-root-2",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ALTER EXTENSION vector UPDATE ; ALTER EXTENSION alloydb scann UPDATE ; View vector index metrics If your table is prone to frequent updates or insertions, then we recommend periodically reindexing the existing ScaNN index in order to improve the recall accuracy for your index.",
+          "What's next Vector index metrics Optimize vector query performance for ScaNN Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can monitor index metrics to view changes in vector distributions or vector mutations since the index was built, and then reindex accordingly."
+        ]
+      },
+      {
+        "title": "Create a ScaNN index \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/create-scann-index",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To create this index on an embedding column that uses the real[] data type instead of vector , cast the column into the vector data type: CREATE INDEX INDEX NAME ON TABLE USING scann ( CAST ( EMBEDDING COLUMN AS vector ( DIMENSIONS )) DISTANCE FUNCTION ) WITH ( num leaves = NUM LEAVES VALUE , max num levels = MAX NUM LEVELS ); Replace DIMENSIONS with the dimensional width of the embedding column.",
+          "Warning: Forcing index creation on a table with little or no data has the following implications: The index is trained on insufficient data, which can result in poor recall for your vector similarity searches.",
+          "What's next Run vector similarity searches Tune vector query performance Vector index metrics Learn how to build a smart shopping assistant with AlloyDB, pgvector, and model endpoint management ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "Pay-as-you-go environment types",
+  "feature_slug": "pay-as-you-go-environment-types",
+  "summary": "Apigee provides Base, Intermediate, and Comprehensive environment types with different capabilities and costs; Apigee provides Base, Intermediate, and Comprehensive environment types with different capabilities and costs.",
+  "extended_definition": "Apigee provides Base, Intermediate, and Comprehensive environment types with different capabilities and costs; Apigee provides Base, Intermediate, and Comprehensive environment types with different capabilities and costs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "By defining conditional flows, you gain the ability to apply processing steps in an API proxy based on: Request URI HTTP verb ( GET / PUT / POST / DELETE ) Value of a query param, header, and form param Many other types of conditions For example, the following conditional flow specifies that it is executed only when the request resource path is /accesstoken .",
+          "BasePath must be unique within an environment.",
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS ."
+        ]
+      },
+      {
+        "title": "Streaming server-sent events \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table shows the execution of EventFlow stanzas based on endpoint placement: ProxyEndpoint TargetEndpoint EventFlow used EventFlow in ProxyEndpoint EventFlow in TargetEndpoint EventFlow in TargetEndpoint No EventFlow EventFlow in TargetEndpoint EventFlow in TargetEndpoint EventFlow in ProxyEndpoint No EventFlow EventFlow in ProxyEndpoint Add policies to an EventFlow You can add up to a total of four policies to the Response element of the EventFlow .",
+          "Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \\ \"https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH \" \\ -d '{ \"contents\":[{\"parts\":[{\"text\": \"Write a story about a magic pen.\"}]}]}' Show a sample response Here's a sample of how the response might look without applying any filtering.",
+          "Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \\ \"https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH \" \\ -d '{ \"contents\":[{\"parts\":[{\"text\": \"Write a story about a magic pen.\"}]}]}' Show a sample response This is a sample response without any filtering applied."
+        ]
+      },
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The second policy uses the <AssignVariable> element to read in the values and creates three new variables: < !-- Policy #2: Get variables from the request -- > < AssignMessage continueOnError = \"false\" enabled = \"true\" name = \"get-variables\" > < AssignTo createNew = \"false\" transport = \"http\" type = \"request\" / > < !-- Get the value of myAppSecret and create a new variable , secret -- > < AssignVariable > < Name>secret < / Name > < Ref>myAppSecret < / Ref > < Value>0 < / Value > < / AssignVariable > < !-- Get the value of config . environment and create a new variable , environment -- > < AssignVariable > < Name>environment < / Name > < Ref>config . environment < / Ref > < Value>default < / Value > < / AssignVariable > < !-- Get the value of config . protocol and create a new variable , protocol -- > < AssignVariable > < Name>protocol < / Name > < Ref>config . protocol < / Ref > < Value>default < / Value > < / AssignVariable > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < / AssignMessage > In the second policy, the <Ref> element references the source variable, and <Name> elements specify the names of the new variables.",
+          "6: Set/get variables The following example uses three AssignMessage policies: Creates three flow variables in the request, with static values Gets the flow variables dynamically in a second policy in the request flow Sets them in the payload of the response < !-- Policy #1: Set variables in the request -- > < AssignMessage name = \"AM-set-variables\" > < !-- Create a variable named myAppSecret -- > < AssignVariable > < Name>myAppSecret < / Name > < Value>42 < / Value > < / AssignVariable > < !-- Create a variable named config . environment -- > < AssignVariable > < Name>config . environment < / Name > < Value>test < / Value > < / AssignVariable > < !-- Create a variable named config . protocol -- > < AssignVariable > < Name>config . protocol < / Name > < Value>gopher < / Value > < / AssignVariable > < / AssignMessage > In the first policy, the <AssignVariable> element creates and sets three variables in the request.",
+          "The following example constructs an XML payload in the response that Edge returns to the client: < !-- Policy #3: Add variables to the response -- > < AssignMessage continueOnError = \"false\" enabled = \"true\" name = \"put-em-in-the-payload\" > < DisplayName>put - em - in - the - payload < / DisplayName > < Set > < Payload contentType = \"application/xml\" > < wrapper > < secret > { secret } < / secret > < config > < environment > { environment } < / environment > < protocol > { protocol } < / protocol > < / config > < / wrapper > < / Payload > < / Set > < IgnoreUnresolvedVariables>true < / IgnoreUnresolvedVariables > < AssignTo createNew = \"false\" transport = \"http\" type = \"response\" / > < / AssignMessage > Note that the syntax to access flow variables in <Set> is to wrap them in curly braces."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "features.SSLInfo.Enforce",
+      "myservice.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    }
+  ]
+}

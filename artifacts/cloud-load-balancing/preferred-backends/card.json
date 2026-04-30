@@ -1,0 +1,124 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.639Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing",
+  "feature_name": "Preferred backends",
+  "feature_slug": "preferred-backends",
+  "summary": "Global external Application Load Balancers can designate preferred backends to optimize traffic placement for cost, latency, and resiliency; Global external Application Load Balancers can designate preferred backends to optimize traffic placement for cost, latency, and resiliency.",
+  "extended_definition": "Global external Application Load Balancers can designate preferred backends to optimize traffic placement for cost, latency, and resiliency; Global external Application Load Balancers can designate preferred backends to optimize traffic placement for cost, latency, and resiliency.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+      "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+      "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Application capacity optimizations with global load balancing \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Addressing these challenges with global load balancing The external Application Load Balancers and external proxy Network Load Balancers are global load balancing products proxied through globally synchronized Google Front End (GFE) servers, making it easier to mitigate these types of load balancing challenges.",
+          "Using an external Application Load Balancer to address capacity challenges To help address the challenges discussed earlier, external Application Load Balancers and external proxy Network Load Balancers can overflow capacity to other regions.",
+          "Note: The algorithm described here is equivalent for all GFE-based load balancers on Google Cloud, including the external Application Load Balancer and external proxy Network Load Balancer ."
+        ]
+      },
+      {
+        "title": "\"Set up authorization policies for Application Load Balancers \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the following APIs : Network Security API Network Services API Set up the load balancer If you haven't created a load balancer, see the following pages to set up your preferred Application Load Balancer: To create a global external Application Load Balancer, see Set up a global external Application Load Balancer with VM instance group backends .",
+          "Note: Authorization policy based on principals is not supported on global external Application Load Balancers.",
+          "See the following example: { httpRequest: {8} insertId: \"example-id\" jsonPayload: { @type: \"type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry\" authzPolicyInfo: { policies: [ 0: { details: \"name: \"projects/12345567/locations/global/authzPolicies/deny-authz-policy-test\"\" result: \"DENIED\" } ] result: \"DENIED\" } backendTargetProjectNumber: \"projects/12345567\" cacheDecision: [2] remoteIp: \"00.100.11.104\" statusDetails: \"denied by authz policy\" } logName: \"projects/example-project/logs/requests\" receiveTimestamp: \"2024-08-28T15:33:56.046651035Z\" resource: {2} severity: \"WARNING\" spanId: \"3e1a09a8e5e3e14d\" timestamp: \"2024-08-28T15:33:55.355042Z\" trace: \"projects/example-project/traces/8c8b3dbf9a19c85954d0fa2d958ca509\" } If you're using a regional internal Application Load Balancer, regional external Application Load Balancer, or cross-region internal Application Load Balancer, proxyStatus is set to error=\\\"http request error\\\"; details=\\\"denied by authz policy\\\" and the name of the policy is logged in policies ."
+        ]
+      },
+      {
+        "title": "\"Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related documentation: Serverless NEGs overview Set up a global external Application Load Balancer with a Cloud Run, Cloud Run functions, or App Engine backend Set up a regional external Application Load Balancer with a Cloud Run backend Set up a regional internal Application Load Balancer with a Cloud Run backend Set up a cross-region internal Application Load Balancer with Cloud Run Load balancing to backends outside Google Cloud Application Load Balancers support load-balancing traffic to endpoints that extend beyond Google Cloud, such as on-premises data centers and other cloud environments.",
+          "To learn more about how failover works, see the following topics: Global external Application Load Balancers: How requests are distributed Cross-region internal Application Load Balancers: High availability and cross-region failover Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more details, see the following: Traffic management overview for global external Application Load Balancers Traffic management overview for regional external Application Load Balancers Extensibility with Service Extensions The integration with Service Extensions lets you inject custom logic into the load balancing path of supported Application Load Balancers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tutorials/about-capacity-optimization-with-global-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/auth-policy/set-up-auth-policy-app-lb",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer"
+      ]
+    }
+  ]
+}

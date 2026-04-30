@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.075Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker",
+  "feature_name": "Delegate Model Set Management",
+  "feature_slug": "delegate-model-set-management",
+  "summary": "This Labs feature lets admins grant the manage_modelsets_restricted permission to users with access to specific model sets.",
+  "extended_definition": "This Labs feature lets admins grant the manage_modelsets_restricted permission to users with access to specific model sets.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker.",
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data."
+        ]
+      },
+      {
+        "title": "Admin settings - Preview Features \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "When enabled, the Enhanced Content Cleanup preview feature lets admins and content owners access an enhanced content management experience in Looker.",
+          "The Enhanced Content Cleanup preview feature provides the following capabilities: Lets admins and users access a new Unused content folder to quickly identify and manage the unused content on a Looker instance.",
+          "This Labs feature enables the Looker reports feature , which lets you create, view, and edit Looker Studio reports in your Looker instance, including both governed and ad hoc data."
+        ]
+      },
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control the actions a user can perform Create a permission set with the appropriate permissions, then assign a group or user to a role with that permission set Control what fields a user can access Create a model with the appropriate fields, then assign a group or user to a role with that model Control what data a user can access Create a model with the appropriate data limitations, then assign a group or user to a role with that model - or - Use access filters to limit a user to the appropriate data - or - Use user attributes to provide differing database credentials to a group or user - or - Use user attributes with access grants to restrict access to specific Explores, joins, views, or fields Control what database connections a Looker developer can access Create a project with the appropriate connections, associate the project with a set of models, then assign a group or user to a role with those models Feature access can also affect content access .",
+          "Feature Access , which controls the types of actions a user is allowed to do in Looker, including viewing data and saved content, changing the LookML models, administrating Looker and so forth.",
+          "Looker admins can manage what a user or group of users can see and do in Looker by specifying the following access: Content Access , which controls whether a user or group of users can view a folder or manage the folder ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-labs",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-preview-features",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.070Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem",
+  "feature_name": "Chronicle event VirusTotal file metadata enrichment",
+  "feature_slug": "chronicle-event-virustotal-file-metadata-enrichment",
+  "summary": "Chronicle now enriches events with VirusTotal file metadata for additional investigative context.",
+  "extended_definition": "Chronicle now enriches events with VirusTotal file metadata for additional investigative context.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Export filter example: Include additional log types The following export filter exports access transparency logs in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR log id(\"cloudaudit.googleapis.com/access transparency\") Export filter example: Include additional logs from a specific project The following export filter exports access transparency logs from a specific project, in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR logName = \"projects/my-project-id/logs/cloudaudit.googleapis.com%2Faccess transparency\" Export filter example: Include additional logs from a specific folder The following export filter exports access transparency logs from a specific folder, in addition to the default logs: log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\") OR logName = \"folders/my-folder-id/logs/cloudaudit.googleapis.com%2Faccess transparency\" Export filter example: Exclude logs from a specific project The following export filter exports the default logs from the entire Google Cloud organization with the exception of a specific project: (log id(\"dns.googleapis.com/dns queries\") OR log id(\"cloudaudit.googleapis.com/activity\") OR log id(\"cloudaudit.googleapis.com/system event\")) AND (NOT logName = \"^projects/my-project-id/logs/. $\") Export Google Cloud asset metadata You can export your Google Cloud asset metadata from Cloud Asset Inventory to Google SecOps.",
+          "You can also send Google Cloud asset metadata used for context enrichment.",
+          "To learn how to filter out logs that are generated by routine activities, see Tune Cloud Audit Logs filters . log id(\"cloudaudit.googleapis.com/activity\") (exported by the default filter) log id(\"cloudaudit.googleapis.com/system event\") (exported by the default filter) log id(\"cloudaudit.googleapis.com/policy\") log id(\"cloudaudit.googleapis.com/access transparency\") Cloud NAT logs ( GCP CLOUD NAT ): log id(\"compute.googleapis.com/nat flows\") Cloud DNS logs ( GCP DNS ): log id(\"dns.googleapis.com/dns queries\") (exported by the default filter) Firewall policy rules logging ( GCP FIREWALL ): log id(\"compute.googleapis.com/firewall\") GCP IDS : log id(\"ids.googleapis.com/threat\") log id(\"ids.googleapis.com/traffic\") GCP LOADBALANCING : This includes logs from Google Cloud Armor and Cloud Load Balancing (both External and Internal). log id(\"requests\") log id(\"loadbalancing.googleapis.com/requests\") GCP CLOUDSQL : log id(\"cloudsql.googleapis.com/mysql-general.log\") log id(\"cloudsql.googleapis.com/mysql.err\") log id(\"cloudsql.googleapis.com/postgres.log\") log id(\"cloudsql.googleapis.com/sqlagent.out\") log id(\"cloudsql.googleapis.com/sqlserver.err\") GCP VPC FLOW : log id(\"compute.googleapis.com/vpc flows\") (for US and EU regions only) NIX SYSTEM : log id(\"syslog\") log id(\"authlog\") log id(\"securelog\") log id(\"osconfig.googleapis.com/patch job\") LINUX SYSMON : log id(\"sysmon.raw\") WINEVTLOG : log id(\"winevt.raw\") log id(\"windows event log\") BRO JSON : log id(\"zeek json streaming conn\") log id(\"zeek json streaming dhcp\") log id(\"zeek json streaming dns\") log id(\"zeek json streaming http\") log id(\"zeek json streaming ssh\") log id(\"zeek json streaming ssl\") KUBERNETES NODE : log id(\"events\") log id(\"stdout\") log id(\"stderr\") AUDITD : log id(\"audit log\") GCP APIGEE X : log id(\"apigee.googleapis.com/ingress instance\") log id(\"apigee.googleapis.com\") log id(\"apigee-logs\") log id(\"apigee\") logName = \"^projects/[\\w\\-]+/logs/apigee[\\w\\-\\.] $\" GCP RECAPTCHA ENTERPRISE : log id(\"recaptchaenterprise.googleapis.com/assessment\") log id(\"recaptchaenterprise.googleapis.com/annotation\") GCP RUN : log id(\"run.googleapis.com/stderr\") log id(\"run.googleapis.com/stdout\") log id(\"run.googleapis.com/requests\") log id(\"run.googleapis.com/varlog/system\") GCP NGFW ENTERPRISE : log id(\"networksecurity.googleapis.com/firewall threat\") GCP ABUSE EVENTS : log id(\"abuseevent.googleapis.com/abuse events\") GCP DNS ATD log id(\"networksecurity.googleapis.com/dns threat events\") Model Armor logs ( GCP MODEL ARMOR ): This includes logs for sanitization operations (screening prompts and responses) and template operations (creation, updates). log id(\"modelarmor.googleapis.com/sanitize operations\") log id(\"modelarmor.googleapis.com/templates\") Customize export filter settings By default, your Cloud Audit Logs (Admin Activity and System Event) and Cloud DNS logs are sent to your Google SecOps instance."
+        ]
+      },
+      {
+        "title": "\"Overview of context-aware analytics \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Invalid. $host over 3h after $e1 condition: $e1 and $e2 } Login example using outcome section The following example uses the outcome section to calculate a risk score for the detection. rule Detection { meta: events: $auth.metadata.event type = \"USER LOGIN\" $auth.metadata.vendor name = \"Acme\" $auth.metadata.product name = \"Acme SSO\" $auth.target.user.userid = $user $auth.metadata.event timestamp.seconds > $context.graph.entity.user.termination date.seconds $context.graph.metadata.vendor name = \"Microsoft\" $context.graph.metadata.product name = \"Azure Active Directory\" $context.graph.metadata.entity type = \"USER\" $context.graph.entity.user.userid = $user $context.graph.entity.user.termination date.seconds > 0 match: $user over 15m outcome: $risk score = max( if ( $auth.metadata.event type = \"USER LOGIN\", 50) + if ( $context.graph.entity.user.title = \"Remote\" nocase or $context.graph.entity.user.title = \"Temp\" nocase or $context.graph.entity.user.title = \"Vendor\" nocase, 40) + if ( $context.graph.entity.user.title = \"Legal\" nocase, 10) ) condition: $auth and $context } Suspicious process launch example The following example evaluates UDM event process data against IOC context data stored as an entity context. rule ProcessLaunch { meta: events: $ioc.graph.metadata.vendor name = \"ACME\" $ioc.graph.metadata.product name = \"IOCs\" $ioc.graph.metadata.entity type = \"FILE\" $ioc.graph.entity.file.sha256 = $hash $process.metadata.event type = \"PROCESS LAUNCH\" $process.principal.hostname = $hostname ( not $process.target.process.file.sha256 = \"\" and $process.target.process.file.sha256 = $hash ) match: $hash over 15m condition: $ioc and $process } Additional qualifiers for entity context To create an event variable that uses an entity context, you must provide a <source> after the event name.",
+          "It is looking for times when someone with administrator privilege attempted to sign in to or log out of the system. rule LoginLogout { meta: events: ($log inout.metadata.event type = \"USER LOGIN\" or $log inout.metadata.event type = \"USER LOGOUT\") $log inout.principal.user.user display name = $user $context.graph.entity.user.user display name = $user $context.graph.entity.resource.attribute.roles.type = \"ADMINISTRATOR\" match: $user over 2m condition: $log inout and $context } Sliding window example The following sliding window example is valid. rule Detection { meta: events: $e1.graph.entity.hostname = $host $e2.udm.principal.hostname = $host match: // Using e2 (a UDM event) as a pivot. $host over 3h after $e2 condition: $e1 and $e2 } Invalid sliding window example The following sliding window example is invalid.",
+          "What's next For information about how Google SecOps ingests contextual data and enriches entities, see How Google SecOps enriches event and entity data Need more help?"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "abuseevent.googleapis.com",
+      "additional.fields",
+      "additional.fields.value.string",
+      "apigee.googleapis.com",
+      "auth.metadata.event",
+      "auth.metadata.product",
+      "auth.metadata.vendor",
+      "auth.target.user.userid",
+      "chroniclesm.viewer",
+      "cloudaudit.googleapis.com",
+      "cloudsql.googleapis.com",
+      "cmd.exe",
+      "compute.googleapis.com",
+      "context.graph.entity.resource.attribute.roles.type",
+      "context.graph.entity.user.termination",
+      "context.graph.entity.user.title",
+      "context.graph.entity.user.user",
+      "context.graph.entity.user.userid",
+      "context.graph.metadata.entity",
+      "context.graph.metadata.product",
+      "context.graph.metadata.vendor",
+      "date.seconds",
+      "dns.googleapis.com",
+      "e.metadata.event",
+      "e.principal.ip",
+      "e1.graph.entity.hostname",
+      "e2.udm.principal.hostname",
+      "general.log",
+      "iam.organizationRoleViewer",
+      "ids.googleapis.com",
+      "inout.metadata.event",
+      "inout.principal.user.user",
+      "ioc.graph.entity.file.sha256",
+      "ioc.graph.metadata.entity",
+      "ioc.graph.metadata.product",
+      "ioc.graph.metadata.vendor",
+      "loadbalancing.googleapis.com",
+      "metadata.event",
+      "metadata.ingestion",
+      "modelarmor.googleapis.com",
+      "mysql.err",
+      "network.sent",
+      "networksecurity.googleapis.com",
+      "osconfig.googleapis.com",
+      "postgres.log",
+      "powershell.exe",
+      "principal.process.file.full",
+      "process.metadata.event",
+      "process.principal.hostname",
+      "process.target.process.file.sha256",
+      "recaptchaenterprise.googleapis.com",
+      "run.googleapis.com",
+      "securitycenter.adminEditor",
+      "sqlagent.out",
+      "sqlserver.err",
+      "susupicious.ip",
+      "sysmon.raw",
+      "target.hostname",
+      "target.process.file.full",
+      "timestamp.seconds",
+      "udm.additional",
+      "value.bool",
+      "value.number",
+      "winevt.raw",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": [
+      "roles/chroniclesm.viewer",
+      "roles/iam.organizationRoleViewer",
+      "roles/securitycenter.adminEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics"
+      ]
+    }
+  ]
+}

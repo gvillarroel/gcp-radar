@@ -1,0 +1,125 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.620Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script",
+  "feature_name": "Granular OAuth consent in Apps Script IDE",
+  "feature_slug": "granular-oauth-consent-in-apps-script-ide",
+  "summary": "Granular OAuth consent in the Apps Script IDE lets users approve individual OAuth scopes during script execution.",
+  "extended_definition": "Granular OAuth consent in the Apps Script IDE lets users approve individual OAuth scopes during script execution.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/client-verification",
+      "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "January 08, 2025 Feature Generally Available : Granular OAuth permissions are now supported for users executing scripts in the Apps Script IDE.",
+          "For more information, refer to the Workspace Updates blog post: Granular OAuth consent in Google Apps Script IDE executions .",
+          "The granular OAuth consent screen lets users specify which individual OAuth scopes they would like to authorize."
+        ]
+      },
+      {
+        "title": "OAuth Client Verification \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/client-verification",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the following articles: Unverified Apps OAuth Application Verification FAQ Google API Services: User Data Policy Figure 1 : Unverified app screen Figure 2 : Unverified app authorization flow This change applies to Google OAuth web clients, including those used by all Apps Script projects.",
+          "Page Summary outlined flag Google requires verification for Google OAuth clients requesting certain sensitive OAuth scopes, though Apps Script projects within the same Google Workspace domain or customer are exempt.",
+          "Unverified Apps Script projects using sensitive scopes and accessed by users outside the domain will display an \"unverified app\" screen and have a cap on the number of unverified users."
+        ]
+      },
+      {
+        "title": "Google Cloud projects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared drives (formerly Team Drives) provide shared spaces where groups of Drive users can collaborate on Apps Script projects and Drive documents.",
+          "The OAuth consent screen settings define the information Google presents to users, such as the application name and Terms of Service URL.",
+          "Default Cloud projects create a consent screen automatically from the Apps Script project details; you can't adjust those settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.getMetrics"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/client-verification",
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects"
+      ]
+    }
+  ]
+}

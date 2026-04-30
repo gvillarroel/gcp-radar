@@ -1,0 +1,402 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.558Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform",
+  "feature_name": "deleteTree API",
+  "feature_slug": "deletetree-api",
+  "summary": "The deleteTree API adds methods to delete folders and team folders in Dataform.",
+  "extended_definition": "The deleteTree API adds methods to delete folders and team folders in Dataform.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+      "https://docs.cloud.google.com/dataform/reference/rest",
+      "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataform API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.teamFolders Methods create POST /v1beta1/{parent=projects/ /locations/ }/teamFolders Creates a new TeamFolder in a given project and location. delete DELETE /v1beta1/{name=projects/ /locations/ /teamFolders/ } Deletes a single TeamFolder. deleteTree POST /v1beta1/{name=projects/ /locations/ /teamFolders/ }:deleteTree Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and WorkflowConfigs). get GET /v1beta1/{name=projects/ /locations/ /teamFolders/ } Fetches a single TeamFolder. getIamPolicy GET /v1beta1/{resource=projects/ /locations/ /teamFolders/ }:getIamPolicy Gets the access control policy for a resource. patch PATCH /v1beta1/{teamFolder.name=projects/ /locations/ /teamFolders/ } Updates a single TeamFolder. queryContents GET /v1beta1/{teamFolder=projects/ /locations/ /teamFolders/ }:queryContents Returns the contents of a given TeamFolder. search GET /v1beta1/{location=projects/ /locations/ }/teamFolders:search Returns all TeamFolders in a given location that the caller has access to and match the provided filter. setIamPolicy POST /v1beta1/{resource=projects/ /locations/ /teamFolders/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource=projects/ /locations/ /teamFolders/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1.projects.locations.teamFolders Methods create POST /v1/{parent=projects/ /locations/ }/teamFolders Creates a new TeamFolder in a given project and location. delete DELETE /v1/{name=projects/ /locations/ /teamFolders/ } Deletes a single TeamFolder. deleteTree POST /v1/{name=projects/ /locations/ /teamFolders/ }:deleteTree Deletes a TeamFolder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and WorkflowConfigs). get GET /v1/{name=projects/ /locations/ /teamFolders/ } Fetches a single TeamFolder. getIamPolicy GET /v1/{resource=projects/ /locations/ /teamFolders/ }:getIamPolicy Gets the access control policy for a resource. patch PATCH /v1/{teamFolder.name=projects/ /locations/ /teamFolders/ } Updates a single TeamFolder. queryContents GET /v1/{teamFolder=projects/ /locations/ /teamFolders/ }:queryContents Returns the contents of a given TeamFolder. search GET /v1/{location=projects/ /locations/ }/teamFolders:search Returns all TeamFolders in a given location that the caller has access to and match the provided filter. setIamPolicy POST /v1/{resource=projects/ /locations/ /teamFolders/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource=projects/ /locations/ /teamFolders/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "REST Resource: v1beta1.projects.locations.folders Methods create POST /v1beta1/{parent=projects/ /locations/ }/folders Creates a new Folder in a given project and location. delete DELETE /v1beta1/{name=projects/ /locations/ /folders/ } Deletes a single Folder. deleteTree POST /v1beta1/{name=projects/ /locations/ /folders/ }:deleteTree Deletes a Folder with its contents (Folders, Repositories, Workspaces, ReleaseConfigs, and WorkflowConfigs). get GET /v1beta1/{name=projects/ /locations/ /folders/ } Fetches a single Folder. getIamPolicy GET /v1beta1/{resource=projects/ /locations/ /folders/ }:getIamPolicy Gets the access control policy for a resource. move POST /v1beta1/{name=projects/ /locations/ /folders/ }:move Moves a Folder to a new Folder, TeamFolder, or the root location. patch PATCH /v1beta1/{folder.name=projects/ /locations/ /folders/ } Updates a single Folder. queryFolderContents GET /v1beta1/{folder=projects/ /locations/ /folders/ }:queryFolderContents Returns the contents of a given Folder. setIamPolicy POST /v1beta1/{resource=projects/ /locations/ /folders/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource=projects/ /locations/ /folders/ }:testIamPermissions Returns permissions that a caller has on the specified resource."
+        ]
+      },
+      {
+        "title": "Changelog \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Repository resource now includes containing folder and team folder name fields to indicate its location within the folder hierarchy. - IAM methods (GetIamPolicy, SetIamPolicy, TestIamPermissions) now support Folder and TeamFolder resources for access control management ( 5371e8e931dfba1d504ac2ffbd48a7f4abdcc158 ) 0.8.0 (2026-01-08) Features auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) 0.7.0 (2025-10-16) Features Add support for Python 3.14 ( 98ee71abc0f97c88239b50bf0e0827df19630def ) Bug Fixes Deprecate credentials file argument ( 98ee71abc0f97c88239b50bf0e0827df19630def ) 0.6.2 (2025-05-20) Features Support adding a workflow action to execute a Data Preparation node ( 8f95f78 ) Documentation Updated the formatting in some comments in multiple services ( 8f95f78 ) 0.6.1 (2025-03-15) Features [google-cloud-dataform] Dataform V1 Public APIs ( #13639 ) ( 7828c61 ) Bug Fixes [Many APIs] Allow Protobuf 6.x ( feb5353 ) remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 ) 0.6.0 (2025-03-03) ⚠ BREAKING CHANGES v1beta1: Response type of method CommitRepositoryChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse in service Dataform v1beta1: Response type of method PullGitCommits is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.PullGitCommitsResponse in service Dataform v1beta1: Response type of method PushGitCommits is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.PushGitCommitsResponse in service Dataform v1beta1: Response type of method CommitWorkspaceChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse in service Dataform v1beta1: Response type of method ResetWorkspaceChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse in service Dataform v1beta1: Response type of method RemoveDirectory is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.RemoveDirectoryResponse in service Dataform v1beta1: Response type of method RemoveFileRequest is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.RemoveFileResponse in service Dataform v1beta1: Response type of method CancelWorkflowInvocation is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse in service Dataform v1beta1: An existing field bigquery action is moved in to oneof in message .google.cloud.dataform.v1beta1.WorkflowInvocationAction Features v1beta1: Added new field internal metadata to all resources to export all the metadata information that is used internally to serve the resource ( 4aaf903 ) v1beta1: Moving existing field bigquery action to oneof in message .google.cloud.dataform.v1beta1.WorkflowInvocationAction to allow adding more actions types such as notebook action ( 4aaf903 ) v1beta1: Returning commit sha in the response of method CommitRepositoryChanges ( 4aaf903 ) Bug Fixes v1beta1: An existing field bigquery action is moved in to oneof in message .google.cloud.dataform.v1beta1.WorkflowInvocationAction ( 4aaf903 ) v1beta1: Response type of method CancelWorkflowInvocation is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method CommitRepositoryChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method CommitWorkspaceChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.CommitWorkspaceChangesResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method PullGitCommits is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.PullGitCommitsResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method PushGitCommits is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.PushGitCommitsResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method RemoveDirectory is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.RemoveDirectoryResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method RemoveFileRequest is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.RemoveFileResponse in service Dataform ( 4aaf903 ) v1beta1: Response type of method ResetWorkspaceChanges is changed from .google.protobuf.Empty to .google.cloud.dataform.v1beta1.ResetWorkspaceChangesResponse in service Dataform ( 4aaf903 ) Documentation v1beta1: Adds known limitations on several methods such as UpdateRepository , UpdateReleaseConfig and UpdateWorkflowConfig ( 4aaf903 ) v1beta1: Explained the effect of field page token on the pagination in several messages ( 4aaf903 ) v1beta1: several comments reformatted ( 4aaf903 ) 0.5.16 (2025-02-18) Bug Fixes deps: Require grpc-google-iam-v1>=0.14.0 ( 16e14c8 ) 0.5.15 (2025-02-12) Features Add REST Interceptors which support reading metadata ( e92d527 ) Add support for reading selective GAPIC generation methods from service YAML ( e92d527 ) 0.5.14 (2024-12-12) Features Add support for opt-in debug logging ( 19ed3be ) Bug Fixes Fix typing issue with gRPC metadata when key ends in -bin ( 19ed3be ) 0.5.13 (2024-10-31) Bug Fixes disable universe-domain validation ( 53c951e ) 0.5.12 (2024-10-24) Features Add support for Python 3.13 ( 6252476 ) 0.5.11 (2024-07-30) Bug Fixes Retry and timeout values do not propagate in requests during pagination ( ba1064f ) 0.5.10 (2024-07-08) Bug Fixes Allow Protobuf 5.x ( #12865 ) ( 7f9dedb ) 0.5.9 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12383 ) ( 305f43f ) 0.5.8 (2024-02-22) Bug Fixes [Many APIs] fix ValueError in test validate universe domain ( #12282 ) ( b985096 ) deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12305 ) ( 2aa7f17 ) 0.5.7 (2024-02-06) Bug Fixes Add google-auth as a direct dependency ( f3db074 ) Add staticmethod decorator to get client cert source and get api endpoint ( f3db074 ) Resolve AttributeError ‘Credentials’ object has no attribute ‘universe domain’ ( f3db074 ) 0.5.6 (2024-02-01) Features Allow users to explicitly configure universe domain ( #12239 ) ( 8004d15 ) 0.5.5 (2023-12-07) Features Add support for python 3.12 ( b96013d ) Introduce compatibility with native namespace packages ( b96013d ) Bug Fixes Require proto-plus >= 1.22.3 ( b96013d ) Use retry async instead of retry in async client ( b96013d ) 0.5.4 (2023-11-02) Features Support custom service account repository configuration ( 13b57e4 ) Support for ReleaseConfigs ( 13b57e4 ) Support for WorkflowConfigs ( 13b57e4 ) Support labels on repositories ( 13b57e4 ) Support new ComputeRepositoryAccessTokenStatus repository method ( 13b57e4 ) Support new first-party repository methods for committing, listing/reading files, and fetching history ( 13b57e4 ) Support NPMRC environment variables ( 13b57e4 ) Support SSH based git authentication configuration ( 13b57e4 ) Support workspace compilation override fields ( 13b57e4 ) Bug Fixes rearrange several messages, thus changing field types ( 13b57e4 ) Documentation several comments reformatted ( 13b57e4 ) 0.5.3 (2023-09-19) Documentation Minor formatting ( 9487380 ) 0.5.2 (2023-07-05) Bug Fixes Add async context manager return types ( #11445 ) ( 98bddda ) 0.5.1 (2023-03-23) Documentation Fix formatting of request arg in docstring ( #54 ) ( c38ec22 ) 0.5.0 (2023-02-27) Features Enable “rest” transport in Python for services supporting numeric enums ( #49 ) ( 403b246 ) 0.4.1 (2023-01-20) Bug Fixes Add context manager return types ( c546812 ) Documentation Add documentation for enums ( c546812 ) 0.4.0 (2023-01-10) Features Add support for python 3.11 ( #40 ) ( b8f6d78 ) 0.3.0 (2022-12-15) Features Add support for google.cloud.dataform. version ( fef5a2c ) Add typing to proto.Message based class attributes ( fef5a2c ) Bug Fixes Add dict typing for client options ( fef5a2c ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( b64c01a ) Drop usage of pkg resources ( b64c01a ) Fix timeout default values ( b64c01a ) Documentation samples: Snippetgen handling of repeated enum field ( fef5a2c ) samples: Snippetgen should call await on the operation coroutine before calling result ( b64c01a ) 0.2.3 (2022-10-07) Bug Fixes deps: Allow protobuf 3.19.5 ( #30 ) ( b070f6e ) 0.2.2 (2022-09-29) Bug Fixes deps: Require protobuf >= 3.20.2 ( #28 ) ( fb846e5 ) 0.2.1 (2022-08-15) Bug Fixes deps: allow protobuf < 5.0.0 ( #12 ) ( ddde619 ) deps: require proto-plus >= 1.22.0 ( ddde619 ) 0.2.0 (2022-07-26) Features generate v1beta1 ( 63b545e ) Bug Fixes remove v1alpha2 ( 63b545e ) 0.1.0 (2022-07-08) Features generate v1alpha2 ( bb0d40d ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "0.10.0 (latest) 0.9.0 0.8.0 0.7.0 0.6.2 0.5.16 0.4.1 0.3.0 0.2.3 0.1.0 PyPI History 0.10.0 (2026-03-26) Documentation A comment for field force in message .google.cloud.dataform.v1.DeleteRepositoryRequest is changed ( 397ae5384b5fa2741d0f479ba7efc1612e1195da ) Features add folders and teamFolders related changes to v1 ( 397ae5384b5fa2741d0f479ba7efc1612e1195da ) Allow Protobuf 7.x ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Bug Fixes Require Python 3.9 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Require google-api-core >= 2.11.0 ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) Improve type checking ( 1eb7c268482e55971966e284dac2cbeb903adcbb ) 0.9.0 (2026-02-12) Documentation A comment for field force in message .google.cloud.dataform.v1beta1.DeleteRepositoryRequest is changed PiperOrigin-RevId: 868182714 ( 5371e8e931dfba1d504ac2ffbd48a7f4abdcc158 ) Features Update GCP Client Libraries in v1beta1 to support Folders, TeamFolders, and other relevant APIs The v1beta1 API now includes support for Folders and TeamFolders, allowing users to organize repositories and files hierarchically and manage access controls.",
+          "SearchTeamFolders to search for TeamFolders. - Added Folder resource and methods: CreateFolder, GetFolder, UpdateFolder, DeleteFolder QueryFolderContents to list folder contents."
+        ]
+      },
+      {
+        "title": "\"Create custom organization policy constraints \\_|\\_ Dataform \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resource Field dataform.googleapis.com/CompilationResult resource.codeCompilationConfig.assertionSchema resource.codeCompilationConfig.builtinAssertionNamePrefix resource.codeCompilationConfig.databaseSuffix resource.codeCompilationConfig.defaultDatabase resource.codeCompilationConfig.defaultLocation resource.codeCompilationConfig.defaultNotebookRuntimeOptions.aiPlatformNotebookRuntimeTemplate resource.codeCompilationConfig.defaultNotebookRuntimeOptions.gcsOutputBucket resource.codeCompilationConfig.defaultSchema resource.codeCompilationConfig.schemaSuffix resource.codeCompilationConfig.tablePrefix resource.codeCompilationConfig.vars resource.gitCommitish resource.releaseConfig resource.workspace dataform.googleapis.com/ReleaseConfig resource.codeCompilationConfig.assertionSchema resource.codeCompilationConfig.builtinAssertionNamePrefix resource.codeCompilationConfig.databaseSuffix resource.codeCompilationConfig.defaultDatabase resource.codeCompilationConfig.defaultLocation resource.codeCompilationConfig.defaultNotebookRuntimeOptions.aiPlatformNotebookRuntimeTemplate resource.codeCompilationConfig.defaultNotebookRuntimeOptions.gcsOutputBucket resource.codeCompilationConfig.defaultSchema resource.codeCompilationConfig.schemaSuffix resource.codeCompilationConfig.tablePrefix resource.codeCompilationConfig.vars resource.cronSchedule resource.disabled resource.gitCommitish resource.name resource.releaseCompilationResult resource.timeZone dataform.googleapis.com/Repository resource.displayName resource.gitRemoteSettings.authenticationTokenSecretVersion resource.gitRemoteSettings.defaultBranch resource.gitRemoteSettings.sshAuthenticationConfig.hostPublicKey resource.gitRemoteSettings.sshAuthenticationConfig.userPrivateKeySecretVersion resource.gitRemoteSettings.url resource.kmsKeyName resource.name resource.npmrcEnvironmentVariablesSecretVersion resource.serviceAccount resource.setAuthenticatedUserAdmin resource.workspaceCompilationOverrides.defaultDatabase resource.workspaceCompilationOverrides.schemaSuffix resource.workspaceCompilationOverrides.tablePrefix dataform.googleapis.com/WorkflowConfig resource.cronSchedule resource.disabled resource.invocationConfig.fullyRefreshIncrementalTablesEnabled resource.invocationConfig.includedTags resource.invocationConfig.includedTargets.database resource.invocationConfig.includedTargets.name resource.invocationConfig.includedTargets.schema resource.invocationConfig.queryPriority resource.invocationConfig.serviceAccount resource.invocationConfig.transitiveDependenciesIncluded resource.invocationConfig.transitiveDependentsIncluded resource.name resource.releaseConfig resource.timeZone dataform.googleapis.com/WorkflowInvocation resource.compilationResult resource.invocationConfig.fullyRefreshIncrementalTablesEnabled resource.invocationConfig.includedTags resource.invocationConfig.includedTargets.database resource.invocationConfig.includedTargets.name resource.invocationConfig.includedTargets.schema resource.invocationConfig.queryPriority resource.invocationConfig.serviceAccount resource.invocationConfig.transitiveDependenciesIncluded resource.invocationConfig.transitiveDependentsIncluded resource.workflowConfig dataform.googleapis.com/Workspace resource.name What's next Learn more about custom constraints .",
+          "Only allow configuration of a Git remote to connect using HTTPS to repositories in the Google organization on GitHub. name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictGitRemote resourceTypes : - dataform.googleapis.com/Repository methodTypes : - CREATE - UPDATE condition : - resource.gitRemoteSettings.url == \"\" resource.gitRemoteSettings.url.startsWith('https://github.com/google/') actionType : ALLOW displayName : Only allow the https://github.com/google/ Git remote. description : Only allow configuration of a Git remote to connect using HTTPS to repositories in the Google organization on GitHub.",
+          "Before you begin, you must have the following: Your organization ID A project ID Create the constraint To create a custom constraint, follow these steps: Save the following file as constraint-restrict-repository-location.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictRepositoryLocation resourceTypes : - dataform.googleapis.com/Repository methodTypes : - CREATE - UPDATE condition : \"resource.name.contains('/locations/us-central1/')\" actionType : ALLOW displayName : Only us-central1 region is allowed. description : All resources must be created in the us-central1 region."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "The permissions in the Code Creator let you create and list code in Dataform, and access only the code that you created and code that was explicitly shared with you. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.folders.create dataform.locations. dataform.locations.get dataform.locations.list dataform.repositories.create dataform.repositories.list resourcemanager.projects.get resourcemanager.projects.list Code Editor ( roles/ dataform.codeEditor ) Edit access code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Owner ( roles/ dataform.codeOwner ) Full access to code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Scheduler Beta ( roles/ dataform.codeScheduler ) Access for scheduling workflows and releases. dataform.releaseConfigs.create dataform. workflowConfigs. create Code Viewer ( roles/ dataform.codeViewer ) Read-only access to all code resources. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Commenter Beta ( roles/ dataform.teamFolderCommenter ) View and comment access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Contributor ( roles/ dataform.teamFolderContributor ) Edit access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.teamFolders.update dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Creator ( roles/ dataform.teamFolderCreator ) Access to create new team folders. dataform.teamFolders.create Team Folder Owner ( roles/ dataform.teamFolderOwner ) Full access to a team folder and its contents.",
+          "Predefined Dataform roles The following table lists the predefined roles that give you access to Dataform resources: Role Permissions Dataform Admin ( roles/ dataform.admin ) Full access to all Dataform resources. dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Editor ( roles/ dataform.editor ) Edit access to Workspaces and Read-only access to Repositories. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform.workflowInvocations. dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Viewer ( roles/ dataform.viewer ) Read-only access to all Dataform resources. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Code Commenter Beta ( roles/ dataform.codeCommenter ) Permissions to comment, at the repository level.",
+          "Can share the team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Viewer ( roles/ dataform.teamFolderViewer ) View access to a team folder and its contents. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.FileOperation.DeleteFile",
+      "com.google.cloud.dataform.v1.CommitRepositoryChangesRequest.FileOperation.DeleteFile.Builder",
+      "custom.restrictGitRemote",
+      "custom.restrictRepositoryLocation",
+      "dataform.admin",
+      "dataform.codeCommenter",
+      "dataform.codeCreator",
+      "dataform.codeEditor",
+      "dataform.codeOwner",
+      "dataform.codeScheduler",
+      "dataform.codeViewer",
+      "dataform.comments",
+      "dataform.comments.create",
+      "dataform.comments.delete",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.comments.update",
+      "dataform.commentThreads",
+      "dataform.commentThreads.create",
+      "dataform.commentThreads.delete",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.commentThreads.update",
+      "dataform.compilationResults",
+      "dataform.config.get",
+      "dataform.config.update",
+      "dataform.editor",
+      "dataform.folders",
+      "dataform.folders.addContents",
+      "dataform.folders.create",
+      "dataform.folders.delete",
+      "dataform.folders.deleteTree",
+      "dataform.folders.get",
+      "dataform.folders.getIamPolicy",
+      "dataform.folders.move",
+      "dataform.folders.queryContents",
+      "dataform.folders.setIamPolicy",
+      "dataform.folders.update",
+      "dataform.googleapis.com",
+      "dataform.locations",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.operations.cancel",
+      "dataform.operations.delete",
+      "dataform.operations.get",
+      "dataform.operations.list",
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.delete",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.list",
+      "dataform.releaseConfigs.update",
+      "dataform.repositories.commit",
+      "dataform.repositories.create",
+      "dataform.repositories.delete",
+      "dataform.repositories.get",
+      "dataform.repositories.list",
+      "dataform.repositories.move",
+      "dataform.repositories.readFile",
+      "dataform.repositories.update",
+      "dataform.teamFolderCommenter",
+      "dataform.teamFolderContributor",
+      "dataform.teamFolderCreator",
+      "dataform.teamFolderOwner",
+      "dataform.teamFolders.create",
+      "dataform.teamFolders.delete",
+      "dataform.teamFolders.get",
+      "dataform.teamFolders.update",
+      "dataform.teamFolderViewer",
+      "dataform.viewer",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.list",
+      "dataform.workflowInvocations",
+      "dataform.workspaces",
+      "dataform.workspaces.commit",
+      "dataform.workspaces.create",
+      "dataform.workspaces.delete",
+      "dataform.workspaces.get",
+      "dataform.workspaces.list",
+      "dataform.workspaces.moveFile",
+      "dataform.workspaces.pull",
+      "dataform.workspaces.push",
+      "dataform.workspaces.readFile",
+      "dataform.workspaces.removeFile",
+      "dataform.workspaces.reset",
+      "dataform.workspaces.writeFile",
+      "folder.name",
+      "github.com",
+      "location.yaml",
+      "proto.Message",
+      "resource.codeCompilationConfig.assertionSchema",
+      "resource.codeCompilationConfig.builtinAssertionNamePrefix",
+      "resource.codeCompilationConfig.databaseSuffix",
+      "resource.codeCompilationConfig.defaultDatabase",
+      "resource.codeCompilationConfig.defaultLocation",
+      "resource.codeCompilationConfig.defaultNotebookRuntimeOptions.aiPlatformNotebookRuntimeTemplate",
+      "resource.codeCompilationConfig.defaultNotebookRuntimeOptions.gcsOutputBucket",
+      "resource.codeCompilationConfig.defaultSchema",
+      "resource.codeCompilationConfig.schemaSuffix",
+      "resource.codeCompilationConfig.tablePrefix",
+      "resource.codeCompilationConfig.vars",
+      "resource.compilationResult",
+      "resource.cronSchedule",
+      "resource.disabled",
+      "resource.displayName",
+      "resource.gitCommitish",
+      "resource.gitRemoteSettings.authenticationTokenSecretVersion",
+      "resource.gitRemoteSettings.defaultBranch",
+      "resource.gitRemoteSettings.sshAuthenticationConfig.hostPublicKey",
+      "resource.gitRemoteSettings.sshAuthenticationConfig.userPrivateKeySecretVersion",
+      "resource.gitRemoteSettings.url",
+      "resource.gitRemoteSettings.url.startsWith",
+      "resource.invocationConfig.fullyRefreshIncrementalTablesEnabled",
+      "resource.invocationConfig.includedTags",
+      "resource.invocationConfig.includedTargets.database",
+      "resource.invocationConfig.includedTargets.name",
+      "resource.invocationConfig.includedTargets.schema",
+      "resource.invocationConfig.queryPriority",
+      "resource.invocationConfig.serviceAccount",
+      "resource.invocationConfig.transitiveDependenciesIncluded",
+      "resource.invocationConfig.transitiveDependentsIncluded",
+      "resource.kmsKeyName",
+      "resource.name",
+      "resource.name.contains",
+      "resource.npmrcEnvironmentVariablesSecretVersion",
+      "resource.releaseCompilationResult",
+      "resource.releaseConfig",
+      "resource.serviceAccount",
+      "resource.setAuthenticatedUserAdmin",
+      "resource.timeZone",
+      "resource.workflowConfig",
+      "resource.workspace",
+      "resource.workspaceCompilationOverrides.defaultDatabase",
+      "resource.workspaceCompilationOverrides.schemaSuffix",
+      "resource.workspaceCompilationOverrides.tablePrefix",
+      "setup.cfg",
+      "v1.projects.locations.folders",
+      "v1.projects.locations.teamFolders",
+      "v1beta1.projects.locations.folders",
+      "v1beta1.projects.locations.teamFolders"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/dataform/latest/changelog",
+        "https://docs.cloud.google.com/dataform/docs/create-custom-constraints",
+        "https://docs.cloud.google.com/dataform/docs/access-control"
+      ]
+    }
+  ]
+}

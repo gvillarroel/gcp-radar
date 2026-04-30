@@ -1,0 +1,170 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.934Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion",
+  "feature_name": "Dataproc 2.0 support in Cloud Data Fusion",
+  "feature_slug": "dataproc-2-0-support-in-cloud-data-fusion",
+  "summary": "Support for Dataproc 2.0 in Cloud Data Fusion was removed starting with version 6.11.1; deprecated on 2025-08-27.",
+  "extended_definition": "Support for Dataproc 2.0 in Cloud Data Fusion was removed starting with version 6.11.1; deprecated on 2025-08-27.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-27",
+    "deprecation_date": "2025-08-27",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+      "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+      "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dataproc provisioner properties \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "source_id": "site-iam-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about compatibility between Cloud Data Fusion versions and Dataproc versions, see Version compatibility .",
+          "Dataproc profile web interface properties mapped to JSON properties Dataproc profile UI property name Dataproc profile JSON property name Profile label name Profile name label Description description Project ID projectId Creator service account key accountKey Region region Zone zone Network network Network host project ID networkHostProjectId Subnet subnet Runner service account serviceAccount Number of masters masterNumNodes Master machine type masterMachineType Master cores masterCPUs Master memory (GB) masterMemoryMB Master disk size (GB) masterDiskGB Master disk type masterDiskType Number of primary workers workerNumNodes Number of secondary workers secondaryWorkerNumNodes Worker machine type workerMachineType Worker cores workerCPUs Worker memory (GB) workerMemoryMB Worker disk size (GB) workerDiskGB Worker disk type workerDiskType Metadata clusterMetaData Network tags networkTags Enable Secure Boot secureBootEnabled Enable vTPM vTpmEnabled Enable Integrity Monitoring integrityMonitoringEnabled Image version imageVersion Custom image URI customImageUri Cloud Storage bucket gcsBucket Encryption key name encryptionKeyName Autoscaling policy autoScalingPolicy Initialization actions initActions Cluster properties clusterProperties Labels clusterLabels Max idle time idleTTL Skip cluster delete skipDelete Enable Stackdriver Logging Integration stackdriverLoggingEnabled Enable Stackdriver Monitoring Integration stackdriverMonitoringEnabled Enable Component Gateway componentGatewayEnabled Prefer external IP preferExternalIP Create poll delay pollCreateDelay Create poll jitter pollCreateJitter Delete poll delay pollDeleteDelay Poll interval pollInterval Best Practices When you create a static cluster for your pipelines, refer to the cluster configuration best practices .",
+          "Home Documentation Data analytics Cloud Data Fusion Guides Send feedback Dataproc provisioner properties Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Dataproc cluster configuration \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Data Fusion version Dataproc version 6.11.1 2.3, 2.2 , 2.1 6.10.1.1 2.2 , 2.1, 2.0 6.10 2.1, 2.0 6.9 2.1, 2.0, 1.5 6.7-6.8 2.0, 1.5 6.4-6.6 2.0 , 1.3 6.1-6.3 1.3 Cloud Data Fusion versions 6.4 and later are compatible with supported versions of Dataproc .",
+          "To specify the OS version used in your Dataproc cluster, the OS version must be compatible with one of the supported Dataproc versions for your Cloud Data Fusion in the preceding table.",
+          "Troubleshoot: Version compatibility Problem : The version of your Cloud Data Fusion environment might not be compatible with the version of your Dataproc cluster."
+        ]
+      },
+      {
+        "title": "\"Grant service account roles for Dataproc \\_|\\_ Cloud Data Fusion \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant Cloud Storage admin permission In Cloud Data Fusion versions 6.2.0 and above, grant the Cloud Storage admin role ( roles/storage.admin ) to service accounts that are used by Dataproc in your project .",
+          "Note: Starting in Cloud Data Fusion versions 6.2.3, you can grant these permissions in the UI when you create an instance.",
+          "Otherwise, Cloud Data Fusion cannot provision a Dataproc cluster and the following error appears when you execute a data pipeline: PROVISION task failed in REQUESTING CREATE state for program run [pipeline-name] due to Dataproc operation failure: INVALID ARGUMENT: User not authorized to act as service account '[service-account-name]' Get the service account name In the Google Cloud console, go to the Identity and Access Management page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsFixedSizeCollection",
+      "com.google.cloud.datafusion.v1.DataFusionClient.ListAvailableVersionsPage",
+      "iam.serviceAccountAdmin",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/dataproc",
+        "https://docs.cloud.google.com/data-fusion/docs/concepts/configure-clusters",
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.585Z",
+  "source_step08_card": "data/step-08/current/products/managed-anthos-service-mesh/card.json",
+  "product_name": "Managed Anthos Service Mesh",
+  "product_slug": "managed-anthos-service-mesh",
+  "feature_name": "VPC Service Controls for managed Anthos Service Mesh",
+  "feature_slug": "vpc-service-controls-for-managed-anthos-service-mesh",
+  "summary": "VPC Service Controls are available for managed Anthos Service Mesh; VPC Service Controls are available for managed Anthos Service Mesh.",
+  "extended_definition": "VPC Service Controls are available for managed Anthos Service Mesh; VPC Service Controls are available for managed Anthos Service Mesh.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+      "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh",
+      "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Environments Feature Managed (TD) Managed (istiod) GKE versions currently available in release channels , in one of the supported regions GKE versions currently available in release channels , in one of the supported regions , GKE Autopilot clusters Environments outside of Google Cloud (GKE Enterprise on-premises, GKE Enterprise on other public clouds, Amazon EKS, Microsoft AKS, or other Kubernetes clusters) Scale Refer to the Scalability Limits page Platform environment Feature Managed (TD) Managed (istiod) Single network Multi-network Single-project Multi-project with Shared VPC Multi-cluster deployment Feature Managed (TD) Managed (istiod) Multi-primary Primary-remote Multi-cluster endpoint discovery with declarative API Multi-cluster endpoint discovery with remote secrets Multi-cluster endpoint discovery with declarative API and a simple topology Notes on terminology A multi-primary configuration means that the configuration must be replicated in all clusters.",
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "You can determine whether the current mode of operation is equivalent to PILOT JWT ENABLE REMOTE JWKS=envoy by determining whether VPC Service Controls are supported for the control plane (ie. the VPCSC GA SUPPORTED condition is displayed)."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable the Cloud DNS API: gcloud services enable dns.googleapis.com Create a private DNS zone, a CNAME , and A records so that nodes and workloads can connect to Google APIs and services using Private Google Access and the private.googleapis.com hostname: gcloud dns managed-zones create private-google-apis \\ --description \"Private DNS zone for Google APIs\" \\ --dns-name googleapis.com \\ --visibility private \\ --networks vpc-network gcloud dns record-sets transaction start --zone private-google-apis gcloud dns record-sets transaction add private.googleapis.com. \\ --name \" .googleapis.com\" \\ --ttl 300 \\ --type CNAME \\ --zone private-google-apis gcloud dns record-sets transaction add \"199.36.153.8\" \\ \"199.36.153.9\" \"199.36.153.10\" \"199.36.153.11\" \\ --name private.googleapis.com \\ --ttl 300 \\ --type A \\ --zone private-google-apis gcloud dns record-sets transaction execute --zone private-google-apis Configuring private access to Container Registry Create a private DNS zone, a CNAME and an A record so that nodes can connect to Container Registry using Private Google Access and the gcr.io hostname: gcloud dns managed-zones create private-gcr-io \\ --description \"private zone for Container Registry\" \\ --dns-name gcr.io \\ --visibility private \\ --networks vpc-network gcloud dns record-sets transaction start --zone private-gcr-io gcloud dns record-sets transaction add gcr.io. \\ --name \" .gcr.io\" \\ --ttl 300 \\ --type CNAME \\ --zone private-gcr-io gcloud dns record-sets transaction add \"199.36.153.8\" \"199.36.153.9\" \"199.36.153.10\" \"199.36.153.11\" \\ --name gcr.io \\ --ttl 300 \\ --type A \\ --zone private-gcr-io gcloud dns record-sets transaction execute --zone private-gcr-io Create a private GKE cluster Find the external IP address of your Cloud Shell so that you can add it to the list of networks that are allowed to access your cluster's API server: SHELL IP = $( dig TXT -4 +short @ns1.google.com o-o.myaddr.l.google.com ) After a period of inactivity, the external IP address of your Cloud Shell VM can change.",
+          "No rule is required for Service connectivity because the iptables routing chain always converts Service IP addresses to Pod IP addresses. gcloud compute firewall-rules create allow-egress-nodes-and-pods \\ --action ALLOW \\ --direction EGRESS \\ --rules all \\ --target-service-accounts sa-application-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com,sa-gateway-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com \\ --destination-ranges 10 .0.0.0/24,10.1.0.0/16 \\ --network vpc-network \\ --priority 1000 \\ --description \"Allow egress to other Nodes and Pods\" Allow access to the reserved sets of IP addresses used by Private Google Access for serving Google APIs, Container Registry, and other services: gcloud compute firewall-rules create allow-egress-gcp-apis \\ --action ALLOW \\ --direction EGRESS \\ --rules tcp \\ --target-service-accounts sa-application-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com,sa-gateway-nodes@ ${ PROJECT ID } .iam.gserviceaccount.com \\ --destination-ranges 199 .36.153.8/30 \\ --network vpc-network \\ --priority 1000 \\ --description \"Allow access to the VIPs used by Google Cloud APIs (Private Google Access)\" If you are using VPC Service Controls , use 199.36.153.8/30 instead.",
+          "Use a single shared destination rule for all external hosts. cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : tls : mode : ISTIO MUTUAL EOF Create a ServiceEntry in the egress namespace to explicitly register example.com in the mesh's service registry for the team-x namespace: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : ServiceEntry metadata : name : example-com-ext namespace : istio-egress labels : Show this service and its telemetry in the Cloud Service Mesh page of the Google Cloud console service.istio.io/canonical-name : example.com spec : hosts : - example.com ports : - number : 80 name : http protocol : HTTP - number : 443 name : tls protocol : TLS resolution : DNS location : MESH EXTERNAL exportTo : - 'team-x' - 'istio-egress' EOF Configuring different egress routing for each namespace The exportTo property controls which namespaces can use the service entry."
+        ]
+      },
+      {
+        "title": "Configure Cloud Service Mesh for Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a Cloud DNS record in an exclusive zone, run the following commands: Create a private managed DNS zone in Cloud DNS for a service mesh. gcloud dns managed-zones create MESH NAME \\ --description = \"Domain for DOMAIN NAME service mesh routes\" \\ --dns-name = DOMAIN NAME . \\ --networks = VPC NETWORK NAME \\ --visibility = private Create a DNS record within the newly created private managed zone.",
+          "Next steps Explore common Cloud Run networking configurations for public and private networking Configure private networking for Cloud Run Set up Envoy proxies with HTTP services Route traffic from Cloud Run Services to Cloud Service Mesh workloads on GKE Route traffic from Cloud Service Mesh workloads to Cloud Run Services Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To create the client service for testing, deploy the fortio app in Cloud Run to allow forwarding traffic to HTTP routes: gcloud beta run deploy CLIENT SERVICE NAME \\ --region = REGION \\ --image = fortio/fortio \\ --network = VPC NETWORK NAME \\ --subnet = SUBNET NAME \\ --mesh = \"projects/ PROJECT ID /locations/global/meshes/ MESH NAME \" Replace the following: CLIENT SERVICE NAME : the name of the client Cloud Run service."
+        ]
+      },
+      {
+        "title": "\"Set up a proxyless gRPC service mesh on GKE \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manual Run a gRPC client and direct it to use the routing configuration specified by the HTTPRoute: C++ kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client service.istio.io/canonical-name: deployment-psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-cpp-client:v1.68.1 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: CSM WORKLOAD NAME value: psm-grpc-client - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CONTAINER NAME value: psm-grpc-client - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Java kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client service.istio.io/canonical-name: deployment-psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-java-client:v1.68.2 imagePullPolicy: Always args: - \"world\" - \"xds:///helloworld.proxyless-example.svc.cluster.local:50051\" - \"9464\" env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: CSM WORKLOAD NAME value: psm-grpc-client - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CONTAINER NAME value: psm-grpc-client - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Go kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client service.istio.io/canonical-name: deployment-psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-go-client:v1.69.4 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: CSM WORKLOAD NAME value: psm-grpc-client - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CONTAINER NAME value: psm-grpc-client - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Python kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client service.istio.io/canonical-name: deployment-psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-python-client:v1.68.1 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: CSM WORKLOAD NAME value: psm-grpc-client - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CONTAINER NAME value: psm-grpc-client - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Automatic Run a gRPC client and direct it to use the routing configuration specified by the HTTPRoute: C++ kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-cpp-client:v1.68.1 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" EOF Java kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-java-client:v1.68.2 imagePullPolicy: Always args: - \"world\" - \"xds:///helloworld.proxyless-example.svc.cluster.local:50051\" - \"9464\" EOF Go kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-go-client:v1.69.4 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" EOF Python kubectl apply -f - <<EOF apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-client namespace: proxyless-example labels: app: psm-grpc-client spec: replicas: 1 selector: matchLabels: app: psm-grpc-client template: metadata: labels: app: psm-grpc-client spec: containers: - name: psm-grpc-client image: grpc/csm-o11y-example-python-client:v1.68.1 imagePullPolicy: Always args: - \"--target=xds:///helloworld.proxyless-example.svc.cluster.local:50051\" EOF The output is similar to deployment.apps/psm-grpc-client created To verify if the client was able to reach the service, view the client's logs: kubectl logs -n proxyless-example $( kubectl get po -n proxyless-example grep psm-grpc-client awk '{print $1;}' ) -f The output is similar to: Defaulted container \"psm-grpc-client\" out of: psm-grpc-client, grpc-td-init (init) Greeter received: Hello from psm-grpc-server-xxxxxxx-xxxx world Google Cloud Managed Service for Prometheus Setup (Optional) You can deploy the Google Cloud Managed Service for Prometheus PodMonitoring resource to export the metrics to Cloud Monitoring.",
+          "Manual Apply the Namespace kubectl apply -f - <<EOF --- kind: Namespace apiVersion: v1 metadata: name: proxyless-example EOF Deploy a gRPC service: C++ kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server service.istio.io/canonical-name: deployment-psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-cpp-server:v1.68.1 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: CONTAINER NAME value: psm-grpc-server - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CSM WORKLOAD NAME value: psm-grpc-server - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Java kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server service.istio.io/canonical-name: deployment-psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-java-server:v1.68.2 imagePullPolicy: Always args: - \"50051\" - \"9464\" ports: - containerPort: 50051 env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: CONTAINER NAME value: psm-grpc-server - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CSM WORKLOAD NAME value: psm-grpc-server - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Go kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server service.istio.io/canonical-name: deployment-psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-go-server:v1.69.4 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: CONTAINER NAME value: psm-grpc-server - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CSM WORKLOAD NAME value: psm-grpc-server - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF Python kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server service.istio.io/canonical-name: deployment-psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-python-server:v1.68.1 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 env: - name: GRPC XDS BOOTSTRAP value: \"/tmp/grpc-xds/td-grpc-bootstrap.json\" - name: POD NAME valueFrom: fieldRef: fieldPath: metadata.name - name: CONTAINER NAME value: psm-grpc-server - name: NAMESPACE NAME valueFrom: fieldRef: fieldPath: metadata.namespace - name: CSM WORKLOAD NAME value: psm-grpc-server - name: CSM CANONICAL SERVICE NAME valueFrom: fieldRef: fieldPath: metadata.labels [ 'service.istio.io/canonical-name' ] - name: CSM MESH ID value: proj- PROJECT NUMBER - name: OTEL RESOURCE ATTRIBUTES value: k8s.pod.name = \\$ ( POD NAME ) ,k8s.namespace.name = \\$ ( NAMESPACE NAME ) ,k8s.container.name = \\$ ( CONTAINER NAME ) volumeMounts: - mountPath: /tmp/grpc-xds/ name: grpc-td-conf readOnly: true initContainers: - name: grpc-td-init image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.16.0 imagePullPolicy: Always args: - \"--output=/tmp/bootstrap/td-grpc-bootstrap.json\" - \"--vpc-network-name=default\" - \"--xds-server-uri=trafficdirector.googleapis.com:443\" - \"--generate-mesh-id\" volumeMounts: - mountPath: /tmp/bootstrap/ name: grpc-td-conf volumes: - name: grpc-td-conf emptyDir: medium: Memory EOF The output is similar to namespace/proxyless-example created service/helloworld created deployment.apps/psm-grpc-server created Automatic Apply the Namespace kubectl apply -f - <<EOF --- kind: Namespace apiVersion: v1 metadata: name: proxyless-example EOF Run the following command to enable Proxyless Bootstrap Injector in the proxyless-example namespace: kubectl label namespace proxyless-example mesh.cloud.google.com/csm-injection = proxyless Deploy a gRPC service: C++ kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-cpp-server:v1.68.1 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 EOF Java kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-java-server:v1.68.2 imagePullPolicy: Always args: - \"50051\" - \"9464\" ports: - containerPort: 50051 EOF Go kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-go-server:v1.69.4 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 EOF Python kubectl apply -f - <<EOF --- apiVersion: v1 kind: Service metadata: name: helloworld namespace: proxyless-example spec: selector: app: psm-grpc-server ports: - port: 50051 targetPort: 50051 --- apiVersion: apps/v1 kind: Deployment metadata: name: psm-grpc-server namespace: proxyless-example labels: app: psm-grpc-server spec: replicas: 2 selector: matchLabels: app: psm-grpc-server template: metadata: labels: app: psm-grpc-server spec: containers: - name: psm-grpc-server image: grpc/csm-o11y-example-python-server:v1.68.1 imagePullPolicy: Always args: - \"--port=50051\" ports: - containerPort: 50051 EOF The output is similar to namespace/proxyless-example created service/helloworld created deployment.apps/psm-grpc-server created Verify that the Pods have been created: kubectl get pods -n proxyless-example The output is similar to NAME READY STATUS RESTARTS AGE psm-grpc-server-65966bf76d-2wwxz 1/1 Running 0 13s psm-grpc-server-65966bf76d-nbxd2 1/1 Running 0 13s Wait for all Pods to be ready and have the Status Running before continuing.",
+          "The channels should have a target of the form xds:/// . gRPC servers are always enabled for Cloud Service Mesh."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bootstrap.json",
+      "deployment.apps",
+      "dns.googleapis.com",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "example.svc.cluster.local",
+      "gcr.io",
+      "googleapis.com",
+      "helloworld.proxyless",
+      "iam.gserviceaccount.com",
+      "items..metadata.name",
+      "k8s.container.name",
+      "k8s.namespace.name",
+      "k8s.pod.name",
+      "mesh.cloud.google.com",
+      "metadata.labels",
+      "metadata.name",
+      "metadata.namespace",
+      "networking.istio.io",
+      "ns1.google.com",
+      "o.myaddr.l.google.com",
+      "private.googleapis.com",
+      "service.istio.io",
+      "trafficdirector.googleapis.com",
+      "v1.68.1",
+      "v1.68.2",
+      "v1.69.4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/configure-cloud-service-mesh-for-cloud-run",
+        "https://docs.cloud.google.com/service-mesh/docs/gateway/proxyless-grpc-mesh"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:48.706Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run",
+  "feature_name": "NVIDIA RTX PRO 6000 Blackwell GPU support",
+  "feature_slug": "nvidia-rtx-pro-6000-blackwell-gpu-support",
+  "summary": "Cloud Run supports NVIDIA RTX PRO 6000 Blackwell GPUs for supported workloads.",
+  "extended_definition": "Cloud Run supports NVIDIA RTX PRO 6000 Blackwell GPUs for supported workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+      "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+      "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Autoscale worker pools based on Prometheus metrics \\_|\\_ Cloud Run \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+        "source_id": "site-docs-root-2",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Run LLM inference on GPUs with Gemma 4 and Ollama \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+        "source_id": "site-docs-root",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note the following important flags in this command: --concurrency 16 is set to match the value of the environment variable OLLAMA NUM PARALLEL . --gpu 1 with --gpu-type nvidia-rtx-pro-6000 assigns 1 NVIDIA RTX PRO 6000 Blackwell GPU GPU to every Cloud Run instance in the service. --max-instances 1 specifies the maximum number of instances to scale to.",
+          "Deploy the Ollama service for LLM inference Deploy the service to Cloud Run: gcloud beta run deploy SERVICE-NAME \\ --image \"ollama/ollama:latest\" \\ --project PROJECT ID \\ --region REGION \\ --no-allow-unauthenticated \\ --cpu 20 \\ --memory 80Gi \\ --gpu 1 \\ --gpu-type nvidia-rtx-pro-6000 \\ --no-gpu-zonal-redundancy \\ --max-instances 1 \\ --concurrency 16 \\ --timeout 600 \\ --set-env-vars = OLLAMA NUM PARALLEL = 16 \\ --set-env-vars = OLLAMA HOST = 0 .0.0.0:8080 \\ --set-env-vars = OLLAMA DEBUG = false \\ --set-env-vars = OLLAMA KEEP ALIVE = -1 \\ --startup-probe tcpSocket.port = 8080 ,initialDelaySeconds = 240 ,failureThreshold = 1 ,timeoutSeconds = 240 ,periodSeconds = 240 \\ --command \"bash\" \\ --args = \"-c,(sleep 15 && ollama pull MODEL NAME ) & ollama serve\" Replace: SERVICE-NAME with a unique name for the Cloud Run service.",
+          "It has to be equal to or lower than your project's NVIDIA RTX Pro 6000 GPU ( Total NVIDIA RTX Pro 6000 GPU allocation, in milli GPU, without zonal redundancy, per project per region ) quota. --no-allow-unauthenticated restricts unauthenticated access to the service."
+        ]
+      },
+      {
+        "title": "\"Process images from Cloud Storage tutorial \\_|\\_ Cloud Run \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "source_id": "site-docs-root",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2.BuildProto"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/gpu-gemma-with-ollama",
+        "https://docs.cloud.google.com/run/docs/tutorials/autoscale-workerpools-prometheus",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    }
+  ]
+}

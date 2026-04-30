@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.493Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration",
+  "feature_name": "Delete integration",
+  "feature_slug": "delete-integration",
+  "summary": "The delete integration capability allows deleting an entire integration and all its versions in a single operation.",
+  "extended_definition": "The delete integration capability allows deleting an entire integration and all its versions in a single operation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"API request fulfilment \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you don't have curl , you can download it from the curl releases and downloads page . curl -v -X POST -H \"Content-Type: application/json\" 'https://integrations.googleapis.com/v1/projects/connectors-ip-test/locations/us-central1/integrations/api-fulfillment-integration:execute' -H \"Authorization: Bearer $(gcloud auth AUTH PROFILE )\" -d '{ \"triggerId\": \"api trigger/api-fulfillment-integration API 1\", \"inputParameters\": { \"customer id\": {\"string value\": 1}, \"location\" : {\"string value\" : \"US\"}} }' The API returns the integration execution response containing all following JSON: { \"CUSTOMER ID\": 2, \"CUSTOMER NAME\": \"Dana\" \"CUSTOMER EMAILID\": \"test-02@test.com \" \"CUSTOMER CITY\": \"Seattle\" } Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, unpublish the integration and delete the connections created in Integration Connectors.",
+          "When you finish the tasks that are described in this document, you can avoid continued billing by deleting the resources that you created.",
+          "After you finish these steps, you can delete the project, removing all resources associated with the project."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce case routing assignments \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, unpublish the integration and delete the connections created in Integration Connectors.",
+          "When you finish the tasks that are described in this document, you can avoid continued billing by deleting the resources that you created.",
+          "After you finish these steps, you can delete the project, removing all resources associated with the project."
+        ]
+      },
+      {
+        "title": "\"Automate Salesforce opportunity to BigQuery order \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, unpublish the integration and delete the connections created in Integration Connectors.",
+          "When you finish the tasks that are described in this document, you can avoid continued billing by deleting the resources that you created.",
+          "After you finish these steps, you can delete the project, removing all resources associated with the project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.googleapis.com",
+      "test.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-case-routing",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+      ]
+    }
+  ]
+}

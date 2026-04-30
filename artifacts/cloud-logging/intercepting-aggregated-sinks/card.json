@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:47.832Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging",
+  "feature_name": "Intercepting aggregated sinks",
+  "feature_slug": "intercepting-aggregated-sinks",
+  "summary": "Aggregated sinks can be configured as intercepting so logs are not passed through the child resource Log Router.",
+  "extended_definition": "Aggregated sinks can be configured as intercepting so logs are not passed through the child resource Log Router.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/central-log-storage",
+      "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+      "https://docs.cloud.google.com/logging/docs/routing/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Route log entries \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are two types of aggregated sinks: Non-intercepting aggregated sinks Intercepting aggregated sinks The difference between these two sink types is that intercepting sinks at one level in the resource hierarchy can affect routing for resources lower in the hierarchy.",
+          "The following destinations are supported: Google Cloud project Select this destination when you want the log sinks in the destination project to reroute your log entries, or when you have created an intercepting aggregated sink.",
+          "Support for organizations and folders To help you manage the log data in an organization or folder, you can do the following: You can create aggregated sinks , which route log entries for an organization or folder and their children, to the destination specified by the sink."
+        ]
+      },
+      {
+        "title": "\"Aggregate and store your organization's logs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Ensure the following: To get the permissions that you need to configure an aggregated sink, ask your administrator to grant you the following IAM roles on your organization: To create log buckets and sinks in a project: Logs Configuration Writer ( roles/logging.configWriter ) - your project To create an aggregated sink: Logs Configuration Writer ( roles/logging.configWriter ) - your organization To grant roles to principals: Owner ( roles/owner ) - your project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Execute the gcloud logging sinks create command: gcloud logging sinks create PROJECT LEVEL SINK NAME SINK DESTINATION --project= PROJECT ID --log-filter='logName:cloudaudit.googleapis.com' \\ --description=\" Audit logs from my organization \" \\ Create the aggregated sink Aggregated sinks combine and route log entries from the resources contained by an organization or folder to a destination.",
+          "Set up the sink at the organization level To create an aggregated sink that is non-intercepting and that routes log entries to a project, complete the following steps: Run the gcloud logging sinks create command."
+        ]
+      },
+      {
+        "title": "Regionalize your logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command: gcloud logging sinks update Default \\ logging.googleapis.com/projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID \\ --log-filter='NOT LOG ID(\"cloudaudit.googleapis.com/activity\") AND NOT LOG ID(\"externalaudit.googleapis.com/activity\") AND NOT LOG ID(\"cloudaudit.googleapis.com/system event\") AND NOT LOG ID(\"externalaudit.googleapis.com/system event\") AND NOT LOG ID(\"cloudaudit.googleapis.com/access transparency\") AND NOT LOG ID(\"externalaudit.googleapis.com/access transparency\")' \\ --description=\"Updated the Default sink to route logs to the LOCATION region\" Note: When you create a project, the filter for the Default sink is as shown in the previous command.",
+          "Logging supports querying logs from multiple regions together, in which case queries are processed in the same locations as the buckets being queried and then aggregated in the region the query was received from to return the results.",
+          "The Logs Explorer is configured to display log entries that originate in your project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "externalaudit.googleapis.com",
+      "logging.configWriter",
+      "logging.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.configWriter",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/routing/overview",
+        "https://docs.cloud.google.com/logging/docs/central-log-storage",
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs"
+      ]
+    }
+  ]
+}

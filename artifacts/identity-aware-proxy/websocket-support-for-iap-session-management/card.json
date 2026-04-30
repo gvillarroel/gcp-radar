@@ -1,0 +1,182 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.837Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy",
+  "feature_name": "WebSocket support for IAP session management",
+  "feature_slug": "websocket-support-for-iap-session-management",
+  "summary": "Identity-Aware Proxy supports WebSocket connections for managing Compute Engine resource sessions.",
+  "extended_definition": "Identity-Aware Proxy supports WebSocket connections for managing Compute Engine resource sessions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+      "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+      "https://docs.cloud.google.com/iap/docs/managing-access",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up IAP To set up IAP for your project, follow these steps: In the Google Cloud console, go to the Security > Identity-Aware Proxy page and select the project that you want to enable IAP for.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "GO TO THE IDENTITY-AWARE PROXY PAGE If you haven't configured your project's OAuth consent screen, you're prompted to do so: Caution: Don't enter any confidential information on the OAuth consent screen."
+        ]
+      },
+      {
+        "title": "\"Overview of IAP for on-premises apps \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Overview of IAP for on-premises apps Stay organized with collections Save and categorize content based on your preferences.",
+          "When the IAP on-prem connector is deployed and IAP is enabled for the newly created on-prem connector backend service, IAP secures your app with identity and context based Identity and Access Management (IAM) access policies.",
+          "Identity-Aware Proxy (IAP) allows you to manage access to HTTP-based apps outside of Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Manage access to IAP-secured resources \\_|\\_ Identity-Aware Proxy \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Manage access to IAP-secured resources Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to manage individual or group access to Identity-Aware Proxy (IAP) secured resources at the resource level.",
+          "Go to the Identity-Aware Proxy page Select the resource you want to secure with IAP."
+        ]
+      },
+      {
+        "title": "Enable IAP for Cloud Run \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Cloud Run Stay organized with collections Save and categorize content based on your preferences.",
+          "There are two ways to enable Identity-Aware Proxy for your Cloud Run services.",
+          "Setting up IAP access Go to the Identity-Aware Proxy page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "domain.com",
+      "iap.googleapis.com",
+      "internal.domain.com",
+      "run.routes.invoke",
+      "sheets.hr"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-for-on-prem-apps-overview",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run"
+      ]
+    }
+  ]
+}

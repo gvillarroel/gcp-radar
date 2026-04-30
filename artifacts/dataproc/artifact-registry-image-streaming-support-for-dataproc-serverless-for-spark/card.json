@@ -1,0 +1,128 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.683Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc",
+  "feature_name": "Artifact Registry image streaming support for Dataproc Serverless for Spark",
+  "feature_slug": "artifact-registry-image-streaming-support-for-dataproc-serverless-for-spark",
+  "summary": "Dataproc Serverless for Spark supports Artifact Registry with image streaming.",
+  "extended_definition": "Dataproc Serverless for Spark supports Artifact Registry with image streaming.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+      "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+      "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using Spark data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable Spark data lineage at the project level, set the following custom project metadata : Key Value DATAPROC LINEAGE ENABLED true DATAPROC CLUSTER SCOPES https://www.googleapis.com/auth/cloud-platform Setting this VM access scope is only necessary for 2.0 image version clusters.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Data lineage is available for all Managed Service for Apache Spark Spark jobs except SparkR and Spark streaming jobs, and supports BigQuery and Cloud Storage data sources."
+        ]
+      },
+      {
+        "title": "\"Manage Java and Scala dependencies for Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: gcloud dataproc jobs submit spark \\ --cluster=my-cluster \\ --region= region \\ --properties=spark.jars.packages='com.google.cloud:google-cloud-translate:1.35.0,org.apache.bahir:spark-streaming-pubsub 2.11:2.2.0' When submitting a job directly on your cluster use the spark-submit command with the --packages=[DEPENDENCIES] parameter.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "This configuration instructs Maven to rename the com.google.common package to repackaged.com.google.common and to update all references to the classes from the original package. < ? xml version = \"1.0\" encoding = \"UTF-8\" ? > < project xmlns = \"http://maven.apache.org/POM/4.0.0\" xmlns : xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xsi : schemaLocation = \"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" > < modelVersion>4 .0.0 < / modelVersion > < properties > < maven . compiler . source>1 .8 < / maven . compiler . source > < maven . compiler . target>1 .8 < / maven . compiler . target > < / properties > < groupId >< ! -- YOUR GROUP ID --></ groupId > < artifactId >< ! -- YOUR ARTIFACT ID --></ artifactId > < version >< ! -- YOUR PACKAGE VERSION --></ version > < dependencies > < dependency > < groupId>org . apache . spark < / groupId > < artifactId>spark - sql 2 .11 < / artifactId > < version >< ! -- YOUR SPARK VERSION --></ version > < scope>provided < / scope > < / dependency > < ! -- YOUR DEPENDENCIES -- > < / dependencies > < build > < plugins > < plugin > < groupId>net . alchim31 . maven < / groupId > < artifactId>scala - maven - plugin < / artifactId > < executions > < execution > < goals > < goal>compile < / goal > < goal>testCompile < / goal > < / goals > < / execution > < / executions > < configuration > < scalaVersion >< ! -- YOUR SCALA VERSION --></ scalaVersion > < / configuration > < / plugin > < plugin > < groupId>org . apache . maven . plugins < / groupId > < artifactId>maven - shade - plugin < / artifactId > < executions > < execution > < phase>package < / phase > < goals > < goal>shade < / goal > < / goals > < configuration > < transformers > < transformer implementation = \"org.apache.maven.plugins.shade.resource.ManifestResourceTransformer\" > < mainClass >< ! -- YOUR APPLICATION MAIN CLASS --></ mainClass > < / transformer > < ! -- This is needed if you have dependencies that use Service Loader ."
+        ]
+      },
+      {
+        "title": "\"Customize your Spark job runtime environment with Docker on YARN \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: dataproc:yarn.docker.image=gcr.io/project-id/image:1.0.1 Requirement: You must host your Docker image on Container Registry or Artifact Registry . (Managed Service for Apache Spark cannot fetch containers from other registries).",
+          "DP IMAGE : Managed Service for Apache Spark image version must be 2.0.49 or later ( --image-version=2.0 will use a qualified minor version later than 2.0.49 ). --optional-components=DOCKER : Enables the Docker component on the cluster. --properties flag: dataproc:yarn.docker.enable=true : Required property to enable the Managed Service for Apache Spark Docker on YARN feature. dataproc:yarn.docker.image : Optional property that you can add to specify your DOCKER IMAGE using the following Container Registry image naming format: {hostname}/{project-id}/{image}:{tag} .",
+          "Download the Miniconda3 installer. wget https://repo.anaconda.com/miniconda/Miniconda3-py39 4.10.3-Linux-x86 64.sh Python module example: cat >test util.py <<EOF def hello ( name ) : print ( \"hello {}\" .format ( name )) def read lines ( path ) : with open ( path ) as f: return f.readlines () EOF Build and push the image. docker build -t \" ${ IMAGE } \" . docker push \" ${ IMAGE } \" Create a Managed Service for Apache Spark cluster After creating a Docker image that customizes your Spark environment, create a Managed Service for Apache Spark cluster that will use your Docker image when running Spark jobs. gcloud gcloud dataproc clusters create CLUSTER NAME \\ --region= REGION \\ --image-version= DP IMAGE \\ --optional-components=DOCKER \\ --properties=dataproc:yarn.docker.enable=true,dataproc:yarn.docker.image= DOCKER IMAGE \\ other flags Replace the following; CLUSTER NAME : The cluster name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.jar",
+      "assembly.sbt",
+      "build.sbt",
+      "com.eed3si9n",
+      "com.google.cloud",
+      "com.google.common",
+      "f.readlines",
+      "gcr.io",
+      "maven.apache.org",
+      "org.apache.bahir",
+      "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer",
+      "org.apache.spark",
+      "repackaged.com.google.common",
+      "repo.anaconda.com",
+      "spark.extraListeners",
+      "spark.jars.packages",
+      "spark.openlineage.appName",
+      "spark.openlineage.namespace",
+      "util.py",
+      "yarn.docker.enable",
+      "yarn.docker.image"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/guides/manage-spark-dependencies",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn"
+      ]
+    }
+  ]
+}

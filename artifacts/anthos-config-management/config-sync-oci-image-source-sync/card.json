@@ -1,0 +1,148 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.178Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management",
+  "feature_name": "Config Sync OCI image source sync",
+  "feature_slug": "config-sync-oci-image-source-sync",
+  "summary": "Config Sync supports syncing configurations packaged as OCI images from Artifact Registry or Container Registry as a preview capability.",
+  "extended_definition": "Config Sync supports syncing configurations packaged as OCI images from Artifact Registry or Container Registry as a preview capability.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Control namespace-scoped sources in a namespace-scoped source Config Sync supports syncing from more than one namespace-scoped source of truth per namespace.",
+          "Control root sources in a root source of truth Config Sync supports syncing from more than one source of truth.",
+          "Config Sync supports Git repositories, Helm charts, and OCI images as the source of truth."
+        ]
+      },
+      {
+        "title": "About sources of truth \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Another RepoSync in a different namespace syncing from an OCI image containing a set of application-specific configurations built by a separate CI/CD process.",
+          "You can use this table to understand the key characteristics of each source type to help you make an informed decision: Feature Git repository OCI image Helm chart Best for General purpose configuration management; flexibility; human-readability Immutable, versioned configurations; leveraging container infrastructure Packaging and distributing complex applications Mutability Mutable Immutable Mutable (chart versions are immutable, but values can change) Rollbacks Revert commits or change branches Deploy previous image tag Rollback to a previous chart version Tooling Standard Git clients, CI/CD pipelines Docker or Podman, container registries Helm CLI, Helm repositories Performance Can be slower for large repositories Faster, especially at scale Fast when fetching from a chart repository Authentication Flexible (SSH, token), can be more complex to set up Simplified with Workload Identity Federation for GKE (for example, with Artifact Registry) Simplified with Workload Identity Federation for GKE (for example, with Artifact Registry) It's also possible to use different source types for different purposes on the same cluster.",
+          "Example RootSync configuration The following example shows a RootSync manifest that syncs from an OCI image stored in Artifact Registry: apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : sourceType : oci sourceFormat : unstructured oci : image : us-central1-docker.pkg.dev/my-project/my-repo/my-config-image:v1.0.0 dir : . auth : k8sserviceaccount This configuration sets up Config Sync to sync from an OCI image."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "With Config Sync, you can manage your Kubernetes resources by syncing configurations from a central source of truth, such as a Git repository, an OCI image, or a Helm chart.",
+          "SECRET : the secret auth type. oci data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true oci { sync repo = \" REPO \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the OCI image repository that contains your configuration files.",
+          "You can configure them later. sourceType : SOURCE TYPE sourceFormat : FORMAT syncRepo : REPO syncRev : REVISION secretType : SECRET TYPE gcpServiceAccountEmail : EMAIL metricsGcpServiceAccountEmail : METRICS EMAIL policyDir : DIRECTORY preventDrift : false Replace the following: SOURCE TYPE : add git to sync from a Git repository, oci to sync from an OCI image, or helm to sync from a Helm chart."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.default.fleet",
+      "configsync.gke.io",
+      "data.google",
+      "docker.pkg.dev",
+      "feature.configmanagement",
+      "feature.name",
+      "project.default.project",
+      "sync.yaml",
+      "v1.0.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/sources-of-truth",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ]
+}

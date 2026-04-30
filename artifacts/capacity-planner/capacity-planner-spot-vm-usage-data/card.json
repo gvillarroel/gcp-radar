@@ -1,0 +1,104 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.422Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner",
+  "feature_name": "Capacity Planner Spot VM usage data",
+  "feature_slug": "capacity-planner-spot-vm-usage-data",
+  "summary": "Capacity Planner preview supports usage data for Spot VMs.",
+  "extended_definition": "In Capacity Planner, Spot VM usage data (including preemptible quota) is available for specific resource types—compute instances, GPUs, and TPUs—when Spot context is enabled. Google Cloud documentation describes two supported methods to access it: in the console by enabling the Spot usage toggle in the usage and forecast graphs, or programmatically by setting `isSpot=true` in the Capacity Planner API. The same documentation explicitly says forecast data for Spot VMs is not supported, so Spot coverage is for usage viewing in defined Spot paths rather than full forecast support.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "HIGH",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/export-data",
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Export data to your local workstation \\_|\\_ Capacity Planner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/export-data",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "source_id": "site-iam-reference",
+        "final_score": 38,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "The cited Capacity Planner pages provide the feature behavior and limits for Spot VM data visibility and the API/console controls required to request it, plus general export/resource-scope context for Capacity Planner usage and forecast data."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "https://docs.cloud.google.com/capacity-planner/docs/export-data"
+      ]
+    }
+  ]
+}

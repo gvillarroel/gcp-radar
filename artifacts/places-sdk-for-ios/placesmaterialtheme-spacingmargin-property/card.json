@@ -1,0 +1,101 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.078Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-ios/card.json",
+  "product_name": "Places SDK for iOS",
+  "product_slug": "places-sdk-for-ios",
+  "feature_name": "PlacesMaterialTheme.spacingMargin property",
+  "feature_slug": "placesmaterialtheme-spacingmargin-property",
+  "summary": "The PlacesMaterialTheme.spacingMargin property is no longer supported; deprecated on 2025-10-02.",
+  "extended_definition": "The PlacesMaterialTheme.spacingMargin property is no longer supported; deprecated on 2025-10-02.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-02",
+    "deprecation_date": "2025-10-02",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAddressComponent",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompletePlaceSuggestion",
+      "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompletePrediction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAddressComponent",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift var types : [ String ] { get } Objective-C @property ( nonatomic , strong , readonly ) NSArray < NSString > Nonnull types ; name Name of the address component, e.g. “Sydney” Declaration Swift var name : String { get } Objective-C @property ( nonatomic , copy , readonly ) NSString Nonnull name ; shortName Short name of the address component, e.g. “AU” Declaration Swift var shortName : String ? { get } Objective-C @property ( nonatomic , copy , readonly ) NSString Nullable shortName ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "GMSAddressComponent @interface GMSAddressComponent : NSObject Represents a component of an address, e.g., street number, postcode, city, etc. type Deprecated type property is deprecated in favor of types Type of the address component.",
+          "Declaration Swift var type : String { get } Objective-C @property ( nonatomic , copy , readonly ) GMS AVAILABLE BUT DEPRECATED MSG NSString type ; types Types associated with the address component."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompletePlaceSuggestion",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift var distanceMeters : NSNumber ? { get } Objective-C @property ( nonatomic , readonly , nullable ) NSNumber distanceMeters ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Declaration Swift var types : [ String ] { get } Objective-C @property ( nonatomic , copy , readonly ) NSArray < NSString > Nonnull types ; distanceMeters The straight line distance in meters between the origin and this suggestion if a valid origin is specified in the GMSAutocompleteFilter of the request.",
+          "For example, you can make every match bold using enumerateAttribute: UIFont regularFont = [UIFont systemFontOfSize:[UIFont labelFontSize]]; UIFont boldFont = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]]; NSMutableAttributedString bolded = [suggestion.attributedFullText mutableCopy]; [bolded enumerateAttribute:kGMSAutocompleteMatchAttribute inRange:NSMakeRange(0, bolded.length) options:0 usingBlock:^(id value, NSRange range, BOOL stop) { UIFont font = (value == nil) ? regularFont : boldFont; [bolded addAttribute:NSFontAttributeName value:font range:range]; }]; label.attributedText = bolded; Declaration Swift @NSCopying var attributedFullText : NSAttributedString { get } Objective-C @property ( nonatomic , copy , readonly ) NSAttributedString Nonnull attributedFullText ; attributedPrimaryText The primary text of a suggestion as a NSAttributedString, usually the name of the place."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompletePrediction",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Objective-C - ( nonnull instancetype ) init ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Declaration Swift var types : [ String ] { get } Objective-C @property ( nonatomic , copy , readonly ) GMS AVAILABLE BUT DEPRECATED MSG NSArray < NSString > types ; distanceMeters Deprecated Use GMSAutocompleteSuggestion instead.",
+          "Declaration Swift var distanceMeters : NSNumber ? { get } Objective-C @property ( nonatomic , readonly , nullable ) NSNumber distanceMeters ; -init Deprecated Use GMSAutocompleteSuggestion instead."
+        ]
+      },
+      {
+        "title": "\"GooglePlaces Framework Reference \\_|\\_ Places SDK for iOS \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/ios-sdk/reference/objc/Classes/GMSAutocompleteFilter",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift var shouldIncludePureServiceAreaBusinesses : Bool { get set } Objective-C @property ( nonatomic ) BOOL shouldIncludePureServiceAreaBusinesses ; Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Declaration Swift var countries : [ String ]? { get set } Objective-C @property ( nonatomic , copy , nullable ) NSArray < NSString > countries ; origin The straight line distance origin location for measuring the straight line distance between the origin location and autocomplete predictions.",
+          "Declaration Swift var regionCode : String ? { get set } Objective-C @property ( nonatomic , nullable ) NSString regionCode ; inputOffset inputOffset is the character offset of the input that indicates where the completions may start from."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bolded.length",
+      "developers.google.com",
+      "e.g",
+      "label.attributedText",
+      "prediction.attributedFullText",
+      "suggestion.attributedFullText"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

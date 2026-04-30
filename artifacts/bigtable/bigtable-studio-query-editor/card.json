@@ -1,0 +1,189 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.160Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable",
+  "feature_name": "Bigtable Studio query editor",
+  "feature_slug": "bigtable-studio-query-editor",
+  "summary": "The Bigtable Studio query editor is now generally available; The Bigtable Studio query editor is now available in preview for managing and querying Bigtable data.",
+  "extended_definition": "The Bigtable Studio query editor is now generally available; The Bigtable Studio query editor is now available in preview for managing and querying Bigtable data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+      "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+      "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage logical views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about using the query editor, see Manage your data using Bigtable Studio . gcloud To create a logical view, use the gcloud bigtable logical-views create command. gcloud bigtable logical-views create VIEW \\ --instance = INSTANCE --query = QUERY Replace the following: VIEW : an ID up to 128 characters long for the new logical view.",
+          "To query a logical view, you can use the Bigtable Studio query editor or any of the Bigtable client libraries that support SQL .",
+          "You can create a logical view using the Google Cloud CLI or the Bigtable Studio query editor in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Continuous materialized views \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can read from a continuous materialized view by using the following: Bigtable Studio query editor The Bigtable client libraries that support SQL queries ReadRows API call using the Bigtable client libraries for Java and Go For more information, see Reading from a continuous materialized view .",
+          "You can create a continuous materialized view using the Google Cloud CLI, the Bigtable Studio query editor in the Google Cloud console, or the Bigtable client libraries for Java and Go.",
+          "This helps to ensure that enough compute capacity is available during the execution of the continuously running SQL query."
+        ]
+      },
+      {
+        "title": "\"Vertex AI roles and permissions \\_|\\_ Identity and Access Management (IAM)\\",
+        "url": "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform",
+        "source_id": "site-iam-reference",
+        "final_score": 91,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Notebooks Admin ( roles/ notebooks.admin ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Vertex AI Platform Express Admin ( roles/ aiplatform.expressAdmin ) Vertex AI Platform Express User ( roles/ aiplatform.expressUser ) Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin ) Vertex AI Feature Store Resource Viewer ( roles/ aiplatform.featurestoreResourceViewer ) Vertex AI Feature Store User ( roles/ aiplatform.featurestoreUser ) Notebook Executor User ( roles/ aiplatform.notebookExecutorUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Notebooks Runner ( roles/ notebooks.runner ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) AI Platform Notebooks Service Agent ( roles/ notebooks.serviceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform. notebookRuntimes. list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Visual Inspection AI Service Agent ( roles/ visualinspection.serviceAgent ) aiplatform.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Vertex AI Administrator ( roles/ aiplatform.admin ) Vertex AI Viewer ( roles/ aiplatform.viewer ) Colab Enterprise Admin ( roles/ aiplatform.colabEnterpriseAdmin ) Colab Enterprise User ( roles/ aiplatform.colabEnterpriseUser ) Notebook Runtime Admin ( roles/ aiplatform.notebookRuntimeAdmin ) Notebook Runtime User ( roles/ aiplatform.notebookRuntimeUser ) Vertex AI User ( roles/ aiplatform.user ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery Studio User ( roles/ bigquery.studioUser ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) ML Engineer ( roles/ iam.mlEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.admin",
+      "aiplatform.colabEnterpriseAdmin",
+      "aiplatform.colabEnterpriseUser",
+      "aiplatform.customCodeServiceAgent",
+      "aiplatform.expressAdmin",
+      "aiplatform.expressUser",
+      "aiplatform.featurestoreAdmin",
+      "aiplatform.featurestoreResourceViewer",
+      "aiplatform.featurestoreUser",
+      "aiplatform.locations.get",
+      "aiplatform.modelMonitoringServiceAgent",
+      "aiplatform.notebookExecutorUser",
+      "aiplatform.notebookRuntimeAdmin",
+      "aiplatform.notebookRuntimeUser",
+      "aiplatform.operations.list",
+      "aiplatform.serviceAgent",
+      "aiplatform.tuningServiceAgent",
+      "aiplatform.user",
+      "aiplatform.viewer",
+      "bigquery.studioAdmin",
+      "bigquery.studioUser",
+      "cloudsecuritycompliance.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "iam.dataScientist",
+      "iam.mlEngineer",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.supportUser",
+      "notebooks.admin",
+      "notebooks.runner",
+      "notebooks.serviceAgent",
+      "visualinspection.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/create-manage-logical-views",
+        "https://docs.cloud.google.com/bigtable/docs/continuous-materialized-views",
+        "https://docs.cloud.google.com/iam/docs/roles-permissions/aiplatform"
+      ]
+    }
+  ]
+}

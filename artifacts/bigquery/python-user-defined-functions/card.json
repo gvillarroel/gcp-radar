@@ -1,0 +1,137 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Python user-defined functions",
+  "feature_slug": "python-user-defined-functions",
+  "summary": "BigQuery now supports Python user-defined functions that can use additional libraries and external APIs.",
+  "extended_definition": "BigQuery now supports Python user-defined functions that can use additional libraries and external APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/user-defined-functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "User-defined functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: SELECT id , my utils . my function ( value ) FROM sales ; Limitations The following limitations apply to temporary and persistent user-defined functions: The DOM objects Window , Document , and Node , and functions that require them, are not supported.",
+          "For example: CREATE FUNCTION mydataset.referringFunction() AS (mydataset.referencedFunction()); The following limitations apply to temporary user-defined functions.",
+          "The following limitations apply to persistent user-defined functions: Each dataset can only contain one persistent UDF with the same name."
+        ]
+      },
+      {
+        "title": "\"Remote functions and Translation API tutorial \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Args: request: HTTP request from BigQuery https://cloud.google.com/bigquery/docs/reference/standard-sql/remote-functions#input format Returns: HTTP response to BigQuery https://cloud.google.com/bigquery/docs/reference/standard-sql/remote-functions#output format \"\"\" try : Parse request data as JSON request json = request . get json () Get the project of the query caller = request json [ \"caller\" ] project = extract project from caller ( caller ) if project is None : return flask . make response ( flask . jsonify ( { \"errorMessage\" : ( 'project can \\' t be extracted from \"caller\":' f \" { caller } .\" ) } ), 400 , ) Get the target language code, default is Spanish (\"es\") context = request json . get ( \"userDefinedContext\" , {}) target = context . get ( \"target language\" , \"es\" ) calls = request json [ \"calls\" ] translated = translate text ([ call [ 0 ] for call in calls ], project , target ) return flask . jsonify ({ \"replies\" : translated }) except Exception as err : return flask . make response ( flask . jsonify ({ \"errorMessage\" : f \"Unexpected error { type ( err ) } : { err } \" }), 400 , ) def extract project from caller ( job : str ) - > str : \"\"\"Extract project id from full resource name of a BigQuery job.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to perform the tasks in this tutorial: bigquery.datasets.create bigquery.connections.create bigquery.connections.get cloudfunctions.functions.create You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Remote functions and Translation API tutorial This tutorial describes how to create a BigQuery remote function , invoke the Cloud Translation API , and perform content translation from any language to Spanish using SQL and Python."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use DDL commands to create, alter, and delete resources, such as the following: Datasets Tables Table schemas Table clones Table snapshots Views Connections User-defined functions (UDFs) Indexes Capacity commitments and reservations Row-level access policies Default configuration settings Required permissions To create a job that runs a DDL statement, you must have the bigquery.jobs.create permission for the project where you are running the job.",
+          "The constant expression cannot contain: A reference to a table Subqueries or SQL statements such as SELECT , CREATE , or UPDATE User-defined functions, aggregate functions, or analytic functions The following scalar functions: ARRAY TO STRING REPLACE REGEXP REPLACE RAND FORMAT LPAD RPAD REPEAT SESSION USER GENERATE ARRAY GENERATE DATE ARRAY If VALUE evaluates to NULL , the corresponding option NAME in the CREATE VIEW statement is ignored. privacy policy The following policies are available in the privacy policy view option to create analysis rules .",
+          "The constant expression cannot contain: A reference to a table Subqueries or SQL statements such as SELECT , CREATE , or UPDATE User-defined functions, aggregate functions, or analytic functions The following scalar functions: ARRAY TO STRING REPLACE REGEXP REPLACE RAND FORMAT LPAD RPAD REPEAT SESSION USER GENERATE ARRAY GENERATE DATE ARRAY If VALUE evaluates to NULL , the corresponding option NAME in the CREATE TABLE statement is ignored. column option list Specify a column option list in the following format: NAME=VALUE, ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.connectionAdmin",
+      "bigquery.connections.create",
+      "bigquery.connections.get",
+      "bigquery.dataOwner",
+      "bigquery.datasets.create",
+      "bigquery.jobs.create",
+      "cloudfunctions.developer",
+      "cloudfunctions.functions.create",
+      "mydataset.referencedFunction",
+      "mydataset.referringFunction"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.connectionAdmin",
+      "roles/bigquery.dataOwner",
+      "roles/cloudfunctions.developer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/user-defined-functions",
+        "https://docs.cloud.google.com/bigquery/docs/remote-functions-translation-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ]
+}

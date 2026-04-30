@@ -1,0 +1,151 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.934Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion",
+  "feature_name": "GET /v3/namespaces/{namespace}/apps endpoint pagination behavior",
+  "feature_slug": "get-v3-namespaces-namespace-apps-endpoint-pagination-behavior",
+  "summary": "The ability to retrieve all applications without pagination via GET /v3/namespaces/{namespace}/apps was deprecated; deprecated on 2025-03-17.",
+  "extended_definition": "The ability to retrieve all applications without pagination via GET /v3/namespaces/{namespace}/apps was deprecated; deprecated on 2025-03-17.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "2025-03-17",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+      "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+      "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "CDAP reference \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /spark/DataStreamsSparkStreaming Records of a real-time pipeline run GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /spark/DataStreamsSparkStreaming/run-id Parameter Description namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name. run-id To find the run ID, see Real-time pipeline run records , which returns a list of run IDs.",
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs Records of a batch pipeline run GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /workflows/DataPipelineWorkflow/runs/ run-id Parameter Description namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name run-id To find the run ID, see Batch pipeline run records , which returns a list of run IDs.",
+          "GET -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ pipeline-name /spark/DataStreamsSparkStreaming/runs/ run-id /logs?start= start-ts &stop= stop-ts \" Parameter Description / value namespace-id The namespace ID must either be the name of the namespace when it was created or default , which is the name of the default namespace. pipeline-name Your pipeline name. run-id Relevant only if you want to view logs of a specific pipeline run."
+        ]
+      },
+      {
+        "title": "Replication API reference \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "POST -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/start\" Parameter Description namespace-id The namespace of the replication job to start.",
+          "POST -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name /workers/DeltaWorker/stop\" Parameter Description namespace-id The namespace of the replication job to stop.",
+          "PUT -H \"Authorization: Bearer ${AUTH TOKEN}\" \"${CDAP ENDPOINT}/v3/namespaces/ namespace-id /apps/ replicator-name \" Parameter Description namespace-id The namespace in which to create the replication job."
+        ]
+      },
+      {
+        "title": "Cloud Data Fusion API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations REST Resource: v1beta1.projects.locations.instances REST Resource: v1beta1.projects.locations.instances.dnsPeerings REST Resource: v1beta1.projects.locations.instances.namespaces REST Resource: v1beta1.projects.locations.operations REST Resource: v1beta1.projects.locations.versions REST Resource: v1.projects.locations REST Resource: v1.projects.locations.instances REST Resource: v1.projects.locations.instances.dnsPeerings REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.versions Service: datafusion.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1beta1.projects.locations.instances.namespaces Methods getIamPolicy GET /v1beta1/{resource=projects/ /locations/ /instances/ /namespaces/ }:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent=projects/ /locations/ /instances/ }/namespaces List namespaces in a given instance setIamPolicy POST /v1beta1/{resource=projects/ /locations/ /instances/ /namespaces/ }:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource=projects/ /locations/ /instances/ /namespaces/ }:testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://datafusion.googleapis.com REST Resource: v1beta1.projects.locations Methods get GET /v1beta1/{name=projects/ /locations/ } Gets information about a location. list GET /v1beta1/{name=projects/ }/locations Lists information about the supported locations for this service. removeIamPolicy POST /v1beta1/{resource=projects/ /locations/ / }:removeIamPolicy Remove IAM policy that is currently set on the given resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datafusion.googleapis.com",
+      "v1.projects.locations",
+      "v1.projects.locations.instances",
+      "v1.projects.locations.instances.dnsPeerings",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.versions",
+      "v1beta1.projects.locations",
+      "v1beta1.projects.locations.instances",
+      "v1beta1.projects.locations.instances.dnsPeerings",
+      "v1beta1.projects.locations.instances.namespaces",
+      "v1beta1.projects.locations.operations",
+      "v1beta1.projects.locations.versions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/reference/cdap-reference",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/rest"
+      ]
+    }
+  ]
+}

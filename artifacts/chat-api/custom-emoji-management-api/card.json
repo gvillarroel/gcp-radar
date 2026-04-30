@@ -1,0 +1,112 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Custom emoji management API",
+  "feature_slug": "custom-emoji-management-api",
+  "summary": "The Chat API can create, delete, get, and list custom emoji when custom emoji is enabled for the Workspace organization.",
+  "extended_definition": "The Chat API can create, delete, get, and list custom emoji when custom emoji is enabled for the Workspace organization.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/delete",
+      "https://developers.google.com/workspace/chat/create-custom-emoji",
+      "https://developers.google.com/workspace/chat/delete-custom-emoji"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Delete a custom emoji \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js chat/client-libraries/cloud/delete-custom-emoji-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.customemojis' , ]; // This sample shows how to delete a custom emoji with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // TODO(developer): Replace EMOJI NAME here. name : 'customEmojis/EMOJI NAME' , }; // Make the request const response = await chatClient . deleteCustomEmoji ( request ); // Handle the response console . log ( response ); } await main (); To run this sample, replace the following: EMOJI NAME : the unique name for your custom emoji, in the emoji name field.",
+          "Home Google Workspace Google Chat Guides Send feedback Delete a custom emoji Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide explains how to use the delete method on the CustomEmoji resource of the Google Chat API to delete a custom emoji in a Google Workspace organization."
+        ]
+      },
+      {
+        "title": "Create a custom emoji \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-custom-emoji",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example creates a custom emoji: Node.js chat/client-libraries/cloud/create-custom-emoji-user-cred.js View on GitHub import fs from 'node:fs' ; import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.customemojis' , ]; // This sample shows how to create custom emoji with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // TODO(developer) Replace FILENAME here. const filename = 'FILENAME' ; // Read custom emoji file content into a base64 encoded string. const fileContent = fs . readFileSync ( filename , { encoding : 'base64' }); // Initialize request argument(s) const request = { custom emoji : { // TODO(developer): Replace EMOJI NAME here. emoji name : 'EMOJI NAME' , payload : { file content : fileContent , filename , }, }, }; // Make the request const response = await chatClient . createCustomEmoji ( request ); // Handle the response console . log ( response ); } await main (); To run this sample, replace the following: FILENAME : A filename of the image.",
+          "This guide explains how to use the create method on the CustomEmoji resource of the Google Chat API to create a new custom emoji in a Google Workspace organization.",
+          "Home Google Workspace Google Chat Guides Send feedback Create a custom emoji Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Method: customEmojis.delete \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/delete",
+        "source_id": "site-api-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-05-07 UTC.\"],[],[\"This document details the process of deleting a custom emoji via an HTTP DELETE request to https://chat.googleapis.com/v1/{name=customEmojis/ }.",
+          "Requires user authentication with the authorization scope : https://www.googleapis.com/auth/chat.customemojis HTTP request DELETE https://chat.googleapis.com/v1/{name=customEmojis/ } The URL uses gRPC Transcoding syntax.",
+          "Home Google Workspace Google Chat Reference Send feedback Method: customEmojis.delete Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.customemojis",
+      "chat.googleapis.com",
+      "cred.js",
+      "developers.google.com",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/delete"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/delete"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/delete-custom-emoji",
+        "https://developers.google.com/workspace/chat/create-custom-emoji",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/customEmojis/delete"
+      ]
+    }
+  ]
+}

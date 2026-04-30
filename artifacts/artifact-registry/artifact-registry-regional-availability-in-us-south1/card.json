@@ -1,0 +1,135 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.080Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry",
+  "feature_name": "Artifact Registry regional availability in us-south1",
+  "feature_slug": "artifact-registry-regional-availability-in-us-south1",
+  "summary": "Artifact Registry is available in the us-south1 region (Dallas, United States).",
+  "extended_definition": "Artifact Registry is available in the us-south1 region (Dallas, United States).",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Artifact Registry API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-west1 northamerica-northeast1 northamerica-northeast2 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 me-central2 us-east7 us eu https://artifactregistry.googleapis.com REST Resource: v1.projects Methods getProjectSettings GET /v1/{name=projects/ /projectSettings} Retrieves the Settings for the Project. updateProjectSettings PATCH /v1/{projectSettings.name=projects/ /projectSettings} Updates the Settings for the Project.",
+          "A service that is available in multiple regions might have multiple regional endpoints.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://artifactregistry.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region."
+        ]
+      },
+      {
+        "title": "\"Class ArtifactRegistryClient (1.87.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient",
+        "source_id": "site-java-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newBuilder (). setEndpoint ( myEndpoint ). build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library ArtifactRegistrySettings artifactRegistrySettings = ArtifactRegistrySettings . newHttpJsonBuilder (). build (); ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ( artifactRegistrySettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ()) { BatchDeleteVersionsRequest request = BatchDeleteVersionsRequest . newBuilder () . setParent ( PackageName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[REPOSITORY]\" , \"[PACKAGE]\" ). toString ()) . addAllNames ( new ArrayList<String> ()) . setValidateOnly ( true ) . build (); OperationFuture<Empty , BatchDeleteVersionsMetadata > future = artifactRegistryClient . batchDeleteVersionsOperationCallable (). futureCall ( request ); // Do something. future . get (); } Returns Type Description OperationCallable < BatchDeleteVersionsRequest , Empty , BatchDeleteVersionsMetadata > close() public final void close () createAttachmentAsync(CreateAttachmentRequest request) public final OperationFuture<Attachment , OperationMetadata > createAttachmentAsync ( CreateAttachmentRequest request ) Creates an attachment.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient . create ()) { ListVersionsRequest request = ListVersionsRequest . newBuilder () . setParent ( \"parent-995424086\" ) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . setView ( VersionView . forNumber ( 0 )) . setOrderBy ( \"orderBy-1207110587\" ) . setFilter ( \"filter-1274492040\" ) . build (); ApiFuture<Version> future = artifactRegistryClient . listVersionsPagedCallable (). futureCall ( request ); // Do something. for ( Version element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListVersionsRequest , ListVersionsPagedResponse > setIamPolicy(SetIamPolicyRequest request) public final Policy setIamPolicy ( SetIamPolicyRequest request ) Updates the IAM policy for a given resource."
+        ]
+      },
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command, replacing ACCOUNT with your service account email address and LOCATION with the regional or multi-regional location of the repository.",
+          "LOCATION is the regional or multi-regional location of the repository where the image is stored.",
+          "For example, to add the regions us-west1 and asia-northeast1 , run the command: docker-credential-gcr configure-docker --registries=us-west1-docker.pkg.dev,asia-northeast1-docker.pkg.dev The specified hostnames are added to the credential helper configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.googleapis.com",
+      "com.google.devtools.artifactregistry.v1.ArtifactRegistryClient",
+      "docker.pkg.dev",
+      "v1.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1.ArtifactRegistryClient"
+      ]
+    }
+  ]
+}

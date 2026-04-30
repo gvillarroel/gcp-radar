@@ -1,0 +1,93 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:43.383Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub",
+  "feature_name": "App Hub regional infrastructure resource support for global applications",
+  "feature_slug": "app-hub-regional-infrastructure-resource-support-for-global-applications",
+  "summary": "App Hub now supports regional infrastructure resources for global applications in Preview.",
+  "extended_definition": "App Hub now supports regional infrastructure resources for global applications in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+      "https://docs.cloud.google.com/app-hub/docs/manage-applications",
+      "https://docs.cloud.google.com/app-hub/docs/register-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Global and regional applications \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "App Hub is available in supported locations to help you organize global or regional Google Cloud infrastructure resources in App Hub applications.",
+          "Compare global and regional applications The following table highlights the key differences and considerations to help you choose between global and regional applications: Global application Regional application Recommended use case Best for applications with components that are inherently global or distributed across multiple regions.",
+          "Global and regional applications are defined as follows: Global applications: Functionally group services and workloads that are globally distributed or spread across multiple Google Cloud regions."
+        ]
+      },
+      {
+        "title": "\"Register existing resources to an application \\_|\\_ App Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the best location for your application, see Global and regional applications .",
+          "For more information about the best location for your application, see Global and regional applications .",
+          "The following example creates a regional application in us-central1 with defined criticality, environment, and owner attributes: resource \"google apphub application\" \"example\" { project = \"my-project-id\" location = \"us-central1\" application id = \"my-application\" display name = \"My Application\" description = \"This application represents our platform.\" scope { type = \"REGIONAL\" } attributes { criticality { type = \"MISSION CRITICAL\" } environment { type = \"PRODUCTION\" } business owners { display name = \"Alice\" email = \"alice@example.com\" } developer owners { display name = \"Bob\" email = \"bob@example.com\" } operator owners { display name = \"Charlie\" email = \"charlie@example.com\" } } } Register services and workloads App Hub lets you select supported resources located within your application management boundary to register them as services and workloads."
+        ]
+      },
+      {
+        "title": "Manage App Hub applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/manage-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use global for global applications or a specific region, such as us-east1 , for regional applications.",
+          "Use global for global applications or a specific region, such as us-east1 , for regional applications.",
+          "Use global for global applications or a specific region, such as us-east1 , for regional applications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/global-regional-applications",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    }
+  ]
+}

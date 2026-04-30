@@ -1,0 +1,165 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "TimespanConfig incremental scans",
+  "feature_slug": "timespanconfig-incremental-scans",
+  "summary": "TimespanConfig can restrict scans to new or modified content in BigQuery and Cloud Storage.",
+  "extended_definition": "TimespanConfig can restrict scans to new or modified content in BigQuery and Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2018-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions\\FileSet; use Google\\Cloud\\Dlp\\V2\\CreateJobTriggerRequest; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectConfig\\FindingLimits; use Google\\Cloud\\Dlp\\V2\\InspectJobConfig; use Google\\Cloud\\Dlp\\V2\\JobTrigger; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Status; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Trigger; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\Schedule; use Google\\Cloud\\Dlp\\V2\\StorageConfig; use Google\\Cloud\\Dlp\\V2\\StorageConfig\\TimespanConfig; use Google\\Protobuf\\Duration; / Create a Data Loss Prevention API job trigger. @param string $callingProjectId The project ID to run the API call under @param string $bucketName The name of the bucket to scan @param string $triggerId (Optional) The name of the trigger to be created @param string $displayName (Optional) The human-readable name to give the trigger @param string $description (Optional) A description for the trigger to be created @param int $scanPeriod (Optional) How often to wait between scans, in days (minimum = 1 day) @param bool $autoPopulateTimespan (Optional) Automatically limit scan to new content only @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function create trigger( string $callingProjectId, string $bucketName, string $triggerId, string $displayName, string $description, int $scanPeriod, bool $autoPopulateTimespan, int $maxFindings ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // ----- Construct job config ----- // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Create the inspectConfig object $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes); // Create triggers $duration = (new Duration()) ->setSeconds($scanPeriod 60 60 24); $schedule = (new Schedule()) ->setRecurrencePeriodDuration($duration); $triggerObject = (new Trigger()) ->setSchedule($schedule); // Create the storageConfig object $fileSet = (new FileSet()) ->setUrl('gs://' . $bucketName . '/ '); $storageOptions = (new CloudStorageOptions()) ->setFileSet($fileSet); // Auto-populate start and end times in order to scan new objects only. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig($autoPopulateTimespan); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($storageOptions) ->setTimespanConfig($timespanConfig); // Construct the jobConfig object $jobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig); // ----- Construct trigger object ----- $jobTriggerObject = (new JobTrigger()) ->setTriggers([$triggerObject]) ->setInspectJob($jobConfig) ->setStatus(Status::HEALTHY) ->setDisplayName($displayName) ->setDescription($description); // Run trigger creation request $parent = $dlp->locationName($callingProjectId, 'global'); $createJobTriggerRequest = (new CreateJobTriggerRequest()) ->setParent($parent) ->setJobTrigger($jobTriggerObject) ->setTriggerId($triggerId); $trigger = $dlp->createJobTrigger($createJobTriggerRequest); // Print results printf('Successfully created trigger %s' .",
+          "DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // (Optional) The name of the trigger to be created. // const triggerId = 'my-trigger'; // (Optional) A display name for the trigger to be created // const displayName = 'My Trigger'; // (Optional) A description for the trigger to be created // const description = \"This is a sample trigger.\"; // The name of the bucket to scan. // const bucketName = 'YOUR-BUCKET'; // Limit scan to new content only. // const autoPopulateTimespan = true; // How often to wait between scans, in days (minimum = 1 day) // const scanPeriod = 1; // The infoTypes of information to match // const infoTypes = [{ name: 'PHONE NUMBER' }, { name: 'EMAIL ADDRESS' }, { name: 'CREDIT CARD NUMBER' }]; // The minimum likelihood required before returning a match // const minLikelihood = 'LIKELIHOOD UNSPECIFIED'; // The maximum number of findings to report per request (0 = server maximum) // const maxFindings = 0; async function createTrigger () { // Get reference to the bucket to be inspected const storageItem = { cloudStorageOptions : { fileSet : { url : gs:// ${ bucketName } / }, }, timeSpanConfig : { enableAutoPopulationOfTimespanConfig : autoPopulateTimespan , }, }; // Construct job to be triggered const job = { inspectConfig : { infoTypes : infoTypes , minLikelihood : minLikelihood , limits : { maxFindingsPerRequest : maxFindings , }, }, storageConfig : storageItem , }; // Construct trigger creation request const request = { parent : projects/ ${ projectId } /locations/global , jobTrigger : { inspectJob : job , displayName : displayName , description : description , triggers : [ { schedule : { recurrencePeriodDuration : { seconds : scanPeriod 60 60 24 , // Trigger the scan daily }, }, }, ], status : ' HEALTHY ' , }, triggerId : triggerId , }; // Run trigger creation request const [ trigger ] = await dlp . createJobTrigger ( request ); console . log ( Successfully created trigger ${ trigger . name } . ); } createTrigger (); PHP To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "When you set the TimespanConfig object to auto-populate, Sensitive Data Protection only scans data that was added or modified since the trigger last ran: ... timespan config { enable auto population of timespan config: true } ..."
+        ]
+      },
+      {
+        "title": "\"Inspect Google Cloud storage and databases for sensitive data \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The scan starts from a random row. @param string $callingProjectId The project ID to run the API call under. @param string $topicId The Pub/Sub topic ID to notify once the job is completed. @param string $subscriptionId The Pub/Sub subscription ID to use when listening for job. @param string $projectId The Google Cloud Project ID. @param string $datasetId The BigQuery Dataset ID. @param string $tableId The BigQuery Table ID to be inspected. / function inspect bigquery with sampling( string $callingProjectId, string $topicId, string $subscriptionId, string $projectId, string $datasetId, string $tableId ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // Specify the BigQuery table to be inspected. $bigqueryTable = (new BigQueryTable()) ->setProjectId($projectId) ->setDatasetId($datasetId) ->setTableId($tableId); $bigQueryOptions = (new BigQueryOptions()) ->setTableReference($bigqueryTable) ->setRowsLimit(1000) ->setSampleMethod(SampleMethod::RANDOM START) ->setIdentifyingFields([ (new FieldId()) ->setName('name') ]); $storageConfig = (new StorageConfig()) ->setBigQueryOptions($bigQueryOptions); // Specify the type of info the inspection will look for. // See https://cloud.google.com/dlp/docs/infotypes-reference for complete list of info types $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $infoTypes = [$personNameInfoType]; // Specify how the content should be inspected. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setIncludeQuote(true); // Specify the action that is triggered when the job completes. $pubSubAction = (new PublishToPubSub()) ->setTopic($topic->name()); $action = (new Action()) ->setPubSub($pubSubAction); // Configure the long running job we want the service to perform. $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request $parent = \"projects/$callingProjectId/locations/global\"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes // Consider using an asynchronous execution model such as Cloud Functions $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job.",
+          "The scan starts from a random location in the dataset and only includes text files under 200 bytes. @param string $callingProjectId The project ID to run the API call under. @param string $gcsUri Google Cloud Storage file url. @param string $topicId The ID of the Pub/Sub topic to notify once the job completes. @param string $subscriptionId The ID of the Pub/Sub subscription to use when listening for job. / function inspect gcs with sampling( // TODO(developer): Replace sample parameters before running the code. string $callingProjectId, string $gcsUri = 'gs://GOOGLE STORAGE BUCKET NAME/dlp sample.csv', string $topicId = 'dlp-pubsub-topic', string $subscriptionId = 'dlp subcription' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $pubsub = new PubSubClient(); $topic = $pubsub->topic($topicId); // Construct the items to be inspected. $cloudStorageOptions = (new CloudStorageOptions()) ->setFileSet((new FileSet()) ->setUrl($gcsUri)) ->setBytesLimitPerFile(200) ->setFilesLimitPercent(90) ->setSampleMethod(SampleMethod::RANDOM START); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($cloudStorageOptions); // Specify the type of info the inspection will look for. $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $emailAddressInfoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $cardNumberInfoType = (new InfoType()) ->setName('CREDIT CARD NUMBER'); $infoTypes = [$phoneNumberInfoType, $emailAddressInfoType, $cardNumberInfoType]; // Specify how the content should be inspected. $inspectConfig = (new InspectConfig()) ->setInfoTypes($infoTypes) ->setIncludeQuote(true); // Construct the action to run when job completes. $action = (new Action()) ->setPubSub((new PublishToPubSub()) ->setTopic($topic->name())); // Construct inspect job config to run. $inspectJob = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Listen for job notifications via an existing topic/subscription. $subscription = $topic->subscription($subscriptionId); // Submit request. $parent = \"projects/$callingProjectId/locations/global\"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJob); $job = $dlp->createDlpJob($createDlpJobRequest); // Poll Pub/Sub using exponential backoff until job finishes. // Consider using an asynchronous execution model such as Cloud Functions. $attempt = 1; $startTime = time(); do { foreach ($subscription->pull() as $message) { if ( isset($message->attributes()['DlpJobName']) && $message->attributes()['DlpJobName'] === $job->getName() ) { $subscription->acknowledge($message); // Get the updated job.",
+          "JSON input: POST https://dlp.googleapis.com/v2/projects/[PROJECT-ID]/dlpJobs?key={YOUR API KEY} { \"inspectJob\":{ \"storageConfig\":{ \"cloudStorageOptions\":{ \"fileSet\":{ \"url\":\"gs://[BUCKET-NAME]/ \" }, \"bytesLimitPerFile\":\"1073741824\" }, \"timespanConfig\":{ \"startTime\":\"2017-11-13T12:34:29.965633345Z\", \"endTime\":\"2018-01-05T04:45:04.240912125Z\" } }, \"inspectConfig\":{ \"infoTypes\":[ { \"name\":\"PHONE NUMBER\" } ], \"excludeInfoTypes\":false, \"includeQuote\":true, \"minLikelihood\":\"LIKELY\" }, \"actions\":[ { \"saveFindings\":{ \"outputConfig\":{ \"table\":{ \"projectId\":\"[PROJECT-ID]\", \"datasetId\":\"[DATASET-ID]\" } } } } ] } } JSON output: { \"name\" : \"projects/[PROJECT-ID]/dlpJobs/[JOB-ID]\" , \"type\" : \"INSPECT JOB\" , \"state\" : \"PENDING\" , \"inspectDetails\" :{ \"requestedOptions\" :{ \"snapshotInspectTemplate\" :{ }, \"jobConfig\" :{ \"storageConfig\" :{ \"cloudStorageOptions\" :{ \"fileSet\" :{ \"url\" : \"gs://[BUCKET-NAME]/ \" }, \"bytesLimitPerFile\" : \"1073741824\" }, \"timespanConfig\" :{ \"startTime\" : \"2017-11-13T12:34:29.965633345Z\" , \"endTime\" : \"2018-01-05T04:45:04.240912125Z\" } }, \"inspectConfig\" :{ \"infoTypes\" :[ { \"name\" : \"PHONE NUMBER\" } ], \"minLikelihood\" : \"LIKELY\" , \"limits\" :{ }, \"includeQuote\" : true }, \"actions\" :[ { \"saveFindings\" :{ \"outputConfig\" :{ \"table\" :{ \"projectId\" : \"[PROJECT-ID]\" , \"datasetId\" : \"[DATASET-ID]\" , \"tableId\" : \"[NEW-TABLE-ID]\" } } } } ] } } }, \"createTime\" : \"2018-11-07T18:01:14.225Z\" } Java To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries ."
+        ]
+      },
+      {
+        "title": "Security Command Center release notes \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Threat detection and investigation Detect threats in your AWS deployments Investigate and respond to incidents with SIEM-like capabilities across 90 days of cloud logs Manage the investigation of and response to threats by using cases Define response workflows and automated actions in response to threats by using playbooks Mandiant Attack Surface Management integration Mandiant Attack Surface Management scans your external attack surfaces to identify vulnerability and misconfiguration findings Sensitive Data Protection integration The Risk overview page of Security Command Center in the Google Cloud console now shows data security findings from the Sensitive Data Protection discovery service Findings from Sensitive Data Protection that indicate the sensitivity and data risk levels of your data can inform the automated assignment of resource values for the attack path simulation feature Gemini artificial intelligence features Natural language search for threat findings AI investigation widget for cases Compliance, security standards Support for AWS security standards Validate infrastructure as code (IaC) against organization policies and Security Health Analytics detectors.",
+          "March 08, 2021 Change Security Health Analytics, a built-in service of Security Command Center, launched new detectors in general availability: Detects resources that are not using customer-managed encryption keys (CMEK) BUCKET CMEK DISABLED DISK CMEK DISABLED NODEPOOL BOOK CMEK DISABLED SQL CMEK DISABLED Detects vulnerabilities in Compute Engine instances DEFAULT SERVICE ACCOUNT USED SHIELDED VM DISABLED Detects publicly accessible Cloud KMS keys KMS PUBLIC KEY Detects out-of-region Compute Engine resources ORG POLICY LOCATION RESTRICTION Detects misconfiguration of SQL instances SQL CROSS DB OWNERSHIP CHAINING SQL CONTAINED DATABASE AUTHENTICATION SQL CROSS DB OWNERSHIP CHAINING SQL LOCAL INFILE SQL LOG CHECKPOINTS DISABLED SQL LOG CONNECTIONS DISABLED SQL LOG DISCONNECTIONS DISABLED SQL LOG LOCK WAITS DISABLED SQL LOG MIN DURATION STATEMENT ENABLED SQL LOG MIN ERROR STATEMENT SQL LOG TEMP FILES For more information on these and other Security Health Analytics detectors, see Vulnerabilities findings .",
+          "April 01, 2024 Fixed The following Security Health Analytics misconfiguration detectors have changed to check for overly restrictive flag values that might prevent error messages from being written to the logs: SQL LOG ERROR VERBOSITY SQL LOG MIN ERROR STATEMENT SEVERITY For the flag values that the detectors check for, see: SQL log error verbosity SQL log min error statement severity March 26, 2024 Feature GKE security posture recommendations released to Preview Recommendations from GKE security posture are now available as findings in all tiers of Security Command Center as a Preview release."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dlp.googleapis.com",
+      "sample.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-storage",
+        "https://docs.cloud.google.com/security-command-center/docs/concepts-rapid-vulnerability-detection-overview"
+      ]
+    }
+  ]
+}

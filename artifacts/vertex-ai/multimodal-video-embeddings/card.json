@@ -1,0 +1,100 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.511Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai",
+  "feature_name": "Multimodal video embeddings",
+  "feature_slug": "multimodal-video-embeddings",
+  "summary": "Vertex AI made video embeddings generally available through the multimodalembedding model.",
+  "extended_definition": "Vertex AI made video embeddings generally available through the multimodalembedding model.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/beginner/bqml",
+      "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI deprecations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+        "source_id": "site-docs-reference-3",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Legacy AutoML Video Intelligence January 23, 2023 July 31, 2024 Migrate to Vertex AI , which includes all functionality of legacy AutoML Video Intelligence as well as new features.",
+          "Training or updating models for Vertex AI AutoML for Text classification, entity extraction, and sentiment analysis objectives will no longer be available.",
+          "You will have full control over these VMs, but they won't be supported or available through Vertex AI Workbench."
+        ]
+      },
+      {
+        "title": "Vertex AI for BigQuery users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/beginner/bqml",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource Use BigQuery ML to analyze images and text using Gemini on Vertex AI Analyzing movie posters in BigQuery with Gemini 2.0 Flash Use BigQuery ML to generate text on BigQuery tables or unstructured data with foundation models on Vertex AI Generate text using BigQuery ML and foundation models in Vertex AI Generate vector embeddings with BigQuery ML over text and images Call a multimodal embedding endpoint in Vertex AI from BigQuery ML to generate embeddings for semantic search Use two Vertex AI Tabular Workflows pipelines to train an AutoML model using different configurations.",
+          "Common use cases include the following: Machine learning tasks, such as forecasting, prediction, recommendation, and anomaly detection Generative AI tasks, such as: Text generation, classification, summarization, and extraction Code generation and completion Image generation Embedding generation You can use BigQuery to prepare training data for Vertex AI models, which you can make available as features in Vertex AI Feature Store .",
+          "You can train models in Vertex AI in three ways: AutoML : Train models on image, tabular, and video datasets without writing code."
+        ]
+      },
+      {
+        "title": "Search using embeddings \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search",
+        "source_id": "site-docs-reference-3",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Send feedback Search using embeddings Stay organized with collections Save and categorize content based on your preferences.",
+          "Search nearest neighbor matches using a public endpoint If you've configured your online store instance to serve feature values using Optimized online serving from a public endpoint, you must do the following to retrieve approximate nearest neighbor matches: Retrieve the public endpoint domain name for the online store Retrieve nearest neighbor matches of an embedding or entity Retrieve the public endpoint domain name for the online store When you create an online store instance for Optimized online serving, Vertex AI Feature Store generates a public endpoint domain name for the online store.",
+          "Retrieve nearest neighbor matches of an embedding or entity Retrieve the service attachment string for the online store When you create an online store instance for Optimized online serving with a Private Service Connect endpoint, Vertex AI Feature Store generates a service attachment string."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/beginner/bqml",
+        "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/beginner/bqml",
+        "https://docs.cloud.google.com/vertex-ai/docs/deprecations",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/embeddings-search"
+      ]
+    }
+  ]
+}

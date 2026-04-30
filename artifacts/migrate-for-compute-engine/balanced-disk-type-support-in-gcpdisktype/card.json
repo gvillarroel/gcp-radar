@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:01.898Z",
+  "source_step08_card": "data/step-08/current/products/migrate-for-compute-engine/card.json",
+  "product_name": "Migrate for Compute Engine",
+  "product_slug": "migrate-for-compute-engine",
+  "feature_name": "Balanced disk type support in GcpDiskType",
+  "feature_slug": "balanced-disk-type-support-in-gcpdisktype",
+  "summary": "Supports the balanced disk type in the GcpDiskType runbook field for batch migrations using waves.",
+  "extended_definition": "Supports the balanced disk type in the GcpDiskType runbook field for batch migrations using waves.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported operating systems \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "OS Version Default license License option BIOS to UEFI conversion supported Comments Oracle Linux 6.0 - 6.7 BYOL N/A No Requires kernel-uek version of at least 4.1.12-37.4.1 6.8 - 6.10 BYOL N/A No 7.0 - 7.9 BYOL N/A No 8.0 - 8.10 BYOL N/A No 9.0 - 9.3 BYOL N/A No 10.0 BYOL N/A No Oracle Linux on Google Cloud Google Cloud supports importing Oracle Linux images using the import virtual disk images capability of Migrate to Virtual Machines.",
+          "For information on different machine types that support NVMe and gVNIC, go to the Machine series comparison section, click Choose VM properties to compare , and select Disk interface type and Network interfaces .",
+          "If the operating system supports multiple license types, you can change the license type when you configure the target Compute Engine instance."
+        ]
+      },
+      {
+        "title": "Migrate to Virtual Machines best practices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there's no VMware host in the network, we recommend one of the following options to migrate your VMs to a source environment that Migrate to Virtual Machines supports: Migrate VMware VMs with VMware HCX to Google Cloud VMware Engine .",
+          "Analyze your current environment to rightsize the target environment To draft a complete migration plan, define the machine type of each VM in the target environment for each VM that you want to migrate from the source environment.",
+          "In such cases, we recommend that you assess other data migration approaches that are specific to these types of workloads."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions reference \\_|\\_ Migrate to Virtual Machines \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "source_id": "site-iam-reference",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following permissions are required to create a resource group associated with the source, verify that it exists, list the resources it contains, and delete it when the source is deleted: \"Microsoft.Resources/subscriptions/resourceGroups/write\", \"Microsoft.Resources/subscriptions/resourceGroups/read\", \"Microsoft.Resources/subscriptions/resourceGroups/delete\" The following permission is required in order to obtain the inventory list and to get the details of the VMs that are being migrated: \"Microsoft.Compute/virtualMachines/read\" The following permission is required to deallocate a VM when it is being cut over into a Google Cloud VM: \"Microsoft.Compute/virtualMachines/deallocate/action\" The following permissions are required to create, list, and delete snapshots / restore points of the VM being migrated: \"Microsoft.Compute/restorePointCollections/read\", \"Microsoft.Compute/restorePointCollections/write\", \"Microsoft.Compute/restorePointCollections/delete\", \"Microsoft.Compute/restorePointCollections/restorePoints/read\", \"Microsoft.Compute/restorePointCollections/restorePoints/write\", \"Microsoft.Compute/restorePointCollections/restorePoints/delete\", \"Microsoft.Compute/snapshots/delete\", \"Microsoft.Compute/snapshots/write\", \"Microsoft.Compute/snapshots/read\" The following permissions are required for reading snapshot / restore point data: \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/read\", \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/beginGetAccess/action\", \"Microsoft.Compute/restorePointCollections/restorePoints/diskRestorePoints/endGetAccess/action\", \"Microsoft.Compute/snapshots/beginGetAccess/action\", \"Microsoft.Compute/snapshots/endGetAccess/action\" Grant network access In addition to granting permissions, you must verify that access to your disks is not blocked or restricted to any specific network.",
+          "For details on how to implement migration permissions review the Create an AWS IAM policy section. { \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\", \"Action\": [ \"ec2:DescribeInstances\", \"ec2:DescribeVolumes\", \"ec2:DescribeInstanceTypes\", \"ec2:DescribeSnapshots\", \"ec2:CreateTags\", \"ec2:CreateSnapshots\", \"ec2:StopInstances\" ], \"Resource\": \" \" }, { \"Effect\": \"Allow\", \"Action\": [ \"ebs:ListSnapshotBlocks\", \"ebs:ListChangedBlocks\", \"ebs:GetSnapshotBlock\", \"ec2:DeleteSnapshot\", \"ec2:DeleteTags\" ], \"Resource\": \" \", \"Condition\": { \"StringEquals\": { \"aws:ResourceTag/m2vm-resource\": \"snapshot\" } } } ] } To show the inventory of the migration candidate instances grant Migrate to Virtual Machines permissions for ec2:DescribeInstances, ec2:DescribeVolumes and ec2:DescribeInstanceTypes .",
+          "To configure the target details of the Compute Engine instance running on the target project, the user account you use to sign in to the Google Cloud console requires permissions to access data in the target project, such as networks, instance types, and more."
+        ]
+      },
+      {
+        "title": "\"VM migration process \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test-clone phase At any time after the initial replication step of the disk data from the source VM completes, you can clone the source VM to a Compute Engine instance for testing: You often create test-clones throughout your migration process as you make modifications to the source VM or the target details.",
+          "Data replication is comprised of two steps: First replication step : Migrate to Virtual Machines creates the initial snapshot of the source VM data disks and replicates the snapshot data to Google Cloud.",
+          "Migrate to Virtual Machines uses data replication technology which continuously replicates disk data from the source VMs to Google Cloud without causing any downtime on the source."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/supported-os-versions",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/migrating-vms-migrate-for-compute-engine-best-practices",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/reference/roles-reference",
+        "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/discover/lifecycle"
+      ]
+    }
+  ]
+}

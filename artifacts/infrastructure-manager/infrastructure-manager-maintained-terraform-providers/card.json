@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:00.898Z",
+  "source_step08_card": "data/step-08/current/products/infrastructure-manager/card.json",
+  "product_name": "Infrastructure Manager",
+  "product_slug": "infrastructure-manager",
+  "feature_name": "Infrastructure Manager-maintained Terraform providers",
+  "feature_slug": "infrastructure-manager-maintained-terraform-providers",
+  "summary": "Use Terraform providers maintained by Infrastructure Manager during deployment creation, updates, and previews.",
+  "extended_definition": "Use Terraform providers maintained by Infrastructure Manager during deployment creation, updates, and previews.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/overview",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+      "https://docs.cloud.google.com/infrastructure-manager/docs/terraform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Terraform and Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/terraform",
+        "source_id": "site-docs-root",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn how to specify the use of a Infra Manager maintained Terraform provider, see Deploy infrastructure using Infrastructure Manager , Update a deployment , or Preview a deployment .",
+          "Infra Manager supports Terraform providers for Google Cloud: google google-beta Omit this field to use the HashiCorp-maintained Terraform provider for Google Cloud .",
+          "Use the Terraform provider for Google Cloud You can configure deployments and previews to use Infra Manager maintained Terraform providers for Google Cloud."
+        ]
+      },
+      {
+        "title": "Deploy infrastructure using Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to use Infrastructure Manager to provision a set of Google Cloud resources that are defined in a Terraform configuration.",
+          "Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider.",
+          "Set to SERVICE MAINTAINED to use the Infra Manager maintained Terraform provider."
+        ]
+      },
+      {
+        "title": "Preview a deployment \\_|\\_ Infrastructure Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "source_id": "site-iam-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To preview the deployment: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- git - source - repo = \" GIT REPO \" \\ -- git - source - directory = \" DIRECTORY \" \\ -- git - source - ref = \" REF \" \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "To preview the update: gcloud infra - manager previews create projects / PROJECT ID / locations / LOCATION / previews / PREVIEW ID \\ -- service - account projects / SERVICE ACCOUNT PROJECT ID / serviceAccounts / SERVICE ACCOUNT \\ -- gcs - source gs : // BUCKET NAME / OBJECT NAME \\ -- input - values = INPUT 1 NAME = VALUE , INPUT 2 NAME = VALUE \\ -- tf - version - constraint = TERRAFORM VERSION \\ -- annotations = \" ANNOTATION KEY = ANNOTATION VALUE \" -- provider - source = SERVICE MAINTAINED Replace: PROJECT ID is the project ID where Infrastructure Manager runs.",
+          "This page describes how to use Infrastructure Manager to preview the deployment of resources defined in a Terraform configuration."
+        ]
+      },
+      {
+        "title": "Infrastructure Manager overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/infrastructure-manager/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each revision, Infra Manager stores the following: Logs The configuration used to do the revision The list of Google Cloud resources created by the revision The state file created as part of each deployment and revision See Infrastructure as Code on Google Cloud for more information about IaC.",
+          "Infra Manager and Infrastructure as Code Infra Manager allows you to use IaC to manage the lifecycle of Google Cloud resources: Terraform is defined declaratively in a Terraform configuration .",
+          "Initializes Terraform ( terraform init ) Validates the Terraform configuration ( terraform validate ) Actuates the configuration ( terraform apply , or terraform destroy if you are deleting a deployment) Streams Cloud Build logs into a storage bucket created by Infra Manager."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/terraform",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/terraform",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/infrastructure-manager/docs/terraform",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/deploy-resources",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/preview-deployment",
+        "https://docs.cloud.google.com/infrastructure-manager/docs/overview"
+      ]
+    }
+  ]
+}

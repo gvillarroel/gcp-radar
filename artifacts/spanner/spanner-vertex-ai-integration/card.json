@@ -1,0 +1,109 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:04.473Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner",
+  "feature_name": "Spanner Vertex AI integration",
+  "feature_slug": "spanner-vertex-ai-integration",
+  "summary": "Spanner Vertex AI integration makes it possible to use Vertex AI with GoogleSQL to add machine learning capabilities to Spanner applications; Spanner Vertex AI integration enables Spanner applications to use machine learning capabilities through Google Standard SQL.",
+  "extended_definition": "Spanner Vertex AI integration makes it possible to use Vertex AI with GoogleSQL to add machine learning capabilities to Spanner applications; Spanner Vertex AI integration enables Spanner applications to use machine learning capabilities through Google Standard SQL.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/ml-tutorial-generative-ai"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Generate ML predictions using SQL \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner Vertex AI integration gives you the ability to generate predictions using your SQL code by calling the ML.PREDICT function for GoogleSQL or the spanner.ML PREDICT ROW function for PostgreSQL.",
+          "GoogleSQL Register the gemini-pro model CREATE MODEL GeminiPro INPUT ( prompt STRING ( MAX )) OUTPUT ( content STRING ( MAX )) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT /locations/ LOCATION /publishers/google/models/gemini-pro' , default batch size = 1 ); Replace the following: PROJECT : the project ID LOCATION : the region where you are using Vertex AI Run the model SELECT content FROM ML .",
+          "Configure access for Spanner Vertex AI integration to Vertex AI endpoints Spanner creates the service agent and grants the necessary permissions automatically when Spanner executes the first MODEL DDL statement."
+        ]
+      },
+      {
+        "title": "\"Use Generative AI to get personalized recommendations in an ecommerce application\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial-generative-ai",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner Vertex AI integration helps you assemble complex prompts containing live data and use them to build AI-enabled applications.",
+          "PostgreSQL interface note: Spanner Vertex AI integration is not supported in PostgreSQL-dialect databases.",
+          "To register this model in a Spanner database, execute the following DDL statement : CREATE MODEL TextBison INPUT ( prompt STRING ( MAX )) OUTPUT ( content STRING ( MAX )) REMOTE OPTIONS ( endpoint = '//aiplatform.googleapis.com/projects/ PROJECT /locations/ LOCATION /publishers/google/models/text-bison' ); Replace the following: PROJECT : the project ID LOCATION : the region where you are using Vertex AI Schema discovery and validation isn't available for Generative AI models."
+        ]
+      },
+      {
+        "title": "Get Vertex AI text embeddings \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , @ Description ))) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' )); Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Update text embeddings To update your embeddings or to ingest data in realtime, use the UPDATE ( GoogleSQL and PostgreSQL ) statement.",
+          "This page describes how to use the Vertex AI text embedding API to generate, store, and update text embeddings for data stored in Spanner for GoogleSQL-dialect databases and PostgreSQL-dialect databases.",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , $ 1 , 'task type' , 'RETRIEVAL QUERY' ) ), 'parameters' , JSONB BUILD OBJECT ( 'outputDimensionality' , 768 ) ) ) - > 'predictions' - > 0 - > 'embeddings' - > 'values' ) ) AS distance FROM Products p ORDER BY distance LIMIT 5 ; Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Store text embeddings After generating the embeddings in a read-only transaction, store them in Spanner so they can be managed with your operational data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "spanner.ML"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-generative-ai",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-generative-ai",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-generative-ai",
+        "https://docs.cloud.google.com/spanner/docs/ml-tutorial-embeddings"
+      ]
+    }
+  ]
+}

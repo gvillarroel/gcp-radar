@@ -1,0 +1,157 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.861Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql",
+  "feature_name": "CMEK allowed key projects organization policy constraint",
+  "feature_slug": "cmek-allowed-key-projects-organization-policy-constraint",
+  "summary": "The constraints/gcp.restrictCmekCryptoKeyProjects policy constraint controls which projects can supply Cloud KMS keys for CMEK.",
+  "extended_definition": "The constraints/gcp.restrictCmekCryptoKeyProjects policy constraint controls which projects can supply Cloud KMS keys for CMEK.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use organizational policy constraints to enforce data residency requirements at the organization, project, or folder level.",
+          "To enable or disable services for sets of users, you can combine organizational policy constraints using IAM policy configurations.",
+          "You can also fine-tune policies for a constraint to specify multi-regions such as asia and europe , or regions such as us-east1 or europe-west1 , as allowed or denied locations."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"minLength\" : integer , \"complexity\" : enum ( Complexity ) , \"reuseInterval\" : integer , \"disallowUsernameSubstring\" : boolean , \"passwordChangeInterval\" : string , \"enablePasswordPolicy\" : boolean , \"disallowCompromisedCredentials\" : boolean } Fields minLength integer Minimum number of characters allowed. complexity enum ( Complexity ) The complexity of the password. reuseInterval integer Number of previous passwords that cannot be reused. disallowUsernameSubstring boolean Disallow username as a part of the password. passwordChangeInterval string ( Duration format) Minimum interval after which the password can be changed.",
+          "JSON representation { \"allowedConsumerProjects\" : [ string ] , \"pscAutoConnections\" : [ { object ( PscAutoConnectionConfig ) } ] , \"networkAttachmentUri\" : string , \"pscEnabled\" : boolean } Fields allowedConsumerProjects[] string Optional.",
+          "The secret manager key storing the administrator credential. (e.g., projects/{project}/secrets/{secret}). organizationalUnit string Optional."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"minLength\" : integer , \"complexity\" : enum ( Complexity ) , \"reuseInterval\" : integer , \"disallowUsernameSubstring\" : boolean , \"passwordChangeInterval\" : string , \"enablePasswordPolicy\" : boolean , \"disallowCompromisedCredentials\" : boolean } Fields minLength integer Minimum number of characters allowed. complexity enum ( Complexity ) The complexity of the password. reuseInterval integer Number of previous passwords that cannot be reused. disallowUsernameSubstring boolean Disallow username as a part of the password. passwordChangeInterval string ( Duration format) Minimum interval after which the password can be changed.",
+          "JSON representation { \"allowedConsumerProjects\" : [ string ] , \"pscAutoConnections\" : [ { object ( PscAutoConnectionConfig ) } ] , \"networkAttachmentUri\" : string , \"pscEnabled\" : boolean } Fields allowedConsumerProjects[] string Optional.",
+          "The secret manager key storing the administrator credential. (e.g., projects/{project}/secrets/{secret}). organizationalUnit string Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "gcp.restrictCmekCryptoKeyProjects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ]
+}

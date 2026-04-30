@@ -1,0 +1,90 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:03.816Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection",
+  "feature_name": "Cloud Storage FileSet regular expression filters",
+  "feature_slug": "cloud-storage-fileset-regular-expression-filters",
+  "summary": "Adds regular expression filters for including or excluding files from a Cloud Storage FileSet scan.",
+  "extended_definition": "Adds regular expression filters for including or excluding files from a Cloud Storage FileSet scan.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Profile Azure Blob Storage data \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For each Blob Storage container, a file store data profile includes the following information: The types of files that you're storing in the container, categorized into file clusters The sensitivity level of the data in the container A summary about each detected file cluster, including the types of sensitive information found For a full list of insights and metadata in each file store data profile, see File store data profiles .",
+          "To configure a filter, specify at least one of the following: A subscription ID or a regular expression that specifies one or more subscription IDs A container name or a regular expression that specifies one or more containers Regular expressions must follow RE2 syntax .",
+          "To match a filter, a container must meet all the regular expressions specified within that filter."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud Storage data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To add filters, follow these steps: To add a regular expression filter, specify at least one of the following: A project ID or a regular expression that specifies one or more projects A bucket name or a regular expression that specifies one or more buckets Regular expressions must follow RE2 syntax .",
+          "To be included in the schedule, a bucket must meet the following requirements: If you add regular expression filters, the bucket must match at least one of the regular expressions that you specify.",
+          "To be included in this schedule's scope, a bucket must match at least one of the regular expression filters and all of the tag filters."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud Storage data in an organization or folder \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To add filters, follow these steps: To add a regular expression filter, specify at least one of the following: A project ID or a regular expression that specifies one or more projects A bucket name or a regular expression that specifies one or more buckets Regular expressions must follow RE2 syntax .",
+          "To be included in the schedule, a bucket must meet the following requirements: If you add regular expression filters, the bucket must match at least one of the regular expressions that you specify.",
+          "To be included in this schedule's scope, a bucket must match at least one of the regular expression filters and all of the tag filters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+      ]
+    }
+  ]
+}

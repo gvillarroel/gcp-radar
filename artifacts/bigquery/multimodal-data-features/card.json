@@ -1,0 +1,122 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:44.521Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery",
+  "feature_name": "Multimodal data features",
+  "feature_slug": "multimodal-data-features",
+  "summary": "BigQuery and BigQuery DataFrames now support multimodal analysis, transformation, embeddings, and ELT workflows across SQL and Python.",
+  "extended_definition": "BigQuery and BigQuery DataFrames now support multimodal analysis, transformation, embeddings, and ELT workflows across SQL and Python.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Analyze multimodal data in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Generative AI functions Generate text, embeddings, and scalar values based on ObjectRef or ObjectRefRuntime input by using the following generative AI functions with Gemini models: AI.GENERATE AI.GENERATE TEXT AI.GENERATE TABLE AI.GENERATE BOOL AI.GENERATE DOUBLE AI.GENERATE INT AI.GENERATE EMBEDDING AI.EMBED AI.SIMILARITY AI.CLASSIFY AI.IF AI.SCORE Work with multimodal data in Python You can analyze multimodal data in Python by using BigQuery DataFrames classes and methods.",
+          "Generate annotations, embeddings, and scalar values from multimodal data by creating multimodal DataFrames in BigQuery DataFrames and using Python libraries.",
+          "Use of BigQuery Python UDFs, and of multimodal DataFrames and object transformations methods in BigQuery DataFrames, incurs Python UDF costs."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . gemini model = bbq . ml . create model ( \"cymbal pets.gemini\" , replace = True , connection name = \"us.cymbal conn\" , options = { \"endpoint\" : \"gemini-2.5-flash\" }, ) Create an embedding generation model Create a BigQuery ML remote model that represents a Vertex AI multimodal embedding model: Run the following to create the remote model: SQL CREATE OR REPLACE MODEL cymbal pets.embedding model REMOTE WITH CONNECTION us.cymbal conn OPTIONS ( ENDPOINT = 'multimodalembedding@001' ); BigQuery DataFrames Before trying this sample, follow the BigQuery DataFrames setup instructions in the BigQuery quickstart using BigQuery DataFrames .",
+          "Analyze multimodal data with SQL and BigQuery DataFrames This tutorial shows you how to analyze multimodal data by using SQL queries and BigQuery DataFrames .",
+          "For more information, see Set up ADC for a local development environment . df manuals agg The results look similar to the following: +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ manual.uri manual.version manual.authorizer manual.details chunks.uri chunks.version chunks.authorizer chunks.details +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ gs://cloud-samples-data/bigquery/ 1742492785900455 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pef\", gs://cloud-samples-data/bigquery/ 1745875761227129 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"c9032b037693d15a33210d638c763d0e\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"5a1116cce4978ec1b094d8e8b49a1d7c\", crittercuisine 5000 user manual.pdf \"size\":566105,\"updated\":1742492785941000}} crittercuisine 5000 user manual page1.pdf \"size\":504583,\"updated\":1745875761266000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ crittercuisine 5000 user manual page1.pdf 1745875760613874 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"94d03ec65d28b173bc87eac7e587b325\", crittercuisine 5000 user manual page2.pdf \"size\":94622,\"updated\":1745875760649000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ ... ... ... ... +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ Run the following to generate a single response from a Gemini model based on the analysis of an array of ObjectRef values: SQL WITH manuals AS ( SELECT OBJ ."
+        ]
+      },
+      {
+        "title": "Introduction to AI in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Search BigQuery offers a variety of search functions and features to help you efficiently find specific data or discover similarities between data including multimodal data.",
+          "You can generate multimodal embeddings by using models provided by or hosted on Vertex AI, or by using models imported and run in BigQuery.",
+          "Assistive AI features AI-powered assistance features in BigQuery, collectively referred to as Gemini in BigQuery , help you discover, prepare, query, and visualize your data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chunk.rfind",
+      "chunks.append",
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "io.BytesIO",
+      "json.loads",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "myproject.region.myconnection",
+      "page.extract",
+      "page1.pdf",
+      "page2.pdf",
+      "pets.embedding",
+      "pets.gemini",
+      "reader.pages",
+      "req.read",
+      "urllib.request",
+      "us.cymbal"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/ai-introduction"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analyze-multimodal-data",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/ai-introduction"
+      ]
+    }
+  ]
+}

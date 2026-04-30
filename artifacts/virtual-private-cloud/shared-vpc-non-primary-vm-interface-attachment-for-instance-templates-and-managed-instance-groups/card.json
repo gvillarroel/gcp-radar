@@ -1,0 +1,171 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Shared VPC non-primary VM interface attachment for instance templates and managed instance groups",
+  "feature_slug": "shared-vpc-non-primary-vm-interface-attachment-for-instance-templates-and-managed-instance-groups",
+  "summary": "Allows VM instances created from instance templates or managed instance groups to attach network interfaces other than nic0 when connected to Shared VPC.",
+  "extended_definition": "Allows VM instances created from instance templates or managed instance groups to attach network interfaces other than nic0 when connected to Shared VPC.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+      "https://docs.cloud.google.com/vpc/docs/routes",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Costs for traffic from a resource in a Shared VPC service project that transfers out through a VLAN attachment are attributed to the project that owns the VLAN attachment.",
+          "Service Project Admins When defining each Service Project Admin, a Shared VPC Admin can grant permission to use the whole host project or just some subnets: Project-level permissions : A Service Project Admin can be defined to have permission to use all subnets in the host project if the Shared VPC Admin grants the role of compute.networkUser for the whole host project to the Service Project Admin.",
+          "Shared VPC Admin ( compute.xpnAdmin and resourcemanager.projectIamAdmin ) • IAM principal in the organization, or • IAM principal in a folder Shared VPC Admins have the Compute Shared VPC Admin ( compute.xpnAdmin ) and Project IAM Admin ( resourcemanager.projectIamAdmin ) roles for the organization or one or more folders."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "Route advertisements and internal IP addresses The following IP addresses are advertised within a VPC network: Regional internal IPv4 addresses Used for primary and secondary IPv4 subnet address ranges Regional internal and external IPv6 addresses Used for internal and external IPv6 subnet address ranges Global internal IPv4 addresses Used for Private Service Connect endpoints for Google APIs If you connect VPC networks using VPC Network Peering, subnet ranges using private IPv4 addresses are always exchanged.",
+          "The primary internal addresses for the following resources come from the subnet's primary range: VM instances, internal load balancers, and internal protocol forwarding.",
+          "Maximum transmission unit For more information about the maximum transmission unit (MTU) setting for a VPC network and its connected VMs, see Maximum transmission unit ."
+        ]
+      },
+      {
+        "title": "\"About network attachments \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "source_id": "site-docs-root-2",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A connection between a network attachment and a Private Service Connect interface is similar to the connection between a Private Service Connect endpoint and a service attachment , but it has two key differences: A network attachment lets a producer VPC network initiate connections to a consumer VPC network (managed service egress).",
+          "A network attachment is a resource that lets a producer Virtual Private Cloud (VPC) network initiate connections to a consumer VPC network through a Private Service Connect interface .",
+          "A network attachment in a consumer VPC network is connected to two Private Service Connect interfaces in a producer VPC network (click to enlarge)."
+        ]
+      },
+      {
+        "title": "Routes \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/routes",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see the following: How Cloud Router works Learned routes The next hop of a dynamic route can be one of the following: A VLAN attachment backed by either a Dedicated Interconnect connection or a Partner Interconnect connection A Cloud VPN tunnel, either a HA VPN tunnel or a Classic VPN configured to use dynamic routing A Router appliance VM instance If a next hop for a dynamic route becomes inaccessible, the Cloud Router that manages its BGP session instructs the VPC network to remove the dynamic route.",
+          "An option to skip evaluating other policy-based routes An internal passthrough Network Load Balancer Policy-based routes can apply to all VMs in the network, to certain VMs selected by network tag, or to traffic entering the VPC network through VLAN attachments for Cloud Interconnect (in only one region, or in all regions).",
+          "Dynamic route with nonfunctional next hop : Even before the BGP session responsible for programming a dynamic route goes down, Google Cloud disregards a dynamic route if its next hop Cloud VPN tunnel, VLAN attachment, or Router appliance VM isn't functional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkUser",
+      "compute.xpnAdmin",
+      "resourcemanager.projectIamAdmin"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/about-network-attachments",
+        "https://docs.cloud.google.com/vpc/docs/routes"
+      ]
+    }
+  ]
+}

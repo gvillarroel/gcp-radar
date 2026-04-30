@@ -1,0 +1,115 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:06.512Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud",
+  "feature_name": "Auto mode VPC subnet range expansion",
+  "feature_slug": "auto-mode-vpc-subnet-range-expansion",
+  "summary": "Auto mode VPC networks now include a new /20 subnet, 10.194.0.0/20, in the Santiago (southamerica-west1) region.",
+  "extended_definition": "Auto mode VPC networks now include a new /20 subnet, 10.194.0.0/20, in the Santiago (southamerica-west1) region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/subnets",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "",
+        "evidence_snippets": [
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"autoCreateSubnetworks\": false, \"name\": \" NETWORK \", \"mtu\": MTU , \"enableUlaInternalIpv6\": true, \"internalIpv6Range\": \" ULA IPV6 RANGE \", \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" } } Replace the following: PROJECT ID : the ID of the project where the VPC network is created.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks { \"autoCreateSubnetworks\": false, \"name\": \" NETWORK \", \"mtu\": MTU , \"enableUlaInternalIpv6\": true, \"internalIpv6Range\": \" ULA IPV6 RANGE \", \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" } } Replace the following: PROJECT ID : the ID of the project where the VPC network is created.",
+          "Subnets with IPv6 address ranges are not supported on auto mode VPC networks."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "You plan to connect your VPC network to another network: Because the subnets of every auto mode VPC network use the same predefined range of IP addresses, you can't connect auto mode VPC networks to one another by using VPC Network Peering or Cloud VPN.",
+          "In addition to the automatically created subnets, you can add more subnets manually to auto mode VPC networks in regions that you choose by using IP ranges outside of 10.128.0.0/9 ."
+        ]
+      },
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Auto mode Virtual Private Cloud (VPC) networks can't be deleted if secondary subnet ranges are present.",
+          "The first network interface listed, the one in my-subnet1 , is the primary interface: gcloud compute instances create multi-nic-alias-vm \\ --machine-type f1-micro \\ --network-interface \"subnet=my-subnet1,aliases=/32;range1:/24\" \\ --network-interface \"subnet=my-subnet2,aliases=/32;range2:/24\" Use the display command to see the interfaces and their addresses: gcloud compute instances describe multi-nic-alias-vm ... networkInterfaces: - ... aliasIpRanges: - ipCidrRange: 172.16.1.2/32 - ipCidrRange: 10.1.0.0/24 subnetworkRangeName: range1 name: nic0 network: .../networks/my-network1 networkIP: 172.16.1.3 subnetwork: .../subnetworks/my-subnet1 ... - ... aliasIpRanges: - ipCidrRange: 172.16.2.2/32 - ipCidrRange: 10.2.0.0/24 subnetworkRangeName: range2 name: nic1 network: .../networks/my-network2 networkIP: 172.16.2.3 subnetwork: .../subnetworks/my-subnet2 API Create two custom mode VPC networks named my-network1 and my-network2 .",
+          "Click Create . gcloud Create the first network: gcloud compute networks create my-network1 --subnet-mode CUSTOM Add a subnet: gcloud compute networks subnets create my-subnet1 \\ --network my-network1 \\ --range 172.16.1.0/24 \\ --secondary-range range1=10.1.0.0/16 Create a second network: gcloud compute networks create my-network2 --subnet-mode CUSTOM Add a subnet: gcloud compute networks subnets create my-subnet2 \\ --network my-network2 \\ --range 172.16.2.0/24 \\ --secondary-range range2=10.2.0.0/16 Create a VM with interfaces in both networks."
+        ]
+      },
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range.",
+          "Subnets with IPv6 address ranges aren't supported on auto mode VPC networks or legacy networks.",
+          "Note: If you want to create subnets with IPv6 address ranges in an auto mode VPC network, you must first convert an auto mode VPC network to custom mode ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    }
+  ]
+}

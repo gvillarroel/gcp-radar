@@ -1,0 +1,142 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.533Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security",
+  "feature_name": "Custom security profiles in Apigee UI",
+  "feature_slug": "custom-security-profiles-in-apigee-ui",
+  "summary": "Customers can create and edit custom security profiles in the Apigee UI to define which security categories contribute to risk scoring.",
+  "extended_definition": "Customers can create and edit custom security profiles in the Apigee UI to define which security categories contribute to risk scoring.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+      "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom security profile You can create custom security profiles that include only your chosen assessment checks and weights to evaluate against proxies.",
+          "Manage custom security profiles in the Apigee UI This section shows how to view, create, edit, and delete custom security profiles using the Apigee UI.",
+          "Create and edit custom security profiles On the Risk Assessment screen, select the Security Profiles tab."
+        ]
+      },
+      {
+        "title": "Security scores and profiles API \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get existing custom security profiles This command retrieves the information for all security profiles for your project: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2\" \\ -H \"Authorization: Bearer $TOKEN\" This command retrieves the metadata for a specific security profile and can be used to retrieve information on the google-default profile as well as custom profiles: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID \" \\ -H \"Authorization: Bearer $TOKEN\" Create a new custom security profile To create a new custom security profile, use a command like this: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2?security profile v2 id= PROFILE ID \" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-type: application/json' \\ -d '{ \"description\": \" PROFILE DESC \", \"risk assessment type\": \"APIGEE\", \"profile assessment configs\": { \"auth-policies-check\": {\"weight\": \"MINOR\"}, \"threat-policies-check\": {\"weight\": \"MODERATE\"} } }' Update an existing custom security profile To update an existing profile, use a command like: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfilesV2/ PROFILE ID ?update mask= UPDATE MASK \" \\ -X PATCH \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-type: application/json' \\ -d '{\"description\": \" PROFILE DESC \"}' where UPDATE MASK can be one of these values, if present: description , profile assessment configs , description,profile assessment configs , or (everything).",
+          "This can be any subset of the following security categories : abuse authorization cors mtls mediation threat Define the profile in the body of an API call To define a custom profile in the body of an API call, enter a command similar to the following: curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityProfiles?security profile id= PROFILE ID \" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"description\":\"test custom profile\", \"profileConfig\" : { \"categories\":[ {\"cors\":{}}, {\"threat\":{}} ] } }' This creates a custom profile that includes the categories cors and threat, and returns a response like this: { \"name\": \" PROFILE ID \", \"revisionId\": \"1\", \"revisionCreateTime\": \"2023-07-17T18:47:08Z\", \"revisionUpdateTime\": \"2023-07-17T18:47:08Z\", \"scoringConfigs\": [ { \"title\": \"json\", \"scorePath\": \"/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/threat/json\", \"description\": \"Check if JSONThreatProtection policy is configured.\" }, { \"title\": \"xml\", \"scorePath\": \"/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/threat/xml\", \"description\": \"Check if XMLThreatProtection policy is configured.\" }, { \"title\": \"cors\", \"scorePath\": \"/org@ ORG /envgroup@ ENVGROUP /env@ ENV /proxies/proxy@$proxy/policies/individual/security/cors\", \"description\": \"Check if CORS policy is configured.\" } ], \"maxScore\": 1200, \"minScore\": 200, \"profileConfig\": { \"categories\": [ { \"cors\": {} }, { \"threat\": {} } ] }, \"description\": \"test custom profile\" } Define the profile by attaching a JSON file to an API call You can also define a custom security profile by attaching a JSON file that defines the profile to an API call.",
+          "See securityAssessmentResults.batchCompute in the Apigee Management API reference documentation for more information on this functionality. curl \"https://apigee.googleapis.com/v1/organizations/ ORG /securityAssessmentResults:batchCompute\" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-type: application/json' \\ -d '{ \"profile\": \" PROFILE ID \", \"scope\": \" ENV \", RESOURCES }' This is a potential response for the request: { \"securityAssessmentResults\": [ { \"resource\": { \"type\": \"API PROXY\", \"name\": \"my-proxy-1\", \"resourceRevisionId\": \"1\" }, \"createTime\": \"2023-11-22T04:49:29.418166Z\", \"scoringResult\": { \"severity\": \"HIGH\", \"failedAssessmentPerWeight\": { \"MINOR\": 1 }, \"assessmentRecommendations\": { \"cors-policies-check\": { \"displayName\": \"CORS policies check\", \"weight\": \"MAJOR\", \"recommendations\": [ { \"description\": \"Check whether a CORS policy or CORS header in AssignMessage policy are present.\", \"link\": { \"text\": \"Learn more\", \"uri\": \"https://cloud.google.com/apigee/docs/api-platform/reference/policies/reference-overview-policy\" } } ], \"verdict\": \"FAIL\", \"scoreImpact\": 100 } }, \"dataUpdateTime\": \"2023-11-22T04:49:29.418166Z\" } } ], \"assessmentTime\": \"2023-11-22T04:49:29.418166Z\" } Manage security profiles This section provides examples for managing security profiles using the APIs and is not exhaustive."
+        ]
+      },
+      {
+        "title": "Manage custom plugins \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST You can create a custom plugin using the Create Plugin API : Custom plugin without a hosting service: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \" PLUGIN DISPLAY NAME \", \"description\": \" PLUGIN DESCRIPTION \", \"actions config\": [ { \"id\": \" PLUGIN ACTION ID \", \"display name\": \" PLUGIN ACTION DISPLAY NAME \", \"description\": \" PLUGIN ACTION DESCRIPTION \", \"trigger mode\": \" PLUGIN ACTION TRIGGER MODE \" } ], \"plugin category\": \" PLUGIN CATEGORY \", \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ HUB LOCATION /plugins?plugin id= PLUGIN ID \" Example curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \"Nebula Connect\", \"description\": \"Nebula Connect plugin for syncing metadata via gRPC.\", \"actions config\": [ { \"id\": \"sync-metadata-core\", \"display name\": \"Sync Core Metadata\", \"description\": \"Initiates synchronization of core API metadata.\", \"trigger mode\": \"API HUB SCHEDULE TRIGGER\" } ], \"plugin category\": \"API GATEWAY\", \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/test-project/locations/us-west1/plugins?plugin id=nebula-connect-v1\" Custom plugin with a hosting service: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \" PLUGIN DISPLAY NAME \", \"description\": \" PLUGIN DESCRIPTION \", \"actions config\": [ { \"id\": \" PLUGIN ACTION ID \", \"display name\": \" PLUGIN ACTION DISPLAY NAME \", \"description\": \" PLUGIN ACTION DESCRIPTION \", \"trigger mode\": \" PLUGIN ACTION TRIGGER MODE \" } ], \"plugin category\": \" PLUGIN CATEGORY \", \"hosting service\": { \"service uri\": \" PLUGIN HOSTING SERVICE URI \" }, \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/ PROJECT ID /locations/ HUB LOCATION /plugins?plugin id= PLUGIN ID \" Example curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -d '{ \"display name\": \"Nebula Connect\", \"description\": \"Nebula Connect plugin for syncing metadata via gRPC.\", \"actions config\": [ { \"id\": \"sync-metadata-core\", \"display name\": \"Sync Core Metadata\", \"description\": \"Initiates synchronization of core API metadata.\", \"trigger mode\": \"API HUB SCHEDULE TRIGGER\" } ], \"plugin category\": \"API GATEWAY\", \"hosting service\": { \"service uri\": \"https://nebula-endpoints-987654321098.us-west1.run.app\" }, \"ownership type\": \"USER OWNED\" }' \\ \"https://apihub.googleapis.com/v1/projects/test-project/locations/us-west1/plugins?plugin id=nebula-connect-v1\" Replace the following: PLUGIN DISPLAY NAME : The display name of the plugin.",
+          "API hub offers you the capability to manually create and manage custom plugins to connect to third party systems and gateways.",
+          "Console To create a custom plugin, do the following: In the Google Cloud console, go to the API hub page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "apihub.googleapis.com",
+      "west1.run.app"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores-api",
+        "https://docs.cloud.google.com/apigee/docs/apihub/create-custom-plugins"
+      ]
+    }
+  ]
+}

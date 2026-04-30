@@ -1,0 +1,88 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.716Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-javascript-client-library/card.json",
+  "product_name": "Earth Engine JavaScript Client Library",
+  "product_slug": "earth-engine-javascript-client-library",
+  "feature_name": "TaskStatus attempt count field",
+  "feature_slug": "taskstatus-attempt-count-field",
+  "summary": "Ee.data.TaskStatus includes a field for the number of times a task was attempted.",
+  "extended_definition": "Ee.data.TaskStatus includes a field for the number of times a task was attempted.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs",
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+      "https://developers.google.com/earth-engine/guides/command_line"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additionally, if you have permission to view the plan configuration , the output contains: planMaxConcurrentExports , a number indicating the maximum number of batch tasks that can run in parallel across all users and projects that use the billing account. set To update the project's configuration, use the set sub-command.",
+          "They may or may not be necessary, depending on your shell and platform.) To delete a property, set it to null without a type: earthengine asset set -p name=null projects/my-project/assets/asset id Date properties are just numbers that represent a number of milliseconds since the Unix epoch ( i.e. midnight on January 1st, 1970) and may be specified directly as a number or in one of the following formats: YYYY-MM-DD YYYY-MM-DDThh:mm:ss YYYY-MM-DDThh:mm:ss.f The time zone is assumed to be UTC.",
+          "You may specify --max items number (or -m for short) to limit the number of items from each folder or collection you list: earthengine ls -m 10 projects/my-project/assets/my large collection Running the ls command with no arguments will list the top-level folders that you own. model Tool with which to manipulate TensorFlow saved models. model prepare Prepare a saved model for serving in Earth Engine."
+        ]
+      },
+      {
+        "title": "API Reference \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "ee.Algorithms.Dictionary \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.TaskStatus",
+      "developers.google.com",
+      "ee.Algorithms.Dictionary",
+      "i.e",
+      "ss.f"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/apidocs",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary"
+      ]
+    }
+  ]
+}

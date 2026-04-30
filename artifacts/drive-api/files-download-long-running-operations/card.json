@@ -1,0 +1,180 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:56.535Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api",
+  "feature_name": "files.download long-running operations",
+  "feature_slug": "files-download-long-running-operations",
+  "summary": "The files.download method now returns a long-running operation for downloading blob content or exporting Google Workspace content.",
+  "extended_definition": "The files.download method now returns a long-running operation for downloading blob content or exporting Google Workspace content.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+      "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+      "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+      "https://developers.google.com/workspace/drive/api/reference/rest/v3"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage long-running operations \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download files To download content under a long-running operation, use the download method on the files resource.",
+          "Default MIME types If a MIME type isn't set when downloading non-blob content, the following default MIME types are assigned: Document Type Format MIME type File Extension Google Apps Script JSON application/vnd.google-apps.script+json .json Google Docs Microsoft Word application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx Google Drawings PNG image/png .png Google Forms ZIP application/zip .zip Google Sheets Microsoft Excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet .xlsx Google Sites Raw Text text/raw .txt Google Slides Microsoft PowerPoint application/vnd.openxmlformats-officedocument.presentationml.presentation .pptx Google Vids MP4 video/mp4 .mp4 Jamboard PDF application/pdf .pdf Download response When calling the download method, the response body consists of a resource representing a long-running operation.",
+          "Method call operations.get(name=' NAME '); Replace NAME with the operation's server-assigned name as shown in the response to the download method request. curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Google Drive API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v3.operations Methods get GET /drive/v3/operations/{name} Gets the latest state of a long-running operation.",
+          "REST Resource: v3.files Methods copy POST /drive/v3/files/{fileId}/copy Creates a copy of a file and applies any requested updates with patch semantics. create POST /drive/v3/files POST /upload/drive/v3/files Creates a file. delete DELETE /drive/v3/files/{fileId} Permanently deletes a file owned by the user without moving it to the trash. download POST /drive/v3/files/{fileId}/download Downloads the content of a file. emptyTrash DELETE /drive/v3/files/trash Permanently deletes all of the user's trashed files. export GET /drive/v3/files/{fileId}/export Exports a Google Workspace document to the requested MIME type and returns exported byte content. generateIds GET /drive/v3/files/generateIds Generates a set of file IDs which can be provided in create or copy requests. get GET /drive/v3/files/{fileId} Gets a file's metadata or content by ID. list GET /drive/v3/files Lists the user's files. listLabels GET /drive/v3/files/{fileId}/listLabels Lists the labels on a file. modifyLabels POST /drive/v3/files/{fileId}/modifyLabels Modifies the set of labels applied to a file. update PATCH /drive/v3/files/{fileId} PATCH /upload/drive/v3/files/{fileId} Updates a file's metadata, content, or both. watch POST /drive/v3/files/{fileId}/watch Subscribes to changes to a file.",
+          "REST Resource: v3.about REST Resource: v3.accessproposals REST Resource: v3.approvals REST Resource: v3.apps REST Resource: v3.changes REST Resource: v3.channels REST Resource: v3.comments REST Resource: v3.drives REST Resource: v3.files REST Resource: v3.operations REST Resource: v3.permissions REST Resource: v3.replies REST Resource: v3.revisions Service: googleapis.com/drive/v3 To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      },
+      {
+        "title": "Protect file content \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "To apply download restrictions to a file, set the downloadRestrictions field using the files.update method.",
+          "Fields that control download, print, and copy features The following table lists files resource fields that affect download, print, and copy functionality: Field Description Version capabilities.canCopy Whether the current user can copy a file. v2 & v3 capabilities.canDownload Whether the current user can download a file. v2 & v3 capabilities.canChangeCopyRequiresWriterPermission Whether the current user can change the copyRequiresWriterPermission restriction of a file. v2 & v3 capabilities.canChangeItemDownloadRestriction Whether the current user can change the download restriction of a file. v3 only copyRequiresWriterPermission Whether the options to copy, print, or download this file, should be disabled for readers and commenters. v2 & v3 downloadRestrictions The download restrictions applied on a file. v3 only Note: Within the files resource several download and copy fields are marked as deprecated.",
+          "Add a content restriction only the file owner can modify To add a file content restriction so only file owners can toggle the mechanism, use the files.update method with the contentRestrictions.ownerRestricted boolean field set to true ."
+        ]
+      },
+      {
+        "title": "Resolve errors \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/handle-errors",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use files.download with Vids files.\" } } To fix this error, inform the user that Google Vids files must be downloaded with the files.download method, as the files.export method isn't supported.",
+          "The following JSON sample is a representation of this error: { \"error\" : { \"errors\" : [ { \"domain\" : \"global\" , \"reason\" : \"notFound\" , \"message\" : \"File not found {fileId}\" } ], \"code\" : 404 , \"message\" : \"File not found: {fileId}\" } } To fix this error: If the file is located in a shared drive, and you're using the files.get method, make sure the supportsAllDrives query parameter is set to true .",
+          "You can also check user access levels in the metadata retrieved by the files.get method and display a read-only UI when permissions are missing. myDriveHierarchyDepthLimitExceeded A myDriveHierarchyDepthLimitExceeded error occurs when the limit for the number of nested folder levels has been exceeded."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apps.script",
+      "capabilities.canChangeCopyRequiresWriterPermission",
+      "capabilities.canChangeItemDownloadRestriction",
+      "capabilities.canCopy",
+      "capabilities.canDownload",
+      "developers.google.com",
+      "files.download",
+      "files.export",
+      "files.get",
+      "files.update",
+      "googleapis.com",
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "operations.get",
+      "v3.about",
+      "v3.accessproposals",
+      "v3.approvals",
+      "v3.apps",
+      "v3.changes",
+      "v3.channels",
+      "v3.comments",
+      "v3.drives",
+      "v3.files",
+      "v3.operations",
+      "v3.permissions",
+      "v3.replies",
+      "v3.revisions",
+      "vnd.google",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/handle-errors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:46.501Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api",
+  "feature_name": "Space discoverability controls",
+  "feature_slug": "space-discoverability-controls",
+  "summary": "The Chat API can make a space discoverable to specific users in a Google Workspace organization and expose its URI.",
+  "extended_definition": "The Chat API can make a space discoverable to specific users in a Google Workspace organization and expose its URI.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "https://developers.google.com/workspace/chat/create-spaces"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: spaces \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, see Make a space discoverable to specific users .",
+          "Methods completeImport Completes the import process for the specified space and makes it visible to users. create Creates a space. delete Deletes a named space. findDirectMessage Returns the existing direct message with the specified user. findGroupChats Developer Preview: Available as part of the Google Workspace Developer Preview Program , which grants early access to certain features.",
+          "For details, see Make a space discoverable to a target audience ."
+        ]
+      },
+      {
+        "title": "Create a named space in Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-spaces",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Make a space discoverable to specific users .",
+          "Here's how to create a named space: Node.js chat/client-libraries/cloud/create-space-user-cred.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.spaces.create' , ]; // This sample shows how to create a named space with user credential async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { space : { spaceType : 'SPACE' , // Replace DISPLAY NAME here. displayName : 'DISPLAY NAME' , }, }; // Make the request const response = await chatClient . createSpace ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create space user cred.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.spaces.create\" ] def create space with user cred (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "CreateSpaceRequest ( space = { \"space type\" : 'SPACE' , Replace DISPLAY NAME here. \"display name\" : 'DISPLAY NAME' } ) Make the request response = client . create space ( request ) Handle the response print ( response ) create space with user cred () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateSpaceUserCred.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateSpaceRequest ; import com.google.chat.v1.Space ; // This sample shows how to create space with user credential. public class CreateSpaceUserCred { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.spaces.create\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateSpaceRequest ."
+        ]
+      },
+      {
+        "title": "Package google.chat.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn more, see Make a space discoverable to specific users . access settings.audience is not supported with useAdminAccess . permission settings : Supports changing the permission settings of a space.",
+          "To learn more, see Make a space discoverable to specific users .",
+          "For details, see Make a space discoverable to a target audience ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appsscript.json",
+      "chat.spaces.create",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.CreateSpaceRequest",
+      "com.google.chat.v1.Space",
+      "cred.js",
+      "cred.py",
+      "developers.google.com",
+      "e.g",
+      "settings.audience",
+      "spaces.members",
+      "spaces.messages",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces",
+        "https://developers.google.com/workspace/chat/create-spaces",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1"
+      ]
+    }
+  ]
+}

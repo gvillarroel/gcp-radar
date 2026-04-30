@@ -1,0 +1,138 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.910Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x",
+  "feature_name": "API proxy endpoint limit increase",
+  "feature_slug": "api-proxy-endpoint-limit-increase",
+  "summary": "Apigee increases the maximum number of endpoints allowed per API proxy from five to ten.",
+  "extended_definition": "Apigee increases the maximum number of endpoints allowed per API proxy from five to ten.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Conditional flows Proxy endpoints and target endpoints support an unlimited number of conditional flows (also known as named flows ).",
+          "The following is a sample ProxyEndpoint configuration: <ProxyEndpoint name=\"default\"> <Description/> <FaultRules/> <PreFlow name=\"PreFlow\"> <Request> <Step> <Name>my-set-integration-request-policy</Name> </Step> </Request> </PreFlow> <Flows/> <PostFlow name=\"PostFlow\"/> <HTTPProxyConnection> <BasePath>/integration-endpoint-test</BasePath> <Properties/> </HTTPProxyConnection> <RouteRule name=\"default\"> <IntegrationEndpoint>my-int-endpoint</IntegrationEndpoint> </RouteRule> </ProxyEndpoint> In the sample ProxyEndpoint configuration, Apigee performs the following tasks: In the PreFlow, executes the policy named my-set-integration-request-policy , which sets the integration request object and integration flow variables.",
+          "The API proxy processing pipeline executes Flows in the following sequence: Request Pipeline: Proxy Request PreFlow Proxy Request Conditional Flows (Optional) Proxy Request PostFlow Target Request PreFlow Target Request Conditional Flows (Optional) Target Request PostFlow Response Pipeline: Target Response PreFlow Target Response Conditional Flows (Optional) Target Response PostFlow Proxy Response PreFlow Proxy Response Conditional Flows (Optional) Proxy Response PostFlow PostClientFlow Response (Optional) Only those Flows with policy attachments need to be configured in ProxyEndpoint or TargetEndpoint configurations."
+        ]
+      },
+      {
+        "title": "Endpoint properties reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Properties are set on ProxyEndpoint HTTPProxyConnection elements as shown in this example configuration: <ProxyEndpoint name=\"default\"> <HTTPProxyConnection> <BasePath>/v1/weather</BasePath> <Properties> <Property name=\"request.streaming.enabled\">true</Property> </Properties> </HTTPProxyConnection> </ProxyEndpoint> Request headers An incoming HTTP request includes the HTTP headers sent by the client.",
+          "ProxyEndpoint Transport Property Specification Property Name Default Value Description X-Forwarded-For false When set to true, the virtual host's IP address is added to the outbound request as the value of the HTTP X-Forwarded-For header. request.streaming. enabled false By default ( false ), HTTP request payloads are read into a buffer, and policies that can operate on the payload work as expected.",
+          "When set to true , all HTTP headers present on the inbound response from the target service are set on the outbound response before it is passed to the ProxyEndpoint . response.retain.headers N/A Defines specific HTTP headers from the response that should be set on the outbound response before it is passed to the ProxyEndpoint ."
+        ]
+      },
+      {
+        "title": "\"Analytics metrics, dimensions, and filters reference \\_|\\_ Apigee \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, policy error metrics, grouped by the developer app dimension, might help you discover that an API key or OAuth token has expired for a given app; or you might find that a specific API proxy is throwing a lot of SpikeArrest policy errors, leading you to discover that the proxy's spike arrest limit doesn't account for an increase in holiday traffic.",
+          "Target URL target url Full URL of the target service defined in an API proxy's TargetEndpoint. <TargetEndpoint name=\"default\"> ... <HTTPTargetConnection> <URL>http://mocktarget.apigee.net/user?user=Dude</URL> </HTTPTargetConnection> In this example, the target url is http://mocktarget.apigee.net/user?user=Dude .",
+          "For example, say an API proxy calls the following target: <TargetEndpoint name=\"default\"> ... <HTTPTargetConnection> <URL>http://mocktarget.apigee.net/user?user=Dude</URL> </HTTPTargetConnection> In this example, the target basepath is /user ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mocktarget.apigee.net",
+      "parse.limit",
+      "request.streaming",
+      "request.streaming.enabled",
+      "response.payload",
+      "response.retain.headers",
+      "use.proxy.host.header.with.target.uri"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.152Z",
+  "source_step08_card": "data/step-08/current/products/database-center/card.json",
+  "product_name": "Database Center",
+  "product_slug": "database-center",
+  "feature_name": "Alerting policy filters",
+  "feature_slug": "alerting-policy-filters",
+  "summary": "Database Center lets you create alerting policies for database resources and signals with metric and resource label filters.",
+  "extended_definition": "Database Center lets you create alerting policies for database resources and signals with metric and resource label filters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-center/docs/alerts",
+      "https://docs.cloud.google.com/database-center/docs/metrics",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Metrics and alerting policy filters \\_|\\_ Database Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/metrics",
+        "source_id": "site-docs-root",
+        "final_score": 335,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Database Center Guides Send feedback Metrics and alerting policy filters Stay organized with collections Save and categorize content based on your preferences.",
+          "To help you identify and troubleshoot performance issues for database products such as Cloud SQL, AlloyDB for PostgreSQL, and Spanner, create custom dashboards that display useful metrics and information about your alerting policies.",
+          "About metric filters When you create charts or alerting policies, you can add filters to restrict the metric data that's charted or monitored."
+        ]
+      },
+      {
+        "title": "\"Monitor your database fleet with alerting policies \\_|\\_ Database Center\\",
+        "url": "https://docs.cloud.google.com/database-center/docs/alerts",
+        "source_id": "site-docs-root",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create, edit, copy, or delete an alerting policy In Database Center, you can create, edit, copy, or delete an alerting policy.",
+          "To see the alerting policies configured for your Google Cloud project and the incidents they create, do the following: In the Google Cloud console, go to the Database Center page.",
+          "This document describes how to use the Database Center to use alerting policies and incidents created by them to monitor your database fleet."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterAsyncClient (0.7.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample query database resource groups(): Create a client client = databasecenter v1beta .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta async def sample aggregate issue stats(): Create a client client = databasecenter v1beta ."
+        ]
+      },
+      {
+        "title": "\"Class DatabaseCenterClient (0.7.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient",
+        "source_id": "site-python-reference",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.databasecenter v1beta.types.AggregateIssueStatsResponse The response message containing one of more group of relevant health issues for database resources. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample query database resource groups(): Create a client client = databasecenter v1beta .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import databasecenter v1beta def sample aggregate issue stats(): Create a client client = databasecenter v1beta ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "v1beta.types.AggregateIssueStatsResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-center/docs/metrics",
+        "https://docs.cloud.google.com/database-center/docs/alerts",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-center/docs/metrics",
+        "https://docs.cloud.google.com/database-center/docs/alerts",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-databasecenter/latest/google.cloud.databasecenter_v1beta.services.database_center.DatabaseCenterClient"
+      ]
+    }
+  ]
+}

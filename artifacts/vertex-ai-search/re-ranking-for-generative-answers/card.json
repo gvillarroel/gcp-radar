@@ -1,0 +1,117 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:04:05.851Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search",
+  "feature_name": "Re-ranking for generative answers",
+  "feature_slug": "re-ranking-for-generative-answers",
+  "summary": "Re-ranking for generative answers was updated to lower response latency.",
+  "extended_definition": "Re-ranking for generative answers was updated to lower response latency.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "A higher pCTR suggests that the result is more likely to satisfy the user's query and intent, making it a valuable signal for ranking. freshness rank : freshness adjustment as a rank document age : The time in hours elapsed since the document was last updated, a floating-point number (e.g., 0.25 means 15 minutes). topicality rank : topicality adjustment as a rank.",
+          "If true, disables event re-ranking and personalization to optimize KPIs & personalize results. disableGenerativeAnswerAddOn boolean Optional.",
+          "Generative answer add-on includes natural language to filters and simple answers."
+        ]
+      },
+      {
+        "title": "\"Vertex AI APIs for building search and RAG experiences \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compared to embeddings that look purely at the semantic similarity of a document and a query, the ranking API can give you a more precise score for how well a document answers a given query.",
+          "You can also ground responses to your Vertex AI Search data using Generative AI on Vertex AI.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generative responses : This gives you access to the advanced generative answer features that require multi-step reasoning, query simplification, multi-turn queries, related questions, and multimodal answers that return images and charts.",
+          "To get charts in the returned answers, you must turn on the Generative responses option.",
+          "Example command and result curl -X GET -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/sessions\" { \"sessions\": [ { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10000135306311111817\", \"state\": \"IN PROGRESS\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/10000135306311114276\", \"text\": \"bugs reported by tiktok on grounding\" } } ], \"startTime\": \"2024-09-03T00:38:40.338623Z\", \"endTime\": \"2024-09-03T00:38:40.338623Z\" }, { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10000827040519035859\", \"state\": \"IN PROGRESS\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/10000827040519033518\", \"text\": \"GDM models\" } } ], \"startTime\": \"2024-07-19T15:53:06.521775Z\" }, { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10003910515245149877\", \"state\": \"IN PROGRESS\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/10003910515245148378\", \"text\": \"gyorgyattila\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10003910515245149877/answers/17036357111873257990\" } ], \"startTime\": \"2024-08-08T11:40:04.632463Z\", \"endTime\": \"2024-08-08T11:40:04.632463Z\" }, ... { \"name\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10198752942940073431\", \"state\": \"IN PROGRESS\", \"turns\": [ { \"query\": { \"queryId\": \"projects/123456/locations/global/questions/10198752942940071818\", \"text\": \"hello\" }, \"answer\": \"projects/123456/locations/global/collections/default collection/engines/my-app/sessions/10198752942940073431/answers/13411441797796265380\" } ], \"startTime\": \"2024-08-14T17:30:21.203439Z\", \"endTime\": \"2024-08-14T17:30:21.203439Z\" } ], \"nextPageToken\": \"IDEDgIwL vuieLC\" } The response contains a list of sessions and the nextPageToken."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/builder-apis",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+      ]
+    }
+  ]
+}

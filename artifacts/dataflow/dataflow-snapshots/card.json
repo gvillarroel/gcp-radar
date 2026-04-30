@@ -1,0 +1,155 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:54.239Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow",
+  "feature_name": "Dataflow snapshots",
+  "feature_slug": "dataflow-snapshots",
+  "summary": "Dataflow snapshots let you capture pipeline state for later recovery or analysis; Dataflow snapshots let you capture pipeline state for later recovery or analysis.",
+  "extended_definition": "Dataflow snapshots let you capture pipeline state for later recovery or analysis; Dataflow snapshots let you capture pipeline state for later recovery or analysis.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+      "https://docs.cloud.google.com/dataflow/docs/guides/logging",
+      "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Stop a running Dataflow pipeline \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow snapshots save the state of a streaming pipeline, so you can start a new version of your Dataflow job without losing state.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud dataflow jobs archive JOB ID --region = REGION ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud dataflow jobs archive JOB ID --region = REGION ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud dataflow jobs archive JOB ID --region = REGION ID You should receive a response similar to the following: Archived job [ JOB ID ]. createTime: ' 2025-06-29T11:00:02.432552Z ' currentState: JOB STATE DONE currentStateTime: ' 2025-06-29T11:04:25.125921Z ' id: JOB ID jobMetadata: userDisplayProperties: archived: 'true' projectId: PROJECT ID startTime: ' 2025-06-29T11:00:02.432552Z ' View and restore archived jobs Follow these steps to view archived jobs or to restore archived jobs to the main jobs list on the Dataflow Jobs page.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://dataflow.googleapis.com/v1b3/projects/ PROJECT ID /locations/ REGION /jobs/ JOB ID /?updateMask=job metadata.user display properties.archived\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"id\": \" JOB ID \", \"projectId\": \" PROJECT ID \", \"currentState\": \"JOB STATE DONE\", \"currentStateTime\": \" 2025-05-20T20:54:41.651442Z \", \"createTime\": \" 2025-05-20T20:51:06.031248Z \", \"jobMetadata\": { \"userDisplayProperties\": { \"archived\": \"false\" } }, \"startTime\": \" 2025-05-20T20:51:06.031248Z \" } What's next Explore the Dataflow REST API ."
+        ]
+      },
+      {
+        "title": "\"Develop Apache Beam notebooks with the interactive runner \\_|\\_ Cloud Dataflow\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the following import statement: from apache beam.runners import DataflowRunner Pass in your pipeline options .",
+          "Apache Beam is installed on your notebook instance, so include the interactive runner and interactive beam modules in your notebook. import apache beam as beam from apache beam.runners.interactive.interactive runner import InteractiveRunner import apache beam.runners.interactive.interactive beam as ib If your notebook uses other Google APIs, add the following import statements: from apache beam.options import pipeline options from apache beam.options.pipeline options import GoogleCloudOptions import google.auth Set interactivity options The following line sets the amount of time the InteractiveRunner records data from an unbounded source.",
+          "Leave the parameter list empty to return the recording status of all pipelines. ib . recordings . describe ( p ) The describe() method provides the following details: Total size (in bytes) of all of the recordings for the pipeline on disk Start time of when the background recording job started (in seconds from Unix epoch) Current pipeline status of the background recording job Python variable for the pipeline Launch Dataflow jobs from a pipeline created in your notebook Optional: Before using your notebook to run Dataflow jobs, restart the kernel, rerun all cells, and verify the output."
+        ]
+      },
+      {
+        "title": "Work with pipeline logs \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dataflow MDC integration When you enable MDC for your Dataflow pipeline, the Dataflow runner automatically captures the MDC context at the time a log message is generated and forwards it to Logging.",
+          "Enable and use MDC To enable MDC, add the following pipeline option when you launch your job: --logMdc = true The following code sample shows how to use MDC to add a messageId to the logs of a Dataflow job that reads messages from Pub/Sub. import org.apache.beam.sdk.Pipeline ; import org.apache.beam.sdk.io.gcp.pubsub.PubsubMessage ; import org.apache.beam.sdk.io.gcp.pubsub.PubsubIO ; import org.apache.beam.sdk.options.Description ; import org.apache.beam.sdk.options.PipelineOptionsFactory ; import org.apache.beam.sdk.options.SdkHarnessOptions ; import org.apache.beam.sdk.transforms.DoFn ; import org.apache.beam.sdk.transforms.ParDo ; import org.slf4j.Logger ; import org.slf4j.LoggerFactory ; import org.slf4j.MDC ; public class SimpleDataflowJobMDC { public interface SimpleDataflowJobOptions extends SdkHarnessOptions { @Description ( \"The Pub/Sub subscription to read from.\" ) String getInputSubscription (); void setInputSubscription ( String value ); } public static class MessageReaderFn extends DoFn<PubsubMessage , Void > { private transient Logger logger ; @Setup public void setup () { logger = LoggerFactory . getLogger ( MessageReaderFn . class ); } @ProcessElement public void processElement ( ProcessContext c ) { PubsubMessage message = c . element (); String messageId = message . getMessageId (); try ( MDC .",
+          "MDCCloseable ignored = MDC . putCloseable ( \"messageId\" , messageId )) { String payload = new String ( message . getPayload ()); logger . info ( \"Received message with payload: \" + payload ); // This is the example task logger . info ( \"Executing example task...\" ); } catch ( Exception e ) { logger . info ( \"failure\" ); } } } public static void main ( String [] args ) { SimpleDataflowJobOptions options = PipelineOptionsFactory . fromArgs ( args ). withValidation (). as ( SimpleDataflowJobOptions . class ); // options.setRunner(DirectRunner.class); options . setLogMdc ( true ); Pipeline p = Pipeline . create ( options ); p . apply ( \"Read Messages from Pub/Sub\" , PubsubIO . readMessagesWithAttributes (). fromSubscription ( options . getInputSubscription ())) . apply ( \"Process Message\" , ParDo . of ( new MessageReaderFn ())); p . run (); } } The following mvn command shows how to execute the pipeline with the --logMdc=true argument: mvn -Pdataflow-runner compile exec:java \\ -Dexec.mainClass = com.sample.SimpleDataflowJobMDC \\ -Dexec.args = \" \\ [...] \\ --logMdc=true \\ [...] Control log volume You can also reduce the volume of logs generated by changing the pipeline log levels ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.options",
+      "beam.options.pipeline",
+      "beam.runners",
+      "beam.runners.dataflow",
+      "beam.runners.interactive.interactive",
+      "cmd.exe",
+      "com.google.dataflow.v1beta3",
+      "com.sample.SimpleDataflowJobMDC",
+      "dataflow.googleapis.com",
+      "metadata.user",
+      "options.setRunner",
+      "org.apache.beam.sdk.io.gcp.pubsub.PubsubIO",
+      "org.apache.beam.sdk.io.gcp.pubsub.PubsubMessage",
+      "org.apache.beam.sdk.options.Description",
+      "org.apache.beam.sdk.options.PipelineOptionsFactory",
+      "org.apache.beam.sdk.options.SdkHarnessOptions",
+      "org.apache.beam.sdk.Pipeline",
+      "org.apache.beam.sdk.transforms.DoFn",
+      "org.apache.beam.sdk.transforms.ParDo",
+      "org.slf4j.Logger",
+      "org.slf4j.LoggerFactory",
+      "org.slf4j.MDC",
+      "properties.archived",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/stopping-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/interactive-pipeline-development",
+        "https://docs.cloud.google.com/dataflow/docs/guides/logging"
+      ]
+    }
+  ]
+}

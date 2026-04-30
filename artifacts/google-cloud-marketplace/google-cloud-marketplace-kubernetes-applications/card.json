@@ -1,0 +1,213 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:58.859Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace/card.json",
+  "product_name": "Google Cloud Marketplace",
+  "product_slug": "google-cloud-marketplace",
+  "feature_name": "Google Cloud Marketplace Kubernetes applications",
+  "feature_slug": "google-cloud-marketplace-kubernetes-applications",
+  "summary": "Google Cloud Marketplace offers Kubernetes applications that can be deployed to GKE clusters; Google Cloud Marketplace offers Kubernetes applications that can be deployed to GKE clusters.",
+  "extended_definition": "Google Cloud Marketplace offers Kubernetes applications that can be deployed to GKE clusters; Google Cloud Marketplace offers Kubernetes applications that can be deployed to GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/access-control",
+      "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type",
+      "https://docs.cloud.google.com/marketplace/docs/container-images",
+      "https://docs.cloud.google.com/marketplace/docs/manage-billing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing billing for Cloud Marketplace products \\_|\\_ Google Cloud Marketplace\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you're managing billing for a Kubernetes app within your organization: Ensure that all users who will deploy the product have the following IAM roles: Viewer ( roles/viewer ) for the project where a Kubernetes app will be deployed.",
+          "Updating your billing plan for Kubernetes apps For Kubernetes apps offered through Google Cloud Marketplace, you must link your billing plan to a service account that reports usage data.",
+          "If there are Cloud Marketplace resources that the project needs to run which haven't been purchased by the new Cloud Billing account that you selected, the Google Cloud console detects the discrepancy and displays a warning message as a reminder."
+        ]
+      },
+      {
+        "title": "\"Deploying container images from Google Cloud Marketplace to Kubernetes or\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify that kubectl can connect to the clusters While Minikube is running (after running minikube start ), you can use the following command to check if your nodes are running: kubectl get nodes Follow the getting started documentation for the container in the Kubernetes section Each container product on Cloud Marketplace contains a getting started guide.",
+          "You can run the following to see if your nodes are running: kubectl get nodes Follow the getting started documentation for the container in the Kubernetes section Each container product on Cloud Marketplace contains a getting started guide.",
+          "Home Documentation Access and resource management Google Cloud Marketplace Guides Send feedback Deploying container images from Google Cloud Marketplace to Kubernetes or Docker Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Google Cloud Marketplace \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Role Permissions Commerce Business Enablement Configuration Admin Beta ( roles/ commercebusinessenablement.admin ) Admin of Various Provider Configuration resources bigquery.datasets.create bigquery.datasets.get bigquery.datasets.update commercebusinessenablement. leadgenConfig. commercebusinessenablement. leadgenConfig. get commercebusinessenablement. leadgenConfig. update commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerConfig. update commercebusinessenablement. resellerRestrictions. commercebusinessenablement. resellerRestrictions. list commercebusinessenablement. resellerRestrictions. update resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list serviceusage.operations.get serviceusage.services.enable serviceusage.services.get Commerce Business Enablement Configuration Viewer Beta ( roles/ commercebusinessenablement.viewer ) Viewer of Various Provider Configuration resource commercebusinessenablement. leadgenConfig. get commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerRestrictions. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement PaymentConfig Admin Beta ( roles/ commercebusinessenablement.paymentConfigAdmin ) Administration of Payment Configuration resource commercebusinessenablement. partnerInfo. get commercebusinessenablement. paymentConfig. commercebusinessenablement. paymentConfig. get commercebusinessenablement. paymentConfig. update resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement PaymentConfig Viewer Beta ( roles/ commercebusinessenablement.paymentConfigViewer ) Viewer of Payment Configuration resource commercebusinessenablement. partnerInfo. get commercebusinessenablement. paymentConfig. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement Rebates Admin Beta ( roles/ commercebusinessenablement.rebatesAdmin ) Provides admin access to rebates commercebusinessenablement. operations. commercebusinessenablement. operations. cancel commercebusinessenablement. operations. delete commercebusinessenablement. operations. get commercebusinessenablement. operations. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. refunds. commercebusinessenablement. refunds. cancel commercebusinessenablement. refunds. create commercebusinessenablement. refunds. delete commercebusinessenablement. refunds. get commercebusinessenablement. refunds. list commercebusinessenablement. refunds. start commercebusinessenablement. refunds. update Commerce Business Enablement Rebates Viewer Beta ( roles/ commercebusinessenablement.rebatesViewer ) Provides read-only access to rebates commercebusinessenablement. operations. get commercebusinessenablement. operations. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. refunds. get commercebusinessenablement. refunds. list Commerce Business Enablement Reseller Discount Admin Beta ( roles/ commercebusinessenablement.resellerDiscountAdmin ) Provides admin access to reseller discount offers commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerDiscountConfig. get commercebusinessenablement. resellerDiscountOffers. commercebusinessenablement. resellerDiscountOffers. cancel commercebusinessenablement. resellerDiscountOffers. create commercebusinessenablement. resellerDiscountOffers. list commercebusinessenablement. resellerPrivateOfferPlans. commercebusinessenablement. resellerPrivateOfferPlans. cancel commercebusinessenablement. resellerPrivateOfferPlans. create commercebusinessenablement. resellerPrivateOfferPlans. delete commercebusinessenablement. resellerPrivateOfferPlans. get commercebusinessenablement. resellerPrivateOfferPlans. list commercebusinessenablement. resellerPrivateOfferPlans. publish commercebusinessenablement. resellerPrivateOfferPlans. update resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Commerce Business Enablement Reseller Discount Viewer Beta ( roles/ commercebusinessenablement.resellerDiscountViewer ) Provides read-only access to reseller discount offers commercebusinessenablement. partnerAccounts. commercebusinessenablement. partnerAccounts. get commercebusinessenablement. partnerAccounts. list commercebusinessenablement. partnerInfo. get commercebusinessenablement. resellerConfig. get commercebusinessenablement. resellerDiscountConfig. get commercebusinessenablement. resellerDiscountOffers. list commercebusinessenablement. resellerPrivateOfferPlans. get commercebusinessenablement. resellerPrivateOfferPlans. list resourcemanager. organizations. get resourcemanager.projects.get resourcemanager.projects.list Granting IAM roles to users From the roles in the table above, the consumerprocurement.orderAdmin and consumerprocurement.orderViewer roles must be assigned at the billing account or organization level, and the consumerprocurement.entitlementManager and consumerprocurement.entitlementViewer roles must be assigned at the project or organization level.",
+          "Using custom roles with Cloud Marketplace If you want granular control over the permissions you grant users, you can create custom roles with the permissions that you want to grant.",
+          "This page describes the Identity and Access Management (IAM) roles and permissions that you need to purchase and manage commercial products on Cloud Marketplace."
+        ]
+      },
+      {
+        "title": "Pricing plans for Google Cloud Marketplace products \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type",
+        "source_id": "site-iam-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You're charged software usage fees for your Kubernetes containers, and for the GKE infrastructure that you use.",
+          "Cloud Marketplace links usage fees to an automatically-created Google Cloud project whose ID begins with pr , followed by a series of unique letters and numbers.",
+          "For example, some vendors might charge by the number of containers that you run the app on and the number of API requests you make to the app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.create",
+      "bigquery.datasets.get",
+      "bigquery.datasets.update",
+      "commercebusinessenablement.admin",
+      "commercebusinessenablement.paymentConfigAdmin",
+      "commercebusinessenablement.paymentConfigViewer",
+      "commercebusinessenablement.rebatesAdmin",
+      "commercebusinessenablement.rebatesViewer",
+      "commercebusinessenablement.resellerDiscountAdmin",
+      "commercebusinessenablement.resellerDiscountViewer",
+      "commercebusinessenablement.viewer",
+      "consumerprocurement.entitlementManager",
+      "consumerprocurement.entitlementViewer",
+      "consumerprocurement.orderAdmin",
+      "consumerprocurement.orderViewer",
+      "providers.entitlements",
+      "resourcemanager.organizationAdmin",
+      "serviceusage.operations.get",
+      "serviceusage.services.enable",
+      "serviceusage.services.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/manage-billing",
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/access-control",
+        "https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:41.619Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub",
+  "feature_name": "API observations in Apigee API hub",
+  "feature_slug": "api-observations-in-apigee-api-hub",
+  "summary": "Introduces API observations to discover and manage undocumented APIs using shadow API discovery and automated discovery workflows.",
+  "extended_definition": "Introduces API observations to discover and manage undocumented APIs using shadow API discovery and automated discovery workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+      "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shadow API Discovery overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Task Required Role(s) Enable or disable Advanced API Security Apigee Organization Admin (roles/apigee.admin) Create observation sources and jobs API Management Admin (roles/apim.admin) View observations API Management Viewer (roles/apim.viewer) Access Shadow API Discovery in the Apigee UI This section describes how to access Shadow API Discovery in the Apigee UI.",
+          "Shadow API Discovery finds shadow APIs (also known as undocumented APIs) in your existing cloud infrastructure.",
+          "You can also use the Apigee Management (APIM) APIs to manage Shadow API Discovery."
+        ]
+      },
+      {
+        "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The API observations feature in API hub helps you address the challenges of undocumented and unmanaged APIs, also known as shadow APIs , which can introduce significant security and governance risks in your API infrastructure.",
+          "Evolving from the Shadow API Discovery feature in Apigee, API observations in API hub uses automated discovery processes to find and catalog all your APIs—both known and unknown—into a single, unified, and managed view.",
+          "Last Event Detected (UTC) : the timestamp (in UTC) of the most recent detection of the discovered API observation Discovered API observations in API hub IAM roles and permissions To use API observations in API hub, you need the following IAM roles and permissions: IAM roles Permissions API Management Admin ( roles/apim.admin ) apim.operations.delete apim.operations.cancel apim.observationSources.create apim.observationSources.delete apim.observationJobs.create apim.observationJobs.enable apim.observationJobs.disable apim.observationJobs.delete apim.apiObservations.batchEditTags API Management Viewer ( roles/apim.viewer ) resourcemanager.projects.get resourcemanager.projects.list apim.operations.list apim.operations.get apim.locations.list apim.locations.get apim.locations.listApiObservationTags apim.observationSources.list apim.observationSources.get apim.observationJobs.list apim.observationJobs.get apim.apiObservations.list apim.apiObservations.get apim.apiOperations.list apim.apiOperations.get apim.entitlements.get Provisioning Admin Role ( roles/apihub.provisioningAdmin ) apihub.runtimeProjectAttachments.create apihub.hostProjects.attach Viewer Role ( roles/apihub.viewer ) apihub.discoveredObservations.list apihub.discoveredObservations.get apihub.discoveredOperations.list apihub.discoveredOperations.get Pricing and billing The API observations feature in API hub is provided at no direct cost."
+        ]
+      },
+      {
+        "title": "\"Auto-register APIs from Google Cloud projects \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "During this process, API hub automatically discovers deployed APIs within the project and creates the necessary plugin instances in API hub to manage data ingestion.",
+          "Supported Google Cloud services Auto-registration is currently supported for the following Google Cloud services: Google Cloud service Ingested data Apigee and Apigee hybrid Deployed API proxies and their associated OpenAPI specifications API Gateway Gateway definitions and managed endpoints Project associations and plugins Deprecated: Pull-based ingestion is no longer supported for Apigee and Apigee hybrid plugins as of July 31, 2025 .",
+          "This page applies to Apigee and Apigee hybrid . orgs path.developers.apps.keys.create API % endsetvar % --> orgs path.environments.analytics.reports.dailysupp API % endsetvar % --> orgs path.environments analytics reports dailysummary d1 results API % endsetvar % --> This page describes how to automatically register APIs from Google Cloud projects to API hub."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apihub.discoveredObservations.get",
+      "apihub.discoveredObservations.list",
+      "apihub.discoveredOperations.get",
+      "apihub.discoveredOperations.list",
+      "apihub.hostProjects.attach",
+      "apihub.provisioningAdmin",
+      "apihub.runtimeProjectAttachments.create",
+      "apihub.viewer",
+      "apim.admin",
+      "apim.apiObservations.batchEditTags",
+      "apim.apiObservations.get",
+      "apim.apiObservations.list",
+      "apim.apiOperations.get",
+      "apim.apiOperations.list",
+      "apim.entitlements.get",
+      "apim.locations.get",
+      "apim.locations.list",
+      "apim.locations.listApiObservationTags",
+      "apim.observationJobs.create",
+      "apim.observationJobs.delete",
+      "apim.observationJobs.disable",
+      "apim.observationJobs.enable",
+      "apim.observationJobs.get",
+      "apim.observationJobs.list",
+      "apim.observationSources.create",
+      "apim.observationSources.delete",
+      "apim.observationSources.get",
+      "apim.observationSources.list",
+      "apim.operations.cancel",
+      "apim.operations.delete",
+      "apim.operations.get",
+      "apim.operations.list",
+      "apim.viewer",
+      "path.developers.apps.keys.create",
+      "path.environments",
+      "path.environments.analytics.reports.dailysupp"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apihub.provisioningAdmin",
+      "roles/apihub.viewer",
+      "roles/apim.admin",
+      "roles/apim.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-observation/shadow-api-discovery",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "https://docs.cloud.google.com/apigee/docs/apihub/auto-register-apigee-proxies"
+      ]
+    }
+  ]
+}

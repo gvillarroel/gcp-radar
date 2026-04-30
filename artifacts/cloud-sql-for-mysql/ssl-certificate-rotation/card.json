@@ -1,0 +1,158 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:49.420Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql",
+  "feature_name": "SSL certificate rotation",
+  "feature_slug": "ssl-certificate-rotation",
+  "summary": "Cloud SQL for MySQL supports rotating SSL certificates.",
+  "extended_definition": "Cloud SQL for MySQL supports rotating SSL certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure SSL/TLS certificates \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 45,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to use the new server certificate immediately, proceed with server certificate rotation by updating your clients and completing the rotation. gcloud For instances that use self-signed server certificates (per-instance CA) : To get information about the server certificate, use the sql ssl server-ca-certs list command: gcloud sql ssl server-ca-certs list \\ --instance = INSTANCE NAME To create a server certificate, use the sql ssl server-ca-certs create command: gcloud sql ssl server-ca-certs create \\ --instance = INSTANCE NAME Download the certificate information to a local PEM file: gcloud sql ssl server-ca-certs list \\ --format = \"value(cert)\" \\ --instance = INSTANCE NAME > \\ FILE PATH / FILE NAME .pem Update all of your clients to use the new information by copying the downloaded file to your client host machines, replacing the existing server-ca.pem files.",
+          "Terraform To enforce SSL/TLS encryption, use a Terraform resource : resource \"google sql database instance\" \"mysql instance\" { name = \"mysql-instance\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" settings { tier = \"db-f1-micro\" ip configuration { The following SSL enforcement options only allow connections encrypted with SSL/TLS and with valid client certificates.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Configure SSL/TLS certificates Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Authorize with SSL/TLS certificates \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "source_id": "site-docs-reference-3",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Authorize with SSL/TLS certificates Stay organized with collections Save and categorize content based on your preferences.",
+          "If you're using a customer-managed CA ( serverCaMode is set to CUSTOMER MANAGED CAS CA ), then you can perform CA certificate rotation by rotating the CAs in the CA pool that you created.",
+          "A shorter validity period for the CA might require more frequent CA rotations and a validity period shorter than one year might affect the validity period of your server certificates."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "CUSTOMER MANAGED CAS CA : with this option, you define the CA hierarchy and manage the rotation of the CA certificates.",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\" { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.pem",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authorize-ssl",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ssl-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ]
+}

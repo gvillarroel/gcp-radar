@@ -1,0 +1,84 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:57.344Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore",
+  "feature_name": "Firestore databases page status column",
+  "feature_slug": "firestore-databases-page-status-column",
+  "summary": "The Firestore databases page in the Google Cloud console now shows database status values such as Ready, Cloning, Restoring from backup, Deleted, and Failed.",
+  "extended_definition": "The Firestore databases page in the Google Cloud console now shows database status values such as Ready, Cloning, Restoring from backup, Deleted, and Failed.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, a recently completed export operation shows the following information: { \"operations\": [ { \"name\": \"projects/ project-id /operations/ASAyMDAwOTEzBxp0bHVhZmVkBxJsYXJ0bmVjc3Utc2Jvai1uaW1kYRQKKhI\", \"metadata\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesMetadata\", \"common\": { \"startTime\": \"2017-12-05T23:01:39.583780Z\", \"endTime\": \"2017-12-05T23:54:58.474750Z\", \"operationType\": \"EXPORT ENTITIES\" }, \"progressEntities\": { \"workCompleted\": \"21933027\", \"workEstimated\": \"21898182\" }, \"progressBytes\": { \"workCompleted\": \"12421451292\", \"workEstimated\": \"9759724245\" }, \"entityFilter\": { \"namespaceIds\": [ \"\" ] }, \"outputUrlPrefix\": \"gs:// bucket-name \" }, \"done\": true, \"response\": { \"@type\": \"type.googleapis.com/google.datastore.admin.v1.ExportEntitiesResponse\", \"outputUrl\": \"gs:// bucket-name /2017-05-25T23:54:39 76544/2017-05-25T23:54:39 76544.overall export metadata\" } } ] } Check operation status To view the status of a long-running operation: Console You can view a list of the most recent export and import operations in the Import/Export page of the Google Cloud console.",
+          "View migration status To verify your project's migration status: In the Google Cloud console, go to the Databases page.",
+          "For example, you can decode a metadata file to determine the namespace and kinds the export files contain: protoc --decode raw < export0.export metadata Importing all entities Console In the Google Cloud console, go to the Databases page."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/manage-data/export-import",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the navigation menu, click Import/Export . gcloud Use the operations list command to see all running and recently completed export and import operations: gcloud firestore operations list Check operation status Google Cloud Console You can view the status of a recent export or import operation in the Import/Export page of the Google Cloud console.",
+          "Note: You must export specific collection groups if you plan to: Import only specific collection groups Load Firestore data into BigQuery Export all documents Google Cloud Console In the Google Cloud console, go to the Databases page.",
+          "View migration status To verify your project's migration status: In the Google Cloud console, go to the Databases page."
+        ]
+      },
+      {
+        "title": "\"Exporting and importing data \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/export-import",
+        "source_id": "site-docs-root-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the navigation menu, click Import/Export . gcloud Use the operations list command to see all running and recently completed export and import operations: gcloud firestore operations list Check operation status Google Cloud Console You can view the status of a recent export or import operation in the Import/Export page of the Google Cloud console.",
+          "Note: You must export specific collection groups if you plan to: Import only specific collection groups Load Firestore data into BigQuery Export all documents Google Cloud Console In the Google Cloud console, go to the Databases page.",
+          "View migration status To verify your project's migration status: In the Google Cloud console, go to the Databases page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "export0.export",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": []
+}

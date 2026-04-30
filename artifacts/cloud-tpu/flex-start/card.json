@@ -1,0 +1,123 @@
+{
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-04-30T16:03:51.112Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tpu/card.json",
+  "product_name": "Cloud TPU",
+  "product_slug": "cloud-tpu",
+  "feature_name": "Flex-start",
+  "feature_slug": "flex-start",
+  "summary": "Flex-start is a flexible Cloud TPU consumption option that dynamically provisions TPUs for up to seven days without long-term reservations.",
+  "extended_definition": "Flex-start is a flexible Cloud TPU consumption option that dynamically provisions TPUs for up to seven days without long-term reservations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuClient",
+      "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About TPUs in GKE \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TPU consumption To optimize resource utilization and cost while balancing workload performance, GKE supports the following TPU consumption options: Flex-start: to provision Flex-start VMs for up to seven days, with GKE automatically allocating the hardware on a best-effort basis based on availability.",
+          "On-demand is the most flexible consumption option; however, there is no guarantee that enough on-demand resources will be available to satisfy your request.",
+          "To choose the consumption option that meets your workload requirements, see About accelerator consumption options for AI/ML workloads in GKE ."
+        ]
+      },
+      {
+        "title": "\"Class TpuAsyncClient (1.26.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 async def sample start node(): Create a client client = tpu v1.TpuAsyncClient() Initialize request argument(s) request = tpu v1.StartNodeRequest( ) Make the request operation = client. start node (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.tpu v1.types.StartNodeRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 async def sample create node(): Create a client client = tpu v1.TpuAsyncClient() Initialize request argument(s) node = tpu v1.Node() node.accelerator type = \"accelerator type value\" node.tensorflow version = \"tensorflow version value\" request = tpu v1.CreateNodeRequest( parent=\"parent value\", node=node, ) Make the request operation = client. create node (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.tpu v1.types.CreateNodeRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 async def sample delete node(): Create a client client = tpu v1.TpuAsyncClient() Initialize request argument(s) request = tpu v1.DeleteNodeRequest( name=\"name value\", ) Make the request operation = client. delete node (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.tpu v1.types.DeleteNodeRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class TpuClient (1.26.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuClient",
+        "source_id": "site-python-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 def sample start node(): Create a client client = tpu v1.TpuClient() Initialize request argument(s) request = tpu v1.StartNodeRequest( ) Make the request operation = client. start node (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.tpu v1.types.StartNodeRequest , dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 def sample create node(): Create a client client = tpu v1.TpuClient() Initialize request argument(s) node = tpu v1.Node() node.accelerator type = \"accelerator type value\" node.tensorflow version = \"tensorflow version value\" request = tpu v1.CreateNodeRequest( parent=\"parent value\", node=node, ) Make the request operation = client. create node (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.tpu v1.types.CreateNodeRequest , dict] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tpu v1 def sample list accelerator types(): Create a client client = tpu v1.TpuClient() Initialize request argument(s) request = tpu v1.ListAcceleratorTypesRequest( parent=\"parent value\", ) Make the request page result = client. list accelerator types (request=request) Handle the response for response in page result: print(response) Parameters Name Description request Union[ google.cloud.tpu v1.types.ListAcceleratorTypesRequest , dict] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "node.accelerator",
+      "node.tensorflow",
+      "operation.result",
+      "options.html",
+      "v1.CreateNodeRequest",
+      "v1.DeleteNodeRequest",
+      "v1.ListAcceleratorTypesRequest",
+      "v1.Node",
+      "v1.StartNodeRequest",
+      "v1.TpuAsyncClient",
+      "v1.TpuClient",
+      "v1.types.CreateNodeRequest",
+      "v1.types.DeleteNodeRequest",
+      "v1.types.ListAcceleratorTypesRequest",
+      "v1.types.StartNodeRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tpu/docs/kubernetes-engine-setup",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/tpu/latest/google.cloud.tpu_v1.services.tpu.TpuClient"
+      ]
+    }
+  ]
+}
