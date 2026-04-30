@@ -1234,6 +1234,7 @@ async function validateRadarMatchesArtifacts() {
     }
     products.push({
       product_slug: productSlug,
+      skipped_feature_count: Number(promotion.skipped_feature_count || 0),
       feature_slugs: (promotion.promoted_features || [])
         .map((feature) => feature?.feature_slug)
         .filter(Boolean)
@@ -1279,6 +1280,8 @@ async function validateRadarMatchesArtifacts() {
     }
     const report = await readFile(reportPath, "utf8");
     const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => `../../artifacts/${product.product_slug}/${featureSlug}/README.md`));
+    const expectedServiceCardLink = `../../artifacts/${product.product_slug}/card.json`;
+    const expectedArtifactIndexLink = `../../artifacts/${product.product_slug}/index.md`;
     const actualFeatureLinks = new Set();
     const staleFeatureLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -1294,6 +1297,54 @@ async function validateRadarMatchesArtifacts() {
       } else {
         staleFeatureLinks.add(link);
       }
+    }
+    const summaryExpectations = [
+      ["Promoted features", product.feature_slugs.length],
+      ["Skipped features during promotion", product.skipped_feature_count],
+    ];
+    for (const [label, expected] of summaryExpectations) {
+      const match = report.match(new RegExp(`^- ${label}:\\s*(\\d+)\\s*$`, "m"));
+      if (!match) {
+        findings.push({
+          severity: "error",
+          rule: "missing_radar_product_summary_count",
+          path: reportPath,
+          product_slug: product.product_slug,
+          summary_label: label,
+          expected,
+        });
+        continue;
+      }
+      const actual = Number(match[1]);
+      if (actual !== expected) {
+        findings.push({
+          severity: "error",
+          rule: "radar_product_summary_count_mismatch",
+          path: reportPath,
+          product_slug: product.product_slug,
+          summary_label: label,
+          expected,
+          actual,
+        });
+      }
+    }
+    if (!reportLinks.has(expectedServiceCardLink)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_product_service_card_link",
+        path: reportPath,
+        product_slug: product.product_slug,
+        link: expectedServiceCardLink,
+      });
+    }
+    if (!reportLinks.has(expectedArtifactIndexLink)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_product_artifact_index_link",
+        path: reportPath,
+        product_slug: product.product_slug,
+        link: expectedArtifactIndexLink,
+      });
     }
     for (const link of expectedFeatureLinks) {
       if (!actualFeatureLinks.has(link)) {

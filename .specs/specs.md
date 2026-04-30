@@ -580,12 +580,14 @@ files or service-card paths outside the product's promotion manifest.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product, must include at least one official
-Google evidence link from each promoted feature card, and must not link feature
-README files outside the product's promoted feature inventory. Product reports
-and the IAM report must keep explicit IAM evidence separate from derived IAM
-signals. The IAM report must link every promoted feature artifact and must not
-retain feature artifact links outside the promoted artifact inventory. The
-services report must link every promoted product service card and
+Google evidence link from each promoted feature card, must link the promoted
+service card and product artifact index, must keep its promoted and skipped
+feature summary counts aligned with the promotion manifest, and must not link
+feature README files outside the product's promoted feature inventory. Product
+reports and the IAM report must keep explicit IAM evidence separate from
+derived IAM signals. The IAM report must link every promoted feature artifact
+and must not retain feature artifact links outside the promoted artifact
+inventory. The services report must link every promoted product service card and
 must not keep stale service-card links outside the promoted artifact inventory.
 When a promoted service card has official Google source links, the services
 report must include at least one of those service evidence links.

@@ -68,6 +68,10 @@ The validator must check:
   product's promotion manifest
 - each Step 10 product report links every promoted feature README for that
   product
+- each Step 10 product report links the promoted service card and product
+  artifact index for that product
+- each Step 10 product report keeps its promoted and skipped feature summary
+  counts aligned with the promotion manifest for that product
 - each Step 10 product report includes at least one official Google evidence
   link from each promoted feature card for that product
 - Step 10 product reports do not retain feature README links outside the

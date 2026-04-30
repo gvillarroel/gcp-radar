@@ -409,11 +409,13 @@ product slug, service-card path, promoted feature count, feature slugs, and
 artifact paths that match the containing artifact directory.
 Product artifact indexes and product reports must link every promoted feature
 README for their product. Product artifact indexes must also link the promoted
-service card. Product reports must include at least one official Google
-evidence link from each promoted feature card so evidence review can be done
-from the final radar output. Product artifact indexes and product reports must
-not retain feature README links that are no longer in that product's promotion
-manifest. The fixed Step 10 report paths recorded in
+service card. Product reports must also link the promoted service card and
+product artifact index, and their promoted and skipped feature summary counts
+must match the promotion manifest. Product reports must include at least one
+official Google evidence link from each promoted feature card so evidence
+review can be done from the final radar output. Product artifact indexes and
+product reports must not retain feature README links that are no longer in that
+product's promotion manifest. The fixed Step 10 report paths recorded in
 `data/step-10/current/index.json` must match the canonical radar report layout
 and resolve to existing files. Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The IAM report must link every
