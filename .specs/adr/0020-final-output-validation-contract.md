@@ -100,6 +100,9 @@ The validator must check:
   does not retain service-card links outside the promoted artifact inventory
 - the Step 10 services report includes at least one official Google evidence
   link for each promoted service card that has service-level source links
+- the Step 10 services report rows match promoted service cards and promotion
+  manifests for status, feature count, latest feature date, explicit IAM count,
+  derived IAM count, unknown IAM count, and rendered official source links
 - the Step 10 root index links every promoted product report and service card,
   and does not retain stale product or service-card links outside the promoted
   artifact inventory

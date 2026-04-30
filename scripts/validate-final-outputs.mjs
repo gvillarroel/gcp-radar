@@ -790,18 +790,27 @@ async function validateRadarServicesReportMatchesArtifacts() {
     return findings;
   }
 
-  const artifactProductSlugs = new Set();
+  const expectedRows = new Map();
   for (const productSlug of await listDirs(artifactsRoot)) {
     const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
-    if (promotion) {
-      artifactProductSlugs.add(productSlug);
+    if (!promotion) {
+      continue;
     }
+    const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
+    const iam = serviceCard?.iam_status_counts || {};
+    expectedRows.set(`../../artifacts/${productSlug}/card.json`, {
+      status: serviceCard?.validation?.product_status || promotion.product_status || "unknown",
+      features: Number(serviceCard?.feature_count || promotion.promoted_feature_count || 0),
+      latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
+      explicit_iam: Number(iam.explicit || 0),
+      derived_iam: Number(iam.derived_from_permission_prefix || 0),
+      unknown_iam: Number(iam.unknown || 0),
+      sources: formatSourcesForReportValidation(serviceCard?.official_source_links || []) || "none",
+    });
   }
 
   const report = await readFile(servicesReportPath, "utf8");
-  const expectedServiceLinks = new Set(
-    [...artifactProductSlugs].sort().map((productSlug) => `../../artifacts/${productSlug}/card.json`)
-  );
+  const expectedServiceLinks = new Set([...expectedRows.keys()].sort());
   const actualServiceLinks = new Set();
   const staleServiceLinks = new Set();
   const reportLinks = new Set();
@@ -813,11 +822,65 @@ async function validateRadarServicesReportMatchesArtifacts() {
     if (!link.startsWith("../../artifacts/") || !link.endsWith("/card.json")) {
       continue;
     }
-    if (expectedServiceLinks.has(link)) {
+    if (expectedRows.has(link)) {
       actualServiceLinks.add(link);
     } else {
       staleServiceLinks.add(link);
     }
+  }
+
+  const rows = report
+    .split(/\r?\n/)
+    .filter((line) => line.trim().startsWith("|"))
+    .map(splitMarkdownTableRow)
+    .filter((cells) => cells.length > 0);
+  const header = rows[0] || [];
+  const expectedHeader = ["Service", "Status", "Features", "Latest feature", "Explicit IAM", "Derived IAM", "Unknown IAM", "Official sources"];
+  if (expectedHeader.some((label, index) => header[index] !== label)) {
+    findings.push({
+      severity: "error",
+      rule: "radar_services_header_mismatch",
+      path: servicesReportPath,
+      expected: expectedHeader,
+      actual: header,
+    });
+    return findings;
+  }
+
+  const actualRows = new Map();
+  for (const cells of rows.slice(2)) {
+    if (cells.length < expectedHeader.length) {
+      continue;
+    }
+    const serviceLink = [...String(cells[0] || "").matchAll(linkPattern)]
+      .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/card.json"));
+    if (!serviceLink) {
+      findings.push({
+        severity: "error",
+        rule: "radar_services_row_missing_service_link",
+        path: servicesReportPath,
+        row: cells,
+      });
+      continue;
+    }
+    if (actualRows.has(serviceLink)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_services_duplicate_service_row",
+        path: servicesReportPath,
+        link: serviceLink,
+      });
+    }
+    actualRows.set(serviceLink, {
+      status: cells[1],
+      features: parseIntegerCell(cells[2]),
+      latest_feature: cells[3],
+      explicit_iam: parseIntegerCell(cells[4]),
+      derived_iam: parseIntegerCell(cells[5]),
+      unknown_iam: parseIntegerCell(cells[6]),
+      sources: cells[7],
+    });
   }
 
   for (const link of expectedServiceLinks) {
@@ -838,7 +901,46 @@ async function validateRadarServicesReportMatchesArtifacts() {
       link,
     });
   }
-  for (const productSlug of artifactProductSlugs) {
+  for (const [link, expected] of expectedRows) {
+    const actual = actualRows.get(link);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_services_row",
+        path: servicesReportPath,
+        link,
+      });
+      continue;
+    }
+    for (const field of ["status", "features", "latest_feature", "explicit_iam", "derived_iam", "unknown_iam", "sources"]) {
+      if (actual[field] !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "radar_services_row_mismatch",
+          path: servicesReportPath,
+          link,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
+    }
+  }
+  for (const link of actualRows.keys()) {
+    if (!expectedRows.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_services_row",
+        path: servicesReportPath,
+        link,
+      });
+    }
+  }
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (!promotion) {
+      continue;
+    }
     const serviceCardPath = path.join(artifactsRoot, productSlug, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);
     const officialSourceLinks = (serviceCard?.official_source_links || []).filter(isOfficialGoogleUrl);
