@@ -538,6 +538,96 @@ async function validateRadarServicesReportMatchesArtifacts() {
   return findings;
 }
 
+async function validateRadarRootIndexMatchesArtifacts() {
+  const findings = [];
+  const rootIndexPath = path.join(radarRoot, "index.md");
+  if (!(await exists(rootIndexPath))) {
+    findings.push({
+      severity: "error",
+      rule: "missing_radar_root_index",
+      path: rootIndexPath,
+    });
+    return findings;
+  }
+
+  const artifactProductSlugs = new Set();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    if (await exists(path.join(artifactsRoot, productSlug, "promotion.json"))) {
+      artifactProductSlugs.add(productSlug);
+    }
+  }
+
+  const report = await readFile(rootIndexPath, "utf8");
+  const expectedProductReportLinks = new Set(
+    [...artifactProductSlugs].sort().map((productSlug) => `./products/${productSlug}.md`)
+  );
+  const expectedServiceCardLinks = new Set(
+    [...artifactProductSlugs].sort().map((productSlug) => `../artifacts/${productSlug}/card.json`)
+  );
+  const actualProductReportLinks = new Set();
+  const actualServiceCardLinks = new Set();
+  const staleProductReportLinks = new Set();
+  const staleServiceCardLinks = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+
+  for (const match of report.matchAll(linkPattern)) {
+    const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+    if (link.startsWith("./products/") && link.endsWith(".md")) {
+      if (expectedProductReportLinks.has(link)) {
+        actualProductReportLinks.add(link);
+      } else {
+        staleProductReportLinks.add(link);
+      }
+    }
+    if (link.startsWith("../artifacts/") && link.endsWith("/card.json")) {
+      if (expectedServiceCardLinks.has(link)) {
+        actualServiceCardLinks.add(link);
+      } else {
+        staleServiceCardLinks.add(link);
+      }
+    }
+  }
+
+  for (const link of expectedProductReportLinks) {
+    if (!actualProductReportLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_root_product_report_link",
+        path: rootIndexPath,
+        link,
+      });
+    }
+  }
+  for (const link of staleProductReportLinks) {
+    findings.push({
+      severity: "error",
+      rule: "stale_radar_root_product_report_link",
+      path: rootIndexPath,
+      link,
+    });
+  }
+  for (const link of expectedServiceCardLinks) {
+    if (!actualServiceCardLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_root_service_card_link",
+        path: rootIndexPath,
+        link,
+      });
+    }
+  }
+  for (const link of staleServiceCardLinks) {
+    findings.push({
+      severity: "error",
+      rule: "stale_radar_root_service_card_link",
+      path: rootIndexPath,
+      link,
+    });
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -717,6 +807,7 @@ async function main() {
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
   const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
   const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
+  const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
     ...artifactValidation.findings,
@@ -727,6 +818,7 @@ async function main() {
     ...radarExternalLinkFindings,
     ...radarIamTableFindings,
     ...radarServicesReportFindings,
+    ...radarRootIndexFindings,
     ...radarArtifactFindings,
   ];
   const payload = {

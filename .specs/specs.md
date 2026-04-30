@@ -565,7 +565,10 @@ promoted feature README for that product and must not link feature README files
 outside the product's promoted feature inventory. Product reports and the IAM
 report must keep explicit IAM evidence separate from derived IAM signals. The
 services report must link every promoted product service card and must not keep
-stale service-card links outside the promoted artifact inventory.
+stale service-card links outside the promoted artifact inventory. The root
+radar index must link every promoted product report and service card, and must
+not retain stale product or service-card links outside the promoted artifact
+inventory.
 
 ### Step 11: Knowledge Capture
 

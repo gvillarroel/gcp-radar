@@ -399,7 +399,9 @@ longer in that product's promotion manifest. The fixed Step 10 report paths reco
 and resolve to existing files. Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The services report must link every
 promoted product service card and must not retain service-card links outside
-the promoted artifact inventory.
+the promoted artifact inventory. The root radar index must link every promoted
+product report and service card, and must not retain stale product or
+service-card links outside the promoted artifact inventory.
 
 ## Practical Lessons
 

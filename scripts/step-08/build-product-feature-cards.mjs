@@ -515,7 +515,7 @@ function buildServiceCard({ generatedAt, step06, validation, corpus, iamSummary,
 }
 
 function markdownTableRow(values) {
-  return `| ${values.map((value) => String(value || "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
+  return `| ${values.map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
 
 function renderProductMarkdown(card) {

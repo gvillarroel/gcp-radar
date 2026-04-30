@@ -38,7 +38,7 @@ function relativeToCwd(target) {
 }
 
 function markdownTableRow(values) {
-  return `| ${values.map((value) => String(value || "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
+  return `| ${values.map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
 
 function markdownLink(label, target) {
