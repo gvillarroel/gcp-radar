@@ -49,5 +49,7 @@ Optional controls:
 - set `GCP_RADAR_STEP09_OUTPUT_ROOT` to override the Step 09 output root
 - set `GCP_RADAR_STEP09_ACCEPTED_WARNING_RULES` to override reviewed warning rules
 - set `GCP_RADAR_STEP09_CLEAN_PRODUCT_ARTIFACTS=1` to remove an existing product artifact directory before promotion; this is broader than the default stale-feature cleanup
+- set `GCP_RADAR_PRINT_FULL_INDEX=1` to print the complete run index instead
+  of the default compact CLI summary
 
 All script-facing documentation must be written in English.
