@@ -48,6 +48,8 @@ The validator must check:
   canonical radar report layout and resolve to existing files
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
+- every promoted feature README includes at least one official Google evidence
+  link from its promoted feature card
 - promoted service and feature artifact cards have embedded slugs that match
   their artifact path and promotion manifest
 - each product promotion manifest has an embedded product slug, service-card

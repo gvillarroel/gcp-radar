@@ -556,6 +556,9 @@ Every external HTTP(S) link in promoted artifact Markdown must resolve to an
 official Google host.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
+Each promoted feature README must include at least one official Google evidence
+link from its promoted feature card so artifact-level review can verify the
+feature without opening JSON.
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity.
