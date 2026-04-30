@@ -61,6 +61,9 @@ The validator must check:
 - each product promotion manifest has an embedded product slug, service-card
   path, promoted feature count, promoted feature slugs, and promoted artifact
   paths that match the containing artifact directory
+- each product promotion manifest has a skipped feature count that matches its
+  skipped feature list, no duplicate skipped feature slugs, and no feature slug
+  listed as both promoted and skipped
 - each product artifact index links every promoted feature README for that
   product
 - each product artifact index links the promoted service card for that product

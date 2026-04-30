@@ -573,7 +573,8 @@ cannot aggregate a card under the wrong product or feature identity.
 Each product promotion manifest must also keep its embedded product slug,
 service-card path, promoted feature count, promoted feature slugs, and
 promoted artifact paths consistent with the artifact directory that contains
-it.
+it. Its skipped feature count must also match the skipped feature list, and a
+feature slug must not appear in both the promoted and skipped feature lists.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.
