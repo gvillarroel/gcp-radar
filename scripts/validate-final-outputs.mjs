@@ -687,6 +687,170 @@ async function validateRadarRootIndexMatchesArtifacts() {
   return findings;
 }
 
+function splitMarkdownTableRow(line) {
+  const trimmed = String(line || "").trim();
+  if (!trimmed.startsWith("|") || !trimmed.endsWith("|")) {
+    return [];
+  }
+  return trimmed
+    .slice(1, -1)
+    .split("|")
+    .map((cell) => cell.trim().replace(/\\\|/g, "|"));
+}
+
+function parseIntegerCell(value) {
+  const parsed = Number(String(value || "").trim());
+  return Number.isInteger(parsed) ? parsed : null;
+}
+
+async function validateRadarCoverageReportMatchesArtifacts() {
+  const findings = [];
+  const coverageReportPath = path.join(radarRoot, "coverage.md");
+  if (!(await exists(coverageReportPath))) {
+    findings.push({
+      severity: "error",
+      rule: "missing_radar_coverage_report",
+      path: coverageReportPath,
+    });
+    return findings;
+  }
+
+  const expectedRows = new Map();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const productDir = path.join(artifactsRoot, productSlug);
+    const promotion = await readJson(path.join(productDir, "promotion.json"), null);
+    if (!promotion) {
+      continue;
+    }
+    const featureSlugs = (promotion.promoted_features || [])
+      .map((feature) => feature?.feature_slug)
+      .filter(Boolean);
+    let explicit = 0;
+    let derived = 0;
+    let unknown = 0;
+    for (const featureSlug of featureSlugs) {
+      const featureCard = await readJson(path.join(productDir, featureSlug, "card.json"), null);
+      const status = featureCard?.iam?.iam_mapping_status || "unknown";
+      if (status === "explicit") {
+        explicit += 1;
+      } else if (status === "derived_from_permission_prefix") {
+        derived += 1;
+      } else {
+        unknown += 1;
+      }
+    }
+    expectedRows.set(productSlug, {
+      product_name: promotion.product_name || productSlug,
+      promoted: featureSlugs.length,
+      skipped: Number(promotion.skipped_feature_count || 0),
+      explicit,
+      derived,
+      unknown,
+    });
+  }
+
+  const coverageMarkdown = await readFile(coverageReportPath, "utf8");
+  const rows = coverageMarkdown
+    .split(/\r?\n/)
+    .filter((line) => line.trim().startsWith("|"))
+    .map(splitMarkdownTableRow)
+    .filter((cells) => cells.length > 0);
+  const header = rows[0] || [];
+  const expectedHeader = ["Product", "Slug", "Promoted", "Skipped", "Explicit IAM", "Derived IAM", "Unknown IAM"];
+  if (expectedHeader.some((label, index) => header[index] !== label)) {
+    findings.push({
+      severity: "error",
+      rule: "radar_coverage_header_mismatch",
+      path: coverageReportPath,
+      expected: expectedHeader,
+      actual: header,
+    });
+    return findings;
+  }
+
+  const actualRows = new Map();
+  for (const cells of rows.slice(2)) {
+    if (cells.length < expectedHeader.length) {
+      continue;
+    }
+    const productSlug = cells[1];
+    if (!productSlug) {
+      findings.push({
+        severity: "error",
+        rule: "radar_coverage_missing_product_slug",
+        path: coverageReportPath,
+        row: cells,
+      });
+      continue;
+    }
+    if (actualRows.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_coverage_duplicate_product_slug",
+        path: coverageReportPath,
+        product_slug: productSlug,
+      });
+    }
+    actualRows.set(productSlug, {
+      product_name: cells[0],
+      promoted: parseIntegerCell(cells[2]),
+      skipped: parseIntegerCell(cells[3]),
+      explicit: parseIntegerCell(cells[4]),
+      derived: parseIntegerCell(cells[5]),
+      unknown: parseIntegerCell(cells[6]),
+    });
+  }
+
+  for (const [productSlug, expected] of expectedRows) {
+    const actual = actualRows.get(productSlug);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_coverage_product_row",
+        path: coverageReportPath,
+        product_slug: productSlug,
+      });
+      continue;
+    }
+    for (const field of ["promoted", "skipped", "explicit", "derived", "unknown"]) {
+      if (actual[field] !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "radar_coverage_count_mismatch",
+          path: coverageReportPath,
+          product_slug: productSlug,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
+    }
+    if (actual.product_name !== expected.product_name) {
+      findings.push({
+        severity: "error",
+        rule: "radar_coverage_product_name_mismatch",
+        path: coverageReportPath,
+        product_slug: productSlug,
+        expected: expected.product_name,
+        actual: actual.product_name,
+      });
+    }
+  }
+
+  for (const productSlug of actualRows.keys()) {
+    if (!expectedRows.has(productSlug)) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_coverage_product_row",
+        path: coverageReportPath,
+        product_slug: productSlug,
+      });
+    }
+  }
+
+  return findings;
+}
+
 async function validateRadarMatchesArtifacts() {
   const findings = [];
   const products = [];
@@ -934,6 +1098,7 @@ async function main() {
   const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
   const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
   const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
+  const radarCoverageReportFindings = await validateRadarCoverageReportMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
   const findings = [
     ...artifactValidation.findings,
@@ -945,6 +1110,7 @@ async function main() {
     ...radarIamTableFindings,
     ...radarServicesReportFindings,
     ...radarRootIndexFindings,
+    ...radarCoverageReportFindings,
     ...radarArtifactFindings,
   ];
   const payload = {

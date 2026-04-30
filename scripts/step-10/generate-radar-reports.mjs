@@ -247,8 +247,8 @@ function renderCoverageReport(products, generatedAt) {
     "",
     `Generated at: \`${generatedAt}\``,
     "",
-    markdownTableRow(["Product", "Promoted", "Skipped", "Explicit IAM", "Derived IAM", "Unknown IAM"]),
-    markdownTableRow(["---", "---", "---", "---", "---", "---"]),
+    markdownTableRow(["Product", "Slug", "Promoted", "Skipped", "Explicit IAM", "Derived IAM", "Unknown IAM"]),
+    markdownTableRow(["---", "---", "---", "---", "---", "---", "---"]),
   ];
 
   for (const product of products) {
@@ -257,6 +257,7 @@ function renderCoverageReport(products, generatedAt) {
     const unknown = product.features.filter((feature) => feature.iam?.iam_mapping_status === "unknown").length;
     lines.push(markdownTableRow([
       product.product_name,
+      product.product_slug,
       product.features.length,
       product.promotion.skipped_feature_count,
       explicit,

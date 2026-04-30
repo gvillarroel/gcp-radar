@@ -410,6 +410,9 @@ Google source links, the services report must include at least one of those
 service evidence links. The root radar index must link every promoted
 product report and service card, and must not retain stale product or
 service-card links outside the promoted artifact inventory.
+The coverage report must include product slugs and must keep promoted,
+skipped, explicit IAM, derived IAM, and unknown IAM counts aligned with the
+promoted artifact manifests and feature cards.
 
 ## Practical Lessons
 

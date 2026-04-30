@@ -73,6 +73,10 @@ The validator must check:
 - the Step 10 root index links every promoted product report and service card,
   and does not retain stale product or service-card links outside the promoted
   artifact inventory
+- the Step 10 coverage report includes every promoted product slug, does not
+  retain stale product rows, and keeps promoted, skipped, explicit IAM,
+  derived IAM, and unknown IAM counts aligned with promoted manifests and
+  feature cards
 
 ## Consequences
 
