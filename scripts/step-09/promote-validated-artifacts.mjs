@@ -205,6 +205,39 @@ async function listStep08Products() {
     .sort(compareStrings);
 }
 
+async function listArtifactProducts() {
+  if (!(await exists(artifactsRoot))) {
+    return [];
+  }
+  const entries = await readdir(artifactsRoot, { withFileTypes: true });
+  return entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort(compareStrings);
+}
+
+async function readArtifactPromotionSummary(productSlug, processedProducts) {
+  const productArtifactDir = path.join(artifactsRoot, productSlug);
+  const promotionPath = path.join(productArtifactDir, "promotion.json");
+  const promotion = await readJson(promotionPath, null);
+  if (!promotion) {
+    return null;
+  }
+
+  const processed = processedProducts.get(productSlug);
+  return {
+    product_name: promotion.product_name || productSlug,
+    product_slug: productSlug,
+    service_card: relativeToCwd(path.join(productArtifactDir, "card.json")),
+    promoted_feature_count: Number(promotion.promoted_feature_count || 0),
+    skipped_feature_count: Number(promotion.skipped_feature_count || 0),
+    stale_feature_artifact_dir_count: processed?.stale_feature_artifact_dir_count || 0,
+    stale_feature_artifact_dirs_removed: processed?.stale_feature_artifact_dirs_removed || [],
+    product_index: relativeToCwd(path.join(productArtifactDir, "index.md")),
+    promotion_json: relativeToCwd(promotionPath),
+  };
+}
+
 async function promoteProduct(productSlug) {
   const cardPath = path.join(step08Root, "products", productSlug, "card.json");
   const card = await readJson(cardPath);
@@ -308,12 +341,20 @@ async function promoteProduct(productSlug) {
 
 async function main() {
   await mkdir(outputRoot, { recursive: true });
-  const products = [];
+  const processedProducts = new Map();
 
   for (const productSlug of await listStep08Products()) {
     const result = await promoteProduct(productSlug);
     if (result) {
-      products.push(result);
+      processedProducts.set(productSlug, result);
+    }
+  }
+
+  const products = [];
+  for (const productSlug of await listArtifactProducts()) {
+    const summary = await readArtifactPromotionSummary(productSlug, processedProducts);
+    if (summary) {
+      products.push(summary);
     }
   }
 
@@ -326,7 +367,9 @@ async function main() {
     product_count: products.length,
     promoted_feature_count: products.reduce((sum, product) => sum + product.promoted_feature_count, 0),
     skipped_feature_count: products.reduce((sum, product) => sum + product.skipped_feature_count, 0),
-    stale_feature_artifact_dir_count: products.reduce((sum, product) => sum + product.stale_feature_artifact_dir_count, 0),
+    processed_product_count: processedProducts.size,
+    processed_products: [...processedProducts.keys()].sort(compareStrings),
+    stale_feature_artifact_dir_count: [...processedProducts.values()].reduce((sum, product) => sum + product.stale_feature_artifact_dir_count, 0),
     products,
   };
 
