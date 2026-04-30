@@ -582,6 +582,10 @@ artifact inventory.
 The coverage report must include each promoted product slug and must keep its
 promoted, skipped, explicit IAM, derived IAM, and unknown IAM counts aligned
 with the promoted artifact manifests and feature cards.
+The security report must link every promoted feature artifact that contains
+security capability signals, must not retain stale promoted-feature links, and
+must include official Google evidence links for those security signals when
+the promoted feature card provides them.
 
 ### Step 11: Knowledge Capture
 

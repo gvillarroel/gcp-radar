@@ -41,6 +41,10 @@ exist, not just a source count, so service-level provenance is reviewable from
 the final radar.
 The coverage report must include the product slug alongside the product name so
 coverage rows can be validated exactly against promoted artifact directories.
+The security report must expose promoted feature artifact links for every
+feature that carries security capability signals, and must preserve official
+Google evidence links for those signals when they exist in promoted feature
+cards.
 
 Reports must distinguish explicit feature IAM evidence from derived IAM
 signals. Derived roles or permissions must not be described as required access

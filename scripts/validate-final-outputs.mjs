@@ -597,6 +597,98 @@ async function validateRadarServicesReportMatchesArtifacts() {
   return findings;
 }
 
+async function validateRadarSecurityReportMatchesArtifacts() {
+  const findings = [];
+  const securityReportPath = path.join(radarRoot, "security", "index.md");
+  if (!(await exists(securityReportPath))) {
+    findings.push({
+      severity: "error",
+      rule: "missing_radar_security_report",
+      path: securityReportPath,
+    });
+    return findings;
+  }
+
+  const expectedFeatureLinks = new Map();
+  for (const productSlug of await listDirs(artifactsRoot)) {
+    const productDir = path.join(artifactsRoot, productSlug);
+    const promotion = await readJson(path.join(productDir, "promotion.json"), null);
+    if (!promotion) {
+      continue;
+    }
+    for (const feature of promotion.promoted_features || []) {
+      const featureSlug = feature?.feature_slug;
+      if (!featureSlug) {
+        continue;
+      }
+      const featureCardPath = path.join(productDir, featureSlug, "card.json");
+      const featureCard = await readJson(featureCardPath, null);
+      const capabilities = featureCard?.security_capabilities || [];
+      if (capabilities.length === 0) {
+        continue;
+      }
+      expectedFeatureLinks.set(`../../artifacts/${productSlug}/${featureSlug}/README.md`, {
+        product_slug: productSlug,
+        feature_slug: featureSlug,
+        evidence_links: [...new Set(capabilities.flatMap((capability) => capability.evidence_links || []))]
+          .filter(isOfficialGoogleUrl),
+      });
+    }
+  }
+
+  const report = await readFile(securityReportPath, "utf8");
+  const actualFeatureLinks = new Set();
+  const staleFeatureLinks = new Set();
+  const reportLinks = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+
+  for (const match of report.matchAll(linkPattern)) {
+    const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+    reportLinks.add(link);
+    if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
+      continue;
+    }
+    if (expectedFeatureLinks.has(link)) {
+      actualFeatureLinks.add(link);
+    } else {
+      staleFeatureLinks.add(link);
+    }
+  }
+
+  for (const [link, expected] of expectedFeatureLinks) {
+    if (!actualFeatureLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_security_feature_link",
+        path: securityReportPath,
+        product_slug: expected.product_slug,
+        feature_slug: expected.feature_slug,
+        link,
+      });
+    }
+    if (expected.evidence_links.length > 0 && !expected.evidence_links.some((evidenceLink) => reportLinks.has(evidenceLink))) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_security_evidence_link",
+        path: securityReportPath,
+        product_slug: expected.product_slug,
+        feature_slug: expected.feature_slug,
+        expected_one_of: expected.evidence_links,
+      });
+    }
+  }
+  for (const link of staleFeatureLinks) {
+    findings.push({
+      severity: "error",
+      rule: "stale_radar_security_feature_link",
+      path: securityReportPath,
+      link,
+    });
+  }
+
+  return findings;
+}
+
 async function validateRadarRootIndexMatchesArtifacts() {
   const findings = [];
   const rootIndexPath = path.join(radarRoot, "index.md");
@@ -1097,6 +1189,7 @@ async function main() {
   const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
   const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
   const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
+  const radarSecurityReportFindings = await validateRadarSecurityReportMatchesArtifacts();
   const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
   const radarCoverageReportFindings = await validateRadarCoverageReportMatchesArtifacts();
   const radarArtifactFindings = await validateRadarMatchesArtifacts();
@@ -1109,6 +1202,7 @@ async function main() {
     ...radarExternalLinkFindings,
     ...radarIamTableFindings,
     ...radarServicesReportFindings,
+    ...radarSecurityReportFindings,
     ...radarRootIndexFindings,
     ...radarCoverageReportFindings,
     ...radarArtifactFindings,
