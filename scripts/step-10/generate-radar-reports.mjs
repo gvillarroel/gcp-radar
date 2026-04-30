@@ -33,6 +33,24 @@ async function writeJson(filePath, value) {
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
+function printIndexSummary(index) {
+  if (process.env.GCP_RADAR_PRINT_FULL_INDEX === "1") {
+    console.log(JSON.stringify(index, null, 2));
+    return;
+  }
+
+  console.log(JSON.stringify({
+    schema_version: index.schema_version,
+    generated_at: index.generated_at,
+    artifacts_root: index.artifacts_root,
+    radar_root: index.radar_root,
+    product_count: index.product_count,
+    feature_count: index.feature_count,
+    index_json: path.posix.join(relativeToCwd(outputRoot), "index.json"),
+    report_count: Object.values(index.reports).flat().length,
+  }, null, 2));
+}
+
 function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/");
 }
@@ -339,7 +357,7 @@ async function main() {
   };
 
   await writeJson(path.join(outputRoot, "index.json"), index);
-  console.log(JSON.stringify(index, null, 2));
+  printIndexSummary(index);
 }
 
 await main();

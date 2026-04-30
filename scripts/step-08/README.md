@@ -55,6 +55,8 @@ Optional controls:
 - set `GCP_RADAR_STEP08_STEP06_ROOT` to override the Step 06 input root
 - set `GCP_RADAR_STEP08_STEP07_ROOT` to override the Step 07 input root
 - set `GCP_RADAR_STEP08_OUTPUT_ROOT` to override the Step 08 output root
+- set `GCP_RADAR_PRINT_FULL_INDEX=1` to print the complete run index instead
+  of the default compact CLI summary
 
 IAM mapping statuses:
 
