@@ -552,6 +552,9 @@ Every feature listed in a promotion manifest must have both a promoted
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity.
+Each product promotion manifest must also keep its embedded product slug,
+promoted feature count, promoted feature slugs, and promoted artifact paths
+consistent with the artifact directory that contains it.
 Each product artifact index must link every promoted feature README for that
 product and must not link feature README files outside the product's promotion
 manifest.

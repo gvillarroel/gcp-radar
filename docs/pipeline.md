@@ -387,7 +387,9 @@ or directories. External HTTP(S) links in generated radar Markdown and promoted
 artifact Markdown must point to official Google hosts. Every feature listed in a
 promotion manifest must have both its promoted `card.json` and `README.md`.
 Promoted service and feature artifact cards must use embedded slugs that match
-their artifact path and promotion manifest.
+their artifact path and promotion manifest. Promotion manifests must use a
+product slug, promoted feature count, feature slugs, and artifact paths that
+match the containing artifact directory.
 Product artifact indexes and product reports must link every promoted feature
 README for their product and must not retain feature README links that are no
 longer in that product's promotion manifest. The fixed Step 10 report paths recorded in
