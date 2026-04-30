@@ -808,6 +808,29 @@ async function validateRadarMatchesArtifacts() {
     return findings;
   }
 
+  const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";
+  const expectedRadarRoot = path.relative(process.cwd(), radarRoot).replace(/\\/g, "/") || ".";
+  const actualArtifactsRoot = String(step10Index.artifacts_root || "").replace(/\\/g, "/");
+  const actualRadarRoot = String(step10Index.radar_root || "").replace(/\\/g, "/");
+  if (actualArtifactsRoot !== expectedArtifactsRoot) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_artifacts_root_mismatch",
+      path: step10IndexPath,
+      expected: expectedArtifactsRoot,
+      actual: actualArtifactsRoot || null,
+    });
+  }
+  if (actualRadarRoot !== expectedRadarRoot) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_radar_root_mismatch",
+      path: step10IndexPath,
+      expected: expectedRadarRoot,
+      actual: actualRadarRoot || null,
+    });
+  }
+
   const featureCount = products.reduce((sum, product) => sum + product.feature_slugs.length, 0);
   if (step10Index.product_count !== products.length) {
     findings.push({
@@ -862,7 +885,31 @@ async function validateRadarMatchesArtifacts() {
   }
 
   const expectedReports = new Set([...artifactProductSlugs].sort().map((productSlug) => `radar/products/${productSlug}.md`));
-  const actualReports = new Set((step10Index.reports?.products || []).map((report) => String(report).replace(/\\/g, "/")));
+  const productReports = step10Index.reports?.products;
+  if (!Array.isArray(productReports)) {
+    findings.push({
+      severity: "error",
+      rule: "step10_index_product_reports_not_array",
+      path: step10IndexPath,
+      actual_type: productReports === null ? "null" : typeof productReports,
+    });
+  }
+  const actualProductReports = Array.isArray(productReports)
+    ? productReports.map((report) => String(report).replace(/\\/g, "/"))
+    : [];
+  const actualReports = new Set(actualProductReports);
+  const seenReports = new Set();
+  for (const report of actualProductReports) {
+    if (seenReports.has(report)) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_duplicate_product_report",
+        path: step10IndexPath,
+        report,
+      });
+    }
+    seenReports.add(report);
+  }
   for (const report of expectedReports) {
     if (!actualReports.has(report)) {
       findings.push({ severity: "error", rule: "step10_index_missing_product_report", path: step10IndexPath, report });

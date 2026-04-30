@@ -40,7 +40,10 @@ The validator must check:
   `artifacts/`
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
+- `data/step-10/current/index.json` records the same artifacts root and radar
+  root that final-output validation is checking
 - Step 10 product report paths exactly match the promoted product inventory
+  without duplicate product report entries
 - fixed Step 10 report paths in `data/step-10/current/index.json` match the
   canonical radar report layout and resolve to existing files
 - every promoted feature listed in a promotion manifest has both its artifact
