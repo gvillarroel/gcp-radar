@@ -635,16 +635,30 @@ async function validateRadarIamReportMatchesArtifacts() {
     return findings;
   }
 
-  const expectedFeatureLinks = new Set();
+  const expectedRows = new Map();
   for (const productSlug of await listDirs(artifactsRoot)) {
     const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
     if (!promotion) {
       continue;
     }
     for (const feature of promotion.promoted_features || []) {
-      if (feature?.feature_slug) {
-        expectedFeatureLinks.add(`../../artifacts/${productSlug}/${feature.feature_slug}/README.md`);
+      const featureSlug = feature?.feature_slug;
+      if (!featureSlug) {
+        continue;
       }
+      const featureCard = await readJson(path.join(artifactsRoot, productSlug, featureSlug, "card.json"), null);
+      if (!featureCard) {
+        continue;
+      }
+      const iam = featureCard.iam || {};
+      expectedRows.set(`../../artifacts/${productSlug}/${featureSlug}/README.md`, {
+        product_name: promotion.product_name || productSlug,
+        mapping: iam.iam_mapping_status || "unknown",
+        explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
+        explicit_permissions: formatPermissionsForReportValidation(iam.explicit_permissions),
+        derived_roles: formatRolesForReportValidation(iam.derived_roles),
+        derived_permissions: formatPermissionsForReportValidation(iam.derived_permissions),
+      });
     }
   }
 
@@ -657,14 +671,67 @@ async function validateRadarIamReportMatchesArtifacts() {
     if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
       continue;
     }
-    if (expectedFeatureLinks.has(link)) {
+    if (expectedRows.has(link)) {
       actualFeatureLinks.add(link);
     } else {
       staleFeatureLinks.add(link);
     }
   }
 
-  for (const link of expectedFeatureLinks) {
+  const rows = report
+    .split(/\r?\n/)
+    .filter((line) => line.trim().startsWith("|"))
+    .map(splitMarkdownTableRow)
+    .filter((cells) => cells.length > 0);
+  const header = rows[0] || [];
+  const expectedHeader = ["Product", "Feature", "Mapping", "Explicit roles", "Explicit permissions", "Derived roles", "Derived permissions"];
+  if (expectedHeader.some((label, index) => header[index] !== label)) {
+    findings.push({
+      severity: "error",
+      rule: "radar_iam_header_mismatch",
+      path: iamReportPath,
+      expected: expectedHeader,
+      actual: header,
+    });
+    return findings;
+  }
+
+  const actualRows = new Map();
+  for (const cells of rows.slice(2)) {
+    if (cells.length < expectedHeader.length) {
+      continue;
+    }
+    const featureLink = [...String(cells[1] || "").matchAll(linkPattern)]
+      .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+    if (!featureLink) {
+      findings.push({
+        severity: "error",
+        rule: "radar_iam_row_missing_feature_link",
+        path: iamReportPath,
+        row: cells,
+      });
+      continue;
+    }
+    if (actualRows.has(featureLink)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_iam_duplicate_feature_row",
+        path: iamReportPath,
+        link: featureLink,
+      });
+    }
+    actualRows.set(featureLink, {
+      product_name: cells[0],
+      mapping: cells[2],
+      explicit_roles: cells[3],
+      explicit_permissions: cells[4],
+      derived_roles: cells[5],
+      derived_permissions: cells[6],
+    });
+  }
+
+  for (const link of expectedRows.keys()) {
     if (!actualFeatureLinks.has(link)) {
       findings.push({
         severity: "error",
@@ -672,6 +739,31 @@ async function validateRadarIamReportMatchesArtifacts() {
         path: iamReportPath,
         link,
       });
+    }
+  }
+  for (const [link, expected] of expectedRows) {
+    const actual = actualRows.get(link);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_iam_feature_row",
+        path: iamReportPath,
+        link,
+      });
+      continue;
+    }
+    for (const field of ["product_name", "mapping", "explicit_roles", "explicit_permissions", "derived_roles", "derived_permissions"]) {
+      if (actual[field] !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "radar_iam_feature_row_mismatch",
+          path: iamReportPath,
+          link,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
     }
   }
   for (const link of staleFeatureLinks) {
@@ -992,6 +1084,20 @@ function splitMarkdownTableRow(line) {
     .slice(1, -1)
     .split("|")
     .map((cell) => cell.trim().replace(/\\\|/g, "|"));
+}
+
+function formatRolesForReportValidation(roles, limit = 8) {
+  return (roles || [])
+    .slice(0, limit)
+    .map((role) => `\`${role}\``)
+    .join("<br>") || "none";
+}
+
+function formatPermissionsForReportValidation(permissions, limit = 8) {
+  return (permissions || [])
+    .slice(0, limit)
+    .map((permission) => `\`${permission.permission}\``)
+    .join("<br>") || "none";
 }
 
 function parseIntegerCell(value) {

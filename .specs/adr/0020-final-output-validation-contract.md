@@ -90,6 +90,9 @@ The validator must check:
   permissions separate from derived roles and permissions
 - the Step 10 IAM report links every promoted feature artifact and does not
   retain feature artifact links outside the promoted artifact inventory
+- the Step 10 IAM report rows match promoted feature cards for product name,
+  IAM mapping status, explicit roles, explicit permissions, derived roles, and
+  derived permissions
 - the Step 10 services report links every promoted product service card and
   does not retain service-card links outside the promoted artifact inventory
 - the Step 10 services report includes at least one official Google evidence

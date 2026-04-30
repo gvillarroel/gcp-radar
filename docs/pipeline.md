@@ -427,7 +427,9 @@ product's promotion manifest. The fixed Step 10 report paths recorded in
 and resolve to existing files. Product reports and the IAM report must retain
 separate explicit and derived IAM columns. The IAM report must link every
 promoted feature artifact and must not retain stale feature artifact links.
-The services report must link every
+Its rows must also match the promoted feature cards for product name, IAM
+mapping status, explicit roles, explicit permissions, derived roles, and
+derived permissions. The services report must link every
 promoted product service card and must not retain service-card links outside
 the promoted artifact inventory. When a promoted service card has official
 Google source links, the services report must include at least one of those

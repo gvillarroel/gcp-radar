@@ -593,7 +593,10 @@ feature README files outside the product's promoted feature inventory. Product
 reports and the IAM report must keep explicit IAM evidence separate from
 derived IAM signals. The IAM report must link every promoted feature artifact
 and must not retain feature artifact links outside the promoted artifact
-inventory. The services report must link every promoted product service card and
+inventory. The IAM report rows must also keep each promoted feature's product
+name, mapping status, explicit roles, explicit permissions, derived roles, and
+derived permissions aligned with the promoted feature card values rendered by
+Step 10. The services report must link every promoted product service card and
 must not keep stale service-card links outside the promoted artifact inventory.
 When a promoted service card has official Google source links, the services
 report must include at least one of those service evidence links.
