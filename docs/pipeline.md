@@ -344,6 +344,13 @@ For every processed product, Step 09 prunes feature directories under
 This keeps the artifact inventory coherent when a previously promoted feature
 becomes skipped after gate, source, or warning-policy changes.
 
+When `GCP_RADAR_STEP09_PRODUCTS` is used for a targeted rerun, the processing
+scope is limited to the requested products, but the Step 09 index is reconciled
+from the complete promoted artifact inventory after the run. The index fields
+`processed_product_count` and `processed_products` record the latest run scope;
+the `products` list remains the full promoted artifact inventory required by
+final-output validation.
+
 Promoted feature documentation must include an IAM section. That section must
 list explicit roles and permissions when the evidence supports them. If the
 mapping is derived or unknown, the artifact must say so directly and avoid

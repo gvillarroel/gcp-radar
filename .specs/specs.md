@@ -481,6 +481,11 @@ Current canonical Step 09 output layout:
 - `artifacts/<product-slug>/<feature-slug>/README.md`
 - `artifacts/<product-slug>/<feature-slug>/card.json`
 
+When Step 09 is run with a product filter, only the filtered products are
+reprocessed. The Step 09 index is still reconciled from the complete promoted
+artifact inventory under `artifacts/`, and records the filtered run scope in
+`processed_product_count` and `processed_products`.
+
 Features can be promoted only when they pass Step 07, have official Google
 evidence links, have a non-empty technical summary, and do not carry
 unaccepted blocking warnings.
