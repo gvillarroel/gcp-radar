@@ -531,7 +531,8 @@ async function validateRadarServicesReportMatchesArtifacts() {
 
   const artifactProductSlugs = new Set();
   for (const productSlug of await listDirs(artifactsRoot)) {
-    if (await exists(path.join(artifactsRoot, productSlug, "promotion.json"))) {
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (promotion) {
       artifactProductSlugs.add(productSlug);
     }
   }
@@ -702,13 +703,47 @@ async function validateRadarRootIndexMatchesArtifacts() {
   }
 
   const artifactProductSlugs = new Set();
+  const expectedPromotedFeatureCountByProduct = new Map();
   for (const productSlug of await listDirs(artifactsRoot)) {
-    if (await exists(path.join(artifactsRoot, productSlug, "promotion.json"))) {
+    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    if (promotion) {
       artifactProductSlugs.add(productSlug);
+      expectedPromotedFeatureCountByProduct.set(productSlug, (promotion.promoted_features || []).length);
     }
   }
 
   const report = await readFile(rootIndexPath, "utf8");
+  const expectedFeatureCount = [...artifactProductSlugs].reduce((sum, productSlug) => {
+    return sum + expectedPromotedFeatureCountByProduct.get(productSlug);
+  }, 0);
+  const summaryExpectations = [
+    ["Service cards", artifactProductSlugs.size],
+    ["Promoted features", expectedFeatureCount],
+  ];
+  for (const [label, expected] of summaryExpectations) {
+    const match = report.match(new RegExp(`^- ${label}:\\s*(\\d+)\\s*$`, "m"));
+    if (!match) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_root_summary_count",
+        path: rootIndexPath,
+        summary_label: label,
+        expected,
+      });
+      continue;
+    }
+    const actual = Number(match[1]);
+    if (actual !== expected) {
+      findings.push({
+        severity: "error",
+        rule: "radar_root_summary_count_mismatch",
+        path: rootIndexPath,
+        summary_label: label,
+        expected,
+        actual,
+      });
+    }
+  }
   const expectedProductReportLinks = new Set(
     [...artifactProductSlugs].sort().map((productSlug) => `./products/${productSlug}.md`)
   );
