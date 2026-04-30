@@ -554,11 +554,12 @@ Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
 cannot aggregate a card under the wrong product or feature identity.
 Each product promotion manifest must also keep its embedded product slug,
-promoted feature count, promoted feature slugs, and promoted artifact paths
-consistent with the artifact directory that contains it.
+service-card path, promoted feature count, promoted feature slugs, and
+promoted artifact paths consistent with the artifact directory that contains
+it.
 Each product artifact index must link every promoted feature README for that
-product and must not link feature README files outside the product's promotion
-manifest.
+product, must link the promoted service card, and must not link feature README
+files or service-card paths outside the product's promotion manifest.
 Radar Markdown links that target promoted `artifacts/` content must resolve to
 existing files or directories. Each product report must also link every
 promoted feature README for that product and must not link feature README files

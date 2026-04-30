@@ -123,6 +123,18 @@ async function validateArtifacts() {
           actual: promotion.promoted_feature_count,
         });
       }
+      const expectedServiceCard = `artifacts/${productSlug}/card.json`;
+      const actualServiceCard = String(promotion.service_card || "").replace(/\\/g, "/");
+      if (actualServiceCard !== expectedServiceCard) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_service_card_path_mismatch",
+          path: promotionPath,
+          product_slug: productSlug,
+          expected: expectedServiceCard,
+          actual: actualServiceCard || null,
+        });
+      }
       const seenFeatureSlugs = new Set();
       for (const feature of promotion.promoted_features || []) {
         const featureSlug = feature?.feature_slug;
@@ -286,12 +298,22 @@ async function validateArtifactProductIndexes() {
       .filter(Boolean)
       .sort((left, right) => left.localeCompare(right))
       .map((featureSlug) => `./${featureSlug}/README.md`));
+    const expectedServiceCardLink = "./card.json";
+    let hasServiceCardLink = false;
     const actualFeatureLinks = new Set();
     const staleFeatureLinks = new Set();
+    const staleServiceCardLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
 
     for (const match of indexMarkdown.matchAll(linkPattern)) {
       const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+      if (link.endsWith("/card.json") || link === expectedServiceCardLink) {
+        if (link === expectedServiceCardLink) {
+          hasServiceCardLink = true;
+        } else if (link.startsWith("./")) {
+          staleServiceCardLinks.add(link);
+        }
+      }
       if (!link.startsWith("./") || !link.endsWith("/README.md")) {
         continue;
       }
@@ -317,6 +339,24 @@ async function validateArtifactProductIndexes() {
       findings.push({
         severity: "error",
         rule: "stale_artifact_index_feature_link",
+        path: productIndexPath,
+        product_slug: productSlug,
+        link,
+      });
+    }
+    if (!hasServiceCardLink) {
+      findings.push({
+        severity: "error",
+        rule: "missing_artifact_index_service_card_link",
+        path: productIndexPath,
+        product_slug: productSlug,
+        link: expectedServiceCardLink,
+      });
+    }
+    for (const link of staleServiceCardLinks) {
+      findings.push({
+        severity: "error",
+        rule: "stale_artifact_index_service_card_link",
         path: productIndexPath,
         product_slug: productSlug,
         link,

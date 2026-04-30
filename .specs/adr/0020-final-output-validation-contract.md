@@ -47,11 +47,12 @@ The validator must check:
   `card.json` and `README.md`
 - promoted service and feature artifact cards have embedded slugs that match
   their artifact path and promotion manifest
-- each product promotion manifest has an embedded product slug, promoted
-  feature count, promoted feature slugs, and promoted artifact paths that match
-  the containing artifact directory
+- each product promotion manifest has an embedded product slug, service-card
+  path, promoted feature count, promoted feature slugs, and promoted artifact
+  paths that match the containing artifact directory
 - each product artifact index links every promoted feature README for that
   product
+- each product artifact index links the promoted service card for that product
 - product artifact indexes do not retain feature README links outside the
   product's promotion manifest
 - each Step 10 product report links every promoted feature README for that
