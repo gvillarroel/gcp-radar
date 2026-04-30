@@ -604,6 +604,10 @@ promoted product service card and must not keep stale service-card links
 outside the promoted artifact inventory.
 When a promoted service card has official Google source links, the services
 report must include at least one of those service evidence links.
+Each services report row must keep the service status, promoted feature count,
+latest feature date, explicit IAM count, derived IAM count, unknown IAM count,
+and rendered official source links aligned with the promoted service card and
+promotion manifest.
 The root radar index must link every promoted product report and service card,
 must not retain stale product or service-card links outside the promoted
 artifact inventory, and must keep its service-card and promoted-feature summary
