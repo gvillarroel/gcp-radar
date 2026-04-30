@@ -728,8 +728,10 @@ async function validateRadarMatchesArtifacts() {
     const actualFeatureLinks = new Set();
     const staleFeatureLinks = new Set();
     const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+    const reportLinks = new Set();
     for (const match of report.matchAll(linkPattern)) {
       const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
+      reportLinks.add(link);
       const prefix = `../../artifacts/${product.product_slug}/`;
       if (!link.startsWith(prefix) || !link.endsWith("/README.md")) {
         continue;
@@ -759,6 +761,24 @@ async function validateRadarMatchesArtifacts() {
         product_slug: product.product_slug,
         link,
       });
+    }
+    for (const featureSlug of product.feature_slugs) {
+      const featureCardPath = path.join(artifactsRoot, product.product_slug, featureSlug, "card.json");
+      const featureCard = await readJson(featureCardPath, null);
+      const officialSourceLinks = (featureCard?.evidence?.source_links || []).filter(isOfficialGoogleUrl);
+      if (officialSourceLinks.length === 0) {
+        continue;
+      }
+      if (!officialSourceLinks.some((link) => reportLinks.has(link))) {
+        findings.push({
+          severity: "error",
+          rule: "missing_radar_feature_evidence_link",
+          path: reportPath,
+          product_slug: product.product_slug,
+          feature_slug: featureSlug,
+          expected_one_of: officialSourceLinks,
+        });
+      }
     }
   }
 
