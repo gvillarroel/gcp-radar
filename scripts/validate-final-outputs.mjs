@@ -1385,10 +1385,25 @@ function splitMarkdownTableRow(line) {
   if (!trimmed.startsWith("|") || !trimmed.endsWith("|")) {
     return [];
   }
-  return trimmed
-    .slice(1, -1)
-    .split("|")
-    .map((cell) => cell.trim().replace(/\\\|/g, "|"));
+  const cells = [];
+  let cell = "";
+  const body = trimmed.slice(1, -1);
+  for (let index = 0; index < body.length; index += 1) {
+    const char = body[index];
+    if (char === "\\" && body[index + 1] === "|") {
+      cell += "|";
+      index += 1;
+      continue;
+    }
+    if (char === "|") {
+      cells.push(cell.trim());
+      cell = "";
+      continue;
+    }
+    cell += char;
+  }
+  cells.push(cell.trim());
+  return cells;
 }
 
 function formatRolesForReportValidation(roles, limit = 8) {
