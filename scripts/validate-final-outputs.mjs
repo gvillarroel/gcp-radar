@@ -1105,8 +1105,11 @@ async function validateRadarSecurityReportMatchesArtifacts() {
         continue;
       }
       expectedFeatureLinks.set(`../../artifacts/${productSlug}/${featureSlug}/README.md`, {
+        product_name: promotion.product_name || productSlug,
         product_slug: productSlug,
         feature_slug: featureSlug,
+        capabilities: formatSecurityCapabilitiesForReportValidation(capabilities),
+        evidence: formatSourcesForReportValidation([...new Set(capabilities.flatMap((capability) => capability.evidence_links || []))], 4),
         evidence_links: [...new Set(capabilities.flatMap((capability) => capability.evidence_links || []))]
           .filter(isOfficialGoogleUrl),
       });
@@ -1132,6 +1135,56 @@ async function validateRadarSecurityReportMatchesArtifacts() {
     }
   }
 
+  const rows = report
+    .split(/\r?\n/)
+    .filter((line) => line.trim().startsWith("|"))
+    .map(splitMarkdownTableRow)
+    .filter((cells) => cells.length > 0);
+  const header = rows[0] || [];
+  const expectedHeader = ["Product", "Feature", "Capabilities", "Evidence"];
+  if (expectedHeader.some((label, index) => header[index] !== label)) {
+    findings.push({
+      severity: "error",
+      rule: "radar_security_header_mismatch",
+      path: securityReportPath,
+      expected: expectedHeader,
+      actual: header,
+    });
+    return findings;
+  }
+
+  const actualRows = new Map();
+  for (const cells of rows.slice(2)) {
+    if (cells.length < expectedHeader.length) {
+      continue;
+    }
+    const featureLink = [...String(cells[1] || "").matchAll(linkPattern)]
+      .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
+      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+    if (!featureLink) {
+      findings.push({
+        severity: "error",
+        rule: "radar_security_row_missing_feature_link",
+        path: securityReportPath,
+        row: cells,
+      });
+      continue;
+    }
+    if (actualRows.has(featureLink)) {
+      findings.push({
+        severity: "error",
+        rule: "radar_security_duplicate_feature_row",
+        path: securityReportPath,
+        link: featureLink,
+      });
+    }
+    actualRows.set(featureLink, {
+      product_name: cells[0],
+      capabilities: cells[2],
+      evidence: cells[3],
+    });
+  }
+
   for (const [link, expected] of expectedFeatureLinks) {
     if (!actualFeatureLinks.has(link)) {
       findings.push({
@@ -1153,6 +1206,33 @@ async function validateRadarSecurityReportMatchesArtifacts() {
         expected_one_of: expected.evidence_links,
       });
     }
+    const actual = actualRows.get(link);
+    if (!actual) {
+      findings.push({
+        severity: "error",
+        rule: "missing_radar_security_feature_row",
+        path: securityReportPath,
+        product_slug: expected.product_slug,
+        feature_slug: expected.feature_slug,
+        link,
+      });
+      continue;
+    }
+    for (const field of ["product_name", "capabilities", "evidence"]) {
+      if (actual[field] !== expected[field]) {
+        findings.push({
+          severity: "error",
+          rule: "radar_security_feature_row_mismatch",
+          path: securityReportPath,
+          product_slug: expected.product_slug,
+          feature_slug: expected.feature_slug,
+          link,
+          field,
+          expected: expected[field],
+          actual: actual[field],
+        });
+      }
+    }
   }
   for (const link of staleFeatureLinks) {
     findings.push({
@@ -1161,6 +1241,16 @@ async function validateRadarSecurityReportMatchesArtifacts() {
       path: securityReportPath,
       link,
     });
+  }
+  for (const link of actualRows.keys()) {
+    if (!expectedFeatureLinks.has(link)) {
+      findings.push({
+        severity: "error",
+        rule: "stale_radar_security_feature_row",
+        path: securityReportPath,
+        link,
+      });
+    }
   }
 
   return findings;
@@ -1320,6 +1410,12 @@ function formatSourcesForReportValidation(sources, limit = 3) {
     .slice(0, limit)
     .map((url) => `[source](${url})`)
     .join("<br>");
+}
+
+function formatSecurityCapabilitiesForReportValidation(capabilities) {
+  return (capabilities || [])
+    .map((capability) => capability.capability)
+    .join(", ");
 }
 
 function parseIntegerCell(value) {

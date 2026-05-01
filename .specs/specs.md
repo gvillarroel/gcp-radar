@@ -621,7 +621,9 @@ with the promoted artifact manifests and feature cards.
 The security report must link every promoted feature artifact that contains
 security capability signals, must not retain stale promoted-feature links, and
 must include official Google evidence links for those security signals when
-the promoted feature card provides them.
+the promoted feature card provides them. Each security report row must also
+keep the promoted feature's product name, capability list, and rendered
+evidence links aligned with the promoted feature card.
 
 ### Step 11: Knowledge Capture
 

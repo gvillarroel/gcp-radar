@@ -118,8 +118,10 @@ The validator must check:
   feature cards
 - the Step 10 security report links every promoted feature artifact that has
   security capability signals, does not retain stale security feature links,
-  and includes official Google evidence links for those signals when promoted
-  feature cards provide them
+  includes official Google evidence links for those signals when promoted
+  feature cards provide them, and keeps each security row's product name,
+  capability list, and rendered evidence links aligned with the promoted
+  feature card
 
 ## Consequences
 
