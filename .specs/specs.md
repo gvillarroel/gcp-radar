@@ -597,6 +597,9 @@ artifact paths, and `source_step08_card` provenance consistent with the
 artifact directory that contains it. Its skipped feature count must also match
 the skipped feature list, and a feature slug must not appear in both the
 promoted and skipped feature lists.
+Promotion manifests must also keep their rendered product name and promoted or
+skipped feature names aligned with the promoted artifact cards and canonical
+Step 08 product card, because those manifest labels feed final radar reports.
 Each product artifact index must link every promoted feature README for that
 product, must link the promoted service card, and must not link feature README
 files or service-card paths outside the product's promotion manifest.

@@ -430,6 +430,9 @@ the containing artifact directory.
 Promotion manifests must also keep skipped feature counts aligned with the
 skipped feature list and must not list the same feature slug as both promoted
 and skipped.
+Promotion manifests must also keep product and feature names aligned with the
+promoted cards and the canonical Step 08 card, since Step 10 uses those labels
+when rendering final radar reports.
 Product artifact indexes and product reports must link every promoted feature
 README for their product. Product artifact indexes must also link the promoted
 service card. Product artifact indexes must keep their rendered title, Step 08

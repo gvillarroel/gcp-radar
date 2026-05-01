@@ -131,6 +131,8 @@ async function validateArtifacts() {
     const promotion = await readJson(promotionPath, null);
     const serviceCardPath = path.join(artifactsRoot, productSlug, "card.json");
     const serviceCard = await readJson(serviceCardPath, null);
+    const step08Card = await readJson(path.join(step08Root, "products", productSlug, "card.json"), null);
+    const step08Features = new Map((step08Card?.features || []).map((feature) => [feature.feature_slug, feature]));
     const expectedSourceStep08Card = relativeToCwd(path.join(step08Root, "products", productSlug, "card.json"));
     const promotedFeatureSlugs = new Set((promotion?.promoted_features || []).map((feature) => feature.feature_slug).filter(Boolean));
     const artifactFeatureSlugs = await listDirs(productDir);
@@ -155,6 +157,17 @@ async function validateArtifacts() {
           path: promotionPath,
           expected: productSlug,
           actual: promotion.product_slug || null,
+        });
+      }
+      const expectedProductName = serviceCard?.product_name || step08Card?.product_name || null;
+      if (expectedProductName && promotion.product_name !== expectedProductName) {
+        findings.push({
+          severity: "error",
+          rule: "promotion_manifest_product_name_mismatch",
+          path: promotionPath,
+          product_slug: productSlug,
+          expected: expectedProductName,
+          actual: promotion.product_name || null,
         });
       }
       if (promotion.promoted_feature_count !== promotedFeatureSlugs.size) {
@@ -229,6 +242,20 @@ async function validateArtifacts() {
           });
         }
         seenFeatureSlugs.add(featureSlug);
+        const step08Feature = step08Features.get(featureSlug);
+        const featureCard = await readJson(path.join(productDir, featureSlug, "card.json"), null);
+        const expectedFeatureName = featureCard?.feature_name || step08Feature?.feature_name || null;
+        if (expectedFeatureName && feature.feature_name !== expectedFeatureName) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_feature_name_mismatch",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: expectedFeatureName,
+            actual: feature.feature_name || null,
+          });
+        }
         const expectedReadme = `artifacts/${productSlug}/${featureSlug}/README.md`;
         const expectedCard = `artifacts/${productSlug}/${featureSlug}/card.json`;
         const actualReadme = String(feature.artifact_readme || "").replace(/\\/g, "/");
@@ -285,6 +312,18 @@ async function validateArtifacts() {
             path: promotionPath,
             product_slug: productSlug,
             feature_slug: featureSlug,
+          });
+        }
+        const step08Feature = step08Features.get(featureSlug);
+        if (step08Feature?.feature_name && feature.feature_name !== step08Feature.feature_name) {
+          findings.push({
+            severity: "error",
+            rule: "promotion_manifest_skipped_feature_name_mismatch",
+            path: promotionPath,
+            product_slug: productSlug,
+            feature_slug: featureSlug,
+            expected: step08Feature.feature_name,
+            actual: feature.feature_name || null,
           });
         }
       }
